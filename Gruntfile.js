@@ -58,6 +58,13 @@ module.exports = function (grunt) {
                     '<%= yeoman.app %>/scripts/templates/*.hbs'
                 ],
                 tasks: ['handlebars']
+            },
+            express: {
+              files:  [ './backend/config/*.js' ],
+              tasks:  [ 'express:dev' ],
+              options: {
+                nospawn: true //Without this option specified express won't be reloaded
+              }
             }
         },
         // connect: {
