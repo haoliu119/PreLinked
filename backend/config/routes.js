@@ -10,6 +10,7 @@ module.exports = function(app) {
     { failureRedirect: '/login' }), function(req, res) {
       res.redirect('/');
   });
+
 	// app.post('/user', users.create);
 	// app.get('/user', users.list);
 	// app.get('/user/:id', users.read);
