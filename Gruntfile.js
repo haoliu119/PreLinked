@@ -187,9 +187,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-express-server');
 
     grunt.registerTask('server', function (target) {
-        if (target === 'dist') {
-            return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
-        }
 
         grunt.task.run([
             'clean:server',
