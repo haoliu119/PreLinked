@@ -1,5 +1,5 @@
 // 'use strict';
-var LIVERELOAD_PORT = 35729;
+// var LIVERELOAD_PORT = 35729;
 // var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
 // var mountFolder = function (connect, dir) {
 //     return connect.static(require('path').resolve(dir));
@@ -29,7 +29,7 @@ module.exports = function (grunt) {
         watch: {
             options: {
                 spawn: false,
-                livereload: LIVERELOAD_PORT
+                livereload: true
             },
             // coffee: {
             //     files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
