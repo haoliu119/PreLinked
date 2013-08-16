@@ -1,10 +1,11 @@
-module.exports = function(app){
+// var users = require('../controllers/users.js');
+var site = require('../controllers/site.js');
 
-	//home route
-	var home = require('../controllers/home');
-	app.get('/', home.index);
-  app.get('/test', function(req, res){
-    res.end('test');
-  });
-
+module.exports = function(app) {
+	app.get('/', site.index);
+	// app.post('/user', users.create);
+	// app.get('/user', users.list);
+	// app.get('/user/:id', users.read);
+	// app.put('/user/:id', users.update);
+	// app.del('/user/:id', users.delete);
 };

@@ -1,5 +1,5 @@
 // 'use strict';
-// var LIVERELOAD_PORT = 35729;
+var LIVERELOAD_PORT = 35729;
 // var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
 // var mountFolder = function (connect, dir) {
 //     return connect.static(require('path').resolve(dir));
@@ -28,20 +28,21 @@ module.exports = function (grunt) {
         yeoman: yeomanConfig,
         watch: {
             options: {
-                nospawn: true
+                spawn: false,
+                livereload: LIVERELOAD_PORT
             },
-            coffee: {
-                files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
-                tasks: ['coffee:dist']
-            },
-            coffeeTest: {
-                files: ['test/spec/{,*/}*.coffee'],
-                tasks: ['coffee:test']
-            },
-            compass: {
-                files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
-                tasks: ['compass']
-            },
+            // coffee: {
+            //     files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
+            //     tasks: ['coffee:dist']
+            // },
+            // coffeeTest: {
+            //     files: ['test/spec/{,*/}*.coffee'],
+            //     tasks: ['coffee:test']
+            // },
+            // compass: {
+            //     files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+            //     tasks: ['compass']
+            // },
             // livereload: {
             //     options: {
             //         livereload: LIVERELOAD_PORT
@@ -53,6 +54,14 @@ module.exports = function (grunt) {
             //         '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}'
             //     ]
             // },
+            js: {
+                files: [
+                    'backend/app.js',
+                    'backend/app/**/*.js',
+                    'backend/config/*.js'
+                ],
+                tasks: ['server']
+            },
             handlebars: {
                 files: [
                     '<%= yeoman.app %>/scripts/templates/*.hbs'
@@ -133,44 +142,44 @@ module.exports = function (grunt) {
                 }
             }
         },
-        coffee: {
-            dist: {
-                files: [{
-                    // rather than compiling multiple files here you should
-                    // require them into your main .coffee file
-                    expand: true,
-                    cwd: '<%= yeoman.app %>/scripts',
-                    src: '{,*/}*.coffee',
-                    dest: '.tmp/scripts',
-                    ext: '.js'
-                }]
-            },
-            test: {
-                files: [{
-                    expand: true,
-                    cwd: '.tmp/spec',
-                    src: '*.coffee',
-                    dest: 'test/spec'
-                }]
-            }
-        },
-        compass: {
-            options: {
-                sassDir: '<%= yeoman.app %>/styles',
-                cssDir: '.tmp/styles',
-                imagesDir: '<%= yeoman.app %>/images',
-                javascriptsDir: '<%= yeoman.app %>/scripts',
-                fontsDir: '<%= yeoman.app %>/styles/fonts',
-                importPath: '<%= yeoman.app %>/bower_components',
-                relativeAssets: true
-            },
-            dist: {},
-            server: {
-                options: {
-                    debugInfo: true
-                }
-            }
-        },
+        // coffee: {
+        //     dist: {
+        //         files: [{
+        //             // rather than compiling multiple files here you should
+        //             // require them into your main .coffee file
+        //             expand: true,
+        //             cwd: '<%= yeoman.app %>/scripts',
+        //             src: '{,*/}*.coffee',
+        //             dest: '.tmp/scripts',
+        //             ext: '.js'
+        //         }]
+        //     },
+        //     test: {
+        //         files: [{
+        //             expand: true,
+        //             cwd: '.tmp/spec',
+        //             src: '*.coffee',
+        //             dest: 'test/spec'
+        //         }]
+        //     }
+        // },
+        // compass: {
+        //     options: {
+        //         sassDir: '<%= yeoman.app %>/styles',
+        //         cssDir: '.tmp/styles',
+        //         imagesDir: '<%= yeoman.app %>/images',
+        //         javascriptsDir: '<%= yeoman.app %>/scripts',
+        //         fontsDir: '<%= yeoman.app %>/styles/fonts',
+        //         importPath: '<%= yeoman.app %>/bower_components',
+        //         relativeAssets: true
+        //     },
+        //     dist: {},
+        //     server: {
+        //         options: {
+        //             debugInfo: true
+        //         }
+        //     }
+        // },
         uglify: {
             dist: {
                 files: {
@@ -311,34 +320,34 @@ module.exports = function (grunt) {
 
         grunt.task.run([
             'clean:server',
-            'coffee:dist',
+            // 'coffee:dist',
             'createDefaultTemplate',
             'handlebars',
             // 'compass:server',
             // 'init-app',
             'express:dev',
             // 'connect:livereload',
-            'open',
+            // 'open',
             'watch'
         ]);
     });
 
     grunt.registerTask('test', [
         'clean:server',
-        'coffee',
+        // 'coffee',
         'createDefaultTemplate',
-        'handlebars',
-        'compass',
-        'connect:test',
-        'mocha'
+        'handlebars'
+        // 'compass',
+        // 'connect:test',
+        // 'mocha'
     ]);
 
     grunt.registerTask('build', [
         'clean:dist',
-        'coffee',
+        // 'coffee',
         'createDefaultTemplate',
         'handlebars',
-        'compass:dist',
+        // 'compass:dist',
         'useminPrepare',
         'imagemin',
         'htmlmin',
