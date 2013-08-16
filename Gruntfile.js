@@ -67,6 +67,13 @@ module.exports = function (grunt) {
                     '<%= yeoman.app %>/scripts/templates/*.hbs'
                 ],
                 tasks: ['handlebars']
+            },
+            express: {
+              files:  [ './backend/**/*.js' ],
+              tasks:  [ 'express:dev' ],
+              options: {
+                nospawn: true //Without this option specified express won't be reloaded
+              }
             }
         },
         // connect: {
@@ -296,6 +303,16 @@ module.exports = function (grunt) {
                     ]
                 }
             }
+        },
+        express: {
+            options: {
+              // Override defaults here
+            },
+            dev: {
+              options: {
+                script: './backend/app.js'
+              }
+            }
         }
     });
 
@@ -307,12 +324,7 @@ module.exports = function (grunt) {
         require("./backend/app.js");
     });
 
-    // grunt.loadNpmTasks('grunt-contrib-stylus');
-
-    // grunt.registerTask("stylus", function () {
-    //     console.log('test');
-    //     grunt.task.run(["stylus"]);
-    // });
+    grunt.loadNpmTasks('grunt-express-server');
 
     grunt.registerTask('server', function (target) {
         if (target === 'dist') {
@@ -325,7 +337,8 @@ module.exports = function (grunt) {
             'createDefaultTemplate',
             'handlebars',
             // 'compass:server',
-            'init-app',
+            // 'init-app',
+            'express:dev',
             // 'connect:livereload',
             // 'open',
             'watch'
