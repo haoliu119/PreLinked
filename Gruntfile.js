@@ -173,6 +173,24 @@ module.exports = function (grunt) {
         //         }
         //     }
         // },
+        stylus: {
+          compile: {
+            options: {
+              paths: ['<%= yeoman.app %>/styles/']
+              // urlfunc: 'embedurl', // use embedurl('test.png') in our code to trigger Data URI embedding
+              // use: [
+              //   require('fluidity') // use stylus plugin at compile time
+              // ]
+              // import: [    //  @import 'foo', 'bar/moo', etc. into every .styl file
+              // 'foo',       //  that is compiled. These might be findable based on values you gave
+              // 'bar/moo'    //  to `paths`, or a plugin you added under `use`
+              // ]
+            },
+            files: {
+              '<%= yeoman.app %>/styles/result.css': '<%= yeoman.app %>/styles/source.styl' // 1:1 compile
+            }
+          }
+        },
         uglify: {
             dist: {
                 files: {
@@ -289,6 +307,13 @@ module.exports = function (grunt) {
         require("./backend/app.js");
     });
 
+    // grunt.loadNpmTasks('grunt-contrib-stylus');
+
+    // grunt.registerTask("stylus", function () {
+    //     console.log('test');
+    //     grunt.task.run(["stylus"]);
+    // });
+
     grunt.registerTask('server', function (target) {
         if (target === 'dist') {
             return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
@@ -335,8 +360,9 @@ module.exports = function (grunt) {
     ]);
 
     grunt.registerTask('default', [
-        'jshint',
-        'test',
-        'build'
+        // 'jshint'
+        // 'test',
+        // 'build'
+        "stylus"
     ]);
 };
