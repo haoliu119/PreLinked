@@ -163,7 +163,8 @@ module.exports = function (grunt) {
                     debugInfo: true
                 }
             }
-        },uglify: {
+        },
+        uglify: {
             dist: {
                 files: {
                     '<%= yeoman.dist %>/scripts/main.js': [
@@ -285,7 +286,7 @@ module.exports = function (grunt) {
             'coffee:dist',
             'createDefaultTemplate',
             'handlebars',
-            'compass:server',
+            // 'compass:server',
             'connect:livereload',
             'open',
             'watch'
