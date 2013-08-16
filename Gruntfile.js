@@ -287,7 +287,7 @@ module.exports = function (grunt) {
 
         grunt.task.run([
             'clean:server',
-            'coffee:dist',
+            // 'coffee:dist',
             'createDefaultTemplate',
             'handlebars',
             // 'compass:server',
@@ -300,20 +300,20 @@ module.exports = function (grunt) {
 
     grunt.registerTask('test', [
         'clean:server',
-        'coffee',
+        // 'coffee',
         'createDefaultTemplate',
-        'handlebars',
-        'compass',
-        'connect:test',
-        'mocha'
+        'handlebars'
+        // 'compass',
+        // 'connect:test',
+        // 'mocha'
     ]);
 
     grunt.registerTask('build', [
         'clean:dist',
-        'coffee',
+        // 'coffee',
         'createDefaultTemplate',
         'handlebars',
-        'compass:dist',
+        // 'compass:dist',
         'useminPrepare',
         'imagemin',
         'htmlmin',
