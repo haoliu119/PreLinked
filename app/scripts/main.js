@@ -2,17 +2,15 @@
 
 
 window.PreLinked = {
-    Models: {},
-    Collections: {},
-    Views: {},
-    Routers: {},
-    init: function () {
-        'use strict';
-        console.log('Hello from Backbone!');
-    }
+  Models: {},
+  Collections: {},
+  Views: {},
+  Routers: {},
+  init: function () {
+    console.log('Hello from Backbone!');
+  }
 };
 
 $(document).ready(function () {
-    'use strict';
-    PreLinked.init();
+  PreLinked.init();
 });
