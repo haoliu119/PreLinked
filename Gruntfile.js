@@ -269,6 +269,16 @@ module.exports = function (grunt) {
                     ]
                 }
             }
+        },
+        express: {
+            options: {
+              // Override defaults here
+            },
+            dev: {
+              options: {
+                script: './backend/app.js'
+              }
+            }
         }
     });
 
@@ -279,6 +289,13 @@ module.exports = function (grunt) {
     grunt.registerTask("init-app", function () {
         require("./backend/app.js");
     });
+
+
+
+    grunt.loadNpmTasks('grunt-express-server');
+
+
+
 
     grunt.registerTask('server', function (target) {
         if (target === 'dist') {
@@ -291,7 +308,8 @@ module.exports = function (grunt) {
             'createDefaultTemplate',
             'handlebars',
             // 'compass:server',
-            'init-app',
+            // 'init-app',
+            'express:dev',
             // 'connect:livereload',
             'open',
             'watch'
