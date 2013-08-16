@@ -70,7 +70,7 @@ module.exports = function (grunt) {
                     'backend/app/**/*.js',
                     'backend/config/*.js'
                 ],
-                tasks: ['server']
+                tasks: ['express-restart']
             },
             handlebars: {
                 files: [
@@ -289,19 +289,17 @@ module.exports = function (grunt) {
                 }
             }
         },
-      express: {
-        server: {
-          options: {
-            port: 9000,
-            bases: 'public',
-            server: path.resolve('./backend/app')
-          }
+        express: {
+            server: {
+              options: {
+                port: 9000,
+                bases: 'public',
+                server: path.resolve('./backend/app'),
+                livereload: true, // if you just specify `true`, default port `35729` will be used
+                // serverreload: true
+              }
+            }
         }
-      }
-
-            //     //     // port: 3000,
-            //     //     // server: path.resolve('./backend/app.js')
-
     });
 
     grunt.loadNpmTasks('grunt-express');
@@ -359,7 +357,7 @@ module.exports = function (grunt) {
         'usemin'
     ]);
 
-    grunt.registerTask('myServer', ['express', 'express-keepalive']);
+    grunt.registerTask('myServer', ['express','watch', 'express-keepalive']);
 
 
     grunt.registerTask('default', [

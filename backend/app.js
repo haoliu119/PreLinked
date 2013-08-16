@@ -29,6 +29,6 @@ var express = require('express');
 var app = express();
 console.log('starting express server');
 app.get('/hello', function(req, res) {
-  res.send('hello!');
+  res.send('hello!hello!hello');
 });
 module.exports = app;
