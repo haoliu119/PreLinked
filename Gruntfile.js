@@ -1,9 +1,9 @@
-'use strict';
-var LIVERELOAD_PORT = 35729;
-var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
-var mountFolder = function (connect, dir) {
-    return connect.static(require('path').resolve(dir));
-};
+// 'use strict';
+// var LIVERELOAD_PORT = 35729;
+// var lrSnippet = require('connect-livereload')({port: LIVERELOAD_PORT});
+// var mountFolder = function (connect, dir) {
+//     return connect.static(require('path').resolve(dir));
+// };
 
 // # Globbing
 // for performance reasons we're only matching one level down:
@@ -42,17 +42,17 @@ module.exports = function (grunt) {
                 files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
                 tasks: ['compass']
             },
-            livereload: {
-                options: {
-                    livereload: LIVERELOAD_PORT
-                },
-                files: [
-                    '<%= yeoman.app %>/*.html',
-                    '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
-                    '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
-                    '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}'
-                ]
-            },
+            // livereload: {
+            //     options: {
+            //         livereload: LIVERELOAD_PORT
+            //     },
+            //     files: [
+            //         '<%= yeoman.app %>/*.html',
+            //         '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
+            //         '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
+            //         '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}'
+            //     ]
+            // },
             handlebars: {
                 files: [
                     '<%= yeoman.app %>/scripts/templates/*.hbs'
@@ -60,47 +60,47 @@ module.exports = function (grunt) {
                 tasks: ['handlebars']
             }
         },
-        connect: {
-            options: {
-                port: 9000,
-                // change this to '0.0.0.0' to access the server from outside
-                hostname: 'localhost'
-            },
-            livereload: {
-                options: {
-                    middleware: function (connect) {
-                        return [
-                            lrSnippet,
-                            mountFolder(connect, '.tmp'),
-                            mountFolder(connect, yeomanConfig.app)
-                        ];
-                    }
-                }
-            },
-            test: {
-                options: {
-                    middleware: function (connect) {
-                        return [
-                            mountFolder(connect, '.tmp'),
-                            mountFolder(connect, 'test'),
-                            mountFolder(connect, yeomanConfig.app)
-                        ];
-                    }
-                }
-            },
-            dist: {
-                options: {
-                    middleware: function (connect) {
-                        return [
-                            mountFolder(connect, yeomanConfig.dist)
-                        ];
-                    }
-                }
-            }
-        },
+        // connect: {
+        //     options: {
+        //         port: 9000,
+        //         // change this to '0.0.0.0' to access the server from outside
+        //         hostname: 'localhost'
+        //     },
+        //     livereload: {
+        //         options: {
+        //             middleware: function (connect) {
+        //                 return [
+        //                     lrSnippet,
+        //                     mountFolder(connect, '.tmp'),
+        //                     mountFolder(connect, yeomanConfig.app)
+        //                 ];
+        //             }
+        //         }
+        //     },
+        //     test: {
+        //         options: {
+        //             middleware: function (connect) {
+        //                 return [
+        //                     mountFolder(connect, '.tmp'),
+        //                     mountFolder(connect, 'test'),
+        //                     mountFolder(connect, yeomanConfig.app)
+        //                 ];
+        //             }
+        //         }
+        //     },
+        //     dist: {
+        //         options: {
+        //             middleware: function (connect) {
+        //                 return [
+        //                     mountFolder(connect, yeomanConfig.dist)
+        //                 ];
+        //             }
+        //         }
+        //     }
+        // },
         open: {
             server: {
-                path: 'http://localhost:<%= connect.options.port %>'
+                path: 'http://localhost:3000'
             }
         },
         clean: {
@@ -276,6 +276,10 @@ module.exports = function (grunt) {
         grunt.file.write('.tmp/scripts/templates.js', 'this.JST = this.JST || {};');
     });
 
+    grunt.registerTask("init-app", function () {
+        require("./backend/app.js");
+    });
+
     grunt.registerTask('server', function (target) {
         if (target === 'dist') {
             return grunt.task.run(['build', 'open', 'connect:dist:keepalive']);
@@ -287,7 +291,8 @@ module.exports = function (grunt) {
             'createDefaultTemplate',
             'handlebars',
             // 'compass:server',
-            'connect:livereload',
+            'init-app',
+            // 'connect:livereload',
             'open',
             'watch'
         ]);

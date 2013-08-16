@@ -21,4 +21,5 @@ var app = express();
 require('./config/express')(app, config);
 require('./config/routes')(app);
 
+console.log('Now running server at http://localhost:3000. Yo!');
 app.listen(config.port);
