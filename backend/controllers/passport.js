@@ -1,5 +1,6 @@
 passport = require('passport'),
-LinkedInStrategy = require('passport-linkedin').Strategy;
+LinkedInStrategy = require('passport-linkedin').Strategy,
+User = require('../models/Users.js').userModel;
 
 var pass = module.exports = {};
 
