@@ -13,6 +13,7 @@
 // templateFramework: 'handlebars'
 
 module.exports = function (grunt) {
+    var path = require('path');
     // show elapsed time at the end
     require('time-grunt')(grunt);
     // load all grunt tasks
@@ -28,9 +29,18 @@ module.exports = function (grunt) {
         yeoman: yeomanConfig,
         watch: {
             options: {
-                spawn: false,
-                livereload: true
+                nospawn: true
+                // livereload: true
             },
+            // express: {
+            //         default_option: {}
+
+            //     // myServer: {
+            //     //     // port: 3000,
+            //     //     // server: path.resolve('./backend/app.js')
+            //     //     // if you do not define a port it will start your server at port 3000
+            //     // }
+            // },
             // coffee: {
             //     files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
             //     tasks: ['coffee:dist']
@@ -278,16 +288,31 @@ module.exports = function (grunt) {
                     ]
                 }
             }
+        },
+      express: {
+        server: {
+          options: {
+            port: 9000,
+            bases: 'public',
+            server: path.resolve('./backend/app')
+          }
         }
+      }
+
+            //     //     // port: 3000,
+            //     //     // server: path.resolve('./backend/app.js')
+
     });
+
+    grunt.loadNpmTasks('grunt-express');
 
     grunt.registerTask('createDefaultTemplate', function () {
         grunt.file.write('.tmp/scripts/templates.js', 'this.JST = this.JST || {};');
     });
 
-    grunt.registerTask("init-app", function () {
-        require("./backend/app.js");
-    });
+    // grunt.registerTask("init-app", function () {
+    //     require("./backend/app.js");
+    // });
 
     grunt.registerTask('server', function (target) {
         if (target === 'dist') {
@@ -300,7 +325,7 @@ module.exports = function (grunt) {
             'createDefaultTemplate',
             'handlebars',
             // 'compass:server',
-            'init-app',
+            // 'init-app',
             // 'connect:livereload',
             // 'open',
             'watch'
@@ -334,9 +359,13 @@ module.exports = function (grunt) {
         'usemin'
     ]);
 
+    grunt.registerTask('myServer', ['express', 'express-keepalive']);
+
+
     grunt.registerTask('default', [
-        'jshint',
-        'test',
-        'build'
+        // 'jshint',
+        // 'test',
+        // 'build'
+        'myServer'
     ]);
 };
