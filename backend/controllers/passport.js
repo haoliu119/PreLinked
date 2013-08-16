@@ -1,5 +1,8 @@
 var passport = require('passport');
 var LinkedInStrategy = require('passport-linkedin').Strategy;
+var mongoose = require('mongoose');
+// var user = require('');
+// var User = mongoose.model('User', );
 
 var pass = module.exports = {};
 
@@ -18,6 +21,9 @@ pass.keys = passport.use(new LinkedInStrategy({
   },
   function(token, tokenSecret, profile, done) {
     process.nextTick(function () {
+      // User.find(function(err, users){
+      //   if(err) throw new Error(err);
+      // });
       // To keep the example simple, the user's LinkedIn profile is returned to
       // represent the logged-in user.  In a typical application, you would want
       // to associate the LinkedIn account with a user record in your database,
