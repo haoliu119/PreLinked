@@ -2,6 +2,7 @@ var path = require('path');
 var express = require('express');
 var hbs = require('hbs');
 var fs = require('fs'); // FOR HBS PARTIALS HELPER
+var passport = require('passport');
 
 module.exports = function(app) {
   // all environments
@@ -10,10 +11,14 @@ module.exports = function(app) {
   app.set('view engine', 'hbs');
   app.use(express.favicon());
   app.use(express.logger('dev'));
+  app.use(express.cookieParser());
   app.use(express.bodyParser());
   app.use(express.methodOverride());
+  app.use(express.session({ secret: 'sdafasfds3dafweh234' }));
+  app.use(passport.initialize());
+  app.use(passport.session());
   app.use(app.router);
-  app.use(express.static(path.join(__dirname, 'public')));
+  app.use(express.static(path.join(__dirname, '../../dist')));
 
   // NOT SURE IF THIS IS THE RIGHT LOCATION FOR HSB HELPER FUNCTIONS
   //-------------------------------------
