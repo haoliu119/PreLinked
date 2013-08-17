@@ -15,6 +15,36 @@
     <!-- endbuild -->
   </head>
   <body>
+
+
+    <script id="template-app" type="text/x-handlebars-template">
+      <div id="#app"></div>
+    </script>
+
+    <script id="template-home" type="text/x-handlebars-template">
+      <div class="row">
+        <div class="small-10 large-centered columns">
+          <div class="row collapse">
+            <h1>Pre-Linked</h1>
+            <div class="small-5 columns">
+              <label>Job</label>
+              <input type="text" placeholder="Example: Software Engineer">
+            </div>
+            <div class="small-5 columns">
+              <label>Location</label>
+              <input type="text" placeholder="Example: San Francisco, CA">
+            </div>
+            <div class="small-2 columns">
+              &nbsp;
+              <a href="#" class="button prefix">Search</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </script>
+
+<!-- 
+    <div id="page"></div>
     <div class="row">
       <div class="small-10 large-centered columns">
         <div class="row collapse">
@@ -102,7 +132,7 @@
         </fieldset>
       </div>
     </div>
-
+ -->
     <!--[if lt IE 7]>
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
@@ -128,7 +158,15 @@
     <script src="scripts/templates.js"></script>
     <script src="scripts/views/home.js"></script>
     <script src="scripts/views/app.js"></script>
+    <script src="scripts/models/app.js"></script>
+    <script src="scripts/models/home.js"></script>
+    <script src="scripts/routes/appRouter.js"></script>
     <!-- endbuild -->
+
+    <script>
+      var appView = new PreLinked.Views.AppView();
+      appView.render();
+    </script>
 
   </body>
 </html>

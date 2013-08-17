@@ -8,6 +8,10 @@ PreLinked.Views.AppView = Backbone.View.extend({
 
   tmpl: '1234',
 
+  initialize: function() {
+    Backbone.history.start();
+  },
+
   render: function() {
   	var homeModel = new PreLinked.Models.HomeModel();
     var homeView = new PreLinked.Views.HomeView({model: homeModel});
