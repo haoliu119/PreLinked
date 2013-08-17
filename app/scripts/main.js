@@ -10,6 +10,8 @@ window.PreLinked = {
   }
 };
 
+_.extend(PreLinked, Backbone.Events);
+
 $(document).ready(function () {
   PreLinked.init();
 });
