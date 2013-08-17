@@ -1,6 +1,9 @@
 var express = require('express');
 var http = require('http');
 var app = express();
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/preLinked');
 
 require('./config/middleware.js')(app);
 require('./config/environments.js')(app);
