@@ -7,7 +7,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
 
   render: function() {
     // var model = new Backbone.Model.extend();
-    this.$el.append("test test test test");
+    this.$el.append('' + this.model.get('title') );
   }
 
 });
