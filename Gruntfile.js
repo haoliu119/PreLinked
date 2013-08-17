@@ -104,7 +104,7 @@ module.exports = function (grunt) {
           // ]
         },
         files: {
-          '<%= yeoman.app %>/styles/result.css': '<%= yeoman.app %>/styles/source.styl' // 1:1 compile
+          '<%= yeoman.app %>/styles/target.css': '<%= yeoman.app %>/styles/source.styl' // 1:1 compile
         }
       }
     },
@@ -135,8 +135,10 @@ module.exports = function (grunt) {
       dist: {
         files: {
           '<%= yeoman.dist %>/styles/main.css': [
-            '.tmp/styles/{,*/}*.css',
-            '<%= yeoman.app %>/styles/{,*/}*.css'
+            '<%= yeoman.app %>/styles/*.css'
+          ],
+          '<%= yeoman.dist %>/styles/vendor.css':[
+            '<%= yeoman.app %>/styles/vendor/*.css'
           ]
         }
       }
