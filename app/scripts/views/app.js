@@ -7,6 +7,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
 
   initialize: function() {
     this.render();
+
     PreLinked.appRouter = new PreLinked.Routers.AppRouter();
     Backbone.history.start({pushState: true});
   },

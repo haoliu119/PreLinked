@@ -4,13 +4,13 @@ PreLinked.Views.HomeView = Backbone.View.extend({
 
   template: JST['app/scripts/templates/home.hbs'],
 
-  events: {
-    'submit': 'doSearch'
-  },
-
   initialize: function() {
     PreLinked.on('home', this.home);
     PreLinked.on('search', this.search);
+  },
+
+  events: {
+    'submit': 'doSearch'
   },
 
   home: function() {
