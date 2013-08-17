@@ -3,10 +3,10 @@
 PreLinked.Views.AppView = Backbone.View.extend({
   el: $('body'),
 
-  //template: JST['app/scripts/templates/app.hbs'],
-  template: Handlebars.compile($("#template-app").html()),
+  template: JST['app/scripts/templates/app.hbs'],
 
   initialize: function() {
+    this.render();
     PreLinked.appRouter = new PreLinked.Routers.AppRouter();
     Backbone.history.start({pushState: true});
   },
