@@ -8,6 +8,9 @@ window.PreLinked = {
   Routers: {},
   init: function () {
     console.log('Hello from PreLinked!');
+    new this.Views.ConnectionView({
+      model: new this.Models.ConnectionModel()
+    });
   }
 };
 
