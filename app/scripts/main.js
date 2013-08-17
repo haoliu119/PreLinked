@@ -1,6 +1,5 @@
 /*global PreLinked, $*/
 
-
 window.PreLinked = {
   Models: {},
   Collections: {},
@@ -18,6 +17,8 @@ window.PreLinked = {
     app_view.render();
   }
 };
+
+_.extend(PreLinked, Backbone.Events);
 
 $(document).ready(function () {
   PreLinked.init();

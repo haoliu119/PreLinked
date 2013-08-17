@@ -15,6 +15,38 @@
     <!-- endbuild -->
   </head>
   <body>
+
+
+    <script id="template-app" type="text/x-handlebars-template">
+      <div id="#app"></div>
+    </script>
+
+    <script id="template-home" type="text/x-handlebars-template">
+      <div class="row">
+        <form>
+          <div class="small-10 large-centered columns">
+            <div class="row collapse">
+              <h1>Pre-Linked</h1>
+              <div class="small-5 columns">
+                <label>Job</label>
+                <input type="text" placeholder="Example: Software Engineer">
+              </div>
+              <div class="small-5 columns">
+                <label>Location</label>
+                <input type="text" placeholder="Example: San Francisco, CA">
+              </div>
+              <div class="small-2 columns">
+                &nbsp;
+                <button type="submit" class="button prefix">Search</button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </script>
+
+<!-- 
+    <div id="page"></div>
     <div class="row">
       <div class="small-10 large-centered columns">
         <div class="row collapse">
@@ -102,10 +134,14 @@
         </fieldset>
       </div>
     </div>
+<<<<<<< HEAD
 
     <div id='page'>
     </div>
 
+=======
+ -->
+>>>>>>> berry
     <!--[if lt IE 7]>
         <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
     <![endif]-->
@@ -129,13 +165,22 @@
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <script src="scripts/templates.js"></script>
-    <script src="scripts/models/connection.js"></script>
     <script src="scripts/models/app.js"></script>
-    <script src="scripts/collections/connections.js"></script>
+    <script src="scripts/models/home.js"></script>
+    <script src="scripts/models/page.js"></script>
     <script src="scripts/views/home.js"></script>
     <script src="scripts/views/app.js"></script>
-    <script src="scripts/views/connection.js"></script>
+    <script src="scripts/views/page.js"></script>
+    <script src="scripts/collections/pages.js"></script>
+    <script src="scripts/views/search.js"></script>
+    <script src="scripts/routes/app.js"></script>
+    <script src="scripts/models/search.js"></script>
     <!-- endbuild -->
+
+    <script>
+      var appView = new PreLinked.Views.AppView();
+      appView.render();
+    </script>
 
   </body>
 </html>
