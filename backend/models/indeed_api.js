@@ -1,36 +1,31 @@
 var request = require('request');
-var Q = require('Q');
 
 var IndeedApi = module.exports = {};
 
 var endPoint = 'http://api.indeed.com/ads/apisearch';
-
 var defaults = {
   publisher: app.get('indeed-id'),
   v:        '2',      // API version
   format:   'json',   // json/xml
   latlong:  '1',      // return geo coordiantes for each result
   filter:   '1',      // filter duplicate results
-  sort:     'relevance'
+  sort:     'relevance',
+  limit:    '1000'
 }
 
-IndeedApi.search = function (query, location) {
+IndeedApi.search = function (query) {
   var deferred = Q.defer();
   request({
     method: 'GET',
     url: endPoint,
-    qs: _.extend(defaults,{
-      q: query,
-      l: location,
-      })
+    qs: _.extend(defaults, query) // query properties will override defaults
     },function(error, response, body){
       if (error) {
         deferred.reject(error);
       } else {
-        deferred.resolve(response);
+        deferred.resolve(body);
       }
   });
-
   return deferred.promise;
 }
 
@@ -45,10 +40,9 @@ http://api.indeed.com/ads/apisearch?publisher=302158985282491&q=java&l=austin%2C
   l=12345
   l=San+Francisco%2C+CA
 
-&co=us  // country, default=us
-
-&sort=        // relevance / date ,     default = relevance
-&radius=      // radius from location,  default =2 5
+&co=us        // default=us. country
+&sort=        // default = relevance. Options: relevance / date
+&radius=      // default =25. radius from location
 &st=          // Site Type: jobsite / employer
 &jt=          // Job Type:  fulltime / partime / contract / internship / temporary
 &start=       // start result at, default=0
