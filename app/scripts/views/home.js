@@ -5,8 +5,8 @@ PreLinked.Views.HomeView = Backbone.View.extend({
   template: JST['app/scripts/templates/home.hbs'],
 
   render: function() {
-  	this.$el.apend(template());
-  	this.$el.append();
+    this.$el.apend(this.template());
+    this.$el.append();
   }
 
 });
