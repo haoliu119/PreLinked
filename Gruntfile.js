@@ -82,6 +82,24 @@ module.exports = function (grunt) {
         }
       }
     },
+    stylus: {
+      compile: {
+        options: {
+          paths: ['<%= yeoman.app %>/styles/']
+          // urlfunc: 'embedurl', // use embedurl('test.png') in our code to trigger Data URI embedding
+          // use: [
+          //   require('fluidity') // use stylus plugin at compile time
+          // ]
+          // import: [    //  @import 'foo', 'bar/moo', etc. into every .styl file
+          // 'foo',       //  that is compiled. These might be findable based on values you gave
+          // 'bar/moo'    //  to `paths`, or a plugin you added under `use`
+          // ]
+        },
+        files: {
+          '<%= yeoman.app %>/styles/result.css': '<%= yeoman.app %>/styles/source.styl' // 1:1 compile
+        }
+      }
+    },
     useminPrepare: {
       html: '<%= yeoman.app %>/index.html',
       options: {
@@ -214,10 +232,12 @@ module.exports = function (grunt) {
     // 'mocha'
   ]);
 
+  //use this for development
   grunt.registerTask('build-dev', [
     'clean:dist',
     'createDefaultTemplate',
     'handlebars',
+    'stylus',
     'useminPrepare',
     'htmlmin',
     'concat',
@@ -226,10 +246,12 @@ module.exports = function (grunt) {
     'usemin'
   ]);
 
+  //use this for deploy
   grunt.registerTask('build', [
     'clean:dist',
     'createDefaultTemplate',
     'handlebars',
+    'stylus',
     'useminPrepare',
     'imagemin',
     'htmlmin',
