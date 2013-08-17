@@ -27,7 +27,7 @@ module.exports = function (grunt) {
           '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}'
         ],
-        tasks: ['jshint', 'build-dev']
+        tasks: ['build-dev']
       },
       handlebars: {
         files: [
@@ -264,7 +264,6 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
-    'jshint',
     'build-dev',
     'server'
   ]);
