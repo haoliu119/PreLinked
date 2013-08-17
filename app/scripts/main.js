@@ -1,6 +1,5 @@
 /*global PreLinked, $*/
 
-
 window.PreLinked = {
   Models: {},
   Collections: {},
@@ -8,6 +7,7 @@ window.PreLinked = {
   Routers: {},
   init: function () {
     console.log('Hello from PreLinked!');
+    _.extend(PreLinked, Backbone.Events);
     // var view = new this.Views.ConnectionView({
     //   model: new this.Models.ConnectionModel()
     // });
@@ -15,7 +15,6 @@ window.PreLinked = {
     var app_view = new this.Views.AppView({
       model: app_model
     });
-    app_view.render();
   }
 };
 
