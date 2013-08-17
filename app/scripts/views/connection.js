@@ -11,6 +11,7 @@ PreLinked.Views.ConnectionView = Backbone.View.extend({
   },
 
   render: function(){
+    console.log('connection.js -render-');
     this.$el.html(this.template(this.model.toJSON()));
     return this;
   }
