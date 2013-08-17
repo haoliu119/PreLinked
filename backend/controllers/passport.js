@@ -20,16 +20,22 @@ pass.keys = passport.use(new LinkedInStrategy({
   },
   function(token, tokenSecret, profile, done) {
     process.nextTick(function () {
-      var userData = {
-        id: profile.id,
-        firstName: profile.name.givenName,
-        lastName: profile.name.familyName
-      };
+      UserModel.findOne({ id: profile.id },function(err, users){
+        if(err) {throw new Error(err);}
+        if(users.id) {
+        } else {
+          var userData = {
+            id: profile.id,
+            firstName: profile.name.givenName,
+            lastName: profile.name.familyName
+          };
 
-      var user = new UserModel(userData);
+          var user = new UserModel(userData);
 
-      user.save(function (err, user) {
-        if (err) throw err;
+          user.save(function (err, user) {
+            if (err) throw err;
+          });
+        }
       });
       
       return done(null, profile);
