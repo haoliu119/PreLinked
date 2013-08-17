@@ -26,7 +26,8 @@ module.exports = function (grunt) {
         tasks: ['handlebars']
       },
       express: {
-        files:  [ './backend/**/*.js' ],
+        //server side watching
+        files:  [ './backend/**/*.js', './backend/**/*.hbs'],
         tasks:  [ 'express:dev' ],
         options: {
           nospawn: true //Without this option specified express won't be reloaded
