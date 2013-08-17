@@ -19,6 +19,16 @@ module.exports = function (grunt) {
         spawn: false,
         livereload: LIVERELOAD_PORT
       },
+      all: {
+        options: { livereload: true },
+        files: [
+          '<%= yeoman.app %>/*.html',
+          '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
+          '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
+          '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}'
+        ],
+        tasks: ['jshint', 'build-dev']
+      },
       handlebars: {
         files: [
           '<%= yeoman.app %>/scripts/templates/*.hbs'
@@ -26,7 +36,8 @@ module.exports = function (grunt) {
         tasks: ['handlebars']
       },
       express: {
-        files:  [ './backend/**/*.js' ],
+        //server side watching
+        files:  [ './backend/**/*.js', './backend/**/*.hbs'],
         tasks:  [ 'express:dev' ],
         options: {
           nospawn: true //Without this option specified express won't be reloaded
@@ -203,6 +214,18 @@ module.exports = function (grunt) {
     // 'mocha'
   ]);
 
+  grunt.registerTask('build-dev', [
+    'clean:dist',
+    'createDefaultTemplate',
+    'handlebars',
+    'useminPrepare',
+    'htmlmin',
+    'concat',
+    'cssmin',
+    'copy',
+    'usemin'
+  ]);
+
   grunt.registerTask('build', [
     'clean:dist',
     'createDefaultTemplate',
@@ -220,7 +243,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'jshint',
-    'test',
-    'build'
+    'build-dev',
+    'server'
   ]);
 };
