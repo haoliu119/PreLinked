@@ -1,4 +1,5 @@
 var request = require('request');
+var Q = require('Q');
 
 var IndeedApi = module.exports = {};
 
@@ -14,6 +15,7 @@ var defaults = {
 }
 
 IndeedApi.search = function (query, location) {
+  var deferred = Q.defer();
   request({
     method: 'GET',
     url: endPoint,
@@ -22,10 +24,14 @@ IndeedApi.search = function (query, location) {
       l: location,
       })
     },function(error, response, body){
-
+      if (error) {
+        deferred.reject(error);
+      } else {
+        deferred.resolve(response);
+      }
   });
 
-
+  return deferred.promise;
 }
 
 /*
