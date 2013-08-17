@@ -2,14 +2,13 @@
 var site = require('../controllers/site.js');
 var passport = require('passport');
 var pass = require('../controllers/passport.js');
+var passportSess = require('../controllers/passportController.js');
 
 module.exports = function(app) {
   app.get('/', site.index);
   app.get('/auth/linkedin', passport.authenticate('linkedin'), function(req, res) {});
   app.get('/auth/linkedin/callback', passport.authenticate('linkedin',
-    { failureRedirect: '/login' }), function(req, res) {
-      res.redirect('/');
-  });
+    { failureRedirect: '/' }), passportSess.setSession);
 
 	// app.post('/user', users.create);
 	// app.get('/user', users.list);
