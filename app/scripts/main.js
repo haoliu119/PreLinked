@@ -1,6 +1,5 @@
 /*global PreLinked, $*/
 
-
 window.PreLinked = {
   Models: {},
   Collections: {},
