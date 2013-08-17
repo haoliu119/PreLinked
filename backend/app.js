@@ -1,9 +1,11 @@
 var express = require('express');
 var http = require('http');
-var app = express();
 var mongoose = require('mongoose');
-
 mongoose.connect('mongodb://nodejitsu:06bd14fda2df534b59f2331f41f66f26@paulo.mongohq.com:10078/nodejitsudb6063054050');
+
+global._    = require('underscore');
+global.Q    = require('Q');
+global.app  = express();
 
 require('./config/middleware.js')(app);
 require('./config/environments.js')(app);
