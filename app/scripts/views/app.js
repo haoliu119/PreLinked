@@ -7,18 +7,8 @@ PreLinked.Views.AppView = Backbone.View.extend({
   template: Handlebars.compile($("#template-app").html()),
 
   initialize: function() {
-    PreLinked.on('home', this.home);
-    PreLinked.on('search', this.search);
-    var appRouter = new PreLinked.Routers.AppRouter();
+    PreLinked.appRouter = new PreLinked.Routers.AppRouter();
     Backbone.history.start({pushState: true});
-  },
-
-  home: function() {
-    console.log('home');
-  },
-
-  search: function() {
-    console.log('search');
   },
 
   render: function() {
