@@ -204,6 +204,18 @@ module.exports = function (grunt) {
     // 'mocha'
   ]);
 
+  grunt.registerTask('build-dev', [
+    'clean:dist',
+    'createDefaultTemplate',
+    'handlebars',
+    'useminPrepare',
+    'htmlmin',
+    'concat',
+    'cssmin',
+    'copy',
+    'usemin'
+  ]);
+
   grunt.registerTask('build', [
     'clean:dist',
     'createDefaultTemplate',
@@ -221,6 +233,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'jshint',
+    'build-dev',
     'server'
   ]);
 };
