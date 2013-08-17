@@ -1,6 +1,6 @@
-var app = express();
 var request = require('request');
-var indeedApi = Module.exports = {};
+
+var IndeedApi = module.exports = {};
 
 var endPoint = 'http://api.indeed.com/ads/apisearch';
 
