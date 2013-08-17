@@ -19,6 +19,16 @@ module.exports = function (grunt) {
         spawn: false,
         livereload: LIVERELOAD_PORT
       },
+      all: {
+        options: { livereload: true },
+        files: [
+          '<%= yeoman.app %>/*.html',
+          '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
+          '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
+          '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}'
+        ],
+        tasks: ['jshint', 'build-dev']
+      },
       handlebars: {
         files: [
           '<%= yeoman.app %>/scripts/templates/*.hbs'
@@ -26,7 +36,8 @@ module.exports = function (grunt) {
         tasks: ['handlebars']
       },
       express: {
-        files:  [ './backend/**/*.js' ],
+        //server side watching
+        files:  [ './backend/**/*.js', './backend/**/*.hbs'],
         tasks:  [ 'express:dev' ],
         options: {
           nospawn: true //Without this option specified express won't be reloaded
@@ -68,6 +79,24 @@ module.exports = function (grunt) {
             '<%= yeoman.app %>/scripts/{,*/}*.js',
             '.tmp/scripts/{,*/}*.js'
           ]
+        }
+      }
+    },
+    stylus: {
+      compile: {
+        options: {
+          paths: ['<%= yeoman.app %>/styles/']
+          // urlfunc: 'embedurl', // use embedurl('test.png') in our code to trigger Data URI embedding
+          // use: [
+          //   require('fluidity') // use stylus plugin at compile time
+          // ]
+          // import: [    //  @import 'foo', 'bar/moo', etc. into every .styl file
+          // 'foo',       //  that is compiled. These might be findable based on values you gave
+          // 'bar/moo'    //  to `paths`, or a plugin you added under `use`
+          // ]
+        },
+        files: {
+          '<%= yeoman.app %>/styles/result.css': '<%= yeoman.app %>/styles/source.styl' // 1:1 compile
         }
       }
     },
@@ -203,10 +232,26 @@ module.exports = function (grunt) {
     // 'mocha'
   ]);
 
+  //use this for development
+  grunt.registerTask('build-dev', [
+    'clean:dist',
+    'createDefaultTemplate',
+    'handlebars',
+    'stylus',
+    'useminPrepare',
+    'htmlmin',
+    'concat',
+    'cssmin',
+    'copy',
+    'usemin'
+  ]);
+
+  //use this for deploy
   grunt.registerTask('build', [
     'clean:dist',
     'createDefaultTemplate',
     'handlebars',
+    'stylus',
     'useminPrepare',
     'imagemin',
     'htmlmin',
@@ -220,7 +265,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'jshint',
-    'test',
-    'build'
+    'build-dev',
+    'server'
   ]);
 };
