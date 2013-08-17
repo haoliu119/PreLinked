@@ -16,7 +16,6 @@ window.PreLinked = {
       model: app_model
     });
     app_view.render();
-    console.log(app_view);
   }
 };
 
