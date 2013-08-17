@@ -3,56 +3,132 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
-        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        <link rel="stylesheet" href="styles/main.css">
-        <!-- build:js scripts/vendor/modernizr.js -->
-        <script src="bower_components/modernizr/modernizr.js"></script>
-        <!-- endbuild -->
-    </head>
-    <body>
-        <div class="container">
-            <div class="hero-unit">
-                <h1>'Allo, 'Allo!</h1>
-                <p>You now have</p>
-                <ul>
-                    <li>HTML5 Boilerplate</li>
-                    <li>jQuery</li>
-                    <li>Backbone.js</li>
-                    <li>Underscore.js</li>
-                </ul>
-                <p>installed.</p>
-                <h3>Enjoy coding! - Yeoman</h3>
-            </div>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>PreLinked - Simplified Job Searches</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body>
+    <div class="row">
+      <div class="small-10 large-centered columns">
+        <div class="row collapse">
+          <h1>Pre-Linked</h1>
+          <div class="small-5 columns">
+            <label>Job</label>
+            <input type="text" placeholder="Example: Software Engineer">
+          </div>
+          <div class="small-5 columns">
+            <label>Location</label>
+            <input type="text" placeholder="Example: San Francisco, CA">
+          </div>
+          <div class="small-2 columns">
+            &nbsp;
+            <a href="#" class="button prefix">Search</a>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <!--[if lt IE 7]>
-            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
-        <![endif]-->
+    <hr>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
+    <div class="row">
+      <div class="large-3 columns">
+        <label>
+          Search for Job
+          <input type="text" placeholder="text">
+        </label>
+        <label>
+          Location
+          <input type="text" placeholder="text">
+        </label>
 
-        <!-- build:js scripts/vendor.js -->
-        <script src="bower_components/jquery/jquery.js"></script>
-        <script src="bower_components/underscore/underscore.js"></script>
-        <script src="bower_components/backbone/backbone.js"></script>
-        <script src="bower_components/handlebars/handlebars.js"></script>
-        <!-- endbuild -->
+        <select>
+          <option>option 1</option>
+          <option>option 2</option>
+          <option>option 3</option>
+        </select>
 
-        <!-- build:js scripts/main.js -->
-        <script src="scripts/main.js"></script>
-        <script src="scripts/templates.js"></script>
-        <!-- endbuild -->
-</body>
+        <label><input type="radio" name="item" value="1"> item1</label>
+        <label><input type="radio" name="item" value="1"> item1</label>
+        <label><input type="radio" name="item" value="1"> item1</label>
+
+        <label><input type="checkbox" name="item" value="1"> item1</label>
+        <label><input type="checkbox" name="item" value="1"> item1</label>
+        <label><input type="checkbox" name="item" value="1"> item1</label>
+      </div>
+      <div class="large-5 columns">
+        <fieldset>
+          <legend>432 results for "Software Engineer"</legend>
+          <div>
+            <a href="#">Software Engineer</a>
+          </div>
+          <div>
+            <a href="#">Software Engineer</a>
+          </div>
+          <div>
+            <a href="#">Software Engineer</a>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend><a href="#">Software Engineer</a></legend>
+          <p>
+            Butcher gluten-free craft beer, est you probably haven't heard of them Neutra vegan. Hella actually velit, Brooklyn Vice esse sed art party cardigan deserunt beard tattooed. Tofu hella exercitation deep v bespoke. Odd Future authentic roof party pickled, messenger bag mollit Pinterest consequat fashion axe shabby chic seitan kogi irony nihil. Nisi you probably haven't heard of them wolf ut. Godard eiusmod fashion axe four loko adipisicing sartorial, gastropub proident labore selfies esse kitsch culpa High Life. Authentic hella locavore qui, pug sustainable gastropub Pinterest put a bird on it craft beer selfies Vice.
+          </p>
+        </fieldset>
+
+      </div>
+      <div class="large-4 columns">
+        <div>
+          <img src="http://placekitten.com/g/50/50">
+          <img src="http://placekitten.com/g/50/50">
+          <img src="http://placekitten.com/g/50/50">
+          <img src="http://placekitten.com/g/50/50">
+          <img src="http://placekitten.com/g/50/50">
+        </div>
+        <fieldset>
+          <legend><a href="#">Homer Simpson</a></legend>
+          <h3>Nuclear Power Technician</h3>
+          <img src="http://placekitten.com/g/50/50">
+          <p>
+            Butcher gluten-free craft beer, est you probably haven't heard of them Neutra vegan. Hella actually velit, Brooklyn Vice esse sed art party cardigan deserunt beard tattooed. Tofu hella exercitation deep v bespoke. Odd Future authentic roof party pickled, messenger bag mollit Pinterest consequat fashion axe shabby chic seitan kogi irony nihil.
+          </p>
+        </fieldset>
+      </div>
+    </div>
+
+    <!--[if lt IE 7]>
+        <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <script>
+      // var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+      // (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+      // g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+      // s.parentNode.insertBefore(g,s)}(document,'script'));
+    </script>
+
+    <!-- build:js scripts/vendor.js -->
+    <script src="bower_components/jquery/jquery.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    <script src="bower_components/backbone/backbone.js"></script>
+    <script src="bower_components/handlebars/handlebars.js"></script>
+    <script src="bower_components/foundation/js/foundation/foundation.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/views/home.js"></script>
+    <script src="scripts/views/app.js"></script>
+    <script src="scripts/templates.js"></script>
+    <!-- endbuild -->
+
+  </body>
 </html>

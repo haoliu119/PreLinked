@@ -27,7 +27,7 @@ module.exports = function (grunt) {
           '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}'
         ],
-        tasks: ['jshint', 'build-dev']
+        tasks: ['build-dev']
       },
       handlebars: {
         files: [
@@ -79,6 +79,24 @@ module.exports = function (grunt) {
             '<%= yeoman.app %>/scripts/{,*/}*.js',
             '.tmp/scripts/{,*/}*.js'
           ]
+        }
+      }
+    },
+    stylus: {
+      compile: {
+        options: {
+          paths: ['<%= yeoman.app %>/styles/']
+          // urlfunc: 'embedurl', // use embedurl('test.png') in our code to trigger Data URI embedding
+          // use: [
+          //   require('fluidity') // use stylus plugin at compile time
+          // ]
+          // import: [    //  @import 'foo', 'bar/moo', etc. into every .styl file
+          // 'foo',       //  that is compiled. These might be findable based on values you gave
+          // 'bar/moo'    //  to `paths`, or a plugin you added under `use`
+          // ]
+        },
+        files: {
+          '<%= yeoman.app %>/styles/result.css': '<%= yeoman.app %>/styles/source.styl' // 1:1 compile
         }
       }
     },
@@ -191,7 +209,7 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('createDefaultTemplate', function () {
-    grunt.file.write('.tmp/scripts/templates.js', 'this.JST = this.JST || {};');
+    grunt.file.write('./app/scripts/templates.js', 'this.JST = this.JST || {};');
   });
 
 
@@ -214,10 +232,12 @@ module.exports = function (grunt) {
     // 'mocha'
   ]);
 
+  //use this for development
   grunt.registerTask('build-dev', [
     'clean:dist',
     'createDefaultTemplate',
     'handlebars',
+    'stylus',
     'useminPrepare',
     'htmlmin',
     'concat',
@@ -226,10 +246,12 @@ module.exports = function (grunt) {
     'usemin'
   ]);
 
+  //use this for deploy
   grunt.registerTask('build', [
     'clean:dist',
     'createDefaultTemplate',
     'handlebars',
+    'stylus',
     'useminPrepare',
     'imagemin',
     'htmlmin',
@@ -242,7 +264,6 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('default', [
-    'jshint',
     'build-dev',
     'server'
   ]);
