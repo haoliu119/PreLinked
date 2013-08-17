@@ -218,8 +218,6 @@ module.exports = function (grunt) {
   grunt.registerTask('server', function () {
     grunt.task.run([
       'clean:server',
-      'createDefaultTemplate',
-      'handlebars',
       'express:dev',
       'watch'
     ]);
