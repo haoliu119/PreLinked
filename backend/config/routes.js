@@ -4,7 +4,7 @@ var passport = require('passport');
 var pass = require('../controllers/passport.js');
 
 module.exports = function(app) {
-  app.get('/', site.index);
+  app.get('/serverindex', site.index);
   app.get('/auth/linkedin', passport.authenticate('linkedin'), function(req, res) {});
   app.get('/auth/linkedin/callback', passport.authenticate('linkedin',
     { failureRedirect: '/login' }), function(req, res) {
