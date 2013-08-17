@@ -19,6 +19,16 @@ module.exports = function (grunt) {
         spawn: false,
         livereload: LIVERELOAD_PORT
       },
+      all: {
+        options: { livereload: true },
+        files: [
+          '<%= yeoman.app %>/*.html',
+          '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
+          '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
+          '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp}'
+        ],
+        tasks: ['jshint', 'build-dev']
+      },
       handlebars: {
         files: [
           '<%= yeoman.app %>/scripts/templates/*.hbs'
