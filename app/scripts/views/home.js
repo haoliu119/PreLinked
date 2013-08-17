@@ -2,8 +2,7 @@
 
 PreLinked.Views.HomeView = Backbone.View.extend({
 
-  //template: JST['app/scripts/templates/home.hbs'],
-  template: Handlebars.compile($("#template-home").html()),
+  template: JST['app/scripts/templates/home.hbs'],
 
   events: {
     'submit': 'doSearch'
