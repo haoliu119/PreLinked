@@ -7,12 +7,10 @@ window.PreLinked = {
   Views: {},
   Routers: {},
   init: function () {
-    'use strict';
-    console.log('Hello from Backbone!');
+    console.log('Hello from PreLinked!');
   }
 };
 
 $(document).ready(function () {
-    'use strict';
-    PreLinked.init();
+  PreLinked.init();
 });

@@ -1,8 +1,15 @@
 // var users = require('../controllers/users.js');
 var site = require('../controllers/site.js');
+var passport = require('passport');
+var pass = require('../controllers/passport.js');
+var passportSess = require('../controllers/passportController.js');
 
 module.exports = function(app) {
-	app.get('/', site.index);
+  app.get('/serverindex', site.index);
+  app.get('/auth/linkedin', passport.authenticate('linkedin'), function(req, res) {});
+  app.get('/auth/linkedin/callback', passport.authenticate('linkedin',
+    { failureRedirect: '/' }), passportSess.setSession);
+
 	// app.post('/user', users.create);
 	// app.get('/user', users.list);
 	// app.get('/user/:id', users.read);
