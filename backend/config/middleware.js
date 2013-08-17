@@ -18,7 +18,7 @@ module.exports = function(app) {
   app.use(passport.initialize());
   app.use(passport.session());
   app.use(app.router);
-  app.use(express.static(path.join(__dirname, 'public')));
+  app.use(express.static(path.join(__dirname, '../public')));
 
   // NOT SURE IF THIS IS THE RIGHT LOCATION FOR HSB HELPER FUNCTIONS
   //-------------------------------------
