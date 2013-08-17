@@ -1,11 +1,15 @@
 // var users = require('../controllers/users.js');
 var site = require('../controllers/site.js');
+var jobs = require('../controllers/jobs.js');
 var passport = require('passport');
 var pass = require('../controllers/passport.js');
 var passportSess = require('../controllers/passportController.js');
 
 module.exports = function(app) {
   app.get('/serverindex', site.index);
+  //Jobs
+  app.get('/search', jobs.search);
+  //LinkedIn Oauth
   app.get('/auth/linkedin', passport.authenticate('linkedin'), function(req, res) {});
   app.get('/auth/linkedin/callback', passport.authenticate('linkedin',
     { failureRedirect: '/' }), passportSess.setSession);
