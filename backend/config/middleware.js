@@ -1,6 +1,8 @@
 var path = require('path');
 var express = require('express');
 var hbs = require('hbs');
+var mongoose = require('mongoose');
+var MongoStore = require('connect-mongo')(express);
 var fs = require('fs'); // FOR HBS PARTIALS HELPER
 var passport = require('passport');
 
@@ -14,7 +16,10 @@ module.exports = function(app) {
   app.use(express.cookieParser());
   app.use(express.bodyParser());
   app.use(express.methodOverride());
-  app.use(express.session({ secret: 'sdafasfds3dafweh234' }));
+  app.use(express.session({ 
+    secret: 'sdafasfds3dafweh234',
+    store: new MongoStore({ db: mongoose.connection.db })
+  }));
   app.use(passport.initialize());
   app.use(passport.session());
   app.use(app.router);
