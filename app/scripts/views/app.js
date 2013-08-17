@@ -6,8 +6,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
   template: JST['app/scripts/templates/app.hbs'],
 
   render: function() {
-    // var model = new Backbone.Model.extend();
-    this.$el.append(this.template(this.model.toJSON()));
+    this.$el.append( this.template(this.model.attributes) );
   }
 
 });
