@@ -1,5 +1,13 @@
 var LIVERELOAD_PORT = 35729;
 
+// # Globbing
+// for performance reasons we're only matching one level down:
+// 'test/spec/{,*/}*.js'
+// use this if you want to match all subfolders:
+// 'test/spec/**/*.js'
+// templateFramework: 'handlebars'
+// PLEASE don't delete the line starts with 'templateFramework'. Used by yo.
+
 module.exports = function (grunt) {
   // show elapsed time at the end
   require('time-grunt')(grunt);
