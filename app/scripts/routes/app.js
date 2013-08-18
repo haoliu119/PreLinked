@@ -8,10 +8,10 @@ PreLinked.Routers.AppRouter = Backbone.Router.extend({
   },
 
   home: function() {
-    PreLinked.trigger('home');
+    PreLinked.trigger('changePage', {page: 'home'});
   },
 
   search: function() {
-    PreLinked.trigger('search');
+    PreLinked.trigger('changePage', {page: 'search'});
   }
 });
