@@ -4,28 +4,36 @@ PreLinked.Views.HomeView = Backbone.View.extend({
 
   template: JST['app/scripts/templates/home.hbs'],
 
-  events: {
-    'submit': 'doSearch'
-  },
-
   initialize: function() {
     PreLinked.on('home', this.home);
     PreLinked.on('search', this.search);
+  },
+
+  events: {
+    'submit form': 'submitSearch'
   },
 
   home: function() {
     console.log('home');
   },
 
-  search: function() {
+  search: function(e) {
     console.log('search');
     PreLinked.appRouter.navigate('/search');
   },
 
-  doSearch: function(e) {
+  submitSearch: function(e) {
     e.preventDefault();
-    console.log('doSearch');
-    PreLinked.trigger('search');
+    
+    $.ajax({
+      type: 'GET',
+      url: 'jobs/search',
+      dataType: 'json',
+      data: {}
+    }).done(function( data ) {
+      console.log(data);
+      PreLinked.trigger('search');
+    });
   },
 
   render: function() {

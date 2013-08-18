@@ -6,7 +6,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
   render: function() {
     var searchModel = new PreLinked.Models.SearchModel();
-    this.$el.html();
+    this.$el.html(this.template);
     return this;
   }
 

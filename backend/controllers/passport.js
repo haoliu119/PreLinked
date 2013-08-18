@@ -1,5 +1,5 @@
 var passport = require('passport');
-var LinkedInStrategy = require('passport-linkedin').Strategy;
+var LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;
 // var mongoose = require('mongoose');
 var UserModel = require('../models/users.js').userModel;
 
@@ -14,18 +14,18 @@ pass.deser = passport.deserializeUser(function(obj, done) {
 });
 
 pass.keys = passport.use(new LinkedInStrategy({
-    consumerKey: '5b03my6m9buq',
-    consumerSecret: 'XrTXBuIK6bNVM2HL',
-    callbackURL: "http://127.0.0.1:3000/auth/linkedin/callback"
+    clientID: app.get('linkedin-key'),
+    clientSecret: app.get('linkedin-secret'),
+    callbackURL: "/auth/linkedin/callback"
   },
-  function(token, tokenSecret, profile, done) {
+  function(accessToken, refreshToken, profile, done) {
     process.nextTick(function () {
-      console.log('token', token);
-      console.log('tokenSecret', tokenSecret);
+      console.log('accessToken', accessToken);
+      console.log('refreshToken', refreshToken);
 
       UserModel.findOne({ id: profile.id },function(err, users){
         if(err) {throw new Error(err);}
-        if(users.id) {
+        if(users && users.id) {
         } else {
           var userData = {
             id: profile.id,
@@ -40,7 +40,7 @@ pass.keys = passport.use(new LinkedInStrategy({
           });
         }
       });
-      
+
       return done(null, profile);
     });
   }
