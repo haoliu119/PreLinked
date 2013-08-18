@@ -17,12 +17,22 @@ PreLinked.Views.AppView = Backbone.View.extend({
     //App level
 
     var homeModel = new PreLinked.Models.HomeModel();
-    var homeView = new PreLinked.Views.HomeView({model: homeModel});
-    var searchModel = new PreLinked.Models.SearchModel();
-    var searchView = new PreLinked.Views.SearchView({model: searchModel});
-
+    var homeView = new PreLinked.Views.HomeView({
+      model: homeModel
+    });
     this.$el.append(homeView.render().el);
-    this.$el.append(searchView.render().el);
+
+    var searchModel = new PreLinked.Models.SearchModel();
+    var that = this;
+    searchModel
+      .fetch()
+      .done(function(data){
+        var searchView = new PreLinked.Views.SearchView({
+          model: data
+        });
+        that.$el.append(searchView.render().el);
+      });
+
     return this;
   }
 
