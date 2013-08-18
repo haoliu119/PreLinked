@@ -7,14 +7,19 @@ PreLinked.Views.AppView = Backbone.View.extend({
 
   initialize: function() {
     this.render();
+
     PreLinked.appRouter = new PreLinked.Routers.AppRouter();
-    Backbone.history.start({pushState: true});
+    Backbone.history.start();
   },
 
   render: function() {
   	var homeModel = new PreLinked.Models.HomeModel();
     var homeView = new PreLinked.Views.HomeView({model: homeModel});
-    this.$el.prepend( homeView.render().el );
+    var searchModel = new PreLinked.Models.SearchModel();
+    var searchView = new PreLinked.Views.SearchView({model: searchModel});
+
+    this.$el.append(homeView.render().el);
+    this.$el.append(searchView.render().el);
     return this;
   }
 
