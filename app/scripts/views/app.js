@@ -13,7 +13,10 @@ PreLinked.Views.AppView = Backbone.View.extend({
   },
 
   render: function() {
-  	var homeModel = new PreLinked.Models.HomeModel();
+    this.$el.html(this.template(this.model.attributes));
+    //App level
+
+    var homeModel = new PreLinked.Models.HomeModel();
     var homeView = new PreLinked.Views.HomeView({model: homeModel});
     var searchModel = new PreLinked.Models.SearchModel();
     var searchView = new PreLinked.Views.SearchView({model: searchModel});
