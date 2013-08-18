@@ -17,7 +17,9 @@ PreLinked.Views.AppView = Backbone.View.extend({
     var homeView = new PreLinked.Views.HomeView({model: homeModel});
     var searchModel = new PreLinked.Models.SearchModel();
     var searchView = new PreLinked.Views.SearchView({model: searchModel});
-    this.$el.prepend( [homeView.render().el, searchView.render().el] );
+
+    this.$el.append(homeView.render().el);
+    this.$el.append(searchView.render().el);
     return this;
   }
 
