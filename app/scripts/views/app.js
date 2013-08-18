@@ -1,7 +1,7 @@
 /*global PreLinked, Backbone, JST*/
 
 PreLinked.Views.AppView = Backbone.View.extend({
-  el: $('body'),
+  el: $('#app'),
 
   template: JST['app/scripts/templates/app.hbs'],
 
