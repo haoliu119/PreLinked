@@ -1,6 +1,6 @@
 /*global PreLinked, Backbone, JST*/
 
-PreLinked.Views.SearchresultsitemView = Backbone.View.extend({
+PreLinked.Views.SearchResultsItemView = Backbone.View.extend({
 
   template: JST['app/scripts/templates/searchResultsItem.hbs'],
 

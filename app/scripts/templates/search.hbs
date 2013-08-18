@@ -23,18 +23,14 @@
   <div class="large-5 columns">
     <fieldset>
       <legend>{{jobCount}} results for "{{jobTitle}}"</legend>
-      <div>
-        <a href="#">Software Engineer</a>
-      </div>
-      <div>
-        <a href="#">Software Engineer</a>
-      </div>
-      <div>
-        <a href="#">Software Engineer</a>
-      </div>
+      {{#each searchResultsItem}}
+        <div>
+          <a href="#">{{job}}</a>
+        </div>
+      {{/each}}
     </fieldset>
     <fieldset>
-      <legend><a href="#">Software Engineer</a></legend>
+      <legend><a href="#">{{jobTitle}}</a></legend>
       <p>
         Butcher gluten-free craft beer, est you probably haven't heard of them Neutra vegan. Hella actually velit, Brooklyn Vice esse sed art party cardigan deserunt beard tattooed. Tofu hella exercitation deep v bespoke. Odd Future authentic roof party pickled, messenger bag mollit Pinterest consequat fashion axe shabby chic seitan kogi irony nihil. Nisi you probably haven't heard of them wolf ut. Godard eiusmod fashion axe four loko adipisicing sartorial, gastropub proident labore selfies esse kitsch culpa High Life. Authentic hella locavore qui, pug sustainable gastropub Pinterest put a bird on it craft beer selfies Vice.
       </p>
