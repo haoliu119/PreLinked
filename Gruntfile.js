@@ -1,5 +1,13 @@
 var LIVERELOAD_PORT = 35729;
 
+// # Globbing
+// for performance reasons we're only matching one level down:
+// 'test/spec/{,*/}*.js'
+// use this if you want to match all subfolders:
+// 'test/spec/**/*.js'
+// templateFramework: 'handlebars'
+// PLEASE don't delete the line starts with 'templateFramework'. Used by yo.
+
 module.exports = function (grunt) {
   // show elapsed time at the end
   require('time-grunt')(grunt);
@@ -96,7 +104,7 @@ module.exports = function (grunt) {
           // ]
         },
         files: {
-          '<%= yeoman.app %>/styles/result.css': '<%= yeoman.app %>/styles/source.styl' // 1:1 compile
+          '<%= yeoman.app %>/styles/target.css': '<%= yeoman.app %>/styles/source.styl' // 1:1 compile
         }
       }
     },
@@ -127,8 +135,10 @@ module.exports = function (grunt) {
       dist: {
         files: {
           '<%= yeoman.dist %>/styles/main.css': [
-            '.tmp/styles/{,*/}*.css',
-            '<%= yeoman.app %>/styles/{,*/}*.css'
+            '<%= yeoman.app %>/styles/*.css'
+          ],
+          '<%= yeoman.dist %>/styles/vendor.css':[
+            '<%= yeoman.app %>/styles/vendor/*.css'
           ]
         }
       }
@@ -180,7 +190,7 @@ module.exports = function (grunt) {
           namespace: 'JST'
         },
         files: {
-          '.tmp/scripts/templates.js': ['<%= yeoman.app %>/scripts/templates/*.hbs']
+          'app/scripts/templates.js': ['<%= yeoman.app %>/scripts/templates/*.hbs']
         }
       }
     },
