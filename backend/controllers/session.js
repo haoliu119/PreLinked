@@ -7,10 +7,11 @@ session.setSession = function(req, res) {
     function(err, users){
       if(err) {
         throw new Error(err);
+        res.redirect('/auth/linkedin');
       } else {
         req.session.userID = req.user.id;
         req.session.accessToken = users.accessToken;
+        res.redirect('/#search');
       }
-    })
-  res.redirect('/#search');
+    });
 };
