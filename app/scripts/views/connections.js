@@ -2,8 +2,6 @@
 
 PreLinked.Views.ConnectionView = Backbone.View.extend({
 
-  tagName: 'li',
-
   template: JST['app/scripts/templates/connections.hbs'],
 
   initialize: function(){
@@ -12,7 +10,18 @@ PreLinked.Views.ConnectionView = Backbone.View.extend({
 
   render: function(){
     console.log('connection.js -render-');
-    this.$el.html(this.template());
+    this.$el.html(this.template(
+      {number_of_connections: this.collection.length}
+    ));
+
+    this.$el.find('#connection-results').empty();
+    this.$el.find('#connection-results').append(
+      this.collection.map(function(item) {
+        return new PreLinked.Views.ConnectionsitemView({
+          model: item
+        }).render().el;
+      })
+    );
     return this;
   }
 

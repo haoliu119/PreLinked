@@ -85,11 +85,10 @@ PreLinked.Views.SearchView = Backbone.View.extend({
         console.log('getConnections', results.length);
 
         var connectionsView = new PreLinked.Views.ConnectionView({
-          collection: data
+          collection: results
         });
         deferred.resolve(connectionsView.render().el);
       });
-    // deferred.resolve(true);
     return deferred.promise();
   },
 
