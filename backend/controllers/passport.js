@@ -42,7 +42,7 @@ pass.keys = passport.use(new LinkedInStrategy({
         }
       });
 
-      return done(null, profile);
+    return done(null, profile);
     });
   }
 ));
