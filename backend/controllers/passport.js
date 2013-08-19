@@ -26,7 +26,7 @@ pass.keys = passport.use(new LinkedInStrategy({
       UserModel.findOne({ id: profile.id },function(err, users){
         if(err) {throw new Error(err);}
         if(users && users.id) {
-          users.accessToken = accessToken;
+          // users.accessToken = accessToken;
         } else {
           var userData = {
             id: profile.id,
