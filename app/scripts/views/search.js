@@ -40,8 +40,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     this.$el
       .attr('data-page','search')
       .html(this.template({
-        jobCount: 432, 
-        jobTitle: 'Software Engineer', 
+        jobCount: 432,
+        jobTitle: 'Software Engineer',
         searchResultsItem: searchResultsItem
       }));
   },
@@ -64,9 +64,9 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   },
 
   render: function() {
-    this.getJobResults();
+    // this.getJobResults();
     // this.getSearchResults();
-    // this.$el.html( this.template() );
+    this.$el.html( this.template() );
     // console.log('searchModel', this.model.attributes);
     return this;
   }
