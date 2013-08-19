@@ -47,12 +47,13 @@ PreLinked.Views.HomeView = Backbone.View.extend({
     //   that.changePage({page: 'search'});
     // });
 
-    PreLinked.appRouter.navigate('#search', { trigger: true});
+    PreLinked.appRouter.navigate('/search', { trigger: true});
   },
 
   render: function() {
-    var homeModel = new PreLinked.Models.HomeModel();
-    this.$el.attr('data-page','home').html(this.template);
+    this.$el
+      .attr('data-page','home')
+      .html(this.template);
 
     return this;
   }
