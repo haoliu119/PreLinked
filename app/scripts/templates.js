@@ -20,7 +20,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<p>Your content here.</p>\n<ul>\n<li>\n<li>\n    <!-- Where our To Do items will go -->\n</ul>\n";
+  return "<p>Your content here.</p>\n\n<div>\n  <img src=\"http://placekitten.com/g/50/50\">\n  <img src=\"http://placekitten.com/g/50/50\">\n  <img src=\"http://placekitten.com/g/50/50\">\n  <img src=\"http://placekitten.com/g/50/50\">\n  <img src=\"http://placekitten.com/g/50/50\">\n</div>\n<fieldset>\n  <legend><a href=\"#\">Homer Simpson</a></legend>\n  <h3>Nuclear Power Technician</h3>\n  <img src=\"http://placekitten.com/g/50/50\">\n  <p>\n    Butcher gluten-free craft beer, est you probably havent heard of them Neutra vegan. Hella actually velit, Brooklyn Vice esse sed art party cardigan deserunt beard tattooed. Tofu hella exercitation deep v bespoke. Odd Future authentic roof party pickled, messenger bag mollit Pinterest consequat fashion axe shabby chic seitan kogi irony nihil.\n  </p>\n</fieldset>\n\n<ul>\n<li>\n<li>\n    <!-- Where our To Do items will go -->\n</ul>\n";
   });
 
 this["JST"]["app/scripts/templates/home.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {

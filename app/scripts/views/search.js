@@ -80,6 +80,10 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     connectionsResults
       .fetch()
       .done(function(data){
+        var connections = JSON.parse(data);
+        var results = connections.values;
+        console.log('getConnections', results.length);
+
         var connectionsView = new PreLinked.Views.ConnectionView({
           collection: data
         });

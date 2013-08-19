@@ -4,7 +4,7 @@ PreLinked.Views.ConnectionView = Backbone.View.extend({
 
   tagName: 'li',
 
-  template: JST['app/scripts/templates/connection.hbs'],
+  template: JST['app/scripts/templates/connections.hbs'],
 
   initialize: function(){
     // this.listenTo(this.model, 'change', this.render);
