@@ -5,7 +5,7 @@ var site = require('../controllers/site.js');
 var jobs = require('../controllers/jobs.js');
 var linkedin = require('../controllers/linkedin.js');
 var pass = require('../controllers/passport.js');
-// var passportSess = require('../controllers/passportController.js');
+var session = require('../controllers/session.js');
 
 module.exports = function(app) {
   app.get('/serverindex', site.index);
@@ -15,12 +15,12 @@ module.exports = function(app) {
   app.get('/auth/linkedin',
     passport.authenticate('linkedin', { scope: ['r_fullprofile', 'r_network'],
                                                     state: '12345'  }),
-    function(req, res) { req.session.userID = req.user.id; });
+    function(req, res) { console.log(">", req, res) });
 
-  app.get('/auth/linkedin/callback', passport.authenticate('linkedin', {
-    successRedirect: '/',
-    failureRedirect: '/auth/linkedin'
-  }));
+  app.get('/auth/linkedin/callback',
+    passport.authenticate('linkedin', {}),
+    session.setSession
+  );
   // LinkedIn API
   app.get('/people/search', linkedin.search);
 
