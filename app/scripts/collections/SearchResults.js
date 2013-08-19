@@ -1,7 +1,9 @@
 /*global PreLinked, Backbone*/
 
-PreLinked.Collections.SearchresultsCollection = Backbone.Collection.extend({
+PreLinked.Collections.SearchResultsCollection = Backbone.Collection.extend({
 
-    model: PreLinked.Models.SearchresultsModel
+    model: PreLinked.Models.SearchResultsItemModel,
+
+    url: '/jobs/search'
 
 });
