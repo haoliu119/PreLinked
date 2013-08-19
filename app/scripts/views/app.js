@@ -6,18 +6,18 @@ PreLinked.Views.AppView = Backbone.View.extend({
   template: JST['app/scripts/templates/app.hbs'],
 
   initialize: function() {
+    PreLinked.on('changePage', this.changePage, this);
     this.render();
   },
 
-  render: function() {
-    this.$el.html(this.template(this.model.attributes));
-    //App level
+  changePage: function(data) {
+    console.log(data.page);
+    var page = data.page + 'Page';
+    this[page].call(this);
+  },
 
-    var homeModel = new PreLinked.Models.HomeModel();
-    var homeView = new PreLinked.Views.HomeView({
-      model: homeModel
-    });
-    this.$el.append(homeView.render().el);
+  searchPage: function(){
+    console.log('-AppView-searchPage');
 
     var searchModel = new PreLinked.Models.SearchModel();
     var that = this;
@@ -29,6 +29,21 @@ PreLinked.Views.AppView = Backbone.View.extend({
         });
         that.$el.append(searchView.render().el);
       });
+  },
+
+  homePage: function(){
+    console.log('-AppView-homePage');
+
+    var homeModel = new PreLinked.Models.HomeModel();
+    var homeView = new PreLinked.Views.HomeView({
+      model: homeModel
+    });
+    this.$el.append(homeView.render().el);
+  },
+
+  render: function() {
+    this.$el.html(this.template(this.model.attributes));
+    //App level
 
     return this;
   }
