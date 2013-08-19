@@ -35,17 +35,19 @@ PreLinked.Views.HomeView = Backbone.View.extend({
         jobLocation = this.$el.find('input[name=job-location]').val();
 
     console.log('[title]-->', jobTitle, '[location]-->', jobLocation);
-    
-    $.ajax({
-      type: 'GET',
-      url: 'jobs/search',
-      dataType: 'json',
-      data: {}
-    }).done(function(data) {
-      //console.log(data);
-      PreLinked.trigger('search');
-      that.changePage({page: 'search'});
-    });
+
+    // $.ajax({
+    //   type: 'GET',
+    //   url: 'jobs/search',
+    //   dataType: 'json',
+    //   data: {}
+    // }).done(function(data) {
+    //   //console.log(data);
+    //   PreLinked.trigger('search');
+    //   that.changePage({page: 'search'});
+    // });
+
+    PreLinked.appRouter.navigate('#search', { trigger: true});
   },
 
   render: function() {
