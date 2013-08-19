@@ -1,1 +1,3 @@
-.sq100{width:100px}
+#app ul li{list-style-type:none}
+#app .page{display:none}
+#app .page.current{display:block}
