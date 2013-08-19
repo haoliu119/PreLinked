@@ -21,8 +21,6 @@ pass.keys = passport.use(new LinkedInStrategy({
   function(accessToken, refreshToken, profile, done) {
     process.nextTick(function () {
 
-      // console.log('accessToken', accessToken);
-
       UserModel.findOne({ id: profile.id },function(err, users){
         if(err) {throw new Error(err);}
         if(users && users.id) {
@@ -39,6 +37,7 @@ pass.keys = passport.use(new LinkedInStrategy({
 
           user.save(function (err, user) {
             if (err) throw err;
+            // TODO: .SAVE IS ASYNCH, MAY BREAK THE SESSION SAVING
           });
         }
       });

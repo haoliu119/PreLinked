@@ -13,9 +13,9 @@ module.exports = function(app) {
   app.get('/jobs/search', jobs.search);
   //LinkedIn Oauth
   app.get('/auth/linkedin',
-    passport.authenticate('linkedin', { scope: ['r_fullprofile', 'r_network'],
-                                                    state: '12345'  }),
-    function(req, res) { console.log(">", req, res) });
+    passport.authenticate('linkedin',
+      { scope: ['r_fullprofile', 'r_network'], state: '12345'  }),
+      function(req, res) { });
 
   app.get('/auth/linkedin/callback',
     passport.authenticate('linkedin', {}),
