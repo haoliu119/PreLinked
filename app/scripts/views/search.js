@@ -53,7 +53,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
         var searchResultsView = new PreLinked.Views.SearchResultsView({
           collection: results
         });
-        searchResultsView.render();
+        that.$el.append( searchResultsView.render().el );
       });
   },
 
