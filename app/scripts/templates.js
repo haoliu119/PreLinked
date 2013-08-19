@@ -57,7 +57,7 @@ function program1(depth0,data) {
   return buffer;
   }
 
-  buffer += "<div class=\"row\">\n  <div class=\"large-3 columns\">\n    <h3>Search</h3>\n    <form id=\"form-search\">\n      <label>\n        Job\n        <input name=\"job-title\" type=\"text\" placeholder=\"Example: Software Engineer\">\n      </label>\n      <label>\n        Location\n        <input name=\"job-location\" type=\"text\" placeholder=\"Example: San Francisco, CA\">\n      </label>\n      <label>\n        Keywords\n        <input name=\"job-keywords\" type=\"text\" placeholder=\"Example: Javascript, Node.js\">\n      </label>\n\n      <p>Salary</p>\n      <ul>\n        <li><label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label></li>\n        <li><label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label></li>\n        <li><label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label></li>\n      </ul>\n\n      <p>Title</p>\n      <ul>\n        <li><label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label></li>\n        <li><label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label></li>\n        <li><label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label></li>\n      </ul>\n      \n      <p>Company</p>\n      <ul>\n        <li><label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label></li>\n        <li><label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label></li>\n        <li><label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label></li>\n      </ul>\n      <button type=\"submit\">Search</button>\n    </form>\n  </div>\n  <div class=\"large-5 columns\">\n    <fieldset>\n      <legend>";
+  buffer += "<div class=\"row\">\n  <div class=\"large-3 columns\">\n    \n  </div>\n  <div class=\"large-5 columns\">\n    <fieldset>\n      <legend>";
   if (stack1 = helpers.jobCount) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.jobCount; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -82,16 +82,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<p>Your content here.</p>\n\n";
-  });
-
-this["JST"]["app/scripts/templates/searchForm.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  
-
-
-  return "<label>\n  Job Search\n  <input type=\"text\" placeholder=\"text\">\n</label>\n<label>\n  Location\n  <input type=\"text\" placeholder=\"text\">\n</label>\n<select>\n  <option>option 1</option>\n  <option>option 2</option>\n  <option>option 3</option>\n</select>\n<label><input type=\"radio\" name=\"item\" value=\"1\"> item1</label>\n<label><input type=\"radio\" name=\"item\" value=\"1\"> item1</label>\n<label><input type=\"radio\" name=\"item\" value=\"1\"> item1</label>\n<label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label>\n<label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label>\n<label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label>";
+  return "<h3>Search</h3>\n<form id=\"form-search\">\n  <label>\n    Job\n    <input name=\"job-title\" type=\"text\" placeholder=\"Example: Software Engineer\">\n  </label>\n  <label>\n    Location\n    <input name=\"job-location\" type=\"text\" placeholder=\"Example: San Francisco, CA\">\n  </label>\n  <label>\n    Keywords\n    <input name=\"job-keywords\" type=\"text\" placeholder=\"Example: Javascript, Node.js\">\n  </label>\n\n  <p>Salary</p>\n  <ul>\n    <li><label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label></li>\n    <li><label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label></li>\n    <li><label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label></li>\n  </ul>\n\n  <p>Title</p>\n  <ul>\n    <li><label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label></li>\n    <li><label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label></li>\n    <li><label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label></li>\n  </ul>\n  \n  <p>Company</p>\n  <ul>\n    <li><label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label></li>\n    <li><label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label></li>\n    <li><label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label></li>\n  </ul>\n  <button type=\"submit\">Search</button>\n</form>";
   });
 
 this["JST"]["app/scripts/templates/searchResults.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
