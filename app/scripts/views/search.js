@@ -85,6 +85,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
         });
         deferred.resolve(connectionsView.render().el);
       });
+    // deferred.resolve(true);
     return deferred.promise();
   },
 
