@@ -1,4 +1,4 @@
-/*global PreLinked, $*/
+/*global PreLinked, $, Backbone*/
 
 window.PreLinked = {
   Models: {},
@@ -15,6 +15,15 @@ window.PreLinked = {
     var app_view = new this.Views.AppView({
       model: app_model
     });
+
+    PreLinked.appRouter = new PreLinked.Routers.AppRouter();
+
+    Backbone.history.start({
+      pushState: false,
+      root: '/',
+      silent: true
+    });
+    Backbone.history.loadUrl();
   }
 };
 

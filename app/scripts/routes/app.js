@@ -2,16 +2,22 @@
 
 PreLinked.Routers.AppRouter = Backbone.Router.extend({
 
+  initialize: function(){
+    //init user session etc.
+  },
+
   routes: {
     '': 'home',
     'search': 'search'
   },
 
   home: function() {
-    PreLinked.trigger('home');
+    PreLinked.trigger('changePage', {page: 'home'});
+    PreLinked.appRouter.navigate('#', { trigger: true});
   },
 
   search: function() {
-    PreLinked.trigger('search');
+    PreLinked.trigger('changePage', {page: 'search'});
+    PreLinked.appRouter.navigate('#search', { trigger: true});
   }
 });

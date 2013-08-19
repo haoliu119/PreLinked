@@ -1,2 +1,74 @@
-<p>Your content here.</p>
+<div class="row">
+  <div class="large-3 columns">
+    <h3>Search</h3>
+    <form id="form-search">
+      <label>
+        Job
+        <input name="job-title" type="text" placeholder="Example: Software Engineer">
+      </label>
+      <label>
+        Location
+        <input name="job-location" type="text" placeholder="Example: San Francisco, CA">
+      </label>
+      <label>
+        Keywords
+        <input name="job-keywords" type="text" placeholder="Example: Javascript, Node.js">
+      </label>
 
+      <p>Salary</p>
+      <ul>
+        <li><label><input type="checkbox" name="item" value="1"> item1</label></li>
+        <li><label><input type="checkbox" name="item" value="1"> item1</label></li>
+        <li><label><input type="checkbox" name="item" value="1"> item1</label></li>
+      </ul>
+
+      <p>Title</p>
+      <ul>
+        <li><label><input type="checkbox" name="item" value="1"> item1</label></li>
+        <li><label><input type="checkbox" name="item" value="1"> item1</label></li>
+        <li><label><input type="checkbox" name="item" value="1"> item1</label></li>
+      </ul>
+      
+      <p>Company</p>
+      <ul>
+        <li><label><input type="checkbox" name="item" value="1"> item1</label></li>
+        <li><label><input type="checkbox" name="item" value="1"> item1</label></li>
+        <li><label><input type="checkbox" name="item" value="1"> item1</label></li>
+      </ul>
+      <button type="submit">Search</button>
+    </form>
+  </div>
+  <div class="large-5 columns">
+    <fieldset>
+      <legend>{{jobCount}} results for "{{jobTitle}}"</legend>
+      {{#each searchResultsItem}}
+        <div>
+          <a href="#">{{job}}</a>
+        </div>
+      {{/each}}
+    </fieldset>
+    <fieldset>
+      <legend><a href="#">{{jobTitle}}</a></legend>
+      <p>
+        Butcher gluten-free craft beer, est you probably haven't heard of them Neutra vegan. Hella actually velit, Brooklyn Vice esse sed art party cardigan deserunt beard tattooed. Tofu hella exercitation deep v bespoke. Odd Future authentic roof party pickled, messenger bag mollit Pinterest consequat fashion axe shabby chic seitan kogi irony nihil. Nisi you probably haven't heard of them wolf ut. Godard eiusmod fashion axe four loko adipisicing sartorial, gastropub proident labore selfies esse kitsch culpa High Life. Authentic hella locavore qui, pug sustainable gastropub Pinterest put a bird on it craft beer selfies Vice.
+      </p>
+    </fieldset>
+  </div>
+  <div class="large-4 columns">
+    <div>
+      <img src="http://placekitten.com/g/50/50">
+      <img src="http://placekitten.com/g/50/50">
+      <img src="http://placekitten.com/g/50/50">
+      <img src="http://placekitten.com/g/50/50">
+      <img src="http://placekitten.com/g/50/50">
+    </div>
+    <fieldset>
+      <legend><a href="#">Homer Simpson</a></legend>
+      <h3>Nuclear Power Technician</h3>
+      <img src="http://placekitten.com/g/50/50">
+      <p>
+        Butcher gluten-free craft beer, est you probably havent heard of them Neutra vegan. Hella actually velit, Brooklyn Vice esse sed art party cardigan deserunt beard tattooed. Tofu hella exercitation deep v bespoke. Odd Future authentic roof party pickled, messenger bag mollit Pinterest consequat fashion axe shabby chic seitan kogi irony nihil.
+      </p>
+    </fieldset>
+  </div>
+</div>
