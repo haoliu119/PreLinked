@@ -2,6 +2,8 @@
 
 PreLinked.Collections.ConnectionsCollection = Backbone.Collection.extend({
 
-    model: PreLinked.Models.ConnectionsModel
+    model: PreLinked.Models.ConnectionModel,
+
+    url: '/people/search'
 
 });

@@ -8,7 +8,6 @@ PreLinked.Views.SearchResultsItemView = Backbone.View.extend({
     // this.$el.append(this.template(this.model.attributes));
     // line above is not working with dummy data
     this.$el.append(this.template(this.model));
-    console.log(this.model);
     return this;
   }
 
