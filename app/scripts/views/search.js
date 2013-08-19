@@ -27,17 +27,39 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
     $.ajax({
       type: 'GET',
-      url: 'jobs/search',
+      url: '/jobs/search',
       dataType: 'json',
       data: {}
     }).done(function(data) {
-      //console.log(data);
+      // console.log(data);
     });
   },
 
-  render: function() {
+  getJobResults: function(){
     var searchResultsItem = [{job:'Back-end Web Developer'}, {job: 'Data Analyst'}, {job: 'Database Architect'}, {job: 'Quality Assurance Engineer'}, {job: 'Front-end Web Developer'}];
     this.$el.attr('data-page','search').html(this.template({jobCount: 432, jobTitle: 'Software Engineer', searchResultsItem: searchResultsItem}));
+  },
+
+  getSearchResults: function(){
+    var searchResults = new PreLinked.Collections.SearchResultsCollection();
+    var that = this;
+    searchResults
+      .fetch()
+      .done(function(data){
+        var jobs = JSON.parse(data);
+        var results = jobs.results;
+        console.log('getSearchResults', results.length);
+
+        var searchResultsView = new PreLinked.Views.SearchResultsView({
+          collection: results
+        });
+        that.$el.append( searchResultsView.render().el );
+      });
+  },
+
+  render: function() {
+    // this.getJobResults();
+    this.getSearchResults();
     // this.$el.html( this.template(this.model.attributes) );
     // console.log('searchModel', this.model.attributes);
     return this;
