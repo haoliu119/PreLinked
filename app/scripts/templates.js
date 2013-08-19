@@ -10,7 +10,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.app_title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.app_title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\n  </h1>\n</div>\n";
+    + "\n  </h1>\n</div>\n<div id=\"main\">\n  Loading...\n</div>\n";
   return buffer;
   });
 
@@ -88,17 +88,95 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 this["JST"]["app/scripts/templates/searchResults.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  return "<fieldset>\n  <legend>432 results for \"Software Engineer\"</legend>\n  <div>\n    <a href=\"#\">Software Engineer</a>\n  </div>\n  <div>\n    <a href=\"#\">Software Engineer</a>\n  </div>\n  <div>\n    <a href=\"#\">Software Engineer</a>\n  </div>\n</fieldset>";
+  buffer += "<fieldset>\n  <legend>";
+  if (stack1 = helpers.jobCount) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.jobCount; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " results for \"Software Engineer\"</legend>\n  <div class=\"jobResults\">\n    Loading...\n  </div>\n</fieldset>";
+  return buffer;
   });
 
 this["JST"]["app/scripts/templates/searchResultsItem.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  return "<div>\n  <a href=\"#\">Software Engineer</a>\n</div>";
+  buffer += "<div class=\"job\">\n  <ul>\n    <li>\n      company: ";
+  if (stack1 = helpers.company) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.company; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n    </li>\n    <li>\n      jobtitle: ";
+  if (stack1 = helpers.jobtitle) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.jobtitle; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n    </li>\n    <li>\n      jobkey: ";
+  if (stack1 = helpers.jobkey) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.jobkey; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n    </li>\n    <li>\n      snippet: ";
+  if (stack1 = helpers.snippet) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.snippet; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n    </li>\n    <li>\n      formattedLocation: ";
+  if (stack1 = helpers.formattedLocation) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.formattedLocation; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n    </li>\n    <li>\n      formattedLocationFull: ";
+  if (stack1 = helpers.formattedLocationFull) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.formattedLocationFull; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n    </li>\n    <li>\n      formattedRelativeTime: ";
+  if (stack1 = helpers.formattedRelativeTime) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.formattedRelativeTime; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n    </li>\n\n    <li>\n      date: ";
+  if (stack1 = helpers.date) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.date; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n    </li>\n    <li>\n      expired: ";
+  if (stack1 = helpers.expired) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.expired; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n    </li>\n    <li>\n      city: ";
+  if (stack1 = helpers.city) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.city; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n    </li>\n    <li>\n      state: ";
+  if (stack1 = helpers.state) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.state; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n    </li>\n    <li>\n      country: ";
+  if (stack1 = helpers.country) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.country; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n    </li>\n    <li>\n      latitude: ";
+  if (stack1 = helpers.latitude) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.latitude; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n    </li>\n    <li>\n      longitude: ";
+  if (stack1 = helpers.longitude) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.longitude; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n    </li>\n    <li>\n      source: ";
+  if (stack1 = helpers.source) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.source; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n    </li>\n    <li>\n      sponsored: ";
+  if (stack1 = helpers.sponsored) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.sponsored; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n    </li>\n    <li>\n      url: ";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n    </li>\n    <li>\n      onmousedown: ";
+  if (stack1 = helpers.onmousedown) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.onmousedown; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n    </li>\n  </ul>\n</div>";
+  return buffer;
   });
