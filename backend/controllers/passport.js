@@ -20,6 +20,7 @@ pass.keys = passport.use(new LinkedInStrategy({
   },
   function(accessToken, refreshToken, profile, done) {
     process.nextTick(function () {
+
       console.log('accessToken', accessToken);
       console.log('refreshToken', refreshToken);
 
@@ -30,7 +31,8 @@ pass.keys = passport.use(new LinkedInStrategy({
           var userData = {
             id: profile.id,
             firstName: profile.name.givenName,
-            lastName: profile.name.familyName
+            lastName: profile.name.familyName,
+            accessToken: accessToken
           };
 
           var user = new UserModel(userData);
