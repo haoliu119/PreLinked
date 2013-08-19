@@ -17,19 +17,53 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 this["JST"]["app/scripts/templates/connections.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  return "<div id=\"connection-results\">\n  Loading...\n</div>\n<div>\n  <img src=\"http://placekitten.com/g/50/50\">\n  <img src=\"http://placekitten.com/g/50/50\">\n  <img src=\"http://placekitten.com/g/50/50\">\n  <img src=\"http://placekitten.com/g/50/50\">\n  <img src=\"http://placekitten.com/g/50/50\">\n</div>\n<fieldset>\n  <legend><a href=\"#\">Homer Simpson</a></legend>\n  <h3>Nuclear Power Technician</h3>\n  <img src=\"http://placekitten.com/g/50/50\">\n  <p>\n    Butcher gluten-free craft beer, est you probably havent heard of them Neutra vegan. Hella actually velit, Brooklyn Vice esse sed art party cardigan deserunt beard tattooed. Tofu hella exercitation deep v bespoke. Odd Future authentic roof party pickled, messenger bag mollit Pinterest consequat fashion axe shabby chic seitan kogi irony nihil.\n  </p>\n</fieldset>\n";
+  buffer += "<fieldset >\n  <legend><a href=\"#\">";
+  if (stack1 = helpers.number_of_connections) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.number_of_connections; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " connections</a></legend>\n  <div id=\"connection-results\">\n    Loading...\n  </div>\n</fieldset>\n";
+  return buffer;
   });
 
 this["JST"]["app/scripts/templates/connectionsItem.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  return "<p>Connections Item</p>\n\n";
+  buffer += "<div class=\"each-connection\">\n  <ul>\n    <li>firstName: ";
+  if (stack1 = helpers.firstName) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.firstName; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n    <li>headline: ";
+  if (stack1 = helpers.headline) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.headline; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n    <li>lastName: ";
+  if (stack1 = helpers.lastName) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.lastName; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n    <li>pictureUrl: ";
+  if (stack1 = helpers.pictureUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.pictureUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n    <li>positions: ";
+  if (stack1 = helpers.positions) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.positions; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n    <li>summary: ";
+  if (stack1 = helpers.summary) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.summary; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n    <li>title: ";
+  if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n  </ul>\n</div>";
+  return buffer;
   });
 
 this["JST"]["app/scripts/templates/home.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
