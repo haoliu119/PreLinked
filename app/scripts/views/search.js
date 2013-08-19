@@ -73,6 +73,21 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     return deferred.promise();
   },
 
+  getConnections: function() {
+    var deferred = $.Deferred();
+    var connectionsResults = new PreLinked.Collections.ConnectionsCollection();
+    var that = this;
+    connectionsResults
+      .fetch()
+      .done(function(data){
+        var connectionsView = new PreLinked.Views.ConnectionView({
+          collection: data
+        });
+        deferred.resolve(connectionsView.render().el);
+      });
+    return deferred.promise();
+  },
+
   render: function() {
     // this.getJobResults();
     // this.getSearchResults();
@@ -87,6 +102,14 @@ PreLinked.Views.SearchView = Backbone.View.extend({
       .done(function(data){
         that.$el
           .find('#job-results')
+          .empty()
+          .append(data);
+      });
+
+    this.getConnections()
+      .done(function(data) {
+        that.$el
+          .find('#connections')
           .empty()
           .append(data);
       });
