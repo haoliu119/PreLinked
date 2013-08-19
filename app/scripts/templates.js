@@ -6,7 +6,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  buffer += "<div>\n  <h1>\n    ";
+  buffer += "<div class=\"row\">\n  <div class=\"large-8 large-centered columns\">\n    <div class=\"row collapse\">\n      <h1><img src=\"https://webfiles.uci.edu/shaohuaz/share/prelinked/prelinked.png\" alt=\"PreLinked\"></h1>\n    </div>\n  </div>\n</div>\n\n<div>\n  <h1>\n    ";
   if (stack1 = helpers.app_title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.app_title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -72,7 +72,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class=\"row\">\n  <div class=\"small-8 large-centered columns\">\n    <div class=\"row collapse\">\n      <form id=\"form-home\">\n        <h1><img src=\"https://webfiles.uci.edu/shaohuaz/share/prelinked/prelinked.png\" alt=\"PreLinked\"></h1>\n        <div class=\"small-8 columns\">\n          Search for Jobs near:\n          <a href=\"#search\">\n            <img src=\"http://www.southportlandba.com/wp-content/uploads/2013/06/Maps-and-Geolocation-Marker-icon2.png\">\n            <strong>San Francisco, CA</strong>\n          </a>\n\n        </div>\n        <div class=\"small-6 columns\">\n          <input name=\"job-title\" type=\"text\" placeholder=\"Enter job title (example: Software Engineer)\">\n        </div>\n        <div class=\"small-2 columns\">\n          <button type=\"submit\" class=\"button prefix\">Search</button>\n        </div>\n        <div class=\"small-1 columns\">\n        </div>\n      </form>\n    </div>\n  </div>\n</div>";
+  return "<div class=\"row\">\n  <div class=\"large-8 large-centered columns\">\n    <div class=\"row collapse\">\n      <form id=\"form-home\">\n        <div class=\"large-10 columns\">\n          Search for Jobs near:\n          <a href=\"#search\">\n            <img src=\"http://www.southportlandba.com/wp-content/uploads/2013/06/Maps-and-Geolocation-Marker-icon2.png\">\n            <strong>San Francisco, CA</strong>\n          </a>\n        </div>\n        <div class=\"large-10 columns\">\n          <input class=\"full-width\" name=\"job-title\" type=\"text\" placeholder=\"Enter job title (example: Software Engineer)\">\n        </div>\n        <div class=\"large-2 columns\">\n          <button type=\"submit\" class=\"button prefix\">Search</button>\n        </div>\n      </form>\n    </div>\n  </div>\n</div>";
   });
 
 this["JST"]["app/scripts/templates/page.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {

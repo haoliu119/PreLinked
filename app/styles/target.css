@@ -1,2 +1,2 @@
-#app ul li{list-style-type:none}
+#app ul li{list-style-type:none;word-break:break-all}
 #app .page.current{display:block}
