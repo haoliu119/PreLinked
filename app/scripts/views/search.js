@@ -46,6 +46,14 @@ PreLinked.Views.SearchView = Backbone.View.extend({
       }));
   },
 
+  getSearchFilter: function(){
+    var searchFilterModel = new PreLinked.Models.SearchfilterModel();
+    var searchFilterView = new PreLinked.Views.SearchfilterView({
+      model: searchFilterModel
+    });
+    return searchFilterView.render().el;
+  },
+
   getSearchResults: function(){
     var searchResults = new PreLinked.Collections.SearchResultsCollection();
     var that = this;
@@ -67,6 +75,10 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     // this.getJobResults();
     // this.getSearchResults();
     this.$el.html( this.template() );
+    this.$el
+      .find('#search-filters')
+      .empty()
+      .append( this.getSearchFilter() );
     // console.log('searchModel', this.model.attributes);
     return this;
   }

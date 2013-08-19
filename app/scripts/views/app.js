@@ -43,11 +43,6 @@ PreLinked.Views.AppView = Backbone.View.extend({
         that.$el.find('#main').append(searchView.render().el);
       });
 
-    var searchFilterModel = new PreLinked.Models.SearchfilterModel();
-    var searchFilterView = new PreLinked.Views.SearchfilterView({
-      model: searchFilterModel
-    });
-    console.log('searchFilterView', searchFilterView.render().el);
   },
 
 
