@@ -40,8 +40,21 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     this.$el.attr('data-page','search').html(this.template({jobCount: 432, jobTitle: 'Software Engineer', searchResultsItem: searchResultsItem}));
   },
 
+  getSearchResults: function(){
+    var searchResults = new PreLinked.Collections.SearchResultsCollection();
+    var that = this;
+    searchResults
+      .fetch()
+      .done(function(data){
+        var jobs = JSON.parse(data);
+        var results = jobs.results;
+        console.log('getSearchResults', results.length);
+      });
+  },
+
   render: function() {
-    this.getJobResults();
+    // this.getJobResults();
+    this.getSearchResults();
     // this.$el.html( this.template(this.model.attributes) );
     // console.log('searchModel', this.model.attributes);
     return this;
