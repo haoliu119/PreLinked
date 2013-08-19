@@ -11,7 +11,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
   },
 
   changePage: function(data) {
-    console.log(data.page);
+    console.log('info from changePage event: ', data.page);
     var page = data.page + 'Page';
     this[page].call(this);
   },
