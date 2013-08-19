@@ -35,16 +35,16 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     });
   },
 
-  getJobResults: function(){
-    var searchResultsItem = [{job:'Back-end Web Developer'}, {job: 'Data Analyst'}, {job: 'Database Architect'}, {job: 'Quality Assurance Engineer'}, {job: 'Front-end Web Developer'}];
-    this.$el
-      .attr('data-page','search')
-      .html(this.template({
-        jobCount: 432,
-        jobTitle: 'Software Engineer',
-        searchResultsItem: searchResultsItem
-      }));
-  },
+  // getJobResults: function(){
+  //   var searchResultsItem = [{job:'Back-end Web Developer'}, {job: 'Data Analyst'}, {job: 'Database Architect'}, {job: 'Quality Assurance Engineer'}, {job: 'Front-end Web Developer'}];
+  //   this.$el
+  //     .attr('data-page','search')
+  //     .html(this.template({
+  //       jobCount: 432,
+  //       jobTitle: 'Software Engineer',
+  //       searchResultsItem: searchResultsItem
+  //     }));
+  // },
 
   getSearchFilter: function(){
     var searchFilterModel = new PreLinked.Models.SearchfilterModel();
@@ -54,7 +54,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     return searchFilterView.render().el;
   },
 
-  getSearchResults: function(){
+  getJobResults: function(){
+    var deferred = $.Deferred();
     var searchResults = new PreLinked.Collections.SearchResultsCollection();
     var that = this;
     searchResults
@@ -67,8 +68,9 @@ PreLinked.Views.SearchView = Backbone.View.extend({
         var searchResultsView = new PreLinked.Views.SearchResultsView({
           collection: results
         });
-        that.$el.append( searchResultsView.render().el );
+        deferred.resolve(searchResultsView.render().el);
       });
+    return deferred.promise();
   },
 
   render: function() {
@@ -79,6 +81,17 @@ PreLinked.Views.SearchView = Backbone.View.extend({
       .find('#search-filters')
       .empty()
       .append( this.getSearchFilter() );
+
+    var that = this;
+    this.getJobResults()
+      .done(function(data){
+        that.$el
+          .find('#job-results')
+          .empty()
+          .append(data);
+      });
+
+
     // console.log('searchModel', this.model.attributes);
     return this;
   }
