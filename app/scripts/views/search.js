@@ -49,6 +49,11 @@ PreLinked.Views.SearchView = Backbone.View.extend({
         var jobs = JSON.parse(data);
         var results = jobs.results;
         console.log('getSearchResults', results.length);
+
+        var searchResultsView = new PreLinked.Views.SearchResultsView({
+          collection: results
+        });
+        searchResultsView.render();
       });
   },
 
