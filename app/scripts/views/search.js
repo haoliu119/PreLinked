@@ -27,11 +27,11 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
     $.ajax({
       type: 'GET',
-      url: 'jobs/search',
+      url: '/jobs/search',
       dataType: 'json',
       data: {}
     }).done(function(data) {
-      //console.log(data);
+      // console.log(data);
     });
   },
 
