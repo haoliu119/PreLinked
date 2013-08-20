@@ -29,4 +29,10 @@ module.exports = function(app) {
 	// app.get('/user/:id', users.read);
 	// app.put('/user/:id', users.update);
 	// app.del('/user/:id', users.delete);
+
+  app.get('/test', function(req, res){
+    //this is where you test random backend functions
+    console.log('app.get(env)', app.get('env'));
+    res.end();
+  });
 };
