@@ -4,7 +4,7 @@ var path = require('path');
 
 var linkedin = module.exports = {};
 
-// GET /jobs/search
+// GET /people/search
 linkedin.search = function(req, res){
   /* dummy data for frontend work
   /*/
@@ -15,7 +15,7 @@ linkedin.search = function(req, res){
   /* LinkedInApi endpoit
   /* TODO: check if it's html or json request
   /*/
-  LinkedInApi.search(req).then(function(json) {
+  LinkedInApi.searchConnections(req).then(function(json) {
     res.json(json);
   })
 };
