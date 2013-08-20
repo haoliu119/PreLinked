@@ -17,5 +17,13 @@ linkedin.search = function(req, res){
   /*/
   LinkedInApi.search(req).then(function(json) {
     res.json(json);
-  })
+  });
+};
+
+linkedin.getProfile = function(req, res){
+  console.log('-controller-linkedin.getProfile-', req.params);
+  LinkedInApi.getProfile(req)
+    .then(function(json){
+      res.json(json);
+    });
 };

@@ -23,6 +23,7 @@ module.exports = function(app) {
   );
   // LinkedIn API
   app.get('/people/search', linkedin.search);
+  app.get('/people/:id', linkedin.getProfile);
 
 	// app.post('/user', users.create);
 	// app.get('/user', users.list);
