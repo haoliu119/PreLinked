@@ -12,7 +12,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   },
 
   events: {
-    'submit form#form-search': 'submitSearch'
+    'submit form#form-search': 'searchResults'
   },
 
   submitSearch: function(e) {
@@ -37,7 +37,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     var searchResults = new PreLinked.Collections.SearchResultsCollection();
     var that = this;
     searchResults
-      .fetch({ data: {q: 'pharmacist', l:'san francisco'} })
+      .fetch({ data: {q: jobTitle, l: jobLocation} })
       .done(function(data){
         var jobs = JSON.parse(data);
         var results = jobs.results;
@@ -50,6 +50,17 @@ PreLinked.Views.SearchView = Backbone.View.extend({
         deferred.resolve(searchResultsView.render().el);
       });
     return deferred.promise();
+  },
+
+  searchResults: function(e) {
+    var that = this;
+    this.submitSearch(e)
+      .done(function(data){
+        that.$el
+          .find('#job-results')
+          .empty()
+          .append(data);
+      });
   },
 
   // getJobResults: function(){
