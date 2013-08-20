@@ -92,6 +92,17 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     return deferred.promise();
   },
 
+  getModalConnectionDetails: function(){
+    console.log('getModalConnectionDetails');
+    var details = new PreLinked.Models.ModalconnectiondetailsModel();
+    var detailsView = new PreLinked.Views.ModalconnectiondetailsView({
+      model: details
+    });
+    this.$el.append( detailsView.render().el );
+    debugger;
+    $('#myModal').foundation('reveal', 'open');
+  },
+
   render: function() {
     // this.getJobResults();
     // this.getSearchResults();
@@ -118,7 +129,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
           .append(data);
       });
 
-
+    this.getModalConnectionDetails();
     // console.log('searchModel', this.model.attributes);
     return this;
   }
