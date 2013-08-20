@@ -12,7 +12,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   },
 
   events: {
-    'submit form#form-search': 'submitSearch'
+    'submit form#form-search': 'submitSearch',
+    'click .modal-details': 'getModalConnectionDetails'
   },
 
   submitSearch: function(e) {
@@ -46,6 +47,26 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   //     }));
   // },
 
+  loadLinkedInData: function() {
+    var connectionsElem = $("#connx"),
+        loadingElem = connectionsElem.find('#connection-results');
+
+    loadingElem.show();
+    IN.API.Connections('me')
+      .fields(['pictureUrl', 'publicProfileUrl'])
+      .params({'count': 50})
+      .result(function(result) {
+        var profHTML = '';
+        $.each(result.values, function(i,v) {
+          if (v.pictureUrl) {
+            profHTML += '<a href="' + v.publicProfileUrl + '" target="_blank">';
+            profHTML += '<img class="linkedin-connection-thumb" src="' + v.pictureUrl + '"></a>';
+          }
+        });
+        $("#connx").html(profHTML);
+      });
+  },
+
   getSearchFilter: function(){
     var searchFilterModel = new PreLinked.Models.SearchfilterModel();
     var searchFilterView = new PreLinked.Views.SearchfilterView({
@@ -68,7 +89,9 @@ PreLinked.Views.SearchView = Backbone.View.extend({
         var searchResultsView = new PreLinked.Views.SearchResultsView({
           collection: results
         });
-        deferred.resolve(searchResultsView.render().el);
+        deferred
+          .resolve(searchResultsView.render().el)
+          .resolve(that.loadLinkedInData());
       });
     return deferred.promise();
   },
@@ -92,16 +115,30 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     return deferred.promise();
   },
 
+  getModalConnectionDetails: function(events){
+    console.log('getModalConnectionDetails');
+    var $target = $(events.target);
+    var in_id = $target.data('in-id');
+
+    var details = new PreLinked.Models.ModalconnectiondetailsModel({
+      id: in_id
+    });
+    var detailsView = new PreLinked.Views.ModalconnectiondetailsView({
+      model: details
+    });
+    this.$el.append( detailsView.render().el );
+    // $('#myModal').foundation('reveal', 'open');
+  },
+
   render: function() {
-    // this.getJobResults();
-    // this.getSearchResults();
+    var that = this;
     this.$el.html( this.template() );
+    this.getJobResults();
     this.$el
       .find('#search-filters')
       .empty()
       .append( this.getSearchFilter() );
 
-    var that = this;
     this.getJobResults()
       .done(function(data){
         that.$el
@@ -118,7 +155,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
           .append(data);
       });
 
-
+    // this.getModalConnectionDetails();
     // console.log('searchModel', this.model.attributes);
     return this;
   }

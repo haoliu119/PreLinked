@@ -53,6 +53,7 @@ LinkedInApi.searchConnections = function (req) {
 // https://api.linkedin.com/v1/people/id=GLgKsKoL1H/connections:(headline,first-name,last-name,positions,picture-url)?format=json&oauth2_access_token=AQVdT8hXNIqHnty2zZKNdSOUtUCz0JPxW8_T4_Wx5oLKBJZUnHH3KslO4M3J2XIdLw8aRgt1tNGkl2hJnQVbOX23KunbeyFqWsNjzt7gRo92PXiGm6FUYo6ICoDT6BZzO4YTS9G7sRu5wVoHiq5_dijFHAkbj8bNGBmaImq_3jnl1cGqxjw
 
 LinkedInApi.getProfile = function(req){
+  // console.log('req.session', req.session);
   //http://developer.linkedin.com/documents/profile-api
   var endPoint = "https://api.linkedin.com/v1/people/";
   var url = endPoint + 'id=' + req.params.id + ":(id,first-name,last-name,industry,headline,location,summary,positions)";

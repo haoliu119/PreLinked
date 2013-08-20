@@ -19,4 +19,5 @@ window.PreLinked = {
 
 $(document).ready(function () {
   PreLinked.init();
+  $(document).foundation();
 });

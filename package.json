@@ -43,5 +43,9 @@
   },
   "engines": {
     "node": ">=0.8.0"
+  },
+  "subdomain": "prelinked",
+  "scripts": {
+    "start": "node backend/app.js"
   }
 }

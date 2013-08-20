@@ -1,6 +1,16 @@
 <fieldset >
   <legend><a href="#">{{number_of_connections}} connections</a></legend>
-  <div id="connection-results">
+  <script type="IN/Login" data-onAuth="loadLinkedInData"></script>
+  <div id="connx">
+
+    <div class="loading" style="display:none;">
+      Loading...
+    </div>
+  </div>
+  <div id="connection-results" class="scroll">
     Loading...
   </div>
+  <script>
+    IN.init();
+  </script>
 </fieldset>
