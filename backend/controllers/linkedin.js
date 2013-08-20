@@ -8,11 +8,11 @@ var linkedin    = module.exports = {};
 linkedin.searchConnections = function(req, res){
   console.log('-controller-linkedin.searchConnections-', req.params);
   LinkedInApi.searchConnections(req).then(function(json) {
-    res.json(json);
+    // res.json(json);
 
   // Dummy Data
-  // var fileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/dummy_linkedin_connections_search_results.json'), 'utf8');
-  // res.json(fileContent);
+  var fileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/dummy_linkedin_connections_search_results.json'), 'utf8');
+  res.json(fileContent);
   });
 };
 
