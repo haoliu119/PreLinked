@@ -47,6 +47,26 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   //     }));
   // },
 
+  loadLinkedInData: function() {
+    var connectionsElem = $("#connx"),
+        loadingElem = connectionsElem.find('#connection-results');
+
+    loadingElem.show();
+    IN.API.Connections('me')
+      .fields(['pictureUrl', 'publicProfileUrl'])
+      .params({'count': 50})
+      .result(function(result) {
+        var profHTML = '';
+        $.each(result.values, function(i,v) {
+          if (v.pictureUrl) {
+            profHTML += '<a href="' + v.publicProfileUrl + '" target="_blank">';
+            profHTML += '<img class="linkedin-connection-thumb" src="' + v.pictureUrl + '"></a>';
+          }
+        });
+        $("#connx").html(profHTML);
+      });
+  },
+
   getSearchFilter: function(){
     var searchFilterModel = new PreLinked.Models.SearchfilterModel();
     var searchFilterView = new PreLinked.Views.SearchfilterView({
@@ -69,7 +89,9 @@ PreLinked.Views.SearchView = Backbone.View.extend({
         var searchResultsView = new PreLinked.Views.SearchResultsView({
           collection: results
         });
-        deferred.resolve(searchResultsView.render().el);
+        deferred
+          .resolve(searchResultsView.render().el)
+          .resolve(that.loadLinkedInData());
       });
     return deferred.promise();
   },
