@@ -6,11 +6,12 @@ session.setSession = function(req, res) {
     { id: req.user.id },
     function(err, users){
       if(err) {
-        throw new Error(err);
+        console.log("error >>>>>> ", err);
+        res.redirect('/'); // TODO: WHERE IS REDIRECT?
       } else {
         req.session.userID = req.user.id;
         req.session.accessToken = users.accessToken;
+        res.redirect('/#search');
       }
-    })
-  res.redirect('/#search');
+    });
 };

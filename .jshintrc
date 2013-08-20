@@ -15,5 +15,11 @@
     "unused": true,
     "trailing": true,
     "smarttabs": true,
-    "jquery": true
+    "jquery": true,
+    "globals": {
+        "_": true,
+        "Q": true,
+        "app": true
+        "$": true
+    }
 }

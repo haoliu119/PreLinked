@@ -24,7 +24,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.number_of_connections) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.number_of_connections; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + " connections</a></legend>\n  <div id=\"connection-results\">\n    Loading...\n  </div>\n</fieldset>\n";
+    + " connections</a></legend>\n  <script type=\"IN/Login\" data-onAuth=\"loadLinkedInData\"></script>\n  <div id=\"connx\">\n\n    <div class=\"loading\" style=\"display:none;\">\n      Loading...\n    </div>\n  </div>\n  <div id=\"connection-results\" class=\"scroll\">\n    Loading...\n  </div>\n  <script>\n    IN.init();\n  </script>\n</fieldset>\n";
   return buffer;
   });
 
@@ -34,7 +34,11 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  buffer += "<div class=\"each-connection\">\n  <ul>\n    <li>firstName: ";
+  buffer += "<div class=\"each-connection\">\n  <a class=\"modal-details\" href=\"#\" data-reveal-id=\"myModal\" data-in-id=\"HbRybmNgE6\">Click Me For A Modal</a>\n  <img src=\"";
+  if (stack1 = helpers.pictureUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.pictureUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\">\n  <ul>\n    <li>firstName: ";
   if (stack1 = helpers.firstName) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.firstName; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -75,6 +79,15 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   return "<div class=\"row\">\n  <div class=\"large-6 columns\">\n    <div class=\"row collapse\">\n      <form id=\"form-home\">\n        <div class=\"large-10 columns\">\n          Search for Jobs near:\n          <a href=\"#search\">\n            <img src=\"http://www.southportlandba.com/wp-content/uploads/2013/06/Maps-and-Geolocation-Marker-icon2.png\">\n            <strong>San Francisco, CA</strong>\n          </a>\n        </div>\n        <div class=\"large-9 columns\">\n          <input class=\"full-width\" name=\"job-title\" type=\"text\" placeholder=\"Enter job title (example: Software Engineer)\">\n        </div>\n        <div class=\"large-3 columns\">\n          <button type=\"submit\" class=\"button prefix\">Search Jobs</button>\n        </div>\n      </form>\n    </div>\n  </div>\n</div>";
   });
 
+this["JST"]["app/scripts/templates/modalConnectionDetails.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
+  this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  
+
+
+  return "<div id=\"myModal\" class=\"reveal-modal\">\n  <h2>Awesome. I have it.</h2>\n  <p class=\"lead\">Your couch.  It is mine.</p>\n  <p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>\n  <a class=\"close-reveal-modal\">&#215;</a>\n</div>";
+  });
+
 this["JST"]["app/scripts/templates/page.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
@@ -112,7 +125,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.jobCount) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.jobCount; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + " results for \"Software Engineer\"</legend>\n  <div class=\"jobResults\">\n    Loading...\n  </div>\n</fieldset>";
+    + " results for \"Software Engineer\"</legend>\n  <div class=\"jobResults scroll\">\n    Loading...\n  </div>\n</fieldset>";
   return buffer;
   });
 

@@ -17,14 +17,6 @@ PreLinked.Views.HomeView = Backbone.View.extend({
     'submit form#form-home': 'submitSearch'
   },
 
-  // changePage: function(data) {
-  //   var hash = data.page === 'home' ? '' : data.page;
-  //   $('.page').removeClass('current');
-  //   console.log(data.page);
-  //   $('#page-' + data.page).addClass('current');
-  //   PreLinked.appRouter.navigate('/' + hash);
-  // },
-
   search: function(data) {
     console.log('callback: search button clicked');
     //PreLinked.appRouter.navigate('/search');
@@ -43,17 +35,6 @@ PreLinked.Views.HomeView = Backbone.View.extend({
 
     console.log('[title]-->', jobTitle, '[location]-->', jobLocation);
 
-    // $.ajax({
-    //   type: 'GET',
-    //   url: 'jobs/search',
-    //   dataType: 'json',
-    //   data: {}
-    // }).done(function(data) {
-    //   //console.log(data);
-    //   PreLinked.trigger('search');
-    //   that.changePage({page: 'search'});
-    // });
-
     PreLinked.appRouter.navigate('/search', { trigger: true});
   },
 
@@ -61,7 +42,6 @@ PreLinked.Views.HomeView = Backbone.View.extend({
     this.$el
       .attr('data-page','home')
       .html(this.template);
-
     return this;
   }
 

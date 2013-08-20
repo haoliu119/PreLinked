@@ -6,6 +6,7 @@ var jobs = module.exports = {};
 
 // GET /jobs/search
 jobs.search = function(req, res){
+  console.log("req.query >>>>>>>>",req.query)
   /* dummy data for frontend work
   /*/
   // var fileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/dummy_indeed_search_results.json'), 'utf8');
@@ -14,7 +15,7 @@ jobs.search = function(req, res){
   /* IndeedApi endpoit
   /* TODO: check if it's html or json request
   /*/
-  IndeedApi.search(req.query).then(function(json) {
+  IndeedApi.search(req).then(function(json) {
     res.json(json);
-  });
+  })
 };
