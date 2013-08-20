@@ -1,11 +1,11 @@
 // var users = require('../controllers/users.js');
 var passport = require('passport');
+var pass      = require('../controllers/passport.js');
 
-var site = require('../controllers/site.js');
-var jobs = require('../controllers/jobs.js');
-var linkedin = require('../controllers/linkedin.js');
-var pass = require('../controllers/passport.js');
-var session = require('../controllers/session.js');
+var site      = require('../controllers/site.js');
+var jobs      = require('../controllers/jobs.js');
+var linkedin  = require('../controllers/linkedin.js');
+var session   = require('../controllers/session.js');
 
 module.exports = function(app) {
   app.get('/serverindex', site.index);
@@ -22,9 +22,11 @@ module.exports = function(app) {
     session.setSession
   );
   // LinkedIn API
-  app.get('/people/search', linkedin.search);
+  app.get('/people/search', linkedin.searchConnections);
   app.get('/people/:id', linkedin.getProfile);
+  app.get('/people/', linkedin.searchFirstDegree);
 
+  // Users
 	// app.post('/user', users.create);
 	// app.get('/user', users.list);
 	// app.get('/user/:id', users.read);
