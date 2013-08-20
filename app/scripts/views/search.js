@@ -8,14 +8,16 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   template: JST['app/scripts/templates/search.hbs'],
 
   initialize: function(){
+    this.indeedSearchResults = new PreLinked.Collections.SearchResultsCollection();
+    this.indeedSearchResultsView = new PreLinked.Views.SearchResultsView({collection: this.indeedSearchResults});
+    
+    this.indeedSearchResults.on('reset', this.indeedSearchResultsView.render, this);
     // this.model.on('change', this.render, this);
   },
 
   events: {
-    'submit form#form-search': 'searchResults'
+    'submit form#form-search': 'submitSearch'
   },
-
-  indeedSearchResults: new PreLinked.Collections.SearchResultsCollection(),
 
   submitSearch: function(e) {
     e.preventDefault();
@@ -31,19 +33,22 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     // var searchResults = new PreLinked.Collections.SearchResultsCollection();
     var that = this;
     this.indeedSearchResults
-      .fetch({ data: {q: jobTitle, l: jobLocation} })
-      .done(function(data){
-        var jobs = JSON.parse(data);
-        var results = jobs.results;
-        console.log('getSearchResults', results.length);
-        console.log('getSearchResults', data);
-
-        var searchResultsView = new PreLinked.Views.SearchResultsView({
-          collection: results
-        });
-        deferred.resolve(searchResultsView.render().el);
+      .fetch({
+        reset: true,
+        data: {q: jobTitle, l: jobLocation}
       });
-    return deferred.promise();
+    //   .done(function(data){
+    //     var jobs = JSON.parse(data);
+    //     var results = jobs.results;
+    //     console.log('getSearchResults', results.length);
+    //     console.log('getSearchResults', data);
+
+    //     var searchResultsView = new PreLinked.Views.SearchResultsView({
+    //       collection: results
+    //     });
+    //     deferred.resolve(searchResultsView.render().el);
+    //   });
+    // return deferred.promise();
   },
 
   searchResults: function(e) {
@@ -87,10 +92,10 @@ PreLinked.Views.SearchView = Backbone.View.extend({
         var results = jobs.results;
         console.log('getSearchResults', results.length);
 
-        var searchResultsView = new PreLinked.Views.SearchResultsView({
+        that.indeedSearchResultsView = new PreLinked.Views.SearchResultsView({
           collection: results
         });
-        deferred.resolve(searchResultsView.render().el);
+        deferred.resolve(that.indeedSearchResultsView.render().el);
       });
     return deferred.promise();
   },
