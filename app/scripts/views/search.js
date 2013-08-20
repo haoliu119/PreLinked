@@ -25,14 +25,31 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
     console.log('[title]-->', jobTitle, '[location]-->', jobLocation, '[keywords]-->', jobKeywords);
 
-    $.ajax({
-      type: 'GET',
-      url: '/jobs/search',
-      dataType: 'json',
-      data: {q: 'software engineer', l:'san francisco'}
-    }).done(function(data) {
-      console.log(data);
-    });
+    // $.ajax({
+    //   type: 'GET',
+    //   url: '/jobs/search',
+    //   dataType: 'json',
+    //   data: {q: 'pharmacist', l:'san francisco'}
+    // }).done(function(data) {
+    //   console.log(data);
+    // });
+    var deferred = $.Deferred();
+    var searchResults = new PreLinked.Collections.SearchResultsCollection();
+    var that = this;
+    searchResults
+      .fetch({ data: {q: 'pharmacist', l:'san francisco'} })
+      .done(function(data){
+        var jobs = JSON.parse(data);
+        var results = jobs.results;
+        console.log('getSearchResults', results.length);
+        console.log('getSearchResults', data);
+
+        var searchResultsView = new PreLinked.Views.SearchResultsView({
+          collection: results
+        });
+        deferred.resolve(searchResultsView.render().el);
+      });
+    return deferred.promise();
   },
 
   // getJobResults: function(){
@@ -59,7 +76,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     var searchResults = new PreLinked.Collections.SearchResultsCollection();
     var that = this;
     searchResults
-      .fetch({q: 'software engineer', l:'san francisco'})
+      .fetch({ data: {q: 'software engineer', l: 'san francisco'} })
       .done(function(data){
         var jobs = JSON.parse(data);
         var results = jobs.results;

@@ -24,11 +24,12 @@ IndeedApi.search = function (query) {
         deferred.reject(error);
       } else {
         deferred.resolve(body);
-        console.log(body);
+        console.log('this is the query', query);
+        console.log('this is the body', body);
       }
   });
   return deferred.promise;
-}
+};
 
 /*
 
