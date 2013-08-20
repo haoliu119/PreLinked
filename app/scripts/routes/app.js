@@ -1,4 +1,3 @@
-/*global PreLinked, Backbone*/
 
 PreLinked.Routers.AppRouter = Backbone.Router.extend({
 
@@ -12,12 +11,12 @@ PreLinked.Routers.AppRouter = Backbone.Router.extend({
   },
 
   home: function() {
-    PreLinked.trigger('changePage', {page: 'home'});
-    PreLinked.appRouter.navigate('/', { trigger: true});
+    console.log('-router-home()');
+    this.navigate('/home', { trigger: true});
   },
 
   search: function() {
-    PreLinked.trigger('changePage', {page: 'search'});
-    PreLinked.appRouter.navigate('/search', { trigger: true});
+    console.log('-router-search()');
+    this.navigate('/search', { trigger: true});
   }
 });
