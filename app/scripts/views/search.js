@@ -12,7 +12,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   },
 
   events: {
-    'submit form#form-search': 'submitSearch'
+    'submit form#form-search': 'submitSearch',
+    'click .modal-details': 'getModalConnectionDetails'
   },
 
   submitSearch: function(e) {
@@ -99,8 +100,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
       model: details
     });
     this.$el.append( detailsView.render().el );
-    debugger;
-    $('#myModal').foundation('reveal', 'open');
+    // $('#myModal').foundation('reveal', 'open');
   },
 
   render: function() {
@@ -129,7 +129,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
           .append(data);
       });
 
-    this.getModalConnectionDetails();
+    // this.getModalConnectionDetails();
     // console.log('searchModel', this.model.attributes);
     return this;
   }
