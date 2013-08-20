@@ -15,6 +15,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     'submit form#form-search': 'searchResults'
   },
 
+  indeedSearchResults: new PreLinked.Collections.SearchResultsCollection(),
+
   submitSearch: function(e) {
     e.preventDefault();
 
@@ -25,18 +27,10 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
     console.log('[title]-->', jobTitle, '[location]-->', jobLocation, '[keywords]-->', jobKeywords);
 
-    // $.ajax({
-    //   type: 'GET',
-    //   url: '/jobs/search',
-    //   dataType: 'json',
-    //   data: {q: 'pharmacist', l:'san francisco'}
-    // }).done(function(data) {
-    //   console.log(data);
-    // });
     var deferred = $.Deferred();
-    var searchResults = new PreLinked.Collections.SearchResultsCollection();
+    // var searchResults = new PreLinked.Collections.SearchResultsCollection();
     var that = this;
-    searchResults
+    this.indeedSearchResults
       .fetch({ data: {q: jobTitle, l: jobLocation} })
       .done(function(data){
         var jobs = JSON.parse(data);
@@ -86,7 +80,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     var deferred = $.Deferred();
     var searchResults = new PreLinked.Collections.SearchResultsCollection();
     var that = this;
-    searchResults
+    this.indeedSearchResults
       .fetch({ data: {q: 'software engineer', l: 'san francisco'} })
       .done(function(data){
         var jobs = JSON.parse(data);
