@@ -6,7 +6,10 @@ PreLinked.Views.HomeView = Backbone.View.extend({
 
   template: JST['app/scripts/templates/home.hbs'],
 
-  initialize: function() {
+  initialize: function(options) {
+    if(options && options.jobQuery){
+      this.jobQuery = options.jobQuery;
+    }
     // PreLinked.on('changePage', this.changePage);
   },
 
@@ -33,6 +36,10 @@ PreLinked.Views.HomeView = Backbone.View.extend({
     var that = this,
         jobTitle = this.$el.find('input[name=job-title]').val(),
         jobLocation = this.$el.find('input[name=job-location]').val();
+
+    this.jobQuery.jobTitle = jobTitle;
+    this.jobQuery.jobLocation = jobLocation;
+    console.log('after submit:', this.jobQuery);
 
     console.log('[title]-->', jobTitle, '[location]-->', jobLocation);
 

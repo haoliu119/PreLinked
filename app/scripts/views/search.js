@@ -7,7 +7,11 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
   template: JST['app/scripts/templates/search.hbs'],
 
-  initialize: function(){
+  initialize: function(options){
+    if(options && options.jobQuery) {
+      this.jobQuery = options.jobQuery;
+      console.log(this.jobQuery);
+    }
     this.indeedSearchResults = new PreLinked.Collections.SearchResultsCollection();
     this.indeedSearchResultsView = new PreLinked.Views.SearchResultsView({collection: this.indeedSearchResults});
     
