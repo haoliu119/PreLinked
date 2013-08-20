@@ -5,11 +5,12 @@ PreLinked.Views.ConnectionView = Backbone.View.extend({
   template: JST['app/scripts/templates/connections.hbs'],
 
   initialize: function(){
-    // this.listenTo(this.model, 'change', this.render);
   },
 
   render: function(){
     console.log('connection.js -render-');
+    console.log('SearchResultColleciton', this.collection);
+
     this.$el.html(this.template(
       {number_of_connections: this.collection.length}
     ));

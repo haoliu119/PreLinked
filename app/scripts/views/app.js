@@ -43,8 +43,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
         var searchView = new PreLinked.Views.SearchView({
           model: data
         });
-        that.$el.find('#main').empty();
-        that.$el.find('#main').append(searchView.render().el);
+        that.$el.find('#main').html(searchView.render().el);
       });
 
   },
