@@ -13,17 +13,17 @@ var defaults = {
   limit:    '1000'
 }
 
-IndeedApi.search = function (query) {
+IndeedApi.search = function (req) {
   var deferred = Q.defer();
   request({
     method: 'GET',
     url: endPoint,
-    qs: _.extend(defaults, query) // query properties will override defaults
+    qs: _.extend(defaults, req.query) // query properties will override defaults
     },function(error, response, body){
       if (error) {
         deferred.reject(error);
       } else {
-        deferred.resolve(body);
+        deferred.resolve(JSON.parse(body).results);
       }
   });
   return deferred.promise;
@@ -34,7 +34,7 @@ IndeedApi.search = function (query) {
 http://api.indeed.com/ads/apisearch?publisher=302158985282491&q=java&l=austin%2C+tx&sort=&radius=&st=&jt=&start=&limit=&fromage=&filter=&latlong=1&co=us&chnl=&userip=1.2.3.4&useragent=Mozilla/%2F4.0%28Firefox%29&v=2
 
 &q= queries
-  exact phrase: "software engineer" as_phr=software+engineer
+  exact phrase: "software engineer"
 
 &l= *     // location: zipcode or city, state combo
   l=12345

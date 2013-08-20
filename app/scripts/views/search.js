@@ -8,7 +8,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   template: JST['app/scripts/templates/search.hbs'],
 
   initialize: function(){
-    // this.model.on('change', this.render, this);
+    this.searchResultsView  = new PreLinked.Views.SearchResultsView({ collection: new PreLinked.Collections.SearchResultsCollection() });
+    this.connectionsView    = new PreLinked.Views.ConnectionView({ collection: new PreLinked.Collections.ConnectionsCollection() });
   },
 
   events: {
@@ -18,33 +19,14 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   submitSearch: function(e) {
     e.preventDefault();
 
-    var that = this,
-        jobTitle = this.$el.find('input[name=job-title]').val(),
+    var jobTitle    = this.$el.find('input[name=job-title]').val(),
         jobLocation = this.$el.find('input[name=job-location]').val(),
         jobKeywords = this.$el.find('input[name=job-keywords]').val();
 
-    console.log('[title]-->', jobTitle, '[location]-->', jobLocation, '[keywords]-->', jobKeywords);
+    // console.log('[title]-->', jobTitle, '[location]-->', jobLocation, '[keywords]-->', jobKeywords);
 
-    $.ajax({
-      type: 'GET',
-      url: '/jobs/search',
-      dataType: 'json',
-      data: {}
-    }).done(function(data) {
-      // console.log(data);
-    });
+    this.getJobResults(jobTitle, jobLocation, jobKeywords);
   },
-
-  // getJobResults: function(){
-  //   var searchResultsItem = [{job:'Back-end Web Developer'}, {job: 'Data Analyst'}, {job: 'Database Architect'}, {job: 'Quality Assurance Engineer'}, {job: 'Front-end Web Developer'}];
-  //   this.$el
-  //     .attr('data-page','search')
-  //     .html(this.template({
-  //       jobCount: 432,
-  //       jobTitle: 'Software Engineer',
-  //       searchResultsItem: searchResultsItem
-  //     }));
-  // },
 
   getSearchFilter: function(){
     var searchFilterModel = new PreLinked.Models.SearchfilterModel();
@@ -54,72 +36,43 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     return searchFilterView.render().el;
   },
 
-  getJobResults: function(){
+  getJobResults: function(title, location, keywords) {
     var deferred = $.Deferred();
-    var searchResults = new PreLinked.Collections.SearchResultsCollection();
     var that = this;
-    searchResults
-      .fetch()
-      .done(function(data){
-        var jobs = JSON.parse(data);
-        var results = jobs.results;
-        console.log('getSearchResults', results.length);
-
-        var searchResultsView = new PreLinked.Views.SearchResultsView({
-          collection: results
-        });
-        deferred.resolve(searchResultsView.render().el);
+    this.searchResultsView.collection
+      .fetch( {data: {q: [title, keywords].join(' ') , l: location}} )
+      .done(function(){
+        deferred.resolve(that.searchResultsView.render().el);
       });
     return deferred.promise();
   },
 
-  getConnections: function() {
+  getConnections: function(title, company, keywords) {
     var deferred = $.Deferred();
-    var connectionsResults = new PreLinked.Collections.ConnectionsCollection();
     var that = this;
-    connectionsResults
-      .fetch()
-      .done(function(data){
-        var connections = JSON.parse(data);
-        var results = connections.values;
-        console.log('getConnections', results.length);
-
-        var connectionsView = new PreLinked.Views.ConnectionView({
-          collection: results
-        });
-        deferred.resolve(connectionsView.render().el);
+    this.connectionsView.collection
+      .fetch( { data: { title: title, 'company-name': company, keywords: keywords } } )
+      .done(function(){
+        deferred.resolve(that.connectionsView.render().el);
       });
     return deferred.promise();
   },
 
   render: function() {
-    // this.getJobResults();
-    // this.getSearchResults();
     this.$el.html( this.template() );
-    this.$el
-      .find('#search-filters')
-      .empty()
-      .append( this.getSearchFilter() );
+    this.$el.find('#search-filters').html(this.getSearchFilter())
 
     var that = this;
-    this.getJobResults()
-      .done(function(data){
-        that.$el
-          .find('#job-results')
-          .empty()
-          .append(data);
+    this.getJobResults('teacher', 'washington, dc')
+      .done(function(element) {
+        that.$el.find('#job-results').html(element);
       });
 
-    this.getConnections()
-      .done(function(data) {
-        that.$el
-          .find('#connections')
-          .empty()
-          .append(data);
+    this.getConnections('teacher', '', 'washington, dc')
+      .done(function(element) {
+        that.$el.find('#connections').html(element);
       });
 
-
-    // console.log('searchModel', this.model.attributes);
     return this;
   }
 

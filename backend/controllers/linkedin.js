@@ -6,19 +6,19 @@ var linkedin    = module.exports = {};
 
 // GET /people/search
 linkedin.searchConnections = function(req, res){
-  console.log('-controller-linkedin.searchConnections-', req.params);
+  console.log('-controller-linkedin.searchConnections-', req.query);
   LinkedInApi.searchConnections(req).then(function(json) {
-    // res.json(json);
+    res.json(json);
 
   // Dummy Data
-  var fileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/dummy_linkedin_connections_search_results.json'), 'utf8');
-  res.json(fileContent);
+  // var fileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/dummy_linkedin_connections_search_results.json'), 'utf8');
+  // res.json(fileContent);
   });
 };
 
 // GET /people/:id
 linkedin.getProfile = function(req, res){
-  console.log('-controller-linkedin.getProfile-', req.params);
+  console.log('-controller-linkedin.getProfile-', req.query);
   LinkedInApi.getProfile(req)
     .then(function(json){
       res.json(json);
@@ -27,7 +27,7 @@ linkedin.getProfile = function(req, res){
 
 // GET /people/
 linkedin.searchFirstDegree = function(req, res){
-  console.log('-controller-linkedin.searchFirstDegree-', req.params);
+  console.log('-controller-linkedin.searchFirstDegree-', req.query);
   LinkedInApi.searchFirstDegree(req)
     .then(function(json){
       res.json(json);

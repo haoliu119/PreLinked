@@ -5,13 +5,14 @@ var LinkedInApi = module.exports = {};
 
 LinkedInApi.searchConnections = function (req) {
   /* expect req.query to contain:
+  title=            [title]
+  company-name=     [company name]
   keywords=         [space delimited keywords]
+
   first-name=       [first name]
   last-name=        [last name]
-  company-name=     [company name]
-  current-company=  [true|false]
-  title=            [title]
   current-title=    [true|false]
+  current-company=  [true|false]
   school-name=      [school name]
   current-school=   [true|false]
   country-code=     [country code]
@@ -44,7 +45,7 @@ LinkedInApi.searchConnections = function (req) {
       if (error) {
         deferred.reject(error);
       } else {
-        deferred.resolve(body);
+        deferred.resolve(JSON.parse(body).people.values);
       }
   });
 
