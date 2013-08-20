@@ -14,7 +14,7 @@ jobs.search = function(req, res){
   /* IndeedApi endpoit
   /* TODO: check if it's html or json request
   /*/
-  // IndeedApi.search(req.query).then(function(json) {
-  //   res.json(json);
-  // })
+  IndeedApi.search(req.query).then(function(json) {
+    res.json(json);
+  })
 };
