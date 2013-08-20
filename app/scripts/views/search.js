@@ -94,6 +94,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   },
 
   getModalConnectionDetails: function(events){
+    events.preventDefault();
     console.log('getModalConnectionDetails');
     var $target = $(events.target);
     var in_id = $target.data('in-id');
@@ -101,11 +102,16 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     var details = new PreLinked.Models.ModalconnectiondetailsModel({
       id: in_id
     });
-    var detailsView = new PreLinked.Views.ModalconnectiondetailsView({
-      model: details
-    });
-    this.$el.append( detailsView.render().el );
-    // $('#myModal').foundation('reveal', 'open');
+
+    var that = this;
+    details.fetch()
+      .done(function(data){
+        var detailsView = new PreLinked.Views.ModalconnectiondetailsView({
+          model: data
+        });
+        that.$el.append( detailsView.render().el );
+        $('#myModal').foundation('reveal', 'open');
+      });
   },
 
   render: function() {
