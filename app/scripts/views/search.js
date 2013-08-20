@@ -12,7 +12,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   },
 
   events: {
-    'submit form#form-search': 'submitSearch'
+    'submit form#form-search': 'submitSearch',
+    'click .modal-details': 'getModalConnectionDetails'
   },
 
   submitSearch: function(e) {
@@ -92,23 +93,38 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     return deferred.promise();
   },
 
+  getModalConnectionDetails: function(events){
+    console.log('getModalConnectionDetails');
+    var $target = $(events.target);
+    var in_id = $target.data('in-id');
+
+    var details = new PreLinked.Models.ModalconnectiondetailsModel({
+      id: in_id
+    });
+    var detailsView = new PreLinked.Views.ModalconnectiondetailsView({
+      model: details
+    });
+    this.$el.append( detailsView.render().el );
+    // $('#myModal').foundation('reveal', 'open');
+  },
+
   render: function() {
+    var that = this;
+    this.$el.html( this.template() );
     // this.getJobResults();
     // this.getSearchResults();
-    this.$el.html( this.template() );
-    this.$el
-      .find('#search-filters')
-      .empty()
-      .append( this.getSearchFilter() );
+    // this.$el
+    //   .find('#search-filters')
+    //   .empty()
+    //   .append( this.getSearchFilter() );
 
-    var that = this;
-    this.getJobResults()
-      .done(function(data){
-        that.$el
-          .find('#job-results')
-          .empty()
-          .append(data);
-      });
+    // this.getJobResults()
+    //   .done(function(data){
+    //     that.$el
+    //       .find('#job-results')
+    //       .empty()
+    //       .append(data);
+    //   });
 
     this.getConnections()
       .done(function(data) {
@@ -118,7 +134,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
           .append(data);
       });
 
-
+    // this.getModalConnectionDetails();
     // console.log('searchModel', this.model.attributes);
     return this;
   }
