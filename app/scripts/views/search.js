@@ -8,7 +8,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   template: JST['app/scripts/templates/search.hbs'],
 
   initialize: function(){
-    // this.model.on('change', this.render, this);
+    this.searchResultsView  = new PreLinked.Views.SearchResultsView({ collection: new PreLinked.Collections.SearchResultsCollection() });
+    this.connectionsView    = new PreLinked.Views.ConnectionView({ collection: new PreLinked.Collections.ConnectionsCollection() });
   },
 
   events: {
@@ -19,32 +20,33 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   submitSearch: function(e) {
     e.preventDefault();
 
-    var that = this,
-        jobTitle = this.$el.find('input[name=job-title]').val(),
+    var jobTitle    = this.$el.find('input[name=job-title]').val(),
         jobLocation = this.$el.find('input[name=job-location]').val(),
         jobKeywords = this.$el.find('input[name=job-keywords]').val();
 
-    console.log('[title]-->', jobTitle, '[location]-->', jobLocation, '[keywords]-->', jobKeywords);
+    // console.log('[title]-->', jobTitle, '[location]-->', jobLocation, '[keywords]-->', jobKeywords);
 
-    $.ajax({
-      type: 'GET',
-      url: '/jobs/search',
-      dataType: 'json',
-      data: {}
-    }).done(function(data) {
-      // console.log(data);
-    });
+    this.getJobResults(jobTitle, jobLocation, jobKeywords);
   },
 
-  // getJobResults: function(){
-  //   var searchResultsItem = [{job:'Back-end Web Developer'}, {job: 'Data Analyst'}, {job: 'Database Architect'}, {job: 'Quality Assurance Engineer'}, {job: 'Front-end Web Developer'}];
-  //   this.$el
-  //     .attr('data-page','search')
-  //     .html(this.template({
-  //       jobCount: 432,
-  //       jobTitle: 'Software Engineer',
-  //       searchResultsItem: searchResultsItem
-  //     }));
+  // loadLinkedInData: function() {
+  //   var connectionsElem = $("#connx"),
+  //       loadingElem = connectionsElem.find('#connection-results');
+
+  //   loadingElem.show();
+  //   IN.API.Connections('me')
+  //     .fields(['pictureUrl', 'publicProfileUrl'])
+  //     .params({'count': 50})
+  //     .result(function(result) {
+  //       var profHTML = '';
+  //       $.each(result.values, function(i,v) {
+  //         if (v.pictureUrl) {
+  //           profHTML += '<a href="' + v.publicProfileUrl + '" target="_blank">';
+  //           profHTML += '<img class="linkedin-connection-thumb" src="' + v.pictureUrl + '"></a>';
+  //         }
+  //       });
+  //       $("#connx").html(profHTML);
+  //     });
   // },
 
   getSearchFilter: function(){
@@ -55,40 +57,24 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     return searchFilterView.render().el;
   },
 
-  getJobResults: function(){
+  getJobResults: function(title, location, keywords) {
     var deferred = $.Deferred();
-    var searchResults = new PreLinked.Collections.SearchResultsCollection();
     var that = this;
-    searchResults
-      .fetch()
-      .done(function(data){
-        var jobs = JSON.parse(data);
-        var results = jobs.results;
-        console.log('getSearchResults', results.length);
-
-        var searchResultsView = new PreLinked.Views.SearchResultsView({
-          collection: results
-        });
-        deferred.resolve(searchResultsView.render().el);
+    this.searchResultsView.collection
+      .fetch( {data: {q: [title, keywords].join(' ') , l: location}} )
+      .done(function(){
+        deferred.resolve(that.searchResultsView.render().el);
       });
     return deferred.promise();
   },
 
-  getConnections: function() {
+  getConnections: function(title, company, keywords) {
     var deferred = $.Deferred();
-    var connectionsResults = new PreLinked.Collections.ConnectionsCollection();
     var that = this;
-    connectionsResults
-      .fetch()
-      .done(function(data){
-        var connections = JSON.parse(data);
-        var results = connections.values;
-        console.log('getConnections', results.length);
-
-        var connectionsView = new PreLinked.Views.ConnectionView({
-          collection: results
-        });
-        deferred.resolve(connectionsView.render().el);
+    this.connectionsView.collection
+      .fetch( { data: { title: title, 'company-name': company, keywords: keywords } } )
+      .done(function(){
+        deferred.resolve(that.connectionsView.render().el);
       });
     return deferred.promise();
   },
@@ -115,32 +101,21 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   },
 
   render: function() {
-    var that = this;
+
     this.$el.html( this.template() );
-    this.getJobResults();
-    this.$el
-      .find('#search-filters')
-      .empty()
-      .append( this.getSearchFilter() );
+    this.$el.find('#search-filters').html(this.getSearchFilter())
 
-    this.getJobResults()
-      .done(function(data){
-        that.$el
-          .find('#job-results')
-          .empty()
-          .append(data);
+    var that = this;
+    this.getJobResults('teacher', 'washington, dc')
+      .done(function(element) {
+        that.$el.find('#job-results').html(element);
       });
 
-    this.getConnections()
-      .done(function(data) {
-        that.$el
-          .find('#connections')
-          .empty()
-          .append(data);
+    this.getConnections('teacher', '', 'washington, dc')
+      .done(function(element) {
+        that.$el.find('#connections').html(element);
       });
 
-    // this.getModalConnectionDetails();
-    // console.log('searchModel', this.model.attributes);
     return this;
   }
 
