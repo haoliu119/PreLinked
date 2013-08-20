@@ -104,22 +104,22 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   },
 
   render: function() {
+    var that = this;
+    this.$el.html( this.template() );
     // this.getJobResults();
     // this.getSearchResults();
-    this.$el.html( this.template() );
-    this.$el
-      .find('#search-filters')
-      .empty()
-      .append( this.getSearchFilter() );
+    // this.$el
+    //   .find('#search-filters')
+    //   .empty()
+    //   .append( this.getSearchFilter() );
 
-    var that = this;
-    this.getJobResults()
-      .done(function(data){
-        that.$el
-          .find('#job-results')
-          .empty()
-          .append(data);
-      });
+    // this.getJobResults()
+    //   .done(function(data){
+    //     that.$el
+    //       .find('#job-results')
+    //       .empty()
+    //       .append(data);
+    //   });
 
     this.getConnections()
       .done(function(data) {
