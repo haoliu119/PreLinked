@@ -23,10 +23,17 @@ module.exports = function(app) {
   );
   // LinkedIn API
   app.get('/people/search', linkedin.search);
+  app.get('/people/:id', linkedin.getProfile);
 
 	// app.post('/user', users.create);
 	// app.get('/user', users.list);
 	// app.get('/user/:id', users.read);
 	// app.put('/user/:id', users.update);
 	// app.del('/user/:id', users.delete);
+
+  app.get('/test', function(req, res){
+    //this is where you test random backend functions
+    console.log('app.get(env)', app.get('env'));
+    res.end();
+  });
 };
