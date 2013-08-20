@@ -29,9 +29,9 @@ PreLinked.Views.SearchView = Backbone.View.extend({
       type: 'GET',
       url: '/jobs/search',
       dataType: 'json',
-      data: {}
+      data: {q: 'software engineer', l:'san francisco'}
     }).done(function(data) {
-      // console.log(data);
+      console.log(data);
     });
   },
 
@@ -59,7 +59,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     var searchResults = new PreLinked.Collections.SearchResultsCollection();
     var that = this;
     searchResults
-      .fetch()
+      .fetch({q: 'software engineer', l:'san francisco'})
       .done(function(data){
         var jobs = JSON.parse(data);
         var results = jobs.results;

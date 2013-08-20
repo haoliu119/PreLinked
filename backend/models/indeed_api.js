@@ -10,7 +10,7 @@ var defaults = {
   latlong:  '1',      // return geo coordiantes for each result
   filter:   '1',      // filter duplicate results
   sort:     'relevance',
-  limit:    '1000'
+  limit:    '2'
 }
 
 IndeedApi.search = function (query) {
@@ -24,6 +24,7 @@ IndeedApi.search = function (query) {
         deferred.reject(error);
       } else {
         deferred.resolve(body);
+        console.log(body);
       }
   });
   return deferred.promise;
