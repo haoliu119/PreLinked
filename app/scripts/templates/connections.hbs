@@ -1,16 +1,18 @@
 <fieldset >
   <legend><a href="#">{{number_of_connections}} connections</a></legend>
-  <script type="IN/Login" data-onAuth="loadLinkedInData"></script>
-  <div id="connx">
+  <script type="IN/Login">
+    Hello, <?js= firstName ?> <?js= lastName ?>!
+  </script>
 
-    <div class="loading" style="display:none;">
-      Loading...
-    </div>
+  <div id="connx">
+    Loading...
   </div>
   <div id="connection-results" class="scroll">
     Loading...
   </div>
+
   <script>
+    console.log('LinkedIn isAuth:', IN.User.isAuthorized());
     IN.init();
   </script>
 </fieldset>

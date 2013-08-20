@@ -9,6 +9,12 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
   initialize: function(){
     // this.model.on('change', this.render, this);
+    IN.User.authorize(function() {
+      IN.API.Profile("me")
+        .result(function(result) {
+          console.log(JSON.stringify(result));
+        });
+    });
   },
 
   events: {
@@ -112,6 +118,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
         });
         deferred.resolve(connectionsView.render().el);
       });
+
     return deferred.promise();
   },
 
