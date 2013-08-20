@@ -24,7 +24,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.number_of_connections) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.number_of_connections; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + " connections</a></legend>\n  <div id=\"connection-results\">\n    Loading...\n  </div>\n</fieldset>\n";
+    + " connections</a></legend>\n  <script type=\"in/Login\">\n    Hello, <?js= firstName ?> <?js= lastName ?>.\n  </script>\n  <script>\n    IN.init();\n  </script>\n  <div id=\"connection-results\">\n    Loading...\n  </div>\n</fieldset>\n";
   return buffer;
   });
 
