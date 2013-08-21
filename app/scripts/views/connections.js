@@ -4,7 +4,8 @@ PreLinked.Views.ConnectionView = Backbone.View.extend({
 
   template: JST['app/scripts/templates/connections.hbs'],
 
-  initialize: function(){
+  initialize: function(options) {
+    this.jobQuery = options.jobQuery;
     this.loginBox = new PreLinked.Views.LoginboxView();
   },
 
