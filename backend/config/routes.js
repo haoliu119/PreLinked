@@ -35,7 +35,11 @@ module.exports = function(app) {
 
   app.get('/session', function(req, res) {
     console.log('session:', req.session);
-    res.json(req.session);
+    if(req.session && req.session.passport && req.session.passport.user){
+      res.json(true);
+    } else {
+      res.json(false);
+    }
   });
 
   app.get('/logout', function(req, res) {
