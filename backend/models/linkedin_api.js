@@ -49,8 +49,8 @@ LinkedInApi.searchConnections = function (req) {
           var people = JSON.parse(body).people.values
           deferred.resolve(JSON.parse(body).people.values);
         } catch (error){
-          console.log('LinkedInApi error: ', error);
-          deferred.reject(error);
+          console.log('LinkedInApi error: ', error, body);
+          deferred.reject(body.message);
         }
       }
   });
