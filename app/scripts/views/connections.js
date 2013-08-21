@@ -7,6 +7,14 @@ PreLinked.Views.ConnectionView = Backbone.View.extend({
   initialize: function(){
   },
 
+  appendLoginModal: function(){
+    $('body').append('<div id="loginModal" class="reveal-modal">\
+<h2>Awesome. I have it.</h2>\
+<a href="http://localhost:3000/auth/linkedin">Login</a>\
+<a class="close-reveal-modal">&#215;</a>\
+</div>');
+  },
+
   checkLogin: function(){
     return true;
   },
@@ -14,6 +22,8 @@ PreLinked.Views.ConnectionView = Backbone.View.extend({
   render: function(){
     console.log('connection.js -render-');
     console.log('SearchResultColleciton', this.collection);
+
+    this.appendLoginModal();
 
     this.$el.html(this.template({
       number_of_connections: this.collection.length,
