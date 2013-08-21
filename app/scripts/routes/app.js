@@ -7,16 +7,17 @@ PreLinked.Routers.AppRouter = Backbone.Router.extend({
 
   routes: {
     '': 'home',
+    'home': 'home',
     'search': 'search'
   },
 
   home: function() {
-    console.log('-router-home()');
-    this.navigate('/home', { trigger: true});
+    // console.log('-router-home()');
+    // this.navigate('/home', { trigger: true});
   },
 
   search: function() {
-    console.log('-router-search()');
-    this.navigate('/search', { trigger: true});
+    // console.log('-router-search()');
+    // this.navigate('/search', { trigger: true});
   }
 });

@@ -4,18 +4,18 @@ PreLinked.Views.SearchResultsView = Backbone.View.extend({
 
   template: JST['app/scripts/templates/searchResults.hbs'],
 
-  initialize: function(){
+  initialize: function(options) {
+    this.jobQuery = options.jobQuery;
   },
 
   render: function() {
-    console.log('SearchResultsView render()', this.collection.length);
-    console.log('SearchResultColleciton', this.collection);
 
-    this.$el.append(this.template(
-      {jobCount: this.collection.length}
+    this.$el.html(this.template(
+      {jobCount: this.collection.length,
+        jobTitle: this.jobQuery.title}
     ));
-    this.$el.find('.jobResults').empty();
-    this.$el.find('.jobResults').append(
+
+    this.$el.find('.jobResults').html(
       this.collection.map(function(item){
         return new PreLinked.Views.SearchResultsItemView({
           model: item

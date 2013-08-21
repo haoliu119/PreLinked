@@ -8,11 +8,9 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   template: JST['app/scripts/templates/search.hbs'],
 
   initialize: function(options){
-    if(options && options.jobQuery) {
-      this.jobQuery = options.jobQuery;
-    }
-    this.searchResultsView  = new PreLinked.Views.SearchResultsView({ collection: new PreLinked.Collections.SearchResultsCollection() });
-    this.connectionsView    = new PreLinked.Views.ConnectionView({ collection: new PreLinked.Collections.ConnectionsCollection() });
+    this.jobQuery = options.jobQuery;
+    this.searchResultsView  = new PreLinked.Views.SearchResultsView({ collection: new PreLinked.Collections.SearchResultsCollection(), jobQuery: this.jobQuery });
+    this.connectionsView    = new PreLinked.Views.ConnectionView({ collection: new PreLinked.Collections.ConnectionsCollection(), jobQuery: this.jobQuery });
   },
 
   events: {
@@ -22,14 +20,10 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
   submitSearch: function(e) {
     e.preventDefault();
-
-    var jobTitle    = this.$el.find('input[name=job-title]').val(),
-        jobLocation = this.$el.find('input[name=job-location]').val(),
-        jobKeywords = this.$el.find('input[name=job-keywords]').val();
-
-    // console.log('[title]-->', jobTitle, '[location]-->', jobLocation, '[keywords]-->', jobKeywords);
-
-    this.getJobResults(jobTitle, jobLocation, jobKeywords);
+    this.jobQuery.jobTitle    = this.$el.find('input[name=job-title]').val();
+    this.jobQuery.jobLocation = this.$el.find('input[name=job-location]').val(),
+    this.jobQuery.jobKeywords = this.$el.find('input[name=job-keywords]').val();
+    this.render(true);
   },
 
   // loadLinkedInData: function() {
@@ -86,6 +80,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     this.searchResultsView.collection
       .fetch( {data: {q: [title, keywords].join(' ') , l: location}} )
       .done(function(){
+        that.searchResultsView.jobQuery.title = title; // TODO: THIS IS BEST PRACTICE??????
         deferred.resolve(that.searchResultsView.render().el);
       });
     return deferred.promise();
@@ -96,7 +91,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     var that = this;
     this.connectionsView.collection
       .fetch( { data: { title: title, 'company-name': company, keywords: keywords } } )
-      .done(function(){
+      .done(function(data){
+        // that.connectionsView.jobQuery.title = title;
         deferred.resolve(that.connectionsView.render().el);
       });
 
@@ -107,7 +103,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     events.preventDefault();
     console.log('getModalConnectionDetails');
     var $target = $(events.target);
-    var in_id = $target.data('in-id');
+    var in_id = $target.closest('a').data('in-id');
 
     var details = new PreLinked.Models.ModalconnectiondetailsModel({
       id: in_id
@@ -124,9 +120,10 @@ PreLinked.Views.SearchView = Backbone.View.extend({
       });
   },
 
-  render: function() {
-
-    this.$el.html( this.template() );
+  render: function(partial) {
+    if (!partial) {
+      this.$el.html( this.template() );
+    }
     this.$el.find('#search-filters').html(this.getSearchFilter())
 
     var that = this;
@@ -135,7 +132,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
         that.$el.find('#job-results').html(element);
       });
 
-    this.getConnections('teacher', '', 'washington, dc')
+    this.getConnections(that.jobQuery.jobTitle, '', that.jobQuery.jobLocation)
       .done(function(element) {
         that.$el.find('#connections').html(element);
       });
