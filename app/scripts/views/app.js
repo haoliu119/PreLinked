@@ -6,6 +6,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
   template: JST['app/scripts/templates/app.hbs'],
 
   initialize: function() {
+
     this.jobQuery = {};
 
     this.render();
@@ -13,13 +14,13 @@ PreLinked.Views.AppView = Backbone.View.extend({
     PreLinked.appRouter = new PreLinked.Routers.AppRouter();
     PreLinked.appRouter.on('route:home', this.homePage, this);
     PreLinked.appRouter.on('route:search', this.searchPage, this);
+
     Backbone.history.start({
       pushState: false,
       root: '/',
       silent: true
     });
     Backbone.history.loadUrl();
-
   },
 
   homePage: function(){
@@ -52,8 +53,6 @@ PreLinked.Views.AppView = Backbone.View.extend({
       });
 
   },
-
-
 
   render: function() {
     this.$el.html(this.template(this.model.attributes));
