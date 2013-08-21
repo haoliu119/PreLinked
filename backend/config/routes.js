@@ -27,6 +27,7 @@ module.exports = function(app) {
   app.get('/logout', function(req, res) {
     req.session.destroy(function(){
       // res.redirect('/#home');
+      res.send(200, 'You are logged out!');
     });
   });
 
