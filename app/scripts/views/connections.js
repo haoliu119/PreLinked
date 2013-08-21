@@ -30,7 +30,7 @@ PreLinked.Views.ConnectionView = Backbone.View.extend({
       .find('#login-box')
       .html(this.loginBox.render().el);
 
-    if( !this.collection.length ){ //if collection is NOT empty
+    if( this.collection.length ){ //if collection is NOT empty
       this.$el.find('#connection-results').empty();
       this.$el.find('#connection-results').append(
         this.collection.map(function(item) {
