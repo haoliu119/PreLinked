@@ -103,7 +103,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     events.preventDefault();
     console.log('getModalConnectionDetails');
     var $target = $(events.target);
-    var in_id = $target.data('in-id');
+    var in_id = $target.closest('a').data('in-id');
 
     var details = new PreLinked.Models.ModalconnectiondetailsModel({
       id: in_id
