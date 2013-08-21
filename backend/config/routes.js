@@ -1,26 +1,35 @@
 // var users = require('../controllers/users.js');
+// var session   = require('../controllers/session.js');
 var passport = require('passport');
 var pass      = require('../controllers/passport.js');
 
 var site      = require('../controllers/site.js');
 var jobs      = require('../controllers/jobs.js');
 var linkedin  = require('../controllers/linkedin.js');
-var session   = require('../controllers/session.js');
 
 module.exports = function(app) {
   app.get('/serverindex', site.index);
+
   //Jobs
   app.get('/jobs/search', jobs.search);
+
   //LinkedIn Oauth
   app.get('/auth/linkedin',
     passport.authenticate('linkedin',
       { scope: ['r_fullprofile', 'r_network'], state: '12345'  }),
-      function(req, res) { });
-
+      function(req, res) {});
   app.get('/auth/linkedin/callback',
-    passport.authenticate('linkedin', {}),
-    session.setSession
+    passport.authenticate('linkedin', {
+      successRedirect: '/#search',
+      failureRedirect: '/#home'
+    })
   );
+  app.get('/logout', function(req, res) {
+    req.session.destroy(function(){
+      res.redirect('/#home');
+    });
+  });
+
   // LinkedIn API
   app.get('/people/search', linkedin.searchConnections);
   app.get('/people/:id', linkedin.getProfile);

@@ -32,7 +32,7 @@ LinkedInApi.searchConnections = function (req) {
     start: '0'
   };
   var id = req.session.userID;
-  var accessToken = req.session.accessToken;
+  var accessToken = req.session.passport.user.accessToken;
   var url = endPoint + "/people-search:(people:(id,first-name,last-name,public-profile-url,picture-url,headline,location:(name),relation-to-viewer:(distance),summary,specialties,positions,skills),num-results)";
   request({
     method: 'GET',
@@ -45,13 +45,17 @@ LinkedInApi.searchConnections = function (req) {
       if (error) {
         deferred.reject(error);
       } else {
-        deferred.resolve(JSON.parse(body).people.values);
+        try {
+          var people = JSON.parse(body).people.values
+          deferred.resolve(JSON.parse(body).people.values);
+        } catch (error){
+          console.log('LinkedInApi error: ', error);
+          deferred.reject(error);
+        }
       }
   });
-
   return deferred.promise;
 };
-// https://api.linkedin.com/v1/people/id=GLgKsKoL1H/connections:(headline,first-name,last-name,positions,picture-url)?format=json&oauth2_access_token=AQVdT8hXNIqHnty2zZKNdSOUtUCz0JPxW8_T4_Wx5oLKBJZUnHH3KslO4M3J2XIdLw8aRgt1tNGkl2hJnQVbOX23KunbeyFqWsNjzt7gRo92PXiGm6FUYo6ICoDT6BZzO4YTS9G7sRu5wVoHiq5_dijFHAkbj8bNGBmaImq_3jnl1cGqxjw
 
 LinkedInApi.getProfile = function(req){
   // console.log('req.session', req.session);
@@ -67,7 +71,7 @@ LinkedInApi.getProfile = function(req){
       method: 'GET',
       url: url,
       qs: _.extend(defaults, {
-        oauth2_access_token: req.session.accessToken
+        oauth2_access_token: req.session.passport.user.accessToken
       })
     }, function(error, response, body){
       if (error) {
@@ -93,7 +97,7 @@ LinkedInApi.searchFirstDegree = function (req) {
     start: '0'
   };
   var id = req.session.userID;
-  var accessToken = req.session.accessToken;
+  var accessToken = req.session.passport.user.accessToken;
   var url = endPoint + "id=" + id + "/connections:(headline,first-name,last-name,positions,picture-url)";
   request({
     method: 'GET',
@@ -106,6 +110,7 @@ LinkedInApi.searchFirstDegree = function (req) {
       if (error) {
         deferred.reject(error);
       } else {
+        console.log('body >>>>>>>>>>>>', body);
         deferred.resolve(body);
       }
   });
