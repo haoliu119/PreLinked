@@ -7,7 +7,10 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
   template: JST['app/scripts/templates/search.hbs'],
 
-  initialize: function(){
+  initialize: function(options){
+    if(options && options.jobQuery) {
+      this.jobQuery = options.jobQuery;
+    }
     this.searchResultsView  = new PreLinked.Views.SearchResultsView({ collection: new PreLinked.Collections.SearchResultsCollection() });
     this.connectionsView    = new PreLinked.Views.ConnectionView({ collection: new PreLinked.Collections.ConnectionsCollection() });
   },
@@ -106,7 +109,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     this.$el.find('#search-filters').html(this.getSearchFilter())
 
     var that = this;
-    this.getJobResults('teacher', 'washington, dc')
+    this.getJobResults(that.jobQuery.jobTitle, that.jobQuery.jobLocation)
       .done(function(element) {
         that.$el.find('#job-results').html(element);
       });
