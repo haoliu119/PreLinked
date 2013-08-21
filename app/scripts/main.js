@@ -13,7 +13,6 @@ window.PreLinked = {
     var app_view = new this.Views.AppView({
       model: app_model
     });
-
   }
 };
 

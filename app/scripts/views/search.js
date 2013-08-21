@@ -9,12 +9,6 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
   initialize: function(){
     // this.model.on('change', this.render, this);
-    IN.User.authorize(function() {
-      IN.API.Profile("me")
-        .result(function(result) {
-          console.log(JSON.stringify(result));
-        });
-    });
   },
 
   events: {
@@ -62,14 +56,14 @@ PreLinked.Views.SearchView = Backbone.View.extend({
       .fields(['pictureUrl', 'publicProfileUrl'])
       .params({'count': 50})
       .result(function(result) {
-        var profHTML = '';
-        $.each(result.values, function(i,v) {
-          if (v.pictureUrl) {
-            profHTML += '<a href="' + v.publicProfileUrl + '" target="_blank">';
-            profHTML += '<img class="linkedin-connection-thumb" src="' + v.pictureUrl + '"></a>';
-          }
-        });
-        $("#connx").html(profHTML);
+        // var profHTML = '';
+        // $.each(result.values, function(i,v) {
+        //   if (v.pictureUrl) {
+        //     profHTML += '<a href="' + v.publicProfileUrl + '" target="_blank">';
+        //     profHTML += '<img class="linkedin-connection-thumb" src="' + v.pictureUrl + '"></a>';
+        //   }
+        // });
+        // $("#connx").html(profHTML);
       });
   },
 
