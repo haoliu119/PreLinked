@@ -8,29 +8,29 @@ var linkedin    = module.exports = {};
 linkedin.searchConnections = function(req, res){
   console.log('GET /people/search - Controller - LinkedIn.searchConnections - req.session >> ', req.session);
   //if user is logged in through LinkedIn
-  if (req.session.passport.user){
-    LinkedInApi.searchConnections(req)
-      .done(
-        function(json) {
-          console.log('FULLFILLED !!!!!!!!!!!!!!');
-          if ( json !== null ) {
-            res.json(json);
-          } else {
-            res.send(204); //204 No Content
-          }
-        },
-        function(error) {
-          console.log('REJECTED with error >>>>>>> ', error);
-          res.send(401, error); //401 Unauthorized
-        });
-  } else {
-    console.log('req.session.passport.user NOT AVAILABLE, need client auth........');
-    res.send(307, 'user session.passport is not available');
-  }
+  // if (req.session.passport.user){
+  //   LinkedInApi.searchConnections(req)
+  //     .done(
+  //       function(json) {
+  //         console.log('FULLFILLED !!!!!!!!!!!!!!');
+  //         if ( json !== null ) {
+  //           res.json(json);
+  //         } else {
+  //           res.send(204); //204 No Content
+  //         }
+  //       },
+  //       function(error) {
+  //         console.log('REJECTED with error >>>>>>> ', error);
+  //         res.send(401, error); //401 Unauthorized
+  //       });
+  // } else {
+  //   console.log('req.session.passport.user NOT AVAILABLE, need client auth........');
+  //   res.send(307, 'user session.passport is not available');
+  // }
 
   // Dummy Data
-  // var fileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/dummy_linkedin_connections_search_results.json'), 'utf8');
-  // res.json(fileContent);
+  var fileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/dummy_linkedin_connections_search_results.json'), 'utf8');
+  res.json(fileContent);
 
 };
 
