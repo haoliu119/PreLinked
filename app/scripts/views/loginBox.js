@@ -5,6 +5,8 @@ PreLinked.Views.LoginboxView = Backbone.View.extend({
   template: JST['app/scripts/templates/loginBox.hbs'],
 
   initialize: function(){
+    this.Modal = (new PreLinked.Views.PmodalView()).pmodal;
+
     this.appendLoginModal();
 
     this.render();
