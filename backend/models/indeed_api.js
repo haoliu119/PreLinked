@@ -10,7 +10,8 @@ var defaults = {
   latlong:  '1',      // return geo coordiantes for each result
   filter:   '1',      // filter duplicate results
   sort:     'relevance',
-  limit:    '2'
+  limit:    '25',
+  highlight: '0'
 }
 
 IndeedApi.search = function (req) {
