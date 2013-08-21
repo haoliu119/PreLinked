@@ -46,8 +46,8 @@ LinkedInApi.searchConnections = function (req) {
         deferred.reject(error);
       } else {
         try {
-          var people = JSON.parse(body).people.values
-          deferred.resolve(JSON.parse(body).people.values);
+          var results = JSON.stringify(JSON.parse(body).people.values);
+          deferred.resolve(results);
         } catch (error){
           console.log('LinkedInApi error: ', error, body);
           deferred.reject(body.message);
@@ -79,24 +79,20 @@ LinkedInApi.getProfile = function(req){
         deferred.reject(error);
       } else {
         try {
-          // console.log('getProfile:', body);
-          JSON.parse(body);
           deferred.resolve(body);
         } catch (error){
-          console.log('LinkedInApi error: ', error);
-          deferred.reject(error);
+          console.log('LinkedInApi error: ', error, body);
+          deferred.reject(body.message);
         }
       }
-    }
-  );
-  // console.log('models', req.params, req.session.accessToken);
+  });
+
   return deferred.promise;
 };
 
 // GET /people/
 LinkedInApi.searchFirstDegree = function (req) {
   /* expect req.query to contain:
-  /*
   /*/
   var deferred = Q.defer();
   var endPoint = "https://api.linkedin.com/v1/people/";
@@ -119,8 +115,12 @@ LinkedInApi.searchFirstDegree = function (req) {
       if (error) {
         deferred.reject(error);
       } else {
-        console.log('body >>>>>>>>>>>>', body);
-        deferred.resolve(body);
+        try {
+          deferred.resolve(body);
+        } catch (error){
+          console.log('LinkedInApi error: ', error, body);
+          deferred.reject(body.message);
+        }
       }
   });
 

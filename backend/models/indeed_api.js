@@ -24,7 +24,13 @@ IndeedApi.search = function (req) {
       if (error) {
         deferred.reject(error);
       } else {
-        deferred.resolve(JSON.parse(body).results);
+        try {
+          var results = JSON.stringify(JSON.parse(body).results);
+          deferred.resolve(results);
+        } catch (error){
+          console.log('IndeedApi error: ', error, body);
+          deferred.reject(body);
+        }
       }
   });
   return deferred.promise;

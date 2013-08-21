@@ -72,7 +72,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
       .fetch( { data: { title: title, 'company-name': company, keywords: keywords } } )
       .done(function(data){
         // that.connectionsView.jobQuery.title = title;
-        console.log('connections data >>>>', data);
+        console.log('GET people/search return >>>', data);
         deferred.resolve(that.connectionsView.render().el);
       });
 
