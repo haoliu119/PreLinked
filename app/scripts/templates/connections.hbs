@@ -1,16 +1,25 @@
 <fieldset >
   <legend><a href="#">{{number_of_connections}} connections</a></legend>
-  <script type="IN/Login" data-onAuth="loadLinkedInData"></script>
-  <div id="connx">
+  <!--script type="IN/Login">
+    Hello, <?js= firstName ?> <?js= lastName ?>!
+  </script-->
+  <div id="login-box">
+    {{#if checkLogin}}
+      Welcome. You are logged in.
+    {{else}}
+      <a class="in-login button" data-reveal-id="loginModal">login with linkedin</a>
+    {{/if}}
+  </div>
 
-    <div class="loading" style="display:none;">
-      Loading...
-    </div>
+  <div id="connx">
+    Loading...
   </div>
   <div id="connection-results" class="scroll">
     Loading...
   </div>
-  <script>
+
+  <!--script>
+    console.log('LinkedIn isAuth:', IN.User.isAuthorized());
     IN.init();
-  </script>
+  </script-->
 </fieldset>

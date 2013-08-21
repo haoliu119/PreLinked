@@ -33,6 +33,21 @@ module.exports = function(app) {
 	// app.put('/user/:id', users.update);
 	// app.del('/user/:id', users.delete);
 
+  app.get('/session', function(req, res) {
+    console.log('session:', req.session);
+    if(req.session && req.session.passport && req.session.passport.user){
+      res.json(true);
+    } else {
+      res.json(false);
+    }
+  });
+
+  app.get('/logout', function(req, res) {
+    req.session.destroy(function(){
+      res.redirect('/');
+    });
+  });
+
   app.get('/test', function(req, res){
     //this is where you test random backend functions
     console.log('app.get(env)', app.get('env'));
