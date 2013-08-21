@@ -33,9 +33,9 @@ PreLinked.Views.LoginboxView = Backbone.View.extend({
   },
 
   render: function(){
-    this.$el.html( this.template({
-      checkLogin: false
-    }) );
+    // this.$el.html( this.template({
+    //   checkLogin: false
+    // }) );
 
     var output = this.checkLogin();
     var that = this;
