@@ -26,7 +26,8 @@ module.exports = function(app) {
   );
   app.get('/logout', function(req, res) {
     req.session.destroy(function(){
-      res.redirect('/#home');
+      // res.redirect('/#home');
+      res.send(200, 'You are logged out!');
     });
   });
 
@@ -49,12 +50,6 @@ module.exports = function(app) {
     } else {
       res.json(false);
     }
-  });
-
-  app.get('/logout', function(req, res) {
-    req.session.destroy(function(){
-      res.redirect('/#home');
-    });
   });
 
   app.get('/test', function(req, res){
