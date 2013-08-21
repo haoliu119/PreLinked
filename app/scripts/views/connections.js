@@ -7,13 +7,18 @@ PreLinked.Views.ConnectionView = Backbone.View.extend({
   initialize: function(){
   },
 
+  checkLogin: function(){
+    return true;
+  },
+
   render: function(){
     console.log('connection.js -render-');
     console.log('SearchResultColleciton', this.collection);
 
-    this.$el.html(this.template(
-      {number_of_connections: this.collection.length}
-    ));
+    this.$el.html(this.template({
+      number_of_connections: this.collection.length,
+      checkLogin: this.checkLogin()
+    }));
 
     this.$el.find('#connection-results').empty();
     this.$el.find('#connection-results').append(

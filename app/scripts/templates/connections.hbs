@@ -3,8 +3,13 @@
   <!--script type="IN/Login">
     Hello, <?js= firstName ?> <?js= lastName ?>!
   </script-->
-
-  <a class="in-login button" data-reveal-id="loginModal">login with linkedin</a>
+  <div id="login-box">
+    {{#if checkLogin}}
+      <a class="in-login button" data-reveal-id="loginModal">login with linkedin</a>
+    {{else}}
+      something else
+    {{/if}}
+  </div>
 
   <div id="connx">
     Loading...
