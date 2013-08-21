@@ -12,6 +12,15 @@ PreLinked.Views.LoginboxView = Backbone.View.extend({
     this.render();
   },
 
+  events: {
+    'click .in-login': 'openLoginModal'
+  },
+
+  openLoginModal: function(){
+    console.log('openLoginModal');
+    $('#loginModal').foundation('reveal', 'open');
+  },
+
   appendLoginModal: function(){
     $('body').append('<div id="loginModal" class="reveal-modal">\
 <h2>Awesome. I have it.</h2>\
