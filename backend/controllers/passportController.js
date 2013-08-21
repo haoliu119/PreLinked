@@ -1,6 +1,6 @@
-var passContr = module.exports = {};
+// var passContr = module.exports = {};
 
-passContr.setSession = function(req, res) {
-  req.session.userID = req.user.id;
-  res.redirect('/');
-};
+// passContr.setSession = function(req, res) {
+//   req.session.userID = req.user.id;
+//   res.redirect('/');
+// };
