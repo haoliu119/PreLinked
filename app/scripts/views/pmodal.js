@@ -27,10 +27,10 @@ var _setModalOptions = function(options){
       <div class="modal-footer">\
         <% if (allowCancel) { %>\
           <% if (cancelText) { %>\
-            <a href="#" class="btn cancel btn-inverse">{{cancelText}}</a>\
+            <a href="#" class="button cancel radius">{{cancelText}}</a>\
           <% } %>\
         <% } %>\
-        <a href="#" class="btn ok btn-primary btn-warning">{{okText}}</a>\
+        <a href="#" class="button ok radius success">{{okText}}</a>\
       </div>\
     <% } %>\
   ');
@@ -57,7 +57,7 @@ PreLinked.Views.PmodalView = Backbone.View.extend({
 
   pmodal: Backbone.View.extend({
 
-    className: 'modal',
+    className: 'modal reveal-modal',
 
     events: {
       'click .close': function(event) {
@@ -77,6 +77,8 @@ PreLinked.Views.PmodalView = Backbone.View.extend({
         if (this.options.content && this.options.content.trigger) {
           this.options.content.trigger('cancel', this);
         }
+
+        this.close(); //the best place for this line?
       },
       'click .ok': function(event) {
         event.preventDefault();
@@ -148,6 +150,7 @@ PreLinked.Views.PmodalView = Backbone.View.extend({
 
       this.isRendered = true;
 
+
       return this;
     },
 
@@ -159,65 +162,69 @@ PreLinked.Views.PmodalView = Backbone.View.extend({
     open: function(cb) {
       if (!this.isRendered) this.render();
 
+      $('body').append(this.$el);
+
       var self = this,
           $el = this.$el;
 
-      //Create it
-      $el.modal(_.extend({
-        keyboard: this.options.allowCancel,
-        backdrop: this.options.allowCancel ? true : 'static'
-      }, this.options.modalOptions));
+      $el.foundation('reveal', 'open');
 
-      //Focus OK button
-      $el.one('shown', function() {
-        if (self.options.focusOk) {
-          $el.find('.btn.ok').focus();
-        }
+      // //Create it
+      // $el.modal(_.extend({
+      //   keyboard: this.options.allowCancel,
+      //   backdrop: this.options.allowCancel ? true : 'static'
+      // }, this.options.modalOptions));
 
-        if (self.options.content && self.options.content.trigger) {
-          self.options.content.trigger('shown', self);
-        }
+      // //Focus OK button
+      // $el.one('shown', function() {
+      //   if (self.options.focusOk) {
+      //     $el.find('.btn.ok').focus();
+      //   }
 
-        self.trigger('shown');
-      });
+      //   if (self.options.content && self.options.content.trigger) {
+      //     self.options.content.trigger('shown', self);
+      //   }
 
-      //Adjust the modal and backdrop z-index; for dealing with multiple modals
-      var numModals = Modal.count,
-          $backdrop = $('.modal-backdrop:eq('+numModals+')'),
-          backdropIndex = parseInt($backdrop.css('z-index'),10),
-          elIndex = parseInt($backdrop.css('z-index'), 10);
+      //   self.trigger('shown');
+      // });
 
-      $backdrop.css('z-index', backdropIndex + numModals);
-      this.$el.css('z-index', elIndex + numModals);
+      // //Adjust the modal and backdrop z-index; for dealing with multiple modals
+      // var numModals = Modal.count,
+      //     $backdrop = $('.modal-backdrop:eq('+numModals+')'),
+      //     backdropIndex = parseInt($backdrop.css('z-index'),10),
+      //     elIndex = parseInt($backdrop.css('z-index'), 10);
 
-      if (this.options.allowCancel) {
-        $backdrop.one('click', function() {
-          if (self.options.content && self.options.content.trigger) {
-            self.options.content.trigger('cancel', self);
-          }
+      // $backdrop.css('z-index', backdropIndex + numModals);
+      // this.$el.css('z-index', elIndex + numModals);
 
-          self.trigger('cancel');
-        });
+      // if (this.options.allowCancel) {
+      //   $backdrop.one('click', function() {
+      //     if (self.options.content && self.options.content.trigger) {
+      //       self.options.content.trigger('cancel', self);
+      //     }
 
-        $(document).one('keyup.dismiss.modal', function (e) {
-          e.which == 27 && self.trigger('cancel');
+      //     self.trigger('cancel');
+      //   });
 
-          if (self.options.content && self.options.content.trigger) {
-            e.which == 27 && self.options.content.trigger('shown', self);
-          }
-        });
-      }
+      //   $(document).one('keyup.dismiss.modal', function (e) {
+      //     e.which == 27 && self.trigger('cancel');
 
-      this.on('cancel', function() {
-        self.close();
-      });
+      //     if (self.options.content && self.options.content.trigger) {
+      //       e.which == 27 && self.options.content.trigger('shown', self);
+      //     }
+      //   });
+      // }
 
-      Modal.count++;
+      // this.on('cancel', function() {
+      //   self.close();
+      // });
 
-      //Run callback on OK if provided
-      if (cb) {
-        self.on('ok', cb);
-      }
+      // Modal.count++;
+
+      // //Run callback on OK if provided
+      // if (cb) {
+      //   self.on('ok', cb);
+      // }
 
       return this;
     },
@@ -249,9 +256,8 @@ PreLinked.Views.PmodalView = Backbone.View.extend({
         self.trigger('hidden');
       });
 
-      $el.modal('hide');
+      $el.foundation('reveal', 'close');
 
-      Modal.count--;
     },
 
     /**
@@ -261,13 +267,6 @@ PreLinked.Views.PmodalView = Backbone.View.extend({
     preventClose: function() {
       this._preventClose = true;
     }
-  },
-  {
-    //STATICS
-
-    //The number of modals on display
-    count: 0
   }), //close pmodal
-
 
 });

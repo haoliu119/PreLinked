@@ -66,7 +66,6 @@ PreLinked.Views.AppView = Backbone.View.extend({
   render: function() {
     this.$el.html(this.template(this.model.attributes));
     //App level
-
     this.testModal();
     return this;
   }
