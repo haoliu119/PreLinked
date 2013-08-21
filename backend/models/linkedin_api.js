@@ -79,7 +79,8 @@ LinkedInApi.getProfile = function(req){
         deferred.reject(error);
       } else {
         try {
-          var people = JSON.parse(body).people.values
+          // console.log('getProfile:', body);
+          JSON.parse(body);
           deferred.resolve(body);
         } catch (error){
           console.log('LinkedInApi error: ', error);
