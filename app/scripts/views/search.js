@@ -139,6 +139,15 @@ PreLinked.Views.SearchView = Backbone.View.extend({
       .done(function(element) {
         that.$el.find('#connections').html(element);
       });
+    $('body').append('<a class="in-login button" data-reveal-id="loginModal">login with linkedin</a>');
+
+    $('body').append('<div id="loginModal" class="reveal-modal">\
+<h2>Awesome. I have it.</h2>\
+<a href="http://localhost:3000/auth/linkedin">Login</a>\
+<p class="lead">Your couch.  It is mine.</p>\
+<p>Im a cool paragraph that lives inside of an even cooler modal. Wins</p>\
+<a class="close-reveal-modal">&#215;</a>\
+</div>');
 
     return this;
   }
