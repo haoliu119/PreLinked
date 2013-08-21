@@ -10,7 +10,7 @@ var defaults = {
   latlong:  '1',      // return geo coordiantes for each result
   filter:   '1',      // filter duplicate results
   sort:     'relevance',
-  limit:    '1000'
+  limit:    '2'
 }
 
 IndeedApi.search = function (req) {
@@ -27,7 +27,7 @@ IndeedApi.search = function (req) {
       }
   });
   return deferred.promise;
-}
+};
 
 /*
 
