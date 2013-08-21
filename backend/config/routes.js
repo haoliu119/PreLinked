@@ -26,7 +26,7 @@ module.exports = function(app) {
   );
   app.get('/logout', function(req, res) {
     req.session.destroy(function(){
-      res.redirect('/#home');
+      // res.redirect('/#home');
     });
   });
 
@@ -49,12 +49,6 @@ module.exports = function(app) {
     } else {
       res.json(false);
     }
-  });
-
-  app.get('/logout', function(req, res) {
-    req.session.destroy(function(){
-      res.redirect('/#home');
-    });
   });
 
   app.get('/test', function(req, res){
