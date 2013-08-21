@@ -31,7 +31,7 @@ linkedin.searchConnections = function(req, res){
 
 // GET /people/:id
 linkedin.getProfile = function(req, res){
-  console.log('-controller-linkedin.getProfile-', req.query);
+  console.log('-controller-linkedin.getProfile-');
   LinkedInApi.getProfile(req)
     .then(function(json){
       res.json(json);
