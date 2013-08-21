@@ -7,23 +7,53 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
   template: JST['app/scripts/templates/search.hbs'],
 
+
   initialize: function(options){
     this.jobQuery = options.jobQuery;
     this.searchResultsView  = new PreLinked.Views.SearchResultsView({ collection: new PreLinked.Collections.SearchResultsCollection(), jobQuery: this.jobQuery });
     this.connectionsView    = new PreLinked.Views.ConnectionView({ collection: new PreLinked.Collections.ConnectionsCollection(), jobQuery: this.jobQuery });
+    this.searchFilterView = new PreLinked.Views.SearchfilterView({
+      model: new PreLinked.Models.SearchfilterModel()
+    });
   },
 
   events: {
-    'submit form#form-search': 'submitSearch',
-    'click .modal-details': 'getModalConnectionDetails'
+    'click #searchFilterButton': 'submitSearch',
+    'click .modal-details': 'getModalConnectionDetails',
+    'click .jobTitleFilter': 'removeJobTitleFilter',
+    'keypress #jobTitleSearchInput': 'dontSearch'
+  },
+
+  dontSearch: function(e) {
+    var that = this;
+      if (e.keyCode == 13) {
+
+        this.jobQuery.jobTitle    = this.$el.find('input[name=job-title]').val();
+        this.jobQuery.jobLocation = this.$el.find('input[name=job-location]').val(),
+        this.jobQuery.jobKeywords = this.$el.find('input[name=job-keywords]').val();
+
+        that.searchFilterView.model.attributes.jobTitle.push(this.jobQuery.jobTitle);
+        that.searchFilterView.model.attributes.jobKeywords.push(this.jobQuery.jobKeywords);
+        that.searchFilterView.model.set('jobLocation', this.jobQuery.jobLocation);
+        // that.searchFilterView.model.set('jobKeywords', that.jobQuery.jobKeywords);
+        console.log('search filter model >>>>>>>>', that.searchFilterView.model);
+        that.searchFilterView.render();
+      }
+  },
+
+  removeJobTitleFilter: function(e) {
+    var elToRemove = e.target.className.split(' ')[1];
+    var jobTitleArray = this.searchFilterView.model.get('jobTitle');
+    var indexToRemove = _.indexOf(jobTitleArray, elToRemove);
+    jobTitleArray.splice(indexToRemove, 1);
+    this.searchFilterView.model.set('jobTitle', jobTitleArray);
+    this.searchFilterView.render();
   },
 
   submitSearch: function(e) {
     e.preventDefault();
-    this.jobQuery.jobTitle    = this.$el.find('input[name=job-title]').val();
-    this.jobQuery.jobLocation = this.$el.find('input[name=job-location]').val(),
-    this.jobQuery.jobKeywords = this.$el.find('input[name=job-keywords]').val();
     this.render(true);
+    this.searchFilterView.render();
   },
 
   // loadLinkedInData: function() {
@@ -67,11 +97,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   },
 
   getSearchFilter: function(){
-    var searchFilterModel = new PreLinked.Models.SearchfilterModel();
-    var searchFilterView = new PreLinked.Views.SearchfilterView({
-      model: searchFilterModel
-    });
-    return searchFilterView.render().el;
+    return this.searchFilterView.render().el;
   },
 
   getJobResults: function(title, location, keywords) {

@@ -2,8 +2,15 @@
 <form id="form-search">
   <label>
     Job
-    <input name="job-title" type="text" placeholder="Example: Software Engineer">
+    <input id="jobTitleSearchInput" name="job-title" type="text" placeholder="Example: Software Engineer">
   </label>
+  <div> 
+    <ul>
+    {{#each jobTitle}}
+      <li>{{this}} <a class="jobTitleFilter {{this}}"> X </a></li>
+    {{/each}}
+    </ul>
+  </div>
   <label>
     Location
     <input name="job-location" type="text" placeholder="Example: San Francisco, CA">
@@ -13,7 +20,7 @@
     <input name="job-keywords" type="text" placeholder="Example: Javascript, Node.js">
   </label>
 
-  <p>Salary</p>
+  {{! <p>Salary</p>
   <ul>
     <li><label><input type="checkbox" name="item" value="1"> item1</label></li>
     <li><label><input type="checkbox" name="item" value="1"> item1</label></li>
@@ -32,6 +39,6 @@
     <li><label><input type="checkbox" name="item" value="1"> item1</label></li>
     <li><label><input type="checkbox" name="item" value="1"> item1</label></li>
     <li><label><input type="checkbox" name="item" value="1"> item1</label></li>
-  </ul>
-  <button>Search</button>
+  </ul> }}
+  <button id="searchFilterButton">Search</button>
 </form>
