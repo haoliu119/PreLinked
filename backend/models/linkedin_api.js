@@ -2,7 +2,7 @@ var request = require('request');
 
 var LinkedInApi = module.exports = {};
 
-
+// GET /people/search
 LinkedInApi.searchConnections = function (req) {
   /* expect req.query to contain:
   title=            [title]
@@ -57,6 +57,7 @@ LinkedInApi.searchConnections = function (req) {
   return deferred.promise;
 };
 
+// GET /people/:id
 LinkedInApi.getProfile = function(req){
   // console.log('req.session', req.session);
   //http://developer.linkedin.com/documents/profile-api
@@ -77,7 +78,13 @@ LinkedInApi.getProfile = function(req){
       if (error) {
         deferred.reject(error);
       } else {
-        deferred.resolve(body);
+        try {
+          var people = JSON.parse(body).people.values
+          deferred.resolve(body);
+        } catch (error){
+          console.log('LinkedInApi error: ', error);
+          deferred.reject(error);
+        }
       }
     }
   );
@@ -85,6 +92,7 @@ LinkedInApi.getProfile = function(req){
   return deferred.promise;
 };
 
+// GET /people/
 LinkedInApi.searchFirstDegree = function (req) {
   /* expect req.query to contain:
   /*
