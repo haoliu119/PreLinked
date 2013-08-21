@@ -5,6 +5,7 @@ PreLinked.Views.ConnectionView = Backbone.View.extend({
   template: JST['app/scripts/templates/connections.hbs'],
 
   initialize: function(){
+    this.loginBox = new PreLinked.Views.LoginboxView();
   },
 
   appendLoginModal: function(){
@@ -41,15 +42,20 @@ PreLinked.Views.ConnectionView = Backbone.View.extend({
     //default
     //user is NOT logged in
 
-    var output = this.checkLogin();
-    var that = this;
-    output.done(function(data){
-      console.log('results from checkLogin', data);
-      that.$el.html(that.template({
-        number_of_connections: that.collection.length,
-        checkLogin: data
-      }));
-    });
+    this.$el
+      .find('#login-box')
+      .empty()
+      .append(this.loginBox.render().el);
+
+    // var output = this.checkLogin();
+    // var that = this;
+    // output.done(function(data){
+    //   console.log('results from checkLogin', data);
+    //   that.$el.html(that.template({
+    //     number_of_connections: that.collection.length,
+    //     checkLogin: data
+    //   }));
+    // });
 
     this.$el.find('#connection-results').empty();
     this.$el.find('#connection-results').append(
