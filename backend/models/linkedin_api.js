@@ -46,6 +46,7 @@ LinkedInApi.searchConnections = function (req) {
         deferred.reject(error);
       } else {
         deferred.resolve(JSON.parse(body).people.values);
+        // deferred.resolve(JSON.stringify([{},{}]));
       }
   });
 
