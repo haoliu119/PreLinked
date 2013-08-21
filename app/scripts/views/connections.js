@@ -16,7 +16,16 @@ PreLinked.Views.ConnectionView = Backbone.View.extend({
   },
 
   checkLogin: function(){
-    return true;
+    var deferred = $.Deferred();
+    $.ajax({
+      type: "GET",
+      url: "/session",
+      contentType: "application/json; charset=utf-8",
+      dataType: "json"
+    }).done(function(data){
+      deferred.resolve( JSON.parse(data) );
+    })
+    return deferred.promise();
   },
 
   render: function(){
@@ -27,8 +36,20 @@ PreLinked.Views.ConnectionView = Backbone.View.extend({
 
     this.$el.html(this.template({
       number_of_connections: this.collection.length,
-      checkLogin: this.checkLogin()
+      checkLogin: false
     }));
+    //default
+    //user is NOT logged in
+
+    var output = this.checkLogin();
+    var that = this;
+    output.done(function(data){
+      console.log('results from checkLogin', data);
+      that.$el.html(that.template({
+        number_of_connections: that.collection.length,
+        checkLogin: data
+      }));
+    });
 
     this.$el.find('#connection-results').empty();
     this.$el.find('#connection-results').append(
