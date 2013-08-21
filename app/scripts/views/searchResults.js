@@ -8,8 +8,6 @@ PreLinked.Views.SearchResultsView = Backbone.View.extend({
   },
 
   render: function() {
-    console.log('SearchResultsView render()', this.collection.length);
-    console.log('SearchResultColleciton', this.collection);
 
     this.$el.append(this.template(
       {jobCount: this.collection.length}

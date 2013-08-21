@@ -7,6 +7,7 @@ PreLinked.Routers.AppRouter = Backbone.Router.extend({
 
   routes: {
     '': 'home',
+    'home': 'home',
     'search': 'search'
   },
 

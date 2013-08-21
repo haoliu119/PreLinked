@@ -1,6 +1,5 @@
 var passport = require('passport');
 var LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;
-// var mongoose = require('mongoose');
 var UserModel = require('../models/users.js').userModel;
 
 var pass = module.exports = {};
@@ -24,7 +23,14 @@ pass.keys = passport.use(new LinkedInStrategy({
       UserModel.findOne({ id: profile.id },function(err, users){
         if(err) {throw new Error(err);}
         if(users && users.id) {
-          // users.accessToken = accessToken;
+          users.accessToken = accessToken;
+          users.save(function(err) {
+            if(err) {
+              console.log(err);
+            } else {
+              console.log('success', users.accessToken);
+            }
+          });
         } else {
           var userData = {
             id: profile.id,
@@ -34,14 +40,12 @@ pass.keys = passport.use(new LinkedInStrategy({
           };
 
           var user = new UserModel(userData);
-
           user.save(function (err, user) {
             if (err) throw err;
-            // TODO: .SAVE IS ASYNCH, MAY BREAK THE SESSION SAVING
           });
         }
       });
-
+    profile.accessToken = accessToken;
     return done(null, profile);
     });
   }
