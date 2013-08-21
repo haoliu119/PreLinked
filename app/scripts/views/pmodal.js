@@ -15,7 +15,7 @@ var _setModalOptions = function(options){
     <% if (title) { %>\
       <div class="modal-header">\
         <% if (allowCancel) { %>\
-          <a class="close">&times;</a>\
+          <a class="close-reveal-modal">&times;</a>\
         <% } %>\
         <h3>{{title}}</h3>\
       </div>\
