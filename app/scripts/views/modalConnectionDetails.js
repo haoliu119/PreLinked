@@ -5,7 +5,9 @@ PreLinked.Views.ModalconnectiondetailsView = Backbone.View.extend({
   template: JST['app/scripts/templates/modalConnectionDetails.hbs'],
 
   render: function(){
-    this.$el.append( this.template(this.model) );
+    //todo
+    //fix JSON.parse(this.model)
+    this.$el.append( this.template(JSON.parse(this.model)) );
     return this;
   }
 

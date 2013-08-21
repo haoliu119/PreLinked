@@ -7,7 +7,10 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
   template: JST['app/scripts/templates/search.hbs'],
 
-  initialize: function(){
+  initialize: function(options){
+    if(options && options.jobQuery) {
+      this.jobQuery = options.jobQuery;
+    }
     this.searchResultsView  = new PreLinked.Views.SearchResultsView({ collection: new PreLinked.Collections.SearchResultsCollection() });
     this.connectionsView    = new PreLinked.Views.ConnectionView({ collection: new PreLinked.Collections.ConnectionsCollection() });
   },
@@ -49,6 +52,26 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   //     });
   // },
 
+  loadLinkedInData: function() {
+    var connectionsElem = $("#connx"),
+        loadingElem = connectionsElem.find('#connection-results');
+
+    loadingElem.show();
+    IN.API.Connections('me')
+      .fields(['pictureUrl', 'publicProfileUrl'])
+      .params({'count': 50})
+      .result(function(result) {
+        // var profHTML = '';
+        // $.each(result.values, function(i,v) {
+        //   if (v.pictureUrl) {
+        //     profHTML += '<a href="' + v.publicProfileUrl + '" target="_blank">';
+        //     profHTML += '<img class="linkedin-connection-thumb" src="' + v.pictureUrl + '"></a>';
+        //   }
+        // });
+        // $("#connx").html(profHTML);
+      });
+  },
+
   getSearchFilter: function(){
     var searchFilterModel = new PreLinked.Models.SearchfilterModel();
     var searchFilterView = new PreLinked.Views.SearchfilterView({
@@ -76,10 +99,12 @@ PreLinked.Views.SearchView = Backbone.View.extend({
       .done(function(data){
         deferred.resolve(that.connectionsView.render().el);
       });
+
     return deferred.promise();
   },
 
   getModalConnectionDetails: function(events){
+    events.preventDefault();
     console.log('getModalConnectionDetails');
     var $target = $(events.target);
     var in_id = $target.data('in-id');
@@ -87,11 +112,16 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     var details = new PreLinked.Models.ModalconnectiondetailsModel({
       id: in_id
     });
-    var detailsView = new PreLinked.Views.ModalconnectiondetailsView({
-      model: details
-    });
-    this.$el.append( detailsView.render().el );
-    // $('#myModal').foundation('reveal', 'open');
+
+    var that = this;
+    details.fetch()
+      .done(function(data){
+        var detailsView = new PreLinked.Views.ModalconnectiondetailsView({
+          model: data
+        });
+        that.$el.append( detailsView.render().el );
+        $('#myModal').foundation('reveal', 'open');
+      });
   },
 
   render: function() {
@@ -100,7 +130,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     this.$el.find('#search-filters').html(this.getSearchFilter())
 
     var that = this;
-    this.getJobResults('teacher', 'washington, dc')
+    this.getJobResults(that.jobQuery.jobTitle, that.jobQuery.jobLocation)
       .done(function(element) {
         that.$el.find('#job-results').html(element);
       });

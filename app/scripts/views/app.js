@@ -6,18 +6,21 @@ PreLinked.Views.AppView = Backbone.View.extend({
   template: JST['app/scripts/templates/app.hbs'],
 
   initialize: function() {
+
+    this.jobQuery = {};
+
     this.render();
 
     PreLinked.appRouter = new PreLinked.Routers.AppRouter();
     PreLinked.appRouter.on('route:home', this.homePage, this);
     PreLinked.appRouter.on('route:search', this.searchPage, this);
+
     Backbone.history.start({
       pushState: false,
       root: '/',
       silent: true
     });
     Backbone.history.loadUrl();
-
   },
 
   homePage: function(){
@@ -25,7 +28,8 @@ PreLinked.Views.AppView = Backbone.View.extend({
 
     var homeModel = new PreLinked.Models.HomeModel();
     var homeView = new PreLinked.Views.HomeView({
-      model: homeModel
+      model: homeModel,
+      jobQuery: this.jobQuery
     });
 
     this.$el.find('#main').empty();
@@ -34,6 +38,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
 
   searchPage: function(){
     console.log('-AppView-searchPage');
+    console.log('jobQuery', this.jobQuery);
 
     var searchModel = new PreLinked.Models.SearchModel();
     var that = this;
@@ -41,14 +46,13 @@ PreLinked.Views.AppView = Backbone.View.extend({
       .fetch()
       .done(function(data){
         var searchView = new PreLinked.Views.SearchView({
-          model: data
+          model: data,
+          jobQuery: that.jobQuery
         });
         that.$el.find('#main').html(searchView.render().el);
       });
 
   },
-
-
 
   render: function() {
     this.$el.html(this.template(this.model.attributes));
