@@ -54,19 +54,9 @@ PreLinked.Views.AppView = Backbone.View.extend({
 
   },
 
-  testModal: function(){
-    var Modal = (new PreLinked.Views.PmodalView()).pmodal;
-    var modal = new Modal({
-      content: "Test content",
-      title: 'Test title'
-    });
-    modal.open();
-  },
-
   render: function() {
     this.$el.html(this.template(this.model.attributes));
     //App level
-    this.testModal();
     return this;
   }
 
