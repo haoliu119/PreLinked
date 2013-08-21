@@ -14,8 +14,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   },
 
   events: {
-    'submit form#form-search': 'submitSearch',
-    'click .modal-details': 'getModalConnectionDetails'
+    'submit form#form-search': 'submitSearch'
   },
 
   submitSearch: function(e) {
@@ -24,46 +23,6 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     this.jobQuery.jobLocation = this.$el.find('input[name=job-location]').val(),
     this.jobQuery.jobKeywords = this.$el.find('input[name=job-keywords]').val();
     this.render(true);
-  },
-
-  // loadLinkedInData: function() {
-  //   var connectionsElem = $("#connx"),
-  //       loadingElem = connectionsElem.find('#connection-results');
-
-  //   loadingElem.show();
-  //   IN.API.Connections('me')
-  //     .fields(['pictureUrl', 'publicProfileUrl'])
-  //     .params({'count': 50})
-  //     .result(function(result) {
-  //       var profHTML = '';
-  //       $.each(result.values, function(i,v) {
-  //         if (v.pictureUrl) {
-  //           profHTML += '<a href="' + v.publicProfileUrl + '" target="_blank">';
-  //           profHTML += '<img class="linkedin-connection-thumb" src="' + v.pictureUrl + '"></a>';
-  //         }
-  //       });
-  //       $("#connx").html(profHTML);
-  //     });
-  // },
-
-  loadLinkedInData: function() {
-    var connectionsElem = $("#connx"),
-        loadingElem = connectionsElem.find('#connection-results');
-
-    loadingElem.show();
-    IN.API.Connections('me')
-      .fields(['pictureUrl', 'publicProfileUrl'])
-      .params({'count': 50})
-      .result(function(result) {
-        // var profHTML = '';
-        // $.each(result.values, function(i,v) {
-        //   if (v.pictureUrl) {
-        //     profHTML += '<a href="' + v.publicProfileUrl + '" target="_blank">';
-        //     profHTML += '<img class="linkedin-connection-thumb" src="' + v.pictureUrl + '"></a>';
-        //   }
-        // });
-        // $("#connx").html(profHTML);
-      });
   },
 
   getSearchFilter: function(){
@@ -82,6 +41,10 @@ PreLinked.Views.SearchView = Backbone.View.extend({
       .done(function(){
         that.searchResultsView.jobQuery.title = title; // TODO: THIS IS BEST PRACTICE??????
         deferred.resolve(that.searchResultsView.render().el);
+      })
+      .fail(function(){
+        that.searchResultsView.jobQuery.title = title; // TODO: THIS IS BEST PRACTICE??????
+        deferred.reject(that.searchResultsView.render().el);
       });
     return deferred.promise();
   },
@@ -93,31 +56,15 @@ PreLinked.Views.SearchView = Backbone.View.extend({
       .fetch( { data: { title: title, 'company-name': company, keywords: keywords } } )
       .done(function(data){
         // that.connectionsView.jobQuery.title = title;
+        console.log('GET people/search return >>>', data);
         deferred.resolve(that.connectionsView.render().el);
+      })
+      .fail(function(){
+        console.log('Fetch connections failed');
+        deferred.reject(that.connectionsView.render().el);
       });
 
     return deferred.promise();
-  },
-
-  getModalConnectionDetails: function(events){
-    events.preventDefault();
-    console.log('getModalConnectionDetails');
-    var $target = $(events.target);
-    var in_id = $target.closest('a').data('in-id');
-
-    var details = new PreLinked.Models.ModalconnectiondetailsModel({
-      id: in_id
-    });
-
-    var that = this;
-    details.fetch()
-      .done(function(data){
-        var detailsView = new PreLinked.Views.ModalconnectiondetailsView({
-          model: data
-        });
-        that.$el.append( detailsView.render().el );
-        $('#myModal').foundation('reveal', 'open');
-      });
   },
 
   render: function(partial) {
@@ -130,10 +77,16 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     this.getJobResults(that.jobQuery.jobTitle, that.jobQuery.jobLocation)
       .done(function(element) {
         that.$el.find('#job-results').html(element);
+      })
+      .fail(function(element) {
+        that.$el.find('#job-results').html(element);
       });
 
     this.getConnections(that.jobQuery.jobTitle, '', that.jobQuery.jobLocation)
       .done(function(element) {
+        that.$el.find('#connections').html(element);
+      })
+      .fail(function(element){
         that.$el.find('#connections').html(element);
       });
 
