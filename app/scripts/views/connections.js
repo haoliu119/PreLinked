@@ -20,8 +20,7 @@ PreLinked.Views.ConnectionView = Backbone.View.extend({
 
   render: function(){
     console.log('connection.js -render-');
-    console.log('CONNECTION RESULTS ', this.collection);
-    this.testModal();
+    console.log('CONNECTION RESULTS ', this.collection.length);
 
     this.$el.html(this.template({
       number_of_connections: this.collection.length
@@ -31,15 +30,17 @@ PreLinked.Views.ConnectionView = Backbone.View.extend({
       .find('#login-box')
       .html(this.loginBox.render().el);
 
-    this.$el.find('#connection-results').empty();
-    this.$el.find('#connection-results').append(
-      // TODO: DEAL WITH EXCEPTION WITH COLLECTION IS EMPTY: FOR EXAMPLE, WHEN PEOPLE SEARCH FOR POOP
-      this.collection.map(function(item) {
-        return new PreLinked.Views.ConnectionsitemView({
-          model: item
-        }).render().el;
-      })
-    );
+    if( this.collection.length ){ //if collection is NOT empty
+      this.$el.find('#connection-results').empty();
+      this.$el.find('#connection-results').append(
+        this.collection.map(function(item) {
+          return new PreLinked.Views.ConnectionsitemView({
+            model: item
+          }).render().el;
+        })
+      );
+    }
+
     return this;
   }
 

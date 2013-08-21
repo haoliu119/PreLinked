@@ -14,12 +14,14 @@ var defaults = {
   highlight: '0'
 }
 
-IndeedApi.search = function (req) {
+// GET /jobs/search
+IndeedApi.search = function (query) {
+  console.log('- GET /jobs/search - query >> ', query);
   var deferred = Q.defer();
   request({
     method: 'GET',
     url: endPoint,
-    qs: _.extend(defaults, req.query) // query properties will override defaults
+    qs: _.extend(defaults, query) // query properties will override defaults
     },function(error, response, body){
       if (error) {
         deferred.reject(error);
@@ -28,7 +30,7 @@ IndeedApi.search = function (req) {
           var results = JSON.stringify(JSON.parse(body).results);
           deferred.resolve(results);
         } catch (error){
-          console.log('IndeedApi error: ', error, body);
+          console.log('- IndeedApi error: ', error, body);
           deferred.reject(body);
         }
       }

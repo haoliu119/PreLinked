@@ -3,8 +3,9 @@ var request = require('request');
 var LinkedInApi = module.exports = {};
 
 // GET /people/search
-LinkedInApi.searchConnections = function (req) {
-  /* expect req.query to contain:
+LinkedInApi.searchConnections = function (session, query) {
+  console.log('- GET /people/search - query >> ', query);
+  /* expect query to contain:
   title=            [title]
   company-name=     [company name]
   keywords=         [space delimited keywords]
@@ -31,14 +32,14 @@ LinkedInApi.searchConnections = function (req) {
     count: '25',
     start: '0'
   };
-  var id = req.session.userID;
-  var accessToken = req.session.passport.user.accessToken;
+  var id = session.userID;
+  var accessToken = session.passport.user.accessToken;
   var url = endPoint + "/people-search:(people:(id,first-name,last-name,public-profile-url,picture-url,headline,location:(name),relation-to-viewer:(distance),summary,specialties,positions,skills),num-results)";
   request({
     method: 'GET',
     url: url,
     qs: _.extend(defaults,
-          req.query, {
+          query, {
           oauth2_access_token: accessToken,
         })
     },function(error, response, body){
@@ -49,7 +50,7 @@ LinkedInApi.searchConnections = function (req) {
           var results = JSON.stringify(JSON.parse(body).people.values);
           deferred.resolve(results);
         } catch (error){
-          console.log('LinkedInApi error: ', error, body);
+          console.log('- LinkedInApi error: ', error, body);
           deferred.reject(body.message);
         }
       }
@@ -58,11 +59,10 @@ LinkedInApi.searchConnections = function (req) {
 };
 
 // GET /people/:id
-LinkedInApi.getProfile = function(req){
-  // console.log('req.session', req.session);
+LinkedInApi.getProfile = function(session, params){
   //http://developer.linkedin.com/documents/profile-api
   var endPoint = "https://api.linkedin.com/v1/people/";
-  var url = endPoint + 'id=' + req.params.id + ":(id,first-name,last-name,industry,headline,location,summary,positions)";
+  var url = endPoint + 'id=' + params.id + ":(id,first-name,last-name,industry,headline,location,summary,positions)";
   var defaults = {
     format: 'json'
   };
@@ -72,7 +72,7 @@ LinkedInApi.getProfile = function(req){
       method: 'GET',
       url: url,
       qs: _.extend(defaults, {
-        oauth2_access_token: req.session.passport.user.accessToken
+        oauth2_access_token: session.passport.user.accessToken
       })
     }, function(error, response, body){
       if (error) {
@@ -81,7 +81,7 @@ LinkedInApi.getProfile = function(req){
         try {
           deferred.resolve(body);
         } catch (error){
-          console.log('LinkedInApi error: ', error, body);
+          console.log('- LinkedInApi error: ', error, body);
           deferred.reject(body.message);
         }
       }
@@ -91,8 +91,9 @@ LinkedInApi.getProfile = function(req){
 };
 
 // GET /people/
-LinkedInApi.searchFirstDegree = function (req) {
-  /* expect req.query to contain:
+LinkedInApi.searchFirstDegree = function (session, query) {
+  console.log('- GET /people/ - query >> ', query);
+  /* expect query to contain:
   /*/
   var deferred = Q.defer();
   var endPoint = "https://api.linkedin.com/v1/people/";
@@ -101,14 +102,14 @@ LinkedInApi.searchFirstDegree = function (req) {
     count: '1',
     start: '0'
   };
-  var id = req.session.userID;
-  var accessToken = req.session.passport.user.accessToken;
+  var id = session.userID;
+  var accessToken = session.passport.user.accessToken;
   var url = endPoint + "id=" + id + "/connections:(headline,first-name,last-name,positions,picture-url)";
   request({
     method: 'GET',
     url: url,
     qs: _.extend(defaults,
-          req.query, {
+          query, {
           oauth2_access_token: accessToken,
         })
     },function(error, response, body){
@@ -118,7 +119,7 @@ LinkedInApi.searchFirstDegree = function (req) {
         try {
           deferred.resolve(body);
         } catch (error){
-          console.log('LinkedInApi error: ', error, body);
+          console.log('- LinkedInApi error: ', error, body);
           deferred.reject(body.message);
         }
       }

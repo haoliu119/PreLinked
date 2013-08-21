@@ -41,6 +41,10 @@ PreLinked.Views.SearchView = Backbone.View.extend({
       .done(function(){
         that.searchResultsView.jobQuery.title = title; // TODO: THIS IS BEST PRACTICE??????
         deferred.resolve(that.searchResultsView.render().el);
+      })
+      .fail(function(){
+        that.searchResultsView.jobQuery.title = title; // TODO: THIS IS BEST PRACTICE??????
+        deferred.reject(that.searchResultsView.render().el);
       });
     return deferred.promise();
   },
@@ -54,6 +58,10 @@ PreLinked.Views.SearchView = Backbone.View.extend({
         // that.connectionsView.jobQuery.title = title;
         console.log('GET people/search return >>>', data);
         deferred.resolve(that.connectionsView.render().el);
+      })
+      .fail(function(){
+        console.log('Fetch connections failed');
+        deferred.reject(that.connectionsView.render().el);
       });
 
     return deferred.promise();
@@ -69,10 +77,16 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     this.getJobResults(that.jobQuery.jobTitle, that.jobQuery.jobLocation)
       .done(function(element) {
         that.$el.find('#job-results').html(element);
+      })
+      .fail(function(element) {
+        that.$el.find('#job-results').html(element);
       });
 
     this.getConnections(that.jobQuery.jobTitle, '', that.jobQuery.jobLocation)
       .done(function(element) {
+        that.$el.find('#connections').html(element);
+      })
+      .fail(function(element){
         that.$el.find('#connections').html(element);
       });
 

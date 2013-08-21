@@ -1,5 +1,5 @@
 // var users = require('../controllers/users.js');
-// var session   = require('../controllers/session.js');
+
 var passport = require('passport');
 var pass      = require('../controllers/passport.js');
 
@@ -44,17 +44,18 @@ module.exports = function(app) {
 	// app.del('/user/:id', users.delete);
 
   app.get('/session', function(req, res) {
-    console.log('session:', req.session);
     if(req.session && req.session.passport && req.session.passport.user){
+      console.log('- GET /session >> ture, accessToken >> ', req.session.passport.user.accessToken);
       res.json(true);
     } else {
+      console.log('- GET /session >> false');
       res.json(false);
     }
   });
 
   app.get('/test', function(req, res){
     //this is where you test random backend functions
-    console.log('app.get(env)', app.get('env'));
+    console.log('- GET /test - app.get(env)', app.get('env'));
     res.end();
   });
 };
