@@ -1,21 +1,25 @@
 <div id="myModal" class="reveal-modal">
-  <h2>{{headline}}</h2>
-  {{#if pictureUrl}}
-    <img src="{{pictureUrl}}">
-  {{else}}
-    <img src="http://placehold.it/80x80">
-  {{/if}}
-  <ul>
-    <li>firstName: {{firstName}}</li>
-    <li>lastName: {{lastName}}</li>
-    <li>headline: {{headline}}</li>
-    <li>industry: {{industry}}</li>
-    <li>id: {{id}}</li>
+  <div class="posr">
+    <div class="info">
+      <h2>{{headline}}</h2>
+      <ul>
+        <li>firstName: {{firstName}}</li>
+        <li>lastName: {{lastName}}</li>
+        <li>headline: {{headline}}</li>
+        <li>industry: {{industry}}</li>
+        <li>id: {{id}}</li>
 
-    <li>pictureUrl: {{pictureUrl}}</li>
-    <li>positions: {{positions}}</li>
-    <li>summary: {{summary}}</li>
-    <li>title: {{title}}</li>
-  </ul>
+        <li>pictureUrl: {{pictureUrl}}</li>
+        <li>positions: {{positions}}</li>
+        <li>summary: {{summary}}</li>
+        <li>title: {{title}}</li>
+      </ul>
+    </div>
+    {{#if pictureUrl}}
+      <img class="image" src="{{pictureUrl}}">
+    {{else}}
+      <img class="image" src="http://placehold.it/80x80">
+    {{/if}}
+  </div>
   <a class="close-reveal-modal">&#215;</a>
 </div>
