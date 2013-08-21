@@ -1,3 +1,6 @@
-#app ul li{list-style-type:none;word-break:break-all}
+#app ul li{list-style-type:none}
 #app .page.current{display:block}
 #app fieldset .scroll{max-height:600px;overflow-y:scroll}
+.each-connection{position:relative}
+.each-connection a.modal-details.img img{position:absolute;top:0;left:0}
+.each-connection .info{margin-left:90px;min-height:90px}

@@ -14,31 +14,31 @@ PreLinked.Views.ConnectionsitemView = Backbone.View.extend({
   },
 
   getModalConnectionDetails: function(events){
-  events.preventDefault();
-  var $target = $(events.target);
-  var in_id = $target.closest('a').data('in-id');
+    events.preventDefault();
+    var $target = $(events.target);
+    var in_id = $target.closest('a').data('in-id');
 
-  var details = new PreLinked.Models.ModalconnectiondetailsModel({
-    id: in_id
-  });
-
-  var that = this;
-  details.fetch()
-    .done(function(data){
-      var detailsView = new PreLinked.Views.ModalconnectiondetailsView({
-        model: data
-      });
-
-      $('body').append( detailsView.render().el );
-      //appending the modal content to body
-      //todo
-      //might not be the best way
-
-      $('#myModal').foundation('reveal', 'open');
-      //open modal
-
-      console.log('getModalConnectionDetails');
+    var details = new PreLinked.Models.ModalconnectiondetailsModel({
+      id: in_id
     });
+
+    var that = this;
+    details.fetch()
+      .done(function(data){
+        var detailsView = new PreLinked.Views.ModalconnectiondetailsView({
+          model: data
+        });
+
+        $('body').append( detailsView.render().el );
+        //appending the modal content to body
+        //todo
+        //might not be the best way
+
+        $('#myModal').foundation('reveal', 'open');
+        //open modal
+
+        console.log('getModalConnectionDetails');
+      });
   }
 
 });
