@@ -2,7 +2,7 @@ var UserModel = require('../models/users.js').userModel;
 var session = module.exports = {};
 
 session.setSession = function(req, res) {
-  console.log('SETSESSION REQ.SESSION ------------- ', req.session)
+  console.log('- SESSION CONTROLLER SHOULD BE DEPRECATED >>');
   // UserModel.findOne(
   //   { id: req.user.id },
   //   function(err, users){
@@ -15,5 +15,5 @@ session.setSession = function(req, res) {
   //       res.redirect('/#search');
   //     }
   //   });
-  res.redirect('/#search');
+  res.redirect(404, '/#home');
 };
