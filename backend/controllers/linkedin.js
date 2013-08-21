@@ -1,52 +1,74 @@
 var fs          = require('fs');
 var path        = require('path');
 var LinkedInApi = require('../models/linkedin_api.js');
+var _helper     = require('./_helper.js');
 
 var linkedin    = module.exports = {};
 
+
 // GET /people/search
 linkedin.searchConnections = function(req, res){
-  console.log('GET /people/search - Controller - LinkedIn.searchConnections - req.session >> ', req.session.passport);
+  console.log('- '+ req.method + ' ' + req.url + ' - Controller -> LinkedIn.searchConnections >> ');
   // if user is logged in through LinkedIn
   // if (req.session.passport.user){
-  //   LinkedInApi.searchConnections(req)
+  //   LinkedInApi.searchConnections(req.session, req.query)
   //     .done(
   //       //Resolved: json returned from LinkedIn API
   //       function(json) {
-  //         console.log('FULLFILLED !!!!!!!!!!!!!!', typeof json);
-  //         res.set('Content-Type', 'application/json');
-  //         res.send(json);
+  //         _helper.resolved(req, res, json);
   //       },
   //       //Rejected: error message from LinkedIn API
   //       function(error) {
-  //         console.log('REJECTED with error >>>>>>> ', error);
-  //         res.send(401, error); //401 Unauthorized
-  //       });
+  //         _helper.rejected(req, res, error);
+  //     });
   // } else {
-  //   console.log('req.session.passport.user NOT AVAILABLE, need client auth........');
-  //   res.send(307, 'user session.passport is not available'); //307 Temperory Redirect
+  //   _helper.sessionNotAvl(req, res);
   // }
 
   // // Dummy Data
   var fileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/dummy_linkedin_connections_search_results.json'), 'utf8');
-  res.set('Content-Type', 'application/json');
-  res.send(fileContent);
+  _helper.resolved(req, res, fileContent);
+
 };
 
 // GET /people/:id
 linkedin.getProfile = function(req, res){
-  console.log('-controller-linkedin.getProfile-');
-  LinkedInApi.getProfile(req)
-    .then(function(json){
-      res.json(json);
-    });
+  console.log('- '+ req.method + ' ' + req.url + req.params.id);
+  if (req.session.passport.user){
+    LinkedInApi.getProfile(req.session, req.params)
+      .done(
+        //Resolved: json returned from LinkedIn API
+        function(json) {
+          _helper.resolved(req, res, json);
+        },
+        //Rejected: error message from LinkedIn API
+        function(error) {
+          _helper.rejected(req, res, error);
+      });
+  } else {
+    _helper.sessionNotAvl(req, res);
+  }
 };
 
 // GET /people/
 linkedin.searchFirstDegree = function(req, res){
-  console.log('-controller-linkedin.searchFirstDegree-', req.query);
-  LinkedInApi.searchFirstDegree(req)
-    .then(function(json){
-      res.json(json);
-    });
+  console.log('- '+ req.method + ' ' + req.url + ' - Controler - LinkedIn.searchFirstDegree >>');
+  if (req.session.passport.user){
+    LinkedInApi.searchFirstDegree(req.session, req.query)
+      .done(
+        //Resolved: json returned from LinkedIn API
+        function(json) {
+          _helper.resolved(req, res, json);
+        },
+        //Rejected: error message from LinkedIn API
+        function(error) {
+          _helper.rejected(req, res, error);
+      });
+  } else {
+    _helper.sessionNotAvl(req, res);
+  }
 };
+
+
+
+
