@@ -14,7 +14,7 @@ PreLinked.Views.SearchResultsView = Backbone.View.extend({
       {jobCount: this.collection.length,
         jobTitle: this.jobQuery.title}
     ));
-    this.$el.find('.jobResults').empty();
+
     this.$el.find('.jobResults').html(
       this.collection.map(function(item){
         return new PreLinked.Views.SearchResultsItemView({

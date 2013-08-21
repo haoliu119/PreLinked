@@ -23,7 +23,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     this.jobQuery.jobTitle    = this.$el.find('input[name=job-title]').val();
     this.jobQuery.jobLocation = this.$el.find('input[name=job-location]').val(),
     this.jobQuery.jobKeywords = this.$el.find('input[name=job-keywords]').val();
-    this.render();
+    this.render(true);
   },
 
   // loadLinkedInData: function() {
@@ -103,7 +103,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     events.preventDefault();
     console.log('getModalConnectionDetails');
     var $target = $(events.target);
-    var in_id = $target.data('in-id');
+    var in_id = $target.closest('a').data('in-id');
 
     var details = new PreLinked.Models.ModalconnectiondetailsModel({
       id: in_id
@@ -120,9 +120,10 @@ PreLinked.Views.SearchView = Backbone.View.extend({
       });
   },
 
-  render: function() {
-
-    this.$el.html( this.template() );
+  render: function(partial) {
+    if (!partial) {
+      this.$el.html( this.template() );
+    }
     this.$el.find('#search-filters').html(this.getSearchFilter())
 
     var that = this;
