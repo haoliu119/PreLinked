@@ -6,14 +6,27 @@ var linkedin    = module.exports = {};
 
 // GET /people/search
 linkedin.searchConnections = function(req, res){
-  console.log('-controller-linkedin.searchConnections-', req.query);
-  LinkedInApi.searchConnections(req).then(function(json) {
-    res.json(json);
+  console.log('-controller-linkedin.searchConnections-', req.session);
+  if (req.session.passport.user){
+    LinkedInApi.searchConnections(req)
+      .done(
+        function(json) {
+          console.log('FULLFILLED !!!!!!!!!!!!!!');
+          res.json(json);
+        },
+        function(error) {
+          console.log('REJECTED >>>>>>> ');
+          res.redirect(404,'/');
+        });
+  } else {
+    console.log('REDIRECT!!!!!!!')
+    res.redirect('/');
+  }
 
   // Dummy Data
   // var fileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/dummy_linkedin_connections_search_results.json'), 'utf8');
   // res.json(fileContent);
-  });
+
 };
 
 // GET /people/:id

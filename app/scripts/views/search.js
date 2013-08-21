@@ -96,7 +96,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     var that = this;
     this.connectionsView.collection
       .fetch( { data: { title: title, 'company-name': company, keywords: keywords } } )
-      .done(function(){
+      .done(function(data){
         deferred.resolve(that.connectionsView.render().el);
       });
 
@@ -135,7 +135,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
         that.$el.find('#job-results').html(element);
       });
 
-    this.getConnections('teacher', '', 'washington, dc')
+    this.getConnections('poop', '', 'san diego, ca')
       .done(function(element) {
         that.$el.find('#connections').html(element);
       });
