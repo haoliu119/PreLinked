@@ -1,3 +1,4 @@
+#app .logo{width:250px}
 #app ul li{list-style-type:none}
 #app .page.current{display:block}
 #app fieldset .scroll{max-height:600px;overflow-y:scroll}
@@ -12,3 +13,4 @@
 .job h2{font-size:18px;line-height:22px;margin-bottom:5px}
 .job .info{list-style-type:none;font-size:14px;line-height:18px}
 .job .location{color:#aaa}
+#search-filters .filter-item .rm{font-weight:normal;margin-left:8px}
