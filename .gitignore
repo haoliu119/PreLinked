@@ -1,3 +1,4 @@
+.gitignore
 node_modules
 dist
 test/temp
@@ -5,3 +6,6 @@ test/temp
 app/bower_components
 .tmp
 test/bower_components/
+npm-debug.log
+.DS_Store
+app/scripts/templates.js

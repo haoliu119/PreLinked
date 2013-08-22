@@ -1,26 +1,17 @@
-var express = require('express'),
-  mongoose = require('mongoose'),
-  fs = require('fs'),
-  config = require('./config/config');
+var express = require('express');
+var http = require('http');
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://nodejitsu:06bd14fda2df534b59f2331f41f66f26@paulo.mongohq.com:10078/nodejitsudb6063054050');
 
-mongoose.connect(config.db);
-var db = mongoose.connection;
-db.on('error', function () {
-  throw new Error('unable to connect to database at ' + config.db);
+global._    = require('underscore');
+global.Q    = require('Q');
+global.app  = express();
+
+require('./config/middleware.js')(app);
+require('./config/environments.js')(app);
+require('./config/db.js')(app);
+require('./config/routes.js')(app);
+
+http.createServer(app).listen(app.get('port'), function(){
+  console.log('Express server listening on port ' + app.get('port'));
 });
-
-var modelsPath = __dirname + '/models';
-fs.readdirSync(modelsPath).forEach(function (file) {
-  if (file.indexOf('.js') >= 0) {
-    require(modelsPath + '/' + file);
-  }
-});
-
-var app = express();
-
-require('./config/express')(app, config);
-require('./config/routes')(app);
-
-console.log('Now running server at http://localhost:3000. Yo!');
-console.log('this is very');
-app.listen(config.port);

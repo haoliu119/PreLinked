@@ -6,7 +6,7 @@
     "curly": true,
     "eqeqeq": true,
     "immed": true,
-    "indent": 4,
+    "indent": 2,
     "latedef": true,
     "newcap": true,
     "noarg": true,
@@ -15,5 +15,11 @@
     "unused": true,
     "trailing": true,
     "smarttabs": true,
-    "jquery": true
+    "jquery": true,
+    "globals": {
+        "_": true,
+        "Q": true,
+        "app": true
+        "$": true
+    }
 }
