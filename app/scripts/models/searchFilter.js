@@ -7,6 +7,7 @@ PreLinked.Models.SearchfilterModel = Backbone.Model.extend({
     this.set('jobLocation', "");
     this.set('jobKeywords', []);
     this.on('addSearchFilter', this.addSearchFilter);
+    this.on('addSearchFilterOnSubmit', this.addSearchFilterOnSubmit);
     this.on('removeSearchFilter', this.removeSearchFilter);
   },
 
@@ -20,10 +21,21 @@ PreLinked.Models.SearchfilterModel = Backbone.Model.extend({
     }
   },
 
-  removeSearchFilter: function(e) {
-    var filterType = e.target.className.split(' ')[0];
-    var elToRemove = e.target.className.split(' ')[1];
+  addSearchFilterOnSubmit: function(title, location, keywords) {
+    if(title) {
+      this.attributes.jobTitle.push(title);
+    }
+    if(location) {
+      this.set('jobLocation', location);
+    }
+    if(keywords) {
+      this.attributes.jobKeywords.push(keywords);
+    }
+  },
 
+  removeSearchFilter: function(e) {
+    var filterType = e.target.className.split(' ')[1];
+    var elToRemove = e.target.className.split(' ')[2];
     if(filterType === 'removeJobTitleFilter') {
       var jobTitleArray = this.get('jobTitle');
       var indexToRemove = _.indexOf(jobTitleArray, elToRemove);

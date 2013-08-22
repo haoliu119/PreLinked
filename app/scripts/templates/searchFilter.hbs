@@ -6,7 +6,11 @@
   </label>
   <div>
     {{#each jobTitle}}
-      <a class="filter-item button tiny round secondary removeJobTitleFilter {{this}} removeFilter">{{this}}<span class="rm">&times;</span></a>
+      <a class="filter-item button tiny round secondary removeJobTitleFilter removeFilter">
+        {{this}}<span class="rm removeJobTitleFilter {{this}}">
+        &times;
+        </span>
+      </a>
     {{/each}}
   </div>
   <label>
@@ -15,7 +19,9 @@
   </label>
   <div>
     {{#if jobLocation}}
-      <a class="filter-item button tiny round secondary removeJobLocationFilter {{this}} removeFilter">{{jobLocation}}<span class="rm">&times;</span></a>
+      <a class="filter-item button tiny round secondary removeFilter">
+        {{jobLocation}} <span class="rm removeJobLocationFilter {{this}}">&times;</span>
+      </a>
     {{/if}}
   </div>
   <label>
@@ -24,8 +30,10 @@
   </label>
   <div>
     {{#each jobKeywords}}
-      <a class="filter-item button tiny round secondary removeJobKeywordsFilter {{this}} removeFilter">{{this}}<span class="rm">&times;</span></a>
+      <a class="filter-item button tiny round secondary removeFilter">
+        {{this}}<span class="rm removeJobKeywordsFilter {{this}}">&times;</span>
+      </a>
     {{/each}}
   </div>
-  <button>Search</button>
+  <button class="searchFilterButton">Search</button>
 </form>
