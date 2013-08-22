@@ -1,3 +1,4 @@
+var mongoose = require('mongoose');
 var Person = require('../models/persons.js');
 
 var persons = module.exports = {};
@@ -15,11 +16,13 @@ persons.post = function(req, res){
   return deferred.promise;
 };
 
-persons._post = function(data){
+persons._post = function(data, myId){
   var deferred = Q.defer();
+
   var person = new Person({
-    _id: data._id,
-    inPerson: data
+    _id: data.id,
+    inPerson: data,
+    firstDegree: [mongoose.Types.ObjectId(myId)]
   });
   person.save(function(error, data){
     if(error){
@@ -28,6 +31,30 @@ persons._post = function(data){
       deferred.resolve(data);
     }
   });
+  return deferred.promise;
+};
+
+persons._put = function(data, myId){
+  var deferred = Q.defer();
+
+  var query = Person.findOne({_id: data.id});
+  query.exec(function(error, oldPerson){
+    if(error){
+      console.log('Unable to find person? ', error);
+      deferred.reject(error);
+      return deferred.promise;
+    }
+    if(oldPerson){
+      //update the person
+      console.log('Find the oldPerson');
+    } else {
+      persons._post(data, myId)
+        .then(function(data){
+          deferred.resolve(data);
+        });
+    }
+  });
+
   return deferred.promise;
 };
 

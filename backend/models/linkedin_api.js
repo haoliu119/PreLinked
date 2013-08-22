@@ -103,7 +103,7 @@ LinkedInApi.searchFirstDegree = function (session, query) {
   var endPoint = "https://api.linkedin.com/v1/people/";
   var defaults = {
     format: 'json',
-    count: '500', //max is 500
+    count: '2', //max is 500
     start: '0'
   };
   var id = session.passport.user.id;

@@ -8,6 +8,9 @@ var personSchema = new Schema({
   firstDegree:   [Schema.Types.ObjectId],
   secondDegree:  [Schema.Types.ObjectId],
   thirdDegree:   [Schema.Types.ObjectId]
+},{
+  collection: 'persons'
+  //force collection to use this name
 });
 
 module.exports = mongoose.model('Person', personSchema);

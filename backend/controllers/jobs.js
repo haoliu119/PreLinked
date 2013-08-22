@@ -28,6 +28,21 @@ jobs.search = function(req, res){
 
 };
 
+var _saveFirstDegree = function(inFirstDegree, myId){
+  if(typeof inFirstDegree === 'string'){
+    inFirstDegree = JSON.parse(inFirstDegree);
+    //API returns a string
+  }
+  if(inFirstDegree && inFirstDegree.values){
+    _(inFirstDegree.values).each(function(data){
+      personsController._put(data, myId)
+        .then(function(){
+          console.log('Data saved successfully.');
+        });
+    });
+  }
+};
+
 jobs.searchSorted = function(req, res){
   console.log('-controller-jobs.searchSorted()');
   //dummy1
@@ -47,10 +62,12 @@ jobs.searchSorted = function(req, res){
 
   Q.all(promises)
     // .spread(function(indeedData, linkedinSearchData, linkedinFirstDegreeData){
-    .spread(function(linkedinFirstDegreeData){
+    .spread(function(inFirstDegree){
       // console.log('IndeedApi data: \n', indeedData);
       // console.log('LinkedInApi data: \n', linkedinSearchData);
-      console.log('LinkedInApi first degree data: \n', linkedinFirstDegreeData);
+
+      console.log('LinkedInApi first degree data: \n', inFirstDegree);
+      _saveFirstDegree(inFirstDegree, req.session.passport.user.id);
     });
 
   //dummy1
