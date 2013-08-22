@@ -5,31 +5,27 @@
     <input class="searchInput" id="jobTitleSearchInput" name="job-title" type="text" placeholder="Example: Software Engineer">
   </label>
   <div>
-    <ul>
     {{#each jobTitle}}
-      <li><a class="removeJobTitleFilter {{this}} removeFilter"> {{this}}<span>&times;</span></a></li>
+      <a class="filter-item button tiny round secondary removeJobTitleFilter {{this}} removeFilter">{{this}}<span class="rm">&times;</span></a>
     {{/each}}
-    </ul>
   </div>
   <label>
     Location
     <input class="searchInput" id="locationSearchInput" name="job-location" type="text" placeholder="Example: San Francisco, CA">
   </label>
   <div>
-    <ul>
-      <li><a class="removeJobLocationFilter {{this}} removeFilter">{{jobLocation}}<span>&times;</span></a></li>
-    </ul>
+    {{#if jobLocation}}
+      <a class="filter-item button tiny round secondary removeJobLocationFilter {{this}} removeFilter">{{jobLocation}}<span class="rm">&times;</span></a>
+    {{/if}}
   </div>
   <label>
     Keywords
     <input class="searchInput" id="keywordsSearchInput" name="job-keywords" type="text" placeholder="Example: Javascript, Node.js">
   </label>
   <div>
-    <ul>
     {{#each jobKeywords}}
-      <li><a class="removeJobKeywordsFilter {{this}} removeFilter">{{this}}<span>&times;</span></a></li>
+      <a class="filter-item button tiny round secondary removeJobKeywordsFilter {{this}} removeFilter">{{this}}<span class="rm">&times;</span></a>
     {{/each}}
-    </ul>
   </div>
   <button>Search</button>
 </form>
