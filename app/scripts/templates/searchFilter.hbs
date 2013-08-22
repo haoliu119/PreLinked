@@ -4,53 +4,28 @@
     Job
     <input class="searchInput" id="jobTitleSearchInput" name="job-title" type="text" placeholder="Example: Software Engineer">
   </label>
-  <div> 
-    <ul>
+  <div>
     {{#each jobTitle}}
-      <li>{{this}} <a class="removeJobTitleFilter {{this}} removeFilter"> &times; </a></li>
+      <a class="filter-item button tiny round secondary removeJobTitleFilter {{this}} removeFilter">{{this}}<span class="rm">&times;</span></a>
     {{/each}}
-    </ul>
   </div>
   <label>
     Location
     <input class="searchInput" id="locationSearchInput" name="job-location" type="text" placeholder="Example: San Francisco, CA">
   </label>
-  <div> 
-    <ul>
-      <li>{{jobLocation}} <a class="removeJobLocationFilter {{this}} removeFilter"> &times; </a></li>
-    </ul>
+  <div>
+    {{#if jobLocation}}
+      <a class="filter-item button tiny round secondary removeJobLocationFilter {{this}} removeFilter">{{jobLocation}}<span class="rm">&times;</span></a>
+    {{/if}}
   </div>
   <label>
     Keywords
     <input class="searchInput" id="keywordsSearchInput" name="job-keywords" type="text" placeholder="Example: Javascript, Node.js">
   </label>
-  <div> 
-    <ul>
+  <div>
     {{#each jobKeywords}}
-      <li>{{this}} <a class="removeJobKeywordsFilter {{this}} removeFilter"> &times; </a></li>
+      <a class="filter-item button tiny round secondary removeJobKeywordsFilter {{this}} removeFilter">{{this}}<span class="rm">&times;</span></a>
     {{/each}}
-    </ul>
   </div>
-
-  {{! <p>Salary</p>
-  <ul>
-    <li><label><input type="checkbox" name="item" value="1"> item1</label></li>
-    <li><label><input type="checkbox" name="item" value="1"> item1</label></li>
-    <li><label><input type="checkbox" name="item" value="1"> item1</label></li>
-  </ul>
-
-  <p>Title</p>
-  <ul>
-    <li><label><input type="checkbox" name="item" value="1"> item1</label></li>
-    <li><label><input type="checkbox" name="item" value="1"> item1</label></li>
-    <li><label><input type="checkbox" name="item" value="1"> item1</label></li>
-  </ul>
-
-  <p>Company</p>
-  <ul>
-    <li><label><input type="checkbox" name="item" value="1"> item1</label></li>
-    <li><label><input type="checkbox" name="item" value="1"> item1</label></li>
-    <li><label><input type="checkbox" name="item" value="1"> item1</label></li>
-  </ul> }}
-  <button id="searchFilterButton">Search</button>
+  <button>Search</button>
 </form>
