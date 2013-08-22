@@ -93,6 +93,7 @@ LinkedInApi.getProfile = function(session, params){
 
 // GET /people/
 LinkedInApi.searchFirstDegree = function (session, query) {
+  console.log('- GET /people/ - session >> ', session);
   console.log('- GET /people/ - query >> ', query);
   /* expect query to contain:
   /*/
@@ -100,12 +101,12 @@ LinkedInApi.searchFirstDegree = function (session, query) {
   var endPoint = "https://api.linkedin.com/v1/people/";
   var defaults = {
     format: 'json',
-    count: '1',
+    count: '500', //max is 500
     start: '0'
   };
-  var id = session.userID;
+  var id = session.passport.user.id;
   var accessToken = session.passport.user.accessToken;
-  var url = endPoint + "id=" + id + "/connections:(headline,first-name,last-name,positions,picture-url)";
+  var url = endPoint + "id=" + id + "/connections:(id,headline,first-name,last-name,positions,picture-url,location,industry)";
   request({
     method: 'GET',
     url: url,
