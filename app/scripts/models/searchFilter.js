@@ -45,7 +45,7 @@ PreLinked.Models.SearchfilterModel = Backbone.Model.extend({
 
     var title = this.get('jobTitle');
     var keywords = this.get('jobKeywords');
-    
+
     searchQuery.title = title[0];
     for(var i = 1; i < title.length; i++) {
       searchQuery.title += ' ' + title[i];
