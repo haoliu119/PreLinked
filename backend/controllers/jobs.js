@@ -1,4 +1,5 @@
 var IndeedApi = require('../models/indeed_api.js');
+var LinkedInApi = require('../models/linkedin_api.js');
 var fs        = require('fs');
 var path      = require('path');
 var _helper   = require('./_helper.js');
@@ -28,22 +29,31 @@ jobs.search = function(req, res){
 
 jobs.searchSorted = function(req, res){
   console.log('-controller-jobs.searchSorted()');
+  //dummy1
   // var jobs = [{jobTitle:'Software Engineer'}];
-  var jobsFileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/dummy_indeed_search_results.json'), 'utf8');
-  var jobs = JSON.parse(jobsFileContent);
+  //dummy2
+  // var jobsFileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/dummy_indeed_search_results.json'), 'utf8');
+  // var jobs = JSON.parse(jobsFileContent);
 
   var promises = [];
   //todo
   //remove this default query string in the future
   req.query.q = req.query.q || 'Software Engineer';
+  req.query.keywords = req.query.keywords || 'Software Engineer';
   promises.push( IndeedApi.search(req.query) );
+  promises.push( LinkedInApi.searchConnections(req.session, req.query) );
+  promises.push( LinkedInApi.searchFirstDegree(req.session, req.query) );
 
   Q.all(promises)
-    .spread(function(data){
-      console.log('IndeedApi data: ', data);
+    .spread(function(indeedData, linkedinSearchData, linkedinFirstDegreeData){
+      console.log('IndeedApi data: \n', indeedData);
+      console.log('LinkedInApi data: \n', linkedinSearchData);
+      console.log('LinkedInApi first degree data: \n', linkedinFirstDegreeData);
     });
 
+  //dummy1
   // var connections = [{name:'Larry Page'}];
+  //dummy2
   var connectionsFileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/dummy_linkedin_connections_search_results.json'), 'utf8');
   var connections = JSON.parse(connectionsFileContent);
 
