@@ -1,3 +1,4 @@
+#app .logo{width:250px}
 #app ul li{list-style-type:none}
 #app .page.current{display:block}
 #app fieldset .scroll{max-height:600px;overflow-y:scroll}
