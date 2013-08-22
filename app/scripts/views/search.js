@@ -21,11 +21,13 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     'click #searchFilterButton': 'submitSearch',
     'click .modal-details': 'getModalConnectionDetails',
     'click .removeFilter': 'removeSearchFilterTrigger',
-    'keypress .searchInput': 'addSearchFilterTrigger',
+    'keypress .searchInput': 'addSearchFilterTrigger'
   },
 
   addSearchFilterTrigger: function(e) {
     if (e.keyCode == 13) {
+      e.preventDefault();
+
       this.searchFilterView.trigger('addSearchFilter', e);
     }
   },
@@ -35,10 +37,12 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   },
 
   submitSearch: function(e) {
-    // TODO HOOKUP MODELS TO SEARCH
     e.preventDefault();
+    
+    var searchQuery = this.searchFilterView.model.parseDataForSearch();
+
+    this.getJobResults(searchQuery.title, searchQuery.location, searchQuery.keywords);
     this.render(true);
-    this.searchFilterView.render();
   },
 
   getSearchFilter: function(){

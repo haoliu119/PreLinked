@@ -11,15 +11,16 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
 
   addSearchFilter: function(e) {
     if(e.target.id === 'jobTitleSearchInput') {
-      var jobTitle = this.$el.find('input[name=job-title]').val();
+      var jobTitle = this.$el.find('input[name="job-title"]')[0].value;
       this.model.attributes.jobTitle.push(jobTitle);
     } else if(e.target.id === 'locationSearchInput') {
-      var jobLocation = this.$el.find('input[name=job-location]').val();
+      var jobLocation = this.$el.find('input[name=job-location]')[0].value;
       this.model.set('jobLocation', jobLocation);
     } else if(e.target.id === 'keywordsSearchInput') {
-      var jobKeywords = this.$el.find('input[name=job-keywords]').val();
+      var jobKeywords = this.$el.find('input[name=job-keywords]')[0].value;
       this.model.attributes.jobKeywords.push(jobKeywords);
     }
+    this.render();
   },
 
   removeSearchFilter: function(e) {
