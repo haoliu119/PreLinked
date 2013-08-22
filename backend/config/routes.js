@@ -6,14 +6,17 @@ var pass      = require('../controllers/passport.js');
 var site      = require('../controllers/site.js');
 var jobs      = require('../controllers/jobs.js');
 var linkedin  = require('../controllers/linkedin.js');
+var persons   = require('../controllers/persons.js');
 
 module.exports = function(app) {
   app.get('/serverindex', site.index);
 
   //Jobs
   app.get('/jobs/search', jobs.search);
-
   app.get('/jobs/searchSorted', jobs.searchSorted);
+
+  //PreLinked Persons
+  app.get('/persons', persons.get);
 
   //LinkedIn Oauth
   app.get('/auth/linkedin',
