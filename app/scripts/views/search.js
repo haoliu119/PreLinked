@@ -24,6 +24,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
   submitSearch: function(e) {
     e.preventDefault();
+
+    this.searchFilterView.trigger('addSearchFilterOnSubmit');
     
     var searchQuery = this.searchFilterView.model.parseDataForSearch();
     this.getJobResults(searchQuery.title, searchQuery.location, searchQuery.keywords);
