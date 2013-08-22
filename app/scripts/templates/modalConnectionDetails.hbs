@@ -7,18 +7,21 @@
         <img class="image" src="http://placehold.it/160x160">
       {{/if}}
     </div>
-    <div class="large-10 columns">
-      <div class="info">
-        <h2>{{firstName}} {{lastName}}</h2>
-        <p>{{headline}}</p>
-        <ul class="list">
-          <li>title: {{title}}</li>
-          <li>industry: {{industry}}</li>
-          <li>id: {{id}}</li>
-          <li>positions: {{positions}}</li>
-          <li>summary: {{summary}}</li>
-        </ul>
-      </div>
+    <div class="large-10 columns info">
+      <h2>{{firstName}} {{lastName}}</h2>
+      <p>{{headline}}</p>
+    </div>
+    <div class="large-2 columns">&nbsp;</div>
+    <div class="large-5 columns">
+      <ul class="list">
+        <li>title: {{title}}</li>
+        <li>industry: {{industry}}</li>
+        <li>id: {{id}}</li>
+        <li>positions: {{positions}}</li>
+      </ul>
+    </div>
+    <div class="large-5 columns">
+      <p>summary: {{summary}}</p>
     </div>
   </div>
   <a class="close-reveal-modal">&#215;</a>
