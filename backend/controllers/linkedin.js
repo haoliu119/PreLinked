@@ -25,7 +25,7 @@ linkedin.searchConnections = function(req, res){
   //   _helper.sessionNotAvl(req, res);
   // }
 
-  // // Dummy Data
+  // Dummy Data
   var fileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/dummy_linkedin_connections_search_results.json'), 'utf8');
   _helper.resolved(req, res, fileContent);
 
