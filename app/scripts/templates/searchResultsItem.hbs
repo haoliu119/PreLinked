@@ -1,10 +1,7 @@
-<ul class="small-10 columns">
-  <li>
-    <a href="{{url}}" target="_blank">{{jobtitle}}</a>
-  </li>
-  <li>
-    {{company}} - {{city}}, {{state}}
-  </li>
+<h2 class="title"><a href="{{url}}" target="_blank">{{jobtitle}}</a></h2>
+<ul class="small-10 info columns">
+  <li class="company">{{company}}</li>
+  <li class="location">{{city}}, {{state}}</li>
   <!-- <li>
     jobkey: {{jobkey}}
   </li>
@@ -50,5 +47,5 @@
   </li> -->
 </ul>
 <ul class="small-2 columns">
-  <li><a class="tiny button right" href="javascript: void(0)">link</a></li>
+  <li><a class="tiny button right" href="{{url}}" target="_blank">Info</a></li>
 </ul>
