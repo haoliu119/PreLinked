@@ -1,4 +1,4 @@
-var UserModel = require('../models/users.js').userModel;
+var UserModel = require('../models/users.js');
 var session = module.exports = {};
 
 session.setSession = function(req, res) {
