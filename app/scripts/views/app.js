@@ -23,7 +23,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
     Backbone.history.loadUrl();
 
     $(window).on('scroll', function() {
-      console.log('scrollTop: ', $(document).scrollTop() );
+      // console.log('scrollTop: ', $(document).scrollTop() );
 
     });
 

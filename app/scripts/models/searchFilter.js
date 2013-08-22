@@ -21,9 +21,8 @@ PreLinked.Models.SearchfilterModel = Backbone.Model.extend({
   },
 
   removeSearchFilter: function(e) {
-    var filterType = e.target.className.split(' ')[0];
-    var elToRemove = e.target.className.split(' ')[1];
-
+    var filterType = e.target.className.split(' ')[1];
+    var elToRemove = e.target.className.split(' ')[2];
     if(filterType === 'removeJobTitleFilter') {
       var jobTitleArray = this.get('jobTitle');
       var indexToRemove = _.indexOf(jobTitleArray, elToRemove);
