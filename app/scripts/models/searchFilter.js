@@ -7,6 +7,7 @@ PreLinked.Models.SearchfilterModel = Backbone.Model.extend({
     this.set('jobLocation', "");
     this.set('jobKeywords', []);
     this.on('addSearchFilter', this.addSearchFilter);
+    this.on('addSearchFilterOnSubmit', this.addSearchFilterOnSubmit);
     this.on('removeSearchFilter', this.removeSearchFilter);
   },
 
@@ -16,6 +17,18 @@ PreLinked.Models.SearchfilterModel = Backbone.Model.extend({
     } else if(e.target.id === 'locationSearchInput') {
       this.set('jobLocation', location);
     } else if(e.target.id === 'keywordsSearchInput') {
+      this.attributes.jobKeywords.push(keywords);
+    }
+  },
+
+  addSearchFilterOnSubmit: function(title, location, keywords) {
+    if(title) {
+      this.attributes.jobTitle.push(title);
+    }
+    if(location) {
+      this.set('jobLocation', location);
+    }
+    if(keywords) {
       this.attributes.jobKeywords.push(keywords);
     }
   },
