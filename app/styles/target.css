@@ -4,5 +4,11 @@
 .each-connection{position:relative}
 .each-connection .modal-details .image{position:absolute;top:0;left:0}
 .each-connection .info{margin-left:90px;min-height:90px}
-.each-connection .info .name{font-size:18px}
+.each-connection .info h2{font-size:18px;margin-bottom:5px}
 .each-connection .info .headline{font-size:14px;line-height:20px}
+.reveal-modal ul li{list-style-type:none}
+.reveal-modal .info h2{margin-bottom:5px}
+.job{clear:both}
+.job h2{font-size:18px;line-height:22px;margin-bottom:5px}
+.job .info{list-style-type:none;font-size:14px;line-height:18px}
+.job .location{color:#aaa}

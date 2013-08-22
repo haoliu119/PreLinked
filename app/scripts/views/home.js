@@ -34,6 +34,10 @@ PreLinked.Views.HomeView = Backbone.View.extend({
     console.log('after submit:', this.jobQuery);
 
     console.log('[title]-->', jobTitle, '[location]-->', jobLocation);
+    analytics.track('Searched on homepage', {
+      jobTitle    : jobTitle,
+      jobLocation : jobLocation
+    });
 
     PreLinked.appRouter.navigate('/search', { trigger: true});
   },

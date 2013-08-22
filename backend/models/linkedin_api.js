@@ -29,7 +29,7 @@ LinkedInApi.searchConnections = function (session, query) {
   var endPoint = "https://api.linkedin.com/v1";
   var defaults = {
     format: 'json',
-    count: '25',
+    count: '10',
     start: '0'
   };
   var id = session.userID;
@@ -62,7 +62,8 @@ LinkedInApi.searchConnections = function (session, query) {
 LinkedInApi.getProfile = function(session, params){
   //http://developer.linkedin.com/documents/profile-api
   var endPoint = "https://api.linkedin.com/v1/people/";
-  var url = endPoint + 'id=' + params.id + ":(id,first-name,last-name,industry,headline,location,summary,positions)";
+  var url = endPoint + 'id=' + params.id +
+    ":(id,first-name,last-name,industry,headline,location,summary,positions,picture-url)";
   var defaults = {
     format: 'json'
   };
