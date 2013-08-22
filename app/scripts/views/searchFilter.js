@@ -6,11 +6,10 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
 
   initialize: function() {
     this.on('addSearchFilter', this.addSearchFilter, this);
-    this.on('removeJobTitleFilter', this.removeJobTitleFilter, this);
+    this.on('removeSearchFilter', this.removeSearchFilter, this);
   },
 
   addSearchFilter: function(e) {
-      console.log('FILTER HIT');
     if(e.target.id === 'jobTitleSearchInput') {
       var jobTitle = this.$el.find('input[name=job-title]').val();
       this.model.attributes.jobTitle.push(jobTitle);
@@ -23,12 +22,24 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
     }
   },
 
-  removeJobTitleFilter: function(e) {
+  removeSearchFilter: function(e) {
+    var filterType = e.target.className.split(' ')[0];
     var elToRemove = e.target.className.split(' ')[1];
-    var jobTitleArray = this.model.get('jobTitle');
-    var indexToRemove = _.indexOf(jobTitleArray, elToRemove);
-    jobTitleArray.splice(indexToRemove, 1);
-    this.model.set('jobTitle', jobTitleArray);
+
+    if(filterType === 'removeJobTitleFilter') {
+      var jobTitleArray = this.model.get('jobTitle');
+      var indexToRemove = _.indexOf(jobTitleArray, elToRemove);
+      jobTitleArray.splice(indexToRemove, 1);
+      this.model.set('jobTitle', jobTitleArray);
+    } else if(filterType === 'removeJobLocationFilter') {
+      this.model.set('jobLocation', '');
+    } else if(filterType === 'removeJobKeywordsFilter') {
+      var jobKeywordsArray = this.model.get('jobKeywords');
+      var indexToRemove = _.indexOf(jobKeywordsArray, elToRemove);
+      jobKeywordsArray.splice(indexToRemove, 1);
+      this.model.set('jobKeywords', jobKeywordsArray);
+    }
+    this.render();
   },
 
   render: function () {

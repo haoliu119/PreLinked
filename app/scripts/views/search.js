@@ -20,19 +20,18 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   events: {
     'click #searchFilterButton': 'submitSearch',
     'click .modal-details': 'getModalConnectionDetails',
-    'click .jobTitleFilter': 'removeJobTitleFilter',
+    'click .removeFilter': 'removeSearchFilterTrigger',
     'keypress .searchInput': 'addSearchFilterTrigger',
   },
 
   addSearchFilterTrigger: function(e) {
-      if (e.keyCode == 13) {
-        console.log('search.js hit');
-        this.searchFilterView.trigger('addSearchFilter', e);
-      }
+    if (e.keyCode == 13) {
+      this.searchFilterView.trigger('addSearchFilter', e);
+    }
   },
 
-  removeJobTitleFilter: function(e) {
-    this.searchFilterView.trigger('removeJobTitleFilter', e);
+  removeSearchFilterTrigger: function(e) {
+    this.searchFilterView.trigger('removeSearchFilter', e);
   },
 
   submitSearch: function(e) {

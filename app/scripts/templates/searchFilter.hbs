@@ -7,7 +7,7 @@
   <div> 
     <ul>
     {{#each jobTitle}}
-      <li>{{this}} <a class="jobTitleFilter {{this}}"> X </a></li>
+      <li>{{this}} <a class="removeJobTitleFilter {{this}} removeFilter"> X </a></li>
     {{/each}}
     </ul>
   </div>
@@ -17,7 +17,7 @@
   </label>
   <div> 
     <ul>
-      <li>{{jobLocation}} <a class="jobLocationFilter {{this}}"> X </a></li>
+      <li>{{jobLocation}} <a class="removeJobLocationFilter {{this}} removeFilter"> X </a></li>
     </ul>
   </div>
   <label>
@@ -27,7 +27,7 @@
   <div> 
     <ul>
     {{#each jobKeywords}}
-      <li>{{this}} <a class="jobKeywordsFilter {{this}}"> X </a></li>
+      <li>{{this}} <a class="removeJobKeywordsFilter {{this}} removeFilter"> X </a></li>
     {{/each}}
     </ul>
   </div>
