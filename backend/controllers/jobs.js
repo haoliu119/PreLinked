@@ -25,3 +25,23 @@ jobs.search = function(req, res){
   _helper.resolved(req, res, fileContent);
 
 };
+
+jobs.searchSorted = function(req, res){
+  console.log('-controller-jobs.searchSorted()');
+  var jobs = [{jobTitle:'Software Engineer'}];
+  var connections = [{name:'Larry Page'}];
+
+  var sortJobs = function(inputJobs, inputConnections){
+    _(inputJobs).each(function(inputJob){
+      inputJob.pScore = Math.random();
+      inputJob.pConnections = [inputConnections[0]];
+      //todo
+      //fix dummy data
+    });
+    return inputJobs;
+  };
+
+  var jobsSorted = sortJobs(jobs, connections);
+
+  _helper.resolved(req, res, jobsSorted);
+};

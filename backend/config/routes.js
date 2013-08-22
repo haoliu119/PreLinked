@@ -13,6 +13,8 @@ module.exports = function(app) {
   //Jobs
   app.get('/jobs/search', jobs.search);
 
+  app.get('/jobs/searchSorted', jobs.searchSorted);
+
   //LinkedIn Oauth
   app.get('/auth/linkedin',
     passport.authenticate('linkedin',
