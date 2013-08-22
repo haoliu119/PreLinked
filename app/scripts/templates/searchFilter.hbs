@@ -2,18 +2,37 @@
 <form id="form-search">
   <label>
     Job
-    <input name="job-title" type="text" placeholder="Example: Software Engineer">
+    <input class="searchInput" id="jobTitleSearchInput" name="job-title" type="text" placeholder="Example: Software Engineer">
   </label>
+  <div> 
+    <ul>
+    {{#each jobTitle}}
+      <li>{{this}} <a class="removeJobTitleFilter {{this}} removeFilter"> X </a></li>
+    {{/each}}
+    </ul>
+  </div>
   <label>
     Location
-    <input name="job-location" type="text" placeholder="Example: San Francisco, CA">
+    <input class="searchInput" id="locationSearchInput" name="job-location" type="text" placeholder="Example: San Francisco, CA">
   </label>
+  <div> 
+    <ul>
+      <li>{{jobLocation}} <a class="removeJobLocationFilter {{this}} removeFilter"> X </a></li>
+    </ul>
+  </div>
   <label>
     Keywords
-    <input name="job-keywords" type="text" placeholder="Example: Javascript, Node.js">
+    <input class="searchInput" id="keywordsSearchInput" name="job-keywords" type="text" placeholder="Example: Javascript, Node.js">
   </label>
+  <div> 
+    <ul>
+    {{#each jobKeywords}}
+      <li>{{this}} <a class="removeJobKeywordsFilter {{this}} removeFilter"> X </a></li>
+    {{/each}}
+    </ul>
+  </div>
 
-  <p>Salary</p>
+  {{! <p>Salary</p>
   <ul>
     <li><label><input type="checkbox" name="item" value="1"> item1</label></li>
     <li><label><input type="checkbox" name="item" value="1"> item1</label></li>
@@ -32,6 +51,6 @@
     <li><label><input type="checkbox" name="item" value="1"> item1</label></li>
     <li><label><input type="checkbox" name="item" value="1"> item1</label></li>
     <li><label><input type="checkbox" name="item" value="1"> item1</label></li>
-  </ul>
-  <button>Search</button>
+  </ul> }}
+  <button id="searchFilterButton">Search</button>
 </form>

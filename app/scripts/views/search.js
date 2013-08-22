@@ -7,30 +7,52 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
   template: JST['app/scripts/templates/search.hbs'],
 
+
   initialize: function(options){
     this.jobQuery = options.jobQuery;
     this.searchResultsView  = new PreLinked.Views.SearchResultsView({ collection: new PreLinked.Collections.SearchResultsCollection(), jobQuery: this.jobQuery });
     this.connectionsView    = new PreLinked.Views.ConnectionView({ collection: new PreLinked.Collections.ConnectionsCollection(), jobQuery: this.jobQuery });
+    this.searchFilterView = new PreLinked.Views.SearchfilterView({
+      model: new PreLinked.Models.SearchfilterModel()
+    });
   },
 
   events: {
-    'submit form#form-search': 'submitSearch'
+    'click #searchFilterButton': 'submitSearch',
+    'click .modal-details': 'getModalConnectionDetails',
+    'click .removeFilter': 'removeSearchFilterTrigger',
+    'keypress .searchInput': 'addSearchFilterTrigger'
+  },
+
+  addSearchFilterTrigger: function(e) {
+    if (e.keyCode == 13) {
+      e.preventDefault();
+
+      var jobTitle = this.$el.find('input[name="job-title"]')[0].value;
+      var jobLocation = this.$el.find('input[name=job-location]')[0].value
+      var jobKeywords = this.$el.find('input[name="job-keywords"]')[0].value;
+
+      this.searchFilterView.model.trigger('addSearchFilter', e, jobTitle, jobLocation, jobKeywords);
+      this.searchFilterView.render();
+    }
+  },
+
+  removeSearchFilterTrigger: function(e) {
+    this.searchFilterView.model.trigger('removeSearchFilter', e);
+    this.searchFilterView.render();
   },
 
   submitSearch: function(e) {
     e.preventDefault();
-    this.jobQuery.jobTitle    = this.$el.find('input[name=job-title]').val();
-    this.jobQuery.jobLocation = this.$el.find('input[name=job-location]').val(),
-    this.jobQuery.jobKeywords = this.$el.find('input[name=job-keywords]').val();
+    
+    var searchQuery = this.searchFilterView.model.parseDataForSearch();
+
+    this.getJobResults(searchQuery.title, searchQuery.location, searchQuery.keywords);
     this.render(true);
   },
 
   getSearchFilter: function(){
-    var searchFilterModel = new PreLinked.Models.SearchfilterModel();
-    var searchFilterView = new PreLinked.Views.SearchfilterView({
-      model: searchFilterModel
-    });
-    return searchFilterView.render().el;
+    return this.searchFilterView.render().el;
   },
 
   getJobResults: function(title, location, keywords) {
