@@ -1,13 +1,9 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var profileSchema = require ('./profiles.js'),
-    keywordSchema = require ('./keywords.js');
 
-var keywordToProfileSchema = module.exports = {};
-
-var keywordToProfile = new Schema({
-  keywordId: profileSchema,
-  profileId: keywordSchema
+var keywordToProfileSchema = new Schema({
+  keywordId: { type: Schema.Types.ObjectId, ref: 'Keyword' },
+  profileId: { type: Schema.Types.ObjectId, ref: 'Profile' }
 });
 
-keywordToProfileSchema.keywordToProfileModel = mongoose.model('keywordToProfiles', keywordToProfile);
+module.exports = mongoose.model('KeywordToProfile', keywordToProfileSchema);

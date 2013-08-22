@@ -1,6 +1,6 @@
 var passport = require('passport');
 var LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;
-var UserModel = require('../models/users.js').userModel;
+var UserModel = require('../models/users.js');
 
 var pass = module.exports = {};
 
