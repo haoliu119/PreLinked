@@ -18,7 +18,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   },
 
   events: {
-    'click #searchFilterButton': 'submitSearch',
+    'click .searchFilterButton': 'submitSearch',
     'click .modal-details': 'getModalConnectionDetails',
   },
 
@@ -26,7 +26,6 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     e.preventDefault();
     
     var searchQuery = this.searchFilterView.model.parseDataForSearch();
-
     this.getJobResults(searchQuery.title, searchQuery.location, searchQuery.keywords);
     // this.render(true); // IS THIS IMPORTANT? Rendering the entire page causes add / remove filter events in searchFilter view to not be heard
   },
