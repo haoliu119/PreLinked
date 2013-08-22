@@ -29,7 +29,7 @@ LinkedInApi.searchConnections = function (session, query) {
   var endPoint = "https://api.linkedin.com/v1";
   var defaults = {
     format: 'json',
-    count: '25',
+    count: '10',
     start: '0'
   };
   var id = session.userID;
