@@ -32,6 +32,17 @@ jobs.searchSorted = function(req, res){
   var jobsFileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/dummy_indeed_search_results.json'), 'utf8');
   var jobs = JSON.parse(jobsFileContent);
 
+  var promises = [];
+  //todo
+  //remove this default query string in the future
+  req.query.q = req.query.q || 'Software Engineer';
+  promises.push( IndeedApi.search(req.query) );
+
+  Q.all(promises)
+    .spread(function(data){
+      console.log('IndeedApi data: ', data);
+    });
+
   // var connections = [{name:'Larry Page'}];
   var connectionsFileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/dummy_linkedin_connections_search_results.json'), 'utf8');
   var connections = JSON.parse(connectionsFileContent);
