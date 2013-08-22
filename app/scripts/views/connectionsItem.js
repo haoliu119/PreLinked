@@ -25,6 +25,7 @@ PreLinked.Views.ConnectionsitemView = Backbone.View.extend({
     var that = this;
     details.fetch()
       .done(function(data){
+
         var detailsView = new PreLinked.Views.ModalconnectiondetailsView({
           model: data
         });
