@@ -28,12 +28,18 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     if (e.keyCode == 13) {
       e.preventDefault();
 
-      this.searchFilterView.trigger('addSearchFilter', e);
+      var jobTitle = this.$el.find('input[name="job-title"]')[0].value;
+      var jobLocation = this.$el.find('input[name=job-location]')[0].value
+      var jobKeywords = this.$el.find('input[name="job-keywords"]')[0].value;
+
+      this.searchFilterView.model.trigger('addSearchFilter', e, jobTitle, jobLocation, jobKeywords);
+      this.searchFilterView.render();
     }
   },
 
   removeSearchFilterTrigger: function(e) {
-    this.searchFilterView.trigger('removeSearchFilter', e);
+    this.searchFilterView.model.trigger('removeSearchFilter', e);
+    this.searchFilterView.render();
   },
 
   submitSearch: function(e) {
