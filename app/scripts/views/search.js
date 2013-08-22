@@ -20,26 +20,6 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   events: {
     'click #searchFilterButton': 'submitSearch',
     'click .modal-details': 'getModalConnectionDetails',
-    'click .removeFilter': 'removeSearchFilterTrigger',
-    'keypress .searchInput': 'addSearchFilterTrigger'
-  },
-
-  addSearchFilterTrigger: function(e) {
-    if (e.keyCode == 13) {
-      e.preventDefault();
-
-      var jobTitle = this.$el.find('input[name="job-title"]')[0].value;
-      var jobLocation = this.$el.find('input[name=job-location]')[0].value
-      var jobKeywords = this.$el.find('input[name="job-keywords"]')[0].value;
-
-      this.searchFilterView.model.trigger('addSearchFilter', e, jobTitle, jobLocation, jobKeywords);
-      this.searchFilterView.render();
-    }
-  },
-
-  removeSearchFilterTrigger: function(e) {
-    this.searchFilterView.model.trigger('removeSearchFilter', e);
-    this.searchFilterView.render();
   },
 
   submitSearch: function(e) {
@@ -48,7 +28,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     var searchQuery = this.searchFilterView.model.parseDataForSearch();
 
     this.getJobResults(searchQuery.title, searchQuery.location, searchQuery.keywords);
-    this.render(true);
+    // this.render(true); // IS THIS IMPORTANT? Rendering the entire page causes add / remove filter events to not be heard
   },
 
   getSearchFilter: function(){
