@@ -28,13 +28,20 @@ jobs.search = function(req, res){
 
 jobs.searchSorted = function(req, res){
   console.log('-controller-jobs.searchSorted()');
-  var jobs = [{jobTitle:'Software Engineer'}];
-  var connections = [{name:'Larry Page'}];
+  // var jobs = [{jobTitle:'Software Engineer'}];
+  var jobsFileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/dummy_indeed_search_results.json'), 'utf8');
+  var jobs = JSON.parse(jobsFileContent);
+
+  // var connections = [{name:'Larry Page'}];
+  var connectionsFileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/dummy_linkedin_connections_search_results.json'), 'utf8');
+  var connections = JSON.parse(connectionsFileContent);
 
   var sortJobs = function(inputJobs, inputConnections){
     _(inputJobs).each(function(inputJob){
       inputJob.pScore = Math.random();
-      inputJob.pConnections = [inputConnections[0]];
+      inputJob.pConnections = _(inputConnections).filter(function(conn){
+        return (Math.random() < 1/4 ? true : false);
+      });
       //todo
       //fix dummy data
     });
