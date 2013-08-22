@@ -5,17 +5,21 @@ PreLinked.Views.LoginboxView = Backbone.View.extend({
   template: JST['app/scripts/templates/loginBox.hbs'],
 
   initialize: function(){
-    this.appendLoginModal();
-
+    this.Modal = (new PreLinked.Views.PmodalView()).pmodal;
     this.render();
   },
 
-  appendLoginModal: function(){
-    $('body').append('<div id="loginModal" class="reveal-modal">\
-<h2>Awesome. I have it.</h2>\
-<a href="http://localhost:3000/auth/linkedin">Login</a>\
-<a class="close-reveal-modal">&#215;</a>\
-</div>');
+  events: {
+    'click .in-login': 'openLoginModal'
+  },
+
+  openLoginModal: function(){
+    var contentStr = '<h3><a href="http://localhost:3000/auth/linkedin">Login</a></h3>';
+    var modal = new this.Modal({
+      title: 'Awesome. I have it.',
+      content: contentStr
+    });
+    modal.open();
   },
 
   checkLogin: function(){
@@ -33,14 +37,10 @@ PreLinked.Views.LoginboxView = Backbone.View.extend({
   },
 
   render: function(){
-    // this.$el.html( this.template({
-    //   checkLogin: false
-    // }) );
 
     var output = this.checkLogin();
     var that = this;
     output.done(function(data){
-      console.log('results from checkLogin', data);
       that.$el.html(that.template({
         checkLogin: data
       }));

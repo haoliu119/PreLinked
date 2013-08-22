@@ -1,11 +1,15 @@
 <div class="each-connection">
-  <a class="th radius modal-details" href="#" data-in-id="{{id}}">
-    <img src="{{pictureUrl}}">
+  <a class="modal-details" href="#" data-in-id="{{id}}">
+    {{#if pictureUrl}}
+      <img class="image" src="{{pictureUrl}}">
+    {{else}}
+      <img class="image" src="http://placehold.it/80x80">
+    {{/if}}
   </a>
-  <ul>
-    <li>{{firstName}}&nbsp;{{lastName}}</li>
-    <li>{{title}}</li>
-    <li>{{headline}}</li>
+  <ul class="info">
+    <li class="name"><a class="modal-details" href="#" data-in-id="{{id}}">{{firstName}}&nbsp;{{lastName}}</a></li>
+    <!-- li>{{title}}</li -->
+    <li class="headline">{{headline}}</li>
     <!--li>{{positions}}</li-->
   </ul>
 </div>

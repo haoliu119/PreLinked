@@ -26,9 +26,9 @@ pass.keys = passport.use(new LinkedInStrategy({
           users.accessToken = accessToken;
           users.save(function(err) {
             if(err) {
-              console.log(err);
+              console.log('- /auth/linkedin/callback - user update accessToken - error >> ', err);
             } else {
-              console.log('success', users.accessToken);
+              console.log('- /auth/linkedin/callback - user update accessToken - success >>');
             }
           });
         } else {
@@ -41,11 +41,16 @@ pass.keys = passport.use(new LinkedInStrategy({
 
           var user = new UserModel(userData);
           user.save(function (err, user) {
-            if (err) throw err;
+            if(err) {
+              console.log('- /auth/linkedin/callback - user.save - error >> ', err);
+            } else {
+              console.log('- /auth/linkedin/callback - user.save - success >>');
+            }
           });
         }
       });
     profile.accessToken = accessToken;
+    console.log('-  /auth/linkedin/callback - profile (session.passport.user) >> ', profile);
     return done(null, profile);
     });
   }
