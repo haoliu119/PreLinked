@@ -1,25 +1,25 @@
 <div id="myModal" class="reveal-modal">
-  <div class="posr">
-    <div class="info">
-      <h2>{{headline}}</h2>
-      <ul>
-        <li>firstName: {{firstName}}</li>
-        <li>lastName: {{lastName}}</li>
-        <li>headline: {{headline}}</li>
-        <li>industry: {{industry}}</li>
-        <li>id: {{id}}</li>
-
-        <li>pictureUrl: {{pictureUrl}}</li>
-        <li>positions: {{positions}}</li>
-        <li>summary: {{summary}}</li>
-        <li>title: {{title}}</li>
-      </ul>
+  <div class="row">
+    <div class="large-2 columns">
+      {{#if pictureUrl}}
+        <img class="image" src="{{pictureUrl}}">
+      {{else}}
+        <img class="image" src="http://placehold.it/160x160">
+      {{/if}}
     </div>
-    {{#if pictureUrl}}
-      <img class="image" src="{{pictureUrl}}">
-    {{else}}
-      <img class="image" src="http://placehold.it/80x80">
-    {{/if}}
+    <div class="large-10 columns">
+      <div class="info">
+        <h2>{{firstName}} {{lastName}}</h2>
+        <p>{{headline}}</p>
+        <ul class="list">
+          <li>title: {{title}}</li>
+          <li>industry: {{industry}}</li>
+          <li>id: {{id}}</li>
+          <li>positions: {{positions}}</li>
+          <li>summary: {{summary}}</li>
+        </ul>
+      </div>
+    </div>
   </div>
   <a class="close-reveal-modal">&#215;</a>
 </div>

@@ -6,7 +6,5 @@
 .each-connection .info{margin-left:90px;min-height:90px}
 .each-connection .info .name{font-size:18px}
 .each-connection .info .headline{font-size:14px;line-height:20px}
-.reveal-modal .posr{position:relative}
 .reveal-modal ul li{list-style-type:none}
-.reveal-modal .info{margin-left:90px}
-.reveal-modal .image{position:absolute;top:0;left:0}
+.reveal-modal .info h2{margin-bottom:5px}
