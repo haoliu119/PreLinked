@@ -62,6 +62,39 @@ module.exports = function(app) {
     var KeywordToJob = require('../models/keywordsToJobs.js');
     var mongoose = require('mongoose');
 
+    /**
+    /** TESTING LinkedIn API
+    /*/
+    var fs          = require('fs');
+    var path        = require('path');
+    var LinkedInApi = require('../models/linkedin_api.js');
+    var _helper     = require('../controllers/_helper.js');
+    // GET /people/search
+    console.log('- '+ req.method + ' ' + req.url + ' - Controller -> LinkedIn.searchConnections >> ');
+    // if user is logged in through LinkedIn
+    if (req.session.passport.user){
+      LinkedInApi.searchConnections(req.session, {title: 'software engineer', keywords: 'san francisco, ca' })
+        .done(
+          //Resolved: json returned from LinkedIn API
+          function(json) {
+            fs.writeFile(path.join(__dirname, '../public/_temp_dummy_data/_LinkedIn_People_Search_Results.json'),
+            json,
+            function(){
+              console.log('- file saved <<');
+              _helper.resolved(req, res, json);
+            });
+          },
+          //Rejected: error message from LinkedIn API
+          function(error) {
+            _helper.rejected(req, res, error);
+        });
+    } else {
+      _helper.sessionNotAvl(req, res);
+    }
+
+    /**
+    /** TESTING MongoDB
+    /*/
     // var job = new Job({
     //   indeedPost: {key:'value2 really'}
     // });
@@ -97,16 +130,16 @@ module.exports = function(app) {
     //   }
     // });
 
-    Keyword.findOne({"keyword":"software"}, function(error, data){
-      KeywordToJob.find({"keywordId": data._id}, {"jobId": 1, "_id": 0}, function(error1, data1){
-        data1 = _(data1).pluck('jobId');
-        console.log('data1', data1);
-        Job.find({"_id": {$in: data1}}, function(error2, data2){
-          console.log('data2', data2);
-        });
-      });
-      console.log('data', data);
-    })
-    res.end();
+    // Keyword.findOne({"keyword":"software"}, function(error, data){
+    //   KeywordToJob.find({"keywordId": data._id}, {"jobId": 1, "_id": 0}, function(error1, data1){
+    //     data1 = _(data1).pluck('jobId');
+    //     console.log('data1', data1);
+    //     Job.find({"_id": {$in: data1}}, function(error2, data2){
+    //       console.log('data2', data2);
+    //     });
+    //   });
+    //   console.log('data', data);
+    // })
+    // res.end();
   });
 };
