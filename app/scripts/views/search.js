@@ -21,28 +21,22 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     'click #searchFilterButton': 'submitSearch',
     'click .modal-details': 'getModalConnectionDetails',
     'click .jobTitleFilter': 'removeJobTitleFilter',
-    'keypress #jobTitleSearchInput': 'addJobTitleFilterTrigger',
+    'keypress .searchInput': 'addSearchFilterTrigger',
   },
 
-  addJobTitleFilterTrigger: function(e) {
+  addSearchFilterTrigger: function(e) {
       if (e.keyCode == 13) {
-        this.searchFilterView.trigger('addJobTitleFilter');
-
-        // will make an extra call to LI API if this line is taken out
-        this.searchFilterView.render();
+        console.log('search.js hit');
+        this.searchFilterView.trigger('addSearchFilter', e);
       }
   },
 
   removeJobTitleFilter: function(e) {
-    var elToRemove = e.target.className.split(' ')[1];
-    var jobTitleArray = this.searchFilterView.model.get('jobTitle');
-    var indexToRemove = _.indexOf(jobTitleArray, elToRemove);
-    jobTitleArray.splice(indexToRemove, 1);
-    this.searchFilterView.model.set('jobTitle', jobTitleArray);
-    this.searchFilterView.render();
+    this.searchFilterView.trigger('removeJobTitleFilter', e);
   },
 
   submitSearch: function(e) {
+    // TODO HOOKUP MODELS TO SEARCH
     e.preventDefault();
     this.render(true);
     this.searchFilterView.render();

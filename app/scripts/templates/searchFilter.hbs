@@ -2,7 +2,7 @@
 <form id="form-search">
   <label>
     Job
-    <input id="jobTitleSearchInput" name="job-title" type="text" placeholder="Example: Software Engineer">
+    <input class="searchInput" id="jobTitleSearchInput" name="job-title" type="text" placeholder="Example: Software Engineer">
   </label>
   <div> 
     <ul>
@@ -13,12 +13,24 @@
   </div>
   <label>
     Location
-    <input name="job-location" type="text" placeholder="Example: San Francisco, CA">
+    <input class="searchInput" id="locationSearchInput" name="job-location" type="text" placeholder="Example: San Francisco, CA">
   </label>
+  <div> 
+    <ul>
+      <li>{{jobLocation}} <a class="jobLocationFilter {{this}}"> X </a></li>
+    </ul>
+  </div>
   <label>
     Keywords
-    <input name="job-keywords" type="text" placeholder="Example: Javascript, Node.js">
+    <input class="searchInput" id="keywordsSearchInput" name="job-keywords" type="text" placeholder="Example: Javascript, Node.js">
   </label>
+  <div> 
+    <ul>
+    {{#each jobKeywords}}
+      <li>{{this}} <a class="jobKeywordsFilter {{this}}"> X </a></li>
+    {{/each}}
+    </ul>
+  </div>
 
   {{! <p>Salary</p>
   <ul>
