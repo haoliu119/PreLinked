@@ -15,6 +15,22 @@ persons.post = function(req, res){
   return deferred.promise;
 };
 
+persons._post = function(data){
+  var deferred = Q.defer();
+  var person = new Person({
+    _id: data._id,
+    inPerson: data
+  });
+  person.save(function(error, data){
+    if(error){
+      console.log('Unable to save to database: ', error);
+    } else {
+      deferred.resolve(data);
+    }
+  });
+  return deferred.promise;
+};
+
 persons.put = function(req, res){
   var deferred = Q.defer();
   deferred.resolve('put');

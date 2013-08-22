@@ -3,6 +3,7 @@ var LinkedInApi = require('../models/linkedin_api.js');
 var fs        = require('fs');
 var path      = require('path');
 var _helper   = require('./_helper.js');
+var personsController = require('./persons.js');
 
 var jobs = module.exports = {};
 
@@ -40,14 +41,15 @@ jobs.searchSorted = function(req, res){
   //remove this default query string in the future
   req.query.q = req.query.q || 'Software Engineer';
   req.query.keywords = req.query.keywords || 'Software Engineer';
-  promises.push( IndeedApi.search(req.query) );
-  promises.push( LinkedInApi.searchConnections(req.session, req.query) );
+  // promises.push( IndeedApi.search(req.query) );
+  // promises.push( LinkedInApi.searchConnections(req.session, req.query) );
   promises.push( LinkedInApi.searchFirstDegree(req.session, req.query) );
 
   Q.all(promises)
-    .spread(function(indeedData, linkedinSearchData, linkedinFirstDegreeData){
-      console.log('IndeedApi data: \n', indeedData);
-      console.log('LinkedInApi data: \n', linkedinSearchData);
+    // .spread(function(indeedData, linkedinSearchData, linkedinFirstDegreeData){
+    .spread(function(linkedinFirstDegreeData){
+      // console.log('IndeedApi data: \n', indeedData);
+      // console.log('LinkedInApi data: \n', linkedinSearchData);
       console.log('LinkedInApi first degree data: \n', linkedinFirstDegreeData);
     });
 
