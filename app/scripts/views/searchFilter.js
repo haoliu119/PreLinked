@@ -23,7 +23,6 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
   },
 
   removeSearchFilter: function(e) {
-    console.log('remove');
     this.model.trigger('removeSearchFilter', e);
     this.render();
   },
@@ -32,5 +31,4 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
     this.$el.html( this.template(this.model.attributes) );
     return this;
   }
-
 });
