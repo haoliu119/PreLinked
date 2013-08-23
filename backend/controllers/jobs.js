@@ -105,18 +105,18 @@ jobs.searchSorted = function(req, res){
   //remove this default query string in the future
   req.query.q = req.query.q || 'Software Engineer';
   req.query.keywords = req.query.keywords || 'Software Engineer';
-  // promises.push( IndeedApi.search(req.query) );
+  promises.push( _grabMultiplePages(req.query) );
   promises.push( LinkedInApi.searchConnections(req.session, req.query) );
   promises.push( LinkedInApi.searchFirstDegree(req.session, req.query) );
 
   Q.all(promises)
-    .spread(function(inSearch, inFirstDegree){
-      // console.log('IndeedApi data: \n', indeedData);
-      console.log('LinkedInApi search data: \n');
-      _saveInSearch(inSearch, req.session.passport.user.id);
+    .spread(function(indeedSearch, inSearch, inFirstDegree){
+      console.log('IndeedApi data: \n', indeedSearch.length);
+      // console.log('LinkedInApi search data: \n');
+      // _saveInSearch(inSearch, req.session.passport.user.id);
 
-      console.log('LinkedInApi first degree data: \n');
-      _saveFirstDegree(inFirstDegree, req.session.passport.user.id);
+      // console.log('LinkedInApi first degree data: \n');
+      // _saveFirstDegree(inFirstDegree, req.session.passport.user.id);
     });
 
   //dummy1
