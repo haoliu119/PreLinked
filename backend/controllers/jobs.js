@@ -114,33 +114,37 @@ var _saveIndeedJobs = function(indeedSearch){
 
 };
 
-jobs.searchSorted = function(req, res){
-  console.log('-controller-jobs.searchSorted()');
 
+var _getJobsAndConnections = function(){
   var promises = [];
   //todo
   //remove this default query string in the future
   req.query.q = req.query.q || 'Software Engineer';
   req.query.keywords = req.query.keywords || 'Software Engineer';
   promises.push( _grabMultiplePages(req.query) );
-  // promises.push( LinkedInApi.searchConnections(req.session, req.query) );
-  // promises.push( LinkedInApi.searchFirstDegree(req.session, req.query) );
+  promises.push( LinkedInApi.searchConnections(req.session, req.query) );
+  promises.push( LinkedInApi.searchFirstDegree(req.session, req.query) );
 
   Q.all(promises)
-    // .spread(function(indeedSearch, inSearch, inFirstDegree){
-    .spread(function(indeedSearch){
-      console.log('IndeedApi data: \n');
+    .spread(function(indeedSearch, inSearch, inFirstDegree){
+      console.log('IndeedApi search data: \n');
       _saveIndeedJobs(indeedSearch);
-      // console.log('LinkedInApi search data: \n');
-      // _saveInSearch(inSearch, req.session.passport.user.id);
 
-      // console.log('LinkedInApi first degree data: \n');
-      // _saveFirstDegree(inFirstDegree, req.session.passport.user.id);
+      console.log('LinkedInApi search data: \n');
+      _saveInSearch(inSearch, req.session.passport.user.id);
+
+      console.log('LinkedInApi first degree data: \n');
+      _saveFirstDegree(inFirstDegree, req.session.passport.user.id);
     });
+};
 
-  //dummy1
-  // var connections = [{name:'Larry Page'}];
-  //dummy2
+jobs.searchSorted = function(req, res){
+  console.log('-controller-jobs.searchSorted()');
+  req.query.q = req.query.q || 'Software Engineer';
+  req.query.keywords = req.query.keywords || 'Software Engineer';
+  var totalJobs = _grabMultiplePages(req.query);
+
+
   var connectionsFileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/dummy_linkedin_connections_search_results.json'), 'utf8');
   var connections = JSON.parse(connectionsFileContent);
 
@@ -156,7 +160,10 @@ jobs.searchSorted = function(req, res){
     return inputJobs;
   };
 
-  var jobsSorted = sortJobs(jobs, connections);
+  totalJobs.then(function(jobResults){
+    console.log('jobResults -->', jobResults.length);
+    var jobsSorted = sortJobs(jobResults, connections);
+    _helper.resolved(req, res, jobsSorted);
+  });
 
-  _helper.resolved(req, res, jobsSorted);
 };
