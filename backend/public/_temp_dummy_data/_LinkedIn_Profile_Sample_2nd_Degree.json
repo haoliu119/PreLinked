@@ -1,0 +1,56 @@
+{
+  "distance": 2,
+  "firstName": "Chris",
+  "headline": "Software Development Engineer at PartyPetition.com (Party Petitioners Inc)",
+  "id": "qzxTRWelIR",
+  "industry": "Information Technology and Services",
+  "lastName": "Carillo",
+  "location": {"name": "San Francisco Bay Area"},
+  "numConnections": 102,
+  "numConnectionsCapped": false,
+  "positions": {
+    "_total": 2,
+    "values": [
+      {
+        "company": {
+          "industry": "Information Technology and Services",
+          "name": "PartyPetition.com (Petitioners Inc)"
+        },
+        "id": 412872333,
+        "isCurrent": true,
+        "startDate": {
+          "month": 6,
+          "year": 2013
+        },
+        "summary": "Party Petition is bringing discounted VIP and other venue reservations and services to the masses in the disruption fashion.\n\nFull LAMP Stack Senior Developer\nBuild backend platform:\nPHP\nMySQL\nCodeIgniter\nGithub\nMight work on frontend also: HTML5/JS/CSS (design/develop)\nDeveloping the payments module of the core platform and APIs\nfor the website and iOS.",
+        "title": "Software Development Engineer"
+      },
+      {
+        "company": {
+          "industry": "Information Technology and Services",
+          "name": "ModestoRC : Ongoing Side Project in Beta"
+        },
+        "id": 223600244,
+        "isCurrent": true,
+        "startDate": {
+          "month": 4,
+          "year": 2011
+        },
+        "summary": "Web Developer/Software Engineer/Consultant Back and Frontend                  April 2011 \u2013 Ongoing\nLAMP, Learning jQuery, Building Prototype then Blow Apart for Redesign.\nDesign & Build MySQL Database\nLAMP Stack OOP Backend\nHome and Lading Pages : jQuery/HTML/CSS/PHP/AJAX\nProject Management",
+        "title": "Consulting : LAMP Stack Web Developer : Ongoing Side Project"
+      }
+    ]
+  },
+  "publicProfileUrl": "http://www.linkedin.com/pub/chris-carillo/1/111/a79",
+  "relationToViewer": {"relatedConnections": {
+    "_total": 1,
+    "values": [{
+      "firstName": "Paul",
+      "id": "vNnHpEKhMa",
+      "lastName": "Veradittakit"
+    }]
+  }},
+  "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=3258813&authType=name&authToken=pWw8&trk=api*a3139351*s3214061*"},
+  "specialties": "Developing, consulting, exploring the following:\n\n\u2022 LAMP, OOP PHP, CSS, JavaScript, AJAX, XHTML, jQuery, JSON/XML.\n\u2022 MVC: symfony 1, ZEND - some development and familiarity.\n\u2022 Database: RDBMS schema/model SQL - MySQL and workbench.\n\u2022 Debug or refactor Java/C++/PERL\n\u2022 Project management experience.\n\u2022 Large data sets\n\u2022 OS - Dev experience: Linux, Win32, UNIX bash shell.\n\u2022 Excel as a data management and analysis tool, MS Office in general.  \n\u2022 Acquisitioning caffine beverages and tasty tidbits.",
+  "summary": "Currently need to get my OOP LAMP - MVC experience onto the next project(s) for your company? Willing to explore mobile apps/platforms where interests lie in developing and bringing client/server applications to the world. Interested in green technology, real social network - user driven, and media content web development; as well as developing for traditional markets. Exploring HTML5/CSS3, SEM/SEO optimization, and usability techniques to incorporate in web design and development. Want to advance my OOP LAMP and SQL development skills with scaling, caching, load balancing, cloud resources, and other platforms if possible. Prefer to do backend and frontend web development, but a bit stronger on the backend.\n\nI've cleaned and processed large data sets. I'm a PC guy but the last few years I've been developing from a Mac because of the native bash shell command line, and everyone around was using Macs. So I'm Mac, PC, Linux, and command line capable, if such is important. I use a text editor mostly, and sometimes Aptana to write code in. I have used Eclipse, but not a big fan, yet. Might check out NetBeans one of these days. Familiar with MVC concepts and have developed under symfony and Zend, briefly. I use Chrome to browse currently, but still use Firefox and Firebug for development and debugging, console.log for JavaScript etc. Checking out git but use svn. I write SQL from scratch but learning to appreciate the MySQL workbench. Exploring unit test driven code. I want to be part of something big that empowers people through my development.\n\nPrefer to work in San Francisco and looking for the next great project and company to work for fulltime; deal directly with companies; PLEASE no second or third party recruiters. HIRE ME, you won't regret it. Willing to commute under right circumstances."
+}

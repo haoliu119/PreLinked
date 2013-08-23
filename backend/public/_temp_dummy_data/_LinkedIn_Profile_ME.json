@@ -2,18 +2,12 @@
   "certifications": {
     "_total": 2,
     "values": [
-      {
-        "id": 18,
-        "name": "Licensed Architect"
-      },
-      {
-        "id": 19,
-        "name": "LEED Accredited Professional"
-      }
+      {"name": "Licensed Architect"},
+      {"name": "LEED Accredited Professional"}
     ]
   },
   "connections": {
-    "_total": 514,
+    "_total": 515,
     "values": [
       {"id": "d3bA9zi41M"},
       {"id": "tkSfbd_HK8"},
@@ -51,11 +45,11 @@
       {"id": "etyF1iuM4Y"},
       {"id": "_ZdTklOGpi"},
       {"id": "gMUoTL5hoA"},
+      {"id": "KzESjM_Ich"},
       {"id": "Bo5qeTL5-0"},
       {"id": "xZvpCdDgbd"},
       {"id": "private"},
       {"id": "private"},
-      {"id": "SQrBjx8OEd"},
       {"id": "juATeHuLTk"},
       {"id": "OeF_y8wcHp"},
       {"id": "LsNZaJQdgk"},
@@ -492,6 +486,7 @@
       {"id": "R6-HSK7hyL"},
       {"id": "tinoY-OZDd"},
       {"id": "D2a-zByL8w"},
+      {"id": "SQrBjx8OEd"},
       {"id": "eVJFnG36Oe"},
       {"id": "g0ZWGr1xx8"},
       {"id": "YqXzHvYAVv"},
@@ -534,26 +529,11 @@
   "courses": {
     "_total": 5,
     "values": [
-      {
-        "id": 8,
-        "name": "Structure of Computer Programs"
-      },
-      {
-        "id": 10,
-        "name": "Symbolic Programming"
-      },
-      {
-        "id": 11,
-        "name": "Discrete Math"
-      },
-      {
-        "id": 35,
-        "name": "Leadership"
-      },
-      {
-        "id": 77,
-        "name": "Principles of Business Administration"
-      }
+      {"name": "Structure of Computer Programs"},
+      {"name": "Symbolic Programming"},
+      {"name": "Discrete Math"},
+      {"name": "Leadership"},
+      {"name": "Principles of Business Administration"}
     ]
   },
   "distance": 0,
@@ -562,24 +542,14 @@
     "values": [
       {
         "degree": "BA",
-        "endDate": {"year": 2006},
         "fieldOfStudy": "Architecture",
-        "id": 66173894,
         "notes": "\u2022\tEmphasis on Experiential Design, Critical and Analytical Thinking, Design Theories, and Creative Problem Solving\n\u2022\t1 year in Computer Science, relevant courses: Structure of Computer Programs, Symbolic Programming, Discrete Math\n\u2022\tStudent instructor to class of 40+ on leadership style; Event chair for a Chinese American student club of 100+ members",
-        "schoolName": "University of California, Berkeley",
-        "startDate": {"year": 2002}
+        "schoolName": "University of California, Berkeley"
       },
-      {
-        "endDate": {"year": 2002},
-        "id": 156085726,
-        "schoolName": "Acalanes High School",
-        "startDate": {"year": 1998}
-      },
+      {"schoolName": "Acalanes High School"},
       {
         "fieldOfStudy": "Computer Science and Software Engineering",
-        "id": 165890596,
-        "schoolName": "Hack Reactor",
-        "startDate": {"year": 2013}
+        "schoolName": "Hack Reactor"
       }
     ]
   },
@@ -678,12 +648,12 @@
     "_total": 2,
     "values": [
       {
-        "id": 13,
-        "language": {"name": "English"}
+        "language": {"name": "English"},
+        "proficiency": {"level": "native_or_bilingual"}
       },
       {
-        "id": 14,
-        "language": {"name": "Mandarin"}
+        "language": {"name": "Mandarin"},
+        "proficiency": {"level": "native_or_bilingual"}
       }
     ]
   },
@@ -694,7 +664,7 @@
   "mfeedRssUrl": "http://www.linkedin.com/rss/mefeed?key=nGTn8ScAKTaxQkcr6Mu5-XMmNNrD_NBNvnmGwDz8KiGaDwxS45jiWnwihkwyeNM",
   "numConnections": 500,
   "numConnectionsCapped": true,
-  "numRecommenders": 1,
+  "numRecommenders": 2,
   "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_QoM0AH7QU-ZNeCzj6ueuAwyXUtS9oCNjkmS8AE0vkqM6z6_go2W1xowUvxDdW5vAbdU3ODTgd6Uc",
   "positions": {
     "_total": 9,
@@ -874,17 +844,27 @@
   },
   "publicProfileUrl": "http://www.linkedin.com/in/haoliu119",
   "recommendationsReceived": {
-    "_total": 1,
-    "values": [{
-      "id": 40821193,
-      "recommendationText": "Hao recently led a very successful consulting project for our volunteer group. \r\n\r\nHao's nonprofit client needed to examine and improve their current fundraising efforts and prepare an actionable plan to help the organization reach its three-year fundraising target.\r\n\r\nBy the conclusion of the 3-month, 50-hour project, Hao delivered an innovative solution to the fundraising team that stood to increase the emotional appeal and success rate of their corporate grant applications. \r\n\r\nUSA Leadership Corps highly recommends Hao for any type of team, consulting, or project management opportunity because he possesses exceptional analytical, problem solving, and leadership skill.\r\n\r\nSincerely,\r\nMaxwell Roper\r\nUSA Leadership Corps",
-      "recommendationType": {"code": "business-partner"},
-      "recommender": {
-        "firstName": "USA Leadership",
-        "id": "2jFsNBfPEK",
-        "lastName": "Corps (USALC)"
+    "_total": 2,
+    "values": [
+      {
+        "recommendationText": "In a word, Hao is awesome.  I hired him to help build an important new software module for Foundersuite focused on tracking and monitoring the competitive landscape.  \r\n\r\nHe absolutely rocked the project.  He:\r\n   \r\n* quickly on-boarded and plugged into the code base \r\n* internalized the user stories and revised mockups to better present data \r\n* implemented stretch features to enrich the user experience \r\n\r\nHao worked fast, hit deadlines, and took initiative.  In short, he went miles above and beyond the scope of the project, and really put his soul into it. I would hire him again (and recommend him to others) without reservation. \r\n\r\nNathan Beckord",
+        "recommendationType": {"code": "service-provider"},
+        "recommender": {
+          "firstName": "Nathan",
+          "id": "bdcV9GpeWd",
+          "lastName": "Beckord"
+        }
+      },
+      {
+        "recommendationText": "Hao recently led a very successful consulting project for our volunteer group. \r\n\r\nHao's nonprofit client needed to examine and improve their current fundraising efforts and prepare an actionable plan to help the organization reach its three-year fundraising target.\r\n\r\nBy the conclusion of the 3-month, 50-hour project, Hao delivered an innovative solution to the fundraising team that stood to increase the emotional appeal and success rate of their corporate grant applications. \r\n\r\nUSA Leadership Corps highly recommends Hao for any type of team, consulting, or project management opportunity because he possesses exceptional analytical, problem solving, and leadership skill.\r\n\r\nSincerely,\r\nMaxwell Roper\r\nUSA Leadership Corps",
+        "recommendationType": {"code": "business-partner"},
+        "recommender": {
+          "firstName": "USA Leadership",
+          "id": "2jFsNBfPEK",
+          "lastName": "Corps (USALC)"
+        }
       }
-    }]
+    ]
   },
   "relatedProfileViews": {
     "_total": 10,
@@ -941,171 +921,51 @@
       }
     ]
   },
-  "relationToViewer": {"distance": 0},
+  "relationToViewer": {},
   "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=80950825&authType=name&authToken=exBA&trk=api*a3139351*s3214061*"},
   "skills": {
     "_total": 40,
     "values": [
-      {
-        "id": 24,
-        "skill": {"name": "Design Management"}
-      },
-      {
-        "id": 28,
-        "skill": {"name": "Entrepreneurship"}
-      },
-      {
-        "id": 31,
-        "skill": {"name": "Concept Design"}
-      },
-      {
-        "id": 37,
-        "skill": {"name": "Product Design"}
-      },
-      {
-        "id": 38,
-        "skill": {"name": "Product Development"}
-      },
-      {
-        "id": 39,
-        "skill": {"name": "Rapid Prototyping"}
-      },
-      {
-        "id": 40,
-        "skill": {"name": "3D Studio Max"}
-      },
-      {
-        "id": 41,
-        "skill": {"name": "SketchUp"}
-      },
-      {
-        "id": 45,
-        "skill": {"name": "AutoCAD"}
-      },
-      {
-        "id": 46,
-        "skill": {"name": "Photoshop"}
-      },
-      {
-        "id": 48,
-        "skill": {"name": "InDesign"}
-      },
-      {
-        "id": 64,
-        "skill": {"name": "Bentley Architecture"}
-      },
-      {
-        "id": 66,
-        "skill": {"name": "MicroStation"}
-      },
-      {
-        "id": 69,
-        "skill": {"name": "Illustrator"}
-      },
-      {
-        "id": 73,
-        "skill": {"name": "Revit"}
-      },
-      {
-        "id": 89,
-        "skill": {"name": "Consulting"}
-      },
-      {
-        "id": 90,
-        "skill": {"name": "Analysis"}
-      },
-      {
-        "id": 94,
-        "skill": {"name": "JavaScript"}
-      },
-      {
-        "id": 95,
-        "skill": {"name": "HTML 5"}
-      },
-      {
-        "id": 96,
-        "skill": {"name": "CSS3"}
-      },
-      {
-        "id": 97,
-        "skill": {"name": "jQuery"}
-      },
-      {
-        "id": 98,
-        "skill": {"name": "Git"}
-      },
-      {
-        "id": 99,
-        "skill": {"name": "Strategy"}
-      },
-      {
-        "id": 102,
-        "skill": {"name": "Backbone.js"}
-      },
-      {
-        "id": 103,
-        "skill": {"name": "d3.js"}
-      },
-      {
-        "id": 104,
-        "skill": {"name": "MySQL"}
-      },
-      {
-        "id": 106,
-        "skill": {"name": "SQL"}
-      },
-      {
-        "id": 107,
-        "skill": {"name": "Ruby"}
-      },
-      {
-        "id": 108,
-        "skill": {"name": "MongoDB"}
-      },
-      {
-        "id": 109,
-        "skill": {"name": "BIM"}
-      },
-      {
-        "id": 111,
-        "skill": {"name": "Node.js"}
-      },
-      {
-        "id": 112,
-        "skill": {"name": "Architecture"}
-      },
-      {
-        "id": 113,
-        "skill": {"name": "Ruby on Rails"}
-      },
-      {
-        "id": 116,
-        "skill": {"name": "Web Development"}
-      },
-      {
-        "id": 117,
-        "skill": {"name": "CSS"}
-      },
-      {
-        "id": 118,
-        "skill": {"name": "AJAX"}
-      },
-      {
-        "id": 120,
-        "skill": {"name": "Github"}
-      },
-      {
-        "id": 121,
-        "skill": {"name": "Microsoft Excel"}
-      },
-      {
-        "id": 123,
-        "skill": {"name": "Rails"}
-      },
-      {
-        "id": 125,
-        "skill": {"name": "Product Management"}
-      }
+      {"skill": {"name": "Design Management"}},
+      {"skill": {"name": "Entrepreneurship"}},
+      {"skill": {"name": "Concept Design"}},
+      {"skill": {"name": "Product Design"}},
+      {"skill": {"name": "Product Development"}},
+      {"skill": {"name": "Rapid Prototyping"}},
+      {"skill": {"name": "3D Studio Max"}},
+      {"skill": {"name": "SketchUp"}},
+      {"skill": {"name": "AutoCAD"}},
+      {"skill": {"name": "Photoshop"}},
+      {"skill": {"name": "InDesign"}},
+      {"skill": {"name": "Bentley Architecture"}},
+      {"skill": {"name": "MicroStation"}},
+      {"skill": {"name": "Illustrator"}},
+      {"skill": {"name": "Revit"}},
+      {"skill": {"name": "Consulting"}},
+      {"skill": {"name": "Analysis"}},
+      {"skill": {"name": "JavaScript"}},
+      {"skill": {"name": "HTML 5"}},
+      {"skill": {"name": "CSS3"}},
+      {"skill": {"name": "jQuery"}},
+      {"skill": {"name": "Git"}},
+      {"skill": {"name": "Strategy"}},
+      {"skill": {"name": "Backbone.js"}},
+      {"skill": {"name": "d3.js"}},
+      {"skill": {"name": "MySQL"}},
+      {"skill": {"name": "SQL"}},
+      {"skill": {"name": "Ruby"}},
+      {"skill": {"name": "MongoDB"}},
+      {"skill": {"name": "BIM"}},
+      {"skill": {"name": "Node.js"}},
+      {"skill": {"name": "Architecture"}},
+      {"skill": {"name": "Ruby on Rails"}},
+      {"skill": {"name": "Web Development"}},
+      {"skill": {"name": "CSS"}},
+      {"skill": {"name": "AJAX"}},
+      {"skill": {"name": "Github"}},
+      {"skill": {"name": "Microsoft Excel"}},
+      {"skill": {"name": "Rails"}},
+      {"skill": {"name": "Product Management"}}
     ]
   },
   "summary": "Hao Liu is passionate about building beautiful and intuitive products, and about creating services that maximize the potentials of people and organizations. Although his career began in architecture, he never stopped applying his analytical and critical thinking skills, intuitive design sense, creative problem solving skill, and business acumen to build products and services outside of architecture. \n\nBesides Hao\u2019s professional accomplishments leading teams of designers and engineers creating complex building projects around the world, his strong entrepreneurial spirit guided him to start his own business and join a startup, and his instinct for problem solving led him to invent consumer products and provide business consulting to nonprofit organizations. \n\nHao\u2019s recent role as a product manager in a startup he invested in, coupled with his strong belief that software is the universal tool to unlock potentials in people and organizations, led him to pursue a career in software development.",
@@ -1192,53 +1052,27 @@
       }
     ]
   },
-  "volunteer": {
-    "causes": {
-      "_total": 6,
-      "values": [
-        {"name": "economicEmpowerment"},
-        {"name": "education"},
-        {"name": "health"},
-        {"name": "humanRights"},
-        {"name": "povertyAlleviation"},
-        {"name": "socialServices"}
-      ]
-    },
-    "supportedOrganizations": {
-      "_total": 5,
-      "values": [
-        {"name": "Habitat for Humanity International"},
-        {"name": "USA Leadership Corps"},
-        {"name": "United Way of Metropolitan Atlanta"},
-        {"name": "Project PLASE, Inc"},
-        {"name": "Community Consulting Teams"}
-      ]
-    },
-    "volunteerExperiences": {
-      "_total": 3,
-      "values": [
-        {
-          "id": 58,
-          "organization": {"name": "Community Consultant Teams Atlanta"},
-          "role": "Pro Bono Business Consultant"
+  "volunteer": {"volunteerExperiences": {
+    "_total": 3,
+    "values": [
+      {
+        "organization": {"name": "Community Consultant Teams Atlanta"},
+        "role": "Pro Bono Business Consultant"
+      },
+      {
+        "organization": {
+          "id": 210115,
+          "name": "USA Leadership Corps"
         },
-        {
-          "id": 52,
-          "organization": {
-            "id": 210115,
-            "name": "USA Leadership Corps"
-          },
-          "role": "Pro Bono Business Consultant"
+        "role": "Pro Bono Business Consultant"
+      },
+      {
+        "organization": {
+          "id": 2567147,
+          "name": "NW Metro Atlanta Habitat for Humanity"
         },
-        {
-          "id": 53,
-          "organization": {
-            "id": 2567147,
-            "name": "NW Metro Atlanta Habitat for Humanity"
-          },
-          "role": "Construction Team Leader"
-        }
-      ]
-    }
-  }
+        "role": "Construction Team Leader"
+      }
+    ]
+  }}
 }
