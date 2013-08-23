@@ -1,7 +1,12 @@
 <h2 class="title"><a href="{{url}}" target="_blank">{{jobtitle}}</a></h2>
 <ul class="small-10 info columns">
   <li class="company">{{company}}</li>
-  <li class="location">{{city}}, {{state}}</li>
+  <li class="location">
+    {{#if city}}
+      {{city}},
+    {{/if}}
+    {{state}}
+  </li>
   <!-- <li>
     jobkey: {{jobkey}}
   </li>
