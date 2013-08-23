@@ -5,6 +5,7 @@ var pass      = require('../controllers/passport.js');
 
 var site      = require('../controllers/site.js');
 var jobs      = require('../controllers/jobs.js');
+var jobs_controller = require('../controllers/jobs_controller.js');
 var linkedin  = require('../controllers/linkedin.js');
 var persons   = require('../controllers/persons.js');
 var getdb     = require('../controllers/getDb.js');
@@ -16,6 +17,7 @@ module.exports = function(app) {
   app.get('/getdb', getdb.getKeyword);
 
   //Jobs
+  app.get('/jobs', jobs_controller.get);
   app.get('/jobs/search', jobs.search);
   app.get('/jobs/searchSorted', jobs.searchSorted);
 

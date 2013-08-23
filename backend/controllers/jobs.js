@@ -97,6 +97,14 @@ var _saveFirstDegree = function(inFirstDegree, myId){
   }
 };
 
+var _saveIndeedJobs = function(indeedSearch){
+  if(typeof indeedSearch === 'string'){
+    indeedSearch = JSON.parse(indeedSearch);
+    //API might return string
+  }
+
+};
+
 jobs.searchSorted = function(req, res){
   console.log('-controller-jobs.searchSorted()');
 
@@ -111,7 +119,8 @@ jobs.searchSorted = function(req, res){
 
   Q.all(promises)
     .spread(function(indeedSearch, inSearch, inFirstDegree){
-      console.log('IndeedApi data: \n', indeedSearch.length);
+      console.log('IndeedApi data: \n', indeedSearch);
+      _saveIndeedJobs(indeedSearch);
       // console.log('LinkedInApi search data: \n');
       // _saveInSearch(inSearch, req.session.passport.user.id);
 
