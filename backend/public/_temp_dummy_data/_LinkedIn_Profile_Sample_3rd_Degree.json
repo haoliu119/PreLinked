@@ -1,0 +1,89 @@
+{
+  "distance": 3,
+  "firstName": "Boris",
+  "headline": "Sr. Software QA Engineer",
+  "id": "ozeCwK7pnm",
+  "industry": "Computer Software",
+  "lastName": "A.",
+  "location": {"name": "San Francisco Bay Area"},
+  "numConnections": 174,
+  "numConnectionsCapped": false,
+  "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_hqAXN0nyCk6BlsSA89lUNy3gCilc1y2AGnLUNylCgh5F24Rlu-3HVpLuuwAHKUDj3c1VURfTplZU",
+  "positions": {
+    "_total": 1,
+    "values": [{
+      "company": {
+        "industry": "Computer Software",
+        "name": "Genophen, Inc., Redwood Shores, CA"
+      },
+      "id": 346007377,
+      "isCurrent": true,
+      "startDate": {
+        "month": 8,
+        "year": 2012
+      },
+      "title": "Sr. Software QA Engineer"
+    }]
+  },
+  "publicProfileUrl": "http://www.linkedin.com/in/bayrapetov",
+  "relationToViewer": {"relatedConnections": {
+    "_count": 10,
+    "_start": 0,
+    "_total": 12,
+    "values": [
+      {
+        "firstName": "Tuhin",
+        "id": "Qes3UBRfsd",
+        "lastName": "Chakraborty"
+      },
+      {
+        "firstName": "Armen",
+        "id": "TUrADuK0dD",
+        "lastName": "Vartanian"
+      },
+      {
+        "firstName": "Steven",
+        "id": "zJqWpZlQaD",
+        "lastName": "Wong"
+      },
+      {
+        "firstName": "Justina",
+        "id": "MYJCbZc5P_",
+        "lastName": "Louie"
+      },
+      {
+        "firstName": "Adi",
+        "id": "0L-ChxvoDw",
+        "lastName": "Jakubovits"
+      },
+      {
+        "firstName": "Bill",
+        "id": "G7mNQXs02J",
+        "lastName": "Dillmeier (dillmeier@comcast.net)"
+      },
+      {
+        "firstName": "David",
+        "id": "QhtSxsiYZF",
+        "lastName": "Vo"
+      },
+      {
+        "firstName": "Loila",
+        "id": "DgSxq1wpGv",
+        "lastName": "Mongas"
+      },
+      {
+        "firstName": "Alexander",
+        "id": "MikzKDXHGs",
+        "lastName": "Luberg"
+      },
+      {
+        "firstName": "Darwish",
+        "id": "th2TbPqlvv",
+        "lastName": "Gani"
+      }
+    ]
+  }},
+  "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=16264697&authType=name&authToken=wkXs&trk=api*a3139351*s3214061*"},
+  "specialties": "Software Quality Assurance, Automation, Cucumber, RubyMine, TeamCity, InelliJ, Software Development Life Cycle, Agile, Functional/UI, Blackbox/Greybox/API/Web Services testing,  Test Plan/Design/Cases/Scenarios, Bug Tracking System, JIRA, Web/Client-Server Application, Windows, UNIX, Linux, Shell, HTML, XML, Visual Studio, C#, Java, Selenium, JUnit, HTTPUnit, Eclipse, Oracle, SQLDeveloper, MySQL, SequelPro, QTP, WinRunner, SilkTest, VMWare, JProtection, JAWS, Code Coverage, SVN, TFS, Networking.",
+  "summary": "-\tExtensive experience in Software Quality Assurance in all stages of Software Development Life Cycle (SDLC).\n\n-\tTrack record of effective participation and innovative contribution in vital stages of testing complex Web-based enterprise scale applications in different OS platforms (Windows, UNIX), Browsers (Internet Explorer, Firefox, Google Chrome, Opera, Safari), Databases (Oracle, Informix).\n\n-\tAbility to work independently and as a team member, rapidly consume domain knowledge and determine comprehensive, meaningful tests."
+}

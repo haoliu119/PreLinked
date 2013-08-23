@@ -4,15 +4,18 @@ var LinkedInApi = module.exports = {};
 
 var _BasicProfileFields = "id,first-name,last-name,headline,location:(name),industry,distance,relation-to-viewer:(related-connections),num-connections,num-connections-capped,summary,specialties,positions,picture-url,site-standard-profile-request,public-profile-url";
 
-var _FullProfileFields = "last-modified-timestamp,associations,interests,publications:(title,publisher,authors:(name),summary,url),patents:(title,summary,inventors:(name),url),languages:(name,level),skills:(name),certifications:(name),educations:(school-name,field-of-study,degree,activities,notes),courses:(name),volunteer:(role,organization:(name),cause:(name)),three-current-positions,three-past-positions,num-recommenders,recommendations-received:(recommendation-type,recommendation-text,recommender),mfeed-rss-url,job-bookmarks,date-of-birth,member-url-resources,related-profile-views,connections,group-memberships,network";
+var _FullProfileFields = "last-modified-timestamp,associations,interests,publications:(title,publisher,authors:(name),summary,url),patents:(title,summary,inventors:(name),url),languages:(language:(name),proficiency:(level)),skills:(skill:(name)),certifications:(name),educations:(school-name,field-of-study,degree,activities,notes),courses:(name),volunteer:(volunteerExperiences:(role,organization)),three-current-positions,three-past-positions,num-recommenders,recommendations-received:(recommendation-type,recommendation-text,recommender),mfeed-rss-url,job-bookmarks,date-of-birth,member-url-resources,related-profile-views,connections:(id),group-memberships,network";
+
+// skills:(???)
 
 var _ContactInfoFields = "email-address,phone-numbers,im-accounts,main-address,twitter-accounts";
 
 var _AllFields = _BasicProfileFields + "," + _FullProfileFields + "," + _ContactInfoFields;
 
-var _PeopleSearchReturnFields = "(people:(" + _AllFields + "),num-results,facets:(code,name,buckets:(code,name,count)))";
+var _PeopleSearchReturnFields = "(people:(" + _AllFields + "),facets:(code,name,buckets:(code,name,count)))";
 
 // GET /people/search
+// related connections is not available for any bulk call
 LinkedInApi.searchConnections = function (session, query) {
   console.log('- GET /people/search - query >> ', query);
   /*  query: {
@@ -44,11 +47,11 @@ LinkedInApi.searchConnections = function (session, query) {
         'first-name': '',
         'last-name' : '',
         format: 'json',
-        count:  '25',        // default page max
-        start:  '0',         // specify in query for pagination
-        sort:   'relevance', // we already have your 1st degree
-        facets: 'location,industry,network,current-company,past-company,school',
-        facet:  'network,S,A,O' //
+        count:  '25',         // default page max
+        start:  '0',          // specify in query for pagination
+        sort:   'relevance',  // we already have your 1st degree
+        facets: 'network',    // location,industry,school,current-company,past-company
+        facet:  'network,S,A,O' // F first, S second, A groups, O out-of-network(third)
       };
 
   var deferred = Q.defer();
@@ -157,3 +160,41 @@ LinkedInApi.searchFirstDegree = function (session, query) {
 
   return deferred.promise;
 };
+
+// LinkedInApi.searchCompanies = function(session, companyNames) {
+//   console.log('- LinkedInApi.searchCompanies >>');
+
+//   // var endPoint = "https://api.linkedin.com/v1/companies::(universal-name=convergent-manufacturing-technologies-inc-)",
+//   var endPoint = "https://api.linkedin.com/v1/company-search:(companies:(id,name,universal-name))",
+//       accessToken = session.passport.user.accessToken,
+//       url = endPoint,
+//       defaults = {
+//         keywords: 'composite software',
+//         format: 'json',
+//         count: '110',
+//         sort: 'relevance'
+//       };
+
+//   var deferred = Q.defer();
+
+//   request({
+//     method: 'GET',
+//     url: url,
+//     qs: _.extend(defaults,{
+//           oauth2_access_token: accessToken,
+//         })
+//     },function(error, response, body){
+//       if (error) {
+//         deferred.reject(error);
+//       } else {
+//         try {
+//           // body = JSON.stringify(JSON.parse(body).people.values);
+//           deferred.resolve(body);
+//         } catch (error){
+//           console.log('- LinkedInApi error: ', error, body);
+//           deferred.reject(body.message);
+//         }
+//       }
+//   });
+//   return deferred.promise;
+// };

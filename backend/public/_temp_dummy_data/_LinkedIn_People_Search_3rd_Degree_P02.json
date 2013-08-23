@@ -1,0 +1,861 @@
+{
+  "facets": {
+    "_total": 1,
+    "values": [{
+      "buckets": {
+        "_total": 4,
+        "values": [
+          {
+            "code": "F",
+            "count": 0,
+            "name": "1st Connections"
+          },
+          {
+            "code": "S",
+            "count": 67,
+            "name": "2nd Connections"
+          },
+          {
+            "code": "A",
+            "count": 190,
+            "name": "Group Members"
+          },
+          {
+            "code": "O",
+            "count": 965,
+            "name": "3rd + Everyone Else"
+          }
+        ]
+      },
+      "code": "network",
+      "name": "Relationship"
+    }]
+  },
+  "people": {
+    "_count": 25,
+    "_start": 25,
+    "_total": 260,
+    "values": [
+      {
+        "distance": 3,
+        "firstName": "Nirmal",
+        "headline": "J2EE Consultant at Ventyx, an ABB Company",
+        "id": "tgCtTQ1nG8",
+        "industry": "Electrical/Electronic Manufacturing",
+        "lastName": "C.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 178,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1388765,
+              "industry": "Computer Software",
+              "name": "Ventyx, an ABB Company",
+              "size": "1001-5000 employees",
+              "type": "Public Company"
+            },
+            "id": 260716515,
+            "isCurrent": true,
+            "startDate": {
+              "month": 2,
+              "year": 2012
+            },
+            "title": "J2EE Consultant"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/nirmalcoonghe",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=2126080&authType=OUT_OF_NETWORK&authToken=LRwm&trk=api*a3139351*s3214061*"},
+        "specialties": "Adept in open standards based technologies like SOAP XML, Web Services  using Axis, JAX-WS\nAdept in XML based technologies like SAX, DOM, STAX, XSLT,etc\nProficient in Java & J2EE based technologies \n\nWell versed in Object-Oriented Analysis & Design and client based technologies like AJAX, Javascript, JSON, XML DOM, XForms \n\nProficient in Troubleshooting & Problem Resolution\n\nWorked in various domains like Supply Chain  Planning, Biotechnology, WIP Tracking Systems & Energy Market Systems",
+        "summary": "About 9 years experience in all phases of Software Development Life Cycle, providing design, development, maintenance and support services for mission critical systems in varied domains."
+      },
+      {
+        "distance": 3,
+        "firstName": "Hervé Vũ",
+        "headline": "High Tech Entrepreneur | Software Architect",
+        "id": "XY74FqUTSN",
+        "industry": "Computer Software",
+        "lastName": "Roussel",
+        "location": {"name": "Washington D.C. Metro Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_QoM0Ad2EUnszH3kjHus2AEDLUtS9oCNjXIS8AE0vkqM6z6_go2W1xowUvxDdW5vAbdU3ODTq8DOc",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "industry": "Computer Software",
+              "name": "Astoria Road"
+            },
+            "id": 418257670,
+            "isCurrent": true,
+            "startDate": {
+              "month": 7,
+              "year": 2013
+            },
+            "summary": "Silicon Valley's Plug and Play Tech Accelerator's Startup Camp 2013 participant.",
+            "title": "CTO"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/hroussel",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=3553781&authType=OPENLINK&authToken=cl3d&trk=api*a3139351*s3214061*"},
+        "specialties": "Software development, Web 2.0, cloud computing, Java, J2SE, J2EE, Database management systems, SQL, JBoss Application Server, Hibernate, jQuery.",
+        "summary": "High tech startup CTO & Co-founder."
+      },
+      {
+        "distance": 3,
+        "firstName": "Joseph",
+        "headline": "Business Analyst/Project Manager/Process Engineer",
+        "id": "ZTKDT8lC80",
+        "industry": "Information Technology and Services",
+        "lastName": "M.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 453,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_Ow-uHnoMKeG8Wlxoy7txHqHzruLG5lOoyd61HqVLfWA-szdEtSG8QNmIOG5j6n060ertFPX8wVDt",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 9112,
+              "industry": "Banking",
+              "name": "First Republic Bank",
+              "size": "1001-5000 employees",
+              "ticker": "FRC",
+              "type": "Public Company"
+            },
+            "id": 228088882,
+            "isCurrent": true,
+            "startDate": {
+              "month": 9,
+              "year": 2011
+            },
+            "title": "Process Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/jmaser",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=2914802&authType=OUT_OF_NETWORK&authToken=MksM&trk=api*a3139351*s3214061*"},
+        "specialties": "Leadership, Stakeholder advocacy, Business Analysis, Project Management, Systems Development Life Cycle (SDLC) methodology, Information Technology Infrastructure Library (ITIL) Change Management methodology, requirements gathering, functional specification development, and web site design.",
+        "summary": "Business Analyst/Project Manager offering demonstrated ability to lead complex projects and full-cycle implementations.  Broadly applicable experience in business and technical environments with proven finesse as a liaison across corporate levels and a facilitator of high-performing, cross-functional teams.  Key areas of focus:\n-Team Leadership\n-Stakeholder advocacy\n-Best practice evaluation and implementation.\n-Pragmatic decision-making to emphasize efficiencies and cost savings.\n-Identifying continuous improvement opportunities and implementing solutions.\n-Project and Life Cycle Management."
+      },
+      {
+        "distance": 3,
+        "firstName": "Satish",
+        "headline": "Director and Senior Portfolio Manager, Board of Regents, University of California, Office of the Treasurer",
+        "id": "kNg7oxv99y",
+        "industry": "Investment Management",
+        "lastName": "S.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "positions": {
+          "_total": 2,
+          "values": [
+            {
+              "company": {
+                "id": 6226,
+                "industry": "Higher Education",
+                "name": "University of San Francisco",
+                "type": "Educational Institution"
+              },
+              "id": 214632978,
+              "isCurrent": true,
+              "startDate": {
+                "month": 1,
+                "year": 2006
+              },
+              "summary": "Currently teaching in the MS Programs in Financial Analysis and Risk Management: \nIntroduction to Fixed Income, Advanced Fixed Income and Portfolio Management for Pension and Endowment Funds.",
+              "title": "Assistant Professor, Graduate School of Management, MSFA and MSRM"
+            },
+            {
+              "company": {
+                "industry": "Investment Management",
+                "name": "Board of Regents Univ of CA"
+              },
+              "id": 21300639,
+              "isCurrent": true,
+              "startDate": {
+                "month": 4,
+                "year": 1998
+              },
+              "summary": "Senior member of the investment management team that manages $85B in assets for the Board of Regents, University of California.  Responsible for the investment management of fixed income assets for the Pension, Endowment and Defined Contribution Portfolios.",
+              "title": "Director and Sr. Portfolio Manager"
+            }
+          ]
+        },
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=14870221&authType=OUT_OF_NETWORK&authToken=q6ZF&trk=api*a3139351*s3214061*"}
+      },
+      {
+        "distance": 3,
+        "firstName": "Poul",
+        "headline": "Master ProSupport Engineer at Dell Networking",
+        "id": "1ZPxLhRZYN",
+        "industry": "Computer & Network Security",
+        "lastName": "Frederiksen",
+        "location": {"name": "Austin, Texas Area"},
+        "numConnections": 160,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_bvDvUWhlobxk-uZuFqxQUI1OHkHNKEduLtJoUoAmcTpk7aO2IPjMzE586oew1SH8QnfwNSi_ydyZ",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1093,
+              "industry": "Information Technology and Services",
+              "name": "Dell",
+              "size": "10,001+ employees",
+              "ticker": "DELL",
+              "type": "Public Company"
+            },
+            "id": 400740175,
+            "isCurrent": true,
+            "startDate": {
+              "month": 11,
+              "year": 2012
+            },
+            "title": "Master ProSupport Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/pfred",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=48222&authType=OPENLINK&authToken=Ni24&trk=api*a3139351*s3214061*"},
+        "specialties": "-Virtualization (VMWare)\n-Datacenter (Design, Power, UPS, Cooling, Rack Systems, Cabling, Consolidation/Upgrade)\n-Hardware(Server, Desktop, RAID, SAN, Dell, HP, Apple)\n-O/S(Windows Server & Desktop, Mac OS X, Linux)\n-Networking (LAN, WAN, VLAN, VOIP, Wireless, iSCSI, Monitoring, Integration)\n-Disaster Recovery (Planning, Testing, Implementation & Business Continuance)\n-Security(Firewall, VPN, SSL-VPN, O/S, Cisco, Juniper, NetScreen, Sonicwall, Fortinet,   WatchGuard)",
+        "summary": "Accomplished IT professional with more than 15 years of substantial multi-national experience.  Broad understanding of information technology fundamentals and global business requirements needed for demonstrated success in the IT arena. \n\nAble to travel if required."
+      },
+      {
+        "distance": 3,
+        "firstName": "Scott",
+        "headline": "Global Continuity Services at eBay at eBay",
+        "id": "GmQnfO8inW",
+        "industry": "Financial Services",
+        "lastName": "B.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_YFRwQl48FWbSVoDqpbV4Q1EiLaK_Z2yqp6fqQ-MAVIkPbewN-3IbHtD0I8ryRIg4xXJvWvIEcTw0",
+        "positions": {
+          "_total": 2,
+          "values": [
+            {
+              "company": {
+                "id": 2034675,
+                "industry": "Hospital & Health Care",
+                "name": "Hope Hospice, Dublin CA",
+                "size": "51-200 employees",
+                "type": "Nonprofit"
+              },
+              "id": 430940378,
+              "isCurrent": true,
+              "startDate": {
+                "month": 7,
+                "year": 2013
+              },
+              "title": "Volunteer"
+            },
+            {
+              "company": {
+                "id": 1481,
+                "industry": "Internet",
+                "name": "eBay",
+                "size": "10,001+ employees",
+                "ticker": "eBay",
+                "type": "Public Company"
+              },
+              "id": 206967352,
+              "isCurrent": true,
+              "startDate": {
+                "month": 8,
+                "year": 2011
+              },
+              "summary": "APAC BC Account Manager\nManage Business Continuity program for eBay and eBay adjacencies in the Asia/Pacific region",
+              "title": "Global Continuity Services"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/scott-b/0/a08/55a",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=2502934&authType=OUT_OF_NETWORK&authToken=c4Zi&trk=api*a3139351*s3214061*"},
+        "specialties": "Disaster Recovery, Business Continuity Planning"
+      },
+      {
+        "distance": 3,
+        "firstName": "Alexey",
+        "headline": "Desk Strategist VP, FX Technology at J.P. Morgan",
+        "id": "Hf5jKySB3M",
+        "industry": "Financial Services",
+        "lastName": "O.",
+        "location": {"name": "Within 23 wards, Tokyo, Japan"},
+        "numConnections": 311,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_IcAN_I6yC44zry9MWnBb_W9jmV75tybMW9LI_Wv3l0UvS4KJbA3ZDd3f8NfsAUQvoq1Euab_LqXx",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1067,
+              "industry": "Financial Services",
+              "name": "J.P. Morgan",
+              "size": "10,001+ employees",
+              "ticker": "JPM",
+              "type": "Public Company"
+            },
+            "id": 232579855,
+            "isCurrent": true,
+            "startDate": {
+              "month": 11,
+              "year": 2011
+            },
+            "summary": "\u2022\tDeveloping risk and pricing analytics for FX trading desk, supporting operations and ongoing projects\n\u2022\tAssisting with the business migration to the new global technology platform",
+            "title": "Desk Strategist VP, FX Technology"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/alexeyorlovsky",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=3807465&authType=OUT_OF_NETWORK&authToken=dHri&trk=api*a3139351*s3214061*"},
+        "specialties": "Quantitative finance research and modeling, fixed income and currencies, software development, applied math background, design of efficient code in Java, C, C++, R, Matlab, and other environments, experience working with large datasets and online databases (CRSP, Compustat, Bloomberg, I/B/E/S, Aegis, NYSE TAQ), Cisco Network Professional certification",
+        "summary": "\u2022\tSolid math background and strong integrated skills in quantitative modeling, research, and software development. \n\u2022\tDemonstrated ability to understand complex concepts and products and present them to a broad range of audiences\n\u2022\tMFE supported by a prior MBA degree with Finance concentration, focusing on financial engineering and macroeconomics"
+      },
+      {
+        "distance": 3,
+        "firstName": "Antoine",
+        "headline": ".Net Software Test Engineer in Clinical Chemistry Diagnostic Instrument at Roche Diagnostics",
+        "id": "ZzNHLaOpt_",
+        "industry": "Information Technology and Services",
+        "lastName": "F.",
+        "location": {"name": "Zürich Area, Switzerland"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_SmdaAVSV9zXLeQ3gDfMgAMVoNtheHLKgfWjlAMwVwBqZcTbj3eJGxJ0qsp8BwGlluSIrOOzjRQ5n",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1600,
+              "industry": "Pharmaceuticals",
+              "name": "Roche Diagnostics",
+              "size": "10,001+ employees",
+              "ticker": "ROG.VX",
+              "type": "Public Company"
+            },
+            "id": 302937923,
+            "isCurrent": true,
+            "startDate": {
+              "month": 7,
+              "year": 2012
+            },
+            "summary": "In charge of the Software Verification and Validation of an new generation of Software controlling Clinical Diagnostic Instruments (Substrate / Specific Protein / Enzyme / DAT / TDM / ISE) based on the Microsoft .Net Framework and Silverlight",
+            "title": ".Net Software Test Engineer of Clinical Chemistry / Clinical Diagnostic Instruments"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/antoinefalempin",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=8971735&authType=OUT_OF_NETWORK&authToken=QGI3&trk=api*a3139351*s3214061*"},
+        "summary": "Technical Software Project Leader,  &  Certified Software Tester,\n\nWorked for a wide range of Research & Develop projects : \n\u2022 Medical Devices for Clinical Diagnostics (DAT/ TDM, Blood Screening)\n\u2022 Virology & Immunology Labs, Cytology Research Labs, \n\u2022 Agronomy, Food Industry, \n\u2022 Automation in productive Factories.\n\nI have a advanced practice  of 3rd parties Corporate Systems Integration (Symyx / Accelrys ELN, Axeda Service Link, Cognex Automated Image-Recognition Technology)\n\nI got a long experience in Software Development Life Cycle :\n    - specification, implementation, debugging, testing, tracking, releasing, support, regression, validation.\n\nCharacter\n----------------\n\u2022 Service oriented, pro-active, creative, \n\u2022 \u2022 I am particularly interested in cutting-edge technologies and methodologies, \n\u2022 \u2022 \u2022 scaling projects and teams to the most recent updates and the highest levels.\n\nSpecialties:\n-----------------\nWindows 8, .NET Framework, C#, Regex, XML, SQL, ...\n\n- Microsoft Test Manager 2012, \n- Microsoft Test Lab Center\n- Visual Studio 2012, \n- Team Foundation Server 2010.\n- Microsoft SharePoint 2010\n\n- Rational ClearCase, ClearQuest,\n- HP Quality Center, \n- Wiki, SAP, DVS,\n- Issue Tracking System\n\n- V-model, Agile Testing methods (SCRUM),\n- TDD (Test Driven Development), Unit Testing"
+      },
+      {
+        "distance": 3,
+        "firstName": "Lek",
+        "headline": "Information Systems Manager II at Santa Clara County's Department of Alcohol and Drug Services",
+        "id": "0IJklp6XVZ",
+        "industry": "Hospital & Health Care",
+        "lastName": "T.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 77,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_A8PuXt0At7hOzqxnPhiPXAYhrf-xB-OnPbb1XrfhfW67end9gQ_8EKUaOGt8qz0sr_ltIBgjU7Kp",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 283130,
+              "industry": "Hospital & Health Care",
+              "name": "Santa Clara Valley Health & Hospital System",
+              "size": "1001-5000 employees",
+              "type": "Government Agency"
+            },
+            "id": 318491552,
+            "isCurrent": true,
+            "startDate": {
+              "month": 9,
+              "year": 2012
+            },
+            "summary": "\u2022\tDesign and manage the implementation of the data warehouse for the Santa Clara County's Mental Helath and Department of Alcohol and Drug Services.  \n\u2022\tProvide information technology support for the Quality Improvement and Data Support Division.",
+            "title": "Information Systems Manager II"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/lek-t/18/ba7/85b",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=62677511&authType=OUT_OF_NETWORK&authToken=9noO&trk=api*a3139351*s3214061*"},
+        "specialties": "\u2022\tPMI certified Project Manager (PMP)\t\u2022\tBusiness Relationship Development\n\u2022\tClinical Information Technology\t\u2022\tStrategic and Product Marketing\n\u2022\tInformation Technology Enterprise Security\t\u2022\tSoftware and Hardware Development\n\u2022\tSingle Sign-On Solution\t\u2022\tMicrosoft Certified Professional\n\u2022\tVoice Over-IP Technology\t\u2022\tASIC and Custom Microprocessor Design\n\u2022\tField Application Engineering\t\u2022\tCMOS VLSI design using VHDL",
+        "summary": "Over 20 years in project management, marketing, technical support, hardware & software development.\nProven record in completing projects & meeting technical & performance requirements within deadline.\nDevelop business relationships, exceeding revenue goals, strong customer relations.\nOrganized team leader in accomplishing group assignments giving recognition to the group."
+      },
+      {
+        "distance": 3,
+        "firstName": "Suchitra",
+        "headline": "As Director at TEKONS; Independent Consultant Oracle DBA , HRMS and e-governance consulatnt",
+        "id": "NbG3lr0ri3",
+        "industry": "Information Technology and Services",
+        "lastName": "P.",
+        "location": {"name": "Bhubaneshwar Area, India"},
+        "numConnections": 443,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_1C0R39jOd4zj42QU18pX3N7Adj8yq7cUlhIk3Nah94NuIIhRxkfc7qsaFPh_Be9B-TjLa1pJ3_Ua",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "industry": "Information Technology and Services",
+              "name": "TEKONS"
+            },
+            "id": 44591059,
+            "isCurrent": true,
+            "startDate": {
+              "month": 9,
+              "year": 2007
+            },
+            "summary": "\u2022\tInvolved as a Consultant to a US based IT company and for a Global entity for Logistics support in India",
+            "title": "DIRECTOR"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/suchitrapattnaik",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=3593660&authType=OUT_OF_NETWORK&authToken=mXJf&trk=api*a3139351*s3214061*"},
+        "specialties": "Business Management, Operations, Development Projects, Consulting, professional training, Database Administrator",
+        "summary": "An Electronics Engineering graduate from BITS, Pilani has over 20 years of experience in the field of operations, business management, engineering management, start-ups and consulting; over 6 years of working experience in US.\n\nOver eight years of experience as an Oracle and Sybase Database Administrator in US and India, Data modeler using Power Designer, Business process automation, project management and program management, professional training\n\nOver 5 years of experience in strategy, IT and management consultancy, e-governance and HRMS projects in both governemnt and private sector"
+      },
+      {
+        "distance": 3,
+        "firstName": "Arvind C",
+        "headline": "PM/ITA at Cisco Systems",
+        "id": "zYIk0r7Mjr",
+        "industry": "Computer Software",
+        "lastName": "R.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 110,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_oCf8SHV2c4yLq6iEeXO1SEVrvRHIq5CEe_R0SEw2EOpRI3voQk0uio0GUveqBC_QITDYCDzsAK5m",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1063,
+              "industry": "Computer Networking",
+              "name": "Cisco Systems,San Jose,CA",
+              "ticker": "CSCO",
+              "type": "Public Company"
+            },
+            "id": 6227937,
+            "isCurrent": true,
+            "startDate": {
+              "month": 3,
+              "year": 2006
+            },
+            "summary": "Architecture Services US\nArchitect Services are required for resources to scale, there has been an increase demand for Architecture Self Service for project teams.  The primary goal of this service is to:\n\u2022Provide the ability for project teams to initiated engagement with the Architecture Process in more efficiently.\n\u2022Provide an initial Assessment of a projects ability to meet a standard set of Architecture requirements.\n\u2022Automate the creation of Architecture feedback based on the results of a Self Assessment.\n\u2022Provide the ability for Architects to enter their Architecture requirements/standards.\n\nApplication: Single Trading Company (STC)\nThe Single Trading Company (STC) initiative is Cisco's response to business demand for direct selling capabilities (product, service, software) in more countries.  The initiative is focused on constructing a commerce back-end (new legal entities and buy-sell model) to support the next decade of global growth\n\n\nApplication: Online Contract Management(OCM)\nOCM provides a process that enables partners and customers to easily make updates to Service Agreements with minimal support by enhancing and simplifying current contract management capabilities, improving Service Agreement Data Quality, and introducing new functionality.",
+            "title": "PM/IT Analyst"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/arupakula",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=4541997&authType=OUT_OF_NETWORK&authToken=Dt-i&trk=api*a3139351*s3214061*"},
+        "specialties": "Business Analysis, Gap Analysis, Project Management using WATERFALL/AGILE methodologies, J2EE/Web Technologies, Oracle ERP modules(iProcurement, CMRO,OM, INV)",
+        "summary": "\u2022\tSelf-motivated software professional  in Enterprise Software Business Applications in Design, Analysis, Development and Project Management experience.\n\u2022\tExperienced Technical Consultant in leading all phases of SDLC for large-scale enterprise software web applications.\n\u2022\tExperienced in working and applying WATERFALL and AGILE models.\n\u2022\tExcellent interpersonal skills , Quick Learner with a track record of absolute success as a team lead on innovative, challenging assignments at Oracle Corporation, Stanford University and Cisco.\n\u2022\tExpertise in J2EE Technologies with thorough understanding of Java, XML, Struts, JSP, EJB, Servlets, AJAX, HTML, Web Services, Application development, and testing in Object Oriented and Web based technologies.\n\u2022\tSolid Experience in Oracle Database with good knowledge of SQL and PL/SQL."
+      },
+      {
+        "distance": 3,
+        "firstName": "Maud",
+        "headline": "Applications & Services Delivery Manager",
+        "id": "4t7ZDzjcEx",
+        "industry": "Telecommunications",
+        "lastName": "C.",
+        "location": {"name": "Paris Area, France"},
+        "numConnections": 269,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_5J73_mcsqgH4SXrzLYD-_DAVnVYcTXTzF4UY_DAoW0EFY8nvd0xDDS5XZNOHGi8JkVS0uE_Po6my",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1110,
+              "industry": "Telecommunications",
+              "name": "Orange (Paris, France)",
+              "ticker": "FTE",
+              "type": "Public Company"
+            },
+            "id": 106551269,
+            "isCurrent": true,
+            "startDate": {
+              "month": 11,
+              "year": 2009
+            },
+            "summary": "Manage the integration of Orange mobile applications in upcoming devices to be launched in shops.",
+            "title": "Applications and Services Delivery Manager"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/mcahuzac",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=825391&authType=OUT_OF_NETWORK&authToken=JwS4&trk=api*a3139351*s3214061*"},
+        "specialties": "Technical skills:\n-- Network Computing \u2013 IPTV and Internet video distribution architectures, online gaming, XML networking, traffic shaping, network-based security;\n-- Programming \u2013 XML language (Web Services), SQL, XQuery, Java, HTML\n\n\u2022 Others:\n-- Ability to lead a project;\n-- Ability to analyze trends in specific Markets, to benchmark vendor products and to give recommendations on services;\n-- Ability to work in a Team;\n-- Perfectly fluent in French and English;\n-- Very organized.",
+        "summary": "Network engineer and project manager - IPTV, Internet video and Virtual worlds, \nResearch & Development, Orange Lab San Francisco\n\n\u2022 Recommend Orange with innovative and disruptive network architectures and technologies, especially in the area of IP Television (IPTV), Internet videos services and virtual worlds;\n\u2022 Scout for new services and products and work closely with vendors to evaluate their networking products in Lab;\n\u2022 Lead projects related to Internet video and virtual worlds;\n\u2022 Analyze trends in North American's Market for technology transfer or potential US Market opportunities for Orange;\n\u2022 Propose innovative services that can be delivered over Orange\u2019s existing IPTV and Internet video offerings (through best practices, white papers, proof of concept and prototypes);\n\u2022 Other projects are related to:\n-- Online multiplayer video games and the impact on the Network;\n-- Carrier SOA: conduct an anticipation study in the field of XML Networking and implemented a demo leveraging XML routing technology;\n-- Network-based security solutions"
+      },
+      {
+        "firstName": "private",
+        "id": "private",
+        "lastName": "private"
+      },
+      {
+        "distance": 3,
+        "firstName": "Randy",
+        "headline": "QA Manager at Sensys Networks",
+        "id": "zA6CAmOxjk",
+        "industry": "Information Technology and Services",
+        "lastName": "M.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 81,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_R2NuP64b1nwGor-xRwvxPkVEPr77or-xMm81P5dzuzUxzNL0Bok8jLgRgYfKWc1PVfntyGUchQCw",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 297266,
+              "industry": "Industrial Automation",
+              "name": "Sensys Networks",
+              "type": "Privately Held"
+            },
+            "id": 104982518,
+            "isCurrent": true,
+            "startDate": {
+              "month": 1,
+              "year": 2010
+            },
+            "summary": "",
+            "title": "Manager, Engineering Quality Assurance"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/randy-m/0/345/b01",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=839665&authType=OUT_OF_NETWORK&authToken=Bj2N&trk=api*a3139351*s3214061*"},
+        "summary": "Software development process specialist with substantial experience in designing and implementing software configuration management systems, automated build and deployment processes, integrated bug-tracking systems and automated test systems."
+      },
+      {
+        "firstName": "private",
+        "id": "private",
+        "lastName": "private"
+      },
+      {
+        "distance": 3,
+        "firstName": "Alexey",
+        "headline": "Sr. Software Engineer at Verint",
+        "id": "gn-mFTtIdX",
+        "industry": "Information Technology and Services",
+        "lastName": "P.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 303,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_N0TLAXiVTldx3Ytj9VK9AbkRTcD03RCj9gvsAbCIY-JfOxvg4JldxF9L7MShCp_Avp_ROhrU_nQY",
+        "positions": {"_total": 0},
+        "publicProfileUrl": "http://www.linkedin.com/in/panph",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=2407133&authType=OUT_OF_NETWORK&authToken=Nb46&trk=api*a3139351*s3214061*"},
+        "summary": "15+ years IT experience, including:\n\u2022 Java programming - mainly core and server side: JDBC, threads, sockets, IO, XML, RMI, EJB, JMS, JPA, Swing et al.\n\u2022 Developing ETL, ORM, business logic, algorithms, and data structures\n\u2022 SQL, PL/SQL and T-SQL programming for Oracle, SQL Server, MySQL and other RDBMSs\n\u2022 Developing highly normalized data models for ODB and DW as well as dimensional ones for data marts for various subject areas (health care, financial, retail, e-commerce et al.), facilitating JAD sessions with SME and implementing all the phases of database design: determining data rules, creating conceptual-, logical- and physical data models\n\n\nBasic Skills (Category, Skill / Tool, years of experience)\nCASE, ERD, OOD, RAD, UML\n \u2022 ERwin Data Modeler, 7\n \u2022 PowerDesigner, 2\n \u2022 Rational Data Architect, 1\n \u2022 Rational Software Architect / Rational Rose, 2\nIDE\n \u2022 Eclipse, 5\n \u2022 IntelliJ IDEA, 1\nORM\n \u2022 Hibernate, 3\n \u2022 JPA, JPQL, 2\n \u2022 TopLink, 1\nDBMS\n \u2022 Oracle, 5\n \u2022 SQL Server, 5\n \u2022 MySQL, 4\n \u2022 PostgreSQL , 1\n \u2022 Infornix , 1\nProgramming Languages\n \u2022 Java, 11\n \u2022 C++, 1\n \u2022 C#, 0.5\n \u2022 C++, 1\n \u2022 SQL, PL/SQL, T-SQL, 11\nGeneric Expertise\n \u2022 Data Modeling / DB design, 10\n \u2022 OOA, OOD, OOP, UML, RUP, 10\n \u2022 OO Design Patterns, Data Modeling Patterns, 5\n\nSpecialties: Software Engineer\nEngineer Physicist: Dosimetry and Health Physics"
+      },
+      {
+        "distance": 3,
+        "firstName": "Sankara",
+        "headline": "Security & Compliance Architect at LOYAL3",
+        "id": "aYulqZ3xdg",
+        "industry": "Information Technology and Services",
+        "lastName": "S.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_OVJogBXEbKP2h2i2OgoMgqKk5NLG2712KYDvgqnvsBA-1IXutpd61NGUwp5j7e-h0JRqtPXpD8P_",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 422055,
+              "industry": "Internet",
+              "name": "LOYAL3",
+              "size": "51-200 employees",
+              "type": "Privately Held"
+            },
+            "id": 349590341,
+            "isCurrent": true,
+            "startDate": {
+              "month": 1,
+              "year": 2013
+            },
+            "title": "Security & Compliance Architect"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/sankaras",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=183434&authType=OUT_OF_NETWORK&authToken=FbGC&trk=api*a3139351*s3214061*"},
+        "specialties": "Enterprise Architecture, Information Security, Identity & Access Management, Risk Management, Regulatory Compliance, System Integration, Vulnerability Assessments and System Monitoring",
+        "summary": "- Around 16 years full time of diversified experience in design, development, implementation, testing and managing of IT Security, BioInformatics, E-Commerce, Mathematical, Healthcare, Financial, Procurement, Transportation and general application and System software using various OO technologies.\n\n- Experienced in building and leading Global teams in the design, implementation, and support of business solutions that have provided significant competitive advantages to the enterprise.\n\n- Experience in IT Security & Privacy, Identity and Access Management (IAM), ETL, EAI,Procurement, Fleet Management, Transportation, Enterprise Projects, Migration Projects\n\n- Highly expertise of Identity and Access Management systems, as well as about the complex interactive relationships among identities, businesses requirements, and regulatory conditions.\n\n- Effective at encouraging and capitalizing on the passions of team members. Recognized for investing in the personal development of team members and fostering an innovative culture through a highly pragmatic and data-driven approach to decision-making.\n\n- Actively engaged with business partners in the design of technology architecture and service parameters. \n\n- Exceptional track records of operational excellence in the analysis, design implementation, monitoring and ongoing support of Information Security Systems.\n\n- Leverage common processes, controls and engineering solutions to simplify business solutions security across the globe.\n\n- Experience in practicing Software standards like SEI CMM, ISO, TOGAF\n\n- Experience in Business Continuity management  and Network designs\n\n- Strong presentation, interpersonal and communication skills, with the ability to communicate with both technical and business audiences at various levels within the organization.\n\n- Sun Certified Enterprise Architect\n\n- Stanford Certified Advance Computer Security Professional"
+      },
+      {
+        "distance": 3,
+        "firstName": "Susan",
+        "headline": "Technology Marketing Professional",
+        "id": "k5H9FexD9E",
+        "industry": "Information Technology and Services",
+        "lastName": "T.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 291,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_7QQHyxWmCAlWcJKCDkhUypI2CqcbRJKCSTtByjsggciBXgbGi8nX-gaPuyBZZOlmm5k9PsHVHZ9p",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1372,
+              "industry": "Computer Software",
+              "name": "CA Technologies",
+              "size": "10,001+ employees",
+              "ticker": "CA",
+              "type": "Public Company"
+            },
+            "id": 14486612,
+            "isCurrent": true,
+            "startDate": {"year": 2007},
+            "title": "Director, Product Marketing"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/susantran",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=5764663&authType=OUT_OF_NETWORK&authToken=vhfP&trk=api*a3139351*s3214061*"},
+        "summary": "Over 20 years of technology experience and a multi-disciplinary background in areas of enterprise software development, enterprise customer support, product and solutions marketing, knowledge management, IT operations and sales enablement."
+      },
+      {
+        "distance": 3,
+        "firstName": "Rahul",
+        "headline": "Senior Scientist at TCS/TRDDC",
+        "id": "kgPfZflWaU",
+        "industry": "Computer Software",
+        "lastName": "K.",
+        "location": {"name": "Pune Area, India"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_0-CI4tzK3Fih1x28xPPZ4r6xi8NuPVg8g1nN4AXfp58yuYEhPqtFnlK3DaqPrjyuOA8zcnnYbTBT",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "industry": "Computer Software",
+              "name": "Tata Research Development & Design Centre, Pune",
+              "size": "10,001+ employees",
+              "ticker": "TCS.NS",
+              "type": "Public Company"
+            },
+            "id": 13873016,
+            "isCurrent": true,
+            "startDate": {
+              "month": 2,
+              "year": 2006
+            },
+            "summary": "-Currently leading the Next generation infrastructure initiative. Developing solutions based on software virtualization and software streaming technologies.\n\n-Leading the software testing R&D group. Developing automated test data and test case generation tool.",
+            "title": "Senior Scientist"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/rahul-k/3/4ab/639",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=10180557&authType=OUT_OF_NETWORK&authToken=UTKq&trk=api*a3139351*s3214061*"}
+      },
+      {
+        "distance": 3,
+        "firstName": "Doug",
+        "headline": "Doug Laine is a System Administrator / Developer",
+        "id": "IUGKa46G-C",
+        "industry": "Information Technology and Services",
+        "lastName": "L.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_FJCU1m3sSzdc3MBtFY5e1DCBfPgzTV9t5OnX12tErnWLYY3-w0tBgu6k3jjoGjcY6V85pw2T8K97",
+        "positions": {"_total": 0},
+        "publicProfileUrl": "http://www.linkedin.com/in/douglaine",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=6720646&authType=OUT_OF_NETWORK&authToken=y6uR&trk=api*a3139351*s3214061*"},
+        "specialties": "Java Developer, Data Encryption, Network Architecture, Integration",
+        "summary": "Doug Laine is an Information Technology professional with 23+ years experience in systems analysis, team leadership, program testing, problem resolution, personnel administration and professional development. Skills include written and verbal communications, time management, organization, and departmental operations."
+      },
+      {
+        "distance": 3,
+        "firstName": "Susan",
+        "headline": "Information Technology and Services Professional",
+        "id": "l0BYEmPL-S",
+        "industry": "Information Technology and Services",
+        "lastName": "W.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 95,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_yHCbiqWdiJq8bxrZpWXqiBV4iMT85VhZOfn4in4dpyvKsYc4ratwS9uFDc3x6j3NgI8M2AQYTLRE",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "industry": "Information Technology and Services",
+              "name": "UCOP"
+            },
+            "id": 291832321,
+            "isCurrent": true,
+            "startDate": {
+              "month": 9,
+              "year": 2012
+            },
+            "title": "Applications Analyst"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/susanwhitney",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=77360733&authType=OUT_OF_NETWORK&authToken=sx06&trk=api*a3139351*s3214061*"},
+        "specialties": "SQL, Excel, Access, PeopleSoft,  HTML/XML, COBOL, TSO/ISPF, JCL",
+        "summary": "Six years of technical business analyst consulting experience on a wide variety of projects, with particular emphasis on time and labor, HR, and payroll.  Additional seven years in IT as a payroll and HR application developer.  Business systems analysis from requirements definition to testing and client support.  Design and execute test cases that deliver products that work correctly and meet customer expectations.  Effectively influence and motivate team members by building a platform for collaboration, communication and trust."
+      },
+      {
+        "distance": 3,
+        "firstName": "Jatan",
+        "headline": "Services Architect at CA Technologies",
+        "id": "U66VbjVyB6",
+        "industry": "Computer Software",
+        "lastName": "P.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 171,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_jbmxXtVtVWnuviHng6xuXrUf4d-_vQMnxLshXrMfFo6PEGm9lTYPEKD39Tty9TZspkuTIBI5rP6h",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1372,
+              "industry": "Computer Software",
+              "name": "CA Technologies",
+              "size": "10,001+ employees",
+              "ticker": "CA",
+              "type": "Public Company"
+            },
+            "id": 344180144,
+            "isCurrent": true,
+            "startDate": {
+              "month": 10,
+              "year": 2012
+            },
+            "summary": "Working on SAAS based 3-D secure protocol product. Responsible for designing and developing the solutions to integrate core product with various financial processors / institutions.",
+            "title": "Services Architect"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/jatan-p/2/603/a59",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=7471653&authType=OUT_OF_NETWORK&authToken=u7s0&trk=api*a3139351*s3214061*"},
+        "specialties": "Electronic Payments, Build Processes, Development Methodologies, Enterprise Systems.",
+        "summary": "Currently working with AurionPro Solutions as Sr. Software Consultant and serving various clients in San Francisco Bay Area focused mainly on electronic payment domain using almost all cutting edge Java / Enterprise technologies like Spring, JMS, Webservices, etc... I have been with AurionPro since 2007.\n\nI started my career as software engineer with Baeurer Infotech Ltd. Almost spent 2.5 years of my career on Panther Prolifics technologies, which are now in coffin. But I got  very good experience on enterprise functionalities like Procure To Payment cycles, Financial Accounting, Inventories, and yes ... how to save organization's money.\n\nThen I joined Trigyn Technologies on basis of Panther and worked there for 4 years and successfully shifted my career path on Java/J2EE technologies. I worked mostly for United Nations and its various devisions like UNDP, UNOV, CTBTO, etc... Working for 4 years for same client gave me good understanding of UN's business process and due to excellent people at Trigyn I learnt a lot and could enhance my skills."
+      },
+      {
+        "distance": 3,
+        "firstName": "Lucian",
+        "headline": "Mobile Architect at GoDaddy",
+        "id": "nCWn-gn_-Q",
+        "industry": "Internet",
+        "lastName": "Masalar",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_FfbQYoeF29j9wOGSWekJYWjwhnoJIUGS5SPJYWmR0POdq0zDwdBErdVza4E6eyiT625ZlapEr4VR",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "industry": "Internet",
+              "name": "GoDaddy.com"
+            },
+            "id": 416616698,
+            "isCurrent": true,
+            "startDate": {
+              "month": 7,
+              "year": 2013
+            },
+            "title": "Mobile Architect"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/lucian-masalar/2/703/a14",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=7720432&authType=OPENLINK&authToken=laRN&trk=api*a3139351*s3214061*"},
+        "summary": "Boy, how does one summarize 21+ years behind the keyboard. Well, I could go with the usual \"seasoned this\" and \"accomplished that\", but instead let me cut to the chase: despite various titles that I've had throughout the years, I'm a coder, I spend most of my waking hours writing code, reading code, reading about code. I've done significant work in most of the important languages of our times. \n\nA few years ago I turned my career around going from developing mega-data storage systems to mobile. Most would consider that a crazy move, I pretty much had to start over from square one. But here I am today, successful in mobile, enjoying every minute of it, and continuing to get paid for having fun. \n\nIf you're looking for keywords here are some: Objective-C, the whole iOS eco-system, Unix (since '84), Python, to name the main ones, but recently I am very interested in what I believe is possibly the lingua franca of the future : Javascript (jQuery Mobile, Sencha, Cappucino) and of course, node.js. \n\nI thrive on influencing people (without controlling them), learning from my peers and teaching them what I know in exchange. \n\nI thrive on shipping good quality mobile product in cadence. \n\nI like working with UI/Ux designers and going through as many iterations as it takes to get every single pixel in its place. \n\nI tend to choose simple solutions before over-engineered ones, Return on Investment before technological coolness."
+      },
+      {
+        "distance": 3,
+        "firstName": "Byron",
+        "headline": "Executive Consultant at Chirp, Inc.",
+        "id": "ip5x6DdtXj",
+        "industry": "Computer Software",
+        "lastName": "Gutierrez, MBA",
+        "location": {"name": "Greater Los Angeles Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 2657066,
+              "industry": "Information Technology and Services",
+              "name": "Chirp, Inc.",
+              "size": "1-10 employees",
+              "type": "Public Company"
+            },
+            "id": 305344829,
+            "isCurrent": true,
+            "startDate": {
+              "month": 7,
+              "year": 2012
+            },
+            "summary": "Establishing software development governance infrastructure. Building-out a scalable software development environment required for the production, and support content optimization products.",
+            "title": "Executive Consultant"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/byrongu",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=7744100&authType=OPENLINK&authToken=-4ey&trk=api*a3139351*s3214061*"},
+        "specialties": "Recruitment and Selection, Mentorship and Staff Development, Six Sigma Methodology, Software Development Life Cycle, Program Management, Budgetary Control",
+        "summary": "Experienced Technology Leader with substantial experience leading and managing all phases of the Software Development Life Cycle (SDLC) including design, technical review, resource planning, development, SQA test, installation, distribution and field support.  Principal Engineer background with knack for schedule impact assessment and project risk management.  Reputation for setting pragmatic priorities, organizing efforts, and driving results.  Proven people manager with success managing geographically dispersed teams and strength at identifying and nurturing technical talent.  Exceptional operational knowledge of mobile, cloud, and social networking technologies.."
+      },
+      {
+        "distance": 3,
+        "firstName": "Bichloan",
+        "headline": "IT Technical Lead at Excelitas Technologies Corp.",
+        "id": "q0F6sdM3-4",
+        "industry": "Biotechnology",
+        "lastName": "D.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 79,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "industry": "Computer Software",
+              "name": "Excelitas Technologies Corp."
+            },
+            "id": 337911179,
+            "isCurrent": true,
+            "startDate": {
+              "month": 3,
+              "year": 2011
+            },
+            "summary": "Manage SAP Landscape at Excelitas Technologies",
+            "title": "IT Technical Lead"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/bichloan-d/4/267/387",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=12578647&authType=OUT_OF_NETWORK&authToken=0HZ-&trk=api*a3139351*s3214061*"}
+      }
+    ]
+  }
+}

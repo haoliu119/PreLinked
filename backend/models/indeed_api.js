@@ -42,8 +42,12 @@ IndeedApi.search = function (query, start) {
 
 http://api.indeed.com/ads/apisearch?publisher=302158985282491&q=java&l=austin%2C+tx&sort=&radius=&st=&jt=&start=&limit=&fromage=&filter=&latlong=1&co=us&chnl=&userip=1.2.3.4&useragent=Mozilla/%2F4.0%28Firefox%29&v=2
 
-&q= queries
+&q=
+  with all word: <word> <word> <word>
   exact phrase: "software engineer"
+  or: (high school teacher or plumber)
+  title:   title:(elementary school teacher)
+           title:(elementary school teacher) or title:(high school teacher)
 
 &l= *     // location: zipcode or city, state combo
   l=12345

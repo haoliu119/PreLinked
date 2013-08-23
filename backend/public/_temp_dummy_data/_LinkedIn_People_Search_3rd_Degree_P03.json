@@ -1,0 +1,1059 @@
+{
+  "facets": {
+    "_total": 1,
+    "values": [{
+      "buckets": {
+        "_total": 4,
+        "values": [
+          {
+            "code": "F",
+            "count": 0,
+            "name": "1st Connections"
+          },
+          {
+            "code": "S",
+            "count": 67,
+            "name": "2nd Connections"
+          },
+          {
+            "code": "A",
+            "count": 190,
+            "name": "Group Members"
+          },
+          {
+            "code": "O",
+            "count": 965,
+            "name": "3rd + Everyone Else"
+          }
+        ]
+      },
+      "code": "network",
+      "name": "Relationship"
+    }]
+  },
+  "people": {
+    "_count": 25,
+    "_start": 50,
+    "_total": 260,
+    "values": [
+      {
+        "distance": 3,
+        "firstName": "Anson",
+        "headline": "Senior Software Engineer at ServiceNow - The Enterprise IT Cloud Company",
+        "id": "JNqFnAEeye",
+        "industry": "Computer Software",
+        "lastName": "M.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 244,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_fquK8j-mvZ6W06LqSrpf8xXmMUKQ15kqSnZf8YqaQYkn23PN_-yyaO8hBzrMKC54acmm7JEGEJhQ",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 29352,
+              "industry": "Computer Software",
+              "name": "ServiceNow - The Enterprise IT Cloud Company",
+              "size": "1001-5000 employees",
+              "type": "Public Company"
+            },
+            "id": 419959013,
+            "isCurrent": true,
+            "startDate": {
+              "month": 7,
+              "year": 2013
+            },
+            "summary": "\u2022 As part of the Platform as a Service (PaaS) team, design, develop and assure the quality of features that improve the efficiency of IT professionals leveraging the ServiceNow SaaS solution.",
+            "title": "Senior Software Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/amayers",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=313438&authType=OUT_OF_NETWORK&authToken=ZEO8&trk=api*a3139351*s3214061*"},
+        "summary": "Pragmatic and effective Software Engineering leader focuses on getting high-value work done in tight time frames, evangelizing effective and performance-friendly development practices, and integrating the act of software development into the larger picture of enterprise software sales and support.\n\nServiceNow is hiring! See our openings at www.servicenow.com\n\nSpecialties: Enterprise software design and development, enterprise-level customer support and maintenance, J2EE server architecture, developer productivity enhancement, internationalization and localization"
+      },
+      {
+        "distance": 3,
+        "firstName": "Maud",
+        "headline": "Applications and Services Delivery Manager at Orange",
+        "id": "-9ff_FIDOO",
+        "industry": "Telecommunications",
+        "lastName": "C.",
+        "location": {"name": "Paris Area, France"},
+        "numConnections": 190,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_VqIaH8X7N2w3xQp6VrUAHilGNfM30Qp6Z10lHiBYwoSAhGIQn-RGQ_iKsTJOyTjoRcdrFkdcRy1A",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 815804,
+              "industry": "Hospitality",
+              "name": "Orange (Paris, France)",
+              "type": "Public Company"
+            },
+            "id": 126444354,
+            "isCurrent": true,
+            "startDate": {
+              "month": 11,
+              "year": 2009
+            },
+            "summary": "Manage the integration of Orange applications on upcoming Orange Mobiles portfolio.",
+            "title": "Applications and Services Delivery Manager"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/maudcahuzac",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=122687&authType=OUT_OF_NETWORK&authToken=I-SJ&trk=api*a3139351*s3214061*"},
+        "summary": "Network engineer and project manager - IPTV, Internet video and Virtual worlds, \nResearch & Development, Orange Lab San Francisco \n\n\u2022 Recommend Orange with innovative and disruptive network architectures and technologies, especially in the area of IP Television (IPTV), Internet videos services and virtual worlds; \n\u2022 Scout for new services and products and work closely with vendors to evaluate their networking products in Lab; \n\u2022 Lead projects related to Internet video and virtual worlds; \n\u2022 Analyze trends in North American's Market for technology transfer or potential US Market opportunities for Orange; \n\u2022 Propose innovative services that can be delivered over Orange\u2019s existing IPTV and Internet video offerings (through best practices, white papers, proof of concept and prototypes); \n\u2022 Other projects are related to: \n-- Online multiplayer video games and the impact on the Network; \n-- Carrier SOA: conduct an anticipation study in the field of XML Networking and implemented a demo leveraging XML routing technology; \n-- Network-based security solutions\n\nSpecialties:\nTechnical skills: \n-- Network Computing \u2013 IPTV and Internet video distribution architectures, online gaming, XML networking, traffic shaping, network-based security; \n-- Programming \u2013 XML language (Web Services), SQL, XQuery, Java, HTML"
+      },
+      {
+        "distance": 3,
+        "firstName": "Rob",
+        "headline": "Computer scientist and software engineer",
+        "id": "dok4kSoCXG",
+        "industry": "Computer Software",
+        "lastName": "T.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_lxZqPr3del91ad6PA0WbPP8devPY2u6P1ZuwPP3zBKbm1HA1jMe4j1vRQR1T7wFxKysoyq0HjpaQ",
+        "positions": {"_total": 0},
+        "publicProfileUrl": "http://www.linkedin.com/in/robtow",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=813874&authType=OUT_OF_NETWORK&authToken=OlYy&trk=api*a3139351*s3214061*"},
+        "summary": "Computer systems researcher, software engineer, and project manager with 10 patents granted and 3 pending in color scanning, embedded data in images, robotics, sensor networks, artificial intelligence, and video search. Open source & Linux advocate and developer. For 32 years worked at the forefront of innovation in software and hardware systems, user interface design, and new media at cutting edge labs such as Northrop Advanced Systems, Schlumerger, Sun Labs, AT&T Labs, Interval Research Corporation, and Xerox PARC. At Sun served on the Digital Rights Management Task Force and the Open Source Licensing Committee, working on intellectual property issues combined with new technologies for distribution, and filed 6 patents on wireless sensor networks. At Interval Research developed Virtual Reality content, patented robotic user interface techniques, and developed and patented a digital video search method. At Xerox PARC patented an amorphous-silicon color scanner design, and was the principle inventor of the Xerox \u201cGlyph\u201d embedded data in images technology, with 3 patents. At Art Center College of Design and California College of the Arts lectured and advised graduate media students. At Montavista Software developed embedded Linux software and software tools for embedded Linux. At Liquid Robotics, did Linux camera integration on a wave and solar powered autonomous ocean going robotics platform with satellite communication. Recently a member of Texas Instrument's Android Development Team in Sunnyvale, California.\n\nSpecialties: Researcher, programmer, engineer, project manager, technology strategist, writer, scientist, inventor, user interface, Linux, Android, wireless sensor networks, open source, mobility."
+      },
+      {
+        "distance": 3,
+        "firstName": "Tim",
+        "headline": "Sr. Flex Engineer",
+        "id": "Fe1uTNH4dL",
+        "industry": "Computer Software",
+        "lastName": "H.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 382,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 10,
+          "values": [
+            {
+              "company": {
+                "id": 4259,
+                "industry": "Marketing and Advertising",
+                "name": "Organic",
+                "size": "501-1000 employees",
+                "ticker": "OMC",
+                "type": "Privately Held"
+              },
+              "id": 300910663,
+              "isCurrent": true,
+              "startDate": {
+                "month": 7,
+                "year": 2012
+              },
+              "summary": "Working on Intel Ultrabooks",
+              "title": "Sr. Flex Engineer"
+            },
+            {
+              "company": {
+                "id": 119904,
+                "industry": "Hospital & Health Care",
+                "name": "Practice Fusion",
+                "type": "Privately Held"
+              },
+              "id": 171562344,
+              "isCurrent": true,
+              "startDate": {
+                "month": 12,
+                "year": 2010
+              },
+              "summary": "",
+              "title": "Sr UI Engineer"
+            },
+            {
+              "company": {
+                "industry": "Computer Software",
+                "name": "Icreative"
+              },
+              "id": 151174878,
+              "isCurrent": true,
+              "startDate": {
+                "month": 10,
+                "year": 2010
+              },
+              "summary": "Viscira, San Francisco, CA \t\t     October 2011 \u2013 Present\nSr. Flash/Flex Engineer\n\u2022\tWorking with Producer and team on a large format application development project for Genentech using flex, flash, air, stagevideo, photoshop, 3M dst\n\u2022\tProject includes multiple touchscreen 3d game applications",
+              "title": "Sr. Flash/Flex Engineer"
+            },
+            {
+              "company": {
+                "industry": "Computer Software",
+                "name": "Franklin Templeton Investments worldwide"
+              },
+              "id": 151174882,
+              "isCurrent": true,
+              "startDate": {
+                "month": 8,
+                "year": 2010
+              },
+              "summary": "Developing custom Financial charts using Flex, Flash, PHP, XML\nCreating Financial application and user interactive Financial web marketing materials",
+              "title": "Objective of Web projects"
+            },
+            {
+              "company": {
+                "id": 52638,
+                "industry": "Staffing and Recruiting",
+                "name": "Mainz Brady Group",
+                "size": "11-50 employees",
+                "type": "Privately Held"
+              },
+              "id": 151174883,
+              "isCurrent": true,
+              "startDate": {"year": 2010},
+              "summary": "Objective of Web projects for TribalDDB worldwide interactive agency:\nDeveloping Stand Up to Cancer, SU2C using Flex, Flash, PHP, XML\nDeveloping new code to existing Stand Up to Cancer application \nRemoval of facebook application and integrating into Stand Up to Cancer web site\nDeveloping interactive banners for Soyjoy promotions",
+              "title": "Sr. Flash/Flex Engineer"
+            },
+            {
+              "company": {
+                "industry": "Computer Software",
+                "name": "Intelliswift Software"
+              },
+              "id": 151174885,
+              "isCurrent": true,
+              "startDate": {"year": 2010},
+              "summary": "",
+              "title": "Project Completed"
+            },
+            {
+              "company": {
+                "industry": "Computer Software",
+                "name": "SFSF"
+              },
+              "id": 151174886,
+              "isCurrent": true,
+              "startDate": {"year": 2010},
+              "summary": "Created a User Interaction/Interface layout for SMB, Collaboration Product Software\nObjective of Web projects for SuccessFactors SMB and Employee Central groups:\nCreated Analytics Software to visualize financial perspectives and key indicators\nConstructed a 3d Globe for geologically locating employees personal threads\nDeveloped 3d Globe using Flex, Flash, Jboss, Oracle DB, CSV, XML, Papervision,  PhotoShop, Illustrator\nConnected company employees with public discussions on business or  'org pulse'\nDeveloped prototypes and mock-ups for advance HR software products",
+              "title": "Sr. Flash/Flex Engineer"
+            },
+            {
+              "company": {
+                "industry": "Computer Software",
+                "name": "Intelliswift Software"
+              },
+              "id": 151174879,
+              "isCurrent": true,
+              "startDate": {
+                "month": 11,
+                "year": 2009
+              },
+              "summary": "",
+              "title": "Project Completed"
+            },
+            {
+              "company": {
+                "industry": "Computer Software",
+                "name": "Freelance"
+              },
+              "id": 91288521,
+              "isCurrent": true,
+              "startDate": {
+                "month": 3,
+                "year": 2009
+              },
+              "summary": "Responsibilities of web & consultation projects have included:\nCreating User Interaction/Interface layouts, navigation flows,  & wireframes\nDeveloping Prototype Rich Internet Applications & custom web projects using Adobe Flex & Flash CS3 in ActionScript 3.0, MXML, HTML, XML, CSS",
+              "title": "Freelance ActionScriptor"
+            },
+            {
+              "company": {
+                "id": 162479,
+                "industry": "Computer Software",
+                "name": "apple",
+                "size": "10,001+ employees",
+                "ticker": "AAPL",
+                "type": "Public Company"
+              },
+              "id": 151174900,
+              "isCurrent": true,
+              "startDate": {"year": 2009},
+              "summary": "Created a User Interaction/Interface layout for Apple, Inc. POS system\nObjective of Web projects for Apple POS & payment group:\nConstructed charts that are directly impacted by the turnaround time of a particular transaction\nDeveloped dashboard Gui using Flex, Flash, jBoss, MySQL, PhotoShop and Blaze DS\nGraphed overall time of a transaction such as client processing time, network delay, server processing time and responsiveness of external systems. \nPerformance metrics charting for analysis and to improve performance - as well as to investigate individual cases of reported lack of performance metrics \nGraphed historic data rolled-up with zoom-in and zoom-out features \nComparative graphs of performance historic data across all stores\nDeveloped real-time graph for comparative analysis",
+              "title": "Software Engineer"
+            }
+          ]
+        },
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=20454541&authType=OUT_OF_NETWORK&authToken=l_DE&trk=api*a3139351*s3214061*"},
+        "specialties": "User Interface/Interaction Designer creating navigation flows, schematics, Web mechanicals, mock-ups, storyboard layouts, prototyping, site maps, & skinning Adobe Flash, DreamWeaver, Fireworks, Flex, MXML, modules. \nHTML, JavaScript, CSS, XML, PHP 4/5, MySQL 4/5, Ajax, JQuery, Java, Adobe PhotoShop, Illustrator, InDesign, After Effects, Final Cut Pro, SoundEdit, Premiere, & electronic audio \nWireframe UI Technologies on Visio, OmniGraffle, \nMATE, MVC design patterns with custom frameworks",
+        "summary": "\u2022\tExperienced at using user-centered interaction code design & methodologies\n\u2022\tApplied user-centered interaction principles & behaviors for users with consistency\n\u2022\tProven ability to understand all fundamentals in Web site design & implementation \n\u2022\tWell-versed in communication, analytical, & collaboration skills\n\u2022\tAbility to design, develop & execute solutions from UI design directives\n\u2022\tDeveloped detailed & innovative navigation flows, site maps, wireframes & interface designs\n\u2022\tStrategic architecture & ability to integrate code base with scalability\n\u2022\tConsistent quality demonstrated through the creative & production process\n\u2022\tConsidered testability for quality assurance for the project lifecycle\n\u2022\tIdentified key user practices for strategic architecture & design alternatives\n\u2022\tRecognized users reactions to design & optimize interfaces & user flows\n\u2022\tIntuitively provide processes for visual comprehension of complex technological systems\n\u2022\tDefined practices for users to grasp product applications quickly from user research data\n\u2022\tContributed to project requirement definitions & providing clarity to the progression of the project"
+      },
+      {
+        "firstName": "private",
+        "id": "private",
+        "lastName": "private"
+      },
+      {
+        "distance": 3,
+        "firstName": "Deborah",
+        "headline": "Systems, Process,  Data Integration Consultant",
+        "id": "wknKP-D7lr",
+        "industry": "Information Technology and Services",
+        "lastName": "Y.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 140,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "industry": "Information Technology and Services",
+              "name": "Cities of Santa Cruz, San Rafael, Novato, Mill Valley and Town of Tiburon, CA"
+            },
+            "id": 23395162,
+            "isCurrent": true,
+            "startDate": {
+              "month": 8,
+              "year": 2006
+            },
+            "summary": "Led evaluation of current processes in building, planning, fire, public works, code enforcement, business license departments to define and prioritize system requirements\nLed RFP and vendor selection process within approved budgets\nLed project to implement new permit approval system.  Systems being used by 120+ users, 15 departments\nPlanned and managed five successful system implementations, total budget of $1.5MM",
+            "title": "Systems and Process Consultant"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/yacobellis",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=496334&authType=OUT_OF_NETWORK&authToken=jpIv&trk=api*a3139351*s3214061*"},
+        "specialties": "software project management / implementation\nbusiness process analysis\nrequirements gathering\ndata conversion and integration\ncustomer and client communications",
+        "summary": "I have 18 years of consulting and software development experience.  I specialize in business process analysis, software selection and implementation, and data conversion, typically in process improvement projects for either single departments or small companies. \n  \nI am currently working with School Loop to integrate data from School District sites to a student tracking system.   Prior to that, I implemented construction project management software for Williams-Sonoma store development group that ulitmately saved the company $1MM annually, and worked with cities from Santa Cruz to San Rafael to implement software to support various business processes."
+      },
+      {
+        "distance": 3,
+        "firstName": "Thomas",
+        "headline": "Founder at TICKERLICK",
+        "id": "KBK8m4Tj9_",
+        "industry": "Financial Services",
+        "lastName": "T.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 95,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "industry": "Financial Services",
+              "name": "TICKERLICK"
+            },
+            "id": 331512564,
+            "isCurrent": true,
+            "startDate": {
+              "month": 8,
+              "year": 2012
+            },
+            "summary": "Conceptualized, designed and developed a technical signal generator system to assist traders to find buy/sell signals for stocks traded in major US exchanges. The signals are generated by using live and historical prices. Used  MACD (moving average convergence/divergence) (12,26,9) and MACD(5,35,5) technical analysis indicatorS to generate signals.\n\nKey Achievements:\n* Developed fully in LAMP environment.\n* Developed web crawlers to retrieve live market data and historical stock price data.\n* Designed and developed user interface screens (Written in PERL/CGI, HTML)\n* Designed a MySQL database and tables. Wrote SQL queries to store and retrieve data from database.\n* Configured Apache, MySQL and MOD_PERL in a Linux server.\nEnvironment: Linux, PERL, MOD_PERL, MySQL, CGI, Dreamweaver and Apache",
+            "title": "Founder"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/thaliath",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=22601129&authType=OUT_OF_NETWORK&authToken=aNgD&trk=api*a3139351*s3214061*"},
+        "summary": "Objective\n\nSeeking a challenging position as a Programmer/Web Developer with  strong background of working knowledge of Perl and database along with the experience and skills to work in scheduled deadlines and under pressure. Strong organizational and management skills with excellent verbal, written communication and interpersonal skills.\n\nQualification Profile\n\n* Solutions-oriented programmer with a track record of effective software and Internet development demonstrated through 17+ years\u2019 experience designing applications in a broad variety of industries.\n* Proven success in an engineering development and support environment, working with software applications, Internet development, and database processes.\n* 2+ years of technical Lead experience mentoring teams globally and across multiple departments.\n * Strong background in processing, aggregating and distributing financial data feeds from leading market data vendors.\n* Strong background in designing and developing web crawlers and search engines, large-scale content extraction and transformation systems.\n* Experience in Advanced Perl programming, LAMP Stack.\n* Proficient in gathering and translating technical requirements, allowing efficient and accurate development.\n * Strong background in collaborating between customers and engineering functions in a consulting and corporate environment.\n* Agile/waterfall development methodology experience.\n\n\nCore Competencies\n\n* Web Applications Development\n* Database and Data Warehouse Applications\n* Financial Market data systems\n* Search Engines\n* E-Commerce Applications\n* Security System Implementation\n* Technical Training\n\nTechnical Background\n\nPlatforms/Tools/Technologies: Unix, Linux, PERL, CGI, HTML, XML, Shell Scripting, Oracle, MySQL, Sybase, Dreamweaver, Apache, Web Logic, MOD_PERL, AJAX, Ant, CVS, Bugzilla and Autosys"
+      },
+      {
+        "distance": 3,
+        "firstName": "Zia",
+        "headline": "Sr Programmer/Analyst at Williams-Sonoma, Inc.",
+        "id": "DHJ9qISyOJ",
+        "industry": "Retail",
+        "lastName": "A.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 237,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 2,
+          "values": [
+            {
+              "company": {
+                "id": 4123,
+                "industry": "Retail",
+                "name": "Williams-Sonoma, Inc.",
+                "size": "10,001+ employees",
+                "ticker": "WSM",
+                "type": "Public Company"
+              },
+              "id": 35294714,
+              "isCurrent": true,
+              "title": "Sr Programmer/Analyst"
+            },
+            {
+              "company": {
+                "industry": "Retail",
+                "name": "Williams-Sonoma Inc., San Francisco, CA."
+              },
+              "id": 92708981,
+              "isCurrent": true,
+              "startDate": {"year": 1999},
+              "title": "Senior Software Engr"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/zia-a/7/768/1ab",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=22782227&authType=OUT_OF_NETWORK&authToken=ODni&trk=api*a3139351*s3214061*"}
+      },
+      {
+        "distance": -1,
+        "firstName": "",
+        "headline": "Software Quality Assurance Engineer at LMS Solutions (India) Pvt. Ltd.",
+        "id": "i90U-L2d3n",
+        "industry": "Computer Software",
+        "lastName": "Private",
+        "location": {"name": "Indore Area, India"},
+        "numConnections": 108,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 2,
+          "values": [
+            {
+              "company": {
+                "id": 1308520,
+                "industry": "Computer Software",
+                "name": "indore mp. Website",
+                "size": "51-200 employees",
+                "type": "Privately Held"
+              },
+              "id": 189556738,
+              "isCurrent": true,
+              "startDate": {
+                "month": 9,
+                "year": 2010
+              },
+              "summary": "Have been working in QA Division",
+              "title": "Software Quality Assurance Engineer AT LMS Solutions (india) pvt.ltd"
+            },
+            {
+              "company": {
+                "id": 13377,
+                "industry": "Internet",
+                "name": "ON24.Inc. San Francisco CA USA. Website-www.on24.com",
+                "size": "201-500 employees",
+                "type": "Privately Held"
+              },
+              "id": 189556750,
+              "isCurrent": true,
+              "startDate": {
+                "month": 9,
+                "year": 2010
+              },
+              "summary": "Project Title              :  Virtual Event Manager.\nClient                         :  ON24.Inc. San Francisco CA USA. Website-www.on24.com\n Role                           :  As a Quality Assurance Engineer.        \n Technologies           :  Java, J2EE, flex.\n Testing                      :  Manual Process, with Bug Tracking tool Jira.\nDescription               : Fully customizable virtual shows\nON24 Virtual Show a cost-efficient virtual events for applications ranging from demand generation and corporate communications to training and continuing education initiatives. ON24 Virtual Show is a virtual venue for events such as trade shows, partner pavilions, conferences and training summits. More engaging and interactive:ON24 Virtual Show provides a suite of interactive networking tools, including group and individual chat, scheduled discussions, message boards, vCard exchange, a message center and Q&A tools, which makes it easy for attendees to connect with sponsors, exhibitors and other attendees. Without ever leaving their desks, ON24 Virtual Show participants can, for example, learn from video presentations, interact with exhibitors and communicate with peers using professional networking tools. This level of interaction builds and strengthens relationships with prospects and customers. With its complete registration system and ability to track attendee activity, ON24 Virtual Show delivers robust reporting analytics",
+              "title": "Project Profile-Virtual Event Manager."
+            }
+          ]
+        },
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=88653475&authType=OUT_OF_NETWORK&authToken=DKJt&trk=api*a3139351*s3214061*"},
+        "summary": "\u2022Working for 4+ year in IT industry, Predominantly in SQA ,on testing web-based and SAAS based software applications.\n\u2022Strong understanding of SDLC, Quality procedures, Quality level and testing phases. \n\u2022Proficient in Object Oriented Programming Technology.\n\u2022Excellent problem solving skills with good interpersonal skills.\n\u2022Quick learner and excellent team player having ability to meet tight dead lines and work under pressure\n\u2022Worked on Manual and Knowledge of Automated Testing for Web applications & Mobile Apps.\n\u2022Knowledge of development of test plan, test cases and executing the test cases. \n\u2022Well versed with all the testing concepts and Methodologies.\n\u2022Involved in developing of Test Plans, test cases and executed Test cases. \n\u2022Worked on Black Box Testing techniques like System Testing, Regression Testing, Functional Testing, and GUI Testing, User interface, Localization, System, Compatibility and Installation testing.\n\u2022Knowledge of various Automated Testing Tools such as QTP, Load Runner, Mercury Quality Center and Jira.\n\nSpecialties: Software Quality Assurance (Testing)"
+      },
+      {
+        "distance": 3,
+        "firstName": "Sreedhar",
+        "headline": "Microsoft BI, OLAP Cubes, Datawarehouse and Web Technical Consultant",
+        "id": "ZfWf_x7LDR",
+        "industry": "Information Technology and Services",
+        "lastName": "V.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 109,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_0-CI4PQj35KDlpg8xNhN4A61i8NuPVg8gznN4AXfp58yuYEhPqtFnlK3DaqPrjyuOA8zcnVgZVPT",
+        "positions": {
+          "_total": 2,
+          "values": [
+            {
+              "company": {
+                "industry": "Information Technology and Services",
+                "name": "Seven Hills solutions"
+              },
+              "id": 93536345,
+              "isCurrent": true,
+              "startDate": {
+                "month": 9,
+                "year": 2009
+              },
+              "summary": "Currently looking for opportunities ...\n\nPresident / Owner - company used for my consulting\n\nMicrosoft Business Intelligence (BI) Stack - SQL/ T-SQL, SSIS (ETL), SSRS (Reports), SSAS (OLAP Cubes), Asp.Net, Databases - design & implementation, Data Warehouses, Data Marts,  little bit of Sharepoint and more ...\n     Health care datasets, Finance datasets\n\nCognos Cubes (old version 7.x)",
+              "title": "BI, OLAP Cubes and Datawarehouse Technical Consultant"
+            },
+            {
+              "company": {
+                "industry": "Information Technology and Services",
+                "name": "540 Enterprises"
+              },
+              "id": 290103694,
+              "isCurrent": true,
+              "startDate": {
+                "month": 11,
+                "year": 2005
+              },
+              "summary": "Registered company used for consulting",
+              "title": "President / Owner"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/sreedharvankayala",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=3006987&authType=OUT_OF_NETWORK&authToken=CTdU&trk=api*a3139351*s3214061*"},
+        "summary": "Male / Technology Industry / Independent Technical Consultant\n\nMy recent experience:\n- Worked as Technical Consultant in Business Intelligence Domain.\n- Worked in different datasets - Finance, Payroll, Emergency, Acute, ADTC,Community and more \n- Worked on projects related to Data Warehouse and Decision Support Sytem, Balanced Scorecard and more.\n\nI am a Microsoft BI, SQL, Oracle, Data warehouse, Data mart and Web application consultant. \n\nIT: \nDatabase, Data Warehouse / Data Mart and Web Application architecture\nBusiness Intelligence development, Database Designer, Application Developer,  and Tech Lead\nMicrosoft BI, SQL, SharePoint development, Cognos, web related technologies and database design using Oracle, and MS-SQL Server\n\nAlways interested to work in challenging environments and can work on migration projects, tuning, bringing new implementations, and last, but not least is my main core is Consulting.\n\nApart from these, I involve in Social activities in free time.\n\nVerticals / specialities: IT, Healthcare (IT), Financial (IT), Retail (IT), architecture, lead and managing teams"
+      },
+      {
+        "distance": 3,
+        "firstName": "Justin",
+        "headline": "Test & Tools",
+        "id": "jAr1Z1Wj2h",
+        "industry": "Computer Software",
+        "lastName": "M.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 367,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_hC1YLyy0OwLzn1Vq88r3L0gpY2rRq1UqChF3L0ShTdXIIBuNukitwxJaKCKXBqs43TA8oZxYGOw9",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 3844,
+              "industry": "Computer Hardware",
+              "name": "HGST, a Western Digital Company",
+              "size": "10,001+ employees",
+              "ticker": "HIT",
+              "type": "Public Company"
+            },
+            "id": 265099656,
+            "isCurrent": true,
+            "startDate": {
+              "month": 3,
+              "year": 2012
+            },
+            "summary": "Test and tools supporting firmware for full range of hard disk drive and solid state storage. Focus on SAS protocol testing and performance measurement tools for storage systems. Managed development lab equipment, mentored entering employees. Provided analysis of test issues to program management.",
+            "title": "Senior Firmware Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/embeddedswexpert",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=5845309&authType=OUT_OF_NETWORK&authToken=YkNI&trk=api*a3139351*s3214061*"},
+        "specialties": "Embedded system software/firmware development, validation and test.\nIndustries include semiconductor, semiconductor equipment, storage, automated test equipment, medical, defense, and secure financial systems.\nAutomated test systems for validation, and manufacturing.\nHigh reliability and secure system experience.\nDevelopment of software and system specifications.",
+        "summary": "From missiles to microscopes, storage systems to networking gear, radio telescopes to high-performance semiconductor chips: deep experience implementing and managing embedded system development and test. This means I\u2019ve coded and/or managed from assembly through compiled languages, script languages and beyond\u2026\n\nSilicon (chip) test and validation, deep experience with embedded real time operating systems and application software including image processing, auto-focus, closed-loop systems. Experienced in hardware/software trade-off consideration.\n\nLooking for opportunities to leverage software skills and experiences in the areas including data storage, networking, green technology/energy, medical/industrial or aerospace, wherever there are critical embedded systems.\n\nDevelopment engineering lab management including facilities, equipment procurement, system maintenance and resource allocation."
+      },
+      {
+        "distance": 3,
+        "firstName": "Sung",
+        "headline": "Senior Program Manager at Microsoft",
+        "id": "J1CfS9SqzX",
+        "industry": "Computer Software",
+        "lastName": "H.",
+        "location": {"name": "Greater Seattle Area"},
+        "numConnections": 271,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1035,
+              "industry": "Computer Software",
+              "name": "Microsoft",
+              "size": "10,001+ employees",
+              "ticker": "MSFT",
+              "type": "Public Company"
+            },
+            "id": 334071974,
+            "isCurrent": true,
+            "startDate": {
+              "month": 11,
+              "year": 2012
+            },
+            "summary": "Working on providing a seamless experience for leveraging SQL Server in Windows Azure Infrastructure Services \n-own definition, implementation, and reporting of KPI and telemetry for Azure SQL VM service measuring usage adoption and quality of service\n-delivered feature enabling SQL Server Failover Clustering on Cluster Shared Volumes\n-drove integration of SQL Server cloud storage support for database and log files enabling rich hybrid cloud scenarios\n-led 3 different feature teams in 3 technology workstreams using agile/scrum methodologies\n-drove conference planning for Azure SQL VM scenario for 6 speaker virtual team participating in over 20 sessions in major conferences including TechEd, TechReady and PASS summit in North America and Europe\n-drafted and reached sign off on business continuity plan for Azure SQL VM service\n-intern mentor",
+            "title": "Senior Program Manager"
+          }]
+        },
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=3282993&authType=OUT_OF_NETWORK&authToken=-DVa&trk=api*a3139351*s3214061*"},
+        "summary": "Over 8 years of experience in the software industry with CA Technologies, Microsoft, and Amazon.com across several disciplines (dev, test, PM, and lead) and a variety of products (workflow, databases, and Kindle) and feature areas (security, setup, resource governance, consolidation, virtualization, high availability, metadata, and cloud services).\n\nEnjoy challenging and rewarding positions where I can help contribute to business success.\n\nSpecialties: Database systems, workflow, security, server architecture, consolidation, virtualization, test, program management, project management, people management, high availability"
+      },
+      {
+        "distance": 3,
+        "firstName": "Narendra",
+        "headline": "Sr.net develope developer/Programmer Analyst as a consultant  at Wells Fargo",
+        "id": "PlrpbBjgEO",
+        "industry": "Computer Software",
+        "lastName": "M.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 143,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1235,
+              "industry": "Financial Services",
+              "name": "Wells Fargo Bank,San Francisco,CA",
+              "size": "10,001+ employees",
+              "ticker": "WFC",
+              "type": "Public Company"
+            },
+            "id": 151276612,
+            "isCurrent": true,
+            "startDate": {
+              "month": 11,
+              "year": 2010
+            },
+            "summary": "1. ATM  Content Manager (ACM):- \nWorking as a program Analyst /developer Engineer in a team of   the ACM Project which is a Web Application to manage the contents of the 16500 ATMs across the USA.\n\nATM Reporting Monitoring(ARM):-\nWorking on an ARM project, which is a web application to generate the daily status of atms.",
+            "title": "Sr.Net Developer /Programmer Analyst (Consultant)"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/nmaharjan",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=77525732&authType=OUT_OF_NETWORK&authToken=Qw8y&trk=api*a3139351*s3214061*"},
+        "summary": "Around 6+ years of work experience in all phases of SDLC Analysis, Design, Architecture, Development, Testing and Implementation of Client/Server systems, n-tier distributed  in diverse domains including E commerce, online Casino Games and Web Application.\n3 Years of Experience In Financial Sector Programming with  .NET Framework 1.1/2.0/3.5/4,0 using  C#, ASP.NET, ADO.NET, window and web services, T-SQL, JavaScript , CSS ,HTML.\n2 years of Experience in Casino Games Developing IT industry with .Net technologies using C#.NET, ASP.NET, Multi-Threading ,Win-Forms, Third-Party API, TSQL, Crystal Reports\n2 years of Experience in IT industry  using Asp, JavaScript, HTML,CSS,C#.net ,ASP.NET,"
+      },
+      {
+        "distance": 3,
+        "firstName": "Murthy",
+        "headline": "Software Professional at Sony",
+        "id": "p2tj-M92GC",
+        "industry": "Computer Software",
+        "lastName": "A.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 163,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1255,
+              "industry": "Computer Games",
+              "name": "Sony",
+              "size": "501-1000 employees",
+              "type": "Public Company"
+            },
+            "id": 92298814,
+            "isCurrent": true,
+            "startDate": {
+              "month": 11,
+              "year": 2007
+            },
+            "summary": "\u2022\tHas been involved in developing Digital Rights Management Server (the interoperable and open digital content sharing platform) and test framework. The server issues digitally signed license and encrypted content key to end devices.\n\u2022\tHas been involved in extending the technology to PC based clients.",
+            "title": "Software Professional"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/murthyavvari",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=15345103&authType=OUT_OF_NETWORK&authToken=rECX&trk=api*a3139351*s3214061*"},
+        "specialties": "Sun Certified Web Component Developer.\nSun Certified Java Developer.",
+        "summary": "Accomplished Software Engineer with experience in the full life cycle of the software design process including requirements definition, prototyping, and proof of concept, design, interface implementation, testing and maintenance.\n\nKnown for high productivity, speed and ability to multitask. \n\nResourceful, detail-oriented team player who adapts quickly to new environments."
+      },
+      {
+        "distance": 3,
+        "firstName": "Barb",
+        "headline": "Sr Project Manager at Immersion Corporation",
+        "id": "WcmS6uLbWc",
+        "industry": "Computer Software",
+        "lastName": "H.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_TLYPQjDK47LUc8Jq3k48QxYK4arNB8dqfTE2Qxj8FDXkeXONDimxH0Wm9QKwqbH486ySW4iucRIO",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 11774,
+              "industry": "Computer Software",
+              "name": "Immersion Corporation",
+              "size": "51-200 employees",
+              "ticker": "IMMR",
+              "type": "Public Company"
+            },
+            "id": 370976712,
+            "isCurrent": true,
+            "startDate": {
+              "month": 3,
+              "year": 2013
+            },
+            "title": "Sr Project Manager"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/blhelfer",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=2365991&authType=OUT_OF_NETWORK&authToken=QlEF&trk=api*a3139351*s3214061*"},
+        "summary": "A technology leader versed in all aspect of the product development lifecycle with extensive experience in innovation, strategic planning, and enterprise-wide product development, including software lifecycle development, and business continuity. A proven track record of execution in: design and management of processes, Website and software development, information systems, risk identification and mitigation, building and developing teams, and executive and vendor relationships.\n\nSpecialties: Project and Program Managerment, Medical Simulation Software and Hardware, Web Operations and Applications, Television, and Distance Education."
+      },
+      {
+        "firstName": "private",
+        "id": "private",
+        "lastName": "private"
+      },
+      {
+        "distance": 3,
+        "firstName": "Jo",
+        "headline": "Senior Java , web and mobile Consultant",
+        "id": "XNhHcrT4KU",
+        "industry": "Computer Software",
+        "lastName": "V.",
+        "location": {"name": "Brussels Area, Belgium"},
+        "numConnections": 340,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_MC0ebCWh6EWaNfDnJGaUbh4jkDYDqfjnRhIcb3whUHEjIwo9zkfkdT0aE_O-BHpsZTjneQvpwsAR",
+        "positions": {
+          "_total": 3,
+          "values": [
+            {
+              "company": {
+                "industry": "Computer Software",
+                "name": "Devoxx and Parleys.com"
+              },
+              "id": 210346406,
+              "isCurrent": true,
+              "startDate": {
+                "month": 4,
+                "year": 2011
+              },
+              "summary": "Developer on the Devoxx tools and parleys.com platform using and experimenting with the latest and greatest tech:\nJava, Scala, Groovy, jQuery, Java/Coffee Script, HTML5, CSS3, Hibernate, Spring, Terracotta, EHCache, Wicket, Clustering, Glassfish, Linux...",
+              "title": "Java, web and mobile developer"
+            },
+            {
+              "company": {
+                "industry": "Computer Software",
+                "name": "Devoxx"
+              },
+              "id": 89683089,
+              "isCurrent": true,
+              "startDate": {
+                "month": 1,
+                "year": 2009
+              },
+              "summary": "Steering member for the Devoxx conference (formerly known as JavaPolis)",
+              "title": "Steering member"
+            },
+            {
+              "company": {
+                "industry": "Program Development",
+                "name": "Pursuit consulting"
+              },
+              "id": 58689516,
+              "isCurrent": true,
+              "startDate": {
+                "month": 11,
+                "year": 2008
+              },
+              "summary": "Senior Java J2EE / JEE and RIA Consultant",
+              "title": "Owner"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/jovoordeckers",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=12357908&authType=OUT_OF_NETWORK&authToken=i9AX&trk=api*a3139351*s3214061*"},
+        "specialties": "Java J2EE/JEE (Spring, Hibernate, JPA, Struts, JSF, EJB2, EJB3, JMS, JTA, WS-*, AOP), J2SE JavaFX, Swing, Java2D, JGoodies (Binding, Forms, Validation),  XML, HTML, CSS, GWT (Google Web Toolkit), Adobe Flex, JavaScript, AJAX, WEB2.0, OS-Workflow, JUnit, Ant, Maven2, J(2)EE appservers: Weblogic 8.1 and 10.0, Tomcat 5.x and 6, JBoss 4.x., Websphere",
+        "summary": "Java Technical Analyst / Project Leader, Senior Software Engineer and mentor. Mainly consulting for government, private sector and always on the lookout to get my hands dirty with the nextgen frameworks and technologies like JavaFX, GWT and Flex. \n\nHas spoken at: \n- JavaOne 2008, San Francisco: JavaFX casestudy from the real world: Parleys.com, this very application featured in the JavaOne 2008 technical keynote by Bob Brewin, CTO of Sun Microsystems\n- Dolmen, Huizingen, Belgium: Gettings started with Adobe Flex and LiveCycle DataServices\n- IT Works, Brussels, Belgium: RIA Alternatives (topic: JavaFX Overview)\n- JavaOne Afterglow 2008, Belgium: JavaFX Overview\n- SAI feb 2008, Belgium: Rich Internet Applications, presenting JavaFX and the JavaFX Parleys.com casestudy"
+      },
+      {
+        "distance": 3,
+        "firstName": "Jim",
+        "headline": "Senior Software Engineer at Lab126",
+        "id": "W2A0x3_l3J",
+        "industry": "Computer Software",
+        "lastName": "Z.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 265,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_zdfeRCms6Terbdj3cWpRR3uUk3RKbdj3BwRcR3YoUXf8ZSoTMf0kvToXE7U7XapDqoDnqQ8G6y4g",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 208137,
+              "industry": "Consumer Electronics",
+              "name": "Lab126",
+              "size": "201-500 employees",
+              "type": "Privately Held"
+            },
+            "id": 310062941,
+            "isCurrent": true,
+            "startDate": {
+              "month": 8,
+              "year": 2012
+            },
+            "title": "Senior Software Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/jimzamiska",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=1382124&authType=OUT_OF_NETWORK&authToken=svB9&trk=api*a3139351*s3214061*"},
+        "specialties": "\u2022 C# and .NET\n\u2022 C++, Win32 and COM\n\u2022 Java\n\u2022 Web and Windows application design and development\n\u2022 Project planning, coordination and engineering team management\n\u2022 Experience in various application domains: video editing, computer graphics, image processing, image acquisition, user interface design, development tools, SDK design, robotics and artificial intelligence\n\u2022 Software intellectual property and patent analysis",
+        "summary": "I am a software engineer with experience in a wide variety of product and technology fields. I have worked in all stages of the software development lifecycle as both a software developer and development manager. I have extensive experience developing Windows applications using C++, C#, .NET, Win32, COM, and other components of the Microsoft technology stack, and spend my spare time learning more about web and mobile application development."
+      },
+      {
+        "firstName": "private",
+        "id": "private",
+        "lastName": "private"
+      },
+      {
+        "distance": 3,
+        "firstName": "Matthew",
+        "headline": "Software Engineer and Lobster Wrangler",
+        "id": "X9TWI3J4f-",
+        "industry": "Computer Software",
+        "lastName": "J.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 188,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 47839,
+              "industry": "Computer Games",
+              "name": "Three Rings Design",
+              "size": "11-50 employees",
+              "type": "Privately Held"
+            },
+            "id": 38616619,
+            "isCurrent": true,
+            "startDate": {
+              "month": 4,
+              "year": 2008
+            },
+            "title": "Software Engineer"
+          }]
+        },
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=5018303&authType=OUT_OF_NETWORK&authToken=qWEi&trk=api*a3139351*s3214061*"}
+      },
+      {
+        "distance": 3,
+        "firstName": "Sandra",
+        "headline": "Solutions/Software Development Engineer and Information Technology and Services Consultant",
+        "id": "VJSsxFpD7e",
+        "industry": "Information Technology and Services",
+        "lastName": "R.",
+        "location": {"name": "Salinas, California Area"},
+        "numConnections": 120,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 6,
+          "values": [
+            {
+              "company": {
+                "industry": "Information Technology and Services",
+                "name": "Retired"
+              },
+              "id": 332487604,
+              "isCurrent": true,
+              "startDate": {
+                "month": 10,
+                "year": 2012
+              },
+              "title": "Retired"
+            },
+            {
+              "company": {
+                "id": 163291,
+                "industry": "Information Technology and Services",
+                "name": "CTB/McGraw-Hill",
+                "type": "Public Company"
+              },
+              "id": 16792900,
+              "isCurrent": true,
+              "startDate": {
+                "month": 5,
+                "year": 1996
+              },
+              "title": "Solutions Engineer"
+            },
+            {
+              "company": {
+                "id": 163291,
+                "industry": "Information Technology and Services",
+                "name": "CTB McGraw Hill, Monterey, CA",
+                "type": "Public Company"
+              },
+              "id": 44348575,
+              "isCurrent": true,
+              "startDate": {"year": 1996},
+              "title": "Solutions Engineer"
+            },
+            {
+              "company": {
+                "id": 2934,
+                "industry": "Information Technology and Services",
+                "name": "CTB/The McGraw-Hill Companies",
+                "type": "Public Company"
+              },
+              "id": 57839571,
+              "isCurrent": true,
+              "startDate": {"year": 1996},
+              "title": "Senior Solutions Engineer"
+            },
+            {
+              "company": {
+                "industry": "Information Technology and Services",
+                "name": "McGraw-Hill Companies"
+              },
+              "id": 99113998,
+              "isCurrent": true,
+              "startDate": {"year": 1996},
+              "title": "Sr. Software Engineer"
+            },
+            {
+              "company": {
+                "industry": "Information Technology and Services",
+                "name": "McGraw-Hill / CTB"
+              },
+              "id": 148136360,
+              "isCurrent": true,
+              "startDate": {"year": 1986},
+              "title": "Sr Solutions Engineer"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/sandra-r/4/b8/524",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=12186604&authType=OUT_OF_NETWORK&authToken=fhFN&trk=api*a3139351*s3214061*"}
+      },
+      {
+        "distance": -1,
+        "firstName": "",
+        "headline": "Co-Founder, Chairman & CEO @ NGCT Cleansys Pvt. Ltd.",
+        "id": "2T92PpRagx",
+        "industry": "Machinery",
+        "lastName": "Private",
+        "location": {"name": "Pune Area, India"},
+        "numConnections": 85,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1409516,
+              "industry": "Machinery",
+              "name": "NGCT Cleansys Pvt. Ltd. (Formerly know as Nexgen Cleantech)",
+              "size": "11-50 employees",
+              "type": "Privately Held"
+            },
+            "id": 133329949,
+            "isCurrent": true,
+            "startDate": {
+              "month": 6,
+              "year": 2010
+            },
+            "summary": "Managing the business (Sales, Marketing, Technologies and Financials) of the company involved in manufacturing of machines in the field of Special Purpose Industrial Component Cleaning Machines. Company specializes in water/aqueous based cleaning and closed-loop environmentally friendly Solvent based cleaning under vacuum.\nFormed a partnership with two German companies who also have a equity stake in the company.\nweb site: http://www.ngctpl.com/",
+            "title": "Co-Founder, Chairman & CEO."
+          }]
+        },
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=5554907&authType=OUT_OF_NETWORK&authToken=v7LU&trk=api*a3139351*s3214061*"},
+        "summary": "Current: Managing the business (Sales, Marketing, Technologies and Financials) of the company involved in manufacturing of machines in the field of Special Purpose Industrial Component Cleaning Machines. \n\nSpecialties: Previous: Software Development, Project/Product Management, in the fields of: Mobile, E-commerce and Internet applications, Middleware and Networking protocols."
+      },
+      {
+        "distance": 3,
+        "firstName": "Hamid",
+        "headline": "Software QA Manager at Juniper Networks",
+        "id": "NtlHFhTvA4",
+        "industry": "Computer & Network Security",
+        "lastName": "S.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 328,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 2240,
+              "industry": "Computer Networking",
+              "name": "Juniper Networks",
+              "size": "5001-10,000 employees",
+              "ticker": "JNPR",
+              "type": "Public Company"
+            },
+            "id": 252149931,
+            "isCurrent": true,
+            "startDate": {
+              "month": 4,
+              "year": 2011
+            },
+            "summary": "Software QA Manager, managing quality test activities associated with Junos Space SDK product.",
+            "title": "Software QA Manager"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/hamid-s/0/779/128",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=1902704&authType=OUT_OF_NETWORK&authToken=BF2z&trk=api*a3139351*s3214061*"},
+        "specialties": "Many years of leading and executing test and verification projects.",
+        "summary": "Experienced System and Software Test Engineering professional"
+      },
+      {
+        "distance": 3,
+        "firstName": "Sergey",
+        "headline": "Architect at SelectQuote Insurance Services",
+        "id": "q9DbKCr3Oa",
+        "industry": "Computer Software",
+        "lastName": "Z.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 161,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 27409,
+              "industry": "Insurance",
+              "name": "SelectQuote Insurance Services",
+              "size": "201-500 employees",
+              "type": "Privately Held"
+            },
+            "id": 171432332,
+            "isCurrent": true,
+            "startDate": {
+              "month": 2,
+              "year": 2011
+            },
+            "title": "Architect"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/sergeyz",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=5994303&authType=OUT_OF_NETWORK&authToken=gTTX&trk=api*a3139351*s3214061*"},
+        "specialties": "Software development life cycle",
+        "summary": "Interests include design and implementation of business applications using RDBMSs, multi-tier architecture, workflows and web technologies."
+      },
+      {
+        "distance": 3,
+        "firstName": "Carl",
+        "headline": "Vice President at IDC | Recognized Thought Leader | \"Mr. Big Data\" |  Database Management Software  Guru",
+        "id": "9WrjhKfoGT",
+        "industry": "Market Research",
+        "lastName": "O.",
+        "location": {"name": "Greater Boston Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_N0TLAXtVilYPTRijnx8VAbkUTAD03RCjn4vsAbCIY-JfOxvg4JldxF9L7MShCp_Avp_ROhymNkFY",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 3386,
+              "industry": "Market Research",
+              "name": "IDC",
+              "type": "Privately Held"
+            },
+            "id": 2736119,
+            "isCurrent": true,
+            "startDate": {
+              "month": 3,
+              "year": 1997
+            },
+            "summary": "* Manage DBMS, database tools, and data integration subscription program maintaining lucrative relationships with blue chip clients such as Oracle, IBM, and Microsoft.\n* Brought $1 million in business to IDC in a year, consistently brought $750k-$800k in business each year.\n* Established thought leadership in \u201cCyberSmart Computing\u201d ( a mix of distributed component based application development and deployment, and distributed data management and access), application integration, semantic web services, and event-driven architectures (EDA).\n* Interviewed on TechTV and CNBC Europe.  Widely quoted in leading publications including the New York Times, the Wall Street Journal, Business Week, Forbes Magazine, Fortune Magazine, the San Francisco Chronicle, and the San José Mercury News.\n* Frequently cited in industry publications including Information Week, Computerworld, eWeek, BusinessOnline.com, and CNET News.com.\n* Spoke at major user meetings including those of Informatica, Oracle, Sybase, and IBM.",
+            "title": "Research Vice President"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/carlolofson",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=2046342&authType=OUT_OF_NETWORK&authToken=GUPP&trk=api*a3139351*s3214061*"},
+        "summary": "Recognized visionary with over thirty years of a wide range of IT experience that provides a varied and comprehensive capability to understand and address the needs of the IT market, especially in the areas of data management, infrastructure, and development tools software.  Experience ranges from early days as a contract programmer to present position as a research vice president performing industry analysis for IDC.\n\nSpecialties: Enterprise Data Management, Development Tools, Meta Data Management, Event Driven Architecture, Real Time Integration"
+      }
+    ]
+  }
+}
