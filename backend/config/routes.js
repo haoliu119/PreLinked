@@ -62,44 +62,46 @@ module.exports = function(app) {
     //this is where you test random backend functions
     // console.log('- GET /test - app.get(env)', app.get('env'));
 
-    var Job = require('../models/jobs.js');
-    var Keyword = require('../models/keywords.js');
-    var KeywordToJob = require('../models/keywordsToJobs.js');
-    var mongoose = require('mongoose');
-
     /**
     /** TESTING LinkedIn API
     /*/
     var fs          = require('fs');
     var path        = require('path');
-    var LinkedInApi = require('../models/linkedin_api.js');
-    var _helper     = require('../controllers/_helper.js');
-    // GET /people/search
-    console.log('- '+ req.method + ' ' + req.url + ' - Controller -> LinkedIn.searchConnections >> ');
-    // if user is logged in through LinkedIn
-    if (req.session.passport.user){
-      LinkedInApi.searchConnections(req.session, {title: 'software engineer', keywords: 'san francisco, ca' })
-        .done(
-          //Resolved: json returned from LinkedIn API
+    // // GET /people/search
+    // req.query = {title: 'software engineer', keywords: 'san francisco, ca',  facet:  'network,O' };
+    // linkedin.searchConnections(req, res,
+    //       function(json) {
+    //         fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_LinkedIn_People_Search_Results.json'), json);
+    //       }
+    // );
+
+    // GET ALL FIRST DEGREE CONNECTIONS
+    // req.query = {start: "500"}; // page two
+    // linkedin.searchFirstDegree(req, res,
+    //       function(json) {
+    //         fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_LinkedIn_First_Degrees_P02.json'), json);
+    //       }
+    // );
+
+    // // GET MY FULL PROFILE
+    req.params.id = req.session.passport.user.id;
+    // req.params.id = "d3bA9zi41M";
+
+    linkedin.getProfile(req, res,
           function(json) {
-            fs.writeFile(path.join(__dirname, '../public/_temp_dummy_data/_LinkedIn_People_Search_Results.json'),
-            json,
-            function(){
-              console.log('- file saved <<');
-              _helper.resolved(req, res, json);
-            });
-          },
-          //Rejected: error message from LinkedIn API
-          function(error) {
-            _helper.rejected(req, res, error);
-        });
-    } else {
-      _helper.sessionNotAvl(req, res);
-    }
+            fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_LinkedIn_My_Profile.json'), json);
+          }
+    );
 
     /**
     /** TESTING MongoDB
     /*/
+
+    // var Job = require('../models/jobs.js');
+    // var Keyword = require('../models/keywords.js');
+    // var KeywordToJob = require('../models/keywordsToJobs.js');
+    // var mongoose = require('mongoose');
+
     // var job = new Job({
     //   indeedPost: {key:'value2 really'}
     // });
