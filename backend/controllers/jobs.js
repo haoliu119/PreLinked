@@ -33,6 +33,9 @@ jobs.search = function(req, res){
 
   grabMultiplePages().then(function(json) {
     console.log('Paginated JSON Data length',json.length);
+    fs.writeFile(path.join(__dirname, '../public/_temp_dummy_data/dummy_paginated_indeed.json'), json, function() {
+      console.log('written');
+    });
     _helper.resolved(req, res, json);
   }, function(error) {
     _helper.rejected(req, res, error);
