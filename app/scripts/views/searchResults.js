@@ -12,10 +12,6 @@ PreLinked.Views.SearchResultsView = Backbone.View.extend({
     'click .showConnectButton': 'findConnectionsForJob'
   },
 
-  findConnectionsForJob: function(e) {
-    console.log(e);
-  },
-
   render: function() {
 
     this.$el.html(this.template(
