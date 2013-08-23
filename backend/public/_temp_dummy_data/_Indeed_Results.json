@@ -1,0 +1,333 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ {
+
+    "version" : 2,
+    "query" : "title:('architect' or 'software engineer' or 'developer') company:('google' or 'yahoo' or 'salesforce') $90K-$120K ('big data' or 'plumber')",
+    "location" : "94105",
+    "dupefilter" : true,
+     
+    "highlight" : false,
+    
+    "radius" : 25,
+    
+    
+    "start" : 1,
+    "end" : 12,
+    "totalResults" : 12,
+     
+    "pageNumber" : 0,
+    
+    
+    
+    
+    "results" : [
+        
+            
+                {
+                    "jobtitle" : "Senior Big Data Engineer",
+                    "company" : "Salesforce",
+                    "city" : "San Francisco",
+                    "state" : "CA",
+                    "country" : "US",
+                    "formattedLocation" : "San Francisco, CA",
+                    "source" : "Salesforce",
+                    "date" : "Thu, 22 Aug 2013 11:01:00 GMT",
+                    "snippet" : "Salesforce.com transformed the enterprise software... data stores. Create standards for building, monitoring, managing and benchmarking big data systems... ",
+                    "url" : "http:\/\/www.indeed.com\/viewjob?jk=e31ccd529450f434&qd=DuhB04ictrCr6GHbgzJXTLckmXe3DB5lXTiQ2S0z21Cjuc0Hx0HIM8qlzj_uGnA-lpp6aOiAbxRCzN0kgGJsHHsUWC-VuGXBsARWxlMIi7BD4UG8jjBJvWTAWl2WVsPHRiAg2-3ok21hJFH8mcpYD7mCEutpntz-66P66Sf9MBUlt8ExwvJ1w3CUb2ivfDPdBeZ-S9T6Xcfdg655xO9TX59k8PlPGXkrepYPwjS3DTOhR1_b9lwDkjQ00wfiFQ-jqmUt9Wb_Zc35mgEs_xkXRcBQ-7G0C44qXFMb0P0y63my9ydRA2x7326qIJqr_QJ05it3fLCRMigIKineewWI54MF-ETwiDM7-r8tCBj781k&indpubnum=302158985282491&atk=182mlcgma1d3i0s1",
+                    "onmousedown" : "indeed_clk(this, '6251');",
+                    "latitude" : 37.774727,
+                    "longitude" : -122.41758,
+                    "jobkey" : "e31ccd529450f434",
+                    "sponsored" : false,
+                    "expired" : false,
+                    "formattedLocationFull" : "San Francisco, CA",
+                    "formattedRelativeTime" : "1 day ago"                
+}
+
+            ,
+        
+            
+                {
+                    "jobtitle" : "Senior Software Engineer, Analytics Big Data Quality",
+                    "company" : "Salesforce",
+                    "city" : "San Francisco",
+                    "state" : "CA",
+                    "country" : "US",
+                    "formattedLocation" : "San Francisco, CA",
+                    "source" : "Salesforce",
+                    "date" : "Sat, 17 Aug 2013 02:52:06 GMT",
+                    "snippet" : "Senior Software Engineer, Analytics Big Data Quality About Salesforce.com Founded in 1999, Salesforce... of data of a variety of types (big data) to uncover... ",
+                    "url" : "http:\/\/www.indeed.com\/viewjob?jk=89b592d3f6272fde&qd=DuhB04ictrCr6GHbgzJXTLckmXe3DB5lXTiQ2S0z21Cjuc0Hx0HIM8qlzj_uGnA-lpp6aOiAbxRCzN0kgGJsHHsUWC-VuGXBsARWxlMIi7BD4UG8jjBJvWTAWl2WVsPHRiAg2-3ok21hJFH8mcpYD7mCEutpntz-66P66Sf9MBUlt8ExwvJ1w3CUb2ivfDPdBeZ-S9T6Xcfdg655xO9TX59k8PlPGXkrepYPwjS3DTOhR1_b9lwDkjQ00wfiFQ-jqmUt9Wb_Zc35mgEs_xkXRcBQ-7G0C44qXFMb0P0y63my9ydRA2x7326qIJqr_QJ05it3fLCRMigIKineewWI54MF-ETwiDM7-r8tCBj781k&indpubnum=302158985282491&atk=182mlcgma1d3i0s1",
+                    "onmousedown" : "indeed_clk(this, '6251');",
+                    "latitude" : 37.774727,
+                    "longitude" : -122.41758,
+                    "jobkey" : "89b592d3f6272fde",
+                    "sponsored" : false,
+                    "expired" : false,
+                    "formattedLocationFull" : "San Francisco, CA",
+                    "formattedRelativeTime" : "6 days ago"                
+}
+
+            ,
+        
+            
+                {
+                    "jobtitle" : "Lead Software Engineer, Analytics Big Data Quality",
+                    "company" : "Salesforce",
+                    "city" : "San Francisco",
+                    "state" : "CA",
+                    "country" : "US",
+                    "formattedLocation" : "San Francisco, CA",
+                    "source" : "Salesforce",
+                    "date" : "Wed, 07 Aug 2013 02:26:57 GMT",
+                    "snippet" : "Lead Software Engineer, Analytics Big Data Quality About Salesforce.com Founded in 1999, Salesforce.com... of data of a variety of types (big data) to uncover... ",
+                    "url" : "http:\/\/www.indeed.com\/viewjob?jk=86e9fcb502604fb0&qd=DuhB04ictrCr6GHbgzJXTLckmXe3DB5lXTiQ2S0z21Cjuc0Hx0HIM8qlzj_uGnA-lpp6aOiAbxRCzN0kgGJsHHsUWC-VuGXBsARWxlMIi7BD4UG8jjBJvWTAWl2WVsPHRiAg2-3ok21hJFH8mcpYD7mCEutpntz-66P66Sf9MBUlt8ExwvJ1w3CUb2ivfDPdBeZ-S9T6Xcfdg655xO9TX59k8PlPGXkrepYPwjS3DTOhR1_b9lwDkjQ00wfiFQ-jqmUt9Wb_Zc35mgEs_xkXRcBQ-7G0C44qXFMb0P0y63my9ydRA2x7326qIJqr_QJ05it3fLCRMigIKineewWI54MF-ETwiDM7-r8tCBj781k&indpubnum=302158985282491&atk=182mlcgma1d3i0s1",
+                    "onmousedown" : "indeed_clk(this, '6251');",
+                    "latitude" : 37.774727,
+                    "longitude" : -122.41758,
+                    "jobkey" : "86e9fcb502604fb0",
+                    "sponsored" : false,
+                    "expired" : false,
+                    "formattedLocationFull" : "San Francisco, CA",
+                    "formattedRelativeTime" : "16 days ago"                
+}
+
+            ,
+        
+            
+                {
+                    "jobtitle" : "Force.com Platform Developer, Senior",
+                    "company" : "Salesforce",
+                    "city" : "San Francisco",
+                    "state" : "CA",
+                    "country" : "US",
+                    "formattedLocation" : "San Francisco, CA",
+                    "source" : "Salesforce",
+                    "date" : "Fri, 16 Aug 2013 10:44:00 GMT",
+                    "snippet" : "is changing the way software is developed and used... Salesforce is looking for an enthusiastic, experienced Software Engineer to help build and architect the... ",
+                    "url" : "http:\/\/www.indeed.com\/viewjob?jk=03746362df87e4ce&qd=DuhB04ictrCr6GHbgzJXTLckmXe3DB5lXTiQ2S0z21Cjuc0Hx0HIM8qlzj_uGnA-lpp6aOiAbxRCzN0kgGJsHHsUWC-VuGXBsARWxlMIi7BD4UG8jjBJvWTAWl2WVsPHRiAg2-3ok21hJFH8mcpYD7mCEutpntz-66P66Sf9MBUlt8ExwvJ1w3CUb2ivfDPdBeZ-S9T6Xcfdg655xO9TX59k8PlPGXkrepYPwjS3DTOhR1_b9lwDkjQ00wfiFQ-jqmUt9Wb_Zc35mgEs_xkXRcBQ-7G0C44qXFMb0P0y63my9ydRA2x7326qIJqr_QJ05it3fLCRMigIKineewWI54MF-ETwiDM7-r8tCBj781k&indpubnum=302158985282491&atk=182mlcgma1d3i0s1",
+                    "onmousedown" : "indeed_clk(this, '6251');",
+                    "latitude" : 37.774727,
+                    "longitude" : -122.41758,
+                    "jobkey" : "03746362df87e4ce",
+                    "sponsored" : false,
+                    "expired" : false,
+                    "formattedLocationFull" : "San Francisco, CA",
+                    "formattedRelativeTime" : "7 days ago"                
+}
+
+            ,
+        
+            
+                {
+                    "jobtitle" : "iOS Mobile Developer - Flickr",
+                    "company" : "Yahoo! Inc.",
+                    "city" : "San Francisco",
+                    "state" : "CA",
+                    "country" : "US",
+                    "formattedLocation" : "San Francisco, CA",
+                    "source" : "Yahoo! Inc.",
+                    "date" : "Fri, 16 Aug 2013 06:57:00 GMT",
+                    "snippet" : "Mobile Engineer - iOS Starting immediately, we are looking for talented iOS engineers to join the Flickr... to a chance to have a big impact (Flickr has 75+... ",
+                    "url" : "http:\/\/www.indeed.com\/viewjob?jk=2e9e5f41e45ce2b9&qd=DuhB04ictrCr6GHbgzJXTLckmXe3DB5lXTiQ2S0z21Cjuc0Hx0HIM8qlzj_uGnA-lpp6aOiAbxRCzN0kgGJsHHsUWC-VuGXBsARWxlMIi7BD4UG8jjBJvWTAWl2WVsPHRiAg2-3ok21hJFH8mcpYD7mCEutpntz-66P66Sf9MBUlt8ExwvJ1w3CUb2ivfDPdBeZ-S9T6Xcfdg655xO9TX59k8PlPGXkrepYPwjS3DTOhR1_b9lwDkjQ00wfiFQ-jqmUt9Wb_Zc35mgEs_xkXRcBQ-7G0C44qXFMb0P0y63my9ydRA2x7326qIJqr_QJ05it3fLCRMigIKineewWI54MF-ETwiDM7-r8tCBj781k&indpubnum=302158985282491&atk=182mlcgma1d3i0s1",
+                    "onmousedown" : "indeed_clk(this, '6251');",
+                    "latitude" : 37.774727,
+                    "longitude" : -122.41758,
+                    "jobkey" : "2e9e5f41e45ce2b9",
+                    "sponsored" : false,
+                    "expired" : false,
+                    "formattedLocationFull" : "San Francisco, CA",
+                    "formattedRelativeTime" : "7 days ago"                
+}
+
+            ,
+        
+            
+                {
+                    "jobtitle" : "Senior Software Engineer, Enterprise API Development, Data.com",
+                    "company" : "Salesforce",
+                    "city" : "San Mateo",
+                    "state" : "CA",
+                    "country" : "US",
+                    "formattedLocation" : "San Mateo, CA",
+                    "source" : "Salesforce",
+                    "date" : "Fri, 19 Jul 2013 19:42:09 GMT",
+                    "snippet" : "a billion dollar data business. Data.com is one of... challenges around big data. All teams are focused on delivering on the Data.com vision of data-as... ",
+                    "url" : "http:\/\/www.indeed.com\/viewjob?jk=ed628303b3850cc2&qd=DuhB04ictrCr6GHbgzJXTLckmXe3DB5lXTiQ2S0z21Cjuc0Hx0HIM8qlzj_uGnA-lpp6aOiAbxRCzN0kgGJsHHsUWC-VuGXBsARWxlMIi7BD4UG8jjBJvWTAWl2WVsPHRiAg2-3ok21hJFH8mcpYD7mCEutpntz-66P66Sf9MBUlt8ExwvJ1w3CUb2ivfDPdBeZ-S9T6Xcfdg655xO9TX59k8PlPGXkrepYPwjS3DTOhR1_b9lwDkjQ00wfiFQ-jqmUt9Wb_Zc35mgEs_xkXRcBQ-7G0C44qXFMb0P0y63my9ydRA2x7326qIJqr_QJ05it3fLCRMigIKineewWI54MF-ETwiDM7-r8tCBj781k&indpubnum=302158985282491&atk=182mlcgma1d3i0s1",
+                    "onmousedown" : "indeed_clk(this, '6251');",
+                    "latitude" : 37.56044,
+                    "longitude" : -122.32417,
+                    "jobkey" : "ed628303b3850cc2",
+                    "sponsored" : false,
+                    "expired" : false,
+                    "formattedLocationFull" : "San Mateo, CA",
+                    "formattedRelativeTime" : "30+ days ago"                
+}
+
+            ,
+        
+            
+                {
+                    "jobtitle" : "Lead Performance Engineer, Analytics",
+                    "company" : "Salesforce",
+                    "city" : "San Francisco",
+                    "state" : "CA",
+                    "country" : "US",
+                    "formattedLocation" : "San Francisco, CA",
+                    "source" : "Salesforce",
+                    "date" : "Thu, 25 Jul 2013 19:58:43 GMT",
+                    "snippet" : "collocating data in tables with billions of rows. This is a superb big data challenge. You will be... is seeking a top notch engineer that they can partner... ",
+                    "url" : "http:\/\/www.indeed.com\/viewjob?jk=158fecc0d0193de3&qd=DuhB04ictrCr6GHbgzJXTLckmXe3DB5lXTiQ2S0z21Cjuc0Hx0HIM8qlzj_uGnA-lpp6aOiAbxRCzN0kgGJsHHsUWC-VuGXBsARWxlMIi7BD4UG8jjBJvWTAWl2WVsPHRiAg2-3ok21hJFH8mcpYD7mCEutpntz-66P66Sf9MBUlt8ExwvJ1w3CUb2ivfDPdBeZ-S9T6Xcfdg655xO9TX59k8PlPGXkrepYPwjS3DTOhR1_b9lwDkjQ00wfiFQ-jqmUt9Wb_Zc35mgEs_xkXRcBQ-7G0C44qXFMb0P0y63my9ydRA2x7326qIJqr_QJ05it3fLCRMigIKineewWI54MF-ETwiDM7-r8tCBj781k&indpubnum=302158985282491&atk=182mlcgma1d3i0s1",
+                    "onmousedown" : "indeed_clk(this, '6251');",
+                    "latitude" : 37.774727,
+                    "longitude" : -122.41758,
+                    "jobkey" : "158fecc0d0193de3",
+                    "sponsored" : false,
+                    "expired" : false,
+                    "formattedLocationFull" : "San Francisco, CA",
+                    "formattedRelativeTime" : "29 days ago"                
+}
+
+            ,
+        
+            
+                {
+                    "jobtitle" : "Senior Web\/UI Application Developer, Dreamforce \/ Events",
+                    "company" : "Salesforce",
+                    "city" : "San Francisco",
+                    "state" : "CA",
+                    "country" : "US",
+                    "formattedLocation" : "San Francisco, CA",
+                    "source" : "Salesforce",
+                    "date" : "Thu, 25 Jul 2013 01:55:46 GMT",
+                    "snippet" : "changing the way software is developed and used? The Web Development team at Salesforce is looking for an enthusiastic, experienced web developer to work on... ",
+                    "url" : "http:\/\/www.indeed.com\/viewjob?jk=d034c8f732447989&qd=DuhB04ictrCr6GHbgzJXTLckmXe3DB5lXTiQ2S0z21Cjuc0Hx0HIM8qlzj_uGnA-lpp6aOiAbxRCzN0kgGJsHHsUWC-VuGXBsARWxlMIi7BD4UG8jjBJvWTAWl2WVsPHRiAg2-3ok21hJFH8mcpYD7mCEutpntz-66P66Sf9MBUlt8ExwvJ1w3CUb2ivfDPdBeZ-S9T6Xcfdg655xO9TX59k8PlPGXkrepYPwjS3DTOhR1_b9lwDkjQ00wfiFQ-jqmUt9Wb_Zc35mgEs_xkXRcBQ-7G0C44qXFMb0P0y63my9ydRA2x7326qIJqr_QJ05it3fLCRMigIKineewWI54MF-ETwiDM7-r8tCBj781k&indpubnum=302158985282491&atk=182mlcgma1d3i0s1",
+                    "onmousedown" : "indeed_clk(this, '6251');",
+                    "latitude" : 37.774727,
+                    "longitude" : -122.41758,
+                    "jobkey" : "d034c8f732447989",
+                    "sponsored" : false,
+                    "expired" : false,
+                    "formattedLocationFull" : "San Francisco, CA",
+                    "formattedRelativeTime" : "29 days ago"                
+}
+
+            ,
+        
+            
+                {
+                    "jobtitle" : "Senior Systems Engineer, Monitoring and Management",
+                    "company" : "Salesforce",
+                    "city" : "San Francisco",
+                    "state" : "CA",
+                    "country" : "US",
+                    "formattedLocation" : "San Francisco, CA",
+                    "source" : "Salesforce",
+                    "date" : "Fri, 19 Jul 2013 19:43:54 GMT",
+                    "snippet" : "etc \u2022Staffed with a mix of R&amp;D Engineers and Infrastructure Engineers \u2022Supported by a Product Owner and... is a big plus \u2022You are a talented systems engineer... ",
+                    "url" : "http:\/\/www.indeed.com\/viewjob?jk=b94914b561640baa&qd=DuhB04ictrCr6GHbgzJXTLckmXe3DB5lXTiQ2S0z21Cjuc0Hx0HIM8qlzj_uGnA-lpp6aOiAbxRCzN0kgGJsHHsUWC-VuGXBsARWxlMIi7BD4UG8jjBJvWTAWl2WVsPHRiAg2-3ok21hJFH8mcpYD7mCEutpntz-66P66Sf9MBUlt8ExwvJ1w3CUb2ivfDPdBeZ-S9T6Xcfdg655xO9TX59k8PlPGXkrepYPwjS3DTOhR1_b9lwDkjQ00wfiFQ-jqmUt9Wb_Zc35mgEs_xkXRcBQ-7G0C44qXFMb0P0y63my9ydRA2x7326qIJqr_QJ05it3fLCRMigIKineewWI54MF-ETwiDM7-r8tCBj781k&indpubnum=302158985282491&atk=182mlcgma1d3i0s1",
+                    "onmousedown" : "indeed_clk(this, '6251');",
+                    "latitude" : 37.774727,
+                    "longitude" : -122.41758,
+                    "jobkey" : "b94914b561640baa",
+                    "sponsored" : false,
+                    "expired" : false,
+                    "formattedLocationFull" : "San Francisco, CA",
+                    "formattedRelativeTime" : "30+ days ago"                
+}
+
+            ,
+        
+            
+                {
+                    "jobtitle" : "Member of Technical Staff, Software Engineering",
+                    "company" : "Salesforce",
+                    "city" : "San Francisco",
+                    "state" : "CA",
+                    "country" : "US",
+                    "formattedLocation" : "San Francisco, CA",
+                    "source" : "Salesforce",
+                    "date" : "Tue, 20 Aug 2013 23:41:00 GMT",
+                    "snippet" : "applications, mobile, big data, security, salesforce... Tools Development Engineer, Software Developer, Software Engineer, Platform Engagements Developer, Intern... ",
+                    "url" : "http:\/\/www.indeed.com\/viewjob?jk=fbbcb8d7e194327d&qd=DuhB04ictrCr6GHbgzJXTLckmXe3DB5lXTiQ2S0z21Cjuc0Hx0HIM8qlzj_uGnA-lpp6aOiAbxRCzN0kgGJsHHsUWC-VuGXBsARWxlMIi7BD4UG8jjBJvWTAWl2WVsPHRiAg2-3ok21hJFH8mcpYD7mCEutpntz-66P66Sf9MBUlt8ExwvJ1w3CUb2ivfDPdBeZ-S9T6Xcfdg655xO9TX59k8PlPGXkrepYPwjS3DTOhR1_b9lwDkjQ00wfiFQ-jqmUt9Wb_Zc35mgEs_xkXRcBQ-7G0C44qXFMb0P0y63my9ydRA2x7326qIJqr_QJ05it3fLCRMigIKineewWI54MF-ETwiDM7-r8tCBj781k&indpubnum=302158985282491&atk=182mlcgma1d3i0s1",
+                    "onmousedown" : "indeed_clk(this, '6251');",
+                    "latitude" : 37.774727,
+                    "longitude" : -122.41758,
+                    "jobkey" : "fbbcb8d7e194327d",
+                    "sponsored" : false,
+                    "expired" : false,
+                    "formattedLocationFull" : "San Francisco, CA",
+                    "formattedRelativeTime" : "2 days ago"                
+}
+
+            ,
+        
+            
+                {
+                    "jobtitle" : "Lead Software Engineer, Predictive Intelligence & Analytics, Quality Engineering",
+                    "company" : "Salesforce",
+                    "city" : "San Francisco",
+                    "state" : "CA",
+                    "country" : "US",
+                    "formattedLocation" : "San Francisco, CA",
+                    "source" : "Salesforce",
+                    "date" : "Sat, 17 Aug 2013 02:52:08 GMT",
+                    "snippet" : "Lead Software Engineer, Predictive Intelligence and Analytics, Quality Engineering About Salesforce.com... with Salesforce, and provide a developer experience... ",
+                    "url" : "http:\/\/www.indeed.com\/viewjob?jk=f1aefcf5ab370312&qd=DuhB04ictrCr6GHbgzJXTLckmXe3DB5lXTiQ2S0z21Cjuc0Hx0HIM8qlzj_uGnA-lpp6aOiAbxRCzN0kgGJsHHsUWC-VuGXBsARWxlMIi7BD4UG8jjBJvWTAWl2WVsPHRiAg2-3ok21hJFH8mcpYD7mCEutpntz-66P66Sf9MBUlt8ExwvJ1w3CUb2ivfDPdBeZ-S9T6Xcfdg655xO9TX59k8PlPGXkrepYPwjS3DTOhR1_b9lwDkjQ00wfiFQ-jqmUt9Wb_Zc35mgEs_xkXRcBQ-7G0C44qXFMb0P0y63my9ydRA2x7326qIJqr_QJ05it3fLCRMigIKineewWI54MF-ETwiDM7-r8tCBj781k&indpubnum=302158985282491&atk=182mlcgma1d3i0s1",
+                    "onmousedown" : "indeed_clk(this, '6251');",
+                    "latitude" : 37.774727,
+                    "longitude" : -122.41758,
+                    "jobkey" : "f1aefcf5ab370312",
+                    "sponsored" : false,
+                    "expired" : false,
+                    "formattedLocationFull" : "San Francisco, CA",
+                    "formattedRelativeTime" : "6 days ago"                
+}
+
+            ,
+        
+            
+                {
+                    "jobtitle" : "Software Tools Architect, Monitoring & Management, Infrastructure Engineering",
+                    "company" : "Salesforce",
+                    "city" : "San Francisco",
+                    "state" : "CA",
+                    "country" : "US",
+                    "formattedLocation" : "San Francisco, CA",
+                    "source" : "Salesforce",
+                    "date" : "Tue, 06 Aug 2013 20:26:27 GMT",
+                    "snippet" : "mix of R&amp;D Engineers and Infrastructure Engineers In... of highly technical engineers some experience with distributed big-data systems like Hadoop, HBase, etc... ",
+                    "url" : "http:\/\/www.indeed.com\/viewjob?jk=ecf5a6201ce1f8b9&qd=DuhB04ictrCr6GHbgzJXTLckmXe3DB5lXTiQ2S0z21Cjuc0Hx0HIM8qlzj_uGnA-lpp6aOiAbxRCzN0kgGJsHHsUWC-VuGXBsARWxlMIi7BD4UG8jjBJvWTAWl2WVsPHRiAg2-3ok21hJFH8mcpYD7mCEutpntz-66P66Sf9MBUlt8ExwvJ1w3CUb2ivfDPdBeZ-S9T6Xcfdg655xO9TX59k8PlPGXkrepYPwjS3DTOhR1_b9lwDkjQ00wfiFQ-jqmUt9Wb_Zc35mgEs_xkXRcBQ-7G0C44qXFMb0P0y63my9ydRA2x7326qIJqr_QJ05it3fLCRMigIKineewWI54MF-ETwiDM7-r8tCBj781k&indpubnum=302158985282491&atk=182mlcgma1d3i0s1",
+                    "onmousedown" : "indeed_clk(this, '6251');",
+                    "latitude" : 37.774727,
+                    "longitude" : -122.41758,
+                    "jobkey" : "ecf5a6201ce1f8b9",
+                    "sponsored" : false,
+                    "expired" : false,
+                    "formattedLocationFull" : "San Francisco, CA",
+                    "formattedRelativeTime" : "17 days ago"                
+}
+
+            
+        
+    ]
+}
+

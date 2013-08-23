@@ -1,13 +1,26 @@
 <h3>Search Jobs</h3>
 <form id="form-search">
   <label>
-    Job
+    Job Title
     <input class="searchInput" id="jobTitleSearchInput" name="job-title" type="text" placeholder="Example: Software Engineer">
   </label>
   <div>
     {{#each jobTitle}}
       <a class="filter-item button tiny round secondary removeJobTitleFilter removeFilter">
         {{this}}<span class="rm removeJobTitleFilter {{this}}">
+        &times;
+        </span>
+      </a>
+    {{/each}}
+  </div>
+  <label>
+    Company
+    <input class="searchInput" id="companySearchInput" name="company" type="text" placeholder="Example: Google">
+  </label>
+  <div>
+    {{#each company}}
+      <a class="filter-item button tiny round secondary removeCompanyFilter removeFilter">
+        {{this}}<span class="rm removeCompanyFilter {{this}}">
         &times;
         </span>
       </a>
