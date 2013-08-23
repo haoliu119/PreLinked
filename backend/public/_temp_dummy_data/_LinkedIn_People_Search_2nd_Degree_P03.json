@@ -1,0 +1,758 @@
+{
+  "facets": {
+    "_total": 1,
+    "values": [{
+      "buckets": {
+        "_total": 4,
+        "values": [
+          {
+            "code": "F",
+            "count": 0,
+            "name": "1st Connections"
+          },
+          {
+            "code": "S",
+            "count": 67,
+            "name": "2nd Connections"
+          },
+          {
+            "code": "A",
+            "count": 191,
+            "name": "Group Members"
+          },
+          {
+            "code": "O",
+            "count": 964,
+            "name": "3rd + Everyone Else"
+          }
+        ]
+      },
+      "code": "network",
+      "name": "Relationship"
+    }]
+  },
+  "people": {
+    "_count": 17,
+    "_start": 50,
+    "_total": 67,
+    "values": [
+      {
+        "distance": 2,
+        "firstName": "Justin",
+        "headline": "Co-Founder & CTO at Evident.io",
+        "id": "wYBF7bjzUP",
+        "industry": "Computer & Network Security",
+        "lastName": "Lundy",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_dtjoY7cYFruVr7-3I1xvYDk151REt2P3wrdvYDX3s9fsSekT5ND6rSKfwgUvAItDHl0qlEVsCGHK",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "industry": "Computer & Network Security",
+              "name": "Evident.io"
+            },
+            "id": 432847697,
+            "isCurrent": true,
+            "startDate": {
+              "month": 8,
+              "year": 2013
+            },
+            "title": "Co-Founder & CTO"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/jblevident",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=1726053&authType=OUT_OF_NETWORK&authToken=RD6P&trk=api*a3139351*s3214061*"},
+        "summary": "I'm an information security specialist with experience ranging from Fortune 500's to Start-ups.\n\nSpecialties: Cloud Computing, Information Security, Enterprise Risk Management, AWS, VMWare."
+      },
+      {
+        "distance": 2,
+        "firstName": "Gaylord",
+        "headline": "Media Entertainment, Innovation, Hi-Tech management, MBA Candidate 2013 @ HULT",
+        "id": "JritBrVv3K",
+        "industry": "Management Consulting",
+        "lastName": "Foureau",
+        "location": {"name": "Paris Area, France"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_2AaKEUBAs7TwKXJHmzjfEJ62VH6w-beHm9VfEJ6uLm-UDixe8cOyXMtCqLQNl8WXD-2m5YqQevMq",
+        "positions": {"_total": 0},
+        "publicProfileUrl": "http://www.linkedin.com/in/gaylordfoureau",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=28604152&authType=OUT_OF_NETWORK&authToken=GX7L&trk=api*a3139351*s3214061*"},
+        "summary": "International professional with six years experience in information technology services, software engineering and video-game industry. Enthusiast team player with strong analytical skills known for maximizing the talents of team members toward successful completion of projects. Deep understanding of technology and its application in innovation and operations. Culturally adaptable, with proven ability to communicate effectively with clients and staff at all levels in organizations."
+      },
+      {
+        "distance": 2,
+        "firstName": "Scott",
+        "headline": "Certified Associate Project Manager  - IT seeking new opportunities: spettersj@gmail.com",
+        "id": "EAYGT709JK",
+        "industry": "Computer Networking",
+        "lastName": "Spetter CAPM CSM",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_e0hbvuNRuLdeD4pPHj84vaXJ860d342Pogq4vakwx8IJOyR1XJrwRmr5mIx9C0DxWpGMsWVkGAfQ",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "industry": "Computer Networking",
+              "name": "Available Now in Silicon Valley"
+            },
+            "id": 333369019,
+            "isCurrent": true,
+            "startDate": {
+              "month": 11,
+              "year": 2012
+            },
+            "summary": "Scott Spetter\nspettersj at gmail dot com\n\nI am an experienced technical program manager, with a track record of successful results.  Great program managers do not just deliver projects, they deliver delighted stakeholders.  The IT project management help you need, is just one click away.",
+            "title": "Senior Technical Program Manager"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/scottspetter",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=49812136&authType=OUT_OF_NETWORK&authToken=BAvt&trk=api*a3139351*s3214061*"},
+        "summary": "Scott J. Spetter\nspettersj at gmail dot com\n\nAccomplished and highly respected Project Manager with an emphasis on leading support operations, server deployments, and major infrastructure improvement projects for the software and networking market segments during a successful tenure at EMC and Cisco Systems.\n\nTrack record of exceptional communication skills, proven in managing complex, cross-collaboration projects; driving Software Development, Configuration, Testing, Deployment and Support; Intellectual Property archival and management; Hardware configuration and deployment; Release Engineering; Documentation Management and both internal and external technical customer support management.\n\n\nSelected Achievements\n\n *\tEffective process improvement methodology at Cisco generated a savings of more than $2M yearly.\n\n*\tCustomer satisfaction rating was 98%+/- while serving as the Support Lead for Electronic Documentation Control System (EDCS) including 65,000 users, one million documents and 16,000 support cases/year.  \n\n*\tThe voice of customer support at EMC BRS division, managing Customer Support Portal feedback mailbox.  Directed inquires to Technical Support, Content, Account and Product Management teams.\n\n*\tRecognized as Cisco EDCS and ClearCase / MultiSite Subject Matter Expert (SME).\n\nSpecialties: * PMI Certified (CAPM)\n\n * Certified ScrumMaster (Agile CSM)\n\n* ClearCase / MultiSite Subject Matter Expert\n\n* Compliance Standards, Business Practices\n\n* Electronic Documentation Control Systems\n  \n* Formal PMBOK Training\n\n* International Teaming and Collaboration\n\n* Build & Release Engineering\n\n* Technical team leadership"
+      },
+      {
+        "distance": 2,
+        "firstName": "Alex",
+        "headline": "Technical Support at Centered Networks",
+        "id": "tEx0l8lmuH",
+        "industry": "Marketing and Advertising",
+        "lastName": "Rodriguez",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 441,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_Goniw0uHKHrVeKmQ8EqpwgDN-INqE1mQ8eCywgyqDa8XvBM6m2QfLjHVp5qIdq7EidNjkVComde_",
+        "positions": {
+          "_total": 3,
+          "values": [
+            {
+              "company": {
+                "id": 797940,
+                "industry": "Information Technology and Services",
+                "name": "Centered Networks",
+                "size": "11-50 employees",
+                "type": "Privately Held"
+              },
+              "id": 424893417,
+              "isCurrent": true,
+              "startDate": {
+                "month": 4,
+                "year": 2013
+              },
+              "summary": "Provide tier 1&2 support for incoming calls, email and helpdesk ticketing system  ManageEngine ServiceDesk Plus on a Citrix server infrastructure to clients xen desktops \nWork with local IT liaison's  at nine different client sites to provide further support and escalate issues to next tier.\nProvide local desktop support for windows xp, and windows 7\nProvide first level support to Citrix server alerts\nWork directly with manager to resolve trouble, stale and ticket re-assignment.\nProvide input to making exiting service level process improvements.\nReduce call backs, and new tickets by providing proper followup procedures.\nMaintain constant updates to ticket history for helpdesk.",
+              "title": "Technical Support"
+            },
+            {
+              "company": {
+                "id": 1448552,
+                "industry": "Marketing and Advertising",
+                "name": "Spinwyz"
+              },
+              "id": 147395531,
+              "isCurrent": true,
+              "startDate": {
+                "month": 10,
+                "year": 2010
+              },
+              "summary": "Brand development, web site traffic growth, web site UI and advertising revenue. Developed brand strategy , monitor online reputation",
+              "title": "Founder"
+            },
+            {
+              "company": {
+                "industry": "Professional Training & Coaching",
+                "name": "Marin Professionals Group",
+                "size": "51-200 employees",
+                "type": "Nonprofit"
+              },
+              "id": 8884298,
+              "isCurrent": true,
+              "startDate": {
+                "month": 4,
+                "year": 2006
+              },
+              "summary": "Marin Professionals is a volunteer-run organization. Each member belongs to one of the committees, and these committees perform all of the functions of the organization.",
+              "title": "Member of Marin Professionals"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/alexrodriguezsf",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=1768349&authType=OUT_OF_NETWORK&authToken=-Kc4&trk=api*a3139351*s3214061*"},
+        "specialties": "Social media, Internet marketing, Organic inbound linking, PPC, SEO, SEM, Public relations, article marketing, email campaigns, video content creation and distribution.\n\nNetwork professional with a varied background in technology, including wireless, voice over Ip and Telecommunications ,Entrepreneur in clothing sales and merchandise.",
+        "summary": "Core Strengths\n\n* SEM ( Search engine marketing)\n* Competitive website analysis\n*Traffic and conversion monitoring\n*Driving tangible ROI goals through use of Digital media content.\n* Online reputation management\n* E-commerce solutions \n\nSr. Network engineer Byer\nReverse engineer Byer network architecture design, Head project lead on Cisco Ip Telephony rollout ( Hardware phase.) and Lead in Cisco and Spectrum wireless technologies.\nReduce monthly Telco expenses by discovering rarely used T1 line locations and improper specs of T1 lines ordered.\n\nNetwork Administrator TPL\nImplement year 2000 strategies for corporate office, remote sites and satelite branches for server and client side computers. Lead in designing Frame Relay Wan for TPL organization.\n \nSr Network Support Engineer Icverify\nmaintain phone que, support 1st and 2nd level helpdesks,maintenance of assigned troubled calls case loads, debug and test all versions of software, Team leader of 15 person morning crew."
+      },
+      {
+        "distance": 2,
+        "firstName": "Greg",
+        "headline": "PHP Developer at AVA.ai",
+        "id": "tTV0FIea58",
+        "industry": "Computer Software",
+        "lastName": "Hedger",
+        "location": {"name": "Bellingham, Washington Area"},
+        "numConnections": 168,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_ukJ160MTZev9qiezuT4h6gIC4H-Q4iezm5Du6y4rFm6nFbxvhCd0epuO9LtMUXWJSbRDdRoprxYD",
+        "positions": {
+          "_total": 4,
+          "values": [
+            {
+              "company": {
+                "industry": "Environmental Services",
+                "name": "AVA.ai"
+              },
+              "id": 429834802,
+              "isCurrent": true,
+              "startDate": {
+                "month": 8,
+                "year": 2013
+              },
+              "summary": "AVA.ai is a fast-growing Internet Technology company, founded in 2007 with offices in Bellingham, WA and San Francisco, CA. With an international presence and more than 4,000 sales professionals in several industries using AVA, the company\u2019s growth has been tremendous and success well-documented. AVA partners with leading industry companies across many verticals who value better lead management.",
+              "title": "PHP Developer"
+            },
+            {
+              "company": {
+                "industry": "Environmental Services",
+                "name": "Climafy.com"
+              },
+              "id": 201269998,
+              "isCurrent": true,
+              "startDate": {
+                "month": 12,
+                "year": 2010
+              },
+              "summary": "Climafy.com provides homeowners, small business people, and facilities managers with a straightforward set of tools to plan, finance, and implement building retrofits that will lower their energy costs, add value to their properties, and reduce their carbon footprint.  Climafy.com provides the tools that make it easy for people to understand the impact of retrofits, their payback time, and just to understand the entire process.\n\nOn 28 February 2013, Climafy was awarded the prestigious EnergyVisions award on the back of Greg's development work on Climafy.com",
+              "title": "Founding Member and Partner"
+            },
+            {
+              "company": {
+                "industry": "Computer Software",
+                "name": "Solidus Software"
+              },
+              "id": 204090816,
+              "isCurrent": true,
+              "startDate": {
+                "month": 5,
+                "year": 2007
+              },
+              "summary": "Solidus Software produces some of the most advanced AI available in historical strategy games.",
+              "title": "Founding Member and Partner"
+            },
+            {
+              "company": {
+                "industry": "Computer Software",
+                "name": "Hedger Software & Consulting",
+                "size": "Myself Only",
+                "type": "Sole Proprietorship"
+              },
+              "id": 5719437,
+              "isCurrent": true,
+              "startDate": {
+                "month": 8,
+                "year": 2003
+              },
+              "summary": "Working in a private consultant capacity as the sole developer on an application containing over 250,000 lines of actual code, developed and drove to market numerous releases of Crystal Point's flagship OutsideView product,  7.2b, 7.3, 7.3a/b/c/d/e, and 7.4.  Satisfied customer requests for new features and frequently supported the development needs for entire OutsideView product line on my own.",
+              "title": "Consultant"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/greg-hedger/1/49b/565",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=4187741&authType=OUT_OF_NETWORK&authToken=s8vs&trk=api*a3139351*s3214061*"},
+        "summary": "Greg is a bright, creative, and energetic software developer who combines veteran experience with youthful enthusiasm. Beginning his career writing Super Nintendo games in assembly language, Greg has moved into areas ranging from large scale ERP to complex port 80 caching appliances running an  embedded OS. His core passion, though, in keeping with his game programmer roots, lies in front end implementations to which end he leveraged another  passion (classical piano music) as an excuse to gain proficiency in web technologies. Thus was Ecital born in 2007.\n\nRecently he has engaged in a number of extracurricular projects. For example, a fun (as opposed to stodgy) quiz engine offers students a way to hone their mastery of various subject matter such as vocabulary skills. He is currently researching the Wikipedia API with a view toward integration, and working with the Zend framework to that end.\n\nHe wrote a simple vector graphics 3D flight simulator (\"JSFlite\") in two weekends last December.\n\n* 3D game engine development - http://www.hedgerholdings.com\n\n* LAMP Web technologies: Linux, Apache, MySQL, Perl.\n\n* Specializing in servers, multithreaded applications, TCP/IP, Telnet, HTTP, OSI layers 3-7.\n\n* Extensive OpenSSL experience (SSL/TLS).\n\n* Extensive GUI work in C/C++/C# and Java.\n\n* Multivariate regression analysis to derive complex formulae through function plotting along multiple domains.\n\n* Performance enhancements through practical, common-sense solutions.\n\n* Data scraping.\n\n* Reductionist, perennial autodidact, multifacted.\n\nCan produce clear, workable designs from requirements.  Can tackle tough problems - quickly - using balance of inductive and deductive methods.\n\nThe ability to balance an ideal with constraints of reality is critical to success in most endeavors.  I believe all deserve respect and affirmation - the light, air, and water that will bring about the blossom of potential realized."
+      },
+      {
+        "distance": 2,
+        "firstName": "Ken",
+        "headline": "Director of Engineering at IMVU",
+        "id": "9jU3ASZCm_",
+        "industry": "Computer Software",
+        "lastName": "Bradley",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_7QQHyYHmmt3FJsAC3hXUypRTClcbRJKCDbtByjsggciBXgbGi8nX-gaPuyBZZOlmm5k9PsHjmlrp",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 32975,
+              "industry": "Internet",
+              "name": "IMVU",
+              "size": "51-200 employees",
+              "type": "Privately Held"
+            },
+            "id": 257705438,
+            "isCurrent": true,
+            "startDate": {
+              "month": 2,
+              "year": 2012
+            },
+            "summary": "IMVU, Inc. (http://www.imvu.com) is an online social game where members use 3D avatars to meet new people, chat, create and play games with their friends. IMVU has reached 50 million registered users, 10+ million unique visitors per month and a $50+ million annualized revenue run rate. IMVU has the world's largest virtual goods catalog of more than six million items, almost all of which are created by its own members.  IMVU is available in multiple languages on both Windows PC and Mac platforms, and for mobile users via its IMVU 2Go iPhone application, available in the Apple App Store.\n\nIMVU has been recognized frequently, including Best Place to Work for the past 2 years, Inc. 500/5000, 8th fastest growing private tech company in Silicon Valley over the past 3 years, and 87th fastest growing tech company in North America over the past 4 years.  The company\u2019s CEO, Cary Rosenzweig, was recognized as The Most Admired CEO among emerging growth companies in 2010 by the San Francisco Business Times.\n \n\nFounded in 2004, IMVU is backed by venture investors Menlo Ventures, Allegis Capital, Bridgescale Partners and Best Buy Capital and is located in Mountain View, CA.  IMVU has been profitable since 2009.\nIMVU recognized as:\nInc. 500: http://bit.ly/dv52wK\nRed Herring 100: http://bit.ly/bbz5Ex\nBest Place to Work: http://bit.ly/aAVdp8\n----> AND WE ARE HIRING: http://www.imvu.com/jobs <----",
+            "title": "Director of Engineering"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/kennethbradley",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=26492370&authType=OUT_OF_NETWORK&authToken=9iPp&trk=api*a3139351*s3214061*"},
+        "specialties": "Cloud computing, SaaS, PaaS, Enterprise, Consumer & Small Business software\n\u2022Experience coordinating multiple simultaneous time-critical programs and teams with on-time delivery\n\u2022Startup & large company experience managing all aspects of the software development lifecycle\n\u2022Proven track record of increasing engineering velocity & output with greater quality\n\u2022Can assume secondary management roles: PM, PMO, QA, Dev, SCM and release coordination\n\u2022Manage budgets & 3rd party contracts over $30 million",
+        "summary": "15+ Years of demonstrated leadership and management skills\n  8+ Years of software development experience\n\nSenior Engineering Management: Cloud computing, SaaS Platforms & Applications, Shrink-Wrapped J2EE Development Tools, Desktop & Mobile applications with global teams in domestic and international markets\n\n\u2022Directed YouSendIt.com engineering teams: Cloud computing, Platform as a service, mobile, Mac and Windows desktop, iOS, developer APIs and partner integrations\n\u2022Transformed YouSendIt from one product (sending files) to multiple products (sync, sign, share)\n\u2022Expanded YouSendIt into the Enterprise market, growing enterprise bookings 447% in 3 years \n\u2022Proven track record of quickly and effectively staffing top DEV & QA teams of over 90 employees\n\u2022Founded and ran highly effective Program Management Organization (PMO) at YouSendIt\n\u2022Built new cloud business for Intuit by creating a web platform with access to QuickBooks desktop data via robust sync technology\n\u2022Experience managing change (spin-outs, reorgs, acquisitions, explosive growth scenarios add more)\n\u2022Delivered shrink wrapped software for enterprises and small businesses: VisualCafé Java Development tools, Enterprise Developer database development tool, QuickBooks for Windows, dbAnywhere 3-tier JDBC Server"
+      },
+      {
+        "distance": 2,
+        "firstName": "Janet",
+        "headline": "Software Developer",
+        "id": "ZlRlpf3TJt",
+        "industry": "Computer Software",
+        "lastName": "Chang",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 369,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_mbFanO4GKF9ERzutaF9AngHYtTA5Jnytui1lngMYSFLv6-w-GTcG4jDKyulsslgY7kLrMVIoNP0v",
+        "positions": {
+          "_total": 2,
+          "values": [
+            {
+              "company": {
+                "industry": "Computer Software",
+                "name": "SharePractice"
+              },
+              "id": 392636653,
+              "isCurrent": true,
+              "startDate": {
+                "month": 5,
+                "year": 2013
+              },
+              "summary": "Building tools and community for doctors to make better clinical decisions, by sharing their practice.",
+              "title": "Software Engineer"
+            },
+            {
+              "company": {
+                "industry": "Computer Software",
+                "name": "Freelance"
+              },
+              "id": 409694060,
+              "isCurrent": true,
+              "startDate": {
+                "month": 1,
+                "year": 2013
+              },
+              "summary": "I've built 2 minimum viable products for startups, written a web interface for multiple APIs, and refactored open source projects for 18% increase in code quality, among other things:\n\nbit.ly/janetscodingprojects",
+              "title": "Software Developer"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/janetchang",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=60566002&authType=OUT_OF_NETWORK&authToken=7KKz&trk=api*a3139351*s3214061*"},
+        "summary": "I write instructions to computers and humans to promote learning, health, and living life optimized."
+      },
+      {
+        "distance": 2,
+        "firstName": "Siva",
+        "headline": "Director, Strategy & Planning, Walt Disney International at The Walt Disney Company",
+        "id": "dvjyL-OXlE",
+        "industry": "Motion Pictures and Film",
+        "lastName": "Natarajan",
+        "location": {"name": "Greater Los Angeles Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1292,
+              "industry": "Entertainment",
+              "name": "The Walt Disney Company",
+              "size": "10,001+ employees",
+              "ticker": "DIS",
+              "type": "Public Company"
+            },
+            "id": 124746868,
+            "isCurrent": true,
+            "startDate": {
+              "month": 4,
+              "year": 2010
+            },
+            "title": "Director, Strategy & Planning, Walt Disney International"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/sivanatarajancbs08",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=1750509&authType=OUT_OF_NETWORK&authToken=iP2r&trk=api*a3139351*s3214061*"},
+        "specialties": "- Motion pictures production, marketing and distribution \n- New Media (Internet, Mobile)"
+      },
+      {
+        "distance": 2,
+        "firstName": "Yuri",
+        "headline": "Software Engineer at BART",
+        "id": "-PrxWf8gzC",
+        "industry": "Information Technology and Services",
+        "lastName": "Moreno",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 284,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_SLdZcMdSeb1bBEEjS_wFcR4ie3TkUdRjfXjFcVRpBXvNkS2g3iJNMs7-Q73U4aVAu6IQ4g5ywDWl",
+        "positions": {"_total": 0},
+        "publicProfileUrl": "http://www.linkedin.com/pub/yuri-moreno/10/887/21",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=38000473&authType=OUT_OF_NETWORK&authToken=mtBA&trk=api*a3139351*s3214061*"}
+      },
+      {
+        "distance": 2,
+        "firstName": "Adam",
+        "headline": "Undercaffeinated. Overconnected. And All Man.",
+        "id": "MSUKIkuI63",
+        "industry": "Internet",
+        "lastName": "Rifkin",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_Oz05knQgXocilE7UYvgVkqcrXd8Clf7UyqIVkqchR2NtmwZRt1fWoN_aobhg-HmB09jUwP5HeAXU",
+        "positions": {
+          "_total": 2,
+          "values": [
+            {
+              "company": {
+                "id": 1617945,
+                "industry": "Internet",
+                "name": "PandaWhale",
+                "size": "1-10 employees",
+                "type": "Privately Held"
+              },
+              "id": 158885387,
+              "isCurrent": true,
+              "startDate": {
+                "month": 1,
+                "year": 2011
+              },
+              "summary": "My co-founder Joyce Park and I love The Web deeply.\n\nSo on 1/11/11 we incorporated PandaWhale with a mission TO EXPAND THE SEARCHABLE WEB...\n\nPandaWhale is a site where people can save content they like, with a social sharing element.\n\nBut not everyone has to write! Most of our 8 million Monthly Active Users just read. And that's cool.\n\nWe are continually improving our product in public at http://pandawhale.com/ ...\n\nYou are invited to join us and try PandaWhale anytime.\n\nJust please keep in mind that PandaWhale is a work in progress...\n\nEven if we are an Alexa Top 10,000 website in the United States. Bless America!\n\nMore about PandaWhale was written lovingly by Semil Shah:\n\nhttp://techcrunch.com/2013/06/30/pandawhales-slow-march-to-relevance/",
+              "title": "Co-founder, Director, and CEO"
+            },
+            {
+              "company": {
+                "industry": "Internet",
+                "name": "106 Miles"
+              },
+              "id": 3341671,
+              "isCurrent": true,
+              "startDate": {
+                "month": 1,
+                "year": 2005
+              },
+              "summary": "106 Miles is a professional network of 8000 startup founders, engineers, and friends.\n\nFounded in 2005 by Joyce Park and me, 106 Miles gets together several times a month in Silicon Valley, Southern California, and San Francisco.\n\nOUR MISSION IS TO EDUCATE ENTREPRENEURIAL ENGINEERS.\n\n\nNew members are always welcome.\n\nJoin us on Meetup and follow us on Twitter and Facebook:\n\nhttp://meetup.com/106miles\nhttp://meetup.com/106milesSoCal\n\nhttp://twitter.com/106miles\nhttp://facebook.com/106miles\n\n\n\nTHE VALUES OF 106 MILES ARE REPUTATION, INNOVATION, SOLIDARITY, AND EDUCATION.\n\nFor more on that, see:\nhttp://pandawhale.com/post/18266/the-values-of-106-miles-are-reputation-innovation-solidarity-and-education\n\n\n\nAs part of my duties as a 106 Miles citizen, I regularly mentor entrepreneurs of Omidyar Network, 500 Startups, The Quarry, AngelPad, and Hackers & Founders. \n\nAlthough, frankly, I am more of a tormentor because I ask \"Why?\" a lot. I believe you can't spell Wise without Why's.\n\nGood times.\n\n...",
+              "title": "Co-founder, Panda, and Whale"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/adamrifkin",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=8244&authType=OUT_OF_NETWORK&authToken=77kX&trk=api*a3139351*s3214061*"},
+        "summary": "Hi! My name is Adam, and I am a LinkedIn Influencer.\n\nGrew up in New York. Educated at William & Mary in Virginia, and Caltech in Pasadena, CA.\n\nCo-founded tech startups KnowNow (real-time web) in 1999 and Renkoo (facebook apps) in 2005.\n\nNow I'm focused on my third startup PandaWhale (social saving): http://pandawhale.com/\n\nFeatured in Wharton Professor Adam Grant's book \"Give and Take\": http://giveandtake.com/\n\nNamed Fortune Magazine's Best Networker: http://tech.fortune.cnn.com/tag/adam-rifkin/\n\nInterview with me about networking: http://www.bakadesuyo.com/2013/02/interview-silicon-valleys-networker-teaches-secrets-making-connections/\n\nNamed to Forbes' Most Influential on AngelList:\nhttp://www.forbes.com/sites/tomiogeron/2012/05/01/the-most-influential-angel-investors-on-angellist/\n\nForbes article I co-authored about five-minute favors:\nhttp://www.forbes.com/sites/kareanderson/2013/07/17/pay-it-forward-with-the-five-minute-favor/\n\nI want to improve the world, and I want to smell good while doing it.\n\nI spend 99% of my waking time right now on PandaWhale. http://pandawhale.com/\n\nSpecialties: Innovation. Distribution. Evolution. Adaptation. Synthesis."
+      },
+      {
+        "distance": 2,
+        "firstName": "Abhijeet",
+        "headline": "Founder and Chief Architect, Nunook Interactive",
+        "id": "tW86VBlVCl",
+        "industry": "Computer Software",
+        "lastName": "Vijayakar",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_Goniw0j5tdKNonYQ8avywg2o-INqE1mQ8DCywgyqDa8XvBM6m2QfLjHVp5qIdq7EidNjkVGiyJm_",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 560025,
+              "industry": "E-Learning",
+              "name": "Nunook Interactive",
+              "size": "1-10 employees",
+              "type": "Privately Held"
+            },
+            "id": 71083286,
+            "isCurrent": true,
+            "startDate": {
+              "month": 3,
+              "year": 2009
+            },
+            "summary": "Founder of the company that makes BrainNook, the next generation of learning games for schools and homes. BrainNook is a massively multiplayer social learning game that helps elementary school children develop math and language skills while playing in real time with classmates and friends. \n\nBrainNook is available as a browser-based game and as a series of iPad apps. It is mapped to the Common Core Standards used in schools across 45 US states.\n\nStudents solve more than 5 million math and language problems on the BrainNook platform across Web and iPad every month.\n\nRaised seed funding from the Imagine K12 startup incubator in Silicon Valley. Designed and architected the product. Recruited a high quality team of programmers, artists, designers and educational advisors. Got coverage for BrainNook from top media outlets such as Techcrunch, VentureBeat and Forbes.\n\nGrew the BrainNook userbase to over 100,000 kids and teachers across the US and internationally. Over 3 million games have been played on the BrainNook platform.\n\nSpeaking:\n- SXSWEdu Presentation: \"Collaborative Learning Through Social Games\", Austin TX, March 2013\n- Panelist, \"Education 2.0 Startups Panel\", Nasscom Product Conclave, Bangalore India, November 2012\n- Techcrunch Disrupt Presentation: \"BrainNook: The Next Generation of Learning Games\", San Francisco CA, September 2011",
+            "title": "Founder and Chief Architect"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/abhijeetv",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=3501909&authType=OUT_OF_NETWORK&authToken=Tagu&trk=api*a3139351*s3214061*"}
+      },
+      {
+        "distance": 2,
+        "firstName": "Oksana",
+        "headline": "Principal SQA Engineer",
+        "id": "JQat6Fk3Ng",
+        "industry": "Computer Software",
+        "lastName": "Zaychik",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 297,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_Fl0jZeT1JCYnP5wDWv7mZoLgJiwMP_UDLnICZo__65xWuFuSwBfA9EcScaIQrks36tjiBSglQCFm",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 2276,
+              "industry": "Biotechnology",
+              "name": "Genentech",
+              "size": "10,001+ employees",
+              "type": "Privately Held"
+            },
+            "id": 410646105,
+            "isCurrent": true,
+            "startDate": {
+              "month": 4,
+              "year": 2013
+            },
+            "title": "SQA Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/oksanazaychik",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=68194961&authType=OUT_OF_NETWORK&authToken=9W1J&trk=api*a3139351*s3214061*"},
+        "summary": "Experienced quality software engineer with an eye for detail and proven record of delivering superior quality and user focused products to customers.\n\n============================================================\n\n« 7 years of testing experience with the primary focus on user satisfaction and quality.\n« 5 years of managing CAD department (a team of 12 CAD operators).\n« Hands-on knowledge of software development process, testing techniques and requirements.\n« Experience in Waterfall and Agile software development models.\n« Precise time estimating. Meeting scheduled deliverables on time and with superior quality under tight deadlines and while working on multiple tasks. \n« Proven ability to raise issues and communicate clearly with all scrum team members: SWD, PD, PM in order to get the job done on time and without sacrificing quality of final product. Ability to assess issues objectively in order to work out the best solution.\n« Collaboration with offshore software development and testing teams.\n« Work equally well independently and as a part of a larger team.\n« Excellent mentoring skills.\n« Software and tools: \n-bug tracking applications for entering and processing software defects: Quality Center, Jira, Clarify;\n-AutoCAD, MS Office Suite; MS Project, Adobe Acrobat, Adobe Photoshop, Adobe Illustrator, Rhino, Balsamiq;\n-AutoLISP scripting language for in-house automations.\n« Operating Systems: Windows, Macintosh\n« Flexible in fast-paced changing environment.\n« Quick learner and extremely willing to learn new skills and techniques. \nTraining in PMI-Agile Certified Practitioner, HTML, SQL, Selenium."
+      },
+      {
+        "distance": 2,
+        "firstName": "J. Michael (Mike)",
+        "headline": "Analytics Consultant; Co-founder of the Sports Analytics Institute; Assistant Professor of Information Systems",
+        "id": "kJydqdSo_h",
+        "industry": "Sports",
+        "lastName": "Boyle",
+        "location": {"name": "Greater Salt Lake City Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_5P24ioAmIOsUtI94bBYwiWKOIxuRKe94Ft4bie3aqsZI723ZdvpqSHvhLA2X17cqkKa62fPIRQGP",
+        "positions": {
+          "_total": 3,
+          "values": [
+            {
+              "company": {
+                "industry": "Sports",
+                "name": "Backcountry.com"
+              },
+              "id": 371811595,
+              "isCurrent": true,
+              "startDate": {
+                "month": 10,
+                "year": 2012
+              },
+              "summary": "Execute on analytics-related projects",
+              "title": "Analyst"
+            },
+            {
+              "company": {
+                "id": 4888,
+                "industry": "Higher Education",
+                "name": "University of Utah",
+                "size": "10,001+ employees",
+                "type": "Educational Institution"
+              },
+              "id": 318992455,
+              "isCurrent": true,
+              "startDate": {
+                "month": 9,
+                "year": 2012
+              },
+              "summary": "Lecturer at David Eccles School of Business, Department of Operations & Information Systems.\n\nCourses include:\n- Business Intelligence and Analytics - Strategy and Application\n- Digital (Web) Analytics\n- Data Warehousing\n- Database Theory and Design\n- Data Structures",
+              "title": "Assistant Professor (Lecturer)"
+            },
+            {
+              "company": {
+                "id": 881847,
+                "industry": "Sports",
+                "name": "The Sports Analytics Institute",
+                "size": "1-10 employees",
+                "type": "Partnership"
+              },
+              "id": 114505021,
+              "isCurrent": true,
+              "startDate": {
+                "month": 8,
+                "year": 2008
+              },
+              "summary": "- Consult to front office staff and coaches of National Hockey League (NHL) organizations on the strategy and application of analytics\n- Develop and operate hosted business intelligence solution for NHL clients\n- Developed multi-stage regressions to model the underlying process of winning for elite hockey teams",
+              "title": "Principal"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/jmichaelboyle",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=917835&authType=OUT_OF_NETWORK&authToken=uJmh&trk=api*a3139351*s3214061*"},
+        "summary": "Data Science professional specializing in helping organizations:\n1) define/refine their business analytics strategies\n2) systematically improve upon their analytical capabilities\n\nSpeaking engagements:\n- \"Managing Data for Analysis of the National Hockey League\", The University of Utah (2013)\n- \"Succeeding with Analytics in Professional Hockey: Now and Into the Future\", Predictive Analytics World, Toronto, (2013)\n- \"Sports Analytics: Consultant Perspective\", Utah Winter Operations Conference, 2013\n- \"Competing on Analytics in the NHL\", The Sports Analytics Innovation Summit, San Francisco, CA (2012)\n- \u201cBuilding Out Sports Intelligence Infrastructure and Processes\u201d, The Georgia Institute of Technology (2011)\n\nMedia appearances:\n\n- SAP.com - Why Major Sports Have Embraced Big Data (And How They Use It) - May 2013\n- The Washington Post - Being physical paying off for New York - May 2013\n- The Globe and Mail (James Mirtle) - Moneyball-ization of hockey pays off for Penguins - Mar. 2013\n- Métro (Mathieu Horth Gagné) - \"Le hockey encore loin d\u2019une révolution des chiffres\" - Nov. 2012\n- The New York Times (Jeff Z. Klein) - \u201cNumbers Indicate That Skill Usually Packs a Bigger Punch Than Fists\u201d - Jan. 2012\n- The Edmonton Journal (David Staples) - \u201cWhat will come after Corsi plus/minus? Here\u2019s one promising new plus/minus system already used by some NHL teams\u201d - Nov. 2011\n- The Globe and Mail (James Mirtle) - The Moneypuck Revolution - Sept. 2011\n\nSpecialties: Business Analytics Strategy, Machine Learning, Data Mining, Statistics, Predictive Analytics, Digital (Web) Analytics, Sports Analytics, Hockey Analytics, Information Visualization, Business Intelligence, Data Warehousing, Data Modeling, Algorithms, Software Engineering Management, IT Operations Management, Project Management"
+      },
+      {
+        "distance": 2,
+        "firstName": "Kesava",
+        "headline": "Senior Software Engineer / Interaction Designer at Vital Connect Inc.",
+        "id": "pupuyq0RK3",
+        "industry": "Computer Software",
+        "lastName": "Mallela",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_fjdmjpnXnB-eGQATfJVjjYkeNAnoaLATSpjAjY5VwqCVAT63_RJCPOAqsx9zSGrSaOIK-JcDrC2s",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 2610806,
+              "industry": "Medical Devices",
+              "name": "Vital Connect, Inc.",
+              "size": "11-50 employees",
+              "type": "Privately Held"
+            },
+            "id": 274097950,
+            "isCurrent": true,
+            "startDate": {
+              "month": 1,
+              "year": 2012
+            },
+            "summary": "* Designed and developed a Ruby websocket based realtime vitals, ECG and notifications streaming service.\n* Implemented a Rails/Javascript/d3.js web application that displays realtime ECG and Vitals.\n* Designed and developed ruby gems for a) internal web services calls and b) authentication.\n* Designed, developed and documented VitalConnect external facing webservices API.\n* Responsible for design and development of UI for monitoring real-time body vitals using backbone.js and Ruby on Rails.",
+            "title": "Senior Software Engineer / Interaction Designer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/kesava",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=2531163&authType=OUT_OF_NETWORK&authToken=Zfe_&trk=api*a3139351*s3214061*"},
+        "summary": "I am an interaction designer, a Ruby on Rails and a backbone.js developer living in the San Francisco Bay Area. I hold a Masters in Information Science from UC Berkeley and have over five years experience in designing and building web applications in United States and India. \n\nIn my current role at Vital Connect, I am responsible for designing and building real-time applications that track user's body vitals.\n\nI have a passion for improving user productivity through design. In my earlier years of career, I spent time improving employee productivity through interaction design for clients like Deutsche Bank, Sallie Mae, Aetna etc.\n\n I\u2019ve found that the ability to learn new skills quickly is almost always better than knowledge of a particular language. That said, these days I focus my learning on Ruby on Rails and backbone.js to design and build user friendly websites that solve real problems.\n\nSpecialties: Interaction Design Process: Design Research, Requirements Gathering, Task Analysis, Flow Diagrams, Scenarios, Personas, Wireframes, Prototypes, Detailed User Interface Specifications, Heuristic Evaluations.\n\nProgramming: Ruby on Rails, Ruby, EventMachine, Javascript, Node.js, jQuery, WebSockets, HTML5/CSS3, backbone.js, angular.js, d3.js, Git, R, C, Java, Python, Shell scripting and extensive knowledge of UNIX environment.\n\nOther: Privacy, Location Based Services, Information Retrieval, Information Visualization"
+      },
+      {
+        "distance": 2,
+        "firstName": "Yoni",
+        "headline": "Vice President at Fortress Investment Group",
+        "id": "wE7RWpk9Pt",
+        "industry": "Venture Capital & Private Equity",
+        "lastName": "Shtein",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_goVSNvd59htSoXpjxdRYN9WIn8TGEGpj0Da-N9sqW6v-vQIgA2oTVnaVZS3jdLjAyd4PUlXNkFJd",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 9751,
+              "industry": "Financial Services",
+              "name": "Fortress Investment Group",
+              "size": "501-1000 employees",
+              "ticker": "FIG",
+              "type": "Public Company"
+            },
+            "id": 372209797,
+            "isCurrent": true,
+            "startDate": {
+              "month": 3,
+              "year": 2013
+            },
+            "title": "Vice President, Intellectual Property Finance"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/yonis",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=2895085&authType=OUT_OF_NETWORK&authToken=V4dr&trk=api*a3139351*s3214061*"},
+        "specialties": "Fluent in English, Hebrew, and Russian.",
+        "summary": "- Analyzing industry dynamics and structuring new product offerings and lines of business.\n\n- Driving industry change by getting key market participants buy-in.\n\n- Market analysis and financial modeling."
+      },
+      {
+        "distance": 2,
+        "firstName": "Karen",
+        "headline": "Senior Learning Consultant at Kaiser Permanente",
+        "id": "NQRBJOpbpj",
+        "industry": "Information Technology and Services",
+        "lastName": "Gee",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 128,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 2,
+          "values": [
+            {
+              "company": {
+                "id": 1550,
+                "industry": "Hospital & Health Care",
+                "name": "Kaiser Permanente",
+                "size": "10,001+ employees",
+                "type": "Nonprofit"
+              },
+              "id": 34189035,
+              "isCurrent": true,
+              "startDate": {
+                "month": 3,
+                "year": 2008
+              },
+              "summary": "Develop materials to train hospital staff on electronic medical records system.",
+              "title": "Senior Learning Consultant/Instructional Designer"
+            },
+            {
+              "company": {
+                "id": 860842,
+                "industry": "Sports",
+                "name": "West Coast Conference",
+                "type": "Nonprofit"
+              },
+              "id": 16474223,
+              "isCurrent": true,
+              "startDate": {"year": 2000},
+              "title": "Director of Volleyball Officials (part-time)"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/karen-gee/2/1aa/5aa",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=6446290&authType=OUT_OF_NETWORK&authToken=OaQT&trk=api*a3139351*s3214061*"},
+        "specialties": "Translating complex information into a format and language tailored to the target audience.\n\nAnalyzing data and financial information for presentation to decision makers.",
+        "summary": "Extensive experience in technology industry with expertise in research and analysis, technical writing, and project management.  Strong background in finance and budgeting, business processes, and education. Excellent verbal and written communication skills, problem solving abilities, and meticulous attention to detail.\n\nAreas of interest:   Permanent employment in financial research/analysis and information development; long- or short-term writing contracts."
+      },
+      {
+        "distance": 2,
+        "firstName": "Kevin",
+        "headline": "Jr. Software Engineer at MUBI",
+        "id": "tGeTPKAtJV",
+        "industry": "Internet",
+        "lastName": "Ko",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 213,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_r9mLMnA0X8tYKd77t-SnMqiPXh5lrEa7-AssMzKfRilTfaJfyrYdcvX3oeLmPSf_AzuRntmb3ucl",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1105003,
+              "industry": "Entertainment",
+              "name": "MUBI",
+              "size": "11-50 employees",
+              "type": "Privately Held"
+            },
+            "id": 415711460,
+            "isCurrent": true,
+            "startDate": {
+              "month": 7,
+              "year": 2013
+            },
+            "title": "Jr. Software Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/kokev",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=84713562&authType=OUT_OF_NETWORK&authToken=o11I&trk=api*a3139351*s3214061*"},
+        "summary": "Full-Stack Rails Developer in San Francisco, CA. I've also helped start two startups along the way.\n\nhttp://www.kokev.in\n\nRecent projects:\n\nhttp://www.timeauction.org\nhttp://www.skuvo.com"
+      }
+    ]
+  }
+}
