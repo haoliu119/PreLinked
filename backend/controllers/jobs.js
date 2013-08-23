@@ -7,20 +7,53 @@ var personsController = require('./persons.js');
 
 var jobs = module.exports = {};
 
+var _grabMultiplePages = function(req_query) {
+  var deferred = Q.defer();
+  var promises = [];
+  for(var i = 0; i < 100; i+=25) {
+    var output = IndeedApi.search(req_query, {start: i});
+    promises.push(output);
+  }
+
+  Q.all(promises)
+    .then(function(data){
+      data = _(data).map(function(item){
+        return JSON.parse(item);
+      });
+      data = _(data).flatten(true); //only flatten the first level
+      deferred.resolve(data);
+    });
+
+  return deferred.promise;
+};
+
+
 // GET /jobs/search
 jobs.search = function(req, res){
   console.log('- GET /jobs/search - Controller -> IndeedApi.searchConnections >> ');
   // IndeedApi endpoit
-  IndeedApi.search(req.query)
-    .done(
-      //Resolved: json returned from Indeed API
-      function(json) {
-        _helper.resolved(req, res, json);
-      },
-      //Rejected: error message from Indeed API
-      function(error) {
-        _helper.rejected(req, res, error);
+
+  _grabMultiplePages(req.query)
+    .then(function(json) {
+      console.log('Paginated JSON Data length',json.length);
+      _helper.resolved(req, res, json);
+    }, function(error) {
+      _helper.rejected(req, res, error);
     });
+
+  // console.log('job results ************', jobResults);
+
+  // IndeedApi.search(req.query)
+  //   .done(
+  //     //Resolved: json returned from Indeed API
+  //     function(json) {
+  //       console.log('Length >>>>>>',json.length);
+  //       _helper.resolved(req, res, json);
+  //     },
+  //     //Rejected: error message from Indeed API
+  //     function(error) {
+  //       _helper.rejected(req, res, error);
+  //   });
 
   // //Dummy data
   // var fileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/dummy_indeed_search_results.json'), 'utf8');
