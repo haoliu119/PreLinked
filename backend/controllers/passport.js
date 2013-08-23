@@ -1,6 +1,6 @@
 var passport = require('passport');
 var LinkedInStrategy = require('passport-linkedin-oauth2').Strategy;
-var UserModel = require('../models/users.js');
+var Users = require('../models/users.js');
 
 var pass = module.exports = {};
 
@@ -20,11 +20,11 @@ pass.keys = passport.use(new LinkedInStrategy({
   function(accessToken, refreshToken, profile, done) {
     process.nextTick(function () {
 
-      UserModel.findOne({ id: profile.id },function(err, users){
+      Users.findOne({ id: profile.id },function(err, user){
         if(err) {throw new Error(err);}
-        if(users && users.id) {
-          users.accessToken = accessToken;
-          users.save(function(err) {
+        if(user && user.id) {
+          user.accessToken = accessToken;
+          user.save(function(err) {
             if(err) {
               console.log('- /auth/linkedin/callback - user update accessToken - error >> ', err);
             } else {
@@ -39,7 +39,7 @@ pass.keys = passport.use(new LinkedInStrategy({
             accessToken: accessToken
           };
 
-          var user = new UserModel(userData);
+          var user = new Users(userData);
           user.save(function (err, user) {
             if(err) {
               console.log('- /auth/linkedin/callback - user.save - error >> ', err);
