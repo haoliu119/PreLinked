@@ -3,15 +3,10 @@ this["JST"] = this["JST"] || {};
 this["JST"]["app/scripts/templates/app.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
+  
 
 
-  buffer += "<div class=\"row\">\n  <div class=\"large-centered columns\">\n    <div class=\"row collapse\">\n      <br><a href=\"#\"><img src=\"https://webfiles.uci.edu/shaohuaz/share/prelinked/prelinked.png\" alt=\"PreLinked\"></a><br>\n    </div>\n  </div>\n</div>\n<hr>\n\n<!--\n<div>\n  <h1>\n    ";
-  if (stack1 = helpers.app_title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.app_title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\n  </h1>\n</div>\n-->\n<div id=\"main\">\n  Loading...\n</div>\n\n<div id=\"footer\">\n  Loading footer ...\n</div>";
-  return buffer;
+  return "<nav class=\"top-bar\" style=\"\">\n  <ul class=\"title-area\">\n    <!-- Title Area -->\n    <li class=\"name\">\n\n    </li>\n    <!-- Remove the class \"menu-icon\" to get rid of menu icon. Take out \"Menu\" to just have icon alone -->\n    <li class=\"toggle-topbar menu-icon\"><a href=\"\"><span>Menu</span></a></li>\n  </ul>\n\n  <section class=\"top-bar-section\">\n    <ul class=\"left\">\n      <li class=\"has-dropdown not-click\"><a href=\"/grid.php\">Item 1</a>\n\n        <ul class=\"dropdown\"><li class=\"title back js-generated\"><h5><a href=\"#\">« Back</a></h5></li>\n          <li class=\"\"><label>Level One</label></li>\n          <li class=\"\"><a href=\"#search\">Search</a></li>\n          <li class=\"divider\"></li>\n          <li class=\"\"><a href=\"#\">Sub-item 2</a></li>\n        </ul>\n      </li>\n      <li class=\"divider\"></li>\n    </ul>\n    <!-- Right Nav Section -->\n    <ul class=\"right\">\n      <li class=\"divider hide-for-small\"></li>\n      <li class=\"\"><a href=\"/#login\">Log in</a></li>\n      <li class=\"\"><a href=\"/logout\">Log out</a></li>\n    </ul>\n  </section>\n</nav>\n\n\n<div class=\"row\">\n  <div class=\"large-centered columns\">\n    <div class=\"row collapse\">\n      <br><a href=\"#\"><img src=\"https://webfiles.uci.edu/shaohuaz/share/prelinked/prelinked.png\" alt=\"PreLinked\"></a><br>\n    </div>\n  </div>\n</div>\n<hr>\n\n<div id=\"main\">\n  Loading...\n</div>\n\n<hr>\n\n<div class=\"row\">\n  <div class=\"large-centered columns\">\n    <div class=\"row collapse\">\n      <div id=\"footer\">\n        © 2013 PreLinked\n      </div>\n    </div>\n  </div>\n</div>";
   });
 
 this["JST"]["app/scripts/templates/connections.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -57,7 +52,7 @@ function program3(depth0,data) {
     + "\">\n    ";
   stack1 = helpers['if'].call(depth0, depth0.pictureUrl, {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n  </a>\n  <ul class=\"info\">\n    <li class=\"name\"><a class=\"modal-details\" href=\"#\" data-in-id=\"";
+  buffer += "\n  </a>\n  <ul class=\"info\">\n    <li><h2 class=\"name\"><a class=\"modal-details\" href=\"#\" data-in-id=\"";
   if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -69,7 +64,7 @@ function program3(depth0,data) {
   if (stack1 = helpers.lastName) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.lastName; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</a></li>\n    <!-- li>";
+    + "</a></h2></li>\n    <!-- li>";
   if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -126,64 +121,56 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n    <img src=\"";
+  buffer += "\n        <img class=\"image\" src=\"";
   if (stack1 = helpers.pictureUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.pictureUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\">\n  ";
+    + "\">\n      ";
   return buffer;
   }
 
 function program3(depth0,data) {
   
   
-  return "\n    <img src=\"http://placehold.it/80x80\">\n  ";
+  return "\n        <img class=\"image\" src=\"http://placehold.it/160x160\">\n      ";
   }
 
-  buffer += "<div id=\"myModal\" class=\"reveal-modal\">\n  <h2>";
-  if (stack1 = helpers.headline) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.headline; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</h2>\n  ";
+  buffer += "<div id=\"myModal\" class=\"reveal-modal\">\n  <div class=\"row\">\n    <div class=\"large-2 columns\">\n      ";
   stack1 = helpers['if'].call(depth0, depth0.pictureUrl, {hash:{},inverse:self.program(3, program3, data),fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n  <ul>\n    <li>firstName: ";
+  buffer += "\n    </div>\n    <div class=\"large-10 columns info\">\n      <h2>";
   if (stack1 = helpers.firstName) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.firstName; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</li>\n    <li>lastName: ";
+    + " ";
   if (stack1 = helpers.lastName) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.lastName; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</li>\n    <li>headline: ";
+    + "</h2>\n      <p>";
   if (stack1 = helpers.headline) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.headline; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</li>\n    <li>industry: ";
-  if (stack1 = helpers.industry) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.industry; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</li>\n    <li>id: ";
-  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</li>\n\n    <li>pictureUrl: ";
-  if (stack1 = helpers.pictureUrl) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.pictureUrl; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</li>\n    <li>positions: ";
-  if (stack1 = helpers.positions) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.positions; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</li>\n    <li>summary: ";
-  if (stack1 = helpers.summary) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.summary; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "</li>\n    <li>title: ";
+    + "</p>\n    </div>\n  </div>\n    <div class=\"row\">\n      <div class=\"large-2 columns\">&nbsp;</div>\n      <div class=\"large-5 columns\">\n        <ul class=\"list\">\n          <li>title: ";
   if (stack1 = helpers.title) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.title; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</li>\n  </ul>\n  <a class=\"close-reveal-modal\">&#215;</a>\n</div>";
+    + "</li>\n          <li>industry: ";
+  if (stack1 = helpers.industry) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.industry; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n          <li>id: ";
+  if (stack1 = helpers.id) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.id; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n          <li>positions: ";
+  if (stack1 = helpers.positions) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.positions; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</li>\n        </ul>\n      </div>\n      <div class=\"large-5 columns\">\n        <p>summary: ";
+  if (stack1 = helpers.summary) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.summary; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "</p>\n      </div>\n    </div>\n\n  <a class=\"close-reveal-modal\">&#215;</a>\n</div>";
   return buffer;
   });
 
@@ -247,7 +234,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  buffer += "<ul class=\"small-10 columns\">\n  <li>\n    <a href=\"";
+  buffer += "<h2 class=\"title\"><a href=\"";
   if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -255,11 +242,11 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.jobtitle) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.jobtitle; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</a>\n  </li>\n  <li>\n    ";
+    + "</a></h2>\n<ul class=\"small-10 info columns\">\n  <li class=\"company\">";
   if (stack1 = helpers.company) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.company; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + " - ";
+    + "</li>\n  <li class=\"location\">";
   if (stack1 = helpers.city) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.city; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -267,7 +254,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.state) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.state; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\n  </li>\n  <!-- <li>\n    jobkey: ";
+    + "</li>\n  <!-- <li>\n    jobkey: ";
   if (stack1 = helpers.jobkey) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.jobkey; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -323,6 +310,10 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.onmousedown) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.onmousedown; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\n  </li> -->\n</ul>\n<ul class=\"small-2 columns\">\n  <li><a class=\"tiny button right\" href=\"javascript: void(0)\">link</a></li>\n</ul>";
+    + "\n  </li> -->\n</ul>\n<ul class=\"small-2 columns\">\n  <li><a class=\"tiny button right\" href=\"";
+  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\" target=\"_blank\">Info</a></li>\n</ul>\n";
   return buffer;
   });
