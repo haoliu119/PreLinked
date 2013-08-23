@@ -1,349 +1,36 @@
 {
   "facets": {
-    "_total": 6,
-    "values": [
-      {
-        "buckets": {
-          "_total": 10,
-          "values": [
-            {
-              "code": "us:0",
-              "count": 819,
-              "name": "United States"
-            },
-            {
-              "code": "us:84",
-              "count": 507,
-              "name": "San Francisco Bay Area"
-            },
-            {
-              "code": "in:0",
-              "count": 30,
-              "name": "India"
-            },
-            {
-              "code": "us:70",
-              "count": 26,
-              "name": "Greater New York City Area"
-            },
-            {
-              "code": "us:91",
-              "count": 23,
-              "name": "Greater Seattle Area"
-            },
-            {
-              "code": "us:7",
-              "count": 21,
-              "name": "Greater Boston Area"
-            },
-            {
-              "code": "ca:0",
-              "count": 19,
-              "name": "Canada"
-            },
-            {
-              "code": "fr:0",
-              "count": 19,
-              "name": "France"
-            },
-            {
-              "code": "us:49",
-              "count": 19,
-              "name": "Greater Los Angeles Area"
-            },
-            {
-              "code": "us:82",
-              "count": 19,
-              "name": "Sacramento, California Area"
-            }
-          ]
-        },
-        "code": "location",
-        "name": "Location"
+    "_total": 1,
+    "values": [{
+      "buckets": {
+        "_total": 4,
+        "values": [
+          {
+            "code": "F",
+            "count": 0,
+            "name": "1st Connections"
+          },
+          {
+            "code": "S",
+            "count": 67,
+            "name": "2nd Connections"
+          },
+          {
+            "code": "A",
+            "count": 190,
+            "name": "Group Members"
+          },
+          {
+            "code": "O",
+            "count": 965,
+            "name": "3rd + Everyone Else"
+          }
+        ]
       },
-      {
-        "buckets": {
-          "_total": 10,
-          "values": [
-            {
-              "code": "4",
-              "count": 409,
-              "name": "Computer Software"
-            },
-            {
-              "code": "96",
-              "count": 236,
-              "name": "Information Technology and Services"
-            },
-            {
-              "code": "6",
-              "count": 57,
-              "name": "Internet"
-            },
-            {
-              "code": "8",
-              "count": 21,
-              "name": "Telecommunications"
-            },
-            {
-              "code": "43",
-              "count": 17,
-              "name": "Financial Services"
-            },
-            {
-              "code": "118",
-              "count": 15,
-              "name": "Computer & Network Security"
-            },
-            {
-              "code": "14",
-              "count": 13,
-              "name": "Hospital & Health Care"
-            },
-            {
-              "code": "70",
-              "count": 10,
-              "name": "Research"
-            },
-            {
-              "code": "109",
-              "count": 10,
-              "name": "Computer Games"
-            },
-            {
-              "code": "12",
-              "count": 7,
-              "name": "Biotechnology"
-            }
-          ]
-        },
-        "code": "industry",
-        "name": "Industry"
-      },
-      {
-        "buckets": {
-          "_total": 4,
-          "values": [
-            {
-              "code": "F",
-              "count": 0,
-              "name": "1st Connections"
-            },
-            {
-              "code": "S",
-              "count": 67,
-              "name": "2nd Connections"
-            },
-            {
-              "code": "A",
-              "count": 191,
-              "name": "Group Members"
-            },
-            {
-              "code": "O",
-              "count": 964,
-              "name": "3rd + Everyone Else"
-            }
-          ]
-        },
-        "code": "network",
-        "name": "Relationship"
-      },
-      {
-        "buckets": {
-          "_total": 11,
-          "values": [
-            {
-              "code": "1035",
-              "count": 12,
-              "name": "Microsoft"
-            },
-            {
-              "code": "1028",
-              "count": 11,
-              "name": "Oracle"
-            },
-            {
-              "code": "1235",
-              "count": 11,
-              "name": "Wells Fargo"
-            },
-            {
-              "code": "1009",
-              "count": 9,
-              "name": "IBM"
-            },
-            {
-              "code": "162479",
-              "count": 8,
-              "name": "Apple"
-            },
-            {
-              "code": "1063",
-              "count": 7,
-              "name": "Cisco Systems"
-            },
-            {
-              "code": "1372",
-              "count": 7,
-              "name": "CA Technologies"
-            },
-            {
-              "code": "1025",
-              "count": 5,
-              "name": "Hewlett-Packard"
-            },
-            {
-              "code": "1033",
-              "count": 5,
-              "name": "Accenture"
-            },
-            {
-              "code": "1441",
-              "count": 5,
-              "name": "Google"
-            },
-            {
-              "code": "1231",
-              "count": 4,
-              "name": "Symantec"
-            }
-          ]
-        },
-        "code": "current-company",
-        "name": "Current Company"
-      },
-      {
-        "buckets": {
-          "_total": 11,
-          "values": [
-            {
-              "code": "1009",
-              "count": 47,
-              "name": "IBM"
-            },
-            {
-              "code": "1025",
-              "count": 44,
-              "name": "Hewlett-Packard"
-            },
-            {
-              "code": "1028",
-              "count": 38,
-              "name": "Oracle"
-            },
-            {
-              "code": "1235",
-              "count": 35,
-              "name": "Wells Fargo"
-            },
-            {
-              "code": "1372",
-              "count": 32,
-              "name": "CA Technologies"
-            },
-            {
-              "code": "1062",
-              "count": 30,
-              "name": "Sun Microsystems"
-            },
-            {
-              "code": "1035",
-              "count": 29,
-              "name": "Microsoft"
-            },
-            {
-              "code": "1063",
-              "count": 29,
-              "name": "Cisco Systems"
-            },
-            {
-              "code": "1480",
-              "count": 21,
-              "name": "Adobe"
-            },
-            {
-              "code": "1033",
-              "count": 18,
-              "name": "Accenture"
-            },
-            {
-              "code": "1053",
-              "count": 18,
-              "name": "Intel Corporation"
-            }
-          ]
-        },
-        "code": "past-company",
-        "name": "Past Company"
-      },
-      {
-        "buckets": {
-          "_total": 11,
-          "values": [
-            {
-              "code": "17909",
-              "count": 58,
-              "name": "San Francisco State University"
-            },
-            {
-              "code": "17939",
-              "count": 35,
-              "name": "University of California, Berkeley"
-            },
-            {
-              "code": "17926",
-              "count": 31,
-              "name": "Stanford University"
-            },
-            {
-              "code": "17968",
-              "count": 22,
-              "name": "University of San Francisco"
-            },
-            {
-              "code": "20091",
-              "count": 22,
-              "name": "City College of San Francisco"
-            },
-            {
-              "code": "17911",
-              "count": 20,
-              "name": "San Jose State University"
-            },
-            {
-              "code": "17960",
-              "count": 12,
-              "name": "University of California, Santa Cruz"
-            },
-            {
-              "code": "13663",
-              "count": 11,
-              "name": "University of Mumbai"
-            },
-            {
-              "code": "17787",
-              "count": 10,
-              "name": "University of Phoenix"
-            },
-            {
-              "code": "17950",
-              "count": 10,
-              "name": "University of California, Los Angeles"
-            },
-            {
-              "code": "17816",
-              "count": 9,
-              "name": "California Polytechnic State University-San Luis Obispo"
-            }
-          ]
-        },
-        "code": "school",
-        "name": "School"
-      }
-    ]
+      "code": "network",
+      "name": "Relationship"
+    }]
   },
-  "numResults": 964,
   "people": {
     "_count": 25,
     "_start": 0,
@@ -377,7 +64,7 @@
           }]
         },
         "publicProfileUrl": "http://www.linkedin.com/in/bayrapetov",
-        "relationToViewer": {"distance": 3},
+        "relationToViewer": {},
         "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=16264697&authType=OUT_OF_NETWORK&authToken=7Wo-&trk=api*a3139351*s3214061*"},
         "specialties": "Software Quality Assurance, Automation, Cucumber, RubyMine, TeamCity, InelliJ, Software Development Life Cycle, Agile, Functional/UI, Blackbox/Greybox/API/Web Services testing,  Test Plan/Design/Cases/Scenarios, Bug Tracking System, JIRA, Web/Client-Server Application, Windows, UNIX, Linux, Shell, HTML, XML, Visual Studio, C#, Java, Selenium, JUnit, HTTPUnit, Eclipse, Oracle, SQLDeveloper, MySQL, SequelPro, QTP, WinRunner, SilkTest, VMWare, JProtection, JAWS, Code Coverage, SVN, TFS, Networking.",
         "summary": "-\tExtensive experience in Software Quality Assurance in all stages of Software Development Life Cycle (SDLC).\n\n-\tTrack record of effective participation and innovative contribution in vital stages of testing complex Web-based enterprise scale applications in different OS platforms (Windows, UNIX), Browsers (Internet Explorer, Firefox, Google Chrome, Opera, Safari), Databases (Oracle, Informix).\n\n-\tAbility to work independently and as a team member, rapidly consume domain knowledge and determine comprehensive, meaningful tests."
@@ -414,7 +101,7 @@
           }]
         },
         "publicProfileUrl": "http://www.linkedin.com/pub/vidya-s/1/a04/714",
-        "relationToViewer": {"distance": 3},
+        "relationToViewer": {},
         "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=5482240&authType=OUT_OF_NETWORK&authToken=VfYP&trk=api*a3139351*s3214061*"},
         "specialties": "",
         "summary": "Certification: \nIBM Certified MQSeries Specialist\n\n\n* 10+ years of experience in Information Technology with 8+ years of WebSphere MQ and WebSphere MQ Integrator (WMB) Architecture/Development/ Administration/Trouble Shooting/ Production Support  and Installation expertise across Multiple Platforms\n* 9 months of experience in webMethods Integration server, Broker, JDBC adapter, MQ Adapter etc\n* 5 + years of experience in Java, J2EE, Oracle, DB2, ESQL, Websphere Application Server ,WebLogic under Windows and Unix (Solaris, AIX, HP-UNIX).\n* Have been instrumental in the requirement analysis, design, development and testing.\n* Experience in DataPower, WTX, Webservice, MQSeries API coding, designing Message Flows/Sets, Clustering, MQclient /MQServer setup, user training and documentation\n* Domain Knowledge/expertise - Banking , Healthcare, Insurance, Automobile, Energy\n* Possesses strong analytical skills and Good communication Skills"
@@ -451,7 +138,7 @@
           }]
         },
         "publicProfileUrl": "http://www.linkedin.com/pub/lee-gemma-f/12/943/993",
-        "relationToViewer": {"distance": 3},
+        "relationToViewer": {},
         "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=44132799&authType=OUT_OF_NETWORK&authToken=VjYw&trk=api*a3139351*s3214061*"},
         "specialties": "IDE: Eclipse, Microsoft Visual Studio, NetBeans   \nOperating Systems: Unix, Windows Operating Systems\nProgramming Languages: C, C++, Java SE, J2EE\nWeb Technologies: CSS, HTML, JavaScript, PHP, Python, XML\nOther Technologies: Adobe Illustrator, Adobe Photoshop, Crystal Reports, Microsoft SharePoint Services, Microsoft SQL Servers, Selenium, SQL, Twill",
         "summary": ""
@@ -488,7 +175,7 @@
           }]
         },
         "publicProfileUrl": "http://www.linkedin.com/pub/ian-c/2/184/492",
-        "relationToViewer": {"distance": 3},
+        "relationToViewer": {},
         "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=6394286&authType=OUT_OF_NETWORK&authToken=Z1X_&trk=api*a3139351*s3214061*"}
       },
       {
@@ -499,7 +186,7 @@
         "industry": "Computer Software",
         "lastName": "Bhattacharjee",
         "location": {"name": "San Francisco Bay Area"},
-        "numConnections": 376,
+        "numConnections": 375,
         "numConnectionsCapped": false,
         "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_r9mLMBTgk8C1-d77YlxnMzGKXh5lrEa7YtssMzKfRilTfaJfyrYdcvX3oeLmPSf_AzuRntan951l",
         "positions": {
@@ -523,7 +210,7 @@
           }]
         },
         "publicProfileUrl": "http://www.linkedin.com/in/debasish007",
-        "relationToViewer": {"distance": 3},
+        "relationToViewer": {},
         "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=35978785&authType=OPENLINK&authToken=6K7M&trk=api*a3139351*s3214061*"},
         "specialties": "Amazon EC2 Cloud computing, Web Service Testing for RESTfull service, Soap UI, Core Java, Selenium RC/Grid, JSON, Maven, SilkTest, SIlkPerformer, JUnit, HttpUnit, Quality Center, CVS, VSS, Eclipse IDE, Sub Version, ClearCase, Java, C, DBMS, RDBMS, SQL, PLSQL, Oracle",
         "summary": "Application Tester, Test Framework Developer in a wide variety of business applications. Particularly interested in client/server, web based application testing, performance tuning, load and stress testing, data driven testing, internationalization and localization testing. Always interested in build testing, build creation, build verification, build deployment in different application servers."
@@ -562,7 +249,7 @@
           }]
         },
         "publicProfileUrl": "http://www.linkedin.com/pub/julie-t/3/871/b51",
-        "relationToViewer": {"distance": 3},
+        "relationToViewer": {},
         "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=11097133&authType=OUT_OF_NETWORK&authToken=pkFX&trk=api*a3139351*s3214061*"}
       },
       {
@@ -594,7 +281,7 @@
           }]
         },
         "publicProfileUrl": "http://www.linkedin.com/pub/gustavo-c/6/ba0/52b",
-        "relationToViewer": {"distance": 3},
+        "relationToViewer": {},
         "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=20861171&authType=OUT_OF_NETWORK&authToken=jHVp&trk=api*a3139351*s3214061*"},
         "summary": "Bilingual software developer and system analyst with over 21 years of proven experience, including desktop and web applications, XML web services, database design, administration and programming;  implementation of software in small and mid-companies and project manager leading the software engineering process of customized business applications. I am methodical, resourceful and open to learn and apply new techniques and technologies.\n\nSpecialties:\n\u2022\tProject management.\n\u2022\tSoftware development.\n\u2022\tCommercial Web application development.\n\u2022\tXML web services.\n\u2022\tMS-Sql server programming and administration (DBA).\n\u2022\tProcess Improvement. \n\u2022\tLifecycle of the software: analysis, design, development, debugging, optimization, integration, testing, roll-out and maintenance.\n\u2022\tFluent in Spanish and English."
       },
@@ -645,7 +332,7 @@
           ]
         },
         "publicProfileUrl": "http://www.linkedin.com/pub/vladimir-p/1/b03/619",
-        "relationToViewer": {"distance": 3},
+        "relationToViewer": {},
         "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=5729205&authType=OUT_OF_NETWORK&authToken=4HJ8&trk=api*a3139351*s3214061*"},
         "specialties": "- Visual Basic, LotusScript, HTML, XML, JavaScript, Java\n- Microsoft SQL Server 2000, Lotus Notes 4.x-7.x, LEI, DB2, Oracle, Access, MySQL, ODBC\n- Microsoft DOS 6.x, Windows 3.11, 9.x, Me, 2000/2003/XP/NT/Vista\n- SilkTest, WinRunner, Seapine Test Track Pro\n- Visual Source Safe, CVS",
         "summary": ""
@@ -683,7 +370,7 @@
           }]
         },
         "publicProfileUrl": "http://www.linkedin.com/in/shajusebastian",
-        "relationToViewer": {"distance": 3},
+        "relationToViewer": {},
         "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=29460543&authType=OUT_OF_NETWORK&authToken=GCPB&trk=api*a3139351*s3214061*"}
       },
       {
@@ -735,7 +422,7 @@
           ]
         },
         "publicProfileUrl": "http://www.linkedin.com/pub/enza-s/0/5a/a94",
-        "relationToViewer": {"distance": 3},
+        "relationToViewer": {},
         "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=122512&authType=OUT_OF_NETWORK&authToken=AI_7&trk=api*a3139351*s3214061*"},
         "specialties": "Software QA Engineer specializing in non-linear video editing software testing.  Video/Film productions from concept to completion, script writing, story-boarding, directing, multi-format digital editing and DVD authoring, photo-journalism, reporter, creative writer, marketing and promotions, advertising editor, public relations, mentoring, teaching multimedia and foreign languages, localization, advance internet researcher, software tester. \nApple software and hardware evangelist.",
         "summary": "Objective: leading a team of creative people with superior technical skills to produce awesome multimedia software that can be utilized to create unique projects from concept to completion.\n\nCreative and critical thinker who generates and evaluates ideas, transforming them in complete projects in a teamwork environment. Energetic artist with the kind of thinking that leads to new insights, novel approaches, fresh perspectives. \n\nAs the founder of 1000 Hearts,  Enza is working as independent filmmaker. She writes non fictional and fictional scripts for corporate and non corporate videos, shooting them in digital format, editing them in Final Cut Pro, encoding them for the web and authoring them for DVD format. \nEnza is also utilizing Apple and Adobe software to design websites.\n\nAs advertising editor, she also provides the digital media community with reports on tools that facilitate the creation and distribution of digital art. \n\nEnza is a multi-talented team player with expertise in both the European and the American markets. A natural leader who's capable to plan multiple projects by working with talented professionals from all over the world.\n\nEnza produces from A to Z  documentaries, music videos, public service annoucements, corporate and educational videos."
@@ -772,7 +459,7 @@
           }]
         },
         "publicProfileUrl": "http://www.linkedin.com/in/marksilvestri",
-        "relationToViewer": {"distance": 3},
+        "relationToViewer": {},
         "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=1915354&authType=OUT_OF_NETWORK&authToken=GI0G&trk=api*a3139351*s3214061*"},
         "summary": "14+ years of experience in building and leading successful software quality assurance teams.  Extensive experience in defining QA processes, methodologies, best practices and release management with continuous delivery and iterative/Agile development processes."
       },
@@ -808,7 +495,7 @@
           }]
         },
         "publicProfileUrl": "http://www.linkedin.com/in/proful",
-        "relationToViewer": {"distance": 3},
+        "relationToViewer": {},
         "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=5936613&authType=OUT_OF_NETWORK&authToken=4Z59&trk=api*a3139351*s3214061*"},
         "summary": "Profile\n\u2022Exceptional background in software development and operations, building products for enterprise, growth, MSP (managed service provider) and channel markets. \n\n\u2022Solutions driven director with experience in strategic planning, development and execution of large programs. \n\n\u2022Delivered high availability systems and solutions that have helped grow revenue in double digits, skilled at optimizing costs, defining KPI\u2019s and driving desired outcomes. \n\n\nSpecialties: - \n- Cloud computing Service & Operations\n- Business Operations & Analytics\n- Program Management\n- Financial & Valuation Modeling\n- SDLC & Agile/SCRUM\n- Remote/Outsourcing/Offshore Team Management expertise\n- SAS70/SSAE 16, CMMi compliance\n- ITIL / ITSM\n- Certified Project Management Professional (PMP);"
       },
@@ -820,7 +507,7 @@
         "industry": "Oil & Energy",
         "lastName": "C.",
         "location": {"name": "San Francisco Bay Area"},
-        "numConnections": 161,
+        "numConnections": 162,
         "numConnectionsCapped": false,
         "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_CV5yQJrwYI5B2-JZh0F7QU85pS3v2qZZhZliQU1Miez51K74apvKHRbB-iTE71MN_JbCWpTQ3p4e",
         "positions": {
@@ -844,7 +531,7 @@
           }]
         },
         "publicProfileUrl": "http://www.linkedin.com/pub/frank-c/1/b48/79b",
-        "relationToViewer": {"distance": 3},
+        "relationToViewer": {},
         "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=5821031&authType=OUT_OF_NETWORK&authToken=-d7Y&trk=api*a3139351*s3214061*"}
       },
       {
@@ -880,7 +567,7 @@
           }]
         },
         "publicProfileUrl": "http://www.linkedin.com/in/snosrap",
-        "relationToViewer": {"distance": 3},
+        "relationToViewer": {},
         "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=4426793&authType=OUT_OF_NETWORK&authToken=JiXD&trk=api*a3139351*s3214061*"},
         "specialties": "Java, Perl, C++/C, Python, Common LISP, XML, SQL",
         "summary": "Software engineering professional with 15 years' experience in all phases of software development in a variety of application domains.  Excellent skills in object-oriented design, relational database design, multitiered and multithreaded software system design, and automated testing practices."
@@ -893,7 +580,7 @@
         "industry": "Computer Software",
         "lastName": "R.",
         "location": {"name": "San Francisco Bay Area"},
-        "numConnections": 138,
+        "numConnections": 137,
         "numConnectionsCapped": false,
         "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0__gnH4M1ohhrqiyguTpBR4VlLCLkUf0puT0CB4Rhqg6KwrUI2fUQXnUNVuSXku4j8CYN9cy-JDpsX",
         "positions": {
@@ -918,7 +605,7 @@
           }]
         },
         "publicProfileUrl": "http://www.linkedin.com/pub/sushma-r/0/a32/952",
-        "relationToViewer": {"distance": 3},
+        "relationToViewer": {},
         "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=2555342&authType=OUT_OF_NETWORK&authToken=yo3B&trk=api*a3139351*s3214061*"},
         "specialties": "Java, J2EE (WebLogic, WebSphere), Struts, XML, Java Script, Perl, JSON, SQL, Business Analyst, Web/Java Development, XML, HTML, Web Services (SOAP)",
         "summary": "Team player with excellent communication, prioritizing, multi-tasking, analytical and trouble shooting skills with a logical mind.\n\nSeveral years of experience as a software engineer, have gained experience working on web application projects, also worked as a business analyst, experience in leading resources in a mid size team while working with offshore team. \n\nProven soft skills to liaison between business and technical teams"
@@ -970,7 +657,7 @@
           ]
         },
         "publicProfileUrl": "http://www.linkedin.com/in/yuryzayrinov",
-        "relationToViewer": {"distance": 3},
+        "relationToViewer": {},
         "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=3509559&authType=OUT_OF_NETWORK&authToken=gwcd&trk=api*a3139351*s3214061*"},
         "specialties": "C/C++,C#, Modula2, PL1, ADA, Fortran*, ..., assemblers, Verilog HDL,TCP/IP, SCSI, RAID, RS 422/232, \u2026; PDL: PostScript, PDF, PCL; DB: DB4, SQL, MySQL; Until: Perl, shells, Lex/Yacc, Case tools, cvs, perforce, gdb, dbx, MS C++, .NET,MS Visio, Rational Rose, MATHLAB, Qt toolkit.",
         "summary": "Objective:\tLead engineer with record of outstanding solutions. Managed projects in both embedded and application software. MS in physics, math and BS in computer science. \n\t\nAbstract:\tAccomplished embedded project lead (14+ products delivered to Fortune 500 customers) with major multithreaded, n-tier enterprise application back-end and kernel/drivers development experience."
@@ -1005,7 +692,7 @@
           }]
         },
         "publicProfileUrl": "http://www.linkedin.com/pub/sunil-m/0/71a/537",
-        "relationToViewer": {"distance": 3},
+        "relationToViewer": {},
         "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=1780603&authType=OUT_OF_NETWORK&authToken=H7ob&trk=api*a3139351*s3214061*"}
       },
       {
@@ -1041,7 +728,7 @@
           }]
         },
         "publicProfileUrl": "http://www.linkedin.com/pub/kevin-s/3/937/5bb",
-        "relationToViewer": {"distance": 3},
+        "relationToViewer": {},
         "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=11272607&authType=OUT_OF_NETWORK&authToken=jXTP&trk=api*a3139351*s3214061*"}
       },
       {
@@ -1077,7 +764,7 @@
           }]
         },
         "publicProfileUrl": "http://www.linkedin.com/pub/samie-m/1/21a/45a",
-        "relationToViewer": {"distance": 3},
+        "relationToViewer": {},
         "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=3522310&authType=OUT_OF_NETWORK&authToken=AYNU&trk=api*a3139351*s3214061*"},
         "summary": "Highly skilled Technical and Business Professional with 16 plus years of experience in Information Technology (IT). \n\nWorked as a Team Lead on Highly Visibility Projects in Telecommunication, Entertainment, Retail Products and HealthCare Industries.\n\nCompanies:\n1- Stanford Hospital & Clinics - Stanford Medicine (Accenture)\n2- Blue Cross Blue Shield of Michigan (Accenture)\n3- Cisco (Accenture)\n4- Walt Disney (Accenture)\n5- Ross Stores Inc. (Accenture)\n6- GAP Inc \n7- SUPERVALU Inc \n8- Williams-Sonoma Inc \n9- CVS Pharmacy\n10-NORDSTROM\n11-MCI Telecommunication (Verizon)\n\nSpecialties: \n\u2022\tSupply Chain Management\n\u2022\tORMS (Oracle Retek Merchandising System)\n\u2022\tCareAdvance\n\u2022\tORDW (Oracle Retek Data Warehouse) \n\u2022\tRDF (Retek Demand Forecasting) \n\u2022\tReSA (Retek Sales Audit)\n\u2022\tPOS (Point of Sales)\n\u2022\tSalesforce.com (CRM & Cloud Computing)\n\u2022\tEDI 850/860 \n\u2022\tDMS 250, ACD 100, SS7, TCAP, ISDN\n\u2022\tOracle Application and databases \n\u2022\tUNIX/LINUX\n\u2022\tMainframe IBM 3090/ES 9000\n\u2022\tCenter of Excellence (CoE) to implement structured testing methodology and continually\n        improve IT operations."
       },
@@ -1111,7 +798,7 @@
             "title": "Senior Software Engineer"
           }]
         },
-        "relationToViewer": {"distance": 3},
+        "relationToViewer": {},
         "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=98758229&authType=OUT_OF_NETWORK&authToken=wCNa&trk=api*a3139351*s3214061*"},
         "specialties": "Languages: Java, C/C++, C#, SQL, SPARC Assembly Language, Motorola 68HC11 Assembly Language, WML, WMLScript, UML, Perl, Javascript\n\nSoftware: Eclipse, Toad, SQLDeveloper, Visual Studio .NET, Perforce, ClearCase, Rational Rose",
         "summary": "A Software Engineer with broad experience in web technologies, networking protocols, and driver development."
@@ -1253,7 +940,7 @@
           ]
         },
         "publicProfileUrl": "http://www.linkedin.com/in/nileshpatelus",
-        "relationToViewer": {"distance": 3},
+        "relationToViewer": {},
         "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=10397343&authType=OUT_OF_NETWORK&authToken=z4Vj&trk=api*a3139351*s3214061*"},
         "specialties": "Oracle R12 Financials, eBusiness Tax - Vertex, Taxware, Sabrix integration",
         "summary": "Nilesh has extensive experience implementing indirect tax solutions for ERP and eCommerce Applications worldwide. He specializes in integration of ERP systems, specially Oracle eBusiness Suite with Vertex, ADP Taxware and Sabrix. He has more than two dozen implementations of Oracle eBusiness Tax R12 for clients in various industries. His successful clients include Netgear Inc., Sunpower Corp., GAP Inc., Facebook Inc., LinkedIn Corp, WMS Gaming Inc., Zebra Technologies, Graco Inc., Coherent Inc. and Enterprise Products Company.\n\nNilesh was one of the key members of R12 eBusiness Tax development team at Oracle Corporation, involved in conception, design, build and rollout of eBTax, and has worked directly with development teams of Vertex, Taxware and Sabrix. Having a thorough understanding of the eBTax design and functional knowledge of indirect taxes and compliance requirements worldwide gives Nilesh a unique advantage in implementing tax technology integrations."
@@ -1290,7 +977,7 @@
           }]
         },
         "publicProfileUrl": "http://www.linkedin.com/pub/ravi-s/10/a87/344",
-        "relationToViewer": {"distance": 3},
+        "relationToViewer": {},
         "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=38498596&authType=OUT_OF_NETWORK&authToken=uQsJ&trk=api*a3139351*s3214061*"}
       },
       {
@@ -1306,7 +993,7 @@
         "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_W1fpiD8yMJeEA65qwA2fimzAMxyIl5vqI-R_imF2QseRm3CNLz0rSaPGBApq-CN4erDG2dJ3qlY2",
         "positions": {"_total": 0},
         "publicProfileUrl": "http://www.linkedin.com/in/isabellasoleri",
-        "relationToViewer": {"distance": 3},
+        "relationToViewer": {},
         "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=53827927&authType=OUT_OF_NETWORK&authToken=k0yR&trk=api*a3139351*s3214061*"},
         "specialties": "Project Management, Transformation Management, BPR, Knowledge Management, Enterprise Modeling (UML), Work-Flow, Quality Assurance.",
         "summary": "8 years Telecom Software Engineer experience.\n7 years Senior Software and Lotus Notes/Domino Consultant  experience. \n3 years of  internationalization/localization experience.\nIdentify opportunities to enhance Company Business Process.  \nAbility to work in various environments."
