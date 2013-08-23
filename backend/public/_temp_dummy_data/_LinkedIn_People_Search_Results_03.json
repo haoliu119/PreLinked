@@ -1,0 +1,1316 @@
+{
+  "facets": {
+    "_total": 6,
+    "values": [
+      {
+        "buckets": {
+          "_total": 10,
+          "values": [
+            {
+              "code": "us:0",
+              "count": 819,
+              "name": "United States"
+            },
+            {
+              "code": "us:84",
+              "count": 507,
+              "name": "San Francisco Bay Area"
+            },
+            {
+              "code": "in:0",
+              "count": 30,
+              "name": "India"
+            },
+            {
+              "code": "us:70",
+              "count": 26,
+              "name": "Greater New York City Area"
+            },
+            {
+              "code": "us:91",
+              "count": 23,
+              "name": "Greater Seattle Area"
+            },
+            {
+              "code": "us:7",
+              "count": 21,
+              "name": "Greater Boston Area"
+            },
+            {
+              "code": "ca:0",
+              "count": 19,
+              "name": "Canada"
+            },
+            {
+              "code": "fr:0",
+              "count": 19,
+              "name": "France"
+            },
+            {
+              "code": "us:49",
+              "count": 19,
+              "name": "Greater Los Angeles Area"
+            },
+            {
+              "code": "us:82",
+              "count": 19,
+              "name": "Sacramento, California Area"
+            }
+          ]
+        },
+        "code": "location",
+        "name": "Location"
+      },
+      {
+        "buckets": {
+          "_total": 10,
+          "values": [
+            {
+              "code": "4",
+              "count": 409,
+              "name": "Computer Software"
+            },
+            {
+              "code": "96",
+              "count": 236,
+              "name": "Information Technology and Services"
+            },
+            {
+              "code": "6",
+              "count": 57,
+              "name": "Internet"
+            },
+            {
+              "code": "8",
+              "count": 21,
+              "name": "Telecommunications"
+            },
+            {
+              "code": "43",
+              "count": 17,
+              "name": "Financial Services"
+            },
+            {
+              "code": "118",
+              "count": 15,
+              "name": "Computer & Network Security"
+            },
+            {
+              "code": "14",
+              "count": 13,
+              "name": "Hospital & Health Care"
+            },
+            {
+              "code": "70",
+              "count": 10,
+              "name": "Research"
+            },
+            {
+              "code": "109",
+              "count": 10,
+              "name": "Computer Games"
+            },
+            {
+              "code": "12",
+              "count": 7,
+              "name": "Biotechnology"
+            }
+          ]
+        },
+        "code": "industry",
+        "name": "Industry"
+      },
+      {
+        "buckets": {
+          "_total": 4,
+          "values": [
+            {
+              "code": "F",
+              "count": 0,
+              "name": "1st Connections"
+            },
+            {
+              "code": "S",
+              "count": 67,
+              "name": "2nd Connections"
+            },
+            {
+              "code": "A",
+              "count": 191,
+              "name": "Group Members"
+            },
+            {
+              "code": "O",
+              "count": 964,
+              "name": "3rd + Everyone Else"
+            }
+          ]
+        },
+        "code": "network",
+        "name": "Relationship"
+      },
+      {
+        "buckets": {
+          "_total": 11,
+          "values": [
+            {
+              "code": "1035",
+              "count": 12,
+              "name": "Microsoft"
+            },
+            {
+              "code": "1028",
+              "count": 11,
+              "name": "Oracle"
+            },
+            {
+              "code": "1235",
+              "count": 11,
+              "name": "Wells Fargo"
+            },
+            {
+              "code": "1009",
+              "count": 9,
+              "name": "IBM"
+            },
+            {
+              "code": "162479",
+              "count": 8,
+              "name": "Apple"
+            },
+            {
+              "code": "1063",
+              "count": 7,
+              "name": "Cisco Systems"
+            },
+            {
+              "code": "1372",
+              "count": 7,
+              "name": "CA Technologies"
+            },
+            {
+              "code": "1025",
+              "count": 5,
+              "name": "Hewlett-Packard"
+            },
+            {
+              "code": "1033",
+              "count": 5,
+              "name": "Accenture"
+            },
+            {
+              "code": "1441",
+              "count": 5,
+              "name": "Google"
+            },
+            {
+              "code": "1231",
+              "count": 4,
+              "name": "Symantec"
+            }
+          ]
+        },
+        "code": "current-company",
+        "name": "Current Company"
+      },
+      {
+        "buckets": {
+          "_total": 11,
+          "values": [
+            {
+              "code": "1009",
+              "count": 47,
+              "name": "IBM"
+            },
+            {
+              "code": "1025",
+              "count": 44,
+              "name": "Hewlett-Packard"
+            },
+            {
+              "code": "1028",
+              "count": 38,
+              "name": "Oracle"
+            },
+            {
+              "code": "1235",
+              "count": 35,
+              "name": "Wells Fargo"
+            },
+            {
+              "code": "1372",
+              "count": 32,
+              "name": "CA Technologies"
+            },
+            {
+              "code": "1062",
+              "count": 30,
+              "name": "Sun Microsystems"
+            },
+            {
+              "code": "1035",
+              "count": 29,
+              "name": "Microsoft"
+            },
+            {
+              "code": "1063",
+              "count": 29,
+              "name": "Cisco Systems"
+            },
+            {
+              "code": "1480",
+              "count": 21,
+              "name": "Adobe"
+            },
+            {
+              "code": "1033",
+              "count": 18,
+              "name": "Accenture"
+            },
+            {
+              "code": "1053",
+              "count": 18,
+              "name": "Intel Corporation"
+            }
+          ]
+        },
+        "code": "past-company",
+        "name": "Past Company"
+      },
+      {
+        "buckets": {
+          "_total": 11,
+          "values": [
+            {
+              "code": "17909",
+              "count": 58,
+              "name": "San Francisco State University"
+            },
+            {
+              "code": "17939",
+              "count": 35,
+              "name": "University of California, Berkeley"
+            },
+            {
+              "code": "17926",
+              "count": 31,
+              "name": "Stanford University"
+            },
+            {
+              "code": "17968",
+              "count": 22,
+              "name": "University of San Francisco"
+            },
+            {
+              "code": "20091",
+              "count": 22,
+              "name": "City College of San Francisco"
+            },
+            {
+              "code": "17911",
+              "count": 20,
+              "name": "San Jose State University"
+            },
+            {
+              "code": "17960",
+              "count": 12,
+              "name": "University of California, Santa Cruz"
+            },
+            {
+              "code": "13663",
+              "count": 11,
+              "name": "University of Mumbai"
+            },
+            {
+              "code": "17787",
+              "count": 10,
+              "name": "University of Phoenix"
+            },
+            {
+              "code": "17950",
+              "count": 10,
+              "name": "University of California, Los Angeles"
+            },
+            {
+              "code": "17816",
+              "count": 9,
+              "name": "California Polytechnic State University-San Luis Obispo"
+            }
+          ]
+        },
+        "code": "school",
+        "name": "School"
+      }
+    ]
+  },
+  "numResults": 964,
+  "people": {
+    "_count": 25,
+    "_start": 0,
+    "_total": 260,
+    "values": [
+      {
+        "distance": 3,
+        "firstName": "Boris",
+        "headline": "Sr. Software QA Engineer",
+        "id": "ozeCwK7pnm",
+        "industry": "Computer Software",
+        "lastName": "A.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 174,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_hqAXN0nyCk6BlsSA89lUNy3gCilc1y2AGnLUNylCgh5F24Rlu-3HVpLuuwAHKUDj3c1VURfTplZU",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "industry": "Computer Software",
+              "name": "Genophen, Inc., Redwood Shores, CA"
+            },
+            "id": 346007377,
+            "isCurrent": true,
+            "startDate": {
+              "month": 8,
+              "year": 2012
+            },
+            "title": "Sr. Software QA Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/bayrapetov",
+        "relationToViewer": {"distance": 3},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=16264697&authType=OUT_OF_NETWORK&authToken=7Wo-&trk=api*a3139351*s3214061*"},
+        "specialties": "Software Quality Assurance, Automation, Cucumber, RubyMine, TeamCity, InelliJ, Software Development Life Cycle, Agile, Functional/UI, Blackbox/Greybox/API/Web Services testing,  Test Plan/Design/Cases/Scenarios, Bug Tracking System, JIRA, Web/Client-Server Application, Windows, UNIX, Linux, Shell, HTML, XML, Visual Studio, C#, Java, Selenium, JUnit, HTTPUnit, Eclipse, Oracle, SQLDeveloper, MySQL, SequelPro, QTP, WinRunner, SilkTest, VMWare, JProtection, JAWS, Code Coverage, SVN, TFS, Networking.",
+        "summary": "-\tExtensive experience in Software Quality Assurance in all stages of Software Development Life Cycle (SDLC).\n\n-\tTrack record of effective participation and innovative contribution in vital stages of testing complex Web-based enterprise scale applications in different OS platforms (Windows, UNIX), Browsers (Internet Explorer, Firefox, Google Chrome, Opera, Safari), Databases (Oracle, Informix).\n\n-\tAbility to work independently and as a team member, rapidly consume domain knowledge and determine comprehensive, meaningful tests."
+      },
+      {
+        "distance": 3,
+        "firstName": "Vidya",
+        "headline": "Senior Integration Developer at Kaiser Permanente, CA",
+        "id": "E3F9boE4s6",
+        "industry": "Computer Software",
+        "lastName": "S.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 178,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_YFRwQlwuFWL7V7DqyGwZQ-eaLSK_Z2yqr_fqQ-MAVIkPbewN-3IbHtD0I8ryRIg4xXJvWvwTyZ40",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1550,
+              "industry": "Hospital & Health Care",
+              "name": "Kaiser Permanente, CA",
+              "size": "10,001+ employees",
+              "type": "Nonprofit"
+            },
+            "id": 135882457,
+            "isCurrent": true,
+            "startDate": {
+              "month": 5,
+              "year": 2010
+            },
+            "summary": "Environment: WBI Message broker V6.0.2.12, WMQ V6.0, DB2 V8.2, WebSphere Transformation Extender(WTX) V8.1, DataPower V 3.7.1, SSL, Webservices, Websphere Application Server 6.1, JMS, XML, XSD, SOAP, HIPPA, HL7, EDI X12, AIX V5.3",
+            "title": "Senior Integration Developer / Support Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/vidya-s/1/a04/714",
+        "relationToViewer": {"distance": 3},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=5482240&authType=OUT_OF_NETWORK&authToken=VfYP&trk=api*a3139351*s3214061*"},
+        "specialties": "",
+        "summary": "Certification: \nIBM Certified MQSeries Specialist\n\n\n* 10+ years of experience in Information Technology with 8+ years of WebSphere MQ and WebSphere MQ Integrator (WMB) Architecture/Development/ Administration/Trouble Shooting/ Production Support  and Installation expertise across Multiple Platforms\n* 9 months of experience in webMethods Integration server, Broker, JDBC adapter, MQ Adapter etc\n* 5 + years of experience in Java, J2EE, Oracle, DB2, ESQL, Websphere Application Server ,WebLogic under Windows and Unix (Solaris, AIX, HP-UNIX).\n* Have been instrumental in the requirement analysis, design, development and testing.\n* Experience in DataPower, WTX, Webservice, MQSeries API coding, designing Message Flows/Sets, Clustering, MQclient /MQServer setup, user training and documentation\n* Domain Knowledge/expertise - Banking , Healthcare, Insurance, Automobile, Energy\n* Possesses strong analytical skills and Good communication Skills"
+      },
+      {
+        "distance": 3,
+        "firstName": "Lee Gemma",
+        "headline": "Configuration Management Engineer at CA Technologies",
+        "id": "RTQLDuog0Z",
+        "industry": "Computer Software",
+        "lastName": "F.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 223,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_2weeFy4eXfFHWduBmDoRF0IQkDrbWEjBmdycF0VJUHXBnaoc8SZkWxmcE_KZoSpUDeEnHZHBdOp8",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1372,
+              "industry": "Computer Software",
+              "name": "CA Technologies",
+              "size": "10,001+ employees",
+              "ticker": "CA",
+              "type": "Public Company"
+            },
+            "id": 299855380,
+            "isCurrent": true,
+            "startDate": {
+              "month": 7,
+              "year": 2012
+            },
+            "title": "Configuration Management Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/lee-gemma-f/12/943/993",
+        "relationToViewer": {"distance": 3},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=44132799&authType=OUT_OF_NETWORK&authToken=VjYw&trk=api*a3139351*s3214061*"},
+        "specialties": "IDE: Eclipse, Microsoft Visual Studio, NetBeans   \nOperating Systems: Unix, Windows Operating Systems\nProgramming Languages: C, C++, Java SE, J2EE\nWeb Technologies: CSS, HTML, JavaScript, PHP, Python, XML\nOther Technologies: Adobe Illustrator, Adobe Photoshop, Crystal Reports, Microsoft SharePoint Services, Microsoft SQL Servers, Selenium, SQL, Twill",
+        "summary": ""
+      },
+      {
+        "distance": 3,
+        "firstName": "Ian",
+        "headline": "at CA (Pacific) Pty Ltd",
+        "id": "GUz1-L_KtA",
+        "industry": "Computer Software",
+        "lastName": "C.",
+        "location": {"name": "Sydney Area, Australia"},
+        "numConnections": 265,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_Y5gdzldCLGFC9ma-YTj9z-wgbhKinDO-pkWnz-ZCZLk1WWdt-_SLUt2uWmrpzo0OxQxcVvErNr6E",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1372,
+              "industry": "Computer Software",
+              "name": "CA Technologies",
+              "size": "10,001+ employees",
+              "ticker": "CA",
+              "type": "Public Company"
+            },
+            "id": 122134800,
+            "isCurrent": true,
+            "startDate": {
+              "month": 4,
+              "year": 2010
+            },
+            "title": "Senior Principal Consultant"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/ian-c/2/184/492",
+        "relationToViewer": {"distance": 3},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=6394286&authType=OUT_OF_NETWORK&authToken=Z1X_&trk=api*a3139351*s3214061*"}
+      },
+      {
+        "distance": 3,
+        "firstName": "Debasish",
+        "headline": "Sr.Software QA Automation Engineer",
+        "id": "DiaW3w1weA",
+        "industry": "Computer Software",
+        "lastName": "Bhattacharjee",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 376,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_r9mLMBTgk8C1-d77YlxnMzGKXh5lrEa7YtssMzKfRilTfaJfyrYdcvX3oeLmPSf_AzuRntan951l",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1372,
+              "industry": "Computer Software",
+              "name": "CA Technologies",
+              "size": "10,001+ employees",
+              "ticker": "CA",
+              "type": "Public Company"
+            },
+            "id": 192712060,
+            "isCurrent": true,
+            "startDate": {
+              "month": 2,
+              "year": 2011
+            },
+            "title": "Sr. QA Automation Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/debasish007",
+        "relationToViewer": {"distance": 3},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=35978785&authType=OPENLINK&authToken=6K7M&trk=api*a3139351*s3214061*"},
+        "specialties": "Amazon EC2 Cloud computing, Web Service Testing for RESTfull service, Soap UI, Core Java, Selenium RC/Grid, JSON, Maven, SilkTest, SIlkPerformer, JUnit, HttpUnit, Quality Center, CVS, VSS, Eclipse IDE, Sub Version, ClearCase, Java, C, DBMS, RDBMS, SQL, PLSQL, Oracle",
+        "summary": "Application Tester, Test Framework Developer in a wide variety of business applications. Particularly interested in client/server, web based application testing, performance tuning, load and stress testing, data driven testing, internationalization and localization testing. Always interested in build testing, build creation, build verification, build deployment in different application servers."
+      },
+      {
+        "firstName": "private",
+        "id": "private",
+        "lastName": "private"
+      },
+      {
+        "distance": 3,
+        "firstName": "Julie",
+        "headline": "Sr. Software Engineer at CA | Wily Technology",
+        "id": "PnaT-6nKAn",
+        "industry": "Computer Software",
+        "lastName": "T.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 185,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 166945,
+              "industry": "Computer Software",
+              "name": "CA | Wily Technology",
+              "ticker": "CA"
+            },
+            "id": 27888963,
+            "isCurrent": true,
+            "startDate": {
+              "month": 11,
+              "year": 2007
+            },
+            "title": "Sr. Software Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/julie-t/3/871/b51",
+        "relationToViewer": {"distance": 3},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=11097133&authType=OUT_OF_NETWORK&authToken=pkFX&trk=api*a3139351*s3214061*"}
+      },
+      {
+        "distance": 3,
+        "firstName": "Gustavo",
+        "headline": "Senior Software/web Developer/programmer, DBA and Project Manager",
+        "id": "z72DmRHLBs",
+        "industry": "Automotive",
+        "lastName": "C.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 133,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_q6hJ9Gxp75MjqRZ1NTQ69TYaSTY-nZZ1n3qQ9TyatkEGWp7PZhrzZ3Hh_fODzxM0zLGFJ6C_em-b",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "industry": "Automotive",
+              "name": "SSF Imported AutoParts (So.San Francisco, CA)"
+            },
+            "id": 31793220,
+            "isCurrent": true,
+            "startDate": {
+              "month": 8,
+              "year": 2004
+            },
+            "summary": "SSF Imported Auto Parts is a leader in the field of automotive parts distribution since 1976, offering quality replacement parts for Mercedes Benz, BMW, Porsche, Audi, VW, SAAB, Volvo and MINI automobiles. SSF's website effectively combines business process, hardware, software, communications and back office lender support to allow authorized customers to search by specific parts or browse through a comprehensive catalog, place orders and have immediate access to the latest product offerings.\nI work in a team analizing, programming, developing and testing transaction based software for my company\u2019s web applications and web services to ensure continued operation of SSF\u2019s website; participate in daily web system operations and administration, participate in administration, programming and maintenance of SQL databases; perform revisions, corrections or expansion of existing software.",
+            "title": "Senior Web programmer Analyst"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/gustavo-c/6/ba0/52b",
+        "relationToViewer": {"distance": 3},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=20861171&authType=OUT_OF_NETWORK&authToken=jHVp&trk=api*a3139351*s3214061*"},
+        "summary": "Bilingual software developer and system analyst with over 21 years of proven experience, including desktop and web applications, XML web services, database design, administration and programming;  implementation of software in small and mid-companies and project manager leading the software engineering process of customized business applications. I am methodical, resourceful and open to learn and apply new techniques and technologies.\n\nSpecialties:\n\u2022\tProject management.\n\u2022\tSoftware development.\n\u2022\tCommercial Web application development.\n\u2022\tXML web services.\n\u2022\tMS-Sql server programming and administration (DBA).\n\u2022\tProcess Improvement. \n\u2022\tLifecycle of the software: analysis, design, development, debugging, optimization, integration, testing, roll-out and maintenance.\n\u2022\tFluent in Spanish and English."
+      },
+      {
+        "distance": 3,
+        "firstName": "Vladimir",
+        "headline": "Lotus Domino developer",
+        "id": "wvA7Ok2pQW",
+        "industry": "Computer Software",
+        "lastName": "P.",
+        "location": {"name": "Raleigh-Durham, North Carolina Area"},
+        "numConnections": 79,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_N0TLAXtV3ze0DZCj9jCVAb1cTcD03RCj94vsAbCIY-JfOxvg4JldxF9L7MShCp_Avp_ROhKoGJzY",
+        "positions": {
+          "_total": 2,
+          "values": [
+            {
+              "company": {
+                "id": 1009,
+                "industry": "Computer Software",
+                "name": "IBM, Research Triangle Park, Durham, NC USA (www.ibm.com)",
+                "type": "Public Company"
+              },
+              "id": 12430597,
+              "isCurrent": true,
+              "startDate": {
+                "month": 9,
+                "year": 2006
+              },
+              "title": "Senior Programmer"
+            },
+            {
+              "company": {
+                "id": 162236,
+                "industry": "Insurance",
+                "name": "ABD Insurance and Financial Services, Redwood City, CA USA (www.cybersure.com)",
+                "type": "Public Company"
+              },
+              "id": 10112309,
+              "isCurrent": true,
+              "startDate": {
+                "month": 8,
+                "year": 2006
+              },
+              "title": "Lotus Notes Domino developer / consultant"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/vladimir-p/1/b03/619",
+        "relationToViewer": {"distance": 3},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=5729205&authType=OUT_OF_NETWORK&authToken=4HJ8&trk=api*a3139351*s3214061*"},
+        "specialties": "- Visual Basic, LotusScript, HTML, XML, JavaScript, Java\n- Microsoft SQL Server 2000, Lotus Notes 4.x-7.x, LEI, DB2, Oracle, Access, MySQL, ODBC\n- Microsoft DOS 6.x, Windows 3.11, 9.x, Me, 2000/2003/XP/NT/Vista\n- SilkTest, WinRunner, Seapine Test Track Pro\n- Visual Source Safe, CVS",
+        "summary": ""
+      },
+      {
+        "distance": 3,
+        "firstName": "Shaju",
+        "headline": "Senior .Net Developer / Data Analyst at Wells Fargo Bank, San Francisco, CA, USA",
+        "id": "1NE0VOK8TT",
+        "industry": "Information Technology and Services",
+        "lastName": "S.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 124,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_m8msvUEAwbQ5BW4x2F75vJsKW_iWBo4xuXsLv4dunLcMemf0GQYnRZgCbm_nqDJP7_uksxBx2QBi",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1235,
+              "industry": "Financial Services",
+              "name": "Wells Fargo Bank, San Francisco, CA, USA",
+              "size": "10,001+ employees",
+              "ticker": "WFC",
+              "type": "Public Company"
+            },
+            "id": 103184348,
+            "isCurrent": true,
+            "startDate": {
+              "month": 9,
+              "year": 2008
+            },
+            "summary": "",
+            "title": "Senior .Net Developer / Data Analyst"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/shajusebastian",
+        "relationToViewer": {"distance": 3},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=29460543&authType=OUT_OF_NETWORK&authToken=GCPB&trk=api*a3139351*s3214061*"}
+      },
+      {
+        "distance": 3,
+        "firstName": "Enza",
+        "headline": "Software QA Engineer - Consumer Applications at Apple",
+        "id": "QVeGJX5rb8",
+        "industry": "Media Production",
+        "lastName": "S.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 431,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_3PuunYtPzC_4KhmtinaxnpkOvTlJK5Yt_AZ1npCaEk5d73W-Svy84y9hUfA61CxYhKmtMUym1z4h",
+        "positions": {
+          "_total": 2,
+          "values": [
+            {
+              "company": {
+                "id": 162479,
+                "industry": "Consumer Electronics",
+                "name": "Apple",
+                "size": "10,001+ employees",
+                "ticker": "AAPL",
+                "type": "Public Company"
+              },
+              "id": 38513120,
+              "isCurrent": true,
+              "startDate": {
+                "month": 2,
+                "year": 2008
+              },
+              "summary": "Software QA Engineer  - Consumer Applications Team.  -",
+              "title": "QA Engineer - Consumers Applications"
+            },
+            {
+              "company": {
+                "industry": "Media Production",
+                "name": "1000 Hearts"
+              },
+              "id": 149069,
+              "isCurrent": true,
+              "startDate": {
+                "month": 1,
+                "year": 2000
+              },
+              "summary": "1,000 HEARTS, Creative Artists Network San Mateo, CA \u2013 Rome, Italy - 1999-present\nFounder/Independent Filmmaker/Videographer",
+              "title": "Filmmaker, Writer, Editor"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/enza-s/0/5a/a94",
+        "relationToViewer": {"distance": 3},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=122512&authType=OUT_OF_NETWORK&authToken=AI_7&trk=api*a3139351*s3214061*"},
+        "specialties": "Software QA Engineer specializing in non-linear video editing software testing.  Video/Film productions from concept to completion, script writing, story-boarding, directing, multi-format digital editing and DVD authoring, photo-journalism, reporter, creative writer, marketing and promotions, advertising editor, public relations, mentoring, teaching multimedia and foreign languages, localization, advance internet researcher, software tester. \nApple software and hardware evangelist.",
+        "summary": "Objective: leading a team of creative people with superior technical skills to produce awesome multimedia software that can be utilized to create unique projects from concept to completion.\n\nCreative and critical thinker who generates and evaluates ideas, transforming them in complete projects in a teamwork environment. Energetic artist with the kind of thinking that leads to new insights, novel approaches, fresh perspectives. \n\nAs the founder of 1000 Hearts,  Enza is working as independent filmmaker. She writes non fictional and fictional scripts for corporate and non corporate videos, shooting them in digital format, editing them in Final Cut Pro, encoding them for the web and authoring them for DVD format. \nEnza is also utilizing Apple and Adobe software to design websites.\n\nAs advertising editor, she also provides the digital media community with reports on tools that facilitate the creation and distribution of digital art. \n\nEnza is a multi-talented team player with expertise in both the European and the American markets. A natural leader who's capable to plan multiple projects by working with talented professionals from all over the world.\n\nEnza produces from A to Z  documentaries, music videos, public service annoucements, corporate and educational videos."
+      },
+      {
+        "distance": 3,
+        "firstName": "Mark",
+        "headline": "Director, QA and Release Engineering at Hotwire",
+        "id": "Ov4FkEDOzn",
+        "industry": "Computer Software",
+        "lastName": "S.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 479,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_zVjRUCNzWGyhh7I8c0SHUhiqd3Zr82R8BRdkU31k9Xuhxe2hMpDczTbEF74fiIVuqJ0LNQDlZRQH",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 7431,
+              "industry": "Internet",
+              "name": "Hotwire",
+              "ticker": "EXPE",
+              "type": "Public Company"
+            },
+            "id": 57497754,
+            "isCurrent": true,
+            "startDate": {
+              "month": 12,
+              "year": 2008
+            },
+            "summary": "",
+            "title": "Director, QA and Release Engineering"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/marksilvestri",
+        "relationToViewer": {"distance": 3},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=1915354&authType=OUT_OF_NETWORK&authToken=GI0G&trk=api*a3139351*s3214061*"},
+        "summary": "14+ years of experience in building and leading successful software quality assurance teams.  Extensive experience in defining QA processes, methodologies, best practices and release management with continuous delivery and iterative/Agile development processes."
+      },
+      {
+        "distance": 3,
+        "firstName": "Proful",
+        "headline": "Director, Business Operations at MarkMonitor",
+        "id": "LBlCrNXAiv",
+        "industry": "Computer Software",
+        "lastName": "B.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_5R4EHmGnX774aaOQLsJMH2l96uZBaSOQFp2zHDrnJWubAdd6djHQQSkZHG4eSE0Ek4VNFEGT-jWw",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 14422,
+              "industry": "Internet",
+              "name": "MarkMonitor",
+              "size": "201-500 employees",
+              "type": "Public Company"
+            },
+            "id": 426664085,
+            "isCurrent": true,
+            "startDate": {
+              "month": 7,
+              "year": 2013
+            },
+            "summary": "MarkMonitor® is the global leader in enterprise brand protection, safeguarding more than half of the Fortune 100 brands. Headquartered in San Francisco, the company offers SaaS solutions and deep domain expertise in Domain Management, Brand Protection, AntiPiracy and AntiFraud, protecting and accelerating customer success on the Internet.",
+            "title": "Director, Business Operations"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/proful",
+        "relationToViewer": {"distance": 3},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=5936613&authType=OUT_OF_NETWORK&authToken=4Z59&trk=api*a3139351*s3214061*"},
+        "summary": "Profile\n\u2022Exceptional background in software development and operations, building products for enterprise, growth, MSP (managed service provider) and channel markets. \n\n\u2022Solutions driven director with experience in strategic planning, development and execution of large programs. \n\n\u2022Delivered high availability systems and solutions that have helped grow revenue in double digits, skilled at optimizing costs, defining KPI\u2019s and driving desired outcomes. \n\n\nSpecialties: - \n- Cloud computing Service & Operations\n- Business Operations & Analytics\n- Program Management\n- Financial & Valuation Modeling\n- SDLC & Agile/SCRUM\n- Remote/Outsourcing/Offshore Team Management expertise\n- SAS70/SSAE 16, CMMi compliance\n- ITIL / ITSM\n- Certified Project Management Professional (PMP);"
+      },
+      {
+        "distance": 3,
+        "firstName": "Frank",
+        "headline": "Optimization Engineer/Research Analyst at Chevron",
+        "id": "CCNvT2ppAp",
+        "industry": "Oil & Energy",
+        "lastName": "C.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 161,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_CV5yQJrwYI5B2-JZh0F7QU85pS3v2qZZhZliQU1Miez51K74apvKHRbB-iTE71MN_JbCWpTQ3p4e",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 2192,
+              "industry": "Oil & Energy",
+              "name": "Chevron Energy Technology Company",
+              "ticker": "CVX",
+              "type": "Public Company"
+            },
+            "id": 212540976,
+            "isCurrent": true,
+            "startDate": {
+              "month": 1,
+              "year": 2011
+            },
+            "summary": "Advanced Analytics, Artificial Intelligence, Machine Learning/Statistical Data Mining, Computational Linguistics, Semantic Web, Semantic Search, and Ontology Engineering for Upstream Oil & Gas.",
+            "title": "Optimization Engineer/Research Analyst"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/frank-c/1/b48/79b",
+        "relationToViewer": {"distance": 3},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=5821031&authType=OUT_OF_NETWORK&authToken=-d7Y&trk=api*a3139351*s3214061*"}
+      },
+      {
+        "distance": 3,
+        "firstName": "David",
+        "headline": "Senior Software Engineer at LeapFrog",
+        "id": "4Y_VnvEkHn",
+        "industry": "Computer Software",
+        "lastName": "P.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 125,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_N0TLAXTNSz4r3Y1jNV89AQAnTcD03RCj9gvsAbCIY-JfOxvg4JldxF9L7MShCp_Avp_ROhpORLQY",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 4833,
+              "industry": "Consumer Goods",
+              "name": "LeapFrog Enterprises, Inc.",
+              "size": "501-1000 employees",
+              "ticker": "LF",
+              "type": "Public Company"
+            },
+            "id": 274966475,
+            "isCurrent": true,
+            "startDate": {
+              "month": 11,
+              "year": 2010
+            },
+            "summary": "As a member of the Ecosystems Engineering group, I design and develop Web services to support LeapFrog's line of educational toys, such as the award-winning LeapPad.  Services provided include game play data acquisition and visualization, digital rights management, metadata management, and support for customer service tools.",
+            "title": "Senior Software Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/snosrap",
+        "relationToViewer": {"distance": 3},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=4426793&authType=OUT_OF_NETWORK&authToken=JiXD&trk=api*a3139351*s3214061*"},
+        "specialties": "Java, Perl, C++/C, Python, Common LISP, XML, SQL",
+        "summary": "Software engineering professional with 15 years' experience in all phases of software development in a variety of application domains.  Excellent skills in object-oriented design, relational database design, multitiered and multithreaded software system design, and automated testing practices."
+      },
+      {
+        "distance": 3,
+        "firstName": "Sushma",
+        "headline": "Technical Lead/Analyst",
+        "id": "QwL8DWhoAC",
+        "industry": "Computer Software",
+        "lastName": "R.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 138,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0__gnH4M1ohhrqiyguTpBR4VlLCLkUf0puT0CB4Rhqg6KwrUI2fUQXnUNVuSXku4j8CYN9cy-JDpsX",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1283,
+              "industry": "Information Technology and Services",
+              "name": "Infosys",
+              "size": "10,001+ employees",
+              "ticker": "INFY",
+              "type": "Public Company"
+            },
+            "id": 334665831,
+            "isCurrent": true,
+            "startDate": {
+              "month": 9,
+              "year": 2012
+            },
+            "summary": "Project lead for a robust software application that runs on Jboss application server and auto deploys other applications on virtual machines. Responsible for supporting application deployments and client interaction on a daily basis for dealing with issues and any escalations.",
+            "title": "Technical Lead"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/sushma-r/0/a32/952",
+        "relationToViewer": {"distance": 3},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=2555342&authType=OUT_OF_NETWORK&authToken=yo3B&trk=api*a3139351*s3214061*"},
+        "specialties": "Java, J2EE (WebLogic, WebSphere), Struts, XML, Java Script, Perl, JSON, SQL, Business Analyst, Web/Java Development, XML, HTML, Web Services (SOAP)",
+        "summary": "Team player with excellent communication, prioritizing, multi-tasking, analytical and trouble shooting skills with a logical mind.\n\nSeveral years of experience as a software engineer, have gained experience working on web application projects, also worked as a business analyst, experience in leading resources in a mid size team while working with offshore team. \n\nProven soft skills to liaison between business and technical teams"
+      },
+      {
+        "distance": 3,
+        "firstName": "Yury",
+        "headline": "Contractor at Silicon Valley Medical Instruments Inc",
+        "id": "WydSWQd833",
+        "industry": "Computer Software",
+        "lastName": "Z.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 88,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_mbFan0oGt3XoJnyt259jngWatGA5Jnyt2L1lngMYSFLv6-w-GTcG4jDKyulsslgY7kLrMVFmQPZv",
+        "positions": {
+          "_total": 2,
+          "values": [
+            {
+              "company": {
+                "id": 1011209,
+                "industry": "Medical Devices",
+                "name": "Silicon Valley Medical Instruments Inc",
+                "type": "Privately Held"
+              },
+              "id": 111396183,
+              "isCurrent": true,
+              "startDate": {
+                "month": 2,
+                "year": 2010
+              },
+              "summary": "\u2022\tPorting embedded ultra sound imaging medical device to embedded Linux platform from Windows based. \n\u2022\tUsing OOD, multitasking, Open GL, Qt toolkit shells, gdb.",
+              "title": "Contractor"
+            },
+            {
+              "company": {
+                "industry": "Computer Software",
+                "name": "Scribe"
+              },
+              "id": 105338548,
+              "isCurrent": true,
+              "startDate": {
+                "month": 6,
+                "year": 2008
+              },
+              "summary": "\u2022\tDesigning OS agnostic Open Source electronic paper editor, debugger and companion applications (Linux, Windows, C++) including debug log control component running boosted gdb 7.1 build. \n\u2022\tUsing OOD, multitasking, Qt toolkit (enhanced 4.5.1, 4.4.3), subversion, MYSQL, XML, Perl, shells, gdb (enhanced 7.1), cygwin and OpenSource LaTEX editors as a template.",
+              "title": "Owner"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/yuryzayrinov",
+        "relationToViewer": {"distance": 3},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=3509559&authType=OUT_OF_NETWORK&authToken=gwcd&trk=api*a3139351*s3214061*"},
+        "specialties": "C/C++,C#, Modula2, PL1, ADA, Fortran*, ..., assemblers, Verilog HDL,TCP/IP, SCSI, RAID, RS 422/232, \u2026; PDL: PostScript, PDF, PCL; DB: DB4, SQL, MySQL; Until: Perl, shells, Lex/Yacc, Case tools, cvs, perforce, gdb, dbx, MS C++, .NET,MS Visio, Rational Rose, MATHLAB, Qt toolkit.",
+        "summary": "Objective:\tLead engineer with record of outstanding solutions. Managed projects in both embedded and application software. MS in physics, math and BS in computer science. \n\t\nAbstract:\tAccomplished embedded project lead (14+ products delivered to Fortune 500 customers) with major multithreaded, n-tier enterprise application back-end and kernel/drivers development experience."
+      },
+      {
+        "distance": 3,
+        "firstName": "Sunil",
+        "headline": "Principal Software Engineer at Vocera Communications",
+        "id": "jTB6n-Eiyv",
+        "industry": "Computer Software",
+        "lastName": "M.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 204,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 13993,
+              "industry": "Hospital & Health Care",
+              "name": "Vocera Communications",
+              "size": "201-500 employees",
+              "type": "Public Company"
+            },
+            "id": 342488692,
+            "isCurrent": true,
+            "startDate": {
+              "month": 4,
+              "year": 2012
+            },
+            "title": "Principal Software Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/sunil-m/0/71a/537",
+        "relationToViewer": {"distance": 3},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=1780603&authType=OUT_OF_NETWORK&authToken=H7ob&trk=api*a3139351*s3214061*"}
+      },
+      {
+        "firstName": "private",
+        "id": "private",
+        "lastName": "private"
+      },
+      {
+        "distance": 3,
+        "firstName": "Kevin",
+        "headline": "Contract Software QA Engineer at Untangle, Inc.",
+        "id": "pAoLwkg4HA",
+        "industry": "Computer Software",
+        "lastName": "S.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 65,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 240725,
+              "industry": "Computer Software",
+              "name": "Untangle, Inc.",
+              "size": "11-50 employees",
+              "type": "Privately Held"
+            },
+            "id": 221429395,
+            "isCurrent": true,
+            "startDate": {"year": 2011},
+            "summary": "",
+            "title": "Contract Software QA Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/kevin-s/3/937/5bb",
+        "relationToViewer": {"distance": 3},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=11272607&authType=OUT_OF_NETWORK&authToken=jXTP&trk=api*a3139351*s3214061*"}
+      },
+      {
+        "distance": 3,
+        "firstName": "Samie",
+        "headline": "at",
+        "id": "ee6d-_ccaN",
+        "industry": "Computer Software",
+        "lastName": "M.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_gPLYkPnGYe6mYnwcgn63kr3iYulmpzUc0NA3krFxTW5YiluBAvztoKPlKGAlx-sRyKF8wBv0eJzD",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1033,
+              "industry": "Management Consulting",
+              "name": "Accenture",
+              "size": "10,001+ employees",
+              "ticker": "ACN",
+              "type": "Public Company"
+            },
+            "id": 126092004,
+            "isCurrent": true,
+            "startDate": {
+              "month": 5,
+              "year": 2010
+            },
+            "summary": "- Currently working at Stanford Hospital & Clinics - Stanford Medicine.\n\n- Worked at Blue Cross Blue Shield of Michigan on  CareAdvance, SMS and WCM DR implementation. Led the Client Teams of 30 plus Nurses and Business Analysts on business and user acceptance testing.\n\n- Worked on a Salesforce.com project at Cisco.\n\n- Worked on Walt Disney Quality Assurance Center of Excellence Project.  Involved in the Disney QA Assessment process to implement structured testing methodology and continually improve IT operations. The purpose of the assessment was to diagnose the process maturity of Walt Disney Parks & Resorts QA capabilities.\n\n-  Worked at Ross Stores Inc. on Allocation Upgrade project.\n- Worked on RFI/RFP for American Express.\n\n- Worked on China Growth Initiative Project at Gap Incorporated. The project is successfully completed and GAP Corporation has opened Stores in China and Hong Kong.",
+            "title": "Senior Consultant"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/samie-m/1/21a/45a",
+        "relationToViewer": {"distance": 3},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=3522310&authType=OUT_OF_NETWORK&authToken=AYNU&trk=api*a3139351*s3214061*"},
+        "summary": "Highly skilled Technical and Business Professional with 16 plus years of experience in Information Technology (IT). \n\nWorked as a Team Lead on Highly Visibility Projects in Telecommunication, Entertainment, Retail Products and HealthCare Industries.\n\nCompanies:\n1- Stanford Hospital & Clinics - Stanford Medicine (Accenture)\n2- Blue Cross Blue Shield of Michigan (Accenture)\n3- Cisco (Accenture)\n4- Walt Disney (Accenture)\n5- Ross Stores Inc. (Accenture)\n6- GAP Inc \n7- SUPERVALU Inc \n8- Williams-Sonoma Inc \n9- CVS Pharmacy\n10-NORDSTROM\n11-MCI Telecommunication (Verizon)\n\nSpecialties: \n\u2022\tSupply Chain Management\n\u2022\tORMS (Oracle Retek Merchandising System)\n\u2022\tCareAdvance\n\u2022\tORDW (Oracle Retek Data Warehouse) \n\u2022\tRDF (Retek Demand Forecasting) \n\u2022\tReSA (Retek Sales Audit)\n\u2022\tPOS (Point of Sales)\n\u2022\tSalesforce.com (CRM & Cloud Computing)\n\u2022\tEDI 850/860 \n\u2022\tDMS 250, ACD 100, SS7, TCAP, ISDN\n\u2022\tOracle Application and databases \n\u2022\tUNIX/LINUX\n\u2022\tMainframe IBM 3090/ES 9000\n\u2022\tCenter of Excellence (CoE) to implement structured testing methodology and continually\n        improve IT operations."
+      },
+      {
+        "distance": 3,
+        "firstName": "Ian",
+        "headline": "Senior Software Engineer at Motif Investing",
+        "id": "zusuRrtVVJ",
+        "industry": "Information Technology and Services",
+        "lastName": "B.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 166,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 2388888,
+              "industry": "Financial Services",
+              "name": "Motif Investing",
+              "size": "11-50 employees",
+              "type": "Privately Held"
+            },
+            "id": 221404127,
+            "isCurrent": true,
+            "startDate": {
+              "month": 4,
+              "year": 2011
+            },
+            "summary": "",
+            "title": "Senior Software Engineer"
+          }]
+        },
+        "relationToViewer": {"distance": 3},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=98758229&authType=OUT_OF_NETWORK&authToken=wCNa&trk=api*a3139351*s3214061*"},
+        "specialties": "Languages: Java, C/C++, C#, SQL, SPARC Assembly Language, Motorola 68HC11 Assembly Language, WML, WMLScript, UML, Perl, Javascript\n\nSoftware: Eclipse, Toad, SQLDeveloper, Visual Studio .NET, Perforce, ClearCase, Rational Rose",
+        "summary": "A Software Engineer with broad experience in web technologies, networking protocols, and driver development."
+      },
+      {
+        "distance": 3,
+        "firstName": "Nilesh",
+        "headline": "eBTax subject matter expert and Vertex Taxware Sabrix integration specialist",
+        "id": "vDH5GxN7Ck",
+        "industry": "Information Technology and Services",
+        "lastName": "P.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 422,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_mbFanOwmr5qwRzutm_XgnyVftGA5Jnyt2Q1lngMYSFLv6-w-GTcG4jDKyulsslgY7kLrMVwRfQJv",
+        "positions": {
+          "_total": 7,
+          "values": [
+            {
+              "company": {
+                "id": 10241,
+                "industry": "Machinery",
+                "name": "Dresser-Rand",
+                "size": "5001-10,000 employees",
+                "ticker": "DRC",
+                "type": "Public Company"
+              },
+              "id": 377151787,
+              "isCurrent": true,
+              "startDate": {
+                "month": 2,
+                "year": 2013
+              },
+              "summary": "Dresser Rand is upgrading to Oracle R12 and integrating with Taxware Enterprise. My role is to review and troubleshoot their eBTax setups for US, Canada and Europe for Order to Cash and Procure to Pay, Troubleshoot their Taxware integration issues, Automated migration scripts for moving tax setups from development to test and production instances.",
+              "title": "eBTax subject matter expert"
+            },
+            {
+              "company": {
+                "id": 5591,
+                "industry": "Computer Games",
+                "name": "Nintendo",
+                "size": "1001-5000 employees",
+                "ticker": "NTDOY",
+                "type": "Public Company"
+              },
+              "id": 377150829,
+              "isCurrent": true,
+              "startDate": {
+                "month": 6,
+                "year": 2012
+              },
+              "summary": "Helped Nintendo with Vertex O Series integration with their eCommerce Applications. Now helping them with their Oracle eBusiness Suite integration with Vertex O Series for US and Canada for Order to Cash and Procure to Pay flows. Helping with Vertex O Series Setups, Vertex TaxLinks installation, configurations, eBusiness Tax configurations, SLA configurations for Canadian accounting requirements, with their Client Extensions and Troubleshooting.",
+              "title": "eBusiness Tax Consultant and Vertex O Series Subject Matter Expert"
+            },
+            {
+              "company": {
+                "id": 6196,
+                "industry": "Electrical/Electronic Manufacturing",
+                "name": "Coherent",
+                "size": "1001-5000 employees",
+                "ticker": "COHR",
+                "type": "Public Company"
+              },
+              "id": 267140666,
+              "isCurrent": true,
+              "startDate": {
+                "month": 12,
+                "year": 2011
+              },
+              "summary": "Helping Coherent Inc with R12 eBusiness Tax upgrade for North America, Europe, Asia Pacific and with complex intercompany taxation requirements.",
+              "title": "eBusiness Tax consultant for R12 upgrade"
+            },
+            {
+              "company": {
+                "id": 163643,
+                "industry": "Oil & Energy",
+                "name": "Enterprise Products",
+                "size": "5001-10,000 employees",
+                "ticker": "EPD",
+                "type": "Public Company"
+              },
+              "id": 294340572,
+              "isCurrent": true,
+              "startDate": {
+                "month": 6,
+                "year": 2011
+              },
+              "summary": "Designed interface for Asset Movement transactions from Oracle eBusiness Suite to Vertex O Series and creating automated accrual journal entries. Vertex O Series setups and migration. Setup eBTax and Vertex O Series integration. Develop customizations for integration to Vertex O Series at invoice distribution level. implemented Vertex Returns 9.x.",
+              "title": "Vertex O Series integration expert"
+            },
+            {
+              "company": {
+                "id": 1677,
+                "industry": "Retail",
+                "name": "Gap Inc.",
+                "size": "5001-10,000 employees",
+                "ticker": "GPS",
+                "type": "Public Company"
+              },
+              "id": 73245669,
+              "isCurrent": true,
+              "startDate": {"year": 2010},
+              "summary": "Integrate Oracle EBS with Vertex O Series for US and Canada",
+              "title": "eBTax Consultant and Vertex O Series Expert"
+            },
+            {
+              "company": {
+                "id": 167024,
+                "industry": "Computer Hardware",
+                "name": "Zebra Technologies",
+                "size": "1001-5000 employees",
+                "ticker": "ZBRA",
+                "type": "Public Company"
+              },
+              "id": 80108235,
+              "isCurrent": true,
+              "startDate": {
+                "month": 8,
+                "year": 2008
+              },
+              "summary": "Supporting Zebra Technologies with phased Oracle eBusiness Tax rollout for EMEA, North America and now Asia Pacific. Implemented Vertex O Series integraion for North America. Providing ongoing support for their tax issues.\n\nCurrently working on Zebra Asia Pacific tax rollout and China Golden Tax adapter.",
+              "title": "EBusiness Tax consultant"
+            },
+            {
+              "company": {
+                "industry": "Information Technology and Services",
+                "name": "Cybernation Inc. CA",
+                "size": "Myself Only"
+              },
+              "id": 52795342,
+              "isCurrent": true,
+              "startDate": {
+                "month": 8,
+                "year": 2008
+              },
+              "summary": "Providing Consuting Service for R12 eBusiness Tax Implementation Projects at Zebra Technologies (Chicago), Probuild (Denver) and Bare Escentuals (San Francisco), Involving Design discussions, Providing implemenation solutions for complex tax issues. These projects involve Vertex Intergration, EMEA, APAC, North American and Latin Tax implementations.",
+              "title": "Owner"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/nileshpatelus",
+        "relationToViewer": {"distance": 3},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=10397343&authType=OUT_OF_NETWORK&authToken=z4Vj&trk=api*a3139351*s3214061*"},
+        "specialties": "Oracle R12 Financials, eBusiness Tax - Vertex, Taxware, Sabrix integration",
+        "summary": "Nilesh has extensive experience implementing indirect tax solutions for ERP and eCommerce Applications worldwide. He specializes in integration of ERP systems, specially Oracle eBusiness Suite with Vertex, ADP Taxware and Sabrix. He has more than two dozen implementations of Oracle eBusiness Tax R12 for clients in various industries. His successful clients include Netgear Inc., Sunpower Corp., GAP Inc., Facebook Inc., LinkedIn Corp, WMS Gaming Inc., Zebra Technologies, Graco Inc., Coherent Inc. and Enterprise Products Company.\n\nNilesh was one of the key members of R12 eBusiness Tax development team at Oracle Corporation, involved in conception, design, build and rollout of eBTax, and has worked directly with development teams of Vertex, Taxware and Sabrix. Having a thorough understanding of the eBTax design and functional knowledge of indirect taxes and compliance requirements worldwide gives Nilesh a unique advantage in implementing tax technology integrations."
+      },
+      {
+        "distance": 3,
+        "firstName": "Ravi",
+        "headline": "Member of Technical Staff at salesforce.com",
+        "id": "BjG8L-jIo8",
+        "industry": "Computer Software",
+        "lastName": "S.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 246,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_ByD7XFrNnWRp_8OVBMOpX5F9qf7O3QxVzUJrX58IIoUaOGesRsj_ELqLVTf3CTY9nxflIGOll9s5",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 3185,
+              "industry": "Internet",
+              "name": "Salesforce.com",
+              "size": "5001-10,000 employees",
+              "ticker": "CRM",
+              "type": "Public Company"
+            },
+            "id": 347052608,
+            "isCurrent": true,
+            "startDate": {
+              "month": 12,
+              "year": 2012
+            },
+            "title": "Member of Technical Staff"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/ravi-s/10/a87/344",
+        "relationToViewer": {"distance": 3},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=38498596&authType=OUT_OF_NETWORK&authToken=uQsJ&trk=api*a3139351*s3214061*"}
+      },
+      {
+        "distance": 3,
+        "firstName": "Isabella",
+        "headline": "Lotus Domino Consultant at GigOptix Inc.",
+        "id": "RViAo1TXZJ",
+        "industry": "Computer Software",
+        "lastName": "S.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 220,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_W1fpiD8yMJeEA65qwA2fimzAMxyIl5vqI-R_imF2QseRm3CNLz0rSaPGBApq-CN4erDG2dJ3qlY2",
+        "positions": {"_total": 0},
+        "publicProfileUrl": "http://www.linkedin.com/in/isabellasoleri",
+        "relationToViewer": {"distance": 3},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=53827927&authType=OUT_OF_NETWORK&authToken=k0yR&trk=api*a3139351*s3214061*"},
+        "specialties": "Project Management, Transformation Management, BPR, Knowledge Management, Enterprise Modeling (UML), Work-Flow, Quality Assurance.",
+        "summary": "8 years Telecom Software Engineer experience.\n7 years Senior Software and Lotus Notes/Domino Consultant  experience. \n3 years of  internationalization/localization experience.\nIdentify opportunities to enhance Company Business Process.  \nAbility to work in various environments."
+      }
+    ]
+  }
+}
