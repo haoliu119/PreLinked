@@ -16,34 +16,52 @@ var _grabMultiplePages = function(req_query) {
   }
 
   Q.all(promises)
-    .then(function(data){
-      data = _(data).map(function(item){
-        return JSON.parse(item);
-      });
-      data = _(data).flatten(true); //only flatten the first level
-      deferred.resolve(data);
-    });
+    .done(
+      // Resolved
+      function(data){
+        data = _(data).map(function(item){
+          return JSON.parse(item);
+        });
+        data = _(data).flatten(true); //only flatten the first level
+        deferred.resolve(data);
+      },
+      // Rejected
+      function(error){
+        deferred.reject(error);
+      }
+    );
 
   return deferred.promise;
 };
 
 
 // GET /jobs/search
-jobs.search = function(req, res){
+jobs.search = function(req, res, testCallback){
   console.log('- GET /jobs/search - Controller -> IndeedApi.searchConnections >> ');
-  // IndeedApi endpoit
+
+  /*
+  /* Indeed API with Pagination ------------------------
+  */
 
   _grabMultiplePages(req.query)
-    .then(function(json) {
-      console.log('Paginated JSON Data length',json.length);
-      _helper.resolved(req, res, json);
-    }, function(error) {
-      _helper.rejected(req, res, error);
+    .done(
+      // Resolved
+      function(json) {
+        console.log('Paginated JSON Data length',json.length);
+        _helper.resolved(req, res, json);
+      },
+      // Rejected:
+      function(error) {
+        _helper.rejected(req, res, error);
     });
 
   // console.log('job results ************', jobResults);
 
-  // IndeedApi.search(req.query)
+  /*
+  /* Indeed API Single Call ------------------------
+  */
+
+  // IndeedApi.search(req.query, {}, testCallback)
   //   .done(
   //     //Resolved: json returned from Indeed API
   //     function(json) {
@@ -55,7 +73,11 @@ jobs.search = function(req, res){
   //       _helper.rejected(req, res, error);
   //   });
 
-  // //Dummy data
+
+  /*
+  /* Dummy Data ------------------------
+  */
+
   // var fileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/dummy_indeed_search_results.json'), 'utf8');
   // _helper.resolved(req, res, fileContent);
 
