@@ -296,7 +296,7 @@ function program1(depth0,data) {
   if (stack1 = helpers.jobtitle) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.jobtitle; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</a></h2>\n<ul class=\"small-10 info columns\">\n  <li class=\"company\">";
+    + "</a></h2>\n<div><a id=\"sort\" href=\"javascript:;\">sort</a></div>\n<ul class=\"small-10 info columns\">\n  <li class=\"company\">";
   if (stack1 = helpers.company) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.company; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
