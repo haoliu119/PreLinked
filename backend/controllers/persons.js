@@ -21,8 +21,8 @@ persons._post = function(data, myId){
 
   var person = new Person({
     _id: data.id,
-    inPerson: data,
-    firstDegree: [myId]
+    inPerson: data
+    // firstDegree: [myId]
   });
   person.save(function(error, data){
     if(error){
@@ -50,8 +50,10 @@ persons._put = function(data, myId){
       //update the person
       console.log('Find the oldPerson\n');
       oldPerson.update({
-        $set: {inPerson: data},
-        $addToSet: {firstDegree: myId}
+        $set: {inPerson: data}
+        // $addToSet: {firstDegree: myId}
+        //todo
+        //check for whether it is a first degree or not
       },function(err){
         if(err){
           console.log(err);
