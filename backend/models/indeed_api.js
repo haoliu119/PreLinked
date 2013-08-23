@@ -10,18 +10,18 @@ var defaults = {
   latlong:  '1',      // return geo coordiantes for each result
   filter:   '1',      // filter duplicate results
   sort:     'relevance',
-  limit:    '25',
+  limit:    '100',
   highlight: '0'
 }
 
 // GET /jobs/search
-IndeedApi.search = function (query) {
+IndeedApi.search = function (query, start) {
   console.log('- GET /jobs/search - query >> ', query);
   var deferred = Q.defer();
   request({
     method: 'GET',
     url: endPoint,
-    qs: _.extend(defaults, query) // query properties will override defaults
+    qs: _.extend(defaults, query, start) // query properties will override defaults
     },function(error, response, body){
       if (error) {
         deferred.reject(error);
