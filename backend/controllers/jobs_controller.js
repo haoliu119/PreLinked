@@ -17,6 +17,23 @@ jobs_controller.post = function(req, res){
   return deferred.promise;
 };
 
+jobs_controller._post = function(input_job){
+  var deferred = Q.defer();
+
+  var job = new Job({
+    indeedJob: input_job
+  });
+  job.save(function(error, data){
+    if(error){
+      console.log('Unable to save to database: ', error);
+    } else {
+      deferred.resolve(data);
+    }
+  });
+
+  return deferred.promise;
+};
+
 jobs_controller.put = function(req, res){
   var deferred = Q.defer();
   deferred.resolve('put');

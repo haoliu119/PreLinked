@@ -4,6 +4,7 @@ var fs        = require('fs');
 var path      = require('path');
 var _helper   = require('./_helper.js');
 var personsController = require('./persons.js');
+var jobsController = require('../controllers/jobs_controller.js');
 
 var jobs = module.exports = {};
 
@@ -102,6 +103,14 @@ var _saveIndeedJobs = function(indeedSearch){
     indeedSearch = JSON.parse(indeedSearch);
     //API might return string
   }
+  if(indeedSearch.length){
+    _(indeedSearch).each(function(data){
+      jobsController._post(data)
+        .then(function(job){
+          console.log('Indeed job saved successfully: ', job);
+        });
+    });
+  }
 
 };
 
@@ -114,12 +123,13 @@ jobs.searchSorted = function(req, res){
   req.query.q = req.query.q || 'Software Engineer';
   req.query.keywords = req.query.keywords || 'Software Engineer';
   promises.push( _grabMultiplePages(req.query) );
-  promises.push( LinkedInApi.searchConnections(req.session, req.query) );
-  promises.push( LinkedInApi.searchFirstDegree(req.session, req.query) );
+  // promises.push( LinkedInApi.searchConnections(req.session, req.query) );
+  // promises.push( LinkedInApi.searchFirstDegree(req.session, req.query) );
 
   Q.all(promises)
-    .spread(function(indeedSearch, inSearch, inFirstDegree){
-      console.log('IndeedApi data: \n', indeedSearch);
+    // .spread(function(indeedSearch, inSearch, inFirstDegree){
+    .spread(function(indeedSearch){
+      console.log('IndeedApi data: \n');
       _saveIndeedJobs(indeedSearch);
       // console.log('LinkedInApi search data: \n');
       // _saveInSearch(inSearch, req.session.passport.user.id);
