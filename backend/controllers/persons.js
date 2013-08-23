@@ -22,7 +22,7 @@ persons._post = function(data, myId){
   var person = new Person({
     _id: data.id,
     inPerson: data,
-    firstDegree: [mongoose.Types.ObjectId(myId)]
+    firstDegree: [myId]
   });
   person.save(function(error, data){
     if(error){
@@ -31,6 +31,7 @@ persons._post = function(data, myId){
       deferred.resolve(data);
     }
   });
+
   return deferred.promise;
 };
 
@@ -40,14 +41,28 @@ persons._put = function(data, myId){
   var query = Person.findOne({_id: data.id});
   query.exec(function(error, oldPerson){
     if(error){
-      console.log('Unable to find person? ', error);
+      console.log('Unable to find person?\n', error);
       deferred.reject(error);
       return deferred.promise;
     }
+
     if(oldPerson){
       //update the person
-      console.log('Find the oldPerson');
+      console.log('Find the oldPerson\n');
+      oldPerson.update({
+        $set: {inPerson: data},
+        $addToSet: {firstDegree: myId}
+      },function(err){
+        if(err){
+          console.log(err);
+        }else{
+          console.log("Successfully updated\n");
+        }
+      });
+
     } else {
+      //save as a new person
+      console.log('Save a new Person\n');
       persons._post(data, myId)
         .then(function(data){
           deferred.resolve(data);
