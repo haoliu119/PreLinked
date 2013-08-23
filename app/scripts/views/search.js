@@ -7,30 +7,49 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
   template: JST['app/scripts/templates/search.hbs'],
 
+
   initialize: function(options){
     this.jobQuery = options.jobQuery;
     this.searchResultsView  = new PreLinked.Views.SearchResultsView({ collection: new PreLinked.Collections.SearchResultsCollection(), jobQuery: this.jobQuery });
     this.connectionsView    = new PreLinked.Views.ConnectionView({ collection: new PreLinked.Collections.ConnectionsCollection(), jobQuery: this.jobQuery });
+    this.searchFilterView = new PreLinked.Views.SearchfilterView({
+      model: new PreLinked.Models.SearchfilterModel()
+    });
   },
 
   events: {
-    'submit form#form-search': 'submitSearch'
+    'click .searchFilterButton': 'submitSearch',
+    'click .modal-details': 'getModalConnectionDetails',
+    'click .showConnectButton': 'findConnectionsForJob'
   },
 
   submitSearch: function(e) {
     e.preventDefault();
-    this.jobQuery.jobTitle    = this.$el.find('input[name=job-title]').val();
-    this.jobQuery.jobLocation = this.$el.find('input[name=job-location]').val(),
-    this.jobQuery.jobKeywords = this.$el.find('input[name=job-keywords]').val();
-    this.render(true);
+
+    this.searchFilterView.trigger('addSearchFilterOnSubmit');
+    
+    var searchQuery = this.searchFilterView.model.parseDataForSearch();
+    this.getJobResults(searchQuery.title, searchQuery.location, searchQuery.keywords);
+    // this.render(true); // IS THIS IMPORTANT? Rendering the entire page causes add / remove filter events in searchFilter view to not be heard
+  },
+
+  findConnectionsForJob: function(e) {
+    var title = e.currentTarget.offsetParent.parentElement.children[0].childNodes[0].innerText;
+    var company = e.currentTarget.offsetParent.parentElement.children[1].firstChild.nextSibling.innerText; // company
+    var that = this;
+
+    this.getConnections(title, company, '')
+      .done(function(element) {
+        that.$el.find('#connections').html(element);
+      })
+      .fail(function(element){
+        that.$el.find('#connections').html(element);
+      });
+    this.connectionsView.render();
   },
 
   getSearchFilter: function(){
-    var searchFilterModel = new PreLinked.Models.SearchfilterModel();
-    var searchFilterView = new PreLinked.Views.SearchfilterView({
-      model: searchFilterModel
-    });
-    return searchFilterView.render().el;
+    return this.searchFilterView.render().el;
   },
 
   getJobResults: function(title, location, keywords) {

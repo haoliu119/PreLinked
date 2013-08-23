@@ -6,7 +6,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<nav class=\"top-bar\" style=\"\">\n  <ul class=\"title-area\">\n    <!-- Title Area -->\n    <li class=\"name\">\n\n    </li>\n    <!-- Remove the class \"menu-icon\" to get rid of menu icon. Take out \"Menu\" to just have icon alone -->\n    <li class=\"toggle-topbar menu-icon\"><a href=\"\"><span>Menu</span></a></li>\n  </ul>\n\n  <section class=\"top-bar-section\">\n    <ul class=\"left\">\n      <li class=\"has-dropdown not-click\"><a href=\"/grid.php\">Item 1</a>\n\n        <ul class=\"dropdown\"><li class=\"title back js-generated\"><h5><a href=\"#\">« Back</a></h5></li>\n          <li class=\"\"><label>Level One</label></li>\n          <li class=\"\"><a href=\"#search\">Search</a></li>\n          <li class=\"divider\"></li>\n          <li class=\"\"><a href=\"#\">Sub-item 2</a></li>\n        </ul>\n      </li>\n      <li class=\"divider\"></li>\n    </ul>\n    <!-- Right Nav Section -->\n    <ul class=\"right\">\n      <li class=\"divider hide-for-small\"></li>\n      <li class=\"\"><a href=\"/#login\">Log in</a></li>\n      <li class=\"\"><a href=\"/logout\">Log out</a></li>\n    </ul>\n  </section>\n</nav>\n\n\n<div class=\"row\">\n  <div class=\"large-centered columns\">\n    <div class=\"row collapse\">\n      <br><a href=\"#\"><img src=\"https://webfiles.uci.edu/shaohuaz/share/prelinked/prelinked.png\" alt=\"PreLinked\"></a><br>\n    </div>\n  </div>\n</div>\n<hr>\n\n<div id=\"main\">\n  Loading...\n</div>\n\n<hr>\n\n<div class=\"row\">\n  <div class=\"large-centered columns\">\n    <div class=\"row collapse\">\n      <div id=\"footer\">\n        © 2013 PreLinked\n      </div>\n    </div>\n  </div>\n</div>";
+  return "<div class=\"logo-row row\">\n  <nav class=\"top-bar\" style=\"\">\n    <ul class=\"title-area\">\n      <!-- Title Area -->\n      <li class=\"name\">\n\n      </li>\n      <!-- Remove the class \"menu-icon\" to get rid of menu icon. Take out \"Menu\" to just have icon alone -->\n      <li class=\"toggle-topbar menu-icon\"><a href=\"\"><span>Menu</span></a></li>\n    </ul>\n\n    <section class=\"top-bar-section\">\n      <ul class=\"left\">\n        <li class=\"has-dropdown not-click\"><a href=\"/grid.php\">Item 1</a>\n\n          <ul class=\"dropdown\"><li class=\"title back js-generated\"><h5><a href=\"#\">« Back</a></h5></li>\n            <li class=\"\"><label>Level One</label></li>\n            <li class=\"\"><a href=\"#search\">Search</a></li>\n            <li class=\"divider\"></li>\n            <li class=\"\"><a href=\"#\">Sub-item 2</a></li>\n          </ul>\n        </li>\n        <li class=\"divider\"></li>\n      </ul>\n      <!-- Right Nav Section -->\n      <ul class=\"right\">\n        <li class=\"divider hide-for-small\"></li>\n        <li class=\"\"><a href=\"/#login\">Log in</a></li>\n        <li class=\"\"><a href=\"/logout\">Log out</a></li>\n      </ul>\n    </section>\n  </nav>\n\n  <div class=\"large-centered columns\">\n    <div class=\"row collapse\">\n      <br><a href=\"#\"><img class=\"logo\" src=\"https://webfiles.uci.edu/shaohuaz/share/prelinked/prelinked.png\" alt=\"PreLinked\"></a><br>\n    </div>\n  </div>\n</div>\n\n<div id=\"main\">\n  Loading...\n</div>\n\n<div class=\"row\">\n  <div class=\"large-centered columns\">\n    <div class=\"row collapse\">\n      <div id=\"footer\">\n        &copy; PreLinked, 2013\n        <script type=\"text/javascript\">\n          analytics.identify('demo_user', {\n            email : 'demo@prelinked.com'\n          });\n        </script>\n      </div>\n    </div>\n  </div>\n</div>";
   });
 
 this["JST"]["app/scripts/templates/connections.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -15,11 +15,11 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  buffer += "<fieldset >\n  <legend>";
+  buffer += "\n  <h3>Your Network (";
   if (stack1 = helpers.number_of_connections) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.number_of_connections; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + " connections</legend>\n  <div id=\"login-box\">\n    Loading login-box ...\n  </div>\n\n  <div id=\"connection-results\" class=\"scroll\">\n    Loading connection-results ...\n  </div>\n</fieldset>\n";
+    + ")</h3>\n  <div id=\"login-box\">\n    Loading login-box ...\n  </div>\n\n  <div id=\"connection-results\" class=\"scroll\">\n    Loading connection-results ...\n  </div>\n\n";
   return buffer;
   });
 
@@ -97,13 +97,13 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   
-  return "\n    Welcome. You are logged in.\n  ";
+  return "\n    Hello, you are logged in.\n  ";
   }
 
 function program3(depth0,data) {
   
   
-  return "\n    <a class=\"in-login button\">login with linkedin</a>\n  ";
+  return "\n    <p>Log into LinkedIn to access your network.</p>\n    <a class=\"in-login\" href=\"javascript:;\"><img src=\"http://developer.linkedin.com/sites/all/themes/dlc/img/developer_signin.png\"></a>\n  ";
   }
 
   buffer += "<div id=\"login-box\" class=\"panel\">\n  ";
@@ -204,10 +204,54 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 this["JST"]["app/scripts/templates/searchFilter.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
+  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+
+function program1(depth0,data) {
   
+  var buffer = "";
+  buffer += "\n      <a class=\"filter-item button tiny round secondary removeJobTitleFilter removeFilter\">\n        "
+    + escapeExpression((typeof depth0 === functionType ? depth0.apply(depth0) : depth0))
+    + "<span class=\"rm removeJobTitleFilter "
+    + escapeExpression((typeof depth0 === functionType ? depth0.apply(depth0) : depth0))
+    + "\">\n        &times;\n        </span>\n      </a>\n    ";
+  return buffer;
+  }
 
+function program3(depth0,data) {
+  
+  var buffer = "", stack1;
+  buffer += "\n      <a class=\"filter-item button tiny round secondary removeFilter\">\n        ";
+  if (stack1 = helpers.jobLocation) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.jobLocation; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " <span class=\"rm removeJobLocationFilter "
+    + escapeExpression((typeof depth0 === functionType ? depth0.apply(depth0) : depth0))
+    + "\">&times;</span>\n      </a>\n    ";
+  return buffer;
+  }
 
-  return "<h3>Search Jobs</h3>\n<form id=\"form-search\">\n  <label>\n    Job\n    <input name=\"job-title\" type=\"text\" placeholder=\"Example: Software Engineer\">\n  </label>\n  <label>\n    Location\n    <input name=\"job-location\" type=\"text\" placeholder=\"Example: San Francisco, CA\">\n  </label>\n  <label>\n    Keywords\n    <input name=\"job-keywords\" type=\"text\" placeholder=\"Example: Javascript, Node.js\">\n  </label>\n\n  <p>Salary</p>\n  <ul>\n    <li><label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label></li>\n    <li><label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label></li>\n    <li><label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label></li>\n  </ul>\n\n  <p>Title</p>\n  <ul>\n    <li><label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label></li>\n    <li><label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label></li>\n    <li><label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label></li>\n  </ul>\n\n  <p>Company</p>\n  <ul>\n    <li><label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label></li>\n    <li><label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label></li>\n    <li><label><input type=\"checkbox\" name=\"item\" value=\"1\"> item1</label></li>\n  </ul>\n  <button>Search</button>\n</form>";
+function program5(depth0,data) {
+  
+  var buffer = "";
+  buffer += "\n      <a class=\"filter-item button tiny round secondary removeFilter\">\n        "
+    + escapeExpression((typeof depth0 === functionType ? depth0.apply(depth0) : depth0))
+    + "<span class=\"rm removeJobKeywordsFilter "
+    + escapeExpression((typeof depth0 === functionType ? depth0.apply(depth0) : depth0))
+    + "\">&times;</span>\n      </a>\n    ";
+  return buffer;
+  }
+
+  buffer += "<h3>Search Jobs</h3>\n<form id=\"form-search\">\n  <label>\n    Job\n    <input class=\"searchInput\" id=\"jobTitleSearchInput\" name=\"job-title\" type=\"text\" placeholder=\"Example: Software Engineer\">\n  </label>\n  <div>\n    ";
+  stack1 = helpers.each.call(depth0, depth0.jobTitle, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n  </div>\n  <label>\n    Location\n    <input class=\"searchInput\" id=\"locationSearchInput\" name=\"job-location\" type=\"text\" placeholder=\"Example: San Francisco, CA\">\n  </label>\n  <div>\n    ";
+  stack1 = helpers['if'].call(depth0, depth0.jobLocation, {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n  </div>\n  <label>\n    Keywords\n    <input class=\"searchInput\" id=\"keywordsSearchInput\" name=\"job-keywords\" type=\"text\" placeholder=\"Example: Javascript, Node.js\">\n  </label>\n  <div>\n    ";
+  stack1 = helpers.each.call(depth0, depth0.jobKeywords, {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data});
+  if(stack1 || stack1 === 0) { buffer += stack1; }
+  buffer += "\n  </div>\n  <button class=\"searchFilterButton expand\">Search</button>\n</form>";
+  return buffer;
   });
 
 this["JST"]["app/scripts/templates/searchResults.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -216,15 +260,15 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  buffer += "<fieldset>\n  <legend>";
-  if (stack1 = helpers.jobCount) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.jobCount; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + " results for ";
+  buffer += "\n  <h3>Jobs for \"";
   if (stack1 = helpers.jobTitle) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.jobTitle; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</legend>\n  <div class=\"jobResults scroll\">\n    Loading...\n  </div>\n</fieldset>";
+    + "\" (";
+  if (stack1 = helpers.jobCount) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.jobCount; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + ")</h3>\n  <div class=\"jobResults\">\n    Loading...\n  </div>\n";
   return buffer;
   });
 
@@ -310,10 +354,6 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.onmousedown) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.onmousedown; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\n  </li> -->\n</ul>\n<ul class=\"small-2 columns\">\n  <li><a class=\"tiny button right\" href=\"";
-  if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
-    + "\" target=\"_blank\">Info</a></li>\n</ul>\n";
+    + "\n  </li> -->\n</ul>\n<ul class=\"small-2 columns\">\n  <li><a class=\"tiny button right showConnectButton\">Info</a></li>\n</ul>\n";
   return buffer;
   });

@@ -1,9 +1,11 @@
 //this file is compiled to target.css
 //then copied to dist/styles/main.css
+h1, h2, h3, h4
+  font-family Play, helvetica, sans-serif
+#app .logo
+  width 250px
 #app ul li
   list-style-type none
-// #app .page
-//   display none
 #app .page.current
   display block
 #app fieldset .scroll
@@ -31,7 +33,7 @@
 .job
   clear both
 .job h2
-  font-size 18px
+  font-size 22px
   line-height 22px
   margin-bottom 5px
 .job .info
@@ -40,3 +42,22 @@
   line-height 18px
 .job .location
   color #aaa
+#search-filters .filter-item .rm
+  font-weight normal
+  margin-left 8px
+  color #aaa
+#search-filters .filter-item:hover .rm
+  color #000
+#search-filters .filter-item .rm:hover
+  color red
+#job-results
+  border-radius 5px
+  background-color #fff
+#search-filters
+  margin-top 20px
+  background-color #d1f2ff
+#connections
+  margin-top 20px
+  background-color #ddd
+body
+  background-color #f2f2f2
