@@ -6,7 +6,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class=\"logo-row row\">\n  <nav class=\"top-bar\" style=\"\">\n    <ul class=\"title-area\">\n      <!-- Title Area -->\n      <li class=\"name\">\n\n      </li>\n      <!-- Remove the class \"menu-icon\" to get rid of menu icon. Take out \"Menu\" to just have icon alone -->\n      <li class=\"toggle-topbar menu-icon\"><a href=\"\"><span>Menu</span></a></li>\n    </ul>\n\n    <section class=\"top-bar-section\">\n      <ul class=\"left\">\n        <li class=\"has-dropdown not-click\"><a href=\"/grid.php\">Item 1</a>\n\n          <ul class=\"dropdown\"><li class=\"title back js-generated\"><h5><a href=\"#\">« Back</a></h5></li>\n            <li class=\"\"><label>Level One</label></li>\n            <li class=\"\"><a href=\"#search\">Search</a></li>\n            <li class=\"divider\"></li>\n            <li class=\"\"><a href=\"#\">Sub-item 2</a></li>\n          </ul>\n        </li>\n        <li class=\"divider\"></li>\n      </ul>\n      <!-- Right Nav Section -->\n      <ul class=\"right\">\n        <li class=\"divider hide-for-small\"></li>\n        <li class=\"\"><a href=\"/#login\">Log in</a></li>\n        <li class=\"\"><a href=\"/logout\">Log out</a></li>\n      </ul>\n    </section>\n  </nav>\n\n  <div class=\"large-centered columns\">\n    <div class=\"row collapse\">\n      <br><a href=\"#\"><img class=\"logo\" src=\"https://webfiles.uci.edu/shaohuaz/share/prelinked/prelinked.png\" alt=\"PreLinked\"></a><br>\n    </div>\n  </div>\n</div>\n\n<div id=\"main\">\n  Loading...\n</div>\n\n<div class=\"row\">\n  <div class=\"large-centered columns\">\n    <div class=\"row collapse\">\n      <div id=\"footer\">\n        &copy; PreLinked, 2013\n        <script type=\"text/javascript\">\n          analytics.identify('demo_user', {\n            email : 'demo@prelinked.com'\n          });\n        </script>\n      </div>\n    </div>\n  </div>\n</div>";
+  return "<div class=\"logo-row row\">\n  <nav class=\"top-bar\" style=\"\">\n    <ul class=\"title-area\">\n      <!-- Title Area -->\n      <li class=\"name\">\n\n      </li>\n      <!-- Remove the class \"menu-icon\" to get rid of menu icon. Take out \"Menu\" to just have icon alone -->\n      <li class=\"toggle-topbar menu-icon\"><a href=\"\"><span>Menu</span></a></li>\n    </ul>\n\n    <section class=\"top-bar-section\">\n      <ul class=\"left\">\n        <li class=\"has-dropdown not-click\"><a href=\"/grid.php\">Item 1</a>\n\n          <ul class=\"dropdown\"><li class=\"title back js-generated\"><h5><a href=\"#\">« Back</a></h5></li>\n            <li class=\"\"><label>Level One</label></li>\n            <li class=\"\"><a href=\"#search\">Search</a></li>\n            <li class=\"divider\"></li>\n            <li class=\"\"><a href=\"#\">Sub-item 2</a></li>\n          </ul>\n        </li>\n        <li class=\"divider\"></li>\n      </ul>\n      <!-- Right Nav Section -->\n      <ul class=\"right\">\n        <li class=\"divider hide-for-small\"></li>\n        <li class=\"\"><a href=\"/#login\">Log in</a></li>\n        <li class=\"\"><a href=\"/logout\">Log out</a></li>\n      </ul>\n    </section>\n  </nav>\n\n  <div class=\"large-centered columns\">\n    <div class=\"row collapse\">\n      <br><a href=\"#\"><img class=\"logo\" src=\"https://webfiles.uci.edu/shaohuaz/share/prelinked/prelinked.png\" alt=\"PreLinked\"></a><br>\n    </div>\n  </div>\n</div>\n\n<div id=\"main\">\n  <div class=\"loader\"></div>\n</div>\n\n<div class=\"row\">\n  <div class=\"large-centered columns\">\n    <div class=\"row collapse\">\n      <div id=\"footer\">\n        &copy; PreLinked, 2013\n        <script type=\"text/javascript\">\n          analytics.identify('demo_user', {\n            email : 'demo@prelinked.com'\n          });\n        </script>\n      </div>\n    </div>\n  </div>\n</div>";
   });
 
 this["JST"]["app/scripts/templates/connections.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -19,7 +19,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.number_of_connections) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.number_of_connections; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + ")</h3>\n  <div id=\"login-box\">\n    Loading login-box ...\n  </div>\n\n  <div id=\"connection-results\" class=\"scroll\">\n    Loading connection-results ...\n  </div>\n\n";
+    + ")</h3>\n  <div id=\"login-box\">\n    <div class=\"loader\"></div>\n  </div>\n\n  <div id=\"connection-results\" class=\"scroll\">\n    <div class=\"loader\"></div>\n  </div>\n\n";
   return buffer;
   });
 
@@ -198,7 +198,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class=\"row\">\n  <div id=\"search-filters\" class=\"large-3 columns\">\n    SeachFilter loading...\n  </div>\n  <div id=\"job-results\" class=\"large-5 columns\">\n    JobResults loading...\n  </div>\n  <div id=\"connections\" class=\"large-4 columns\">\n    Connections loading...\n  </div>\n</div>";
+  return "<div class=\"row\">\n  <div id=\"search-filters\" class=\"large-3 columns\">\n    <div class=\"loader\"></div>\n  </div>\n  <div id=\"job-results\" class=\"large-5 columns\">\n    <div class=\"loader\"></div>\n  </div>\n  <div id=\"connections\" class=\"large-4 columns\">\n    <div class=\"loader\"></div>\n  </div>\n</div>";
   });
 
 this["JST"]["app/scripts/templates/searchFilter.hbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -268,7 +268,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.jobCount) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.jobCount; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + ")</h3>\n  <div class=\"jobResults\">\n    Loading...\n  </div>\n";
+    + ")</h3>\n  <div class=\"jobResults\">\n    <div class=\"loader\"></div>\n  </div>\n";
   return buffer;
   });
 
