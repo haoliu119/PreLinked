@@ -7,7 +7,6 @@ PreLinked.Collections.SearchResultsCollection = Backbone.Collection.extend({
     url: '/jobs/search',
 
     comparator: function (model) {
-      console.log('pScore', model.get('pScore'));
-      return parseFloat( model.get('pScore') );
+      return -1 * parseFloat( model.get('pScore') );
     }
 });

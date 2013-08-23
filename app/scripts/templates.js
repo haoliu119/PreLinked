@@ -260,7 +260,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  buffer += "\n  <h3>Jobs for \"";
+  buffer += "<h3>Jobs for \"";
   if (stack1 = helpers.jobTitle) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.jobTitle; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -268,7 +268,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.jobCount) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.jobCount; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + ")</h3>\n  <div class=\"jobResults\">\n    Loading...\n  </div>\n";
+    + ")</h3>\n\n<div>\n  <a class=\"sortAsc\" href=\"\">sort asc</a>\n  <span> | </span>\n  <a class=\"sortDesc\" href=\"\">sort desc</a>\n</div>\n\n<div class=\"jobResults\">\n  Loading...\n</div>\n";
   return buffer;
   });
 
@@ -296,9 +296,13 @@ function program1(depth0,data) {
   if (stack1 = helpers.jobtitle) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.jobtitle; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</a></h2>\n<div><a id=\"sort\" href=\"javascript:;\">sort</a></div>\n<ul class=\"small-10 info columns\">\n  <li class=\"company\">";
+    + "</a></h2>\n<ul class=\"small-10 info columns\">\n  <li class=\"company\">";
   if (stack1 = helpers.company) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.company; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + " ";
+  if (stack1 = helpers.pScore) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.pScore; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
     + "</li>\n  <li class=\"location\">\n    ";
   stack1 = helpers['if'].call(depth0, depth0.city, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
