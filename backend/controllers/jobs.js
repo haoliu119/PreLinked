@@ -7,36 +7,39 @@ var personsController = require('./persons.js');
 
 var jobs = module.exports = {};
 
+var _grabMultiplePages = function(req_query) {
+  var deferred = Q.defer();
+  var promises = [];
+  for(var i = 0; i < 100; i+=25) {
+    var output = IndeedApi.search(req_query, {start: i});
+    promises.push(output);
+  }
+
+  Q.all(promises)
+    .then(function(data){
+      data = _(data).map(function(item){
+        return JSON.parse(item);
+      });
+      data = _(data).flatten(true); //only flatten the first level
+      deferred.resolve(data);
+    });
+
+  return deferred.promise;
+};
+
+
 // GET /jobs/search
 jobs.search = function(req, res){
   console.log('- GET /jobs/search - Controller -> IndeedApi.searchConnections >> ');
   // IndeedApi endpoit
 
-  var grabMultiplePages = function() {
-    var deferred = Q.defer();
-    var promises = [];
-    var jobResults = [];
-    for(var i = 0; i < 100; i+=25) {
-      var output = IndeedApi.search(req.query, {start: i});
-      promises.push(output);
-    }
-
-    Q.all(promises)
-      .spread(function(data, data1, data2, data3){
-
-        var finalData = [data, data1, data2, data3];
-        deferred.resolve(finalData);
-      });
-
-    return deferred.promise;
-  };
-
-  grabMultiplePages().then(function(json) {
-    console.log('Paginated JSON Data length',json.length);
-    _helper.resolved(req, res, json);
-  }, function(error) {
-    _helper.rejected(req, res, error);
-  });
+  _grabMultiplePages(req.query)
+    .then(function(json) {
+      console.log('Paginated JSON Data length',json.length);
+      _helper.resolved(req, res, json);
+    }, function(error) {
+      _helper.rejected(req, res, error);
+    });
 
   // console.log('job results ************', jobResults);
 
