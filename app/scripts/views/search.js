@@ -56,6 +56,9 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   },
 
   getJobResults: function(title, company, location, keywords) {
+    if(!title && !company && !keywords) {
+      company = 'google';
+    }
     var deferred = $.Deferred();
     var that = this;
 
