@@ -7,8 +7,13 @@ _helper.sessionNotAvl = function(req, res){
 
 _helper.resolved = function(req, res, json){
   console.log('- '+ req.method + ' ' + req.url + ' - Resolved <<');
-  res.set('Content-Type', 'application/json');
-  res.send(json);
+  res.writeHead(200, {
+    'Content-Type': 'application/json'
+  });
+  console.log('typeof json >>> ', typeof json);
+  // console.log('json', json);
+  res.write(json);
+  res.end();
 };
 
 _helper.rejected = function(req, res, error){

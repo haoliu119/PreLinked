@@ -15,12 +15,12 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     this.searchFilterView = new PreLinked.Views.SearchfilterView({
       model: new PreLinked.Models.SearchfilterModel()
     });
+    this.searchResultsView.collection.on('showConnections', this.findConnectionsForJob, this);
   },
 
   events: {
     'click .searchFilterButton': 'submitSearch',
     'click .modal-details': 'getModalConnectionDetails',
-    'click .showConnectButton': 'findConnectionsForJob'
   },
 
   submitSearch: function(e) {
@@ -34,12 +34,14 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     // this.render(true); // IS THIS IMPORTANT? Rendering the entire page causes add / remove filter events in searchFilter view to not be heard
   },
 
-  findConnectionsForJob: function(e) {
-    var title = e.currentTarget.offsetParent.parentElement.children[0].childNodes[0].innerText;
-    var company = e.currentTarget.offsetParent.parentElement.children[1].firstChild.nextSibling.innerText; // company
-    var that = this;
+  findConnectionsForJob: function(data) {
 
-    this.getConnections(title, company, '')
+    console.log('showConnections for data >>>', data);
+
+    var keywords = this.searchFilterView.model.get('jobKeywords').join(' ');
+    var titles   = this.searchFilterView.model.get('jobTitle').join(' ');
+    var that = this;
+    this.getConnections(titles, data.company, keywords)
       .done(function(element) {
         that.$el.find('#connections').html(element);
       })
@@ -80,8 +82,16 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   getConnections: function(title, company, keywords) {
     var deferred = $.Deferred();
     var that = this;
+
+    var query = {
+      title: title,
+      keywords: keywords
+    };
+    if (company && company.length > 0){
+      query['company-name'] = company;
+    }
     this.connectionsView.collection
-      .fetch( { data: { title: title, 'company-name': company, keywords: keywords } } )
+      .fetch( { data: query } )
       .done(function(data){
         // that.connectionsView.jobQuery.title = title;
         console.log('GET people/search return >>>', data);
