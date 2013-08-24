@@ -5,6 +5,7 @@ var path      = require('path');
 var _helper   = require('./_helper.js');
 var personsController = require('./persons.js');
 var jobsController = require('../controllers/jobs_controller.js');
+var natural = require('natural');
 
 var jobs = module.exports = {};
 
@@ -152,9 +153,31 @@ var _getJobsAndConnections = function(){
 };
 
 var _getScore = function(job, connections){
-  console.log('job title from indeed\n', job);
-  console.log('connections positions from linkedin\n', JSON.stringify( _(connections).pluck("positions") ) );
-  return Math.random();
+  var employer = job.company;
+  console.log('employer from indeed\n', employer);
+
+  var friends = [];
+  _(connections).each(function(item){
+    var output = {};
+    output.id = item.id;
+    if(item.positions && item.positions.values && item.positions.values.length){
+      output.positions = _(item.positions.values).map( function(item){
+        return item.company && item.company.name;
+      } );
+    }
+    var stringDistances = _(output.positions).map(function(pos){
+      return natural.JaroWinklerDistance(employer, pos);
+    });
+    output.stringDistance = _(stringDistances).max();
+    friends.push(output);
+  });
+
+  friends = _(friends).sortBy(function(item){
+    return -1 * item.stringDistance;
+  });
+  console.log('best match from linkedin connections\n', friends[0] );
+  console.log('Best match score\n', friends[0].stringDistance );
+  return friends[0].stringDistance;
 };
 
 jobs.searchSorted = function(req, res){
