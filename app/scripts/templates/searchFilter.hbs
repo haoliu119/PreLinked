@@ -2,7 +2,10 @@
 <form id="form-search">
   <label>
     Job Title
-    <input class="searchInput" id="jobTitleSearchInput" name="job-title" type="text" placeholder="Example: Software Engineer">
+    {{! <div class="inputFilter"> }}
+      <input class="searchInput" id="jobTitleSearchInput" name="job-title" type="text" placeholder="Example: Software Engineer">
+      {{! <button class="addFilterButton tiny">Add</button> }}
+    {{! <div> }}
   </label>
   <div>
     {{#each jobTitle}}
@@ -15,7 +18,10 @@
   </div>
   <label>
     Company
-    <input class="searchInput" id="companySearchInput" name="company" type="text" placeholder="Example: Google">
+    <div class="inputFilter">
+      <input class="searchInput" id="companySearchInput" name="company" type="text" placeholder="Example: Google">
+      <button class="addFilterButton tiny">Add</button>
+    </div>
   </label>
   <div>
     {{#each company}}
@@ -39,7 +45,10 @@
   </div>
   <label>
     Keywords
-    <input class="searchInput" id="keywordsSearchInput" name="job-keywords" type="text" placeholder="Example: Javascript, Node.js">
+    <div class="inputFilter">
+      <input class="searchInput" id="keywordsSearchInput" name="job-keywords" type="text" placeholder="Example: Javascript, Node.js">
+      <button class="addFilterButton tiny">Add</button>
+    </div>
   </label>
   <div>
     {{#each jobKeywords}}
