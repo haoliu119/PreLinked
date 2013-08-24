@@ -37,7 +37,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
       $('#search-filters').css('margin-top', '');
     };
 
-    if( $(window).width() < 900 ) {
+    if( $(window).width() < 768) {
       reset();
       return;
     }
@@ -51,12 +51,12 @@ PreLinked.Views.AppView = Backbone.View.extend({
 
     if(top > 150) {
       htResCheck && $('#connections').addClass('scroll').css({
-        marginTop: top - 130,
+        marginTop: (top > resultsHt-viewportHt ? resultsHt-viewportHt : top) - 130,
         maxHeight: viewportHt - 20
       });
       $('#search-filters').css('margin-top', top - 130);
     } else {
-      htResCheck && reset();
+      reset();
     }
   },
 
