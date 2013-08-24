@@ -2,7 +2,6 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var jobSchema = new Schema({
-  _id: { type: String, unique: true },
   indeedJob: Schema.Types.Mixed
 });
 
