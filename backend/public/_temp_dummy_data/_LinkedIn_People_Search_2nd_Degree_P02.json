@@ -1,0 +1,1116 @@
+{
+  "facets": {
+    "_total": 1,
+    "values": [{
+      "buckets": {
+        "_total": 4,
+        "values": [
+          {
+            "code": "F",
+            "count": 0,
+            "name": "1st Connections"
+          },
+          {
+            "code": "S",
+            "count": 67,
+            "name": "2nd Connections"
+          },
+          {
+            "code": "A",
+            "count": 191,
+            "name": "Group Members"
+          },
+          {
+            "code": "O",
+            "count": 963,
+            "name": "3rd + Everyone Else"
+          }
+        ]
+      },
+      "code": "network",
+      "name": "Relationship"
+    }]
+  },
+  "people": {
+    "_count": 25,
+    "_start": 25,
+    "_total": 67,
+    "values": [
+      {
+        "distance": 2,
+        "firstName": "Jeffrey",
+        "headline": "Business Intelligence Architect at Royal Caribbean International",
+        "id": "onN15fGKQe",
+        "industry": "Leisure, Travel & Tourism",
+        "lastName": "Lehmann",
+        "location": {"name": "Miami/Fort Lauderdale Area"},
+        "numConnections": 268,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_4dB69TyQCk4DwUYPZ7NJ9GJQhX0CIgfPsw_M9GRc03ItqJ41NfboZC7JaExgesaxJov4J5de2xep",
+        "positions": {
+          "_total": 2,
+          "values": [
+            {
+              "company": {
+                "id": 165777,
+                "industry": "Leisure, Travel & Tourism",
+                "name": "Royal Caribbean Cruises Ltd",
+                "size": "10,001+ employees",
+                "ticker": "RCL",
+                "type": "Public Company"
+              },
+              "id": 25147718,
+              "isCurrent": true,
+              "startDate": {
+                "month": 12,
+                "year": 2005
+              },
+              "summary": "-Recognized for successfully completing 9.3 upgrade (from SAS 9.2) and SAS 9.2 upgrade (from SAS 9.1.3) for both development and production servers on time and under budget\n-Implemented original SAS 9.1.3 on a new AIX production server\n-Provided support for UNIX/AIX administration, SAS software development, SAS statistical models and Oracle and PC data support to users in various business units\n-Coded SAS procedures to convert and manipulate a 500GB customer prospect database into a manageable SAS data set\n-Utilized SAS Macro and PROC SQL writing and UNIX shell scripting skills\n-Troubleshot issues via logs both at the server/services/start-up level as well as those in submitted SAS user processes/code -Worked with UNIX and Workstations team to resolve server/laptop issues outside of SAS\n-Provided on-call support for production problem resolution\n-Applied and followed-up on hot fixes where required\n-Managed SAS access and security through Management Console access to metadata server\n-Recommended system improvements including those involving sizing, memory utilization, performance impacts and temp file and user storage\n-Documented server architecture as well as user-level processes and workstation installation\n-Served as liason to SAS technical, sales, licensing and training support\n-Continued to provide efficient and single-handed support to the BI SAS platform resulting in nearly 100% planned application up-time and services availability in spite of the increased overall system utilization by multiple business user departments\n-Started and periodically host a local in-house SAS user group for training, new product demos and ultimately for the purpose of increased in-house SAS usage and ROI to the company\n-Interfaced with SAS vendor and conducted SAS-sponsored training and introductory software demos for prospective internal users\n\u2013Met with SAS users periodically in various departments to review initiatives, to offer coding assistance and to provide training",
+              "title": "SAS Architect/Lead"
+            },
+            {
+              "company": {
+                "id": 165777,
+                "industry": "Leisure, Travel & Tourism",
+                "name": "Royal Caribbean Cruises, Ltd.",
+                "ticker": "RCL",
+                "type": "Public Company"
+              },
+              "id": 44047869,
+              "isCurrent": true,
+              "startDate": {
+                "month": 12,
+                "year": 2005
+              },
+              "summary": "-Participated in OBIEE+ POC metadata and dashboard rollout for Marine business unit\n-Successfully administered and configured Hyperion Performance Scorecard to users in Marine department in 2010\n-Played a key role in the 2009 Hyperion Interactive Reporting System 9.3.1 Upgrade project from Brio 6.6, executed in partnership with an external vendor. The project team migrated 1,500 reporting users, domestic and international, using 1,800+ interactive reports and 1,650 scheduled reports.\n-Led the effort in late 2009 and through 2011 to complete  Hyperion Interactive Reporting product upgrades to Service Pack 3 (9.3.1.3) and version 9.3.3 entirely with internal resources on time and under budget\n-Ensured that Hyperion IR developers/contractors and Essbase developers on the BI team had sufficient assignments\n-Interviewed and hired new Hyperion IR and Essbase contractors\n-Gathered and documented Marketing Data Mart requirements in Rational Requisite Pro and relayed them to a third party consulting firm hired to implement the data mart\n-Authored SOW consulting agreements and technical specification documents for Hyperion upgrades\n-Installed and conducted a Siebel Analytics proof of concept demo for business users\n-Created estimates for IT Data Warehouse or BI tool impact for new business user initiatives/projects\n-Attended KPI Partner training in OBIEE+ Dashboard Building, January 2010 and OBIEE+ administration, November 2009\n-Attended Hyperion Solutions 2007 and 2007 Oracle Open World",
+              "title": "Business Intelligence Architect/Team Lead"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/jeffrey-lehmann/0/441/a",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=1080010&authType=OUT_OF_NETWORK&authToken=Y2gn&trk=api*a3139351*s3214061*"},
+        "specialties": "OBIEE+ administration and dashboard development; Hyperion Interactive Reporting administration; SAS administration and development using Enterprise Guide and Enterprise Miner; Software purchasing, licensing and statements of work; marketing/revenue management business intelligence initiatives; reservations, travel partner API, financial, international banking and logistics/freight forwarding software applications; requirements analysis and business process design; Fluent in Spanish",
+        "summary": "IT professional with broad experience in all aspects of business intelligence, software development, requirements analysis, team leadership, project management and strategy.  Direct experience with SAS and Oracle business intelligence architecture, strategy and team lead/project management for UNIX-based Oracle Data Warehouse/Data Mart BI initiatives.   Special interest in Oracle Business Intelligence Enterprise Edition + (OBIEE+), SAS Enterprise Miner and Data Mining, business intelligence dashboards for external partners and making full use of upgraded business intelligence applications."
+      },
+      {
+        "distance": 2,
+        "firstName": "Habib",
+        "headline": "Volunteer Success Team Coordinator at San Francisco Professional Career Network Meet Up",
+        "id": "TNcnr4YV04",
+        "industry": "Computer Software",
+        "lastName": "Lichaa",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_UZgaG6BbvxeuhCTVzy0AG5BVcJ7CC3rVJMWlG5BFHVUtg5FscYSGuLidJlfg36A9sUxrDGLMqRK8",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "industry": "Computer Software",
+              "name": "San Francisco Professional Career Network Meet Up"
+            },
+            "id": 429716486,
+            "isCurrent": true,
+            "startDate": {
+              "month": 10,
+              "year": 2012
+            },
+            "summary": "Volunteer Member of the Leadership Team:  \n I am a  volunteer as Success Team Coordinator- Create and Mentor Success teams for SFPCN Meetup.\n Programs Team member- Mentor of Programing team\nWas on the Executive Director search Committee\nHelping with logistics and Greeting new members.",
+            "title": "Volunteer Success Team Coordinator"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/lichaa",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=4218837&authType=OUT_OF_NETWORK&authToken=elZ3&trk=api*a3139351*s3214061*"},
+        "specialties": "Adding Return On Investment value to every project\nTest case creation from Requirements\nTraining and Mentoring\nLeadership and vision",
+        "summary": "\u2022 Certified Tester FL (ASTQB)\n\n\u2022 Innovative self-starter who thrives in environments requiring high-level strategy and big-picture thinking. Proven supervisory skills and meticulous attention to detail, utilized in driving profitable and cost-effective collaboration for successful project completion. Certified tester with extensive knowledge of all aspects of the system development lifecycle. Adept at quickly and successfully responding to ever changing environments and an effective communicator capable of managing and motivating multidisciplinary professional teams. \n\n\u2022 Proven regression testing skills utilized in supporting efforts of cross-functional teams and external cross-discipline resources. Success-oriented with exceptional test script construction expertise. \n\n\u2022 Quality Assurance Professional with a record of developing and supporting successful projects and solutions incorporating a wide range of applications and technologies. \n\n\u2022 Consistently recognized and tasked by executive management to improve organizational effectiveness and efficiency. \n\n\u2022 Exceptional leadership that aligns business processes and infrastructure to realize cost savings, accelerate performance, and sustain strategic corporate flexibility."
+      },
+      {
+        "distance": 2,
+        "firstName": "Vidal",
+        "headline": "Director of Engineering @WalmartLabs",
+        "id": "tYm67dM7lB",
+        "industry": "Computer Software",
+        "lastName": "Graupera",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_I3FrdIsfPwxd4rMHdi5idWoDxWoWZ9WHW617dWWj8uOMbtYebFcpbdj1lFEnRAeXoGLa6acsQTgz",
+        "positions": {
+          "_total": 2,
+          "values": [
+            {
+              "company": {
+                "id": 2646,
+                "industry": "Retail",
+                "name": "Walmart",
+                "size": "10,001+ employees",
+                "ticker": "WMT",
+                "type": "Public Company"
+              },
+              "id": 319579332,
+              "isCurrent": true,
+              "startDate": {
+                "month": 9,
+                "year": 2012
+              },
+              "summary": "Classrooms by Walmart (http://classrooms.walmart.com) a new tool designed to help teachers easily communicate to parents what supplies are needed for their classroom throughout the school year.",
+              "title": "Director of Engineering @WalmartLabs"
+            },
+            {
+              "company": {
+                "id": 2563775,
+                "industry": "Computer Software",
+                "name": "The VDG Group",
+                "size": "1-10 employees",
+                "type": "Privately Held"
+              },
+              "id": 9141395,
+              "isCurrent": true,
+              "startDate": {
+                "month": 9,
+                "year": 2005
+              },
+              "summary": "Developing web and cross platform mobile applications.\n\nWrote and published multiple consumer oriented and professional websites using Ruby on Rails, (X)HTML, CSS, JavaScript, Linux, Amazon EC2, Apache, Mongrel, Capistrano, RSpec, and MySQL, e.g. http://contacthero.com (a contact management system for the web, Blackberry and iPhone devices), and others listed at http://vdggroup.com/portfolio. See demonstrations, here: http://vimeo.com/vgraupera/videos.\n\nNotable client projects include:\n\nWALMART LABS, Mountain View, CA   Sept 2011 -\n\nPAYPAL, San Jose CA              Oct 2010 - Sept 2011\nWorking hands on with PayPal engineers on mobile (web) wallet application enabling customers to pay using PayPal at point of sale. \n\nRHOMOBILE, Cupertino, CA \tJan 2009 - March 2010\nDeveloping Cross Platform Enterprise Applications for Smartphones\n\nDeveloped multiple enterprise smartphone applications using rhomobile framework for iPhone, Blackberry, et. al. Wrote server synchronization modules. Developed native handheld clients for Wikipedia (top 100 in App Store free apps), SugarCRM, Remedy and others.\n\nALEXA INTERNET (AMAZON.COM), San Francisco, CA \tOct 2008 \u2013 Dec 2008\nDeveloping Analytics Application in Zend PHP Framework and Amazon Web Services\n\nCNET Networks, San Francisco, CA\t\t\t\t\t\tFall 2007\nEnhancing Existing Ruby on Rails Enterprise Application\n\nWorked directly with stake holders to take over and enhance an existing Ruby on Rails application for Enterprise Business Systems that manages internal projects at CNET. Completed project ahead of schedule and under budget.",
+              "title": "Principal"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/vidalgraupera",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=13521&authType=OUT_OF_NETWORK&authToken=-Ffr&trk=api*a3139351*s3214061*"},
+        "specialties": "Vidal is a hands on senior software engineer, architect and engineering leader passionate about creating consumer oriented websites and applications. Specifically, he is one of America's leading designers and developers of mobile software applications. \n\nMost recently he has been focusing on creating mobile applications and using Ruby on Rails.",
+        "summary": "Vidal is an Engineering Leader, Entrepreneur, and Completely Hands on Senior Ruby on Rails & Mobile Developer.\n\nI am co author of \"Pro Smartphone Cross-Platform Development: iPhone, Blackberry, Windows Mobile and Android Development and Distribution\" from Apress. http://apress.com/book/view/1430228687"
+      },
+      {
+        "firstName": "private",
+        "id": "private",
+        "lastName": "private"
+      },
+      {
+        "distance": 2,
+        "firstName": "Flaviu",
+        "headline": "Sr. Computer Software Engineer (Java Programmer / Architect 12++ yrs.)",
+        "id": "6iN2CXMRB8",
+        "industry": "Computer Software",
+        "lastName": "Chindris",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 114,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_OPQTE1BuAI5TKvukyq9tEKLf1acmyvukyAtOElFO2DiY_AUXtvnSXAPrjQBl0tSe0Kkx59MXVn8X",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 227310,
+              "industry": "Information Technology and Services",
+              "name": "Fujitsu",
+              "size": "1001-5000 employees",
+              "type": "Privately Held"
+            },
+            "id": 363007317,
+            "isCurrent": true,
+            "startDate": {
+              "month": 9,
+              "year": 2012
+            },
+            "summary": "Analyzed, deployed, tested and maintained various Java applications on BC Hydro Intranet and Internet website (www.bchydro.com).\nAdministered WebLogic server clusters to host Java / J2EE enterprise applications. Wrote Disaster & Recovery plans.\nUsed eclipse IDE to write Java code (EJB, JSP, Struts, JSTL, Servlets, XML, SOAP, WSDL, JSON, REST, AXIS, JDBC, Spring, Hibernate, JPA, JMS). Wrote PL/SQL scripts to access and manipulate data in Oracle DB (stored procedures, triggers, functions, packages). Used various design patterns like Spring MVC, Factory, Façade, Adapter, Strategy, Singleton and many, others to write polymorphic, generic and reusable code for high scalability and extensibility. Performed build and release tasks using CVS, Maven, Hudson, SVN, Ant and GNUMake, Wrote shell scripts on Linux to automate daily programming tasks (AWK, sed, grep, RegEx).",
+            "title": "Sr. Computer Software Consultant"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/flaviu-chindris/5/bbb/41",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=17914225&authType=OUT_OF_NETWORK&authToken=xVEl&trk=api*a3139351*s3214061*"},
+        "summary": "I am a senior computer software engineer with over 12 years of hands on, writing code, programming experience (Java, C++, Oracle PL/SQL, MySQL, Python, PHP, Linux, Windows, Solaris / SunOS, Apache, Servlet/JSP on Tomcat / Jetty, EJB / MDB / JMS on JBoss / WebLogic / WebSphere, Spring, Hibernate).\nI have been developing code in an Agile process for more than 5 years. \n\nI worked for small, medium and large companies like Hewlett-Packard, eBay, Ariba and Fujitsu just to name a few.\n\nI used Scrum, Test Driven Methodology and xTreme Programming throughout the last 6 years of my computer programming experience. \nI wrote code, for many major and minor releases and patches, throughout all phases of the software development life cycle.\nI am very experienced with the modern OOP design patterns (GoF) like Strategy, Facade, Singleton, Dynamic Proxy, Factory, Adapter just to name a few.\nI can work on all tiers of the enterprise, multi-tier, application from the front end (HTML, CSS, JavaScript, AJAX, Prototype, jQuery, Dojo, ExtJS, GWT, YUI, MooTools, Canvas) to the middle tier (Servlet / JSP / JSTL, Struts, EJB, MDB, JMS, IoC & Dependency Injection with Spring and ORM / JPA with Hibernate) and all the way to the back end (Oracle PL/SQL, stored procedures, functions, packages, triggers, query tuning with Oracle Optimizer hints and indexes, TKPROF, SQLTrace etc.).\nI am very comfortable writing code on both Windows and Linux platforms and I am EXTREMELY proficient with UNIX shell scripting (Bash, Korn, TCSH) and other \ninterpreted languages like Python & Perl.\n\nI have excellent communication skills and I can work equally well in a team environment or alone, with minimum supervision.\n\nI am a self starter, motivated and goal oriented.\n\nAttached is my resume for your review.\n\nI am Canadian citizen.\nI am also incorporated in British Columbia, Canada, so I can take (long / short) independent contracting projects."
+      },
+      {
+        "distance": 2,
+        "firstName": "Aditya",
+        "headline": "Product Design and Development - GE Healthcare",
+        "id": "2T__m5Ih-l",
+        "industry": "Information Technology and Services",
+        "lastName": "KN Swamy",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 433,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1016,
+              "industry": "Hospital & Health Care",
+              "name": "GE Healthcare",
+              "size": "10,001+ employees",
+              "ticker": "GE",
+              "type": "Public Company"
+            },
+            "id": 413983949,
+            "isCurrent": true,
+            "startDate": {
+              "month": 6,
+              "year": 2013
+            },
+            "title": "Product Design and Development Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/adityakn",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=7426151&authType=OUT_OF_NETWORK&authToken=doZf&trk=api*a3139351*s3214061*"},
+        "specialties": "JAVA, J2EE, Spring, XML, JavaScript, Open Source Frameworks, Web technologies.",
+        "summary": "Information Technology Engineer/Manager with more than 15 years of experience and in-depth understanding of system-software engineering life cycle phases. Have experience in executing projects from inception to completion, making feasibility studies and interfacing between various business and technology groups.\n          Expertise in Java J2EE technologies, web technologies, networks programming and multi-threaded server programming, middle ware and web-enabled multifunctional, multi-platform distributed systems. Proficient in providing end-to-end technical solutions for e-commerce, N-tire applications in domains like Risk applications, Insurance, Export/Import Trade Systems, Banking, Financial Institutions, Card Services, Stock Exchange, Online Search services. Have experience in requirement analysis, project specifications, application integration, component design, database design and development."
+      },
+      {
+        "distance": 2,
+        "firstName": "Michelle",
+        "headline": "Recruiting (Executives, Engineers, Sales, Tech & Finance), International Headhunter, 中美人才国际猎头, MichelleYouBiz.com",
+        "id": "YP3j65yAKb",
+        "industry": "Human Resources",
+        "lastName": "(Actively Recruiting) You",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_WfMGODDwccjRW3Thw2RjOmswczJIwChhISSgOmI9HrDRN6c8LdWaKax4JUMqH532e2UpAdMAaoai",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "industry": "Staffing and Recruiting",
+              "name": "MichelleYouBiz.com"
+            },
+            "id": 271070287,
+            "isCurrent": true,
+            "startDate": {"year": 2010},
+            "summary": "Specialized Recruiting Areas:\nMid-senior level and executive talent in IT, Engineering and Finance, executive headhunting, international talent search and bilingual talent recruiting (English/Chinese)\n\n    Executives\n    Managers\n    Engineers\n    CPAs/Accountants\n    Sales/Business Development\n    Translators/Interpreters\n    Office Staff\n    Other Professionals\n    Bilingual Talent (English/Chinese)\n\nRecruiting independent contractors in the following areas:\nIT, Translation, Interpreting, Editing, Finance, Tax, Accounting, Graphic Design\n\nHelp entrepreneurs to start up a new business and assist small to large companies to grow in California, USA and China with the right people.\n\n--- Check out current job openings in USA & China on www.MichelleYouBiz.com ---\n\n*** Jobs Jobs Jobs Jobs Jobs Jobs Jobs Jobs Jobs Jobs Jobs Jobs Jobs Jobs Jobs Jobs ***",
+            "title": "Independent Recruiter (IT, Engineering, Finance) (USA & China)"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/michelleyoutaxpro",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=31437243&authType=OUT_OF_NETWORK&authToken=dJH1&trk=api*a3139351*s3214061*"},
+        "specialties": "**************\n\u2022 Industries: EE, Telecom, IT, Technology, Finance\n\u2022 Executive, Technical, Sales & Financial Recruiting\n\u2022 International Headhunting (USA & China)\n\u2022 Silicon Valley Top Talent Acquisition\n\u2022 Passive Candidates Development\n\u2022 Tsinghua Alumni Recruiting\n\u2022 Talent Acquisition \n\u2022 中美跨国公司，中高级人才招聘\n\nPrimary Locations of New Jobs:\n=========================\n\n\u2022 Silicon Valley, San Francisco Bay Area, CA, USA\n\u2022 Beijing, Shanghai, Shenzhen, Suzhou, China\n\n*** Jobs Jobs Jobs Jobs Jobs Jobs Jobs ***",
+        "summary": "Contact Me Now:\n=============\n      ~ Email resume to MichelleYouBiz@gmail.com\n      ~ Check new jobs in USA & China on MichelleYouBiz.com \n      ~ Follow me on Twitter (@MichelleYouBiz)\n      ~ 微博:http://blog.sina.com.cn/michelleyoubiz\n\nWelcome to connect with me on LinkedIn for new job & business opportunities. I'm an open networker. \n\n中美跨国及本地公司，中高级人才招聘 (International Headhunter)\n\nRecruiting talents for fast growing international companies, Pre-IPOs and local businesses in the US and China.\nHiring: Executives, Managers, Engineers, Sales, Marketing, Finance\n\n\nJob Openings in USA/China:\n=====================\n(for all current job openings and JDs, please visit www.MichelleYouBiz.com)\n\n---- San Francisco Bay Area ----\n\nProduct Manager (VoIP)\nOperations Manager (System, Software, IP)\nDirector of Engineering (VoIP, Large Scale Web Apps)\nBuild & Release Engineer\nSenior C++ Engineer (Linux, Platform, Media, Audio)\nSenior Java Engineer (Spring, Hibernate, Cloud, Telecom)\nDevops Engineer/System & Network Admin (VoIP)\nStrategic Account Manager\nPre-Sales Engineer in EE\nSales (ERP, English/Chinese)\nExperienced Sales in EE\nFinancial Service Professionals (Sales)\nSales Admin (Bilingual)\n\n--- China (Beijing, Shanghai, Suzhou, Shenzhen) ---\n\nVP of Engineering in EE\nDirector of Engineering in EE\nRegional Sales Manager in EE\nGlobal Key Account Manager in EE\nGeneral Manager in Optical Cable & Products\nArchitect or Development Manager (Software)\nPrinciple Group Program Manager (Software)\nFirewall Architect \nSenior C++ Engineer (Linux, Platform, Media, Audio)\nSenior Java Engineer (Telecom)\nDevops Engineer (Linux)\nCustomer Engineer \n软件测试工程师\n系统／网络管理员 (Linux)\nProject Manager in EE\nElectronics Engineer\nSoftware/Hardware Engineer in EE & Automation\n\n--- more jobs on www.MichelleYouBiz.com in USA & China ---\n\n*** Jobs Jobs Jobs Jobs Jobs Jobs Jobs Jobs Jobs Jobs Jobs Jobs Jobs ***\n\n***********"
+      },
+      {
+        "distance": 2,
+        "firstName": "Guy",
+        "headline": "柯進強   ガイ⋅クラゲス   Technical Writer, Software Trainer and Language-Learning Game Creator at EduTainMe",
+        "id": "8g3rJ5Sj0d",
+        "industry": "Information Technology and Services",
+        "lastName": "Klages",
+        "location": {"name": "Greater Boston Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_Y5gdzlYCbTNf9Da-OiDVz-RtbhKinDO-pCWnz-ZCZLk1WWdt-_SLUt2uWmrpzo0OxQxcVvEt_2vE",
+        "positions": {
+          "_total": 5,
+          "values": [
+            {
+              "company": {
+                "id": 644563,
+                "industry": "Wireless",
+                "name": "ROAM™",
+                "size": "51-200 employees",
+                "type": "Privately Held"
+              },
+              "id": 410890557,
+              "isCurrent": true,
+              "startDate": {
+                "month": 6,
+                "year": 2013
+              },
+              "title": "Contract Technical Writer and Software Trainer"
+            },
+            {
+              "company": {
+                "id": 2858633,
+                "industry": "Individual & Family Services",
+                "name": "Angel Ed Inc.",
+                "size": "1-10 employees",
+                "type": "Educational Institution"
+              },
+              "id": 420851119,
+              "isCurrent": true,
+              "startDate": {
+                "month": 11,
+                "year": 2012
+              },
+              "title": "Academic Advisor"
+            },
+            {
+              "company": {
+                "industry": "Recreational Facilities and Services",
+                "name": "Brookline Public Library"
+              },
+              "id": 242284404,
+              "isCurrent": true,
+              "startDate": {
+                "month": 3,
+                "year": 2011
+              },
+              "summary": "* Teaching English as a Second Language to high school, college and adult learners",
+              "title": "ESL Teacher"
+            },
+            {
+              "company": {
+                "industry": "Information Technology and Services",
+                "name": "MICA"
+              },
+              "id": 149528817,
+              "isCurrent": true,
+              "startDate": {
+                "month": 1,
+                "year": 2001
+              },
+              "summary": "* Suggest features and other product improvements\n* Find and track bugs and other inconsistencies\n* Document user manuals, help and other files\n* Assist in various demoing capacities\n* Google Docs, Help & Manual, Snag-It, Flash, AS3",
+              "title": "Consultant, Writer, Tester, Evangelist"
+            },
+            {
+              "company": {
+                "industry": "Information Technology and Services",
+                "name": "(self)"
+              },
+              "id": 122638910,
+              "isCurrent": true,
+              "startDate": {
+                "month": 1,
+                "year": 1990
+              },
+              "summary": "",
+              "title": "Trainer and Computer Troubleshooter"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/klages",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=17661981&authType=OUT_OF_NETWORK&authToken=iuSe&trk=api*a3139351*s3214061*"},
+        "summary": "Can be reached at guy.klages@gmail.com or (419) 855-2437.\n\nSimultaneous (day/evening) dual careers:\n\u2022 Technology .... ROAM; OpSec, VA, ADP, HP, Microsoft, PSD, SRS, AMAT, Read Rite, Apple\n\u2022 Education ...... Angel Ed, EduTainMe, Boston Public Library; Seattle Parks & Rec, Talk Group\n\nRoles ...... Tech Writer, Software Trainer, ESL Teacher, Academic Director, DB Designer\nCities ...... Boston, Hong Kong, Saigon, San Francisco, Shanghai, Singapore, Taipei, Bangkok\n\nVolunteered as a Teacher, Group Leader and Tutor for homeless or needy kids in\nCalifornia, China, Vietnam, Thailand, Singapore, Seattle, and Boston\n\nSpecialties: In the medical, financial and education industries:\n\u2022 Trainer of various topics, in-person and on-line\n\u2022 Curriculum and Activity Writer\n\u2022 Technical Writer of software/hardware\n\u2022 Project Manager of software development\n\u2022 Database Developer / DBA\n\u2022 Organize/improve/standardize any design/process/system\n\u2022 Explain/train complex concepts/procedures"
+      },
+      {
+        "distance": 2,
+        "firstName": "Roshi",
+        "headline": "Global Product/Partner Marketing and Account Manager Professional",
+        "id": "B-LEEBDgIn",
+        "industry": "Computer Software",
+        "lastName": "Yousefi",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_RNyrI5blRag7t_eIMK7fI6PpMIwit_dIJre7I6qTQSx1SFOwBtup5Q87B6IpAkHFVBYaXT6_zqg-",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "industry": "Computer Software",
+              "name": "Consultant"
+            },
+            "id": 73486496,
+            "isCurrent": true,
+            "startDate": {
+              "month": 5,
+              "year": 2009
+            },
+            "summary": "Consultant specializing in global account management, partner /product marketing programs including, product strategy, roadmaps, usability,  research & benchmarking, and launches, online and offline campaigns, tracking metrics such as conversion, site traffic, and campaign ROI, and customized websites, customer acquisition, social media, and collaterals and cross functional coordination.\n\nDevelop sales support materials including case studies, webinars, presentations, tradeshow materials, web content, messaging and collateral creation, special promotions, etc.",
+            "title": "Partner / Product Marketing - Account and Business Development Manager"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/roshiyousefi",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=118373&authType=OUT_OF_NETWORK&authToken=_YLM&trk=api*a3139351*s3214061*"},
+        "summary": "Demonstrated success in meeting/exceeding revenue goals via: \n\u2022\tSoftware product management/product and partner marketing including inbound and outbound initiatives.\n\u2022\tDiverse technical background in, online marketing, VOD, interactive and Internet TV, advertising, middleware, broadcast, storage, digital media, consumer electronics, SaaS, entertainment, Utility, Cloud, Mobile, Advertising, and many more.\n\u2022\tChannel marketing programs: incentive and retention programs\n\u2022\tAccount management:  exceptional recruitment and relationship management\n\nPragmatic management style: \n\u2022\tSuccessful leader in delivering complex technology products on time and budget, based on direct experience as a software developer\n\u2022\tEncourage a team-spirited environment while keeping production quality high and cost low\n\u2022\tAble to instill vision in clients, partners, associates, and staff\n\u2022\tSolid record hiring, training, motivating, and retaining employees\n\u2022\tDefining product strategies, roadmap, and go to market plans.\n\u2022\tExcellent communication and presentation skills; liaison between C-level business management and technical teams both internally and externally.\n\nProven history designing marketing and partner programs:\n\u2022\tManage programs and client accounts from inception through execution; provide superior customer service that leads to successful relationships\n\u2022\tAbility to gain client confidence and develop relationships built on mutual trust and respect\n\u2022\tCreate sales tools spanning advertising, web sites, CDs, product launches, customized marketing materials, promotions and tracking metrics and campaign ROI.\n\nSpecialties: Product Management/Product Marketing/Partner Marketing  - Channel  and Field Marketing - Business Development and Account Management - International Marketing -  Strategic Planning - online Initiatives (such as social media, customized websites and portals, email marketing) - Profitability Improvement - Client Services - Event Management"
+      },
+      {
+        "distance": 2,
+        "firstName": "Mark",
+        "headline": "Principal Engineer at @WalmartLabs",
+        "id": "gqFakMk_wc",
+        "industry": "Computer Software",
+        "lastName": "Paine",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 127,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_OurBLns9udn7LUV4KenHLqdnu78aFOo4paXHLqEbPuNO4sjZtEhUwNOWCFhAkJIq07-WoP4VdN6g",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "industry": "Computer Software",
+              "name": "@WalmartLabs"
+            },
+            "id": 200082094,
+            "isCurrent": true,
+            "startDate": {
+              "month": 4,
+              "year": 2011
+            },
+            "summary": "Worked to develop an overhauled righthealth.com web site for Kosmix, before we were acquired by Walmart to become founding members of @WalmartLabs. In its previous incarnation, righthealth.com was a high volume SEO/SEM arbitrage money-maker with content largely generated algorithmically through search.\nDeveloped a social shopping application, Shopycat, again written in Rails, to leverage what we refer to as the social shopping genome, constructed by way of processing signals from various social platforms.\nVarious web application, API, and data visualization development.",
+            "title": "Principal Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/therealmarkpaine",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=4443589&authType=OUT_OF_NETWORK&authToken=So-l&trk=api*a3139351*s3214061*"},
+        "summary": "Recruiters:\n* I am happy in my current position.\n* I am not looking.\n* I would never, ever, consider a position off of the San Francisco peninsula, nor south of the San Francisco airport. Ever.\n* Not even if they have a shuttle.\nThat may sound harsh, but let's just agree to save ourselves a whole lot of time.\n\nExtremely versatile software developer with over 20 years of experience, a record of producing tangible results and intellectual property, and a knack for helping teams be in the right place at the right time. Proven ability to design and implement intuitive, easy to learn, and easy to use software solutions independently or as a member of a team. Trustworthy, diplomatic, calm, resourceful, and especially skilled at taming complex problems.\n\nAdobe Systems (10 years of C programming)\nRandom Noise (6 months, all Java)\nOverture Inc (5 years, Java, Python)\nVilla Bientu (2 years, owner, marketer, Ruby/Rails)\nIndependent developer (6 years, Ruby/Rails, Python/Django/PostGIS, OCaml, Objective-C, Google App Engine)\n@WalmartLabs (2+ years)\n\nSpecialties: Resourcefulness: finding and deploying the appropriate tools for the job. In the past this has included C, Objective-C, Java, Python, Ruby, Rails, Django, OCaml, MySQL, PostgreSQL. Front-end, back-end, native mobile applications, it doesn't matter to me."
+      },
+      {
+        "distance": 2,
+        "firstName": "Ragi",
+        "headline": "Entrepreneur & Geospatial Software Architect",
+        "id": "bjV_IXtYuT",
+        "industry": "Computer Software",
+        "lastName": "Burhum",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0__NWrbZnfZdBzObZsDlE7bRiiVeCcOXds3Pg7bRlpLSnF38OVftMpdUL-q6GHgiHnCBwaey_QqIF0",
+        "positions": {
+          "_total": 3,
+          "values": [
+            {
+              "company": {
+                "industry": "Computer Software",
+                "name": "AmigoCloud"
+              },
+              "id": 297658628,
+              "isCurrent": true,
+              "startDate": {
+                "month": 7,
+                "year": 2012
+              },
+              "summary": "Easy to use Mobile geospatial data collection software",
+              "title": "Co-Founder"
+            },
+            {
+              "company": {
+                "industry": "Computer Software",
+                "name": "GeoMeetup"
+              },
+              "id": 298431648,
+              "isCurrent": true,
+              "startDate": {
+                "month": 10,
+                "year": 2010
+              },
+              "summary": "The GeoMeetup is the most successful developer-oriented Meetup related to geospatial technologies in the world. Every meeting gathers 100+ people that come from various companies in the Bay Area (Google, Twitter, Facebook, Apple, etc), medium sized GIS consulting companies, as well as non-profit organizations.",
+              "title": "Organizer"
+            },
+            {
+              "company": {
+                "id": 570768,
+                "industry": "Computer Software",
+                "name": "Burhum LLC - GIS Consulting",
+                "size": "1-10 employees",
+                "type": "Privately Held"
+              },
+              "id": 91795304,
+              "isCurrent": true,
+              "startDate": {
+                "month": 8,
+                "year": 2009
+              },
+              "summary": "Mapping, GIS and Mobile applications consulting.",
+              "title": "Owner"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/rburhum",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=14926439&authType=OUT_OF_NETWORK&authToken=hAj1&trk=api*a3139351*s3214061*"},
+        "specialties": "Spatial Technologies - ESRI-oriented as well as Open Source. \n\nMobile, Desktop or Server GIS. Mapping, LBS",
+        "summary": "Have worked on projects to build/revamp/maintain GIS core technologies/data pipelines for ESRI and Microsoft as well as provided solutions for organizations like the National GeoSpatial Agency (formerly NIMA), National Geographic, United Kingdom Hydrographic Office, Navteq, TeleAtlas, several International Governments etc.\n\nHave also founded and built a luxury fashion e-commerce website (ModeWalk.com) that attracted 1.8m in Venture Capital and was featured in several well known publications like Vogue.com and the Wall Street journal. ModeWalk was part of the  amazing Stanford StartX accelerator program (Summer 2011)."
+      },
+      {
+        "distance": 2,
+        "firstName": "Sree",
+        "headline": "Senior Software Applications Architect / Big Data / Recommendation Systems",
+        "id": "dFQi8JISFM",
+        "industry": "Information Technology and Services",
+        "lastName": "Vaddi",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_vJv4J_PdfLSPfZVCzZcIJ3C6D5RASYVCcUTbJ3A9-Qf3tVDGJ05qBT54iDUaaMRmNVB69QinJ43G",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 6919,
+              "industry": "Information Technology and Services",
+              "name": "Independent Consulting",
+              "size": "1001-5000 employees",
+              "type": "Privately Held"
+            },
+            "id": 316206942,
+            "isCurrent": true,
+            "startDate": {
+              "month": 11,
+              "year": 2011
+            },
+            "summary": "Role: Contributor\nClient: Apache\nProject: Drill\nhttp://incubator.apache.org/drill/\n\n\nRole: Senior Software Applications Architect\nClient: WellsFargo, San Francisco, CA\nhttp://wellsfargo.com/\n\nProject: Recommendation System - Offers\n\nLily Enterprise, Myrrix, Solr,  Hadoop (CM/CDH4), R, JDK 1.7, RHEL, SLES\n\n\n\nRole: Senior Software Application Architect\nClient: Dorado/CoreLogic, San Mateo, CA\nhttp://dorado.com/\n\nProjects: Correspondent Lending System (CLS) and PrimeLending System (PL)",
+            "title": "Senior Software Applications Architect"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/sreeatwork",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=1116500&authType=OUT_OF_NETWORK&authToken=n-xV&trk=api*a3139351*s3214061*"},
+        "summary": "4 yrs Big Data, 15 yrs of Java, Object-Oriented design and development in n-tier development and Distributed Computing experience\n-\tExperience in the industries: Financial Services (wholesale, mortgage, investment and brokerage), HealthCare, Web (marketplace, crowdsourcing and advertising), News and Entertainment, Property & Casualty Insurance, Software Product Development and Scientific Research.\n-\tArchitect and Sr. developer of SaaS, PaaS, IaaS, Cloud, Hadoop, Rich Enterprise Applications, n-tier Enterprise Systems, Enterprise Application Integration (EAI) in web-enabling legacy systems IBM Mainframe and SAP, SOA Web Services with Java2 and J2EE.\n-\tExcellent experience in all phases of SDLC namely Designing, Developing, Performance Testing and Implementing Web-2.0, Web-UI, Server-Side and Middleware applications.\n-\tExperience working with Big 5 Consulting and Fortune 100 Companies.\n-\tLead teams of sizes 2-80 across globe in different time zones, cultures and dialects.\n-\tAdministrator of J2EE Containers (Geronimo, WebSphere, Weblogic, JBoss, Tomcat).\n-\tDiligent worker and Quick Learner with Excellent Problem Solving and Mentoring Skills.\n\nSpecialties: Big Data management using Hadoop and its eco-systems\nMapReduce programming in java, python (mrjob)\nhttp://sreevaddi.blogspot.com/2012/05/hadoop-200-alpha-standalone-and-jdk7u4.html\nBuilding RESTful Web services using Jersey"
+      },
+      {
+        "distance": 2,
+        "firstName": "Aihui",
+        "headline": "Founder & CEO at Love With Food",
+        "id": "QCfohntqT3",
+        "industry": "Internet",
+        "lastName": "Ong",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_zVbmGhiW1VeAaNT9vyLjG_loAy0rucl9BZPAGC1ZaMIhPPQnMpBCuGbn0-xffrKVqJ5KDLDvXHD1",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1438841,
+              "industry": "Internet",
+              "name": "Love With Food",
+              "size": "1-10 employees",
+              "type": "Privately Held"
+            },
+            "id": 146964832,
+            "isCurrent": true,
+            "startDate": {
+              "month": 9,
+              "year": 2011
+            },
+            "summary": "LoveWithFood.com is the easiest way to discover GREAT food for a GREAT cause. \n\nLove With Food is the Amazon of Gourmet Experience. Discover and sample the best gourmet food delivered to your door for only $10/month. For every box sent, a meal is donated to feed hungry children in America. \n\nLove With Food also offers an e-commerce store offering the best, unique gourmet foods sold in America. \n\nLove With Food was named by InStyle Magazine as Best of the Web for 2012 and is privated funded by VCs like 500 Startups, Teec Angel Fun and Great Oaks VC. Love With Food has also collaborated with celebrities like Andrew Zimmern and had him to curate a tasty and fun themed box named Weird, Wild and Wonderful. See video here > http://youtu.be/BQsnvfj4jhY \n\nIn less than 18 months, Love With Food has donated more than 100,000 meals to food banks all across America.",
+            "title": "Founder & CEO"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/aihui",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=2401452&authType=OUT_OF_NETWORK&authToken=YYSF&trk=api*a3139351*s3214061*"},
+        "specialties": "Consumer Web / Technical Engineer\nTechnology Consulting - B2B and B2C\nEnterprise Software - Financial & HR systems",
+        "summary": "1 cup Entrepreneur, 1/2 cup Swimmer, 1/2 cup Runner, 1 cup Rails developer, 1 cup Cook, 1 bag of Smiles"
+      },
+      {
+        "distance": 2,
+        "firstName": "Tom",
+        "headline": "Technical Lead/Senior Quality Engineer for TiVo client software and Flash-based HDUI",
+        "id": "OeKF7He5SL",
+        "industry": "Entertainment",
+        "lastName": "Hart",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 346,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_0-CI4tvff_A2PpS8grrN4rq1iiNuPVg8gKnN4AXfp58yuYEhPqtFnlK3DaqPrjyuOA8zcnnPsI9T",
+        "positions": {
+          "_total": 2,
+          "values": [
+            {
+              "company": {
+                "id": 166454,
+                "industry": "Consumer Electronics",
+                "name": "TiVo",
+                "ticker": "tivo",
+                "type": "Public Company"
+              },
+              "id": 141691283,
+              "isCurrent": true,
+              "startDate": {
+                "month": 8,
+                "year": 2010
+              },
+              "summary": "Responsible for leading the testing of the TiVo client software, test case and test suite development and assignment, tracking and reporting the client sw changes and the Adobe Flash-based HDUI changes, plus release management, kernel signing and publishing, and pushing of new software releases for internal and external test groups.",
+              "title": "Technical Lead/Sr. Quality Engineer"
+            },
+            {
+              "company": {
+                "industry": "Entertainment",
+                "name": "Plumera Productions"
+              },
+              "id": 104802122,
+              "isCurrent": true,
+              "startDate": {
+                "month": 4,
+                "year": 2007
+              },
+              "summary": "",
+              "title": "Owner"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/tahart",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=3259330&authType=OUT_OF_NETWORK&authToken=nFtj&trk=api*a3139351*s3214061*"},
+        "specialties": "Black/Gray box testing, IDE testing, automation testing using JS or Python, localization, mobile device testing, Linux, Unix, Agile Scrum. \n\nI am especially familiar with the software product life cycle on Windows and Mac OS X. \n\nVideo Editing, Effects, Animation, Screenwriting, Storyboarding, Tech Writing, IT, Graphic Design, Digital Printing, Digital Photography, Web Design, DVD Authoring, Final Cut Pro, SVG, XML, HTML, CSS, Flash, ActionScript, RSS 2.0, Selenium, MEL.",
+        "summary": "I am an experienced Quality Engineer and artist with the ability to learn and adapt to new technology quickly. I look forward to continuing to gain experience in software development and also expand upon my creative skills and experience in relation to print publishing, writing, illustration, web publishing, film, photography, animation, and visual effects."
+      },
+      {
+        "distance": 2,
+        "firstName": "Wolfram",
+        "headline": "CTO at Handle.com",
+        "id": "9VdO_NvTdJ",
+        "industry": "Internet",
+        "lastName": "Arnold",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_O-y3pnXOzciGA537pN7tpqqOzBLm1_37yKeYpqbGotAY2F9ftquDtN12RJ5lKkh_0AY01PvsNhgE",
+        "positions": {
+          "_total": 2,
+          "values": [
+            {
+              "company": {
+                "id": 2288763,
+                "industry": "Consumer Services",
+                "name": "Handle, Inc",
+                "size": "1-10 employees",
+                "type": "Privately Held"
+              },
+              "id": 345058324,
+              "isCurrent": true,
+              "startDate": {
+                "month": 10,
+                "year": 2012
+              },
+              "summary": "Handle offers a new email experience and consists of a backend server, a web frontend and an iOS app. Technologies: Rails, Heroku, Postgres, AWS S3, Resque, Mongo, EventMachine, Memcache, Knockout.js, Backbone.js, d3.js, crossfilter.js, rspec, iOS\n\n* Engineered 90% reduction in technical debt, improvements in code quality and unit test effectiveness, as measured by retrospectives.\n* Established automatic site monitoring systems through New Relic, live dashboards and in-house diagnostics solutions, reducing response time to serious issues to less then 60 minutes and improving uptime to > 99%.\n* Led re-architecture effort to use Reactor Pattern with EventMachine for email retrieval, reducing email arrival latencies from > 5 minutes to < 5 seconds.\n* Developed synchronization architecture to keep mobile and web clients sync'ed in real time through a mix of Operational Transforms and Opportunistic Concurrency.\n* Optimized site scalability across two orders of magnitude in traffic increase.\n* Built site analytics as a combination of Mixpanel and hand-crafted database queries visualized with dc.js, d3.js and crossfilter.js\n* Conducted formal security audit with outside firm. No glaring problems were found.\n* Directed a team of six engineers.",
+              "title": "CTO"
+            },
+            {
+              "company": {
+                "id": 270553,
+                "industry": "Internet",
+                "name": "RubyFocus",
+                "size": "1-10 employees",
+                "type": "Privately Held"
+              },
+              "id": 71918810,
+              "isCurrent": true,
+              "startDate": {
+                "month": 8,
+                "year": 2007
+              },
+              "summary": "RubyFocus is a boutique consulting firm specializing in Ruby-on-Rails, based in San Francisco, CA.  We help our clients with:\n* Iterating product market fit and taking applications to launch\n* Securing and scaling their applications\n* Conducting technical due diligence audits\n* Forging a best practices culture and building world-class teams\n\nOur clients and projects include:\n* Handle.com. Set up core architecture and development culture for backend. Led single-page app development effort with backbone.js.\n* Conducted due diligence and technical audits for various clients including Accenture and Battery Ventures.\n* Yottamark. Advised company on app deployment strategy.\n* Marakana and BlazingCloud (2009-2012). Rails instructor for week-long or evening developer training classes in Rails best practices and Test-Driven-Development.\n* In collaboration with Blazingcloud.net: For the JCC in San Francisco, built a web-based CMS with Radiant and custom extensions, set up SOAP-based data feed from a legacy SQL Server database.\n* Mightyverse.com. Turned demo site for language learning and sharing into a launched product, hosting on Heroku and using Postgres for multi-language full-text search. Trained Director of Engineering in Rails and TDD to take over development independently.\n* FanSnap.com. Established Rails best practices and conventions, set up Continuous Integration, and Capistrano deployment. Developed features for the company's event ticket search in Rails and jQuery.\n* EduFire.com. Built company's online learning site using Rails, Ajax and Javascript; trained CTO in Rails and TDD through remote pair-programming. Attached >95% test coverage which proved key for hiring talent.\n* Papercheck.com Implemented PCI-compliant payment workflow with Paypal and Authorize.net. Designed fraud-prevention logic for online purchases.",
+              "title": "Principal Consultant"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/wolframarnold",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=10244&authType=OUT_OF_NETWORK&authToken=ArMC&trk=api*a3139351*s3214061*"},
+        "summary": "Veteran technology leader recognized for:\n* Transforming software organizations into strike teams of high cohesion\n* Establishing Lean Startup cultural values including Test-Driven Development, Pair Programming and Continuous Deployment\n* Enabling rapid product iteration by tightly controlling technical debt.\n* Data-driven product strategy\n* Leveraging the ecosystem of open source and cloud services to focus available resources on the building core business value.\n\nInterested in:\n* Companies building disruptive technologies in big data, machine learning, mobile\n* Teams that become more than the sum of their parts\n\nSpecialties: Ruby-on-Rails, Javascript frameworks, reactor pattern, scaling web apps, app security, TDD (test-driven development), analytics and business intelligence, big data, payment systems, clean architecture; vibrant organizations of highly motivated teams; technical leadership."
+      },
+      {
+        "distance": 2,
+        "firstName": "Justin",
+        "headline": "iOS Engineer",
+        "id": "noUz5qmFMl",
+        "industry": "Computer Software",
+        "lastName": "Middleton",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 486,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_tm_nI-uq2a5K6OdFrdidIKOV2ec0X4eFrWBdIlao1aifRyxbOePs5AsXG5Bhb0WIPSTeX9rVpG-Y",
+        "positions": {
+          "_total": 3,
+          "values": [
+            {
+              "company": {
+                "id": 2774793,
+                "industry": "Consumer Electronics",
+                "name": "Whistle Labs",
+                "size": "11-50 employees",
+                "type": "Privately Held"
+              },
+              "id": 363456923,
+              "isCurrent": true,
+              "startDate": {
+                "month": 2,
+                "year": 2013
+              },
+              "summary": "Whistle is the world\u2019s first technology company dedicated to helping pets live longer and healthier lives. Through intuitive devices and a large comparative database of pet health information, Whistle is creating a new standard for preventative care and fueling groundbreaking insights to transform veterinary medical research. The San Francisco-based company is backed by DCM, other leading venture firms and executives across the pet, retail, and technology industries.",
+              "title": "iOS Lead"
+            },
+            {
+              "company": {
+                "industry": "Computer Software",
+                "name": "Self Employed"
+              },
+              "id": 333218770,
+              "isCurrent": true,
+              "startDate": {
+                "month": 9,
+                "year": 2012
+              },
+              "title": "Independent Consultant"
+            },
+            {
+              "company": {
+                "id": 769078,
+                "industry": "Industrial Automation",
+                "name": "LoadOut Technologies",
+                "size": "1-10 employees",
+                "type": "Privately Held"
+              },
+              "id": 344013991,
+              "isCurrent": true,
+              "startDate": {"year": 2012},
+              "summary": "Contribute to full-stack development of the LoadOut News Network, including:\n\n* iOS client application development\n* Backend development using Python, web2py, and PostgreSQL\n* Operations automation and backend monitoring (Icinga/nagios, Jenkins, and friends)\n* Source management (git/github)",
+              "title": "Consultant, Client and Server Development"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/justinmiddleton",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=5224929&authType=OUT_OF_NETWORK&authToken=xASb&trk=api*a3139351*s3214061*"},
+        "specialties": "Languages and Tools: Objective-C, Python, Java, Bourne, SQL, and various other specialized languages and tools such as GNU R, AppleScript, ant, dot, and make, and friends.\n\nSkills: Application and tools development; engineering team management.",
+        "summary": "A hands-on technology professionall with excellent communication and interpersonal skills and a strong background in software and tools development in UNIX/Linux/OSX and iOS environments."
+      },
+      {
+        "distance": 2,
+        "firstName": "Chase",
+        "headline": "Front-End Web Developer at Nest Labs",
+        "id": "bNlKgDyDnE",
+        "industry": "Internet",
+        "lastName": "Martin",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 493,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_OPQTE-Nm0IP3pvykOqTOElzG1wcmyvukyttOElFO2DiY_AUXtvnSXAPrjQBl0tSe0Kkx59JGafFX",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 2374003,
+              "industry": "Consumer Electronics",
+              "name": "Nest Labs",
+              "size": "201-500 employees",
+              "type": "Privately Held"
+            },
+            "id": 404864526,
+            "isCurrent": true,
+            "startDate": {
+              "month": 6,
+              "year": 2013
+            },
+            "summary": "- Web engineering with JavaScript, HTML5, CSS3/SCSS, AJAX",
+            "title": "Front-End Web Developer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/chasemartin",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=8884139&authType=OPENLINK&authToken=ymc7&trk=api*a3139351*s3214061*"},
+        "specialties": "Expert full-stack, secure, accessible, cross-browser, scalable object-oriented LAMP web development including mobile devices using PHP5/MySQL/Apache 2, JavaScript ES5, HTML5, and CSS3 for the better part of a decade as well as 2+ years (each) with Ruby/RoR and Java, and 1+ years with Python, Perl, and C#.NET.",
+        "summary": "I am a Software Engineer in San Francisco, a member of Mensa, and a proactive internet engineering enthusiast. I thrive in diverse, cutting-edge environments which require a mix of theoretical, creative and highly technical skills."
+      },
+      {
+        "distance": 2,
+        "firstName": "Prasanth",
+        "headline": "Certified Senior Product Manager - always interested in the next HOT Opportunity",
+        "id": "oNZl-YGwnf",
+        "industry": "Computer Software",
+        "lastName": "Padmanabhan, MBA'd & Agile PM",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_DjKFeM99T2lkCpSI_4_NeVnviEbWCxSI7VkZeV5bp7PMgRswTR8I6sAWDXFn3ZuF2OtJbgcV9IQW",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "industry": "Computer Software",
+              "name": "BeAspired"
+            },
+            "id": 41221770,
+            "isCurrent": true,
+            "startDate": {
+              "month": 6,
+              "year": 2008
+            },
+            "summary": "- Currently manage all Product Marketing/Marketing Management, Go-To-Market strategy, Marketing Promotions, Project Managment, and Product Management for upcoming database and suite of products \n- Product Management: PRD's (Scrum) Specs, Use Case Development, Roadmap, and Product Development\n- Application Development: Launched online and mobile applications: iOS, Android, Windows 8 and created entire user experience for them. \n- Business Development - seeking partnerships with Web 2.0 Startups and Online Advertising Markets (Admob, Adbrite, Adify, etc) for co-marketing deals, revenue-sharing deals, or ad/traffic sharing. \n - Advertising - enlisting/seeking advertising and digital media buying partnerships to promote and create buzz and awareness for BeAspired product and features for sponsorships.\n- Manage all lead generation and website content\n- Working closely with engineering and UI for all aspects of development and graphics design/user experience.\n- Manage developers and in the future marketing/PR people.\n- Working with executive management on all feature planning, sales development, and corporate positioning (M&A, Finance, P&L).",
+            "title": "Executive Partner & Board Member - Chief Product Officer and New Business Development"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/abogi",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=252298&authType=OUT_OF_NETWORK&authToken=VIwi&trk=api*a3139351*s3214061*"},
+        "summary": "- I am looking for a hot Software or Consumer Product Management role  to continue growing my expertise and knowledge of both software and the cutting edge of Product Management.\n\n- I am a Certified ScrumMastered/Agile Product Manager with more than a decade of Product and Technical Experience with Internet/Software/ and Social Media experience. I've worked for several successful F500 companies such as Yahoo!, Apple, Cisco and several Internet and Media Startups.\n\n - I have a Masters in Business Administration(MBA), and Bachelors in Computer Science and Mathematics. I live in the great Bay Area. \n\n - I am also media trained. I was on TV! - http://www.ktvu.com/videos/news/mix-and-mingle-for-work-pinkslipmixerscom-targets/vC3CB/\n\nSpecialties: Certified Product Manager - AIPMM, ScrumMastered/Agile Trained\nMarketing: Promotions, Campaign Management.  Product Management, Product Marketing/Marketing Management, Business Development\n\nTechnology -  Knowledge of: HTML 5, CSS, Ruby/Groovy on Rails/GrailsJAVA (J2EE, J2SE), PHP/mySQL MongoDB/noSQL, XML/XSL SQL Queries, DBMS theory, Mobile Application Development: iOS, Android, Windows 8"
+      },
+      {
+        "distance": 2,
+        "firstName": "Ismail",
+        "headline": "Member of Technical Staff at Salesforce.com",
+        "id": "H52GqSEwIf",
+        "industry": "Computer Software",
+        "lastName": "Kacimi",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 255,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_jOgiHr9XUoG03ka6xMypHP9qBEvfi3a6xJWyHPXke7T0p5JQl4SfQ1KEMXzr86fopjxjFq9TJlI-",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 3185,
+              "industry": "Internet",
+              "name": "Salesforce.com",
+              "size": "5001-10,000 employees",
+              "ticker": "CRM",
+              "type": "Public Company"
+            },
+            "id": 260621179,
+            "isCurrent": true,
+            "startDate": {
+              "month": 2,
+              "year": 2012
+            },
+            "title": "Member of Technical Staff"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/ismailkacimi",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=4027141&authType=OUT_OF_NETWORK&authToken=lHAR&trk=api*a3139351*s3214061*"},
+        "specialties": "e-commerce platform, website design, database design, SEO, design tools like uml, Game digital distribution",
+        "summary": "Skills\t\nLanguages: C\\C++, Java, Perl, PHP, JS/HTML, SQL, XML, AJAX,.\nExperience with windows, Linux/Unix MAC OS and ubuntu.\nFamiliar with the tools Websphere\\Jbose\\tomcat, Eclipse, spring, Hibernate, Lucene, UML, Perforce, Makefile, Junit\n\n\nExperience\nProject Manager: RealNetworks April 2008 to present\nSan Francisco, CA\n\u2022\tManages a team of 7 people (PHP Developers, Web designers and QA engineers) to develop and implement new Store products for partners based on a PHP Ecommerce Platform (example of partners are Yahoo and AOL).\n\u2022\tMonitors the project from initiation through delivery including planning and directing schedules and monitoring budget/spending.\n\u2022\tWorks with engineering groups to enhance the ecommerce platform by writing requirements and technical documents for new features.\n\u2022\tDocument and maintain documentation of all special projects from inception to delivery.\n\nLead Deployment Engineer: Macrovision\\Trymedia, Mars 2005 \u2013 April 2008\nSan Francisco, CA\n\u2022\tCreating multiple tools to facilitate games enablement for digital distribution including an automatic mass repackaging system (C\\C++, Perl, SQL, Makefile).\n\u2022\tManaging a White Label Affiliate Program. Worked with Engineering, Operations and Marketing groups to drive the project forward and make improvements to meet the customers\u2019 needs.\n\u2022\tCreating and managing an automatic technical support mail system to answer customers\u2019 service issues.\n\u2022\tDesigned and conducted customers\u2019 technical training sessions on DRM product ActiveMark.\n\u2022\tDeveloped Web pages using PHP, HTML/Javascript and CSS for Casual Games.\n\u2022\tInstaller Build Lead. Trained and Delegated assignments to 2 installer engineers.\n\nComputer Lab Assistant: University of California at Irvine, Library.\nIrvine, California March 2002 \u2013 Jun 2004.\n\u2022\tInstalled and maintained software.\n\u2022\tRegularly conducted diagnostics on computer hardware.\n\u2022\tAssisted student and faculty with computer hardware/software problems."
+      },
+      {
+        "distance": 2,
+        "firstName": "Roger (Libing)",
+        "headline": "Data Scientist/Architect",
+        "id": "RZu8wxQRzB",
+        "industry": "Information Technology and Services",
+        "lastName": "Chen",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_rmBXqKuLi3n1eZprruKcq1xQ3QPjej2r-o_Uq1ScOhbDBMRKyebHsPJJfw1GIVDpASvVRNPTWTQU",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1255839,
+              "industry": "Computer & Network Security",
+              "name": "Freelancer",
+              "size": "Myself Only",
+              "type": "Self-Employed"
+            },
+            "id": 359989471,
+            "isCurrent": true,
+            "startDate": {"year": 2007},
+            "summary": "Leads the R&D & Consultancy:\n\u2022 Provides direction & leads innovation by exploring, recommending, implementing & evangelizing cloud technology\n\u2022 Works with R&D groups of subsidiaries in China & local to guide design, development, testing & deployment of big data projects\n\u2022 Leads initiatives of large data processing technology, research & design\n\u2022 Builds leading combination of data processing platform for business decisions, commercial operation, social networking & provides massive data analysis & processing\n\u2022 Scientific technology researches to create business value of big data innovation &\nfor global grow\n\u2022 Develops strategic partners & collaborates in big data platform research & services\n\u2022 Data Mining: Regression, Clustering, Decision Tree, Time series, Neural Network, Filtering, Bayesian\nStatistical Analysis:  Multivariate, Common Correlation &  Regression of variance\nApplied Predictive Modeling, Trend Analysis & Recommender Systems\n\u2022 Python, Matlab, C/C++, Java, Perl\nR: Manipulates, visualizes, understands data & structures. Imports data & created graphs. Uses functions & control structures for data management. Writes own R functions to aggregate data.  Do experimental designs & visualizes results. Tests hypothesis. Transforms correlated variables into a smaller uncorrelated variables & uncovers the latent structure underlying variables.  Handles the missing data values & visualizing data\n\u2022 MongoDB data modeling, schema design, index, performance tuning, monitoring, replication, sharding, clustering, backup, recovery. Coded & built a blogging site\n\n\u2022 Atlas Software, Chicago, IL: Reviewed & recommended Next-Gen architecture & data models, EDW population strategy using Oracle, OWB, GoldenGate, MongoDB & Solr\n\n\u2022 A private co., Marina Del Rey, CA:  Provided requirements analysis & architecture design. Proposed Cloud architectures of fault-tolerance, scaling & monitoring using AWS & Rackspace, MySQL, Kaggle, & Erwin\n\n\u2022 TEKsystems, Irvine, CA:  Implemented Oracle EBS",
+            "title": "Data Scientist/Architect"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/rogerlibingchen",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=15789857&authType=OUT_OF_NETWORK&authToken=ENSh&trk=api*a3139351*s3214061*"},
+        "summary": "\u2022 10+ years of experience in Big Data, Cloud Computing, Data Science, Architect, Data Mining, Machine Learning, Statistical Modeling & Analysis, Data-driven Analytics, Data Visualization, Data Warehouse, BI, Relational and NoSQL databases \n\u2022 Technical lead & management, fund finding for startup technology firm, & business strategy development\n \u2022 Provides technical and vision of architecture strategies for building mission critical platforms, services and end-to-end solutions  \n \u2022 Drives technical design and best practices to increase system performance, scalability, availability, maintainability, and cost effectiveness. \n \u2022 Proactively researches forward-looking technologies, and new technical trends to improve business agility and operational excellence\n \u2022 A lifetime learner,  enthusiastic & self-motivated with excellent communication skills, & work ethic \n \u2022 US DoD security clearances. Read, write and speak fluent native Mandarin Chinese"
+      },
+      {
+        "distance": 2,
+        "firstName": "Ty",
+        "headline": "Staff Systems Engineer",
+        "id": "yMeKnYwjt8",
+        "industry": "Financial Services",
+        "lastName": "Lim",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "industry": "Financial Services",
+              "name": "Major Financial Services Company"
+            },
+            "id": 178456360,
+            "isCurrent": true,
+            "startDate": {
+              "month": 3,
+              "year": 2011
+            },
+            "summary": "Architected middleware environments utilizing IBM WebSphere Applicatoin Server.\nWorked on automating deployment process utilizing a variety of tools to include jython scripting, BMC Applicatiion Release Automation (ARA), BMC BladeLogic Server Automation, shell scripting.\nExperience working in UNIX/Linux/Windows Environments.",
+            "title": "Staff Systems Engineer"
+          }]
+        },
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=4634317&authType=OUT_OF_NETWORK&authToken=UZI3&trk=api*a3139351*s3214061*"},
+        "summary": "Infrastructure Architecture/Administration:\n\nUNIX Systems Administrator with experience in Middleware Administration as well as general UNIX systems administration:\n User Administration\n Logical Volume Management\n Software Installations\n Middleware Administration\n LPAR Administration\n UNIX Shell Scripting\n Involved with WebSphere code deployments\n Knowledge of SSH and HTTP protocols.\n Knowledge of Data Center operations in a 24x7 environment and working within a structured change management cycle.\n Experience working in distributed environments.\n\nMiddleware Integration Experience:\n\n Systems administration and application integration experience using IBM WebSphere 5.X, 6..X and 7.0.\n Experience in deploying critical applications to production infrastructure.\nExperience writing JACL scripts for WebSphere Administration.\nWebSphere Administration(5.X,6.X,7.X)\nExperience building and configuring WebSphere JVMs.  Wrote shell scripts and JACL scripts to support WebSphere Adminsitration.\n Experience configuring and administering Apache web servers in support of WebSphere environments.\n Experience setting up and maintaining Volume Groups and Logical Volumes in HP-UX and Linux in support of WebSphere installations.\n Experience in installation FixPacks and Cumulative Fixes for WebSphere 5 and 6.\n Experience setting up Performance monitoring and utilizing Tivoli Performance Viewer to address sizing issues.\n Experience troubleshooting WebSphere related issues.\nExperience with securing WebSphere 5 and 6 installations on both UNIX (AIX, HP-UX, Linux) and WIndows.\nKnowledge of WebSphere XD.\nExperience building LPARs on IBM P5 hardware.\n\nDevelopment Experience:\n\nUnderstanding of JAVA programming and Object Oriented concepts.\nExperience writing Jython code to support various WebSphere operations (systems administration, code deployment).\nShell scripting (BASH, Jython, Python, Expect, KORN)"
+      },
+      {
+        "firstName": "private",
+        "id": "private",
+        "lastName": "private"
+      },
+      {
+        "distance": 2,
+        "firstName": "Christopher",
+        "headline": "Principal iOS Programmer at Good Technology",
+        "id": "IVUfyNhDGq",
+        "industry": "Computer Software",
+        "lastName": "Schardt",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_-zC9rz3r7AN-lMN0tt_5rnKl7qCtlVL0K-nWrBAuKAnCmY-xY1tVYc5CTsGS-jX1198H0r7OH2FS",
+        "positions": {
+          "_total": 5,
+          "values": [
+            {
+              "company": {
+                "id": 13539,
+                "industry": "Wireless",
+                "name": "Good Technology",
+                "size": "501-1000 employees",
+                "type": "Privately Held"
+              },
+              "id": 363464110,
+              "isCurrent": true,
+              "startDate": {
+                "month": 2,
+                "year": 2013
+              },
+              "summary": "I write iOS apps for Good.",
+              "title": "Principal Programmer"
+            },
+            {
+              "company": {
+                "industry": "Computer Software",
+                "name": "Moe's Kitchen"
+              },
+              "id": 72498529,
+              "isCurrent": true,
+              "startDate": {
+                "month": 3,
+                "year": 2009
+              },
+              "summary": "designing and implementing applications for iPhone, iPad, and iPod Touch.\n\nIn January 2010, Moe's Notes was released.  It was featured by Apple and climbed to #1 in Productivity apps, #7 in all apps.\n  https://itunes.apple.com/us/app/moes-notes/id413819280?mt=8\n\nIn May 2010, Moe's Notepad was released.  This iPad version of Moe's Notes takes advantage of the larger screen to implement a fully-modeless user-interface, with movable splitter bars - unique in the iPad world.\n  https://itunes.apple.com/us/app/moes-notepad/id416639391?mt=8\n\nSome of the audio code, including the live waveform UI, was licensed for use in the app, CloudTalk.\n\nEver notice that about the most difficult thing to do with an iPhone is make a phone call (to someone you have to look up)?  I did, so I wrote Moe's Contacts:\n  https://itunes.apple.com/us/app/moes-contacts/id514385577?mt=8",
+              "title": "Principal/Programmer"
+            },
+            {
+              "company": {
+                "industry": "Arts and Crafts",
+                "name": "Catwalk Studios",
+                "size": "Myself Only"
+              },
+              "id": 13153644,
+              "isCurrent": true,
+              "startDate": {
+                "month": 5,
+                "year": 2003
+              },
+              "summary": "Catwalk Studios is an art studio space in Emeryville, CA.  I rent out studios to various artists.  I also create my kinetic sculpture, music, and programming work here.",
+              "title": "Owner/Manager"
+            },
+            {
+              "company": {
+                "industry": "Computer Software",
+                "name": "San Francisco Integral Yoga Institute"
+              },
+              "id": 218432603,
+              "isCurrent": true,
+              "startDate": {
+                "month": 1,
+                "year": 2002
+              },
+              "summary": "Teach Hatha.",
+              "title": "Intermediate Hatha Teacher"
+            },
+            {
+              "company": {
+                "industry": "Computer Hardware",
+                "name": "Catwalk Studios"
+              },
+              "id": 258087223,
+              "isCurrent": true,
+              "startDate": {
+                "month": 3,
+                "year": 2000
+              },
+              "summary": "I create large, moving sculptures, usually made of aluminum, incorporating propane burners, LEDs, and microcontrollers.\n\nMy most recent work, Garden of Rockets, is my most ambitious.  It is three large sculptures propelled by the thrust of propane burners.  The throttle and direction of each burner is controlled remotely, allowing the visitor to bring about many kinds of motion.",
+              "title": "Kinetic Sculptor"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/christopherschardt",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=9472455&authType=OUT_OF_NETWORK&authToken=H56w&trk=api*a3139351*s3214061*"},
+        "summary": "I've been writing apps in Objective-C++ since early 2009.  I've been programming in C++ for about 16 years.  I very much enjoy the mix of Objective-C and C++ that Xcode supports.  I enjoy the universe of iOS APIs.  I have non-trivial experience with:\n    CoreAudio\n    CoreLocation\n    CoreGraphics\n    CoreTelephony\n    MapKit\n    StoreKit\n    ABAddressBook\n    MediaPlayer\n    local and remote notifications\n    Google location services\n    RESTful APIs\n    JSON\n    FBConnect\n    Flurry\n    Urban Airship\n\nHere are my 2 functionality-rich, Apple-featured mutli-media note-taking apps:\n       http://itunes.apple.com/us/app/moes-notes/id413819280?mt=8&ls=1\n       http://itunes.apple.com/us/app/moes-notepad/id416639391?mt=8&ls=1\n\nHere is my Address Book manager app (also very capable):\n       https://itunes.apple.com/us/app/moes-contacts-free/id575322495?ls=1&mt=8\n\nSpecialties: iOS\nObjective-C++\ndigital audio\ncross-platform programming\nvector graphics\nUI design and implementation\nmusic composition and production"
+      },
+      {
+        "distance": 2,
+        "firstName": "James",
+        "headline": "Sr Security Engineer and SAAS, Active Directory, SSO SME",
+        "id": "q5vufITJW3",
+        "industry": "Information Technology and Services",
+        "lastName": "Sergent MCSE/MCSA/MCITP EA/ ITIL",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_M5umgFUAqnmlN882Uiplg5sYNAd3nLA2RFZAgkRawqjAWT6uz_yC1X7hsxWOzGrhZQmKtiLWKkEJ",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 163820,
+              "industry": "Insurance",
+              "name": "Fireman's Fund Insurance Company",
+              "size": "1001-5000 employees",
+              "type": "Public Company"
+            },
+            "id": 340666270,
+            "isCurrent": true,
+            "startDate": {
+              "month": 7,
+              "year": 2012
+            },
+            "summary": "Responsible for the day to day support of enterprise applications and the Microsoft Stack Technologies as well as Lead Project Implementation Integrations related to Active Directory, Federation, LDAP, PKI and Mobile Technologies.  Manage Vendors and Stack holders of FFIC\u2019s complex network environment designing and implementing Federation, Identity, Mobility Solutions that meet or surpass diverse internal and external environment needs.\n\n\u2022\tImplement solutions that support SAML 2.0 based authentication to internally hosted and cloud based web applications\n\u2022\tConfigure solutions to support mobile applications using OAuth 2.0.\n\u2022\tIntegrate with multi-factor solutions including certificate, token based OTP and on demand OTP to provide for higher assurance SSO.\n\u2022\tProvide Tier 3 support for authentication solutions.\n\u2022\tProvide strategic guidance to the Identity & Access Engineering team on industry best practices and trends.\n\u2022\tServe as the subject matter expert for SAML and OAuth authentication *PKI, *SSO (single sign on) token management, *SAML, *WS-Security, *ID-FF, *ID-WSF, *WS-Federation, LDAP integration, PING Federate, Symplified, OKTA, McAfee CIM, ADFS, TFIM, Microsoft FIM \n\u2022\tCoordinate with vendors, customers, developers, engineers and support personnel to develop highly scalable, globally deployed authentication\n\u2022\tSSO solutions for web and mobile applications.\n\u2022\t server, LDAP, SSO login page\n\u2022\tWorking knowledge of web server and web application platforms such as Microsoft Internet Information Services (IIS), Apache, Manage Enterprise in the Cloud data and Access \n\u2022\tImplemented ADFS, Federation Solutions, Mobil technology, Direct Access, TFIM",
+            "title": "Sr. Security Engineer and SME for Active Directory, Federation, SaaS, Mobility and Access Management"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/jamessergent",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=34614487&authType=OUT_OF_NETWORK&authToken=g6s3&trk=api*a3139351*s3214061*"},
+        "specialties": "Active Directory, Siteminder, Certificate Authority & PKI, LDAP, SAML, Mainframe, OpenVMS, UNIX, ORACLE, AS400,, APCA, CICS, TSO, ACF2 & LDAP, eTrust CA-ACF2 Security, Video Conference setup and support, VPN, PIX Firewall, Remedy AR Request System, Win Server 2000\\2003\\2008, NT4.0, WIN95/98/4.0/2000/XP, MAC OS 9,10 & X, OS/2, MS Exchange Server and Client, SMS Server, Open VMS, Secure ID, SQL Server, , HP Asset View, Hp Open View, RAS, Lotus, Outlook versions, MS Office versions, SAP",
+        "summary": "Hello I'm James Sergent and I'm an Enterprise Security Engineer.  I Have worked with various Fortune 500 Banking, Insurance and Finance companies and Public Utilities in the Information Security Space. Having worked in Information Technology industry for more than 17 years. I specialize in Security/Identity Management Strategies, Methodologies and Architecture Review. As well as implementing these controls on Windows, UNIX and Linux Servers and assorted Applications.\n\nI'm a Highly motivated and performance driven Information Security Subject Matter Expert with more than seventeen years of successful experience in Information Security is looking for a position in a progressive organizations where I can utilize my skills and knowledge to ensure an appropriate level of confidentiality, integrity, availability, authentication, and non-repudiation is administered and is based upon valid risk management decisions, using my Strong competency with Active Directory,, Migration & Support Public Key Infrastructure (PKI), PIV, HSPD-12, Common Access Cards (CACs) Card Readers, FIPS 201, NIST 800 series documents, X.509 Certificate Policy, Data-At-Rest, Cryptographic Logon (CLO), Certificate Revocation List (CRL), Online Certificate Status Protocol (OCSP) these tools are my foundation to ensuring the entire organization can securely resist the forces to which it may be subjected and meet the organization's business goals and objectives.\n\nI'm a loyal, enthusiastic, dependable results-oriented professional who thrives in environments offering a challenge to provide new, Interactive solutions, with skills ranging from Planning & Development to Implementation, Data Management, IAMS & System Administration.  I am an effective leader and co-worker with the ability to empower co-workers, Management and Lead Teams to achieve stated objectives or be hands on in a systems engineering capacity or 24/7 Duty pager or Cell phone Disaster recovery projects.  \n\nThank you,\n\nJames Sergent"
+      },
+      {
+        "distance": 2,
+        "firstName": "Jesse",
+        "headline": "Principal UI Engineer at frog",
+        "id": "3XHggypTsa",
+        "industry": "Internet",
+        "lastName": "Cravens",
+        "location": {"name": "Austin, Texas Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_y_g-snVjcF1aNksapTjDsqdGRG6un3EaOkWSszeCX3-yW5gmr5SOqvpuzEQPz6wGg8x2vt9_L5ic",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 163904,
+              "industry": "Design",
+              "name": "frog",
+              "size": "501-1000 employees",
+              "type": "Privately Held"
+            },
+            "id": 386629043,
+            "isCurrent": true,
+            "startDate": {
+              "month": 4,
+              "year": 2013
+            },
+            "summary": "Technical lead role on engagements with Fortune 200 clients with a focus on UI engineering. \n\nServing as both a technical leader and a high performing, individual contributor in the development of full-stack software components or modules and binding of UI presentation logic, middleware, and backend data services tiers in the software application stack.\n\n\u2028Providing subject matter expertise in UI presentation layer architecture recommendations and design integration support to help ensure the intended user experience is successfully translated into engineered software.\n\nFacilitating project communication through presentations to key stakeholders and daily project updates.",
+            "title": "Principal UI Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/jessecravens",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=4674411&authType=OUT_OF_NETWORK&authToken=3sY2&trk=api*a3139351*s3214061*"},
+        "summary": "Principal UI Software Engineer at frog, O'Reilly Media Technical Author, Tech.pro Blogger, Founder of HTML5Hacks.com\n\nAn innovative, hands-on, Principal UI Engineer/Web Architect with 13 years of experience building web/mobile applications for direct clients, digital marketing agencies, virtual web development teams, a global innovation firm, and numerous Fortune 200 IT enterprises to include: USAA (Bank, Insurance, Investments), Disney, a multinational credit card services corporation (confidential name), and a global financial information and education company (confidential name).\n\nA seasoned technical leader/manager with 7 years of experience in leading/architecting large, complex software integrations and 2 years in managing a Fortune 200 Enterprise team of 16 mobile/tablet application infrastructure developers.\n\nAuthor of O'Reilly's 'HTML5 Hacks' covering HTML5 specifications that include Canvas, SVG, CSS3, multimedia, data storage, web workers, web sockets, and geolocation.\n\nJesse's second book, O'Reilly's 'Building Modern Web Applications with Ember.js and Ruby On Rails', is due for release Fall 2013.  \n\nSpeaker on topics such as HTML5, JavaScript, next generation browser technologies:\n\nDevcon5 HTML5 Summit 2012: Austin, TX\nDevcon5 HTML5 Summit 2012: San Francisco, CA\nHTML5.tx 2013: Austin, TX\nSXSW Interactive 2013, Austin, TX\nFluent Conf 2013, San Fransico, CA\nDevcon5 HTML5 Summit NYC 2013, NYC, NY\nOredev 2013, Milao, Sweden"
+      }
+    ]
+  }
+}

@@ -5,6 +5,7 @@ var pass      = require('../controllers/passport.js');
 
 var site      = require('../controllers/site.js');
 var jobs      = require('../controllers/jobs.js');
+var jobsController = require('../controllers/jobs_controller.js');
 var linkedin  = require('../controllers/linkedin.js');
 var persons   = require('../controllers/persons.js');
 var getdb     = require('../controllers/getDb.js');
@@ -16,7 +17,8 @@ module.exports = function(app) {
   app.get('/getdb', getdb.getKeyword);
 
   //Jobs
-  app.get('/jobs/search', jobs.search);
+  app.get('/jobs', jobsController.get);
+  app.get('/jobs/search', jobs.searchSorted);
   app.get('/jobs/searchSorted', jobs.searchSorted);
 
   //PreLinked Persons
@@ -62,40 +64,66 @@ module.exports = function(app) {
     }
   });
 
+  //this is where you test random backend functions
   app.get('/test', function(req, res){
-    //this is where you test random backend functions
     // console.log('- GET /test - app.get(env)', app.get('env'));
 
-    /**
-    /** TESTING LinkedIn API
-    /*/
     var fs          = require('fs');
     var path        = require('path');
+
+    /**
+    /** TESTING LinkedIn API ---------------------------------------------
+    /*/
+
+    // GET COMPANIES
+    // var LinkedInApi = require('../models/linkedin_api.js'),
+    //     _helper     = require('../controllers/_helper.js');
+
+    // LinkedInApi.searchCompanies(req.session)
+    //   .done(
+    //     //Resolved: json returned from LinkedIn API
+    //     function(json) {
+    //       fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_LinkedIn_Companies.json'), json);
+    //       _helper.resolved(req, res, json);
+    //     },
+    //     //Rejected: error message from LinkedIn API
+    //     function(error) {
+    //       _helper.rejected(req, res, error);
+    //   });
+
     // // GET /people/search
-    // req.query = {title: 'software engineer', keywords: 'san francisco, ca',  facet:  'network,O' };
+    // // F first, S second, A groups, O out-of-network(third)
+    // req.query = {title: 'software engineer', keywords: 'san francisco, ca',  start: '75', facet:  'network,A,O' };
     // linkedin.searchConnections(req, res,
     //       function(json) {
-    //         fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_LinkedIn_People_Search_Results.json'), json);
+    //         fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_LinkedIn_People_Search_3rd_Degree_P04.json'), json);
     //       }
     // );
 
     // GET ALL FIRST DEGREE CONNECTIONS
-    // req.query = {start: "500"}; // page two
+    // req.query = {start: "500"}; // increment by 500
     // linkedin.searchFirstDegree(req, res,
     //       function(json) {
-    //         fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_LinkedIn_First_Degrees_P02.json'), json);
+    //         fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_LinkedIn_People_My_First_Degrees_P02.json'), json);
     //       }
     // );
 
-    // // GET MY FULL PROFILE
-    req.params.id = req.session.passport.user.id;
-    // req.params.id = "d3bA9zi41M";
+    // // GET ME/1st/2nd/3rd degree FULL PROFILE
+    // req.params.id = req.session.passport.user.id; // uncomment for your own profile
+    // // req.params.id = "TxTQIGBWTJ"; // uncomment for 1st/2nd/3rd degree profiles
 
-    linkedin.getProfile(req, res,
-          function(json) {
-            fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_LinkedIn_My_Profile.json'), json);
-          }
-    );
+    // linkedin.getProfile(req, res,
+    //       function(json) {
+    //         fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_LinkedIn_Profile_ME.json'), json);
+    //         // fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_LinkedIn_Profile_Sample_1st_Degree.json'), json);
+    //         // fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_LinkedIn_Profile_Sample_2nd_Degree.json'), json);
+    //         // fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_LinkedIn_Profile_Sample_3rd_Degree.json'), json);
+    //       }
+    // );
+
+    /**
+    /** TESTING Indeed ---------------------------------------------
+    /*/
 
   });
 };
