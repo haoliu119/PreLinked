@@ -64,6 +64,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     console.log('location >>', location);
     console.log('keywords >>', keywords);
 
+    var title = this.jobQuery.get("jobTitle");
+
     var distance = this.searchFilterView.model.get('distance');
     console.log(distance);
 
@@ -72,11 +74,11 @@ PreLinked.Views.SearchView = Backbone.View.extend({
       .fetch( {data: {q: [title, company, keywords].join(' ') , l: location, radius: distance}} )
       .done(function(data){
         console.log('job search results', data);
-        that.searchResultsView.jobQuery.title = title; // TODO: THIS IS BEST PRACTICE??????
+        that.searchResultsView.jobQuery.set("jobTitle") = title; // TODO: THIS IS BEST PRACTICE??????
         deferred.resolve(that.searchResultsView.render().el);
       })
       .fail(function(){
-        that.searchResultsView.jobQuery.title = title; // TODO: THIS IS BEST PRACTICE??????
+        that.searchResultsView.jobQuery.set("jobTitle") = title; // TODO: THIS IS BEST PRACTICE??????
         deferred.reject(that.searchResultsView.render().el);
       });
     return deferred.promise();

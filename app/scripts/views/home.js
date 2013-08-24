@@ -29,8 +29,8 @@ PreLinked.Views.HomeView = Backbone.View.extend({
         jobTitle = this.$el.find('input[name=job-title]').val(),
         jobLocation = this.$el.find('input[name=job-location]').val();
 
-    this.jobQuery.jobTitle = jobTitle;
-    this.jobQuery.jobLocation = jobLocation;
+    this.jobQuery.set("jobTitle") = jobTitle;
+    this.jobQuery.set("jobLocation") = jobLocation;
     console.log('after submit:', this.jobQuery);
 
     console.log('[title]-->', jobTitle, '[location]-->', jobLocation);

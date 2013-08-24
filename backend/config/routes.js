@@ -22,6 +22,7 @@ module.exports = function(app) {
   app.get('/jobs/searchSorted', jobs.searchSorted);
 
   //PreLinked Persons
+  // Fetch data from our database
   app.get('/persons', persons.get);
 
   //LinkedIn Oauth

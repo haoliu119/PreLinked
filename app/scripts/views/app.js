@@ -8,7 +8,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
   initialize: function() {
     var that = this;
 
-    this.jobQuery = {};
+    this.jobQuery = this.model.attributes;
 
     this.render();
 
