@@ -10,8 +10,11 @@ _helper.resolved = function(req, res, json){
   res.writeHead(200, {
     'Content-Type': 'application/json'
   });
-  console.log('typeof json >>> ', typeof json);
-  // console.log('json', json);
+
+  if(typeof json !== 'string'){
+    json = JSON.stringify(json);
+  }
+
   res.write(json);
   res.end();
 };
