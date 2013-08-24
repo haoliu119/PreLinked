@@ -2,10 +2,10 @@
 <form id="form-search">
   <label>
     Job Title
-    <div class="inputFilter">
+    {{! <div class="inputFilter"> }}
       <input class="searchInput" id="jobTitleSearchInput" name="job-title" type="text" placeholder="Example: Software Engineer">
-      <button class="addFilterButton tiny">Add</button>
-    <div>
+      {{! <button class="addFilterButton tiny">Add</button> }}
+    {{! <div> }}
   </label>
   <div>
     {{#each jobTitle}}
@@ -18,7 +18,10 @@
   </div>
   <label>
     Company
-    <input class="searchInput" id="companySearchInput" name="company" type="text" placeholder="Example: Google">
+    <div class="inputFilter">
+      <input class="searchInput" id="companySearchInput" name="company" type="text" placeholder="Example: Google">
+      <button class="addFilterButton tiny">Add</button>
+    </div>
   </label>
   <div>
     {{#each company}}
@@ -31,10 +34,7 @@
   </div>
   <label>
     Location
-    <div class="inputFilter">
-      <input class="searchInput" id="locationSearchInput" name="job-location" type="text" placeholder="Example: San Francisco, CA">
-      <button class="addFilterButton tiny">Add</button>
-    </div>
+    <input class="searchInput" id="locationSearchInput" name="job-location" type="text" placeholder="Example: San Francisco, CA">
   </label>
   <div>
     {{#if jobLocation}}
