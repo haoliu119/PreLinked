@@ -10,7 +10,14 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
 
   events: {
     'keypress .searchInput': 'addSearchFilter',
-    'click .removeFilter': 'removeSearchFilter'
+    'click .removeFilter': 'removeSearchFilter',
+    'mousemove .distanceRangeSlider': 'displaySliderInput'
+  },
+
+  displaySliderInput: function() {
+    var distance = this.$el.find('input[name="distance"]')[0].value;
+    $('.distanceRange').html(distance + ' Miles');
+    this.model.set('distance', distance);
   },
 
   addSearchFilter: function(e) {
