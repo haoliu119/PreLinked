@@ -1,8 +1,4 @@
-{
-  "_count": 500,
-  "_start": 0,
-  "_total": 515,
-  "values": [
+[
     {
       "distance": 1,
       "firstName": "Jihu",
@@ -16428,4 +16424,3 @@
       "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=10770429&authType=name&authToken=Mi0_&trk=api*a3139351*s3214061*"}
     }
   ]
-}

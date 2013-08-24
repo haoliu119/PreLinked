@@ -1,41 +1,4 @@
-{
-  "facets": {
-    "_total": 1,
-    "values": [{
-      "buckets": {
-        "_total": 4,
-        "values": [
-          {
-            "code": "F",
-            "count": 0,
-            "name": "1st Connections"
-          },
-          {
-            "code": "S",
-            "count": 67,
-            "name": "2nd Connections"
-          },
-          {
-            "code": "A",
-            "count": 191,
-            "name": "Group Members"
-          },
-          {
-            "code": "O",
-            "count": 964,
-            "name": "3rd + Everyone Else"
-          }
-        ]
-      },
-      "code": "network",
-      "name": "Relationship"
-    }]
-  },
-  "people": {
-    "_count": 25,
-    "_start": 0,
-    "_total": 67,
-    "values": [
+[
       {
         "distance": 2,
         "firstName": "Chris",
@@ -1038,5 +1001,3 @@
         "specialties": "Creator and manager of Phrantom (Web company; IT)\nR&D in Augmented Reality (metaio Inc.; IT)"
       }
     ]
-  }
-}
