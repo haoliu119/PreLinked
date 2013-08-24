@@ -14,7 +14,7 @@ module.exports = function(app) {
   app.get('/serverindex', site.index);
 
   //getDb
-  app.get('/getdb', getdb.getKeyword);
+  app.get('/getdb', getdb.testKeyword);
 
   //Jobs
   app.get('/jobs', jobsController.get);
