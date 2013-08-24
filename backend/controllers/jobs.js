@@ -8,6 +8,19 @@ var jobsController = require('../controllers/jobs_controller.js');
 
 var jobs = module.exports = {};
 
+var _grabOnePage = function(req_query){
+  var deferred = Q.defer();
+  IndeedApi
+    .search(req_query, {start: 0})
+    .then(function(data){
+      if(typeof data === 'string'){
+        data = JSON.parse(data);
+      }
+      deferred.resolve(data);
+    });
+  return deferred.promise;
+};
+
 var _grabMultiplePages = function(req_query) {
   var deferred = Q.defer();
   var promises = [];
@@ -138,11 +151,17 @@ var _getJobsAndConnections = function(){
     });
 };
 
+var _getScore = function(job, connections){
+  console.log('job title from indeed\n', job);
+  console.log('connections positions from linkedin\n', JSON.stringify( _(connections).pluck("positions") ) );
+  return Math.random();
+};
+
 jobs.searchSorted = function(req, res){
   console.log('-controller-jobs.searchSorted()');
   req.query.q = req.query.q || 'Software Engineer';
   req.query.keywords = req.query.keywords || 'Software Engineer';
-  var totalJobs = _grabMultiplePages(req.query);
+  var totalJobs = _grabOnePage(req.query);
 
 
   var connectionsFileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/dummy_linkedin_connections_search_results.json'), 'utf8');
@@ -150,7 +169,7 @@ jobs.searchSorted = function(req, res){
 
   var sortJobs = function(inputJobs, inputConnections){
     _(inputJobs).each(function(inputJob){
-      inputJob.pScore = Math.random();
+      inputJob.pScore = _getScore(inputJob, inputConnections);
       inputJob.pConnections = _(inputConnections).filter(function(conn){
         return (Math.random() < 1/4 ? true : false);
       });
