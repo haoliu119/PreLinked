@@ -9,7 +9,6 @@ PreLinked.Views.SearchResultsView = Backbone.View.extend({
   },
 
   events: {
-    'click .showConnectButton': 'findConnectionsForJob',
     'click .sortAsc': 'sortCollectionAsc',
     'click .sortDesc': 'sortCollectionDesc'
   },

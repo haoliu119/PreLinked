@@ -59,7 +59,7 @@ jobs_controller._put = function(){
         //check for whether it is a first degree or not
       },function(err){
         if(err){
-          console.log(err);
+          console.log('ERRRRRRER >>>>>> ',err);
         }else{
           console.log("Successfully updated\n");
         }
