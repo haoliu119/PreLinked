@@ -57,5 +57,10 @@
       </a>
     {{/each}}
   </div>
+  <label>
+    Distance
+    <input class="distanceRangeSlider" type="range" name="distance" min="1" max="100" value="{{distance}}">
+    <div class="distanceRange"> {{distance}} Miles</div>
+  </label>
   <button class="searchFilterButton expand">Search</button>
 </form>
