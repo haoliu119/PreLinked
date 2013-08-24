@@ -61,9 +61,10 @@ db.setup = function(req, res){
 
 db.getKeyword = function(req, res){
   console.log('db.getKeyword\n');
-  //{_id:new ObjectId('52159c36a8c904d21b000001')} is not working
-  //no idea why
-  Job.find({}, function(error, data){
+  var query = Job.find({
+    _id: new ObjectId('5217d2d307cb164534000013')
+  });
+  query.exec(function(error, data){
     if(error){
       console.log('Error getting data', error);
     } else {
