@@ -44,10 +44,11 @@ module.exports = function(app) {
 
   // LinkedIn API
   app.get('/people/search', linkedin.searchConnections);
-  app.get('/people/:id', persons.getById);
-  // app.get('/people/:id', linkedin.getProfile);
-  app.get('/people/', persons.get);
-  // app.get('/people/', linkedin.searchFirstDegree);
+  app.get('/people/:id', linkedin.getProfile);
+  app.get('/people/', linkedin.searchFirstDegree);
+  // app.get('/people/search', linkedin.searchConnections);
+  // app.get('/people/:id', persons.getById);
+  // app.get('/people/', persons.get);
 
   // Users
 	// app.post('/user', users.create);
