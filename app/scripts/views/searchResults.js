@@ -9,7 +9,27 @@ PreLinked.Views.SearchResultsView = Backbone.View.extend({
   },
 
   events: {
-    'click .showConnectButton': 'findConnectionsForJob'
+    'click .showConnectButton': 'findConnectionsForJob',
+    'click .sortAsc': 'sortCollectionAsc',
+    'click .sortDesc': 'sortCollectionDesc'
+  },
+
+  sortCollectionAsc: function(events){
+    events.preventDefault();
+    this.collection.comparator = function (model) {
+      return parseFloat( model.get('pScore') );
+    };
+    this.collection.sort();
+    this.render();
+  },
+
+  sortCollectionDesc: function(events){
+    events.preventDefault();
+    this.collection.comparator = function (model) {
+      return -1 * parseFloat( model.get('pScore') );
+    };
+    this.collection.sort();
+    this.render();
   },
 
   render: function() {
