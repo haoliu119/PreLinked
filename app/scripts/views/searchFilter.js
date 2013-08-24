@@ -40,7 +40,11 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
       var jobLocation = this.$el.find('input[name=job-location]')[0].value
       var jobKeywords = this.$el.find('input[name="job-keywords"]')[0].value;
 
-      this.model.trigger('addSearchFilterOnSubmit', jobTitle, company, jobLocation, jobKeywords);
+      var minSalary = this.$el.find('#minSalary')[0].value;
+      var maxSalary = this.$el.find('#maxSalary')[0].value;
+      console.log('minSalary', minSalary);
+
+      this.model.trigger('addSearchFilterOnSubmit', jobTitle, company, jobLocation, jobKeywords, minSalary, maxSalary);
       this.render();
   },
 

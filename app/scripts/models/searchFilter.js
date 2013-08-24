@@ -8,39 +8,53 @@ PreLinked.Models.SearchfilterModel = Backbone.Model.extend({
     this.set('jobLocation', "");
     this.set('jobKeywords', []);
     this.set('distance', 25);
+    this.set('minSalary', 'none');
+    this.set('maxSalary', 'none');
     this.on('addSearchFilter', this.addSearchFilter);
     this.on('addSearchFilterOnSubmit', this.addSearchFilterOnSubmit);
     this.on('removeSearchFilter', this.removeSearchFilter);
   },
 
+  isDuplicateFilter: function(filterType, filterWord) {
+    var filterArray = this.get(filterType);
+    return _.contains(filterArray, filterWord)
+  },
+
   addSearchFilter: function(e, title, company, location, keywords) {
-    if(title) {
+    if(title && !this.isDuplicateFilter('jobTitle', title)) {
       this.attributes.jobTitle.push(title);
     } 
-    if(company) {
+    if(company && !this.isDuplicateFilter('company', company)) {
       this.attributes.company.push(company);
     }
     if(location) {
       this.set('jobLocation', location);
     }
-    if(keywords) {
+    if(keywords && !this.isDuplicateFilter('jobKeywords', keywords)) {
       this.attributes.jobKeywords.push(keywords);
     }
   },
 
-  addSearchFilterOnSubmit: function(title, company, location, keywords) {
-    if(title) {
+  addSearchFilterOnSubmit: function(title, company, location, keywords, minSalary, maxSalary) {
+    if(title && !this.isDuplicateFilter('jobTitle', title)) {
       this.attributes.jobTitle.push(title);
     }
-    if(company) {
+    if(company && !this.isDuplicateFilter('company', company)) {
       this.attributes.company.push(company);
     }
     if(location) {
       this.set('jobLocation', location);
     }
-    if(keywords) {
+    if(keywords && !this.isDuplicateFilter('jobKeywords', keywords)) {
       this.attributes.jobKeywords.push(keywords);
     }
+    if(minSalary) {
+      this.set('minSalary', minSalary);
+    }
+    if(maxSalary) {
+      this.set('maxSalary', maxSalary);
+    }
+    console.log(this.attributes);
   },
 
   removeSearchFilter: function(e) {
