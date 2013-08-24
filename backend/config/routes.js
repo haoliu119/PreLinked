@@ -18,7 +18,7 @@ module.exports = function(app) {
 
   //Jobs
   app.get('/jobs', jobsController.get);
-  app.get('/jobs/search', jobs.search);
+  app.get('/jobs/search', jobs.searchSorted);
   app.get('/jobs/searchSorted', jobs.searchSorted);
 
   //PreLinked Persons
@@ -125,97 +125,5 @@ module.exports = function(app) {
     /** TESTING Indeed ---------------------------------------------
     /*/
 
-    // GET /jobs/search
-    /*
-    l=    '12345'
-          'San Francisco, CA'
-          // zipcode or city, state
-
-    q=
-      space = + / AND'd
-
-      with all word:  <word> <word> <word>
-
-      exact phrase:   "software engineer"
-
-      or / at least one of these words:
-          ('high school teacher' or 'plumber')
-          (plumber or teacher or engineer or accountant)
-
-      job title:  "title:('elementary school teacher')"
-                  "title:('software engineer' or 'software developer')"
-
-      salary: $60,000
-              $40K-$90K
-
-      company:
-
-      radius=50
-
-      jt=(fulltime+or+parttime)
-    */
-    // req.query = {q: "title:('architect' or 'software engineer' or 'developer') company:('google' or 'yahoo' or 'salesforce') $90K-$120K ('big data' or 'plumber')", l: "94105"};
-    // var fileName = "_Indeed_Results.json";
-    // jobs.search(req, res,
-    //   function(json){
-    //     fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/' + fileName ), json);
-    //   }
-    // );
-
-    /**
-    /** TESTING MongoDB ---------------------------------------------
-    /*/
-
-    // var Job = require('../models/jobs.js');
-    // var Keyword = require('../models/keywords.js');
-    // var KeywordToJob = require('../models/keywordsToJobs.js');
-    // var mongoose = require('mongoose');
-
-    // var job = new Job({
-    //   indeedPost: {key:'value2 really'}
-    // });
-    // job.save(function(error, data){
-    //   if(error){
-    //     console.log('Error in saving job:', error);
-    //   } else {
-    //     console.log('Success in saving job:', data);
-    //   }
-    // });
-
-
-    // var keyword = new Keyword({
-    //   keyword: 'software'
-    // });
-    // keyword.save(function(error, data){
-    //   if(error){
-    //     console.log('Error in saving keyword:', error);
-    //   } else {
-    //     console.log('Success in saving keyword:', data);
-    //   }
-    // });
-
-    // var keywordToJob = new KeywordToJob({
-    //   keywordId: mongoose.Types.ObjectId('52159e06958f70e51b000001'),
-    //   jobId: mongoose.Types.ObjectId('5215a3522dfd9f1e1c000001')
-    // });
-    // keywordToJob.save(function(error, data){
-    //   if(error){
-    //     console.log('Error in saving keywordToJob:', error);
-    //   } else {
-    //     console.log('Success in saving keywordToJob:', data);
-    //   }
-    // });
-
-    // Keyword.findOne({"keyword":"software"}, function(error, data){
-    //   KeywordToJob.find({"keywordId": data._id}, {"jobId": 1, "_id": 0}, function(error1, data1){
-    //     data1 = _(data1).pluck('jobId');
-    //     console.log('data1', data1);
-    //     Job.find({"_id": {$in: data1}}, function(error2, data2){
-    //       console.log('data2', data2);
-    //     });
-    //   });
-    //   console.log('data', data);
-    // })
-    // res.end();
   });
 };
