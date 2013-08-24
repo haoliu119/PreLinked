@@ -8,6 +8,29 @@ PreLinked.Views.SearchResultsView = Backbone.View.extend({
     this.jobQuery = options.jobQuery;
   },
 
+  events: {
+    'click .sortAsc': 'sortCollectionAsc',
+    'click .sortDesc': 'sortCollectionDesc'
+  },
+
+  sortCollectionAsc: function(events){
+    events.preventDefault();
+    this.collection.comparator = function (model) {
+      return parseFloat( model.get('pScore') );
+    };
+    this.collection.sort();
+    this.render();
+  },
+
+  sortCollectionDesc: function(events){
+    events.preventDefault();
+    this.collection.comparator = function (model) {
+      return -1 * parseFloat( model.get('pScore') );
+    };
+    this.collection.sort();
+    this.render();
+  },
+
   render: function() {
 
     this.$el.html(this.template(

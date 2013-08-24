@@ -20,6 +20,10 @@ h1,h2,h3,h4{font-family:Play,helvetica,sans-serif}
 #search-filters .filter-item:hover .rm{color:#000}
 #search-filters .filter-item .rm:hover{color:#f00}
 #job-results{border-radius:5px;background-color:#fff;min-height:300px}
+#job-results .loader{min-height:300px}
 #search-filters{margin-top:20px;background-color:#d1f2ff}
 #connections{margin-top:20px;background-color:#ddd}
+#connections.scroll{max-height:600px;overflow-y:auto}
 .loader{background:url("https://webfiles.uci.edu/shaohuaz/share/prelinked/loader.gif") no-repeat 50% 50%;height:40px}
+.inputFilter{position:relative}
+.addFilterButton{position:absolute;top:2px;right:2px}
