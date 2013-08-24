@@ -6,6 +6,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
   template: JST['app/scripts/templates/app.hbs'],
 
   initialize: function() {
+    var that = this;
 
     this.jobQuery = {};
 
@@ -21,6 +22,21 @@ PreLinked.Views.AppView = Backbone.View.extend({
       silent: true
     });
     Backbone.history.loadUrl();
+
+    $(window).on('scroll', function() {
+      that.fixedScroll();
+    });
+  },
+
+  fixedScroll: function() {
+    var top = $(window).scrollTop();
+    if(top > 150) {
+      $('#search-filters').css('margin-top', top - 130);
+      $('#connections').addClass('scroll').css('margin-top', top - 130);
+    } else {
+      $('#search-filters').css('margin-top', '');
+      $('#connections').removeClass('scroll').css('margin-top', '');
+    }
   },
 
   homePage: function(){
