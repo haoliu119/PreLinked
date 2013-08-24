@@ -64,9 +64,12 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     console.log('location >>', location);
     console.log('keywords >>', keywords);
 
+    var distance = this.searchFilterView.model.get('distance');
+    console.log(distance);
+
 
     this.searchResultsView.collection
-      .fetch( {data: {q: [title, company, keywords].join(' ') , l: location}} )
+      .fetch( {data: {q: [title, company, keywords].join(' ') , l: location, radius: distance}} )
       .done(function(data){
         console.log('job search results', data);
         that.searchResultsView.jobQuery.title = title; // TODO: THIS IS BEST PRACTICE??????
