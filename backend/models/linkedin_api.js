@@ -51,7 +51,7 @@ LinkedInApi.searchConnections = function (session, query) {
         start:  '0',          // specify in query for pagination
         sort:   'relevance',  // we already have your 1st degree
         facets: 'network',    // location,industry,school,current-company,past-company
-        facet:  'network,S,A,O' // F first, S second, A groups, O out-of-network(third)
+        facet:  'network,F,S,A,O' // F first, S second, A groups, O out-of-network(third)
       };
 
   var deferred = Q.defer();
@@ -68,6 +68,7 @@ LinkedInApi.searchConnections = function (session, query) {
         deferred.reject(error);
       } else {
         try {
+          body = JSON.stringify(JSON.parse(body).people.values);
           deferred.resolve(body);
         } catch (error){
           console.log('- LinkedInApi error: ', error, body);

@@ -7,11 +7,17 @@ PreLinked.Views.SearchResultsItemView = Backbone.View.extend({
   template: JST['app/scripts/templates/searchResultsItem.hbs'],
 
   events: {
-    'click': ''
+    'click .showConnectButton': 'showConnect'
   },
 
   render: function() {
     this.$el.html(this.template(this.model.attributes));
     return this;
+  },
+
+  showConnect: function(e) {
+    e.preventDefault();
+    this.model.showConnections();
   }
+
 });
