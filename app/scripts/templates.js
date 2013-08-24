@@ -241,13 +241,13 @@ function program5(depth0,data) {
   return buffer;
   }
 
-  buffer += "<h3>Search Jobs</h3>\n<form id=\"form-search\">\n  <label>\n    Job\n    <input class=\"searchInput\" id=\"jobTitleSearchInput\" name=\"job-title\" type=\"text\" placeholder=\"Example: Software Engineer\">\n  </label>\n  <div>\n    ";
+  buffer += "<h3>Search Jobs</h3>\n<form id=\"form-search\">\n  <label>\n    Job\n    <div class=\"inputFilter\">\n      <input class=\"searchInput\" id=\"jobTitleSearchInput\" name=\"job-title\" type=\"text\" placeholder=\"Example: Software Engineer\">\n      <button class=\"addFilterButton tiny\">Add</button>\n    <div>\n  </label>\n  <div>\n    ";
   stack1 = helpers.each.call(depth0, depth0.jobTitle, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n  </div>\n  <label>\n    Location\n    <input class=\"searchInput\" id=\"locationSearchInput\" name=\"job-location\" type=\"text\" placeholder=\"Example: San Francisco, CA\">\n  </label>\n  <div>\n    ";
+  buffer += "\n  </div>\n  <label>\n    Location\n    <div class=\"inputFilter\">\n      <input class=\"searchInput\" id=\"locationSearchInput\" name=\"job-location\" type=\"text\" placeholder=\"Example: San Francisco, CA\">\n      <button class=\"addFilterButton tiny\">Add</button>\n    </div>\n  </label>\n  <div>\n    ";
   stack1 = helpers['if'].call(depth0, depth0.jobLocation, {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n  </div>\n  <label>\n    Keywords\n    <input class=\"searchInput\" id=\"keywordsSearchInput\" name=\"job-keywords\" type=\"text\" placeholder=\"Example: Javascript, Node.js\">\n  </label>\n  <div>\n    ";
+  buffer += "\n  </div>\n  <label>\n    Keywords\n    <div class=\"inputFilter\">\n      <input class=\"searchInput\" id=\"keywordsSearchInput\" name=\"job-keywords\" type=\"text\" placeholder=\"Example: Javascript, Node.js\">\n      <button class=\"addFilterButton tiny\">Add</button>\n    </div>\n  </label>\n  <div>\n    ";
   stack1 = helpers.each.call(depth0, depth0.jobKeywords, {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n  </div>\n  <button class=\"searchFilterButton expand\">Search</button>\n</form>";
