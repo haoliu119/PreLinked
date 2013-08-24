@@ -197,8 +197,8 @@ var _getScore = function(job, connections){
   friends = _(friends).sortBy(function(item){
     return -1 * item.stringDistance;
   });
-  console.log('best match from linkedin connections\n', friends[0] );
-  console.log('Best match score\n', friends[0].stringDistance );
+  // console.log('best match from linkedin connections\n', friends[0] );
+  // console.log('Best match score\n', friends[0].stringDistance );
   return friends[0].stringDistance;
 };
 
