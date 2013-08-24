@@ -24,7 +24,7 @@ var _grabMultiplePages = function(req_query) {
           return JSON.parse(item);
         });
         data = _(data).flatten(true); //only flatten the first level
-        deferred.resolve(data);
+        deferred.resolve(JSON.stringify(data));
       },
       // Rejected
       function(error){
