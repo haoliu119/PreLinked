@@ -13,13 +13,16 @@ PreLinked.Models.SearchfilterModel = Backbone.Model.extend({
   },
 
   addSearchFilter: function(e, title, company, location, keywords) {
-    if(e.target.id === 'jobTitleSearchInput') {
+    if(title) {
       this.attributes.jobTitle.push(title);
-    } else if(e.target.id === 'companySearchInput') {
+    } 
+    if(company) {
       this.attributes.company.push(company);
-    } else if(e.target.id === 'locationSearchInput') {
+    }
+    if(location) {
       this.set('jobLocation', location);
-    } else if(e.target.id === 'keywordsSearchInput') {
+    }
+    if(keywords) {
       this.attributes.jobKeywords.push(keywords);
     }
   },
