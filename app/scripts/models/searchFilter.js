@@ -7,6 +7,7 @@ PreLinked.Models.SearchfilterModel = Backbone.Model.extend({
     this.set('company', []);
     this.set('jobLocation', "");
     this.set('jobKeywords', []);
+    this.set('distance', 25);
     this.on('addSearchFilter', this.addSearchFilter);
     this.on('addSearchFilterOnSubmit', this.addSearchFilterOnSubmit);
     this.on('removeSearchFilter', this.removeSearchFilter);

@@ -29,13 +29,34 @@ PreLinked.Views.AppView = Backbone.View.extend({
   },
 
   fixedScroll: function() {
-    var top = $(window).scrollTop();
-    if(top > 150) {
-      $('#search-filters').css('margin-top', top - 130);
-      $('#connections').addClass('scroll').css('margin-top', top - 130);
-    } else {
+    var reset = function() {
+      $('#connections').removeClass('scroll').css({
+        marginTop: '',
+        maxHeight: ''
+      });
       $('#search-filters').css('margin-top', '');
-      $('#connections').removeClass('scroll').css('margin-top', '');
+    };
+
+    if( $(window).width() < 900 ) {
+      reset();
+      return;
+    }
+
+    var viewportHt = $(window).height(),
+        top = $(window).scrollTop(),
+        connHt = $('#connections').height(),
+        resultsHt = $('#job-results').height(),
+        filterHt = $('#search-filters').height(),
+        htResCheck = resultsHt > viewportHt;
+
+    if(top > 150) {
+      htResCheck && $('#connections').addClass('scroll').css({
+        marginTop: top - 130,
+        maxHeight: viewportHt - 20
+      });
+      $('#search-filters').css('margin-top', top - 130);
+    } else {
+      htResCheck && reset();
     }
   },
 
