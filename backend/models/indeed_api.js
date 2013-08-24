@@ -2,21 +2,23 @@ var request = require('request');
 
 var IndeedApi = module.exports = {};
 
-var endPoint = 'http://api.indeed.com/ads/apisearch';
-var defaults = {
-  publisher: app.get('indeed-id'),
-  v:        '2',      // API version
-  format:   'json',   // json/xml
-  latlong:  '1',      // return geo coordiantes for each result
-  filter:   '1',      // filter duplicate results
-  sort:     'relevance',
-  limit:    '100',
-  highlight: '0'
-}
+var endPoint = 'http://api.indeed.com/ads/apisearch',
+    defaults = {
+      publisher: app.get('indeed-id'),
+      v:        '2',      // API version
+      format:   'json',   // json/xml
+      latlong:  '1',      // return geo coordiantes for each result
+      filter:   '1',      // filter duplicate results
+      sort:     'relevance',
+      limit:    '25', // max limit per page is 25
+      highlight: '0'
+    };
 
 // GET /jobs/search
-IndeedApi.search = function (query, start) {
+IndeedApi.search = function (query, start, testCallback) {
   console.log('- GET /jobs/search - query >> ', query);
+
+
   var deferred = Q.defer();
   request({
     method: 'GET',
@@ -27,8 +29,11 @@ IndeedApi.search = function (query, start) {
         deferred.reject(error);
       } else {
         try {
-          var results = JSON.stringify(JSON.parse(body).results);
-          deferred.resolve(results);
+          if (testCallback){
+            testCallback(body);
+          }
+          body = JSON.stringify(JSON.parse(body).results);
+          deferred.resolve(body);
         } catch (error){
           console.log('- IndeedApi error: ', error, body);
           deferred.reject(body);
@@ -39,8 +44,6 @@ IndeedApi.search = function (query, start) {
 };
 
 /*
-
-http://api.indeed.com/ads/apisearch?publisher=302158985282491&q=java&l=austin%2C+tx&sort=&radius=&st=&jt=&start=&limit=&fromage=&filter=&latlong=1&co=us&chnl=&userip=1.2.3.4&useragent=Mozilla/%2F4.0%28Firefox%29&v=2
 
 &q=
   with all word: <word> <word> <word>

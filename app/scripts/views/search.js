@@ -27,9 +27,10 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     e.preventDefault();
 
     this.searchFilterView.trigger('addSearchFilterOnSubmit');
-    
+
     var searchQuery = this.searchFilterView.model.parseDataForSearch();
-    this.getJobResults(searchQuery.title, searchQuery.location, searchQuery.keywords);
+    console.log(searchQuery);
+    this.getJobResults(searchQuery.title, searchQuery.company, searchQuery.location, searchQuery.keywords);
     // this.render(true); // IS THIS IMPORTANT? Rendering the entire page causes add / remove filter events in searchFilter view to not be heard
   },
 
@@ -52,12 +53,20 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     return this.searchFilterView.render().el;
   },
 
-  getJobResults: function(title, location, keywords) {
+  getJobResults: function(title, company, location, keywords) {
     var deferred = $.Deferred();
     var that = this;
+
+    console.log('title >>', title);
+    console.log('company >>', company);
+    console.log('location >>', location);
+    console.log('keywords >>', keywords);
+
+
     this.searchResultsView.collection
-      .fetch( {data: {q: [title, keywords].join(' ') , l: location}} )
-      .done(function(){
+      .fetch( {data: {q: [title, company, keywords].join(' ') , l: location}} )
+      .done(function(data){
+        console.log('job search results', data);
         that.searchResultsView.jobQuery.title = title; // TODO: THIS IS BEST PRACTICE??????
         deferred.resolve(that.searchResultsView.render().el);
       })
