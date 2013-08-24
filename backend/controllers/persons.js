@@ -1,5 +1,7 @@
 var mongoose = require('mongoose');
-var Person = require('../models/persons.js');
+var ObjectId = mongoose.Types.ObjectId;
+var Person   = require('../models/persons.js');
+var _helper  = require('./_helper.js');
 
 var persons = module.exports = {};
 
@@ -7,6 +9,35 @@ persons.get = function(req, res){
   var deferred = Q.defer();
   deferred.resolve('get');
   res.json('get');
+  return deferred.promise;
+};
+
+persons.getById = function(req, res){
+  if(req.params && req.params.id){
+    targetId = req.params.id;
+    targetId = '2szl4q2Yhy';
+    //todo
+    //fix dummy data
+    console.log('targetId', targetId);
+  }
+
+  var deferred = Q.defer();
+  var query = Person.findOne({
+    _id: targetId
+  });
+  query.exec(function(error, data){
+    if(error){
+      console.log('DB query error in getById: ', error);
+      deferred.reject(error);
+    } else {
+      console.log('DB query in getById: ', data);
+      data = data.inPerson;
+      //todo
+      //fix data.inPerson
+      deferred.resolve(data);
+      _helper.resolved(req, res, data);
+    }
+  })
   return deferred.promise;
 };
 

@@ -176,7 +176,7 @@ var _getJobsAndConnections = function(){
 
 var _getScore = function(job, connections){
   var employer = job.company;
-  console.log('employer from indeed\n', employer);
+  // console.log('employer from indeed\n', employer);
 
   var friends = [];
   _(connections).each(function(item){
@@ -197,8 +197,8 @@ var _getScore = function(job, connections){
   friends = _(friends).sortBy(function(item){
     return -1 * item.stringDistance;
   });
-  console.log('best match from linkedin connections\n', friends[0] );
-  console.log('Best match score\n', friends[0].stringDistance );
+  // console.log('best match from linkedin connections\n', friends[0] );
+  // console.log('Best match score\n', friends[0].stringDistance );
   return friends[0].stringDistance;
 };
 
@@ -225,7 +225,7 @@ jobs.searchSorted = function(req, res){
   };
 
   totalJobs.then(function(jobResults){
-    console.log('jobResults -->', jobResults.length);
+    // console.log('jobResults -->', jobResults.length);
     var jobsSorted = sortJobs(jobResults, connections);
     _helper.resolved(req, res, jobsSorted);
   });
