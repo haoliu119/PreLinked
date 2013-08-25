@@ -73,15 +73,26 @@ module.exports = function(app) {
   app.post('/user/searches', function(req, res){
     console.log('POST /user_searches >>>>', req.body.searches[0]);
 
-    users.userSearch = new users.UserSearch(req.body.searches[0]);
-    users.userSearch.save(function(err){
-      if(err){
-        console.log(err);
-      }
-    });
-    // users.UserSearch.find({}, function(err, data) {
-    //   console.log('-->', err, data);
+  ////////// begin dummy ///////////
+    var fs   = require('fs');
+    var path = require('path');
+    var json = req.body.searches[0];
+    console.log('json-->', json);
+    fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_User_Searches.json'), json);
+  ////////// end dummy ///////////
+
+  ////////// begin db save ///////////
+    // users.userSearch = new users.UserSearch(req.body.searches[0]);
+    // users.userSearch.save(function(err){
+    //   if(err){
+    //     console.log(err);
+    //   }
     // });
+    // // users.UserSearch.find({}, function(err, data) {
+    // //   console.log('-->', err, data);
+    // // });
+  ////////// end db save ///////////
+
     res.end();
   });
 
