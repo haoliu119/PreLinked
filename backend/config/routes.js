@@ -71,7 +71,7 @@ module.exports = function(app) {
 
   // post user search
   app.post('/user/searches', function(req, res){
-    console.log('POST /user/searches >>>>', req.body.searches[0]);
+    console.log('--->POST /user/searches >>>>>>>>>>>>>>', req.body);
 
   ////////// begin dummy ///////////
     // var fs   = require('fs');
@@ -82,14 +82,17 @@ module.exports = function(app) {
   ////////// end dummy ///////////
 
   ////////// begin db save ///////////
-    users.userSearch = new users.UserSearch(req.body.searches[0]);
-    users.userSearch.save(function(err){
+    users.userSearch = new users.UserSearch(req.body);
+
+    users.userSearch.save(function(err, results){
       if(err){
         console.log(err);
+      } else {
+        console.log('Saved successfully', results);
       }
-    });
-    users.UserSearch.find({}, function(err, data) {
+      users.UserSearch.find({}, function(err, data) {
       //console.log('-->', data);
+      });
     });
   ////////// end db save ///////////
 
