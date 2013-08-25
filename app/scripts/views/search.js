@@ -27,7 +27,13 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     this.searchFilterView.addSearchFilterOnSubmit();
     this.getJobResults();
 
-    this.userSearch = new PreLinked.Models.UserModel();
+    this.userSearch = new PreLinked.Models.UserModel({
+      location: this.jobQuery.attributes.location,
+      company: this.jobQuery.attributes.company,
+      title: this.jobQuery.attributes.title,
+      keywords: this.jobQuery.attributes.keywords,
+      distance: this.jobQuery.attributes.distance
+    });
     this.userSearch.save();
   },
 

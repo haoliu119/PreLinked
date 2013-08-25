@@ -17,7 +17,7 @@ PreLinked.Models.UserModel = Backbone.Model.extend({
       company: 'company',
       title: 'title',
       keywords: 'keywords',
-      distance: 'distance'
+      distance: 100
     }];
 
     this.set('searches', data);
