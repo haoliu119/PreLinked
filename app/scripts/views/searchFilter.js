@@ -44,11 +44,12 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
     this.model.addSearchFilterOnSubmit(jobTitle, company, jobLocation, jobKeywords);
     this.render();
 
-    this.userSearch = new PreLinked.Models.UserModel({
-      location: this.model.jobQuery.attributes.jobLocation,
+    var userSearch = new PreLinked.Models.UserModel();
+    userSearch.save({
+      jobTitle: this.model.jobQuery.attributes.jobTitle,
       company: this.model.jobQuery.attributes.company,
-      title: this.model.jobQuery.attributes.jobTitle,
-      keywords: this.model.jobQuery.attributes.jobKeywords,
+      jobLocation: this.model.jobQuery.attributes.jobLocation,
+      jobKeywords: this.model.jobQuery.attributes.jobKeywords,
       distance: 25
     });
   },
@@ -60,7 +61,7 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
   },
 
   render: function () {
-    this.$el.html( this.template(this.model.jobQuery.attributes) );
+    this.$el.html( this.template(this.jobQuery.attributes) );
     return this;
   }
 });
