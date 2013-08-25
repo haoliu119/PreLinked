@@ -43,6 +43,52 @@ IndeedApi.search = function (query, start, testCallback) {
   return deferred.promise;
 };
 
+var parseJobQueryForIndeed = function(query) {
+
+    var apiQuery = {};
+    var title    = query.jobTitle,
+        company  = query.company,
+        keywords = query.jobKeywords;
+
+    if(title.length) {
+      apiQuery.title = "title:(";
+      for(var i = 0; i < title.length; i++) {
+        apiQuery.title += "'" + title[i] + "'";
+        if (i !== title.length - 1 ){
+          apiQuery.title += " or ";
+        }
+      }
+      apiQuery.title += ")";
+    }
+
+    if(company.length) {
+      apiQuery.company = "company:(";
+      for(var i = 0; i < company.length; i++) {
+        apiQuery.company += "'" + company[i] + "'";
+        if (i !== company.length - 1 ){
+          apiQuery.company += " or ";
+        }
+      }
+      apiQuery.company += ")";
+    }
+
+    if(keywords.length) {
+      apiQuery.keywords = "(";
+      for(var i = 0; i < keywords.length; i++) {
+        apiQuery.keywords += "'" + keywords[i] + "'";
+        if (i !== keywords.length - 1 ){
+          apiQuery.keywords += " or ";
+        }
+      }
+      apiQuery.keywords += ")";
+    }
+
+    apiQuery.q
+    apiQuery.l      = query.location;
+    apiQuery.radius = query.distance;
+    return apiQuery;
+  }
+
 /*
 
 &q=

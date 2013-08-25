@@ -8,8 +8,11 @@ PreLinked.Views.AppView = Backbone.View.extend({
   initialize: function() {
     var that = this;
 
-    this.jobQuery = this.model.attributes;
+    // TODO: DELETE BEFORE DEPLOYMENT
+    this.model.on('change', this.model.consoleLogJobQuery);
+    // ------------------------------
 
+    this.jobQuery = this.model;
     this.render();
 
     PreLinked.appRouter = new PreLinked.Routers.AppRouter();
@@ -61,7 +64,10 @@ PreLinked.Views.AppView = Backbone.View.extend({
   },
 
   homePage: function(){
-    console.log('-AppView-homePage');
+    // TODO: DELETE BEFORE DEPLOYMENT
+    console.log('-AppView-homePage >>>');
+    this.model.consoleLogJobQuery();
+    // ------------------------------
 
     var homeModel = new PreLinked.Models.HomeModel();
     var homeView = new PreLinked.Views.HomeView({
@@ -69,16 +75,18 @@ PreLinked.Views.AppView = Backbone.View.extend({
       jobQuery: this.jobQuery
     });
 
-    this.$el.find('#main').empty();
-    this.$el.find('#main').append(homeView.render().el);
+    this.$el.find('#main').html(homeView.render().el);
   },
 
   searchPage: function(){
-    console.log('-AppView-searchPage');
-    console.log('jobQuery', this.jobQuery);
+    // TODO: DELETE BEFORE DEPLOYMENT
+    console.log('-AppView-searchPage >>>');
+    this.model.consoleLogJobQuery();
+    // ------------------------------
 
-    var searchModel = new PreLinked.Models.SearchModel();
+    var searchModel = new PreLinked.Collections.SearchResultsCollection()
     var that = this;
+
     searchModel
       .fetch()
       .done(function(data){
