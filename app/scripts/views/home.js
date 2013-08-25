@@ -24,9 +24,14 @@ PreLinked.Views.HomeView = Backbone.View.extend({
     this.jobQuery.attributes.jobTitle.push(jobTitle);
     this.jobQuery.attributes.jobLocation = jobLocation
 
-    this.userSearch = new PreLinked.Models.UserModel({
-      location: jobLocation,
-      title: jobTitle
+
+    var userSearch = new PreLinked.Models.UserModel();
+    userSearch.save({
+      jobTitle: [jobTitle],
+      company: [],
+      jobLocation: jobLocation,
+      jobKeywords: [],
+      distance: 25
     });
 
     analytics.track('Searched on homepage', {
