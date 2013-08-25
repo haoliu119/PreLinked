@@ -14,10 +14,6 @@ PreLinked.Views.AppView = Backbone.View.extend({
       jobQuery: this.jobQuery
     });
 
-    // TODO: DELETE BEFORE DEPLOYMENT
-    this.model.on('change', this.model.consoleLogJobQuery);
-    // ------------------------------
-
     this.render();
 
     PreLinked.appRouter = new PreLinked.Routers.AppRouter();
