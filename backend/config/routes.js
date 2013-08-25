@@ -28,7 +28,7 @@ module.exports = function(app) {
   //LinkedIn Oauth
   app.get('/auth/linkedin',
     passport.authenticate('linkedin',
-      { scope: ['r_fullprofile', 'r_network'], state: '12345'  }),
+      { scope: ['r_fullprofile', 'r_network', 'r_emailaddress', 'r_contactinfo'], state: '12345'  }),
       function(req, res) {});
   app.get('/auth/linkedin/callback',
     passport.authenticate('linkedin', {
