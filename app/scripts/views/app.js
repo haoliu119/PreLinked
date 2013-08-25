@@ -27,43 +27,43 @@ PreLinked.Views.AppView = Backbone.View.extend({
     });
     Backbone.history.loadUrl();
 
-    var that = this;
-    $(window).on('scroll', function() {
-      that.fixedScroll();
-    });
+    // var that = this;
+    // $(window).on('scroll', function() {
+    //   that.fixedScroll();
+    // });
   },
 
-  fixedScroll: function() {
-    var reset = function() {
-      $('#connections').removeClass('scroll').css({
-        marginTop: '',
-        maxHeight: ''
-      });
-      $('#search-filters').css('margin-top', '');
-    };
+  // fixedScroll: function() {
+  //   var reset = function() {
+  //     $('#connections').removeClass('scroll').css({
+  //       marginTop: '',
+  //       maxHeight: ''
+  //     });
+  //     $('#search-filters').css('margin-top', '');
+  //   };
 
-    if( $(window).width() < 768) {
-      reset();
-      return;
-    }
+  //   if( $(window).width() < 768) {
+  //     reset();
+  //     return;
+  //   }
 
-    var viewportHt = $(window).height(),
-        top = $(window).scrollTop(),
-        connHt = $('#connections').height(),
-        resultsHt = $('#job-results').height(),
-        filterHt = $('#search-filters').height(),
-        htResCheck = resultsHt > viewportHt;
+  //   var viewportHt = $(window).height(),
+  //       top = $(window).scrollTop(),
+  //       connHt = $('#connections').height(),
+  //       resultsHt = $('#job-results').height(),
+  //       filterHt = $('#search-filters').height(),
+  //       htResCheck = resultsHt > viewportHt;
 
-    if(top > 150) {
-      htResCheck && $('#connections').addClass('scroll').css({
-        marginTop: (top > resultsHt-viewportHt ? resultsHt-viewportHt : top) - 130,
-        maxHeight: viewportHt - 20
-      });
-      $('#search-filters').css('margin-top', top - 130);
-    } else {
-      reset();
-    }
-  },
+  //   if(top > 150) {
+  //     htResCheck && $('#connections').addClass('scroll').css({
+  //       marginTop: (top > resultsHt-viewportHt ? resultsHt-viewportHt : top) - 130,
+  //       maxHeight: viewportHt - 20
+  //     });
+  //     $('#search-filters').css('margin-top', top - 130);
+  //   } else {
+  //     reset();
+  //   }
+  // },
 
   homePage: function(){
     // TODO: DELETE BEFORE DEPLOYMENT
