@@ -9,7 +9,7 @@ var jobsController = require('../controllers/jobs_controller.js');
 var linkedin  = require('../controllers/linkedin.js');
 var persons   = require('../controllers/persons.js');
 var getdb     = require('../controllers/getDb.js');
-var mongoose  = require('mongoose');
+var users     = require('../controllers/users');
 
 module.exports = function(app) {
   app.get('/serverindex', site.index);
@@ -71,26 +71,28 @@ module.exports = function(app) {
 
   // post user search
   app.post('/user/searches', function(req, res){
-    console.log('POST /user_searches >>>>', req.body.searches[0]);
-    var Schema = mongoose.Schema;
-    var schema = new Schema({
-      location: String,
-      company: String,
-      title: String,
-      keywords: String
-    },{
-      collection: 'user_searches'
-    });
-    var User = mongoose.model('user_searches', schema);
-    var user = new User(req.body.searches[0]);
-    user.save(function(err){
+    console.log('POST /user/searches >>>>', req.body.searches[0]);
+
+  ////////// begin dummy ///////////
+    // var fs   = require('fs');
+    // var path = require('path');
+    // var json = req.body.searches[0];
+    // console.log('json-->', json);
+    // fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_User_Searches.json'), json);
+  ////////// end dummy ///////////
+
+  ////////// begin db save ///////////
+    users.userSearch = new users.UserSearch(req.body.searches[0]);
+    users.userSearch.save(function(err){
       if(err){
         console.log(err);
       }
     });
-    User.find({}, function(err, data) {
-      console.log('-->', err, data);
+    users.UserSearch.find({}, function(err, data) {
+      //console.log('-->', data);
     });
+  ////////// end db save ///////////
+
     res.end();
   });
 
