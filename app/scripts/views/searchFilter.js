@@ -5,6 +5,7 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
   template: JST['app/scripts/templates/searchFilter.hbs'],
 
   initialize: function() {
+    this.jobQuery = this.model;
     this.model.jobQuery.on('change', this.render);
   },
 
@@ -35,13 +36,21 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
   },
 
   addSearchFilterOnSubmit: function() {
-      var jobTitle = this.$el.find('input[name="job-title"]')[0].value;
-      var company = this.$el.find('input[name="company"]')[0].value;
-      var jobLocation = this.$el.find('input[name=job-location]')[0].value
-      var jobKeywords = this.$el.find('input[name="job-keywords"]')[0].value;
+    var jobTitle = this.$el.find('input[name="job-title"]')[0].value;
+    var company = this.$el.find('input[name="company"]')[0].value;
+    var jobLocation = this.$el.find('input[name=job-location]')[0].value
+    var jobKeywords = this.$el.find('input[name="job-keywords"]')[0].value;
 
-      this.model.addSearchFilterOnSubmit(jobTitle, company, jobLocation, jobKeywords);
-      this.render();
+    this.model.addSearchFilterOnSubmit(jobTitle, company, jobLocation, jobKeywords);
+    this.render();
+
+    this.userSearch = new PreLinked.Models.UserModel({
+      location: this.model.jobQuery.attributes.jobLocation,
+      company: this.model.jobQuery.attributes.company,
+      title: this.model.jobQuery.attributes.jobTitle,
+      keywords: this.model.jobQuery.attributes.jobKeywords,
+      distance: 25
+    });
   },
 
   removeSearchFilter: function(e) {

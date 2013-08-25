@@ -3,10 +3,10 @@ var mongoose  = require('mongoose');
 
 // save user search
 users.schema = new mongoose.Schema({
-  location: String,
-  company: String,
-  title: String,
-  keywords: String,
+  jobTitle: Array,
+  company: Array,
+  jobLocation: String,
+  jobKeywords: Array,
   distance: Number
 },{
   collection: 'user_searches'

@@ -4,22 +4,20 @@ PreLinked.Models.UserModel = Backbone.Model.extend({
   urlRoot: '/user/searches',
 
   defaults: {
-    location: '',
-    company: '',
-    title: '',
-    keywords: '',
-    distance: ''
+    jobTitle: [],
+    company: [],
+    jobLocation: '',
+    jobKeywords: [],
+    distance: 25
   },
 
   initialize: function() {
-    var data = [{
-      location: 'location',
-      company: 'company',
-      title: 'title',
-      keywords: 'keywords',
-      distance: 100
-    }];
-
-    this.set('searches', data);
+    // this.save({
+    //   jobTitle: this.get('title'),
+    //   company: this.get('company'),
+    //   jobLocation: this.get('jobLocation'),
+    //   jobKeywords: this.get('jobKeywords'),
+    //   distance: this.get('distance')
+    // });
   }
 });
