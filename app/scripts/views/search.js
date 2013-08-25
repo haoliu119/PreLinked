@@ -23,8 +23,12 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
   submitSearch: function(e) {
     e.preventDefault();
+
     this.searchFilterView.addSearchFilterOnSubmit();
     this.getJobResults();
+
+    this.userSearch = new PreLinked.Models.UserModel();
+    this.userSearch.save();
   },
 
   findConnectionsForJob: function(data) {

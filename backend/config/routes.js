@@ -9,6 +9,7 @@ var jobsController = require('../controllers/jobs_controller.js');
 var linkedin  = require('../controllers/linkedin.js');
 var persons   = require('../controllers/persons.js');
 var getdb     = require('../controllers/getDb.js');
+var mongoose  = require('mongoose');
 
 module.exports = function(app) {
   app.get('/serverindex', site.index);
@@ -66,6 +67,31 @@ module.exports = function(app) {
       console.log('- GET /session >> false');
       res.json(false);
     }
+  });
+
+  // post user search
+  app.post('/user/searches', function(req, res){
+    console.log('POST /user_searches >>>>', req.body.searches[0]);
+    var Schema = mongoose.Schema;
+    var schema = new Schema({
+      location: String,
+      company: String,
+      title: String,
+      keywords: String
+    },{
+      collection: 'user_searches'
+    });
+    var User = mongoose.model('user_searches', schema);
+    var user = new User(req.body.searches[0]);
+    user.save(function(err){
+      if(err){
+        console.log(err);
+      }
+    });
+    User.find({}, function(err, data) {
+      console.log('-->', err, data);
+    });
+    res.end();
   });
 
   //this is where you test random backend functions
