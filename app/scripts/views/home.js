@@ -6,34 +6,24 @@ PreLinked.Views.HomeView = Backbone.View.extend({
 
   template: JST['app/scripts/templates/home.hbs'],
 
-  initialize: function(options) {
-    if(options && options.jobQuery){
-      this.jobQuery = options.jobQuery;
-    }
-    // PreLinked.on('changePage', this.changePage);
-  },
-
   events: {
     'submit form#form-home': 'submitSearch'
   },
 
-  search: function(data) {
-    console.log('callback: search button clicked');
-    //PreLinked.appRouter.navigate('/search');
+  initialize: function(options) {
+    this.jobQuery = options.jobQuery;
   },
 
   submitSearch: function(e) {
     e.preventDefault();
 
     var that = this,
-        jobTitle = this.$el.find('input[name=job-title]').val(),
+        jobTitle    = this.$el.find('input[name=job-title]').val(),
         jobLocation = this.$el.find('input[name=job-location]').val();
 
-    this.jobQuery.jobTitle = jobTitle;
-    this.jobQuery.jobLocation = jobLocation;
-    console.log('after submit:', this.jobQuery);
+    this.jobQuery.attributes.jobTitle.push(jobTitle);
+    this.jobQuery.attributes.jobLocation = jobLocation
 
-    console.log('[title]-->', jobTitle, '[location]-->', jobLocation);
     analytics.track('Searched on homepage', {
       jobTitle    : jobTitle,
       jobLocation : jobLocation

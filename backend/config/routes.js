@@ -18,16 +18,17 @@ module.exports = function(app) {
 
   //Jobs
   app.get('/jobs', jobsController.get);
-  app.get('/jobs/search', jobs.searchSorted);
+  app.get('/jobs/search', jobs.search);
   app.get('/jobs/searchSorted', jobs.searchSorted);
 
   //PreLinked Persons
+  // Fetch data from our database
   app.get('/persons', persons.get);
 
   //LinkedIn Oauth
   app.get('/auth/linkedin',
     passport.authenticate('linkedin',
-      { scope: ['r_fullprofile', 'r_network'], state: '12345'  }),
+      { scope: ['r_fullprofile', 'r_network', 'r_emailaddress', 'r_contactinfo'], state: '12345'  }),
       function(req, res) {});
   app.get('/auth/linkedin/callback',
     passport.authenticate('linkedin', {
@@ -127,6 +128,43 @@ module.exports = function(app) {
     /**
     /** TESTING Indeed ---------------------------------------------
     /*/
+
+    // GET /jobs/search
+    /*
+    l=    '12345'
+          'San Francisco, CA'
+          // zipcode or city, state
+
+    q=
+      space = + / AND'd
+
+      with all word:  <word> <word> <word>
+
+      exact phrase:   "software engineer"
+
+      or / at least one of these words:
+          ('high school teacher' or 'plumber')
+          (plumber or teacher or engineer or accountant)
+
+      job title:  "title:('elementary school teacher')"
+                  "title:('software engineer' or 'software developer')"
+
+      salary: $60,000
+              $40K-$90K
+
+      company:
+
+      radius=50
+
+      jt=(fulltime+or+parttime)
+    */
+    // req.query = {q: "title:('architect' or 'software engineer' or 'developer') company:('google' or 'yahoo' or 'salesforce') $90K-$120K ('big data' or 'plumber')", l: "94105"};
+    // var fileName = "_Indeed_Results.json";
+    // jobs.search(req, res,
+    //   function(json){
+    //     fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/' + fileName ), json);
+    //   }
+    // );
 
   });
 };

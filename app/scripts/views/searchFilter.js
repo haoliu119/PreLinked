@@ -5,7 +5,7 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
   template: JST['app/scripts/templates/searchFilter.hbs'],
 
   initialize: function() {
-    this.on('addSearchFilterOnSubmit', this.addSearchFilterOnSubmit);
+    this.model.jobQuery.on('change', this.render);
   },
 
   events: {
@@ -29,7 +29,7 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
       var jobLocation = this.$el.find('input[name=job-location]')[0].value
       var jobKeywords = this.$el.find('input[name="job-keywords"]')[0].value;
 
-      this.model.trigger('addSearchFilter', e, jobTitle, company, jobLocation, jobKeywords);
+      this.model.addSearchFilter(jobTitle, company, jobLocation, jobKeywords);
       this.render();
     }
   },
@@ -40,17 +40,18 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
       var jobLocation = this.$el.find('input[name=job-location]')[0].value
       var jobKeywords = this.$el.find('input[name="job-keywords"]')[0].value;
 
-      this.model.trigger('addSearchFilterOnSubmit', jobTitle, company, jobLocation, jobKeywords);
+      this.model.addSearchFilterOnSubmit(jobTitle, company, jobLocation, jobKeywords);
       this.render();
   },
 
   removeSearchFilter: function(e) {
-    this.model.trigger('removeSearchFilter', e);
+    e.preventDefault();
+    this.model.removeSearchFilter(e);
     this.render();
   },
 
   render: function () {
-    this.$el.html( this.template(this.model.attributes) );
+    this.$el.html( this.template(this.model.jobQuery.attributes) );
     return this;
   }
 });
