@@ -5,6 +5,7 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
   template: JST['app/scripts/templates/searchFilter.hbs'],
 
   initialize: function() {
+    this.model.jobQuery.on('change', this.render);
   },
 
   events: {
@@ -50,7 +51,7 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
   },
 
   render: function () {
-    this.$el.html( this.template(this.model.attributes) );
+    this.$el.html( this.template(this.model.jobQuery.attributes) );
     return this;
   }
 });

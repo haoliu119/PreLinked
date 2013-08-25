@@ -12,6 +12,10 @@ PreLinked.Models.AppModel = Backbone.Model.extend({
 
   initialize: function (){
     this.app_title = 'PreLinked App';
+
+    // TODO: DELETE BEFORE DEPLOYMENT
+    this.on('change', this.consoleLogJobQuery);
+    // ------------------------------
   },
 
   // TODO: DELETE BEFORE DEPLOYMENT
