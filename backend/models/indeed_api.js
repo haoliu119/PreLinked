@@ -16,9 +16,8 @@ var endPoint = 'http://api.indeed.com/ads/apisearch',
 
 // GET /jobs/search
 IndeedApi.search = function (query, start, testCallback) {
-  console.log('- GET /jobs/search - query >> ', query);
-
-
+  query = parseJobQueryForIndeed(query);
+  console.log('- GET /jobs/search -> IndeedApi.search - parsedQueryForIndeed >> ', query);
   var deferred = Q.defer();
   request({
     method: 'GET',
@@ -45,46 +44,50 @@ IndeedApi.search = function (query, start, testCallback) {
 
 var parseJobQueryForIndeed = function(query) {
 
+    var tempQuery = {};
     var apiQuery = {};
     var title    = query.jobTitle,
         company  = query.company,
         keywords = query.jobKeywords;
 
-    if(title.length) {
-      apiQuery.title = "title:(";
+    if(title && title.length) {
+      tempQuery.title = "title:(";
       for(var i = 0; i < title.length; i++) {
-        apiQuery.title += "'" + title[i] + "'";
+        tempQuery.title += "'" + title[i] + "'";
         if (i !== title.length - 1 ){
-          apiQuery.title += " or ";
+          tempQuery.title += " or ";
         }
       }
-      apiQuery.title += ")";
+      tempQuery.title += ")";
     }
 
-    if(company.length) {
-      apiQuery.company = "company:(";
+    if(company && company.length) {
+      tempQuery.company = "company:(";
       for(var i = 0; i < company.length; i++) {
-        apiQuery.company += "'" + company[i] + "'";
+        tempQuery.company += "'" + company[i] + "'";
         if (i !== company.length - 1 ){
-          apiQuery.company += " or ";
+          tempQuery.company += " or ";
         }
       }
-      apiQuery.company += ")";
+      tempQuery.company += ")";
     }
 
-    if(keywords.length) {
-      apiQuery.keywords = "(";
+    if(keywords && keywords.length) {
+      tempQuery.keywords = "(";
       for(var i = 0; i < keywords.length; i++) {
-        apiQuery.keywords += "'" + keywords[i] + "'";
+        tempQuery.keywords += "'" + keywords[i] + "'";
         if (i !== keywords.length - 1 ){
-          apiQuery.keywords += " or ";
+          tempQuery.keywords += " or ";
         }
       }
-      apiQuery.keywords += ")";
+      tempQuery.keywords += ")";
     }
 
-    apiQuery.q
-    apiQuery.l      = query.location;
+    apiQuery.q = _.reduce(tempQuery,
+      function(memo, value){
+        return memo += (" " + value);
+      }, "");
+    apiQuery.l      = query.jobLocation;
     apiQuery.radius = query.distance;
     return apiQuery;
   }

@@ -21,7 +21,8 @@ PreLinked.Views.HomeView = Backbone.View.extend({
         jobTitle    = this.$el.find('input[name=job-title]').val(),
         jobLocation = this.$el.find('input[name=job-location]').val();
 
-    this.jobQuery.set({jobTitle : jobTitle, jobLocation : jobLocation});
+    this.jobQuery.attributes.jobTitle.push(jobTitle);
+    this.jobQuery.attributes.jobLocation = jobLocation
 
     analytics.track('Searched on homepage', {
       jobTitle    : jobTitle,

@@ -3,12 +3,15 @@
 PreLinked.Models.AppModel = Backbone.Model.extend({
 
   defaults:{
-    app_title:    'PreLinked App',
     jobTitle:     [],
     company:      [],
     jobLocation:  "",
     jobKeywords:  [],
     distance:     25
+  },
+
+  initialize: function (){
+    this.app_title = 'PreLinked App';
   },
 
   // TODO: DELETE BEFORE DEPLOYMENT

@@ -6,13 +6,18 @@ PreLinked.Views.AppView = Backbone.View.extend({
   template: JST['app/scripts/templates/app.hbs'],
 
   initialize: function() {
-    var that = this;
+    this.jobQuery = this.model;
+
+    this.searchView = new PreLinked.Views.SearchView({jobQuery: this.jobQuery});
+    this.homeView = new PreLinked.Views.HomeView({
+      model: new PreLinked.Models.HomeModel(),
+      jobQuery: this.jobQuery
+    });
 
     // TODO: DELETE BEFORE DEPLOYMENT
     this.model.on('change', this.model.consoleLogJobQuery);
     // ------------------------------
 
-    this.jobQuery = this.model;
     this.render();
 
     PreLinked.appRouter = new PreLinked.Routers.AppRouter();
@@ -26,6 +31,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
     });
     Backbone.history.loadUrl();
 
+    var that = this;
     $(window).on('scroll', function() {
       that.fixedScroll();
     });
@@ -69,13 +75,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
     this.model.consoleLogJobQuery();
     // ------------------------------
 
-    var homeModel = new PreLinked.Models.HomeModel();
-    var homeView = new PreLinked.Views.HomeView({
-      model: homeModel,
-      jobQuery: this.jobQuery
-    });
-
-    this.$el.find('#main').html(homeView.render().el);
+    this.$el.find('#main').html(this.homeView.render().el);
   },
 
   searchPage: function(){
@@ -84,18 +84,18 @@ PreLinked.Views.AppView = Backbone.View.extend({
     this.model.consoleLogJobQuery();
     // ------------------------------
 
-    var searchModel = new PreLinked.Collections.SearchResultsCollection()
-    var that = this;
+    // var searchModel = new PreLinked.Collections.SearchResultsCollection()
 
-    searchModel
-      .fetch()
-      .done(function(data){
-        var searchView = new PreLinked.Views.SearchView({
-          model: data,
-          jobQuery: that.jobQuery
-        });
-        that.$el.find('#main').html(searchView.render().el);
-      });
+    var that = this;
+    // searchModel
+    //   .fetch()
+    //   .done(function(data){
+    //     var searchView = new PreLinked.Views.SearchView({
+    //       model: data,
+    //       jobQuery: that.jobQuery
+    //     });
+        that.$el.find('#main').html(this.searchView.render().el);
+      // });
 
   },
 
