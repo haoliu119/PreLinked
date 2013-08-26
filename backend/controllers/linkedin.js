@@ -5,6 +5,12 @@ var _helper     = require('./_helper.js');
 
 var linkedin    = module.exports = {};
 
+var parseLinkedInResults = function(json){
+  json = _.reject(JSON.parse(json), function(person){
+    return person.id === 'private';
+  });
+  return JSON.stringify(json);
+};
 
 // GET /people/search
 linkedin.searchConnections = function(req, res, testCallback){
@@ -19,6 +25,7 @@ linkedin.searchConnections = function(req, res, testCallback){
       .done(
         //Resolved: json returned from LinkedIn API
         function(json) {
+          json = parseLinkedInResults(json);
           if (testCallback) {
             testCallback(json);
           }
