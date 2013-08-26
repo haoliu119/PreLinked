@@ -12,6 +12,7 @@ PreLinked.Views.HomeView = Backbone.View.extend({
 
   initialize: function(options) {
     this.jobQuery = options.jobQuery;
+    this.jobQuery.on('change:jobLocation', this.updateLocation, this);
   },
 
   submitSearch: function(e) {
@@ -35,8 +36,12 @@ PreLinked.Views.HomeView = Backbone.View.extend({
   render: function() {
     this.$el
       .attr('data-page','home')
-      .html(this.template);
+      .html(this.template(this.jobQuery.attributes));
     return this;
+  },
+
+  updateLocation: function(){
+    this.$el.find('#jobLocation').text(this.jobQuery.attributes.jobLocation);
   }
 
 });
