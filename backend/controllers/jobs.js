@@ -181,6 +181,15 @@ var _getJobsAndConnections = function(){
   //       }
   // );
 
+
+  //input
+  //100 indeed jobs
+  //500 1st degree
+  //100 2nd degree
+  //100 3rd degree
+
+
+
   Q.all(promises)
     .spread(function(indeedSearch, inSearch, inFirstDegree){
       console.log('IndeedApi search data: \n');

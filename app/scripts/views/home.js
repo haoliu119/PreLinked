@@ -22,11 +22,18 @@ PreLinked.Views.HomeView = Backbone.View.extend({
         jobLocation = this.$el.find('input[name=job-location]').val();
 
     this.jobQuery.attributes.jobTitle.push(jobTitle);
-    this.jobQuery.attributes.jobLocation = jobLocation
+    this.jobQuery.attributes.jobLocation = jobLocation;
+
+
+    var userSearch = new PreLinked.Models.UserModel();
+    userSearch.save({
+      jobTitle: this.jobQuery.attributes.jobTitle,
+      jobLocation: this.jobQuery.attributes.jobLocation
+    });
 
     analytics.track('Searched on homepage', {
-      jobTitle    : jobTitle,
-      jobLocation : jobLocation
+      jobTitle    : this.jobQuery.attributes.jobTitle,
+      jobLocation : this.jobQuery.attributes.jobLocation
     });
 
     PreLinked.appRouter.navigate('/search', { trigger: true});
