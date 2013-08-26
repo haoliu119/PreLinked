@@ -115,7 +115,9 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   },
 
   render: function() {
-    this.$el.html( this.template() );
+    this.$el
+      .attr('data-page','search')
+      .html( this.template() );
     this.$el.find('#search-filters').html(this.getSearchFilter())
 
     var that = this;

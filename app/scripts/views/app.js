@@ -21,10 +21,10 @@ PreLinked.Views.AppView = Backbone.View.extend({
     _.bindAll(this, "showPosition");
     _.bindAll(this, "showError");
     this.model.on('googleGeoSuccess',function(){
-      this.$el.find('#main .geoLocation img').attr('src', this.imageUrls.geoLocate);
+      this.setIconGeo();
     }, this);
     this.model.on('googleGeoError',function(){
-      this.$el.find('#main .geoLocation img').attr('src', this.imageUrls.geoLocate);
+      this.setIconGeo();
       alert("Location information is unavailable.");
     }, this);
 
@@ -33,8 +33,6 @@ PreLinked.Views.AppView = Backbone.View.extend({
       model: new PreLinked.Models.HomeModel(),
       jobQuery: this.jobQuery
     });
-
-    this.getLocation();
 
     PreLinked.appRouter = new PreLinked.Routers.AppRouter();
     PreLinked.appRouter.on('route:home', this.homePage, this);
@@ -86,8 +84,10 @@ PreLinked.Views.AppView = Backbone.View.extend({
   // },
 
   homePage: function(){
+    debugger;
     this.$el.find('#main').html(this.homeView.render().el);
     this.$el.find('#main input[name=job-title]').focus();
+    this.getLocation();
   },
 
   searchPage: function(){
@@ -102,11 +102,23 @@ PreLinked.Views.AppView = Backbone.View.extend({
 
   getLocation: function(){
     if(navigator.geolocation){
-      this.$el.find('#main .geoLocation img').attr('src', this.imageUrls.loading);
+      this.setIconLoading();
       navigator.geolocation.getCurrentPosition(this.showPosition, this.showError);
     }else{
       alert("Sorry, this feature is not supported by your browser.");
     }
+  },
+
+  setIconLoading: function(){
+    var currentPage = PreLinked.appRouter.routes[Backbone.history.fragment];
+    alert(currentPage);
+    this.$el.find('#main #page-' + currentPage + ' .geoLocation img').attr('src', this.imageUrls.loading);
+  },
+
+  setIconGeo: function(){
+    var currentPage = PreLinked.appRouter.routes[Backbone.history.fragment];
+    alert(currentPage);
+    this.$el.find('#main #page-' + currentPage + ' .geoLocation img').attr('src', this.imageUrls.geoLocate);
   },
 
   showPosition: function(position){
@@ -131,7 +143,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
         alert("An unknown error occurred.");
         break;
       }
-    this.$el.find('#main .geoLocation img').attr('src', this.imageUrls.geoLocate);
+    this.setIconGeo();
   }
 
 });
