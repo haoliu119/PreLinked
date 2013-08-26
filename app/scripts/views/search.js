@@ -23,8 +23,12 @@ PreLinked.Views.SearchView = Backbone.View.extend({
                     jobQuery: this.jobQuery
                   })
     });
-    this.searchRecentView   = new PreLinked.Views.SearchfilterView({  model:      new PreLinked.Models.SearchfilterModel({jobQuery: this.jobQuery}) });
-    this.searchResultsView.collection.on('showConnections', this.findConnectionsForJob, this);
+    this.searchRecentView   = new PreLinked.Views.SearchfilterView({
+      model     : new PreLinked.Models.SearchfilterModel({
+                    jobQuery: this.jobQuery
+                  })
+    });
+    // this.searchResultsView.collection.on('showConnections', this.findConnectionsForJob, this);
   },
 
   events: {
