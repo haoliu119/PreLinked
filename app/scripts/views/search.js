@@ -7,6 +7,10 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
   template: JST['app/scripts/templates/search.hbs'],
 
+  events: {
+    'click .searchFilterButton': 'submitSearch',
+    'click .modal-details': 'getModalConnectionDetails',
+  },
 
   initialize: function(options){
     this.jobQuery = options.jobQuery;
@@ -21,7 +25,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     this.searchFilterView   = new PreLinked.Views.SearchfilterView({
       model     : new PreLinked.Models.SearchfilterModel({
                     jobQuery: this.jobQuery
-                  })
+                  }),
+      jobQuery: this.jobQuery
     });
     this.searchRecentView   = new PreLinked.Views.SearchfilterView({
       model     : new PreLinked.Models.SearchfilterModel({
@@ -31,17 +36,15 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     // this.searchResultsView.collection.on('showConnections', this.findConnectionsForJob, this);
   },
 
-  events: {
-    'click .searchFilterButton': 'submitSearch',
-    'click .modal-details': 'getModalConnectionDetails',
-  },
-
   submitSearch: function(e) {
     e.preventDefault();
-
-    this.searchFilterView.addSearchFilterOnSubmit();
-    this.getJobResults();
-    // this.getConnections();
+    if(this.jobQuery.hasChanged()){
+      alert('CHANGED !!!!!!!!!!!');
+      console.log('changedAttributes >>>>>>>>',this.jobQuery.changedAttributes());
+      // this.searchFilterView.addSearchFilterOnSubmit();
+      // this.getJobResults();
+      // this.getConnections();
+    }
   },
 
   findConnectionsForJob: function(data) {
