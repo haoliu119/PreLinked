@@ -4,10 +4,8 @@
       <form id="form-home">
         <div class="large-10 columns">
           Search for Jobs near:
-          <a href="javascript: void(0)">
-            <img src="http://www.southportlandba.com/wp-content/uploads/2013/06/Maps-and-Geolocation-Marker-icon2.png">
-            <strong>San Francisco, CA</strong>
-          </a>
+          <strong><a href="#" data-dropdown="drop1" id="jobLocation">{{jobLocation}}</a></strong>
+          <a href="#" class="geoLocation"><img src="https://webfiles.uci.edu/shaohuaz/share/prelinked/geolocate.png" height="20" width="20"></a>
         </div>
         <div class="large-9 columns">
           <input class="full-width" name="job-title" type="text" placeholder="Enter job title (example: Software Engineer)">
@@ -15,6 +13,18 @@
         <div class="large-3 columns">
           <button type="submit" class="button prefix">Search Jobs</button>
         </div>
+      </form>
+      <form id="form-location">
+        <ul id="drop1" class="f-dropdown medium" data-dropdown-content>
+          <li>
+            <div class="small-10 columns">
+              <input class="full-width" name="job-location" type="text" placeholder="Location: city, state, or zip">
+            </div>
+            <div class="small-2 columns">
+              <button type="submit" class="button prefix">Update</button>
+            </div>
+          </li>
+        </ul>
       </form>
     </div>
   </div>
