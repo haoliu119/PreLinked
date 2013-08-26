@@ -128,10 +128,12 @@ module.exports = function(app) {
 
     // // GET /people/search
     // // F first, S second, A groups, O out-of-network(third)
-    // req.query = {title: 'software engineer', keywords: 'san francisco, ca',  start: '75', facet:  'network,A,O' };
+    // req.query = {title: 'software engineer', keywords: 'san francisco, ca',  start: '0', facet:  'network,S,A,O' };
+    // // var fileName = "_LinkedIn_People_Search_3rd_Degree_P04.json";
+    // var fileName = "_temp_test";
     // linkedin.searchConnections(req, res,
     //       function(json) {
-    //         fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_LinkedIn_People_Search_3rd_Degree_P04.json'), json);
+    //         fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/' + fileName), json);
     //       }
     // );
 
