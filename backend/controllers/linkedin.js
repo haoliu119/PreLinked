@@ -7,13 +7,13 @@ var linkedin    = module.exports = {};
 
 var parseLinkedInResults = function(json){
   json = _.reject(JSON.parse(json), function(person){
-    return person.id === 'private';
+    return (person.id.toLowerCase() === 'private' || person.lastName.toLowerCase() === 'private' || person.firstName.toLowerCase() === 'private' || person.distance === -1);
   });
   return JSON.stringify(json);
 };
 
 // GET /people/search
-linkedin.searchConnections = function(req, res, testCallback){
+linkedin.searchConnections = function(req, res){
   console.log('- '+ req.method + ' ' + req.url + ' - Controller -> LinkedIn.searchConnections >> ');
 
   /*
@@ -26,9 +26,6 @@ linkedin.searchConnections = function(req, res, testCallback){
         //Resolved: json returned from LinkedIn API
         function(json) {
           json = parseLinkedInResults(json);
-          if (testCallback) {
-            testCallback(json);
-          }
           _helper.resolved(req, res, json);
         },
         //Rejected: error message from LinkedIn API
