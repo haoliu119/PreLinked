@@ -26,7 +26,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
     this.searchFilterView.addSearchFilterOnSubmit();
     this.getJobResults();
-    this.getConnections();
+    // this.getConnections();
   },
 
   findConnectionsForJob: function(data) {
