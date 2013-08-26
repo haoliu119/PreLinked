@@ -36,6 +36,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
     this.searchFilterView.addSearchFilterOnSubmit();
     this.getJobResults();
+    // this.getConnections();
   },
 
   findConnectionsForJob: function(data) {
@@ -63,8 +64,10 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     var deferred = $.Deferred();
     var that = this;
 
+    // TODO: DELETE BEFORE DEPLOYMENT
     console.log('getJobResults >>>>>>', this.jobQuery.attributes);
     this.jobQuery.consoleLogJobQuery();
+    // ----------------------------------
 
     this.searchResultsView.collection
       .fetch( {data: that.jobQuery.attributes} )
@@ -78,17 +81,22 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     return deferred.promise();
   },
 
-  getConnections: function(title, company, keywords) {
+  getConnections: function(start, degree) {
     var deferred = $.Deferred();
     var that = this;
 
+    var keywords = this.jobQuery.attributes.jobKeywords;
+    keywords = keywords.concat(this.jobQuery.attributes.company); // Linkedin API company parameter is inaccurate, passing companies in as keywords
+    console.log('keywords >>>> ', keywords);
     var query = {
-      title: title,
-      keywords: keywords
+      title: this.jobQuery.attributes.jobTitle.join(' '),
+      keywords: keywords.join(' '),
+      // 'company-name': this.jobQuery.attributes.company.join(' '),
+      start: '0',
+      count: '25',
+      facet:  'network,F,S,A,O'
     };
-    if (company && company.length > 0){
-      query['company-name'] = company;
-    }
+
     this.connectionsView.collection
       .fetch( { data: query } )
       .done(function(data){

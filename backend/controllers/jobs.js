@@ -54,6 +54,8 @@ var _grabMultiplePages = function(req_query) {
 jobs.search = function(req, res, testCallback){
   console.log('- GET /jobs/search - Controller -> IndeedApi.searchConnections >> ');
 
+  req.query.useragent = req.headers['user-agent'];
+  req.query.userip = _helper.getClientIp(req);
   /*
   /* Indeed API with Pagination ------------------------
   */
