@@ -54,6 +54,8 @@ var _grabMultiplePages = function(req_query) {
 jobs.search = function(req, res, testCallback){
   console.log('- GET /jobs/search - Controller -> IndeedApi.searchConnections >> ');
 
+  req.query.useragent = req.headers['user-agent'];
+  req.query.userip = _helper.getClientIp(req);
   /*
   /* Indeed API with Pagination ------------------------
   */
@@ -155,11 +157,40 @@ var _getJobsAndConnections = function(){
   var promises = [];
   //todo
   //remove this default query string in the future
-  req.query.q = req.query.q || 'Software Engineer';
-  req.query.keywords = req.query.keywords || 'Software Engineer';
+  //{
+  //   jobTitle:     [],
+  //   company:      [],
+  //   jobLocation:  "",
+  //   jobKeywords:  [],
+  //   distance:     25
+  // },
+
+  req.query = req.query || {jobTitle: ['Software Engineer']};
   promises.push( _grabMultiplePages(req.query) );
-  promises.push( LinkedInApi.searchConnections(req.session, req.query) );
-  promises.push( LinkedInApi.searchFirstDegree(req.session, req.query) );
+
+  promises.push( LinkedInApi.searchFirstDegree(req.session) ); //First 500 for now
+
+  // promises.push( LinkedInApi.searchConnections(req.session, req.query) );
+  // req.query.keywords = req.query.keywords || 'Software Engineer';
+
+  // // GET /people/search
+  // // F first, S second, A groups, O out-of-network(third)
+  // req.query = {title: 'software engineer', keywords: 'google san francisco, ca',  start: '75', facet:  'network,S' }; // 2ND DEGREE
+  // req.query = {title: 'software engineer', keywords: 'amazon twitter san francisco, ca',  start: '75', facet:  'network,A,O' }; // 3RD DEGREE
+  // linkedin.searchConnections(req, res,
+  //       function(json) {
+  //         fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_LinkedIn_People_Search_3rd_Degree_P04.json'), json);
+  //       }
+  // );
+
+
+  //input
+  //100 indeed jobs
+  //500 1st degree
+  //100 2nd degree
+  //100 3rd degree
+
+
 
   Q.all(promises)
     .spread(function(indeedSearch, inSearch, inFirstDegree){
@@ -175,8 +206,8 @@ var _getJobsAndConnections = function(){
 };
 
 var _getScore = function(job, connections){
-  var employer = job.company;
-  console.log('employer from indeed\n', employer);
+  var employer = job.company; // Apple
+  // console.log('employer from indeed\n', employer);
 
   var friends = [];
   _(connections).each(function(item){
@@ -225,7 +256,7 @@ jobs.searchSorted = function(req, res){
   };
 
   totalJobs.then(function(jobResults){
-    console.log('jobResults -->', jobResults.length);
+    // console.log('jobResults -->', jobResults.length);
     var jobsSorted = sortJobs(jobResults, connections);
     _helper.resolved(req, res, jobsSorted);
   });

@@ -9,12 +9,13 @@ var jobsController = require('../controllers/jobs_controller.js');
 var linkedin  = require('../controllers/linkedin.js');
 var persons   = require('../controllers/persons.js');
 var getdb     = require('../controllers/getDb.js');
+var users     = require('../controllers/users');
 
 module.exports = function(app) {
   app.get('/serverindex', site.index);
 
   //getDb
-  app.get('/getdb', getdb.getKeyword);
+  app.get('/getdb', getdb.testKeyword);
 
   //Jobs
   app.get('/jobs', jobsController.get);
@@ -22,12 +23,13 @@ module.exports = function(app) {
   app.get('/jobs/searchSorted', jobs.searchSorted);
 
   //PreLinked Persons
+  // Fetch data from our database
   app.get('/persons', persons.get);
 
   //LinkedIn Oauth
   app.get('/auth/linkedin',
     passport.authenticate('linkedin',
-      { scope: ['r_fullprofile', 'r_network'], state: '12345'  }),
+      { scope: ['r_fullprofile', 'r_network', 'r_emailaddress', 'r_contactinfo'], state: '12345'  }),
       function(req, res) {});
   app.get('/auth/linkedin/callback',
     passport.authenticate('linkedin', {
@@ -46,6 +48,9 @@ module.exports = function(app) {
   app.get('/people/search', linkedin.searchConnections);
   app.get('/people/:id', linkedin.getProfile);
   app.get('/people/', linkedin.searchFirstDegree);
+  // app.get('/people/search', linkedin.searchConnections);
+  // app.get('/people/:id', persons.getById);
+  // app.get('/people/', persons.get);
 
   // Users
 	// app.post('/user', users.create);
@@ -62,6 +67,36 @@ module.exports = function(app) {
       console.log('- GET /session >> false');
       res.json(false);
     }
+  });
+
+  // post user search
+  app.post('/user/searches', function(req, res){
+    console.log('--->POST /user/searches >>>>>>>>>>>>>>', req.body);
+
+  ////////// begin dummy ///////////
+    // var fs   = require('fs');
+    // var path = require('path');
+    // var json = req.body.searches[0];
+    // console.log('json-->', json);
+    // fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_User_Searches.json'), json);
+  ////////// end dummy ///////////
+
+  ////////// begin db save ///////////
+    users.userSearch = new users.UserSearch(req.body);
+
+    users.userSearch.save(function(err, results){
+      if(err){
+        console.log(err);
+      } else {
+        console.log('Saved successfully', results);
+      }
+      users.UserSearch.find({}, function(err, data) {
+      //console.log('-->', data);
+      });
+    });
+  ////////// end db save ///////////
+
+    res.end();
   });
 
   //this is where you test random backend functions
@@ -93,10 +128,12 @@ module.exports = function(app) {
 
     // // GET /people/search
     // // F first, S second, A groups, O out-of-network(third)
-    // req.query = {title: 'software engineer', keywords: 'san francisco, ca',  start: '75', facet:  'network,A,O' };
+    // req.query = {title: 'software engineer', keywords: 'san francisco, ca',  start: '0', facet:  'network,S,A,O' };
+    // // var fileName = "_LinkedIn_People_Search_3rd_Degree_P04.json";
+    // var fileName = "_temp_test";
     // linkedin.searchConnections(req, res,
     //       function(json) {
-    //         fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_LinkedIn_People_Search_3rd_Degree_P04.json'), json);
+    //         fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/' + fileName), json);
     //       }
     // );
 
@@ -124,6 +161,43 @@ module.exports = function(app) {
     /**
     /** TESTING Indeed ---------------------------------------------
     /*/
+
+    // GET /jobs/search
+    /*
+    l=    '12345'
+          'San Francisco, CA'
+          // zipcode or city, state
+
+    q=
+      space = + / AND'd
+
+      with all word:  <word> <word> <word>
+
+      exact phrase:   "software engineer"
+
+      or / at least one of these words:
+          ('high school teacher' or 'plumber')
+          (plumber or teacher or engineer or accountant)
+
+      job title:  "title:('elementary school teacher')"
+                  "title:('software engineer' or 'software developer')"
+
+      salary: $60,000
+              $40K-$90K
+
+      company:
+
+      radius=50
+
+      jt=(fulltime+or+parttime)
+    */
+    // req.query = {q: "title:('architect' or 'software engineer' or 'developer') company:('google' or 'yahoo' or 'salesforce') $90K-$120K ('big data' or 'plumber')", l: "94105"};
+    // var fileName = "_Indeed_Results.json";
+    // jobs.search(req, res,
+    //   function(json){
+    //     fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/' + fileName ), json);
+    //   }
+    // );
 
   });
 };

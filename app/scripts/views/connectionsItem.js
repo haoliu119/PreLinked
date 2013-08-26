@@ -4,6 +4,10 @@ PreLinked.Views.ConnectionsitemView = Backbone.View.extend({
 
   template: JST['app/scripts/templates/connectionsItem.hbs'],
 
+  initialize: function(){
+    this.Modal = (new PreLinked.Views.PmodalView()).pmodal;
+  },
+
   events: {
     'click .modal-details': 'getModalConnectionDetails'
   },
@@ -30,12 +34,11 @@ PreLinked.Views.ConnectionsitemView = Backbone.View.extend({
           model: data
         });
 
-        $('body').append( detailsView.render().el );
-        //appending the modal content to body
-        //todo
-        //might not be the best way
-
-        $('#myModal').foundation('reveal', 'open');
+        var modal = new that.Modal({
+          content: detailsView,
+          allowCancel: false
+        });
+        modal.open();
         //open modal
 
         console.log('getModalConnectionDetails');

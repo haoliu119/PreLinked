@@ -10,6 +10,8 @@
     <li><h2 class="name"><a class="modal-details" href="#" data-in-id="{{id}}">{{firstName}}&nbsp;{{lastName}}</a> {{distance}}</h2></li>
     <!-- li>{{title}}</li -->
     <li class="headline">{{headline}}</li>
-    <!--li>{{positions}}</li-->
+    {{#each positions.values}}
+      <li>Company: {{this.company.name}}</li>
+    {{/each}}
   </ul>
 </div>

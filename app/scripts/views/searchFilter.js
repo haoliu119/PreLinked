@@ -5,7 +5,7 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
   template: JST['app/scripts/templates/searchFilter.hbs'],
 
   initialize: function() {
-    this.on('addSearchFilterOnSubmit', this.addSearchFilterOnSubmit);
+    this.model.jobQuery.on('change', this.render, this);
   },
 
   events: {
@@ -29,28 +29,38 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
       var jobLocation = this.$el.find('input[name=job-location]')[0].value
       var jobKeywords = this.$el.find('input[name="job-keywords"]')[0].value;
 
-      this.model.trigger('addSearchFilter', e, jobTitle, company, jobLocation, jobKeywords);
+      this.model.addSearchFilter(jobTitle, company, jobLocation, jobKeywords);
       this.render();
     }
   },
 
   addSearchFilterOnSubmit: function() {
-      var jobTitle = this.$el.find('input[name="job-title"]')[0].value;
-      var company = this.$el.find('input[name="company"]')[0].value;
-      var jobLocation = this.$el.find('input[name=job-location]')[0].value
-      var jobKeywords = this.$el.find('input[name="job-keywords"]')[0].value;
+    var jobTitle = this.$el.find('input[name="job-title"]')[0].value;
+    var company = this.$el.find('input[name="company"]')[0].value;
+    var jobLocation = this.$el.find('input[name=job-location]')[0].value
+    var jobKeywords = this.$el.find('input[name="job-keywords"]')[0].value;
 
-      this.model.trigger('addSearchFilterOnSubmit', jobTitle, company, jobLocation, jobKeywords);
-      this.render();
+    this.model.addSearchFilterOnSubmit(jobTitle, company, jobLocation, jobKeywords);
+    this.render();
+
+    var userSearch = new PreLinked.Models.UserModel();
+    userSearch.save({
+      jobTitle: this.model.jobQuery.attributes.jobTitle,
+      company: this.model.jobQuery.attributes.company,
+      jobLocation: this.model.jobQuery.attributes.jobLocation,
+      jobKeywords: this.model.jobQuery.attributes.jobKeywords,
+      distance: 25
+    });
   },
 
   removeSearchFilter: function(e) {
-    this.model.trigger('removeSearchFilter', e);
+    e.preventDefault();
+    this.model.removeSearchFilter(e);
     this.render();
   },
 
   render: function () {
-    this.$el.html( this.template(this.model.attributes) );
+    this.$el.html( this.template(this.model.jobQuery.attributes) );
     return this;
   }
 });

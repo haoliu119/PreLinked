@@ -23,3 +23,16 @@ _helper.rejected = function(req, res, error){
   console.log('- '+ req.method + ' ' + req.url + ' - Rejected - error << ', error);
   res.send(401, error); //401 Unauthorized
 };
+
+_helper.getClientIp = function(req) {
+  var ipAddress;
+  var forwardedIpsStr = req.header('x-forwarded-for');
+  if (forwardedIpsStr) {
+    var forwardedIps = forwardedIpsStr.split(',');
+    ipAddress = forwardedIps[0];
+  }
+  if (!ipAddress) {
+    ipAddress = req.connection.remoteAddress;
+  }
+  return ipAddress;
+};

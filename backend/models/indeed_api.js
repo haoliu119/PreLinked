@@ -16,9 +16,8 @@ var endPoint = 'http://api.indeed.com/ads/apisearch',
 
 // GET /jobs/search
 IndeedApi.search = function (query, start, testCallback) {
-  console.log('- GET /jobs/search - query >> ', query);
-
-
+  query = parseJobQueryForIndeed(query);
+  console.log('- GET /jobs/search -> IndeedApi.search - parsedQueryForIndeed >> ', query);
   var deferred = Q.defer();
   request({
     method: 'GET',
@@ -42,6 +41,58 @@ IndeedApi.search = function (query, start, testCallback) {
   });
   return deferred.promise;
 };
+
+var parseJobQueryForIndeed = function(query) {
+
+    var tempQuery = {};
+    var apiQuery = {};
+    var title    = query.jobTitle,
+        company  = query.company,
+        keywords = query.jobKeywords;
+
+    if(title && title.length) {
+      tempQuery.title = "title:(";
+      for(var i = 0; i < title.length; i++) {
+        tempQuery.title += "'" + title[i] + "'";
+        if (i !== title.length - 1 ){
+          tempQuery.title += " or ";
+        }
+      }
+      tempQuery.title += ")";
+    }
+
+    if(company && company.length) {
+      tempQuery.company = "company:(";
+      for(var i = 0; i < company.length; i++) {
+        tempQuery.company += "'" + company[i] + "'";
+        if (i !== company.length - 1 ){
+          tempQuery.company += " or ";
+        }
+      }
+      tempQuery.company += ")";
+    }
+
+    if(keywords && keywords.length) {
+      tempQuery.keywords = "(";
+      for(var i = 0; i < keywords.length; i++) {
+        tempQuery.keywords += "'" + keywords[i] + "'";
+        if (i !== keywords.length - 1 ){
+          tempQuery.keywords += " or ";
+        }
+      }
+      tempQuery.keywords += ")";
+    }
+
+    apiQuery.q = _.reduce(tempQuery,
+      function(memo, value){
+        return memo += (" " + value);
+      }, "");
+    apiQuery.l      = query.jobLocation;
+    apiQuery.radius = query.distance;
+    apiQuery.userip = query.userip;
+    apiQuery.useragent = query.useragent;
+    return apiQuery;
+  }
 
 /*
 
