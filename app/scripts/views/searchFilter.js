@@ -4,8 +4,9 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
 
   template: JST['app/scripts/templates/searchFilter.hbs'],
 
-  initialize: function() {
-    this.model.jobQuery.on('change', this.render, this);
+  initialize: function(options) {
+    this.jobQuery = options.jobQuery;
+    this.jobQuery.on('change', this.render, this);
   },
 
   events: {
@@ -48,10 +49,10 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
 
     var userSearch = new PreLinked.Models.UserModel();
     userSearch.save({
-      jobTitle: this.model.jobQuery.attributes.jobTitle,
-      company: this.model.jobQuery.attributes.company,
-      jobLocation: this.model.jobQuery.attributes.jobLocation,
-      jobKeywords: this.model.jobQuery.attributes.jobKeywords,
+      jobTitle: this.jobQuery.attributes.jobTitle,
+      company: this.jobQuery.attributes.company,
+      jobLocation: this.jobQuery.attributes.jobLocation,
+      jobKeywords: this.jobQuery.attributes.jobKeywords,
       distance: 25
     });
   },
@@ -63,14 +64,13 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
   },
 
   render: function () {
-    // var obj_selected = {};
-    // if(this.model.get('maxSalary') === '$40,000'){
-    //   obj_selected.selected_forty = true;
-    // }
-    // this.$el.html( this.template(
-    //   _(this.model.attributes).extend(obj_selected)
-    // ) );
-    this.$el.html( this.template(this.model.jobQuery.attributes) );
+    var obj = _.clone(this.jobQuery.attributes);
+    _(obj).extend({
+      salaryList: ["None", "40", "60", "80", "100", "120"]
+    });
+    this.$el.html( this.template(obj) );
+    this.$el.find('#minSalary').find("[data-id='" + this.jobQuery.attributes.minSalary + "']").attr('selected','selected');
+    this.$el.find('#maxSalary').find("[data-id='" + this.jobQuery.attributes.maxSalary + "']").attr('selected','selected');
     return this;
   }
 });

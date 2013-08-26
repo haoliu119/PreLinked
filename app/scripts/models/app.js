@@ -7,7 +7,9 @@ PreLinked.Models.AppModel = Backbone.Model.extend({
     company:      [],
     jobLocation:  "Mountain View, CA",
     jobKeywords:  [],
-    distance:     25
+    distance:     25,
+    minSalary:    "None",
+    maxSalary:    "None"
   },
 
   initialize: function (){
