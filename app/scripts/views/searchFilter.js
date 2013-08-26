@@ -39,6 +39,9 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
     var company = this.$el.find('input[name="company"]')[0].value;
     var jobLocation = this.$el.find('input[name=job-location]')[0].value
     var jobKeywords = this.$el.find('input[name="job-keywords"]')[0].value;
+    var minSalary = this.$el.find('#minSalary')[0].value;
+    var maxSalary = this.$el.find('#maxSalary')[0].value;
+    console.log('minSalary', minSalary);
 
     this.model.addSearchFilterOnSubmit(jobTitle, company, jobLocation, jobKeywords);
     this.render();
@@ -60,6 +63,13 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
   },
 
   render: function () {
+    // var obj_selected = {};
+    // if(this.model.get('maxSalary') === '$40,000'){
+    //   obj_selected.selected_forty = true;
+    // }
+    // this.$el.html( this.template(
+    //   _(this.model.attributes).extend(obj_selected)
+    // ) );
     this.$el.html( this.template(this.model.jobQuery.attributes) );
     return this;
   }
