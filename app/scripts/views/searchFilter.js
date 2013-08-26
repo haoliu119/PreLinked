@@ -12,13 +12,12 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
   events: {
     'keypress .searchInput': 'addSearchFilter',
     'click .removeFilter': 'removeSearchFilter',
-    'mousemove .distanceRangeSlider': 'displaySliderInput'
+    'mouseup .distanceRangeSlider': 'setDistance'
   },
 
-  displaySliderInput: function() {
+  setDistance: function() {
     var distance = this.$el.find('input[name="distance"]')[0].value;
-    $('.distanceRange').html(distance + ' Miles');
-    this.model.set('distance', distance);
+    this.jobQuery.set('distance', distance);
   },
 
   addSearchFilter: function(e) {
@@ -42,7 +41,6 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
     var jobKeywords = this.$el.find('input[name="job-keywords"]')[0].value;
     var minSalary = this.$el.find('#minSalary')[0].value;
     var maxSalary = this.$el.find('#maxSalary')[0].value;
-    console.log('minSalary', minSalary);
 
     this.model.addSearchFilterOnSubmit(jobTitle, company, jobLocation, jobKeywords);
     this.render();

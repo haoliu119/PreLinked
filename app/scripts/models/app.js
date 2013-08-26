@@ -57,11 +57,13 @@ PreLinked.Models.AppModel = Backbone.Model.extend({
 
   // TODO: DELETE BEFORE DEPLOYMENT
   consoleLogJobQuery: function(){
-    console.log('[jobTitle] = ',    this.get('jobTitle'));
-    console.log('[company] = ',     this.get('company'));
-    console.log('"jobLocation" = ', this.get('jobLocation'));
-    console.log('[jobKeywords] = ', this.get('jobKeywords'));
-    console.log('distance = ',      this.get('distance'));
+    console.log('jobTitle: ',    this.get('jobTitle'));
+    console.log('company: ',     this.get('company'));
+    console.log('jobLocation: ', this.get('jobLocation'));
+    console.log('jobKeywords: ', this.get('jobKeywords'));
+    console.log('distance: ',    this.get('distance'));
+    console.log('minSalary: ',   this.get('minSalary'));
+    console.log('maxSalary: ',   this.get('maxSalary'));
   }
   // ------------------------------
 });
