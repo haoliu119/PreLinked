@@ -91,7 +91,6 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     var query = {
       title: this.jobQuery.attributes.jobTitle.join(' '),
       keywords: keywords.join(' '),
-      // 'company-name': this.jobQuery.attributes.company.join(' '),
       start: '0',
       count: '25',
       facet:  'network,F,S,A,O'
