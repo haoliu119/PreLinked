@@ -2,11 +2,21 @@ var mongoose = require('mongoose');
 var ObjectId = mongoose.Types.ObjectId;
 var Person   = require('../models/persons.js');
 var _helper  = require('./_helper.js');
+var users     = require('../controllers/users'); // TODO: refactor this later
 
 var persons = module.exports = {};
 
 persons.searchRecent = function(req, res) {
-  _helper.resolved(req, res, [{key:'v1'}, {key:'v2'}, {key:'v3'}]);
+
+
+  users.UserSearch.find({}, function(err, data) {
+    if(err) {
+      console.log(err);
+    }
+    _helper.resolved(req, res, data);
+  });
+
+  //_helper.resolved(req, res, [{key:'v1'}, {key:'v2'}, {key:'v3'}]);
 };
 
 persons.get = function(req, res){
