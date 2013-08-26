@@ -17,6 +17,9 @@ module.exports = function(app) {
   //getDb
   app.get('/getdb', getdb.testKeyword);
 
+  //test score
+  // app.get('/testScore', jobs._getJobsAndConnections);
+
   //Jobs
   app.get('/jobs', jobsController.get);
   app.get('/jobs/search', jobs.search);
