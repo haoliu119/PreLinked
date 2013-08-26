@@ -6,7 +6,7 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
 
   initialize: function() {
     this.jobQuery = this.model;
-    this.model.jobQuery.on('change', this.render);
+    this.model.jobQuery.on('change', this.render, this);
   },
 
   events: {
