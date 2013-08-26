@@ -54,7 +54,13 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
   },
 
   render: function () {
-    this.$el.html( this.template(this.model.attributes) );
+    var obj_selected = {};
+    if(this.model.get('maxSalary') === '$40,000'){
+      obj_selected.selected_forty = true;
+    }
+    this.$el.html( this.template(
+      _(this.model.attributes).extend(obj_selected)
+    ) );
     return this;
   }
 });

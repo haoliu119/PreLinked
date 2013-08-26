@@ -31,7 +31,6 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     var searchQuery = this.searchFilterView.model.parseDataForSearch();
     console.log(searchQuery);
     this.getJobResults(searchQuery.title, searchQuery.company, searchQuery.location, searchQuery.keywords);
-    // this.render(true); // IS THIS IMPORTANT? Rendering the entire page causes add / remove filter events in searchFilter view to not be heard
   },
 
   findConnectionsForJob: function(data) {

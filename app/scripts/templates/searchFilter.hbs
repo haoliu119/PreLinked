@@ -65,23 +65,23 @@
   <label>
     Min Salary
   <select id='minSalary'>
-    <option value="none">None</option>
-    <option value="40">40k</option>
-    <option value="60">60k</option>
-    <option value="80">80k</option>
-    <option value="100">100k</option>
-    <option value="120+">120k</option>
+    <option value="$0,000">None</option>
+    <option value="$40,000">40k</option>
+    <option value="$60,000">60k</option>
+    <option value="$80,000">80k</option>
+    <option value="$100,000">100k</option>
+    <option value="$120,000+">120k</option>
   </select>
   </label>
   <label>
     Max Salary
   <select id='maxSalary'>
-    <option value="none">None</option>
-    <option value="40">40k</option>
-    <option value="60">60k</option>
-    <option value="80">80k</option>
-    <option value="100">100k</option>
-    <option value="120+">120k+</option>
+    <option value="$0,000" {{#if selected_zero}} selected {{/if}}>None</option>
+    <option value="$40,000" {{#if selected_forty}} selected {{/if}}>40k</option>
+    <option value="$60,000" {{#if selected_sixty}} selected {{/if}}>60k</option>
+    <option value="$80,000" >80k</option>
+    <option value="$100,000">100k</option>
+    <option value="$120,000+">120k+</option>
   </select>
   </label>
   <button class="searchFilterButton expand">Search</button>

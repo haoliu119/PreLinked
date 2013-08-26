@@ -86,6 +86,38 @@ PreLinked.Models.SearchfilterModel = Backbone.Model.extend({
     var searchQuery = {};
     searchQuery.location = this.get('jobLocation');
 
+    var minSalary = this.get('minSalary');
+    var maxSalary = this.get('maxSalary');
+    var salary;
+
+    if(minSalary > maxSalary) {
+      minSalary = '$' + minSalary + ',000';
+      maxSalary = null;
+    } else {
+      if(typeof minSalary === 'number') {
+        minSalary = '$' + minSalary + ',000';
+      } else {
+        minSalary = 0;
+      }
+      if(typeof maxSalary === 'number') {
+        maxSalary = '$' + maxSalary + ',000';
+      } else {
+        maxSalary = 0;
+      }
+    }
+
+    if(minSalary && maxSalary) {
+      salary = minSalary + '-' + maxSalary;
+    } else if(minSalary && !maxSalary) {
+      salary = minSalary;
+    } else {
+      salary = '$0,000-' + maxSalary;
+    }
+
+    
+
+    console.log('SALARIES >>>>>>>>',minSalary, maxSalary);
+
     var title = this.get('jobTitle');
     var company = this.get('company');
     var keywords = this.get('jobKeywords');
