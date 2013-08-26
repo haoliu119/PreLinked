@@ -24,13 +24,13 @@ var _setModalOptions = function(options){
     <div class="modal-body">{{content}}</div>\
            \
     <% if (footer) { %>\
-      <div class="modal-footer">\
+      <div class="modal-footer right">\
         <% if (allowCancel) { %>\
           <% if (cancelText) { %>\
-            <a href="#" class="button cancel radius">{{cancelText}}</a>\
+            <a href="#" class="button left cancel radius">{{cancelText}}</a>\
           <% } %>\
         <% } %>\
-        <a href="#" class="button ok radius success">{{okText}}</a>\
+        <a href="#" class="button left ok radius success">{{okText}}</a>\
       </div>\
     <% } %>\
   ');
@@ -241,23 +241,8 @@ PreLinked.Views.PmodalView = Backbone.View.extend({
         this._preventClose = false;
         return;
       }
-
-      $el.one('hidden', function onHidden(e) {
-        // Ignore events propagated from interior objects, like bootstrap tooltips
-        if(e.target !== e.currentTarget){
-          return $el.one('hidden', onHidden);
-        }
-        self.remove();
-
-        if (self.options.content && self.options.content.trigger) {
-          self.options.content.trigger('hidden', self);
-        }
-
-        self.trigger('hidden');
-      });
-
       $el.foundation('reveal', 'close');
-
+      self.remove();
     },
 
     /**

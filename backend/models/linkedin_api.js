@@ -69,6 +69,7 @@ LinkedInApi.searchConnections = function (session, query) {
       } else {
         try {
           body = JSON.stringify(JSON.parse(body).people.values);
+          body = body ? body : "[]";
           deferred.resolve(body);
         } catch (error){
           console.log('- LinkedInApi error: ', error, body);

@@ -10,10 +10,18 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
   initialize: function(options){
     this.jobQuery = options.jobQuery;
-    this.searchResultsView  = new PreLinked.Views.SearchResultsView({ collection: new PreLinked.Collections.SearchResultsCollection(), jobQuery: this.jobQuery });
-    this.connectionsView    = new PreLinked.Views.ConnectionView({ collection: new PreLinked.Collections.ConnectionsCollection(), jobQuery: this.jobQuery });
-    this.searchFilterView = new PreLinked.Views.SearchfilterView({
-      model: new PreLinked.Models.SearchfilterModel()
+    this.searchResultsView  = new PreLinked.Views.SearchResultsView({
+      collection: new PreLinked.Collections.SearchResultsCollection(),
+      jobQuery  : this.jobQuery
+    });
+    this.connectionsView    = new PreLinked.Views.ConnectionView({
+      collection: new PreLinked.Collections.ConnectionsCollection(),
+      jobQuery  : this.jobQuery
+    });
+    this.searchFilterView   = new PreLinked.Views.SearchfilterView({
+      model     : new PreLinked.Models.SearchfilterModel({
+                    jobQuery: this.jobQuery
+                  })
     });
     this.searchResultsView.collection.on('showConnections', this.findConnectionsForJob, this);
   },
@@ -26,19 +34,17 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   submitSearch: function(e) {
     e.preventDefault();
 
-    this.searchFilterView.trigger('addSearchFilterOnSubmit');
-
-    var searchQuery = this.searchFilterView.model.parseDataForSearch();
-    console.log(searchQuery);
-    this.getJobResults(searchQuery.title, searchQuery.company, searchQuery.location, searchQuery.keywords);
+    this.searchFilterView.addSearchFilterOnSubmit();
+    this.getJobResults();
+    // this.getConnections();
   },
 
   findConnectionsForJob: function(data) {
 
     console.log('showConnections for data >>>', data);
 
-    var keywords = this.searchFilterView.model.get('jobKeywords').join(' ');
-    var titles   = this.searchFilterView.model.get('jobTitle').join(' ');
+    var keywords = this.jobQuery.get('jobKeywords').join(' ');
+    var titles   = this.jobQuery.get('jobTitle').join(' ');
     var that = this;
     this.getConnections(titles, data.company, keywords)
       .done(function(element) {
@@ -54,47 +60,42 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     return this.searchFilterView.render().el;
   },
 
-  getJobResults: function(title, company, location, keywords) {
-    if(!title && !company && !keywords) {
-      company = 'google';
-    }
+  getJobResults: function() {
     var deferred = $.Deferred();
     var that = this;
 
-    console.log('title >>', title);
-    console.log('company >>', company);
-    console.log('location >>', location);
-    console.log('keywords >>', keywords);
-
-    var distance = this.searchFilterView.model.get('distance');
-    console.log(distance);
-
+    // TODO: DELETE BEFORE DEPLOYMENT
+    console.log('getJobResults >>>>>>', this.jobQuery.attributes);
+    this.jobQuery.consoleLogJobQuery();
+    // ----------------------------------
 
     this.searchResultsView.collection
-      .fetch( {data: {q: [title, company, keywords].join(' ') , l: location, radius: distance}} )
+      .fetch( {data: that.jobQuery.attributes} )
       .done(function(data){
         console.log('job search results', data);
-        that.searchResultsView.jobQuery.title = title; // TODO: THIS IS BEST PRACTICE??????
         deferred.resolve(that.searchResultsView.render().el);
       })
       .fail(function(){
-        that.searchResultsView.jobQuery.title = title; // TODO: THIS IS BEST PRACTICE??????
         deferred.reject(that.searchResultsView.render().el);
       });
     return deferred.promise();
   },
 
-  getConnections: function(title, company, keywords) {
+  getConnections: function(start, degree) {
     var deferred = $.Deferred();
     var that = this;
 
+    var keywords = this.jobQuery.attributes.jobKeywords;
+    keywords = keywords.concat(this.jobQuery.attributes.company); // Linkedin API company parameter is inaccurate, passing companies in as keywords
+    console.log('keywords >>>> ', keywords);
     var query = {
-      title: title,
-      keywords: keywords
+      title: this.jobQuery.attributes.jobTitle.join(' '),
+      keywords: keywords.join(' '),
+      start: '0',
+      count: '25',
+      facet:  'network,F,S,A,O'
     };
-    if (company && company.length > 0){
-      query['company-name'] = company;
-    }
+
     this.connectionsView.collection
       .fetch( { data: query } )
       .done(function(data){
@@ -110,14 +111,12 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     return deferred.promise();
   },
 
-  render: function(partial) {
-    if (!partial) {
-      this.$el.html( this.template() );
-    }
+  render: function() {
+    this.$el.html( this.template() );
     this.$el.find('#search-filters').html(this.getSearchFilter())
 
     var that = this;
-    this.getJobResults(that.jobQuery.jobTitle, that.jobQuery.jobLocation)
+    this.getJobResults()
       .done(function(element) {
         that.$el.find('#job-results').html(element);
       })
@@ -125,7 +124,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
         that.$el.find('#job-results').html(element);
       });
 
-    this.getConnections(that.jobQuery.jobTitle, '', that.jobQuery.jobLocation)
+    this.getConnections()
       .done(function(element) {
         that.$el.find('#connections').html(element);
       })

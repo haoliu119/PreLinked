@@ -5,12 +5,36 @@ PreLinked.Views.AppView = Backbone.View.extend({
 
   template: JST['app/scripts/templates/app.hbs'],
 
+  events:{
+    "click .geoLocation" : "getLocation"
+  },
+
+  imageUrls:{
+    loading:    "https://webfiles.uci.edu/shaohuaz/share/prelinked/loader.gif",
+    geoLocate:  "https://webfiles.uci.edu/shaohuaz/share/prelinked/geolocate.png"
+  },
+
   initialize: function() {
-    var that = this;
-
-    this.jobQuery = {};
-
+    this.jobQuery = this.model;
     this.render();
+
+    _.bindAll(this, "showPosition");
+    _.bindAll(this, "showError");
+    this.model.on('googleGeoSuccess',function(){
+      this.$el.find('#main .geoLocation img').attr('src', this.imageUrls.geoLocate);
+    }, this);
+    this.model.on('googleGeoError',function(){
+      this.$el.find('#main .geoLocation img').attr('src', this.imageUrls.geoLocate);
+      alert("Location information is unavailable.");
+    }, this);
+
+    this.searchView = new PreLinked.Views.SearchView({jobQuery: this.jobQuery});
+    this.homeView = new PreLinked.Views.HomeView({
+      model: new PreLinked.Models.HomeModel(),
+      jobQuery: this.jobQuery
+    });
+
+    this.getLocation();
 
     PreLinked.appRouter = new PreLinked.Routers.AppRouter();
     PreLinked.appRouter.on('route:home', this.homePage, this);
@@ -23,57 +47,91 @@ PreLinked.Views.AppView = Backbone.View.extend({
     });
     Backbone.history.loadUrl();
 
-    $(window).on('scroll', function() {
-      that.fixedScroll();
-    });
+    // var that = this;
+    // $(window).on('scroll', function() {
+    //   that.fixedScroll();
+    // });
   },
 
-  fixedScroll: function() {
-    var top = $(window).scrollTop();
-    if(top > 150) {
-      $('#search-filters').css('margin-top', top - 130);
-      $('#connections').addClass('scroll').css('margin-top', top - 130);
-    } else {
-      $('#search-filters').css('margin-top', '');
-      $('#connections').removeClass('scroll').css('margin-top', '');
-    }
-  },
+  // fixedScroll: function() {
+  //   var reset = function() {
+  //     $('#connections').removeClass('scroll').css({
+  //       marginTop: '',
+  //       maxHeight: ''
+  //     });
+  //     $('#search-filters').css('margin-top', '');
+  //   };
+
+  //   if( $(window).width() < 768) {
+  //     reset();
+  //     return;
+  //   }
+
+  //   var viewportHt = $(window).height(),
+  //       top = $(window).scrollTop(),
+  //       connHt = $('#connections').height(),
+  //       resultsHt = $('#job-results').height(),
+  //       filterHt = $('#search-filters').height(),
+  //       htResCheck = resultsHt > viewportHt;
+
+  //   if(top > 150) {
+  //     htResCheck && $('#connections').addClass('scroll').css({
+  //       marginTop: (top > resultsHt-viewportHt ? resultsHt-viewportHt : top) - 130,
+  //       maxHeight: viewportHt - 20
+  //     });
+  //     $('#search-filters').css('margin-top', top - 130);
+  //   } else {
+  //     reset();
+  //   }
+  // },
 
   homePage: function(){
-    console.log('-AppView-homePage');
-
-    var homeModel = new PreLinked.Models.HomeModel();
-    var homeView = new PreLinked.Views.HomeView({
-      model: homeModel,
-      jobQuery: this.jobQuery
-    });
-
-    this.$el.find('#main').empty();
-    this.$el.find('#main').append(homeView.render().el);
+    this.$el.find('#main').html(this.homeView.render().el);
+    this.$el.find('#main input[name=job-title]').focus();
   },
 
   searchPage: function(){
-    console.log('-AppView-searchPage');
-    console.log('jobQuery', this.jobQuery);
-
-    var searchModel = new PreLinked.Models.SearchModel();
-    var that = this;
-    searchModel
-      .fetch()
-      .done(function(data){
-        var searchView = new PreLinked.Views.SearchView({
-          model: data,
-          jobQuery: that.jobQuery
-        });
-        that.$el.find('#main').html(searchView.render().el);
-      });
-
+    this.$el.find('#main').html(this.searchView.render().el);
   },
 
   render: function() {
+    // render header, footer, other page-common components
     this.$el.html(this.template(this.model.attributes));
-    //App level
     return this;
+  },
+
+  getLocation: function(){
+    if(navigator.geolocation){
+      this.$el.find('#main .geoLocation img').attr('src', this.imageUrls.loading);
+      navigator.geolocation.getCurrentPosition(this.showPosition, this.showError);
+    }else{
+      alert("Sorry, this feature is not supported by your browser.");
+    }
+  },
+
+  showPosition: function(position){
+    var latlng = position.coords.latitude+","+position.coords.longitude;
+    this.model.getGoogleGeo(latlng);
+  },
+
+  showError: function(error){
+    switch(error.code)
+      {
+      case error.PERMISSION_DENIED:
+        console.log("User denied the request for Geolocation.");
+        break;
+      case error.POSITION_UNAVAILABLE:
+        alert("Location information is unavailable.");
+        break;
+      case error.TIMEOUT:
+        alert("Request timed out, try again.");
+        // alert("The request to get user location timed out.");
+        break;
+      case error.UNKNOWN_ERROR:
+        alert("An unknown error occurred.");
+        break;
+      }
+    this.$el.find('#main .geoLocation img').attr('src', this.imageUrls.geoLocate);
   }
 
 });
