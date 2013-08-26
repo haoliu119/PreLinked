@@ -5,8 +5,11 @@ PreLinked.Views.SearchrecentView = Backbone.View.extend({
     template: JST['app/scripts/templates/searchRecent.hbs'],
 
     render: function() {
+      this.$el.html(this.template());
+      //render a placeholder first
+
       this.$el
-        .find('#search-recent')
+        .find('#search-recent-details')
         .html(
           this.collection.map(function(item) {
             return new PreLinked.Views.SearchrecentView({
