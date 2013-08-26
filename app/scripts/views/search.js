@@ -23,10 +23,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
                     jobQuery: this.jobQuery
                   })
     });
-    this.searchRecentView   = new PreLinked.Views.SearchfilterView({
-      model     : new PreLinked.Models.SearchfilterModel({
-                    jobQuery: this.jobQuery
-                  })
+    this.searchRecentView   = new PreLinked.Views.SearchrecentView({
+      collection: new PreLinked.Collections.SearchrecentCollection()
     });
     // this.searchResultsView.collection.on('showConnections', this.findConnectionsForJob, this);
   },
@@ -120,6 +118,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     return deferred.promise();
   },
 
+
+
   render: function() {
     this.$el.html( this.template() );
     this.$el.find('#search-filters').html(this.getSearchFilter())
@@ -140,6 +140,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
       .fail(function(element){
         that.$el.find('#connections').html(element);
       });
+
+    this.$el.find('#search-recent').html(this.getSearchRecent());
 
     return this;
   }
