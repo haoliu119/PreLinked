@@ -89,6 +89,8 @@ var parseJobQueryForIndeed = function(query) {
       }, "");
     apiQuery.l      = query.jobLocation;
     apiQuery.radius = query.distance;
+    apiQuery.userip = query.userip;
+    apiQuery.useragent = query.useragent;
     return apiQuery;
   }
 

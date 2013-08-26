@@ -6,33 +6,44 @@ PreLinked.Models.SearchfilterModel = Backbone.Model.extend({
     this.jobQuery = options.jobQuery;
   },
 
+  isDuplicateFilter: function(filterType, filterWord) {
+    var filterArray = this.get(filterType);
+    return _.contains(filterArray, filterWord)
+  },
+
   addSearchFilter: function(title, company, location, keywords) {
-    if(title) {
+    if(title && !this.isDuplicateFilter('jobTitle', title)) {
       this.jobQuery.attributes.jobTitle.push(title);
     }
-    if(company) {
+    if(company && !this.isDuplicateFilter('company', company)) {
       this.jobQuery.attributes.company.push(company);
     }
     if(location) {
       this.jobQuery.set('jobLocation', location);
     }
-    if(keywords) {
+    if(keywords && !this.isDuplicateFilter('jobKeywords', keywords)) {
       this.jobQuery.attributes.jobKeywords.push(keywords);
     }
   },
 
   addSearchFilterOnSubmit: function(title, company, location, keywords) {
-    if(title) {
+    if(title && !this.isDuplicateFilter('jobTitle', title)) {
       this.jobQuery.attributes.jobTitle.push(title);
     }
-    if(company) {
+    if(company && !this.isDuplicateFilter('company', company)) {
       this.jobQuery.attributes.company.push(company);
     }
     if(location) {
       this.jobQuery.set('jobLocation', location);
     }
-    if(keywords) {
+    if(keywords && !this.isDuplicateFilter('jobKeywords', keywords)) {
       this.jobQuery.attributes.jobKeywords.push(keywords);
+    }
+    if(minSalary) {
+      this.set('minSalary', minSalary);
+    }
+    if(maxSalary) {
+      this.set('maxSalary', maxSalary);
     }
   },
 

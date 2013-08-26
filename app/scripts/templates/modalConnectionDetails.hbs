@@ -19,7 +19,10 @@
       <li>title: {{title}}</li>
       <li>industry: {{industry}}</li>
       <li>id: {{id}}</li>
-      <li>positions: {{positions}}</li>
+      <li>positions:</li>
+      {{#each positions.values}}
+        <li>{{this.title}} @ {{this.company.name}}</li>
+      {{/each}}
     </ul>
   </div>
   <div class="large-5 columns">
