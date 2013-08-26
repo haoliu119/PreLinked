@@ -8,6 +8,7 @@ PreLinked.Models.SearchfilterModel = Backbone.Model.extend({
 
   isDuplicateFilter: function(filterType, filterWord) {
     var filterArray = this.jobQuery.attributes[filterType];
+    var filterWord = filterWord.toLowerCase();
     return _.contains(filterArray, filterWord)
   },
 
