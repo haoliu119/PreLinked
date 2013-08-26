@@ -6,7 +6,7 @@ var _helper  = require('./_helper.js');
 var persons = module.exports = {};
 
 persons.searchRecent = function(req, res) {
-  res.json(JSON.stringify([{key:'v1'},{key:'v2'},{key:'v3'}]));
+  _helper.resolved(req, res, [{key:'v1'}, {key:'v2'}, {key:'v3'}]);
 };
 
 persons.get = function(req, res){
