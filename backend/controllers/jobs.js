@@ -23,16 +23,6 @@ var _grabOnePage = function(req_query){
 };
 
 var _grabMultiplePages = function(req_query) {
-
-  req_query = { jobTitle: [ 'software engineer' ],
-                jobLocation: 'Mountain View, CA',
-                distance: '25',
-                minSalary: 'None',
-                maxSalary: 'None',
-                useragent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.57 Safari/537.36',
-                userip: '127.0.0.1'
-              };
-
   var deferred = Q.defer();
   var promises = [];
   for(var i = 0; i < 100; i+=25) {
@@ -179,12 +169,24 @@ var _getJobsAndConnections = function(req, res){
   //   distance:     25
   // },
 
-  promises.push( _grabMultiplePages(req.query) );
+
+  var indeed_query_obj =  { jobTitle: [ 'software engineer' ],
+                            jobLocation: 'Mountain View, CA',
+                            distance: '25',
+                            minSalary: 'None',
+                            maxSalary: 'None',
+                            useragent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.57 Safari/537.36',
+                            userip: '127.0.0.1'
+                          };
+  promises.push( _grabMultiplePages(indeed_query_obj) );
 
   promises.push( LinkedInApi.searchFirstDegree(req.session) ); //First 500 for now
 
-  // promises.push( LinkedInApi.searchConnections(req.session, req.query) );
   // req.query.keywords = req.query.keywords || 'Software Engineer';
+  var linkedin_query_obj = {
+    keywords: 'Software Engineer'
+  };
+  promises.push( LinkedInApi.searchConnections(req.session, linkedin_query_obj) );
 
   // // GET /people/search
   // // F first, S second, A groups, O out-of-network(third)
@@ -206,7 +208,7 @@ var _getJobsAndConnections = function(req, res){
   Q.all(promises)
     .then(function(data){
       _(data).each(function(value, index){
-        console.log('data ' + index, value.length + '\n');
+        console.log('data ' + index, value.length, value.substring(0,100) + '\n');
       });
     });
 
