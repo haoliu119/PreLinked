@@ -38,3 +38,7 @@ h1,h2,h3,h4{font-family:Play,helvetica,sans-serif}
 .summaryHeader{border-top:dashed #2ba6cb 3px;padding-top:20px;margin-bottom:5px}
 .sectionLabel{color:#2ba6cb;font-weight:bold}
 .inline{display:inline-block}
+.viewProfileButton{color:#fff}
+.viewProfileContainer{text-align:center}
+.viewProfileButton:hover{color:#fff}
+.viewProfileContainer button{top:45px}
