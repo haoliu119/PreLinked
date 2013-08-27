@@ -17,28 +17,57 @@ persons.searchRecent = function(req, res) {
 
 //req.session.passport.user
 
-  Person.find({_id: req.session.passport.user.id}, function(err, data) {
-    console.log('====>>>>', data);
-  });
+  // Person.find({_id: req.session.passport.user.id}, function(err, data) {
+  //   console.log('====>>>>', data);
+  // });
 
-  Person.find().sort({_id: -1}).skip(0).limit(5).exec(function(err, data) {
 
-    _.each(data, function(value, index) {
-      console.log(value, index);
-    });
+  //var id = req.session.passport.user.id;
+  var id = 'CPZciUt8hq';
+  if (req.session.passport.user){
 
-    if (req.session.passport.user){
+
+    Person.findOne({id: id}, function(err, data) {
       if(err) {
-        console.log(err);
+        console.log('err---->', err);
       }
-      //console.log('/////////-->', data.inPerson);
+      data = [
+        {jobTitle:['title1'], jobKeywords:['kw1'], location:'sf1', company:'company1', distance:25},
+        {jobTitle:['title1'], jobKeywords:['kw1'], location:'sf1', company:'company1', distance:25},
+        {jobTitle:['title1'], jobKeywords:['kw1'], location:'sf1', company:'company1', distance:25},
+        {jobTitle:['title1'], jobKeywords:['kw1'], location:'sf1', company:'company1', distance:25},
+        {jobTitle:['title1'], jobKeywords:['kw1'], location:'sf1', company:'company1', distance:25}
+      ];
 
       _helper.resolved(req, res, data);
-    } else {
-      //_helper.sessionNotAvl(req, res);
-    }
 
-  });
+    });
+
+  } else {
+    _helper.sessionNotAvl(req, res);
+  }
+
+
+
+
+  // Person.find().sort({_id: -1}).skip(0).limit(5).exec(function(err, data) {
+
+  //   _.each(data, function(value, index) {
+  //     console.log(value, index);
+  //   });
+
+  //   if (req.session.passport.user){
+  //     if(err) {
+  //       console.log(err);
+  //     }
+  //     //console.log('/////////-->', data.inPerson);
+
+  //     _helper.resolved(req, res, data);
+  //   } else {
+  //     //_helper.sessionNotAvl(req, res);
+  //   }
+
+  // });
 
 
   // users.UserSearch.find().sort({_id: -1}).skip(0).limit(5).exec(function(err, data) {
@@ -86,6 +115,8 @@ persons.getLinkedin = function(req, res){
 
 persons._getById = function(targetId){
   var deferred = Q.defer();
+
+  console.log('---> id', targetId);
 
   if(targetId){
     var query = Person.findOne({

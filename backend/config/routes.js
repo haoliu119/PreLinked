@@ -17,9 +17,6 @@ module.exports = function(app) {
   //getDb
   app.get('/getdb', getdb.testKeyword);
 
-  //test score
-  // app.get('/testScore', jobs._getJobsAndConnections);
-
   //Jobs
   app.get('/jobs', jobsController.get);
   app.get('/jobs/search', jobs.search);
@@ -29,7 +26,6 @@ module.exports = function(app) {
   // Fetch data from our database
   app.get('/persons/searchRecent', persons.searchRecent);
   app.get('/persons', persons.get);
-  app.get('/persons/linkedin', persons.getLinkedin);
 
   //LinkedIn Oauth
   app.get('/auth/linkedin',
@@ -38,14 +34,14 @@ module.exports = function(app) {
       function(req, res) {});
   app.get('/auth/linkedin/callback',
     passport.authenticate('linkedin', {
-      successRedirect: '/persons/linkedIn', // download person profile, save to DB
-      failureRedirect: '/#search'
+      successRedirect: '/#search',
+      failureRedirect: '/#home'
     })
   );
   app.get('/logout', function(req, res) {
     req.session.destroy(function(){
-      res.redirect('/#search');
-      // res.send(200, 'You are logged out!');
+      // res.redirect('/#home');
+      res.send(200, 'You are logged out!');
     });
   });
 
@@ -74,8 +70,6 @@ module.exports = function(app) {
     }
   });
 
-  // GET /user
-  app.get('/user', users.read);
   // post user search
   app.post('/user/searches', function(req, res){
     console.log('--->POST /user/searches >>>>>>>>>>>>>>', req.body);
@@ -89,18 +83,32 @@ module.exports = function(app) {
   ////////// end dummy ///////////
 
   ////////// begin db save ///////////
-    users.userSearch = new users.UserSearch(req.body);
 
-    users.userSearch.save(function(err, results){
-      if(err){
-        console.log(err);
-      } else {
-        console.log('Saved successfully', results);
-      }
-      users.UserSearch.find({}, function(err, data) {
-      //console.log('-->', data);
-      });
-    });
+
+    // Persons.save({searchHistory: req.body}, function(err, results){
+    //   if(err){
+    //     console.log(err);
+    //   } else {
+    //     console.log('Saved successfully', results);
+    //   }
+    //   Persons.find({}, function(err, data) {
+    //   //console.log('-->', data);
+    //   });
+    // })
+
+
+    // users.userSearch = new users.UserSearch(req.body);
+
+    // users.userSearch.save(function(err, results){
+    //   if(err){
+    //     console.log(err);
+    //   } else {
+    //     console.log('Saved successfully', results);
+    //   }
+    //   users.UserSearch.find({}, function(err, data) {
+    //   //console.log('-->', data);
+    //   });
+    // });
   ////////// end db save ///////////
 
     res.end();
