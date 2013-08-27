@@ -2,7 +2,7 @@ var request = require('request');
 
 var LinkedInApi = module.exports = {};
 
-var _BasicProfileFields = "id,first-name,last-name,headline,location:(name),industry,distance,relation-to-viewer:(related-connections),num-connections,num-connections-capped,summary,specialties,positions,picture-url,site-standard-profile-request,public-profile-url";
+var _BasicProfileFields = "id,first-name,last-name,headline,location:(name),industry,distance,relation-to-viewer:(related-connections),num-connections,num-connections-capped,summary,specialties,positions,picture-url,picture-urls::(original),site-standard-profile-request,public-profile-url";
 
 var _FullProfileFields = "last-modified-timestamp,associations,interests,publications:(title,publisher,authors:(name),summary,url),patents:(title,summary,inventors:(name),url),languages:(language:(name),proficiency:(level)),skills:(skill:(name)),certifications:(name),educations:(school-name,field-of-study,degree,activities,notes),courses:(name),volunteer:(volunteerExperiences:(role,organization)),three-current-positions,three-past-positions,num-recommenders,recommendations-received:(recommendation-type,recommendation-text,recommender),mfeed-rss-url,job-bookmarks,date-of-birth,member-url-resources,related-profile-views,connections:(id),group-memberships,network";
 
