@@ -158,6 +158,7 @@ jobs.testScore = function(req, res){
 };
 
 var _getJobsAndConnections = function(req, res){
+  var deferred = Q.defer();
   var promises = [];
 
   //first, indeed jobs
@@ -216,10 +217,12 @@ var _getJobsAndConnections = function(req, res){
         }
         console.log('jobs: \n', jobs.length);
         console.log('connections: \n', connections.length);
-        _helper.resolved(req, res, [jobs, connections]);
+        // _helper.resolved(req, res, [jobs, connections]);
+        deferred.resolve([jobs, connections]);
       }
     });
 
+  return deferred.promise;
 };
 
 //helper method to save promises to db
@@ -269,32 +272,30 @@ var _getScore = function(job, connections){
   return friends[0].stringDistance;
 };
 
-jobs.searchSorted = function(req, res){
-  console.log('-controller-jobs.searchSorted()');
-  req.query.q = req.query.q || 'Software Engineer';
-  req.query.keywords = req.query.keywords || 'Software Engineer';
-  var totalJobs = _grabOnePage(req.query);
-
-
-  var connectionsFileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/dummy_linkedin_connections_search_results.json'), 'utf8');
-  var connections = JSON.parse(connectionsFileContent);
-
-  var sortJobs = function(inputJobs, inputConnections){
-    _(inputJobs).each(function(inputJob){
-      inputJob.pScore = _getScore(inputJob, inputConnections);
-      inputJob.pConnections = _(inputConnections).filter(function(conn){
-        return (Math.random() < 1/4 ? true : false);
-      });
-      //todo
-      //fix dummy data
+var _sortJobs = function(inputJobs, inputConnections){
+  _(inputJobs).each(function(inputJob){
+    inputJob.pScore = _getScore(inputJob, inputConnections);
+    inputJob.pConnections = _(inputConnections).filter(function(conn){
+      return (Math.random() < 1/100 ? true : false);
     });
-    return inputJobs;
-  };
-
-  totalJobs.then(function(jobResults){
-    // console.log('jobResults -->', jobResults.length);
-    var jobsSorted = sortJobs(jobResults, connections);
-    _helper.resolved(req, res, jobsSorted);
+    //todo
+    //fix dummy data
   });
+  return inputJobs;
+};
+
+jobs.searchSorted = function(req, res){
+
+  _getJobsAndConnections(req, res)
+    .then(function(jobsAndConnections){
+      console.log('-controller-jobs.searchSorted()');
+
+      var jobs = jobsAndConnections[0];
+      var connections = jobsAndConnections[1];
+      var jobsSorted = _sortJobs(jobs, connections);
+
+      _helper.resolved(req, res, jobsSorted);
+
+    });
 
 };
