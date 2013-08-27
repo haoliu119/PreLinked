@@ -33,13 +33,13 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
   submitSearch: function(e) {
     e.preventDefault();
-    if(this.jobQuery.hasChanged()){
+    // if(this.jobQuery.hasChanged()){
       alert('CHANGED !!!!!!!!!!!');
-      console.log('changedAttributes >>>>>>>>',this.jobQuery.changedAttributes());
-      // this.searchFilterView.addSearchFilterOnSubmit();
-      // this.getJobResults();
-      // this.getConnections();
-    }
+      // console.log('changedAttributes >>>>>>>>',this.jobQuery.changedAttributes());
+      this.searchFilterView.addSearchFilterOnSubmit();
+      this.getJobResults();
+      this.getConnections();
+    // }
   },
 
   findConnectionsForJob: function(data) {
@@ -68,14 +68,12 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     var that = this;
 
     // TODO: DELETE BEFORE DEPLOYMENT
-    console.log('getJobResults >>>>>>', this.jobQuery.attributes);
     this.jobQuery.consoleLogJobQuery();
     // ----------------------------------
 
     this.searchResultsView.collection
       .fetch( {data: that.jobQuery.attributes} )
       .done(function(data){
-        console.log('job search results', data);
         deferred.resolve(that.searchResultsView.render().el);
       })
       .fail(function(){
@@ -90,7 +88,6 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
     var keywords = this.jobQuery.attributes.jobKeywords;
     keywords = keywords.concat(this.jobQuery.attributes.company); // Linkedin API company parameter is inaccurate, passing companies in as keywords
-    console.log('keywords >>>> ', keywords);
     var query = {
       title: this.jobQuery.attributes.jobTitle.join(' '),
       keywords: keywords.join(' '),
@@ -103,7 +100,6 @@ PreLinked.Views.SearchView = Backbone.View.extend({
       .fetch( { data: query } )
       .done(function(data){
         // that.connectionsView.jobQuery.title = title;
-        console.log('GET people/search return >>>', data);
         deferred.resolve(that.connectionsView.render().el);
       })
       .fail(function(){

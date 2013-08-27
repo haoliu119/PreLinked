@@ -44,11 +44,40 @@ IndeedApi.search = function (query, start, testCallback) {
 
 var parseJobQueryForIndeed = function(query) {
 
+  console.log('PARSE JOB QUERY FOR INDEED',query);
+
     var tempQuery = {};
     var apiQuery = {};
     var title    = query.jobTitle,
         company  = query.company,
-        keywords = query.jobKeywords;
+        keywords = query.jobKeywords,
+        minSalary = query.minSalary,
+        maxSalary = query.MaxSalary,
+        salary;
+    
+    var parseSalary = function(salary) {
+      if(parseInt(salary.replace(',','').substr(1,1)) === (1)) {
+        return parseInt(salary.replace(',','').substr(1,3))
+      } else {
+        return parseInt(salary.replace(',','').substr(1,1))
+      }
+    }
+    if(minSalary === 'None') {
+      salary = '$0,000-' + maxSalary;
+    } else if(maxSalary === 'None') {
+      salary = minSalary;
+    } else {
+      if(parseSalary(minSalary) >= parseSalary(maxSalary)) {
+      maxSalary = 0;
+      } 
+      if(minSalary && maxSalary) {
+        salary = minSalary + '-' + maxSalary;
+      } else if(minSalary && !maxSalary) {
+        salary = minSalary;
+      }
+    }
+    
+console.log(salary) 
 
     if(title && title.length) {
       tempQuery.title = "title:(";
@@ -87,6 +116,8 @@ var parseJobQueryForIndeed = function(query) {
       function(memo, value){
         return memo += (" " + value);
       }, "");
+    apiQuery.q = apiQuery.q + salary;
+    console.log('APIQUERY.Q >>>>>>>',apiQuery.q);
     apiQuery.l      = query.jobLocation;
     apiQuery.radius = query.distance;
     apiQuery.userip = query.userip;
