@@ -201,9 +201,22 @@ var _getJobsAndConnections = function(req, res){
 
   Q.all(promises)
     .then(function(data){
-      _(data).each(function(value, index){
+      data = _(data).map(function(value, index){
         console.log('data ' + index, value.length, value.substring(0,200) + '\n');
+        return JSON.parse(value);
       });
+      //convert data from string to objects
+
+      if(data.length === 4){
+        //first element is indeed jobs
+        //the last three elements are linkedin connections
+        var jobs = data[0];
+        if(data[1].values && data[1].values.length){
+          var connections = data[1].values.concat( data[2], data[3] );
+        }
+        console.log('jobs: \n', jobs.length);
+        console.log('connections: \n', connections.length);
+      }
     });
 
 };
