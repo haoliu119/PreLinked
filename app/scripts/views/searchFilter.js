@@ -12,11 +12,14 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
   events: {
     'keypress .searchInput': 'addSearchFilter',
     'click .removeFilter': 'removeSearchFilter',
-    'mouseup .distanceRangeSlider': 'setDistance'
+    'mouseup .distanceRangeSlider': 'setDistance',
+    'submit #form-location-search': 'updateLocation',
+    'click a#jobLocation' : 'locationOnFocus'
   },
 
   setDistance: function() {
     var distance = this.$el.find('input[name="distance"]')[0].value;
+
     this.jobQuery.set('distance', distance);
   },
 
@@ -71,5 +74,20 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
     this.$el.find('#minSalary').find("[data-id='" + this.jobQuery.attributes.minSalary + "']").attr('selected','selected');
     this.$el.find('#maxSalary').find("[data-id='" + this.jobQuery.attributes.maxSalary + "']").attr('selected','selected');
     return this;
+  },
+
+  updateLocation: function(e){
+    e.preventDefault();
+    var jobLocation = this.$el.find('input[name=job-location]').val();
+    if (jobLocation !== ""){
+      this.$el.find('#jobLocation').trigger('click');
+      this.$el.find('input[name=job-location]').val('');
+      this.jobQuery.set('jobLocation', jobLocation);
+    }
+  },
+
+  locationOnFocus: function(e){
+    e.preventDefault();
+    this.$el.find('input[name=job-location]').focus();
   }
 });
