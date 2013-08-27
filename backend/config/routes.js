@@ -5,6 +5,7 @@ var pass      = require('../controllers/passport.js');
 
 var site      = require('../controllers/site.js');
 var jobs      = require('../controllers/jobs.js');
+var jobsSorted= require('../controllers/jobsSorted.js');
 var jobsController = require('../controllers/jobs_controller.js');
 var linkedin  = require('../controllers/linkedin.js');
 var persons   = require('../controllers/persons.js');
@@ -18,12 +19,13 @@ module.exports = function(app) {
   app.get('/getdb', getdb.testKeyword);
 
   //test score
-  // app.get('/testScore', jobs._getJobsAndConnections);
+  app.get('/testScore', jobsSorted.testScore);
 
   //Jobs
   app.get('/jobs', jobsController.get);
-  app.get('/jobs/search', jobs.search);
-  app.get('/jobs/searchSorted', jobs.searchSorted);
+  // app.get('/jobs/search', jobs.search);
+  app.get('/jobs/search', jobsSorted.searchSorted);
+  app.get('/jobs/searchSorted', jobsSorted.searchSorted);
 
   //PreLinked Persons
   // Fetch data from our database
@@ -75,6 +77,7 @@ module.exports = function(app) {
 
   // GET /user
   app.get('/user', users.read);
+  app.get('/user/:id', users.read);
   // post user search
   app.post('/user/searches', function(req, res){
     console.log('--->POST /user/searches >>>>>>>>>>>>>>', req.body);
