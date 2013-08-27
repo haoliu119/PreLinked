@@ -28,7 +28,11 @@ PreLinked.Views.SearchView = Backbone.View.extend({
                   }),
       jobQuery: this.jobQuery
     });
-    this.searchResultsView.collection.on('showConnections', this.findConnectionsForJob, this);
+    this.searchResultsView.collection.on('showConnections', this.showConnections, this);
+  },
+
+  showConnections: function(jobAttributes){
+    this.connectionsView.collection.reset(jobAttributes.pConnections.slice(0,jobAttributes.pCount));
   },
 
   submitSearch: function(e) {
@@ -42,22 +46,22 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     // }
   },
 
-  findConnectionsForJob: function(data) {
+  // findConnectionsForJob: function(data) {
 
-    console.log('showConnections for data >>>', data);
+  //   console.log('showConnections for data >>>', data);
 
-    var keywords = this.jobQuery.get('jobKeywords').join(' ');
-    var titles   = this.jobQuery.get('jobTitle').join(' ');
-    var that = this;
-    this.getConnections(titles, data.company, keywords)
-      .done(function(element) {
-        that.$el.find('#connections').html(element);
-      })
-      .fail(function(element){
-        that.$el.find('#connections').html(element);
-      });
-    this.connectionsView.render();
-  },
+  //   var keywords = this.jobQuery.get('jobKeywords').join(' ');
+  //   var titles   = this.jobQuery.get('jobTitle').join(' ');
+  //   var that = this;
+  //   this.getConnections(titles, data.company, keywords)
+  //     .done(function(element) {
+  //       that.$el.find('#connections').html(element);
+  //     })
+  //     .fail(function(element){
+  //       that.$el.find('#connections').html(element);
+  //     });
+  //   this.connectionsView.render();
+  // },
 
   getSearchFilter: function(){
     return this.searchFilterView.render().el;

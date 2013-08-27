@@ -5,25 +5,38 @@ var pass      = require('../controllers/passport.js');
 
 var site      = require('../controllers/site.js');
 var jobs      = require('../controllers/jobs.js');
+var jobsSorted= require('../controllers/jobsSorted.js');
 var jobsController = require('../controllers/jobs_controller.js');
 var linkedin  = require('../controllers/linkedin.js');
 var persons   = require('../controllers/persons.js');
 var getdb     = require('../controllers/getDb.js');
 var users     = require('../controllers/users');
 
+//http://stackoverflow.com/questions/14218725/working-with-sessions-in-express-js
+var restrict = function(req, res, next) {
+  if (req.session && req.session.passport && req.session.passport.user) {
+    next();
+  } else {
+    console.log('Did NOT pass restrict(). Please check session.');
+    req.session.error = 'Access denied!';
+    res.redirect('/');
+  }
+};
+
 module.exports = function(app) {
   app.get('/serverindex', site.index);
 
   //getDb
-  app.get('/getdb', getdb.testKeyword);
+  app.get('/getdb', restrict, getdb.testKeyword);
 
   //test score
-  // app.get('/testScore', jobs._getJobsAndConnections);
+  app.get('/testScore', jobsSorted.testScore);
 
   //Jobs
   app.get('/jobs', jobsController.get);
-  app.get('/jobs/search', jobs.search);
-  app.get('/jobs/searchSorted', jobs.searchSorted);
+  // app.get('/jobs/search', jobs.search);
+  app.get('/jobs/search', jobsSorted.searchSorted);
+  app.get('/jobs/searchSorted', jobsSorted.searchSorted);
 
   //PreLinked Persons
   // Fetch data from our database
@@ -49,9 +62,9 @@ module.exports = function(app) {
   });
 
   // LinkedIn API
-  app.get('/people/search', linkedin.searchConnections);
-  app.get('/people/:id', linkedin.getProfile);
-  app.get('/people/', linkedin.searchFirstDegree);
+  app.get('/people/search', restrict, linkedin.searchConnections);
+  app.get('/people/:id', restrict, linkedin.getProfile);
+  app.get('/people/', restrict, linkedin.searchFirstDegree);
   // app.get('/people/search', linkedin.searchConnections);
   // app.get('/people/:id', persons.getById);
   // app.get('/people/', persons.get);
@@ -75,6 +88,7 @@ module.exports = function(app) {
 
   // GET /user
   app.get('/user', users.read);
+  app.get('/user/:id', users.read);
   // post user search
   app.post('/user/searches', function(req, res){
     console.log('--->POST /user/searches >>>>>>>>>>>>>>', req.body);
