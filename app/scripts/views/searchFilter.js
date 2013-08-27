@@ -40,29 +40,6 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
     this.model.removeSearchFilter(e);
   },
 
-  // TODO:  delete before deployment ==============================
-  // addSearchFilterOnSubmit: function() {
-  //   var jobTitle = this.$el.find('input[name="job-title"]')[0].value;
-  //   var company = this.$el.find('input[name="company"]')[0].value;
-  //   var jobLocation = this.$el.find('input[name=job-location]')[0].value
-  //   var jobKeywords = this.$el.find('input[name="job-keywords"]')[0].value;
-  //   var minSalary = this.$el.find('#minSalary')[0].value;
-  //   var maxSalary = this.$el.find('#maxSalary')[0].value;
-
-  //   this.model.addSearchFilterOnSubmit(jobTitle, company, jobLocation, jobKeywords, minSalary, maxSalary);
-  //   var userSearch = new PreLinked.Models.UserModel();
-  //   userSearch.save({
-  //     jobTitle: this.jobQuery.attributes.jobTitle,
-  //     company: this.jobQuery.attributes.company,
-  //     jobLocation: this.jobQuery.attributes.jobLocation,
-  //     jobKeywords: this.jobQuery.attributes.jobKeywords,
-  //     distance: 25,
-  //     minSalary: this.jobQuery.attributes.minSalary,
-  //     maxSalary: this.jobQuery.attributes.maxSalary,
-  //   });
-  // },
-  // =============================================================
-
   render: function () {
     console.log('searchFilter View .render() >>>>>>>');
     var obj = _.clone(this.jobQuery.attributes);

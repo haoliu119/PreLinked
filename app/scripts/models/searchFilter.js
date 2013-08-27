@@ -45,30 +45,6 @@ PreLinked.Models.SearchfilterModel = Backbone.Model.extend({
     }
   },
 
-  // TODO:  delete before deployment ==============================
-  // addSearchFilterOnSubmit: function(title, company, location, keywords, minSalary, maxSalary) {
-  //   if(title && !this.isDuplicateFilter('jobTitle', title)) {
-  //     this.jobQuery.attributes.jobTitle.push(title);
-  //   }
-  //   if(company && !this.isDuplicateFilter('company', company)) {
-  //     this.jobQuery.attributes.company.push(company);
-  //   }
-  //   if(location) {
-  //     this.jobQuery.set('jobLocation', location);
-  //   }
-  //   if(keywords && !this.isDuplicateFilter('jobKeywords', keywords)) {
-  //     this.jobQuery.attributes.jobKeywords.push(keywords);
-  //   }
-  //   if(minSalary) {
-  //     this.jobQuery.set('minSalary', minSalary);
-  //   }
-  //   if(maxSalary) {
-  //     this.jobQuery.set('maxSalary', maxSalary);
-  //   }
-  // },
-  // =============================================================
-
-
   removeSearchFilter: function(e) {
     var filterType = e.target.className.split(' ')[1];
     var elToRemove = e.target.className.split(' ')[2];

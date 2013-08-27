@@ -67,25 +67,27 @@
   </div>
   <br>
   <label>Min Salary</label>
-  <select id='minSalary'>
-    {{#each salaryList}}
-      {{#ifCond this "None"}}
-        <option value="None" data-id="{{this}}">None</option>
-      {{else}}
-        <option value="{{this}}" data-id="{{this}}">${{this}},000</option>
-      {{/ifCond}}
-    {{/each}}
-  </select>
-  <label>Max Salary</label>
-  <select id='maxSalary'>
-    {{#each salaryList}}
-      {{#ifCond this "None"}}
-        <option value="None" data-id="{{this}}">None</option>
-      {{else}}
-        <option value="{{this}}" data-id="{{this}}">${{this}},000</option>
-      {{/ifCond}}
-    {{/each}}
-  </select>
+  <p>
+    <select id='minSalary'>
+      {{#each salaryList}}
+        {{#ifCond this "None"}}
+          <option value="None" data-id="{{this}}">None</option>
+        {{else}}
+          <option value="{{this}}" data-id="{{this}}">${{this}},000</option>
+        {{/ifCond}}
+      {{/each}}
+    </select>
+    <label>Max Salary</label>
+    <select id='maxSalary'>
+      {{#each salaryList}}
+        {{#ifCond this "None"}}
+          <option value="None" data-id="{{this}}">None</option>
+        {{else}}
+          <option value="{{this}}" data-id="{{this}}">${{this}},000</option>
+        {{/ifCond}}
+      {{/each}}
+    </select>
+  </p>
 </form>
 <button class="searchFilterButton expand">Search</button>
 
