@@ -152,6 +152,25 @@ var _saveIndeedJobs = function(indeedSearch){
 
 };
 
+//helper method to save promises to db
+var _savePromises = function(req, res, promises){
+  Q.all(promises)
+    // .spread(function(indeedSearch, inSearch, inFirstDegree){
+    .spread(function(indeedSearch, inFirstDegree){
+      console.log('IndeedApi search data: \n', indeedSearch);
+      // _saveIndeedJobs(indeedSearch);
+
+      // console.log('LinkedInApi search data: \n');
+      // _saveInSearch(inSearch, req.session.passport.user.id);
+
+      console.log('LinkedInApi first degree data: \n', inFirstDegree);
+      // _saveFirstDegree(inFirstDegree, req.session.passport.user.id);
+
+      _helper.resolved(req, res, indeedSearch);
+      res.end('end');
+    });
+};
+
 //testing function
 jobs.testScore = function(req, res){
   _getJobsAndConnections(req, res);
@@ -225,24 +244,7 @@ var _getJobsAndConnections = function(req, res){
   return deferred.promise;
 };
 
-//helper method to save promises to db
-var _savePromises = function(req, res, promises){
-  Q.all(promises)
-    // .spread(function(indeedSearch, inSearch, inFirstDegree){
-    .spread(function(indeedSearch, inFirstDegree){
-      console.log('IndeedApi search data: \n', indeedSearch);
-      // _saveIndeedJobs(indeedSearch);
 
-      // console.log('LinkedInApi search data: \n');
-      // _saveInSearch(inSearch, req.session.passport.user.id);
-
-      console.log('LinkedInApi first degree data: \n', inFirstDegree);
-      // _saveFirstDegree(inFirstDegree, req.session.passport.user.id);
-
-      _helper.resolved(req, res, indeedSearch);
-      res.end('end');
-    });
-};
 
 var _getScore = function(job, connections){
   var employer = job.company; // Apple
