@@ -34,7 +34,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   submitSearch: function(e) {
     e.preventDefault();
     // if(this.jobQuery.hasChanged()){
-      alert('CHANGED !!!!!!!!!!!');
+      // alert('CHANGED !!!!!!!!!!!');
       // console.log('changedAttributes >>>>>>>>',this.jobQuery.changedAttributes());
       this.searchFilterView.addSearchFilterOnSubmit();
       this.getJobResults();

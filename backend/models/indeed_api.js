@@ -43,42 +43,32 @@ IndeedApi.search = function (query, start, testCallback) {
 };
 
 var parseJobQueryForIndeed = function(query) {
-
-  console.log('PARSE JOB QUERY FOR INDEED',query);
-
     var tempQuery = {};
     var apiQuery = {};
     var title    = query.jobTitle,
         company  = query.company,
         keywords = query.jobKeywords,
         minSalary = query.minSalary,
-        maxSalary = query.MaxSalary,
+        maxSalary = query.maxSalary,
         salary;
     
-    var parseSalary = function(salary) {
-      if(parseInt(salary.replace(',','').substr(1,1)) === (1)) {
-        return parseInt(salary.replace(',','').substr(1,3))
-      } else {
-        return parseInt(salary.replace(',','').substr(1,1))
-      }
-    }
-    if(minSalary === 'None') {
-      salary = '$0,000-' + maxSalary;
+    var minSalaryString = '$' + minSalary + ',000';
+    var maxSalaryString = '$' + maxSalary + ',000';
+    if((minSalary === 'None') && (maxSalary === 'None')) {
+        salary = '';
+    } else if(minSalary === 'None') {
+      salary = '$0,000-' + maxSalaryString;
     } else if(maxSalary === 'None') {
-      salary = minSalary;
+      salary = minSalaryString;
     } else {
-      if(parseSalary(minSalary) >= parseSalary(maxSalary)) {
-      maxSalary = 0;
-      } 
-      if(minSalary && maxSalary) {
-        salary = minSalary + '-' + maxSalary;
+      if(parseInt(minSalary) >= parseInt(maxSalary)) {
+      salary = minSalaryString;
+      } else if(minSalary && maxSalary) {
+        salary = minSalaryString + '-' + maxSalaryString;
       } else if(minSalary && !maxSalary) {
-        salary = minSalary;
+        salary = minSalaryString;
       }
     }
-    
-console.log(salary) 
-
     if(title && title.length) {
       tempQuery.title = "title:(";
       for(var i = 0; i < title.length; i++) {
@@ -116,8 +106,7 @@ console.log(salary)
       function(memo, value){
         return memo += (" " + value);
       }, "");
-    apiQuery.q = apiQuery.q + salary;
-    console.log('APIQUERY.Q >>>>>>>',apiQuery.q);
+    apiQuery.q = apiQuery.q + ' ' + salary;
     apiQuery.l      = query.jobLocation;
     apiQuery.radius = query.distance;
     apiQuery.userip = query.userip;
