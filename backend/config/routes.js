@@ -23,8 +23,8 @@ module.exports = function(app) {
 
   //Jobs
   app.get('/jobs', jobsController.get);
-  app.get('/jobs/search', jobs.search);
-  // app.get('/jobs/search', jobsSorted.searchSorted);
+  // app.get('/jobs/search', jobs.search);
+  app.get('/jobs/search', jobsSorted.searchSorted);
   app.get('/jobs/searchSorted', jobsSorted.searchSorted);
 
   //PreLinked Persons
@@ -77,6 +77,7 @@ module.exports = function(app) {
 
   // GET /user
   app.get('/user', users.read);
+  app.get('/user/:id', users.read);
   // post user search
   app.post('/user/searches', function(req, res){
     console.log('--->POST /user/searches >>>>>>>>>>>>>>', req.body);
