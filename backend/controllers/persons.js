@@ -2,6 +2,7 @@ var mongoose = require('mongoose');
 var ObjectId = mongoose.Types.ObjectId;
 var Person   = require('../models/persons.js');
 var _helper  = require('./_helper.js');
+var LinkedInApi = require('../models/linkedin_api.js');
 
 var persons = module.exports = {};
 
@@ -12,32 +13,59 @@ persons.get = function(req, res){
   return deferred.promise;
 };
 
-persons.getById = function(req, res){
-  if(req.params && req.params.id){
-    targetId = req.params.id;
-    targetId = '2szl4q2Yhy';
-    //todo
-    //fix dummy data
-    console.log('targetId', targetId);
+persons.getLinkedin = function(req, res){
+  var id = req.session.passport.user.id;
+  LinkedInApi.getProfile(req.session, id)
+    .done(
+      //Resolved: json returned from LinkedIn API
+      function(json) {
+        // save it to DB
+        if(typeof json === "string"){
+          json = JSON.parse(json);
+        }
+        persons._put(json, id)
+          .done(
+            function(data){
+              console.log('person successfully saved to DB');
+              res.redirect('/#search');
+            },
+            function(error){
+              console.log('person NOT saved to DB, error >>>', error);
+              res.redirect('/#search');
+            });
+      },
+      //Rejected: error message from LinkedIn API
+      function(error) {
+        console.log('linkedin did not return profile, error >>>', error);
+        res.redirect('/#search');
+    });
+};
+
+persons._getById = function(targetId){
+  var deferred = Q.defer();
+
+  if(targetId){
+    var query = Person.findOne({
+      _id: targetId
+    });
+    query.exec(function(error, data){
+      if(error){
+        // console.log('DB query error in getById: ', error);
+        deferred.reject(error);
+      } else {
+        // console.log('DB query in getById: ', data);
+        if (data){
+          data = data.inPerson;
+          deferred.resolve(data);
+        }else{
+          deferred.reject('person not in database');
+        }
+      }
+    });
+  } else {
+    deferred.reject('id not available');
   }
 
-  var deferred = Q.defer();
-  var query = Person.findOne({
-    _id: targetId
-  });
-  query.exec(function(error, data){
-    if(error){
-      console.log('DB query error in getById: ', error);
-      deferred.reject(error);
-    } else {
-      console.log('DB query in getById: ', data);
-      data = data.inPerson;
-      //todo
-      //fix data.inPerson
-      deferred.resolve(data);
-      _helper.resolved(req, res, data);
-    }
-  })
   return deferred.promise;
 };
 
@@ -58,6 +86,7 @@ persons._post = function(data, myId){
   person.save(function(error, data){
     if(error){
       console.log('Unable to save to database: ', error);
+      deferred.reject(error);
     } else {
       deferred.resolve(data);
     }
@@ -88,8 +117,10 @@ persons._put = function(data, myId){
       },function(err){
         if(err){
           console.log(err);
+          deferred.reject(err);
         }else{
           console.log("Successfully updated\n");
+          deferred.resolve(oldPerson);
         }
       });
 
