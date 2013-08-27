@@ -220,6 +220,15 @@ var _getScores = function(job, connections, queryJobTitle){
     friend.pScore = friend.pScore || 0;
   })
 
+  //extra step for first degree
+  //if title doesn't really match, set pScore to zero
+  var titleThreshold = 0.7;
+  _(friends).each(function(friend){
+    if(friend.distance === 1){
+      var titleScore = friend.titleStringDistance > titleThreshold ? 1 : 0;
+      friend.pScore = friend.pScore * titleScore;
+    }
+  });
 
   //sort friends array by pScore
   friends = _(friends).sortBy(function(friend){
