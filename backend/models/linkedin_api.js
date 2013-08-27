@@ -80,6 +80,38 @@ LinkedInApi.searchConnections = function (session, query) {
   return deferred.promise;
 };
 
+// GET 100 connections, 25 per page x 4 pages
+LinkedInApi.getOneHundredConnections = function(session, query){
+
+  var deferred = Q.defer();
+  var promises = [];
+  for(var i = 0; i < 100; i+=25) {
+    _(query).extend({start: i}); //pagination
+    var output = LinkedInApi.searchConnections(session, query);
+    promises.push(output);
+  }
+
+  Q.all(promises)
+    .done(
+      // Resolved
+      function(data){
+        data = _(data).map(function(item){
+          return JSON.parse(item);
+        });
+        data = _(data).flatten(true); //only flatten the first level
+        deferred.resolve(JSON.stringify(data));
+      },
+      // Rejected
+      function(error){
+        deferred.reject(error);
+      }
+    );
+
+  return deferred.promise;
+
+};
+
+
 // GET /people/:id
 LinkedInApi.getProfile = function(session, id){
 
