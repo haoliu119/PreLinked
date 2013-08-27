@@ -37,13 +37,16 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
   submitSearch: function(e) {
     e.preventDefault();
-    // if(this.jobQuery.hasChanged()){
-      // alert('CHANGED !!!!!!!!!!!');
-      // console.log('changedAttributes >>>>>>>>',this.jobQuery.changedAttributes());
-      this.searchFilterView.addSearchFilterOnSubmit();
+    if(this.jobQuery.hasChanged()){
+      // TODO: DELETE BEFORE DEPLOYMENT =========================================
+      console.log('jobQuery changed since last time, YOU MAY SUBMIT >>>>>>>>>>');
+      console.log('changedAttributes >>>>>>>>',this.jobQuery.changedAttributes());
+      // ========================================================================
+      this.jobQuery.changed = {};
+      this.searchFilterView.addSearchFilter(e);
       this.getJobResults();
-      this.getConnections();
-    // }
+      // this.getConnections();
+    }
   },
 
   // findConnectionsForJob: function(data) {
