@@ -28,7 +28,13 @@ PreLinked.Views.SearchView = Backbone.View.extend({
                   }),
       jobQuery: this.jobQuery
     });
+
     this.searchResultsView.collection.on('showConnections', this.findConnectionsForJob, this);
+
+    this.searchRecentView   = new PreLinked.Views.SearchrecentView({
+      collection: new PreLinked.Collections.SearchrecentCollection()
+    });
+    // this.searchResultsView.collection.on('showConnections', this.findConnectionsForJob, this);
   },
 
   submitSearch: function(e) {
@@ -61,6 +67,21 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
   getSearchFilter: function(){
     return this.searchFilterView.render().el;
+  },
+
+  getSearchRecent: function(){
+    var deferred = $.Deferred();
+    var that = this;
+    this.searchRecentView.collection
+      .fetch()
+      .done(function(data) {
+        console.log('getSearchRecent', data);
+        deferred.resolve(that.searchRecentView.render().el);
+      })
+      .fail(function() {
+       deferred.reject(that.searchRecentView.render().el);
+      });
+    return deferred.promise();
   },
 
   getJobResults: function() {
@@ -110,6 +131,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     return deferred.promise();
   },
 
+
+
   render: function() {
     this.$el
       .attr('data-page','search')
@@ -131,6 +154,14 @@ PreLinked.Views.SearchView = Backbone.View.extend({
       })
       .fail(function(element){
         that.$el.find('#connections').html(element);
+      });
+
+    this.getSearchRecent()
+      .done(function(element) {
+        that.$el.find('#search-recent').html(element);
+      })
+      .fail(function(element) {
+        that.$el.find('#search-recent').html(element);
       });
 
     return this;

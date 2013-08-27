@@ -3,8 +3,51 @@ var ObjectId = mongoose.Types.ObjectId;
 var Person   = require('../models/persons.js');
 var _helper  = require('./_helper.js');
 var LinkedInApi = require('../models/linkedin_api.js');
+var users     = require('../controllers/users'); // TODO: refactor this later into Person
 
 var persons = module.exports = {};
+
+persons.searchRecent = function(req, res) {
+
+  //var person = new Person();
+
+  // Person.find({},'searchHistory',function(err, data) {
+  //   console.log('-->', data.searchHistory);
+  // });
+
+//req.session.passport.user
+
+  Person.find({_id: req.session.passport.user.id}, function(err, data) {
+    console.log('====>>>>', data);
+  });
+
+  Person.find().sort({_id: -1}).skip(0).limit(5).exec(function(err, data) {
+
+    _.each(data, function(value, index) {
+      console.log(value, index);
+    });
+
+    if (req.session.passport.user){
+      if(err) {
+        console.log(err);
+      }
+      //console.log('/////////-->', data.inPerson);
+
+      _helper.resolved(req, res, data);
+    } else {
+      //_helper.sessionNotAvl(req, res);
+    }
+
+  });
+
+
+  // users.UserSearch.find().sort({_id: -1}).skip(0).limit(5).exec(function(err, data) {
+  //   if(err) {
+  //     console.log(err);
+  //   }
+  //   _helper.resolved(req, res, data);
+  // });
+};
 
 persons.get = function(req, res){
   var deferred = Q.defer();
