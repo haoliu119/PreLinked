@@ -159,15 +159,6 @@ jobs.testScore = function(req, res){
 
 var _getJobsAndConnections = function(req, res){
   var promises = [];
-  //todo
-  //remove this default query string in the future
-  //{
-  //   jobTitle:     [],
-  //   company:      [],
-  //   jobLocation:  "",
-  //   jobKeywords:  [],
-  //   distance:     25
-  // },
 
   //first, indeed jobs
   var indeed_query_obj =  { jobTitle: [ 'software engineer' ],
@@ -181,59 +172,59 @@ var _getJobsAndConnections = function(req, res){
   promises.push( _grabMultiplePages(indeed_query_obj) );
 
   //second, linkedin first degrees
-  promises.push( LinkedInApi.searchFirstDegree(req.session) ); //First 500 for now
+  //First 500 for now
+  promises.push( LinkedInApi.searchFirstDegree(req.session) );
 
   //third, linkedin second degrees
-  // req.query.keywords = req.query.keywords || 'Software Engineer';
-  var linkedin_query_obj = {
-    keywords: 'Software Engineer'
+  var linkedin_second_degree_query_obj = {
+    title   : 'software engineer',
+    keywords: 'google san francisco, ca',
+    start   : '0',
+    facet   : 'network,S'
   };
-  promises.push( LinkedInApi.searchConnections(req.session, linkedin_query_obj) );
+  promises.push( LinkedInApi.searchConnections(req.session, linkedin_second_degree_query_obj) );
 
   //fourth, linkedin third degrees
-
-  // // GET /people/search
-  // // F first, S second, A groups, O out-of-network(third)
-  // req.query = {title: 'software engineer', keywords: 'google san francisco, ca',  start: '75', facet:  'network,S' }; // 2ND DEGREE
-  // req.query = {title: 'software engineer', keywords: 'amazon twitter san francisco, ca',  start: '75', facet:  'network,A,O' }; // 3RD DEGREE
-  // linkedin.searchConnections(req, res,
-  //       function(json) {
-  //         fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_LinkedIn_People_Search_3rd_Degree_P04.json'), json);
-  //       }
-  // );
-
+  var linkedin_third_degree_query_obj = {
+    title   : 'software engineer',
+    keywords: 'google san francisco, ca',
+    start   : '0',
+    facet   : 'network,A,O'
+  };
+  promises.push( LinkedInApi.searchConnections(req.session, linkedin_third_degree_query_obj) );
 
   //input
   //100 indeed jobs
   //500 1st degree
-  //100 2nd degree
-  //100 3rd degree
+  //25 2nd degree
+  //25 3rd degree
 
   Q.all(promises)
     .then(function(data){
       _(data).each(function(value, index){
-        console.log('data ' + index, value.length, value.substring(0,100) + '\n');
+        console.log('data ' + index, value.length, value.substring(0,200) + '\n');
       });
     });
 
+};
 
-  // Q.all(promises)
-  //   // .spread(function(indeedSearch, inSearch, inFirstDegree){
-  //   .spread(function(indeedSearch, inFirstDegree){
-  //     console.log('IndeedApi search data: \n', indeedSearch);
-  //     // _saveIndeedJobs(indeedSearch);
+//helper method to save promises to db
+var _savePromises = function(req, res, promises){
+  Q.all(promises)
+    // .spread(function(indeedSearch, inSearch, inFirstDegree){
+    .spread(function(indeedSearch, inFirstDegree){
+      console.log('IndeedApi search data: \n', indeedSearch);
+      // _saveIndeedJobs(indeedSearch);
 
-  //     // console.log('LinkedInApi search data: \n');
-  //     // _saveInSearch(inSearch, req.session.passport.user.id);
+      // console.log('LinkedInApi search data: \n');
+      // _saveInSearch(inSearch, req.session.passport.user.id);
 
-  //     console.log('LinkedInApi first degree data: \n', inFirstDegree);
-  //     // _saveFirstDegree(inFirstDegree, req.session.passport.user.id);
+      console.log('LinkedInApi first degree data: \n', inFirstDegree);
+      // _saveFirstDegree(inFirstDegree, req.session.passport.user.id);
 
-  //     _helper.resolved(req, res, indeedSearch);
-  //     res.end('end');
-  //   });
-
-  return;
+      _helper.resolved(req, res, indeedSearch);
+      res.end('end');
+    });
 };
 
 var _getScore = function(job, connections){
