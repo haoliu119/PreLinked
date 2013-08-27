@@ -21,29 +21,29 @@ linkedin.searchConnections = function(req, res){
   /* LinkedIn API ------------------------
   */
 
-  if (req.session.passport.user){
-    LinkedInApi.searchConnections(req.session, req.query)
-      .done(
-        //Resolved: json returned from LinkedIn API
-        function(json) {
-          json = parseLinkedInResults(json);
-          _helper.resolved(req, res, json);
-        },
-        //Rejected: error message from LinkedIn API
-        function(error) {
-          _helper.rejected(req, res, error);
-      });
-  } else {
-    _helper.sessionNotAvl(req, res);
-  }
+  // if (req.session.passport.user){
+  //   LinkedInApi.searchConnections(req.session, req.query)
+  //     .done(
+  //       //Resolved: json returned from LinkedIn API
+  //       function(json) {
+  //         json = parseLinkedInResults(json);
+  //         _helper.resolved(req, res, json);
+  //       },
+  //       //Rejected: error message from LinkedIn API
+  //       function(error) {
+  //         _helper.rejected(req, res, error);
+  //     });
+  // } else {
+  //   _helper.sessionNotAvl(req, res);
+  // }
 
   /*
   /* Dummy Data ------------------------
   */
 
-  // var fileName = "_LinkedIn_People_Search_2nd_Degree_P01.json";
-  // var fileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/' + fileName ), 'utf8');
-  // _helper.resolved(req, res, fileContent);
+  var fileName = "_LinkedIn_People_Search_2nd_Degree_P01.json";
+  var fileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/' + fileName ), 'utf8');
+  _helper.resolved(req, res, fileContent);
 
 };
 
