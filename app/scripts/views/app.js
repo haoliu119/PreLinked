@@ -20,6 +20,8 @@ PreLinked.Views.AppView = Backbone.View.extend({
 
     _.bindAll(this, "showPosition");
     _.bindAll(this, "showError");
+
+    this.userView = new PreLinked.Views.UserView({model: new PreLinked.Models.UserModel()});
     this.model.on('googleGeoSuccess',function(){
       this.setIconGeo();
     }, this);
@@ -49,6 +51,68 @@ PreLinked.Views.AppView = Backbone.View.extend({
     // $(window).on('scroll', function() {
     //   that.fixedScroll();
     // });
+  },
+
+  homePage: function(){
+    this.$el.find('#main').html(this.homeView.render().el);
+    this.$el.find('#main input[name=job-title]').focus();
+    this.getLocation();
+  },
+
+  searchPage: function(){
+    this.userView.model.fetchUser();
+    this.$el.find('#main').html(this.searchView.render().el);
+  },
+
+  render: function() {
+    // render header, footer, other page-common components
+    this.$el.html(this.template(this.model.attributes));
+    return this;
+  },
+
+  getLocation: function(event){
+    if (event){
+      event.preventDefault();
+    }
+    if(navigator.geolocation){
+      this.setIconLoading();
+      navigator.geolocation.getCurrentPosition(this.showPosition, this.showError);
+    }else{
+      alert("Sorry, this feature is not supported by your browser.");
+    }
+  },
+
+  setIconLoading: function(){
+    this.$el.find('#main .geoLocation img').attr('src', this.imageUrls.loading);
+  },
+
+  setIconGeo: function(){
+    this.$el.find('#main .geoLocation img').attr('src', this.imageUrls.geoLocate);
+  },
+
+  showPosition: function(position){
+    var latlng = position.coords.latitude+","+position.coords.longitude;
+    this.model.getGoogleGeo(latlng);
+  },
+
+  showError: function(error){
+    switch(error.code)
+      {
+      case error.PERMISSION_DENIED:
+        console.log("User denied the request for Geolocation.");
+        break;
+      case error.POSITION_UNAVAILABLE:
+        alert("Location information is unavailable.");
+        break;
+      case error.TIMEOUT:
+        alert("Request timed out, try again.");
+        // alert("The request to get user location timed out.");
+        break;
+      case error.UNKNOWN_ERROR:
+        alert("An unknown error occurred.");
+        break;
+      }
+    this.setIconGeo();
   },
 
   // fixedScroll: function() {
@@ -81,68 +145,5 @@ PreLinked.Views.AppView = Backbone.View.extend({
   //   } else {
   //     reset();
   //   }
-  // },
-
-  homePage: function(){
-    this.$el.find('#main').html(this.homeView.render().el);
-    this.$el.find('#main input[name=job-title]').focus();
-    this.getLocation();
-  },
-
-  searchPage: function(){
-    this.$el.find('#main').html(this.searchView.render().el);
-  },
-
-  render: function() {
-    // render header, footer, other page-common components
-    this.$el.html(this.template(this.model.attributes));
-    return this;
-  },
-
-  getLocation: function(){
-    if(navigator.geolocation){
-      this.setIconLoading();
-      navigator.geolocation.getCurrentPosition(this.showPosition, this.showError);
-    }else{
-      alert("Sorry, this feature is not supported by your browser.");
-    }
-  },
-
-  setIconLoading: function(){
-    var currentPage = PreLinked.appRouter.routes[Backbone.history.fragment];
-    alert(currentPage);
-    this.$el.find('#main #page-' + currentPage + ' .geoLocation img').attr('src', this.imageUrls.loading);
-  },
-
-  setIconGeo: function(){
-    var currentPage = PreLinked.appRouter.routes[Backbone.history.fragment];
-    alert(currentPage);
-    this.$el.find('#main #page-' + currentPage + ' .geoLocation img').attr('src', this.imageUrls.geoLocate);
-  },
-
-  showPosition: function(position){
-    var latlng = position.coords.latitude+","+position.coords.longitude;
-    this.model.getGoogleGeo(latlng);
-  },
-
-  showError: function(error){
-    switch(error.code)
-      {
-      case error.PERMISSION_DENIED:
-        console.log("User denied the request for Geolocation.");
-        break;
-      case error.POSITION_UNAVAILABLE:
-        alert("Location information is unavailable.");
-        break;
-      case error.TIMEOUT:
-        alert("Request timed out, try again.");
-        // alert("The request to get user location timed out.");
-        break;
-      case error.UNKNOWN_ERROR:
-        alert("An unknown error occurred.");
-        break;
-      }
-    this.setIconGeo();
-  }
-
+  // }
 });
