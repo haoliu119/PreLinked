@@ -77,6 +77,7 @@ module.exports = function(app) {
 
   // GET /user
   app.get('/user', users.read);
+  app.get('/user/:id', users.read);
   // post user search
   app.post('/user/searches', function(req, res){
     console.log('--->POST /user/searches >>>>>>>>>>>>>>', req.body);
