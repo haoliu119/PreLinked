@@ -54,12 +54,8 @@ module.exports = function(app) {
       failureRedirect: '/#search'
     })
   );
-  app.get('/logout', function(req, res) {
-    req.session.destroy(function(){
-      res.redirect('/#search');
-      // res.send(200, 'You are logged out!');
-    });
-  });
+  app.get('/logout', util.logout);
+  app.get('/session', util.getSession);
 
   // LinkedIn API
   app.get('/people/search', restrict, linkedin.searchConnections);
@@ -70,13 +66,12 @@ module.exports = function(app) {
   // app.get('/people/', persons.get);
 
   // Users
-	// app.post('/user', users.create);
-	// app.get('/user', users.list);
-	// app.get('/user/:id', users.read);
-	// app.put('/user/:id', users.update);
-	// app.del('/user/:id', users.delete);
+  // app.post('/user', users.create);
+  // app.get('/user', users.list);
+  // app.get('/user/:id', users.read);
+  // app.put('/user/:id', users.update);
+  // app.del('/user/:id', users.delete);
 
-  app.get('/session', util.getSession);
 
   // GET /user
   app.get('/user', users.read);

@@ -9,3 +9,10 @@ util.getSession = function(req, res) {
     res.json(false);
   }
 };
+
+util.logout = function(req, res) {
+  req.session.destroy(function(){
+    res.redirect('/');
+    // res.send(200, 'You are logged out!');
+  });
+};
