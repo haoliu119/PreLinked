@@ -1,5 +1,3 @@
-// var users = require('../controllers/users.js');
-
 var passport = require('passport');
 var pass      = require('../controllers/passport.js');
 
@@ -10,7 +8,9 @@ var jobsController = require('../controllers/jobs_controller.js');
 var linkedin  = require('../controllers/linkedin.js');
 var persons   = require('../controllers/persons.js');
 var getdb     = require('../controllers/getDb.js');
-var users     = require('../controllers/users');
+var users     = require('../controllers/users.js');
+
+var util      = require('../controllers/util.js');
 
 //http://stackoverflow.com/questions/14218725/working-with-sessions-in-express-js
 var restrict = function(req, res, next) {
@@ -76,15 +76,7 @@ module.exports = function(app) {
 	// app.put('/user/:id', users.update);
 	// app.del('/user/:id', users.delete);
 
-  app.get('/session', function(req, res) {
-    if(req.session && req.session.passport && req.session.passport.user){
-      console.log('- GET /session >> ture, accessToken >> ', req.session.passport.user.accessToken);
-      res.json(true);
-    } else {
-      console.log('- GET /session >> false');
-      res.json(false);
-    }
-  });
+  app.get('/session', util.getSession);
 
   // GET /user
   app.get('/user', users.read);
