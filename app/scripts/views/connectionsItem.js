@@ -40,8 +40,6 @@ PreLinked.Views.ConnectionsitemView = Backbone.View.extend({
         });
         modal.open();
         //open modal
-
-        console.log('getModalConnectionDetails');
       });
   }
 

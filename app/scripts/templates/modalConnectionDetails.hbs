@@ -6,26 +6,22 @@
     <img class="image" src="http://placehold.it/160x160">
     {{/if}}
   </div>
-  <div class="large-10 columns info">
-    <h2>{{firstName}} {{lastName}}</h2>
-    <p>{{headline}}</p>
+  <div class="large-10 columns info modalHeader">
+    <h2 class='name'>{{firstName}} {{lastName}}</h2>
+    <div class="industry"> <span class="sectionLabel"> Industry: </span> {{industry}}</div>
+    </br>
+    <p class="sectionLabel inline">Headline:&nbsp; </p><p class="inline">{{headline}}</p>
   </div>
 </div>
 
 <div class="row">
   <div class="large-2 columns">&nbsp;</div>
-  <div class="large-5 columns">
-    <ul class="list">
-      <li>title: {{title}}</li>
-      <li>industry: {{industry}}</li>
-      <li>id: {{id}}</li>
-      <li>positions:</li>
-      {{#each positions.values}}
-        <li>{{this.title}} @ {{this.company.name}}</li>
-      {{/each}}
-    </ul>
-  </div>
-  <div class="large-5 columns">
-    <p>summary: {{summary}}</p>
-  </div>
+  <div class="positionsHeader sectionLabel"> Positions: </div>
+  <ul class="positions">
+    {{#each positions.values}}
+      <li class='position'>{{this.title}} @ {{this.company.name}}</li>
+    {{/each}}
+  </ul>
 </div>
+<div class="summaryHeader sectionLabel"> Summary: </div>
+<p class="summary">{{summary}}</p>
