@@ -84,7 +84,6 @@ PreLinked.Views.AppView = Backbone.View.extend({
   // },
 
   homePage: function(){
-    debugger;
     this.$el.find('#main').html(this.homeView.render().el);
     this.$el.find('#main input[name=job-title]').focus();
     this.getLocation();
