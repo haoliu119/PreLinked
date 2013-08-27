@@ -216,6 +216,7 @@ var _getJobsAndConnections = function(req, res){
         }
         console.log('jobs: \n', jobs.length);
         console.log('connections: \n', connections.length);
+        _helper.resolved(req, res, [jobs, connections]);
       }
     });
 
