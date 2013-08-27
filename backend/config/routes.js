@@ -17,6 +17,9 @@ module.exports = function(app) {
   //getDb
   app.get('/getdb', getdb.testKeyword);
 
+  //test score
+  // app.get('/testScore', jobs._getJobsAndConnections);
+
   //Jobs
   app.get('/jobs', jobsController.get);
   app.get('/jobs/search', jobs.search);
@@ -25,6 +28,7 @@ module.exports = function(app) {
   //PreLinked Persons
   // Fetch data from our database
   app.get('/persons', persons.get);
+  app.get('/persons/linkedin', persons.getLinkedin);
 
   //LinkedIn Oauth
   app.get('/auth/linkedin',
@@ -33,14 +37,14 @@ module.exports = function(app) {
       function(req, res) {});
   app.get('/auth/linkedin/callback',
     passport.authenticate('linkedin', {
-      successRedirect: '/#search',
-      failureRedirect: '/#home'
+      successRedirect: '/persons/linkedIn', // download person profile, save to DB
+      failureRedirect: '/#search'
     })
   );
   app.get('/logout', function(req, res) {
     req.session.destroy(function(){
-      // res.redirect('/#home');
-      res.send(200, 'You are logged out!');
+      res.redirect('/#search');
+      // res.send(200, 'You are logged out!');
     });
   });
 
@@ -69,6 +73,8 @@ module.exports = function(app) {
     }
   });
 
+  // GET /user
+  app.get('/user', users.read);
   // post user search
   app.post('/user/searches', function(req, res){
     console.log('--->POST /user/searches >>>>>>>>>>>>>>', req.body);

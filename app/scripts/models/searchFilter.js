@@ -6,33 +6,45 @@ PreLinked.Models.SearchfilterModel = Backbone.Model.extend({
     this.jobQuery = options.jobQuery;
   },
 
+  isDuplicateFilter: function(filterType, filterWord) {
+    var filterArray = this.jobQuery.attributes[filterType];
+    var filterWord = filterWord.toLowerCase();
+    return _.contains(filterArray, filterWord);
+  },
+
   addSearchFilter: function(title, company, location, keywords) {
-    if(title) {
+    if(title && !this.isDuplicateFilter('jobTitle', title)) {
       this.jobQuery.attributes.jobTitle.push(title);
     }
-    if(company) {
+    if(company && !this.isDuplicateFilter('company', company)) {
       this.jobQuery.attributes.company.push(company);
     }
     if(location) {
       this.jobQuery.set('jobLocation', location);
     }
-    if(keywords) {
+    if(keywords && !this.isDuplicateFilter('jobKeywords', keywords)) {
       this.jobQuery.attributes.jobKeywords.push(keywords);
     }
   },
 
-  addSearchFilterOnSubmit: function(title, company, location, keywords) {
-    if(title) {
+  addSearchFilterOnSubmit: function(title, company, location, keywords, minSalary, maxSalary) {
+    if(title && !this.isDuplicateFilter('jobTitle', title)) {
       this.jobQuery.attributes.jobTitle.push(title);
     }
-    if(company) {
+    if(company && !this.isDuplicateFilter('company', company)) {
       this.jobQuery.attributes.company.push(company);
     }
     if(location) {
       this.jobQuery.set('jobLocation', location);
     }
-    if(keywords) {
+    if(keywords && !this.isDuplicateFilter('jobKeywords', keywords)) {
       this.jobQuery.attributes.jobKeywords.push(keywords);
+    }
+    if(minSalary) {
+      this.jobQuery.set('minSalary', minSalary);
+    }
+    if(maxSalary) {
+      this.jobQuery.set('maxSalary', maxSalary);
     }
   },
 
@@ -55,9 +67,7 @@ PreLinked.Models.SearchfilterModel = Backbone.Model.extend({
       var jobKeywordsArray = this.jobQuery.get('jobKeywords');
       var indexToRemove = _.indexOf(jobKeywordsArray, elToRemove);
       jobKeywordsArray.splice(indexToRemove, 1);
-      console.log('keywords after splice', jobKeywordsArray);
       this.jobQuery.set('jobKeywords', jobKeywordsArray);
-      console.log('keywords after set', this.jobQuery.get('jobKeywords'));
     }
   }
 

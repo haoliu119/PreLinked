@@ -4,20 +4,24 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
 
   template: JST['app/scripts/templates/searchFilter.hbs'],
 
-  initialize: function() {
-    this.model.jobQuery.on('change', this.render, this);
+  initialize: function(options) {
+    this.jobQuery = options.jobQuery;
+    this.jobQuery.on('change', this.render, this);
   },
 
   events: {
     'keypress .searchInput': 'addSearchFilter',
     'click .removeFilter': 'removeSearchFilter',
-    'mousemove .distanceRangeSlider': 'displaySliderInput'
+    'mouseup .distanceRangeSlider': 'setDistance',
+    'click .addFilterButton': 'addSearchFilterAddButton',
+    'submit #form-location-search': 'updateLocation',
+    'click a#jobLocation' : 'locationOnFocus'
   },
 
-  displaySliderInput: function() {
+  setDistance: function() {
     var distance = this.$el.find('input[name="distance"]')[0].value;
-    $('.distanceRange').html(distance + ' Miles');
-    this.model.set('distance', distance);
+
+    this.jobQuery.set('distance', distance);
   },
 
   addSearchFilter: function(e) {
@@ -34,22 +38,37 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
     }
   },
 
+  addSearchFilterAddButton: function(e) {
+      e.preventDefault();
+
+      var jobTitle = this.$el.find('input[name="job-title"]')[0].value;
+      var company = this.$el.find('input[name="company"]')[0].value;
+      var jobLocation = this.$el.find('input[name=job-location]')[0].value
+      var jobKeywords = this.$el.find('input[name="job-keywords"]')[0].value;
+
+      this.model.addSearchFilter(jobTitle, company, jobLocation, jobKeywords);
+      this.render();
+  },
+
   addSearchFilterOnSubmit: function() {
     var jobTitle = this.$el.find('input[name="job-title"]')[0].value;
     var company = this.$el.find('input[name="company"]')[0].value;
     var jobLocation = this.$el.find('input[name=job-location]')[0].value
     var jobKeywords = this.$el.find('input[name="job-keywords"]')[0].value;
+    var minSalary = this.$el.find('#minSalary')[0].value;
+    var maxSalary = this.$el.find('#maxSalary')[0].value;
 
-    this.model.addSearchFilterOnSubmit(jobTitle, company, jobLocation, jobKeywords);
+    this.model.addSearchFilterOnSubmit(jobTitle, company, jobLocation, jobKeywords, minSalary, maxSalary);
     this.render();
-
     var userSearch = new PreLinked.Models.UserModel();
     userSearch.save({
-      jobTitle: this.model.jobQuery.attributes.jobTitle,
-      company: this.model.jobQuery.attributes.company,
-      jobLocation: this.model.jobQuery.attributes.jobLocation,
-      jobKeywords: this.model.jobQuery.attributes.jobKeywords,
-      distance: 25
+      jobTitle: this.jobQuery.attributes.jobTitle,
+      company: this.jobQuery.attributes.company,
+      jobLocation: this.jobQuery.attributes.jobLocation,
+      jobKeywords: this.jobQuery.attributes.jobKeywords,
+      distance: 25,
+      minSalary: this.jobQuery.attributes.minSalary,
+      maxSalary: this.jobQuery.attributes.maxSalary,
     });
   },
 
@@ -60,7 +79,28 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
   },
 
   render: function () {
-    this.$el.html( this.template(this.model.jobQuery.attributes) );
+    var obj = _.clone(this.jobQuery.attributes);
+    _(obj).extend({
+      salaryList: ["None", "40", "60", "80", "100", "120"]
+    });
+    this.$el.html( this.template(obj) );
+    this.$el.find('#minSalary').find("[data-id='" + this.jobQuery.attributes.minSalary + "']").attr('selected','selected');
+    this.$el.find('#maxSalary').find("[data-id='" + this.jobQuery.attributes.maxSalary + "']").attr('selected','selected');
     return this;
+  },
+
+  updateLocation: function(e){
+    e.preventDefault();
+    var jobLocation = this.$el.find('input[name=job-location]').val();
+    if (jobLocation !== ""){
+      this.$el.find('#jobLocation').trigger('click');
+      this.$el.find('input[name=job-location]').val('');
+      this.jobQuery.set('jobLocation', jobLocation);
+    }
+  },
+
+  locationOnFocus: function(e){
+    e.preventDefault();
+    this.$el.find('input[name=job-location]').focus();
   }
 });

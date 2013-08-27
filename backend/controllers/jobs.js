@@ -203,6 +203,8 @@ var _getJobsAndConnections = function(){
       console.log('LinkedInApi first degree data: \n');
       _saveFirstDegree(inFirstDegree, req.session.passport.user.id);
     });
+
+  return;
 };
 
 var _getScore = function(job, connections){

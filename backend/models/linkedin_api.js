@@ -81,11 +81,10 @@ LinkedInApi.searchConnections = function (session, query) {
 };
 
 // GET /people/:id
-LinkedInApi.getProfile = function(session, params){
+LinkedInApi.getProfile = function(session, id){
 
   //TODO: currently only fetching profile with linkedin id, ignoring cases when only public url is available
   var endPoint    = "https://api.linkedin.com/v1/people/",
-      id          = params.id,
       accessToken = session.passport.user.accessToken,
       url         = endPoint + 'id=' + id + ":(" + _AllFields + ")",
       defaults    = {
