@@ -20,6 +20,8 @@ PreLinked.Views.AppView = Backbone.View.extend({
 
     _.bindAll(this, "showPosition");
     _.bindAll(this, "showError");
+
+    this.userView = new PreLinked.Views.UserView({model: new PreLinked.Models.UserModel()});
     this.model.on('googleGeoSuccess',function(){
       this.setIconGeo();
     }, this);
@@ -51,38 +53,6 @@ PreLinked.Views.AppView = Backbone.View.extend({
     // });
   },
 
-  // fixedScroll: function() {
-  //   var reset = function() {
-  //     $('#connections').removeClass('scroll').css({
-  //       marginTop: '',
-  //       maxHeight: ''
-  //     });
-  //     $('#search-filters').css('margin-top', '');
-  //   };
-
-  //   if( $(window).width() < 768) {
-  //     reset();
-  //     return;
-  //   }
-
-  //   var viewportHt = $(window).height(),
-  //       top = $(window).scrollTop(),
-  //       connHt = $('#connections').height(),
-  //       resultsHt = $('#job-results').height(),
-  //       filterHt = $('#search-filters').height(),
-  //       htResCheck = resultsHt > viewportHt;
-
-  //   if(top > 150) {
-  //     htResCheck && $('#connections').addClass('scroll').css({
-  //       marginTop: (top > resultsHt-viewportHt ? resultsHt-viewportHt : top) - 130,
-  //       maxHeight: viewportHt - 20
-  //     });
-  //     $('#search-filters').css('margin-top', top - 130);
-  //   } else {
-  //     reset();
-  //   }
-  // },
-
   homePage: function(){
     this.$el.find('#main').html(this.homeView.render().el);
     this.$el.find('#main input[name=job-title]').focus();
@@ -90,6 +60,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
   },
 
   searchPage: function(){
+    this.userView.model.fetchUser();
     this.$el.find('#main').html(this.searchView.render().el);
   },
 
@@ -142,6 +113,37 @@ PreLinked.Views.AppView = Backbone.View.extend({
         break;
       }
     this.setIconGeo();
-  }
+  },
 
+  // fixedScroll: function() {
+  //   var reset = function() {
+  //     $('#connections').removeClass('scroll').css({
+  //       marginTop: '',
+  //       maxHeight: ''
+  //     });
+  //     $('#search-filters').css('margin-top', '');
+  //   };
+
+  //   if( $(window).width() < 768) {
+  //     reset();
+  //     return;
+  //   }
+
+  //   var viewportHt = $(window).height(),
+  //       top = $(window).scrollTop(),
+  //       connHt = $('#connections').height(),
+  //       resultsHt = $('#job-results').height(),
+  //       filterHt = $('#search-filters').height(),
+  //       htResCheck = resultsHt > viewportHt;
+
+  //   if(top > 150) {
+  //     htResCheck && $('#connections').addClass('scroll').css({
+  //       marginTop: (top > resultsHt-viewportHt ? resultsHt-viewportHt : top) - 130,
+  //       maxHeight: viewportHt - 20
+  //     });
+  //     $('#search-filters').css('margin-top', top - 130);
+  //   } else {
+  //     reset();
+  //   }
+  // }
 });

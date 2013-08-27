@@ -19,17 +19,19 @@ PreLinked.Views.HomeView = Backbone.View.extend({
 
   submitSearch: function(e) {
     e.preventDefault();
-
+    e.stopPropagation();
     var that = this,
         jobTitle    = this.$el.find('input[name=job-title]').val();
 
-    this.jobQuery.attributes.jobTitle.push(jobTitle);
+    if (jobTitle !== ""){
+      this.jobQuery.attributes.jobTitle.push(jobTitle);
+    }
 
-    var userSearch = new PreLinked.Models.UserModel();
-    userSearch.save({
-      jobTitle: this.jobQuery.attributes.jobTitle,
-      jobLocation: this.jobQuery.attributes.jobLocation
-    });
+    // var userSearch = new PreLinked.Models.UserModel();
+    // userSearch.save({
+    //   jobTitle: this.jobQuery.attributes.jobTitle,
+    //   jobLocation: this.jobQuery.attributes.jobLocation
+    // });
 
     analytics.track('Searched on homepage', {
       jobTitle    : this.jobQuery.attributes.jobTitle,
