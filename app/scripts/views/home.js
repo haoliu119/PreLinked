@@ -50,9 +50,9 @@ PreLinked.Views.HomeView = Backbone.View.extend({
     e.preventDefault();
     var jobLocation = this.$el.find('input[name=job-location]').val();
     if (jobLocation !== ""){
-      this.jobQuery.set('jobLocation', jobLocation);
       this.$el.find('input[name=job-location]').val('');
       this.$el.find('a#jobLocation').trigger('click');
+      this.jobQuery.set('jobLocation', jobLocation);
     }
   },
 

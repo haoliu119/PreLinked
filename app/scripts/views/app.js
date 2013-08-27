@@ -84,7 +84,6 @@ PreLinked.Views.AppView = Backbone.View.extend({
   // },
 
   homePage: function(){
-    debugger;
     this.$el.find('#main').html(this.homeView.render().el);
     this.$el.find('#main input[name=job-title]').focus();
     this.getLocation();
@@ -100,7 +99,10 @@ PreLinked.Views.AppView = Backbone.View.extend({
     return this;
   },
 
-  getLocation: function(){
+  getLocation: function(event){
+    if (event){
+      event.preventDefault();
+    }
     if(navigator.geolocation){
       this.setIconLoading();
       navigator.geolocation.getCurrentPosition(this.showPosition, this.showError);
@@ -110,15 +112,11 @@ PreLinked.Views.AppView = Backbone.View.extend({
   },
 
   setIconLoading: function(){
-    var currentPage = PreLinked.appRouter.routes[Backbone.history.fragment];
-    alert(currentPage);
-    this.$el.find('#main #page-' + currentPage + ' .geoLocation img').attr('src', this.imageUrls.loading);
+    this.$el.find('#main .geoLocation img').attr('src', this.imageUrls.loading);
   },
 
   setIconGeo: function(){
-    var currentPage = PreLinked.appRouter.routes[Backbone.history.fragment];
-    alert(currentPage);
-    this.$el.find('#main #page-' + currentPage + ' .geoLocation img').attr('src', this.imageUrls.geoLocate);
+    this.$el.find('#main .geoLocation img').attr('src', this.imageUrls.geoLocate);
   },
 
   showPosition: function(position){
