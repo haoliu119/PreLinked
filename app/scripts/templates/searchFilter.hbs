@@ -1,9 +1,27 @@
 <h3>Search Jobs</h3>
+<label>Location <a href="#" class="geoLocation"><img src="https://webfiles.uci.edu/shaohuaz/share/prelinked/geolocate.png" height="20" width="20"></a>
+</label>
+<div>
+  <strong><a href="#" data-dropdown="drop2" id="jobLocation">{{jobLocation}}</a></strong>
+</div>
+<form id="form-location-search">
+  <ul id="drop2" class="f-dropdown medium" data-dropdown-content>
+    <li>
+      <div>
+        <input class="full-width" name="job-location" type="text" placeholder="Location: city, state, or zip">
+      </div>
+      <div>
+        <button type="submit" class="button prefix">Update</button>
+      </div>
+    </li>
+  </ul>
+</form>
 <form id="form-search">
-  <label>
-    Job
+  <label>Job Title</label>
+  <div class="inputFilter">
     <input class="searchInput" id="jobTitleSearchInput" name="job-title" type="text" placeholder="Example: Software Engineer">
-  </label>
+    <button class="addFilterButton tiny" data-id="jobTitle">Add</button>
+  <div>
   <div>
     {{#each jobTitle}}
       <a class="filter-item button tiny round secondary removeJobTitleFilter removeFilter">
@@ -13,21 +31,26 @@
       </a>
     {{/each}}
   </div>
-  <label>
-    Location
-    <input class="searchInput" id="locationSearchInput" name="job-location" type="text" placeholder="Example: San Francisco, CA">
-  </label>
-  <div>
-    {{#if jobLocation}}
-      <a class="filter-item button tiny round secondary removeFilter">
-        {{jobLocation}} <span class="rm removeJobLocationFilter {{this}}">&times;</span>
-      </a>
-    {{/if}}
+  <label>Company</label>
+  <div class="inputFilter">
+    <input class="searchInput" id="companySearchInput" name="company" type="text" placeholder="Example: Google">
+    <button class="addFilterButton tiny" data-id="company">Add</button>
   </div>
-  <label>
-    Keywords
-    <input class="searchInput" id="keywordsSearchInput" name="job-keywords" type="text" placeholder="Example: Javascript, Node.js">
+  <div>
+    {{#each company}}
+      <a class="filter-item button tiny round secondary removeCompanyFilter removeFilter">
+        {{this}}<span class="rm removeCompanyFilter {{this}}">
+        &times;
+        </span>
+      </a>
+    {{/each}}
+  </div>
+  <label>Keywords
   </label>
+  <div class="inputFilter">
+    <input class="searchInput" id="keywordsSearchInput" name="job-keywords" type="text" placeholder="Example: Javascript, Node.js">
+    <button class="addFilterButton tiny">Add</button>
+  </div>
   <div>
     {{#each jobKeywords}}
       <a class="filter-item button tiny round secondary removeFilter">
@@ -35,5 +58,32 @@
       </a>
     {{/each}}
   </div>
+  <label>Distance</label>
+  <div>
+    <input class="distanceRangeSlider" type="range" name="distance" min="1" max="100" value="{{distance}}">
+    <span class="distanceRange">{{distance}} Miles</span>
+  </div>
+  <br>
+  <label>Min Salary</label>
+  <select id='minSalary'>
+    {{#each salaryList}}
+      {{#ifCond this "None"}}
+        <option value="None" data-id="{{this}}">None</option>
+      {{else}}
+        <option value="{{this}}" data-id="{{this}}">${{this}},000</option>
+      {{/ifCond}}
+    {{/each}}
+  </select>
+  <label>Max Salary</label>
+  <select id='maxSalary'>
+    {{#each salaryList}}
+      {{#ifCond this "None"}}
+        <option value="None" data-id="{{this}}">None</option>
+      {{else}}
+        <option value="{{this}}" data-id="{{this}}">${{this}},000</option>
+      {{/ifCond}}
+    {{/each}}
+  </select>
   <button class="searchFilterButton expand">Search</button>
 </form>
+

@@ -5,34 +5,48 @@ var pass      = require('../controllers/passport.js');
 
 var site      = require('../controllers/site.js');
 var jobs      = require('../controllers/jobs.js');
+var jobsSorted= require('../controllers/jobsSorted.js');
+var jobsController = require('../controllers/jobs_controller.js');
 var linkedin  = require('../controllers/linkedin.js');
 var persons   = require('../controllers/persons.js');
+var getdb     = require('../controllers/getDb.js');
+var users     = require('../controllers/users');
 
 module.exports = function(app) {
   app.get('/serverindex', site.index);
 
+  //getDb
+  app.get('/getdb', getdb.testKeyword);
+
+  //test score
+  app.get('/testScore', jobsSorted.testScore);
+
   //Jobs
-  app.get('/jobs/search', jobs.search);
-  app.get('/jobs/searchSorted', jobs.searchSorted);
+  app.get('/jobs', jobsController.get);
+  // app.get('/jobs/search', jobs.search);
+  app.get('/jobs/search', jobsSorted.searchSorted);
+  app.get('/jobs/searchSorted', jobsSorted.searchSorted);
 
   //PreLinked Persons
+  // Fetch data from our database
   app.get('/persons', persons.get);
+  app.get('/persons/linkedin', persons.getLinkedin);
 
   //LinkedIn Oauth
   app.get('/auth/linkedin',
     passport.authenticate('linkedin',
-      { scope: ['r_fullprofile', 'r_network'], state: '12345'  }),
+      { scope: ['r_fullprofile', 'r_network', 'r_emailaddress', 'r_contactinfo'], state: '12345'  }),
       function(req, res) {});
   app.get('/auth/linkedin/callback',
     passport.authenticate('linkedin', {
-      successRedirect: '/#search',
-      failureRedirect: '/#home'
+      successRedirect: '/persons/linkedIn', // download person profile, save to DB
+      failureRedirect: '/#search'
     })
   );
   app.get('/logout', function(req, res) {
     req.session.destroy(function(){
-      // res.redirect('/#home');
-      res.send(200, 'You are logged out!');
+      res.redirect('/#search');
+      // res.send(200, 'You are logged out!');
     });
   });
 
@@ -40,6 +54,9 @@ module.exports = function(app) {
   app.get('/people/search', linkedin.searchConnections);
   app.get('/people/:id', linkedin.getProfile);
   app.get('/people/', linkedin.searchFirstDegree);
+  // app.get('/people/search', linkedin.searchConnections);
+  // app.get('/people/:id', persons.getById);
+  // app.get('/people/', persons.get);
 
   // Users
 	// app.post('/user', users.create);
@@ -58,93 +75,138 @@ module.exports = function(app) {
     }
   });
 
+  // GET /user
+  app.get('/user', users.read);
+  app.get('/user/:id', users.read);
+  // post user search
+  app.post('/user/searches', function(req, res){
+    console.log('--->POST /user/searches >>>>>>>>>>>>>>', req.body);
+
+  ////////// begin dummy ///////////
+    // var fs   = require('fs');
+    // var path = require('path');
+    // var json = req.body.searches[0];
+    // console.log('json-->', json);
+    // fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_User_Searches.json'), json);
+  ////////// end dummy ///////////
+
+  ////////// begin db save ///////////
+    users.userSearch = new users.UserSearch(req.body);
+
+    users.userSearch.save(function(err, results){
+      if(err){
+        console.log(err);
+      } else {
+        console.log('Saved successfully', results);
+      }
+      users.UserSearch.find({}, function(err, data) {
+      //console.log('-->', data);
+      });
+    });
+  ////////// end db save ///////////
+
+    res.end();
+  });
+
+  //this is where you test random backend functions
   app.get('/test', function(req, res){
-    //this is where you test random backend functions
     // console.log('- GET /test - app.get(env)', app.get('env'));
 
-    var Job = require('../models/jobs.js');
-    var Keyword = require('../models/keywords.js');
-    var KeywordToJob = require('../models/keywordsToJobs.js');
-    var mongoose = require('mongoose');
-
-    /**
-    /** TESTING LinkedIn API
-    /*/
     var fs          = require('fs');
     var path        = require('path');
-    var LinkedInApi = require('../models/linkedin_api.js');
-    var _helper     = require('../controllers/_helper.js');
-    // GET /people/search
-    console.log('- '+ req.method + ' ' + req.url + ' - Controller -> LinkedIn.searchConnections >> ');
-    // if user is logged in through LinkedIn
-    if (req.session.passport.user){
-      LinkedInApi.searchConnections(req.session, {title: 'software engineer', keywords: 'san francisco, ca' })
-        .done(
-          //Resolved: json returned from LinkedIn API
-          function(json) {
-            fs.writeFile(path.join(__dirname, '../public/_temp_dummy_data/_LinkedIn_People_Search_Results.json'),
-            json,
-            function(){
-              console.log('- file saved <<');
-              _helper.resolved(req, res, json);
-            });
-          },
-          //Rejected: error message from LinkedIn API
-          function(error) {
-            _helper.rejected(req, res, error);
-        });
-    } else {
-      _helper.sessionNotAvl(req, res);
-    }
 
     /**
-    /** TESTING MongoDB
+    /** TESTING LinkedIn API ---------------------------------------------
     /*/
-    // var job = new Job({
-    //   indeedPost: {key:'value2 really'}
-    // });
-    // job.save(function(error, data){
-    //   if(error){
-    //     console.log('Error in saving job:', error);
-    //   } else {
-    //     console.log('Success in saving job:', data);
-    //   }
-    // });
 
+    // GET COMPANIES
+    // var LinkedInApi = require('../models/linkedin_api.js'),
+    //     _helper     = require('../controllers/_helper.js');
 
-    // var keyword = new Keyword({
-    //   keyword: 'software'
-    // });
-    // keyword.save(function(error, data){
-    //   if(error){
-    //     console.log('Error in saving keyword:', error);
-    //   } else {
-    //     console.log('Success in saving keyword:', data);
-    //   }
-    // });
-
-    // var keywordToJob = new KeywordToJob({
-    //   keywordId: mongoose.Types.ObjectId('52159e06958f70e51b000001'),
-    //   jobId: mongoose.Types.ObjectId('5215a3522dfd9f1e1c000001')
-    // });
-    // keywordToJob.save(function(error, data){
-    //   if(error){
-    //     console.log('Error in saving keywordToJob:', error);
-    //   } else {
-    //     console.log('Success in saving keywordToJob:', data);
-    //   }
-    // });
-
-    // Keyword.findOne({"keyword":"software"}, function(error, data){
-    //   KeywordToJob.find({"keywordId": data._id}, {"jobId": 1, "_id": 0}, function(error1, data1){
-    //     data1 = _(data1).pluck('jobId');
-    //     console.log('data1', data1);
-    //     Job.find({"_id": {$in: data1}}, function(error2, data2){
-    //       console.log('data2', data2);
-    //     });
+    // LinkedInApi.searchCompanies(req.session)
+    //   .done(
+    //     //Resolved: json returned from LinkedIn API
+    //     function(json) {
+    //       fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_LinkedIn_Companies.json'), json);
+    //       _helper.resolved(req, res, json);
+    //     },
+    //     //Rejected: error message from LinkedIn API
+    //     function(error) {
+    //       _helper.rejected(req, res, error);
     //   });
-    //   console.log('data', data);
-    // })
-    // res.end();
+
+    // // GET /people/search
+    // // F first, S second, A groups, O out-of-network(third)
+    // req.query = {title: 'software engineer', keywords: 'san francisco, ca',  start: '0', facet:  'network,S,A,O' };
+    // // var fileName = "_LinkedIn_People_Search_3rd_Degree_P04.json";
+    // var fileName = "_temp_test";
+    // linkedin.searchConnections(req, res,
+    //       function(json) {
+    //         fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/' + fileName), json);
+    //       }
+    // );
+
+    // GET ALL FIRST DEGREE CONNECTIONS
+    // req.query = {start: "500"}; // increment by 500
+    // linkedin.searchFirstDegree(req, res,
+    //       function(json) {
+    //         fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_LinkedIn_People_My_First_Degrees_P02.json'), json);
+    //       }
+    // );
+
+    // // GET ME/1st/2nd/3rd degree FULL PROFILE
+    // req.params.id = req.session.passport.user.id; // uncomment for your own profile
+    // // req.params.id = "TxTQIGBWTJ"; // uncomment for 1st/2nd/3rd degree profiles
+
+    // linkedin.getProfile(req, res,
+    //       function(json) {
+    //         fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_LinkedIn_Profile_ME.json'), json);
+    //         // fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_LinkedIn_Profile_Sample_1st_Degree.json'), json);
+    //         // fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_LinkedIn_Profile_Sample_2nd_Degree.json'), json);
+    //         // fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_LinkedIn_Profile_Sample_3rd_Degree.json'), json);
+    //       }
+    // );
+
+    /**
+    /** TESTING Indeed ---------------------------------------------
+    /*/
+
+    // GET /jobs/search
+    /*
+    l=    '12345'
+          'San Francisco, CA'
+          // zipcode or city, state
+
+    q=
+      space = + / AND'd
+
+      with all word:  <word> <word> <word>
+
+      exact phrase:   "software engineer"
+
+      or / at least one of these words:
+          ('high school teacher' or 'plumber')
+          (plumber or teacher or engineer or accountant)
+
+      job title:  "title:('elementary school teacher')"
+                  "title:('software engineer' or 'software developer')"
+
+      salary: $60,000
+              $40K-$90K
+
+      company:
+
+      radius=50
+
+      jt=(fulltime+or+parttime)
+    */
+    // req.query = {q: "title:('architect' or 'software engineer' or 'developer') company:('google' or 'yahoo' or 'salesforce') $90K-$120K ('big data' or 'plumber')", l: "94105"};
+    // var fileName = "_Indeed_Results.json";
+    // jobs.search(req, res,
+    //   function(json){
+    //     fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/' + fileName ), json);
+    //   }
+    // );
+
   });
 };

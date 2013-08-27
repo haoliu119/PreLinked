@@ -2,34 +2,49 @@
 
 PreLinked.Models.SearchfilterModel = Backbone.Model.extend({
 
-  initialize: function() {
-    this.set('jobTitle', []);
-    this.set('jobLocation', "");
-    this.set('jobKeywords', []);
-    this.on('addSearchFilter', this.addSearchFilter);
-    this.on('addSearchFilterOnSubmit', this.addSearchFilterOnSubmit);
-    this.on('removeSearchFilter', this.removeSearchFilter);
+  initialize: function(options) {
+    this.jobQuery = options.jobQuery;
   },
 
-  addSearchFilter: function(e, title, location, keywords) {
-    if(e.target.id === 'jobTitleSearchInput') {
-      this.attributes.jobTitle.push(title);
-    } else if(e.target.id === 'locationSearchInput') {
-      this.set('jobLocation', location);
-    } else if(e.target.id === 'keywordsSearchInput') {
-      this.attributes.jobKeywords.push(keywords);
+  isDuplicateFilter: function(filterType, filterWord) {
+    var filterArray = this.jobQuery.attributes[filterType];
+    var filterWord = filterWord.toLowerCase();
+    return _.contains(filterArray, filterWord);
+  },
+
+  addSearchFilter: function(title, company, location, keywords) {
+    if(title && !this.isDuplicateFilter('jobTitle', title)) {
+      this.jobQuery.attributes.jobTitle.push(title);
     }
-  },
-
-  addSearchFilterOnSubmit: function(title, location, keywords) {
-    if(title) {
-      this.attributes.jobTitle.push(title);
+    if(company && !this.isDuplicateFilter('company', company)) {
+      this.jobQuery.attributes.company.push(company);
     }
     if(location) {
-      this.set('jobLocation', location);
+      this.jobQuery.set('jobLocation', location);
     }
-    if(keywords) {
-      this.attributes.jobKeywords.push(keywords);
+    if(keywords && !this.isDuplicateFilter('jobKeywords', keywords)) {
+      this.jobQuery.attributes.jobKeywords.push(keywords);
+    }
+  },
+
+  addSearchFilterOnSubmit: function(title, company, location, keywords, minSalary, maxSalary) {
+    if(title && !this.isDuplicateFilter('jobTitle', title)) {
+      this.jobQuery.attributes.jobTitle.push(title);
+    }
+    if(company && !this.isDuplicateFilter('company', company)) {
+      this.jobQuery.attributes.company.push(company);
+    }
+    if(location) {
+      this.jobQuery.set('jobLocation', location);
+    }
+    if(keywords && !this.isDuplicateFilter('jobKeywords', keywords)) {
+      this.jobQuery.attributes.jobKeywords.push(keywords);
+    }
+    if(minSalary) {
+      this.jobQuery.set('minSalary', minSalary);
+    }
+    if(maxSalary) {
+      this.jobQuery.set('maxSalary', maxSalary);
     }
   },
 
@@ -37,37 +52,23 @@ PreLinked.Models.SearchfilterModel = Backbone.Model.extend({
     var filterType = e.target.className.split(' ')[1];
     var elToRemove = e.target.className.split(' ')[2];
     if(filterType === 'removeJobTitleFilter') {
-      var jobTitleArray = this.get('jobTitle');
+      var jobTitleArray = this.jobQuery.get('jobTitle');
       var indexToRemove = _.indexOf(jobTitleArray, elToRemove);
       jobTitleArray.splice(indexToRemove, 1);
-      this.set('jobTitle', jobTitleArray);
+      this.jobQuery.set('jobTitle', jobTitleArray);
+    } else if(filterType === 'removeCompanyFilter') {
+      var companyArray = this.jobQuery.get('company');
+      var indexToRemove = _.indexOf(companyArray, elToRemove);
+      companyArray.splice(indexToRemove, 1);
+      this.jobQuery.set('company', companyArray);
     } else if(filterType === 'removeJobLocationFilter') {
-      this.set('jobLocation', '');
+      this.jobQuery.set('jobLocation', '');
     } else if(filterType === 'removeJobKeywordsFilter') {
-      var jobKeywordsArray = this.get('jobKeywords');
+      var jobKeywordsArray = this.jobQuery.get('jobKeywords');
       var indexToRemove = _.indexOf(jobKeywordsArray, elToRemove);
       jobKeywordsArray.splice(indexToRemove, 1);
-      this.set('jobKeywords', jobKeywordsArray);
+      this.jobQuery.set('jobKeywords', jobKeywordsArray);
     }
-  },
-
-  parseDataForSearch: function() {
-    var searchQuery = {};
-    searchQuery.location = this.get('jobLocation');
-
-    var title = this.get('jobTitle');
-    var keywords = this.get('jobKeywords');
-
-    searchQuery.title = title[0];
-    for(var i = 1; i < title.length; i++) {
-      searchQuery.title += ' ' + title[i];
-    }
-
-    searchQuery.keywords = keywords[0];
-    for(var i = 1; i < keywords.length; i++) {
-      searchQuery.keywords += ' ' + keywords[i];
-    }
-
-    return searchQuery;
   }
+
 });

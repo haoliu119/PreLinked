@@ -1,0 +1,1078 @@
+{
+  "certifications": {
+    "_total": 2,
+    "values": [
+      {"name": "Licensed Architect"},
+      {"name": "LEED Accredited Professional"}
+    ]
+  },
+  "connections": {
+    "_total": 515,
+    "values": [
+      {"id": "d3bA9zi41M"},
+      {"id": "tkSfbd_HK8"},
+      {"id": "WzuuaZILF_"},
+      {"id": "private"},
+      {"id": "jLQSA3E_y6"},
+      {"id": "TxTQIGBWTJ"},
+      {"id": "private"},
+      {"id": "erSHxqytOF"},
+      {"id": "private"},
+      {"id": "0Lzz60BUgN"},
+      {"id": "WsZrUV2VwH"},
+      {"id": "w9ZtEyRYxU"},
+      {"id": "x5Wt_9TfPt"},
+      {"id": "1Y--ZkJR-5"},
+      {"id": "j6WvsXZaPs"},
+      {"id": "dXKNtrvMwB"},
+      {"id": "wbj03HIUpO"},
+      {"id": "qfYUoizqT-"},
+      {"id": "oX6kHZntOo"},
+      {"id": "VtTf8gfjfM"},
+      {"id": "SRNk7wgddr"},
+      {"id": "EDsvJOaXeQ"},
+      {"id": "64RBAmHZuu"},
+      {"id": "fDShaY2VUY"},
+      {"id": "NzzcV04pSt"},
+      {"id": "MMXJfwTpMH"},
+      {"id": "bdcV9GpeWd"},
+      {"id": "b2mhKSIsve"},
+      {"id": "yL3zzKOZRi"},
+      {"id": "dUm3jEymUt"},
+      {"id": "lxP2f_i2lW"},
+      {"id": "xYafcQMb--"},
+      {"id": "JZMwnCMIKh"},
+      {"id": "etyF1iuM4Y"},
+      {"id": "_ZdTklOGpi"},
+      {"id": "gMUoTL5hoA"},
+      {"id": "KzESjM_Ich"},
+      {"id": "Bo5qeTL5-0"},
+      {"id": "xZvpCdDgbd"},
+      {"id": "private"},
+      {"id": "private"},
+      {"id": "juATeHuLTk"},
+      {"id": "OeF_y8wcHp"},
+      {"id": "LsNZaJQdgk"},
+      {"id": "nefxq46NlJ"},
+      {"id": "g_udGX09Ox"},
+      {"id": "Qes3UBRfsd"},
+      {"id": "5vQ9U9TEaD"},
+      {"id": "WOWT3cqTgF"},
+      {"id": "wLwEHClPyp"},
+      {"id": "DErAs92I-D"},
+      {"id": "EB3q6qu2NE"},
+      {"id": "o3gk4MQRsy"},
+      {"id": "WmURtdfktU"},
+      {"id": "k6tNSVZLpZ"},
+      {"id": "bvAtrdDMbj"},
+      {"id": "q6E8UROEud"},
+      {"id": "A17RBGWmDk"},
+      {"id": "fyTuQqFWex"},
+      {"id": "dF64XHAdDS"},
+      {"id": "l0yV7JfW5Z"},
+      {"id": "SL7PcKs9yB"},
+      {"id": "7cbLv1DX0i"},
+      {"id": "zyU-Ha4P-M"},
+      {"id": "R_AWejR9Rm"},
+      {"id": "04hfrWOiE0"},
+      {"id": "gZu3L9f0cO"},
+      {"id": "vJuSix0Ym9"},
+      {"id": "jGNjeqc4M8"},
+      {"id": "P9081A9Xhx"},
+      {"id": "WFQDNiVTZz"},
+      {"id": "private"},
+      {"id": "ZBUA1vGhTm"},
+      {"id": "MbLK1Op6GU"},
+      {"id": "8rjv4XKrGP"},
+      {"id": "JqqohiufFc"},
+      {"id": "v81MRkyBQP"},
+      {"id": "SlFjo1ISLC"},
+      {"id": "VsC607LZKq"},
+      {"id": "twwSPCDVQ7"},
+      {"id": "UZo-I18jdo"},
+      {"id": "_e4lc3JmeY"},
+      {"id": "q4wT-EtuKW"},
+      {"id": "2jFsNBfPEK"},
+      {"id": "ES1_iiY0jR"},
+      {"id": "gE0-8li4E1"},
+      {"id": "ohrl2YQEDr"},
+      {"id": "BalC9Jiz31"},
+      {"id": "oH98jBwYTc"},
+      {"id": "NWZ9wHJ3jN"},
+      {"id": "TzNKrTJwl-"},
+      {"id": "unfaPU4xl9"},
+      {"id": "G7mNQXs02J"},
+      {"id": "pF7PCRFoh2"},
+      {"id": "wjgrGZvGfX"},
+      {"id": "t2HM4Nwh4_"},
+      {"id": "8vb3qF52fO"},
+      {"id": "9z0Ft2mTnM"},
+      {"id": "363BdrDa79"},
+      {"id": "8h-j9LU-b5"},
+      {"id": "f-x0ldvh2i"},
+      {"id": "9Gvq6wtzgc"},
+      {"id": "E6kYoJipff"},
+      {"id": "_O6mUpJ2wF"},
+      {"id": "QbT_Z_X-us"},
+      {"id": "_7570ksBNe"},
+      {"id": "XuPEP1TrtA"},
+      {"id": "_SlIV05UEE"},
+      {"id": "nSgCqCcmwK"},
+      {"id": "LhxLbaBgg_"},
+      {"id": "7Ksjui9b_b"},
+      {"id": "csxApNsELO"},
+      {"id": "JU8ewB8AfX"},
+      {"id": "4_FCOTTbOE"},
+      {"id": "fIaVWZtPMk"},
+      {"id": "JmntpwiUb8"},
+      {"id": "aTZUVpDLEp"},
+      {"id": "O5Qht6ZxPZ"},
+      {"id": "UGuP47KMKR"},
+      {"id": "GYpsIzaKsC"},
+      {"id": "m2T9yBGAN8"},
+      {"id": "ihv6T-tXuP"},
+      {"id": "zygqlsqkc3"},
+      {"id": "bf4fj67OEn"},
+      {"id": "th2TbPqlvv"},
+      {"id": "JKsvCXhVEv"},
+      {"id": "VQ8X4YL-L0"},
+      {"id": "S-Ds7dTlF2"},
+      {"id": "xZvx95KinR"},
+      {"id": "yfCANcLmmP"},
+      {"id": "fFg-mc0aLQ"},
+      {"id": "qme7Z7sCKh"},
+      {"id": "cdWg16fXh3"},
+      {"id": "_muw7dqxPm"},
+      {"id": "xuhQ8kKLL0"},
+      {"id": "GF0ZFSMhLd"},
+      {"id": "o-gl8Z5ig2"},
+      {"id": "JjV7IrYi9S"},
+      {"id": "yE2pRLOPc5"},
+      {"id": "xRDNyIMkXL"},
+      {"id": "GtlgSI6Hdf"},
+      {"id": "tXPbgIafYX"},
+      {"id": "m7TVFbAgbe"},
+      {"id": "FNMzST9ZVX"},
+      {"id": "G2u4lkMpgh"},
+      {"id": "6LaTPYNiwz"},
+      {"id": "oi7LCSHoUw"},
+      {"id": "1GUTT9zwYo"},
+      {"id": "private"},
+      {"id": "Adh355F1EH"},
+      {"id": "fQXWgTx0Si"},
+      {"id": "dw4GljU39I"},
+      {"id": "NEh0_rIdYX"},
+      {"id": "dWaE2p01lH"},
+      {"id": "C7yTV7FSIP"},
+      {"id": "U5awJec6Qa"},
+      {"id": "8RdsYUwIlr"},
+      {"id": "AjHphU7_Hv"},
+      {"id": "7V84DQPsHr"},
+      {"id": "WcK845fZLt"},
+      {"id": "9XrwDju2L2"},
+      {"id": "8zNCWTXJv_"},
+      {"id": "UDko1_1rLO"},
+      {"id": "L1UmqAScWc"},
+      {"id": "pZKjvJlapS"},
+      {"id": "l0w3Q-mcCL"},
+      {"id": "DF3G45elIN"},
+      {"id": "hr-vPayk7w"},
+      {"id": "YY7KvSzj__"},
+      {"id": "-9jXSsDG6U"},
+      {"id": "BJJbY54O0J"},
+      {"id": "6gWZ06AAUA"},
+      {"id": "t1bjwZQi6b"},
+      {"id": "rm3If3b1u8"},
+      {"id": "YRczv_H2el"},
+      {"id": "private"},
+      {"id": "2zz6nvfxNy"},
+      {"id": "e7FI7rvyag"},
+      {"id": "_VreCkU7LU"},
+      {"id": "0L-ChxvoDw"},
+      {"id": "2vUhRSdevO"},
+      {"id": "U4xdvTAJmA"},
+      {"id": "private"},
+      {"id": "XQ4nELteIn"},
+      {"id": "4FmBa81xAv"},
+      {"id": "xs3_6uc5iA"},
+      {"id": "gbKKh8WXt5"},
+      {"id": "kVzY6Xxnfx"},
+      {"id": "Osf0ee4pug"},
+      {"id": "jHrdo7zM9N"},
+      {"id": "fLkOdgm7eL"},
+      {"id": "i4Rlm-LhPG"},
+      {"id": "IfpjyXXgIt"},
+      {"id": "O7d2bWI_VG"},
+      {"id": "L3Od36ZwVT"},
+      {"id": "umx1GUn9I3"},
+      {"id": "gbs2J2fR9m"},
+      {"id": "jBU_VC3KGQ"},
+      {"id": "Ms0YEEMTMr"},
+      {"id": "private"},
+      {"id": "dW0KZQ7gT9"},
+      {"id": "CeKlG1QEKS"},
+      {"id": "-Be_y5BNFu"},
+      {"id": "H2YTCN-MlY"},
+      {"id": "iZxbJ6dHQG"},
+      {"id": "cBgT3zuZxV"},
+      {"id": "Yb93-YJXWL"},
+      {"id": "qh-iIhAKxD"},
+      {"id": "Y2OCQ2GjLa"},
+      {"id": "dzEYokB2tw"},
+      {"id": "Vb3uRqZKEz"},
+      {"id": "-TOJOpzkQ1"},
+      {"id": "GY0lhuTH0F"},
+      {"id": "0IlZgnlfnT"},
+      {"id": "B9QIwoY17x"},
+      {"id": "Y0AHZGQ7u6"},
+      {"id": "z99RfHW7yV"},
+      {"id": "GtuxkdYxAv"},
+      {"id": "R9vAlAMBCf"},
+      {"id": "_PoCYd3VBO"},
+      {"id": "Rf6SdTL09c"},
+      {"id": "private"},
+      {"id": "3B-WQpCc3W"},
+      {"id": "QDAJXWHkyL"},
+      {"id": "rdWSnVlg42"},
+      {"id": "4Am-m9TvkW"},
+      {"id": "uomBXrjmGV"},
+      {"id": "5f5CK5Pvw8"},
+      {"id": "j3miKGAGwr"},
+      {"id": "Nax20vw6qr"},
+      {"id": "yzW2zonxtI"},
+      {"id": "0vVYjEbYdq"},
+      {"id": "ogmEePm9S1"},
+      {"id": "qXXYa0ZmJY"},
+      {"id": "aYWo5qj8tR"},
+      {"id": "QfyGdyg0yk"},
+      {"id": "1Q4ecuFsvg"},
+      {"id": "FRI0Y54Ic3"},
+      {"id": "Kk7xsU-7iC"},
+      {"id": "mbQTO9TJPA"},
+      {"id": "bSY8F6o0WH"},
+      {"id": "y859ouN_9s"},
+      {"id": "un-gG_09RQ"},
+      {"id": "yeqI9Tvzap"},
+      {"id": "KodOcwaB6o"},
+      {"id": "3tXH0bOPJZ"},
+      {"id": "gwgfnx7mB5"},
+      {"id": "8BUXdxK90u"},
+      {"id": "EfH7pPVdqZ"},
+      {"id": "IrML_4QBLU"},
+      {"id": "dWnnCzSbWW"},
+      {"id": "private"},
+      {"id": "XgoqkEy82c"},
+      {"id": "-NODNhxQGA"},
+      {"id": "vNK4SRUqlo"},
+      {"id": "_lVZt4Cspw"},
+      {"id": "ER8eqZK5gh"},
+      {"id": "private"},
+      {"id": "zEkGxRUNAB"},
+      {"id": "BrlwyfkwYZ"},
+      {"id": "SZcwPJLHLc"},
+      {"id": "WoS0Z6Ax0A"},
+      {"id": "TXk4z6Po4s"},
+      {"id": "ISWN4prT1Q"},
+      {"id": "nLbkIbaq4i"},
+      {"id": "_sySiaLSAA"},
+      {"id": "SLdoE_AR8t"},
+      {"id": "ZfkJusxFgR"},
+      {"id": "RRn1q1XG_b"},
+      {"id": "UQcN_stBZb"},
+      {"id": "_evyiBRL9R"},
+      {"id": "6qeJYGGmsT"},
+      {"id": "MYJCbZc5P_"},
+      {"id": "FKttGVUJjK"},
+      {"id": "private"},
+      {"id": "MikzKDXHGs"},
+      {"id": "LUaw3BdJ6t"},
+      {"id": "n4g40sH8LX"},
+      {"id": "5OU9ByUi9k"},
+      {"id": "pSjfplM6md"},
+      {"id": "oR9KUP8Hxb"},
+      {"id": "-YWkuAuuRi"},
+      {"id": "YHTKclsBSU"},
+      {"id": "jMJJgKbtHd"},
+      {"id": "wVPS_wrsGw"},
+      {"id": "MxZshR4lDm"},
+      {"id": "IFefZthC1V"},
+      {"id": "O8TCojYfTW"},
+      {"id": "rKLuFvkMzT"},
+      {"id": "PmmU_1hyMF"},
+      {"id": "ZEwuHf42Zi"},
+      {"id": "private"},
+      {"id": "j49P_U-6lz"},
+      {"id": "ueFNnMsEj0"},
+      {"id": "5GTSDMd3Lz"},
+      {"id": "1IjE1C0H07"},
+      {"id": "9ZekmtJtgp"},
+      {"id": "f8CXo1-IWs"},
+      {"id": "IhkNNkJgNB"},
+      {"id": "TDK4WNkffI"},
+      {"id": "DgSxq1wpGv"},
+      {"id": "9v111pholz"},
+      {"id": "xSpgrTWPBa"},
+      {"id": "pyhQ4UeOLU"},
+      {"id": "_zvhu9-i1j"},
+      {"id": "i1aoJDMf4o"},
+      {"id": "4y0A_366Mj"},
+      {"id": "jk_GnFtc9u"},
+      {"id": "67pdVRq5py"},
+      {"id": "u4L3Jzqw9E"},
+      {"id": "3LOuYrGQTf"},
+      {"id": "bhunzrKtwi"},
+      {"id": "d8rwNNldvJ"},
+      {"id": "LjbEvtEtNZ"},
+      {"id": "7GHVJfFSvy"},
+      {"id": "v8eYzQQyJ6"},
+      {"id": "mkoFp9jjeP"},
+      {"id": "ZrrR9po-VO"},
+      {"id": "4gFExcx1lY"},
+      {"id": "5dh99SQqfS"},
+      {"id": "rDfp1_pKPw"},
+      {"id": "A3VA0NDh4X"},
+      {"id": "epN4325qnO"},
+      {"id": "wDLVJUmO1H"},
+      {"id": "B9yMfT0zlL"},
+      {"id": "XfoVmoEJjw"},
+      {"id": "-VES1jCDkh"},
+      {"id": "tzDRMFv5mr"},
+      {"id": "DxlP6Hvgh3"},
+      {"id": "U6jYkZmOiH"},
+      {"id": "1LwdZ1Wyt9"},
+      {"id": "AwKLP6wEm7"},
+      {"id": "S_WmTyedaX"},
+      {"id": "vatBwJGmjj"},
+      {"id": "JjvbHGbhlj"},
+      {"id": "V8deYEPzXx"},
+      {"id": "X8aayTXY35"},
+      {"id": "0RlBO4ABuP"},
+      {"id": "qxI9tHFn0d"},
+      {"id": "DzONb4uwOj"},
+      {"id": "GcKXLtElOS"},
+      {"id": "mMkfol9bfx"},
+      {"id": "private"},
+      {"id": "Q4kctYAo2_"},
+      {"id": "WQVe04ZuDC"},
+      {"id": "ZIkDl2QrZD"},
+      {"id": "xUdHJKr1Ge"},
+      {"id": "zapbRvsneA"},
+      {"id": "adCCyJDEvf"},
+      {"id": "h6sUlo5XzH"},
+      {"id": "3US7vplpnK"},
+      {"id": "8TyVe7tm4c"},
+      {"id": "zZFfpztJWs"},
+      {"id": "4_qMGULLEY"},
+      {"id": "_ftGlgVIeQ"},
+      {"id": "3zwa4kTyQw"},
+      {"id": "z3hYFrnO2B"},
+      {"id": "_i1d6eWGUO"},
+      {"id": "9HCiOCVCyi"},
+      {"id": "rJOT2rEBzi"},
+      {"id": "fuV8u71LnL"},
+      {"id": "GLgKsKoL1H"},
+      {"id": "Pq7vQ2VQJ_"},
+      {"id": "divRGFadlX"},
+      {"id": "yftEQid8DJ"},
+      {"id": "5F9oDbvLVP"},
+      {"id": "_fMogY_Dj0"},
+      {"id": "k03TNXt-G2"},
+      {"id": "uNkj0TnPuw"},
+      {"id": "2STfwqiotN"},
+      {"id": "KBq9YekZ3R"},
+      {"id": "KOyo4CLLbM"},
+      {"id": "cDbEmmC4Lc"},
+      {"id": "JSwU8XtxV2"},
+      {"id": "ynjpCkJApq"},
+      {"id": "QeMsGYZJta"},
+      {"id": "private"},
+      {"id": "NrY06GDW_c"},
+      {"id": "OdvmGVHotY"},
+      {"id": "4FOU6vvxV8"},
+      {"id": "woAZYf_3jx"},
+      {"id": "xoPKX4Djw_"},
+      {"id": "e6SYQjL_Mz"},
+      {"id": "private"},
+      {"id": "QPQSKNrQVx"},
+      {"id": "private"},
+      {"id": "1KzN3918WH"},
+      {"id": "FjwxxkzbE7"},
+      {"id": "ESiK_Rtr8z"},
+      {"id": "9glTbiEbqL"},
+      {"id": "_-m8ZmyJMl"},
+      {"id": "W5aeyuHzNN"},
+      {"id": "VRgt32ipM6"},
+      {"id": "TEumFAlea4"},
+      {"id": "vbdpekNs8B"},
+      {"id": "DDX-ZS6dpP"},
+      {"id": "l6xM4cWw4W"},
+      {"id": "1nPK3vqeJn"},
+      {"id": "naDts6MZla"},
+      {"id": "GSf6H0siD-"},
+      {"id": "WZUkGy5EPb"},
+      {"id": "6UEvcob-ep"},
+      {"id": "TRM-rkVp0D"},
+      {"id": "neaY12oeLO"},
+      {"id": "mNAXMLjXzX"},
+      {"id": "oPvSl2vrKl"},
+      {"id": "j5Pc5rK2pB"},
+      {"id": "yL3ucro-gf"},
+      {"id": "C4YdAsGrDa"},
+      {"id": "4sne8YWT1o"},
+      {"id": "m9ArhY1E2X"},
+      {"id": "A4tYt9o1PL"},
+      {"id": "g310hL4q1A"},
+      {"id": "SREOregJnt"},
+      {"id": "YBtSIS2hjM"},
+      {"id": "AZTS4NGWC6"},
+      {"id": "rXT4hpziWe"},
+      {"id": "3Y0jVdfdDo"},
+      {"id": "kLXwxhs0FW"},
+      {"id": "ZjvPbJ8ayM"},
+      {"id": "QSP6fBOV8I"},
+      {"id": "jDAZs3WrcY"},
+      {"id": "4L1uY0W9hA"},
+      {"id": "ULgEjeHSKy"},
+      {"id": "scT_puzIzY"},
+      {"id": "PLeeQDTSTz"},
+      {"id": "ctcPKGnh_B"},
+      {"id": "rI27n0WFtn"},
+      {"id": "_-bRc3sfzo"},
+      {"id": "Zs7h8qWKzJ"},
+      {"id": "mPWrOcnj6M"},
+      {"id": "OcKBkYrWCt"},
+      {"id": "FOdy-XaSkQ"},
+      {"id": "Hcx84U4iQU"},
+      {"id": "LQS9wJiuT2"},
+      {"id": "fAqQPbMRBb"},
+      {"id": "private"},
+      {"id": "HCEXOpX1_Z"},
+      {"id": "IfZ3Jf2G_m"},
+      {"id": "ke0g9Ftdnj"},
+      {"id": "Hv1U8SGscf"},
+      {"id": "private"},
+      {"id": "VEjKIsmFfC"},
+      {"id": "pHZDKdPZyu"},
+      {"id": "kVqDbhayKf"},
+      {"id": "35_CpECGAX"},
+      {"id": "SqB-etS_CL"},
+      {"id": "oYmz_cEZeD"},
+      {"id": "osigDb8aVR"},
+      {"id": "VJDxq9l7CB"},
+      {"id": "3-At7gojUX"},
+      {"id": "3lpcgoZ6wp"},
+      {"id": "Zd2gOLGDN0"},
+      {"id": "l9krnyCqXl"},
+      {"id": "private"},
+      {"id": "1hZd1vuRdu"},
+      {"id": "vvpMhc-owD"},
+      {"id": "oIsJmoNTxY"},
+      {"id": "d_XxIUkZXg"},
+      {"id": "1jPRRvJiVe"},
+      {"id": "ht8Sp5BKsr"},
+      {"id": "GvA1L2H3Vf"},
+      {"id": "TUrADuK0dD"},
+      {"id": "nNLNfKWia3"},
+      {"id": "vNnHpEKhMa"},
+      {"id": "QhtSxsiYZF"},
+      {"id": "private"},
+      {"id": "bkv6tvbqoK"},
+      {"id": "sBxbqi2ZXS"},
+      {"id": "ieUK6ESyT4"},
+      {"id": "ReWnamZj5q"},
+      {"id": "vifxqLcTKQ"},
+      {"id": "Q844G7qWxN"},
+      {"id": "9Hfa3EVO9z"},
+      {"id": "R6-HSK7hyL"},
+      {"id": "tinoY-OZDd"},
+      {"id": "D2a-zByL8w"},
+      {"id": "SQrBjx8OEd"},
+      {"id": "eVJFnG36Oe"},
+      {"id": "g0ZWGr1xx8"},
+      {"id": "YqXzHvYAVv"},
+      {"id": "yFK125By3T"},
+      {"id": "WE2iA6QsJ8"},
+      {"id": "-KnaUFOrAl"},
+      {"id": "P4XwTKRbSb"},
+      {"id": "bQ8oxz07mj"},
+      {"id": "zJqWpZlQaD"},
+      {"id": "2dHSpxqm3v"},
+      {"id": "_okpJxQFyO"},
+      {"id": "U35e4pv8dv"},
+      {"id": "Zyin7QbHU6"},
+      {"id": "JM6FGslRpa"},
+      {"id": "olMO3JmA8a"},
+      {"id": "xjIgKZWym3"},
+      {"id": "WNF54xAsh6"},
+      {"id": "69jgHwdYWm"},
+      {"id": "iNMcJcg8d0"},
+      {"id": "iQBLxSCly6"},
+      {"id": "YndgZP6s9v"},
+      {"id": "6QGG4WWQpj"},
+      {"id": "cNfvQPruGX"},
+      {"id": "wcuJhSs78J"},
+      {"id": "Lim3845wP3"},
+      {"id": "myMRKF20st"},
+      {"id": "XFm9qgm_4Y"},
+      {"id": "0OXd0lClsu"},
+      {"id": "private"},
+      {"id": "r5KZnzUvLm"},
+      {"id": "ZoINy9Yp34"},
+      {"id": "fi_P1XEp0B"},
+      {"id": "5bJdoB-o16"},
+      {"id": "HbRybmNgE6"},
+      {"id": "P3qHNJidFC"},
+      {"id": "v84fyN-z4m"},
+      {"id": "8CqDEmUtPY"}
+    ]
+  },
+  "courses": {
+    "_total": 5,
+    "values": [
+      {"name": "Structure of Computer Programs"},
+      {"name": "Symbolic Programming"},
+      {"name": "Discrete Math"},
+      {"name": "Leadership"},
+      {"name": "Principles of Business Administration"}
+    ]
+  },
+  "distance": 0,
+  "educations": {
+    "_total": 3,
+    "values": [
+      {
+        "degree": "BA",
+        "fieldOfStudy": "Architecture",
+        "notes": "\u2022\tEmphasis on Experiential Design, Critical and Analytical Thinking, Design Theories, and Creative Problem Solving\n\u2022\t1 year in Computer Science, relevant courses: Structure of Computer Programs, Symbolic Programming, Discrete Math\n\u2022\tStudent instructor to class of 40+ on leadership style; Event chair for a Chinese American student club of 100+ members",
+        "schoolName": "University of California, Berkeley"
+      },
+      {"schoolName": "Acalanes High School"},
+      {
+        "fieldOfStudy": "Computer Science and Software Engineering",
+        "schoolName": "Hack Reactor"
+      }
+    ]
+  },
+  "firstName": "Hao",
+  "headline": "Software Engineer / Full Stack Developer",
+  "id": "33y8nab7-6",
+  "industry": "Computer Software",
+  "interests": "Salsa, Snowboarding, Inventing, Travel, Culinary scene, Stock trading, Cooking, Golf, P90X",
+  "jobBookmarks": {
+    "_total": 5,
+    "values": [
+      {
+        "applyTimestamp": 1367322638000,
+        "isApplied": true,
+        "isSaved": true,
+        "job": {
+          "active": false,
+          "company": {
+            "id": 129665,
+            "name": "Scribd"
+          },
+          "descriptionSnippet": "Scribd is a YCombinator startup based in San Francisco looking for a product manager to lead the agile ideation, discovery, development, and launch of product initiatives to constantly make the product better. We want to make the experience for our customers the most enjoyable and enticing possible, while building on our disruptive business model. If you're excited by this challenge, we want you. ",
+          "id": 5530412,
+          "position": {"title": "Product Manager"},
+          "postingTimestamp": 1366933262000
+        },
+        "savedTimestamp": 1367322639000
+      },
+      {
+        "isApplied": false,
+        "isSaved": true,
+        "job": {
+          "active": false,
+          "company": {
+            "id": 3137,
+            "name": "Levi Strauss & Co."
+          },
+          "descriptionSnippet": "LS&amp;Co. is aggressively pursuing a global digital strategy with a strong emphasis on eCommerce.  This is an exciting opportunity to be part of a highly talented team, focused on enabling revenue across all channels through digital. The Asst. Product Manager's key area of responsibility will be to deliver small to medium-sized projects for the Levi's &amp; Dockers EU and US web stores.  He/she w",
+          "id": 5659996,
+          "position": {"title": "Assistant Digital Product Manager - eCommerce"},
+          "postingTimestamp": 1368059409000
+        },
+        "savedTimestamp": 1368153211000
+      },
+      {
+        "isApplied": false,
+        "isSaved": true,
+        "job": {
+          "active": false,
+          "company": {
+            "id": 8557,
+            "name": "Esurance"
+          },
+          "descriptionSnippet": "Assists with the definition, design, and development of website functionality that maximizes revenue, improves customer experience, and enhances brand value. Writes detailed business requirements documents (BRDs), including user interface specifications, according to the release schedule deadlines. Collaborates with User Experience professionals on user interface specifications supporting the busi",
+          "id": 4458127,
+          "position": {"title": "Associate Ecommerce Product Manager"},
+          "postingTimestamp": 1356119403000
+        },
+        "savedTimestamp": 1368153649000
+      },
+      {
+        "isApplied": false,
+        "isSaved": true,
+        "job": {
+          "active": false,
+          "company": {
+            "id": 1879,
+            "name": "Autodesk"
+          },
+          "descriptionSnippet": "BUSINESS CONSULTANT \u2013 BIM TRANSFORMATION SPECIALISTAs a global leader in 3D design, engineering, and entertainment software, Autodesk helps people imagine, design, and create a better world.&nbsp; Autodesk accelerates better design through an unparalleled depth of experience and a broad portfolio of software to give customers the power to solve their design, business, and environmental challenges.",
+          "id": 5580681,
+          "position": {"title": "BIM Business Consultant"},
+          "postingTimestamp": 1367427709000
+        },
+        "savedTimestamp": 1368620152000
+      },
+      {
+        "isApplied": false,
+        "isSaved": true,
+        "job": {
+          "active": false,
+          "company": {
+            "id": 10667,
+            "name": "Facebook"
+          },
+          "descriptionSnippet": "From News Feed to Mobile Applications and everything in between, we drive the conceptual and technical development of product initiatives from beginning to end. We collaborate with multiple teams throughout the company to deliver world-class products. Join our team if you want to make a deep impact on Facebook's newest products and help guide our evolution. Facebook Product Managers build products",
+          "id": 4339067,
+          "position": {"title": "Product Manager, University"},
+          "postingTimestamp": 1354864997000
+        },
+        "savedTimestamp": 1369078284000
+      }
+    ]
+  },
+  "languages": {
+    "_total": 2,
+    "values": [
+      {
+        "language": {"name": "English"},
+        "proficiency": {"level": "native_or_bilingual"}
+      },
+      {
+        "language": {"name": "Mandarin"},
+        "proficiency": {"level": "native_or_bilingual"}
+      }
+    ]
+  },
+  "lastModifiedTimestamp": 1376930552210,
+  "lastName": "Liu",
+  "location": {"name": "San Francisco Bay Area"},
+  "memberUrlResources": {"_total": 0},
+  "mfeedRssUrl": "http://www.linkedin.com/rss/mefeed?key=nGTn8ScAKTaxQkcr6Mu5-XMmNNrD_NBNvnmGwDz8KiGaDwxS45jiWnwihkwyeNM",
+  "numConnections": 500,
+  "numConnectionsCapped": true,
+  "numRecommenders": 2,
+  "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_QoM0AH7QU-ZNeCzj6ueuAwyXUtS9oCNjkmS8AE0vkqM6z6_go2W1xowUvxDdW5vAbdU3ODTgd6Uc",
+  "positions": {
+    "_total": 9,
+    "values": [
+      {
+        "company": {
+          "id": 3032535,
+          "industry": "Computer Software",
+          "name": "Hack Reactor",
+          "size": "11-50 employees",
+          "type": "Educational Institution"
+        },
+        "id": 412268199,
+        "isCurrent": true,
+        "startDate": {
+          "month": 6,
+          "year": 2013
+        },
+        "title": "Software Engineer / Full Stack Developer"
+      },
+      {
+        "company": {
+          "id": 3198216,
+          "industry": "Computer Software",
+          "name": "Foundersuite",
+          "size": "1-10 employees",
+          "type": "Public Company"
+        },
+        "endDate": {
+          "month": 8,
+          "year": 2013
+        },
+        "id": 432812136,
+        "isCurrent": false,
+        "startDate": {
+          "month": 8,
+          "year": 2013
+        },
+        "title": "Contract Software Developer"
+      },
+      {
+        "company": {
+          "industry": "Computer Software",
+          "name": "Community Consultant Teams Atlanta"
+        },
+        "endDate": {
+          "month": 7,
+          "year": 2013
+        },
+        "id": 381976484,
+        "isCurrent": false,
+        "startDate": {
+          "month": 2,
+          "year": 2013
+        },
+        "summary": "Develop marketing strategies and revenue diversification implementation plans for nonprofit client to achieve financial sustainability and future revenue growth. Propose online fundraising platforms as best technical solution and create implementation instructions to address client's immediate financial needs.\n\n--- Responsibilities include:\n\n\u2022 Define best practices for fundraising webpage design to drive donor conversion and visitor retention. \n\u2022 Gather and analyze client feedback to refine project scope and prioritize team tasks. \n\u2022 Define metrics for surveying client\u2019s customers, analyze results to define marketing strategy. \n\u2022 Conduct market research to understand client\u2019s competitive position and to refine revenue diversification strategy.\n\u2022 Define deliverable and communicate project objective and progress to client.",
+        "title": "Business Consultant"
+      },
+      {
+        "company": {
+          "id": 103231,
+          "industry": "Architecture & Planning",
+          "name": "John Portman & Associates",
+          "size": "51-200 employees",
+          "type": "Privately Held"
+        },
+        "endDate": {
+          "month": 5,
+          "year": 2013
+        },
+        "id": 130773135,
+        "isCurrent": false,
+        "startDate": {
+          "month": 6,
+          "year": 2007
+        },
+        "summary": "Define vision and drive development roadmap for complex architectural projects in 15+ major oversea cities. Work closely with design, engineering, marketing, and real estate financial teams to iterate and refine architectural product throughout entire development cycle: scope, concept, design development, material specifications, performance testing, quality assurance, and construction. \n\n--- Responsibilities include:\n\n\u2022\tImplement workflow best practices for Building Information Modeling and other software tools to streamline design process and enable agile execution and flexible planning. Anticipate for program changes and unforeseen issues, meet fast-paced deadlines and stay in budget.\n\u2022\tConduct research and market analysis to understand strategic and competitive position; Synthesize client feedback, access functional and financial needs, and analyze technical, social, and cultural requirements to define building\u2019s functionality and prioritize development tasks.\n\u2022\tTest building performances with engineers and consultants, analyze resulting metrics to improve the design of architectural features. \n\u2022\tPay attention to detail on building features, ensuring superior user experience.\n\u2022\tCommunicate schedule, project roadmap, scope, and progress to internal and external stakeholders. Create project requirement and deliverable documents.\n\u2022\tKnowledgeable in Building Information Modeling products and mentors employees with variable technical skills.\n\n--- Accomplishments: \n\n\u2022\tCreated and led a training class for 50+ employees to drive adoption of a design software product into company workflow.\n\u2022\tCreated an intranet forum and employee group that mentors and motivates junior architects, promotes best practices in design and operation, and enables free exchange of ideas among 60+ employees.\n\u2022\tStreamlined communication process in Mandarin with an outsourced production team in China; decreased response time to less than 24 hours from over 72 hours resulting in a 60% fee reduction",
+        "title": "Associate Project Manager, Project Architect, RA, LEED AP"
+      },
+      {
+        "company": {
+          "id": 210115,
+          "industry": "Management Consulting",
+          "name": "USA Leadership Corps",
+          "size": "1-10 employees",
+          "type": "Educational Institution"
+        },
+        "endDate": {
+          "month": 3,
+          "year": 2012
+        },
+        "id": 256667896,
+        "isCurrent": false,
+        "startDate": {
+          "month": 6,
+          "year": 2011
+        },
+        "summary": "Create revenue forecast, analyze current fundraising processes, and create implementation plan to increase grant application approve rate. Create implementation plan to build database for customer testimony and design database input interface.\n\n--- Responsibilities include:\n\n\u2022\tConduct meetings with executive team, gather and analyze feedback to refine scope and prioritize tasks.\n\u2022\tDefine project scope and deliverable and communicate project objectives and progress to client. \n\u2022\tGather and analyze 3 years of revenue data to prioritize future revenue stream, set revenue expectations for the next 3 years. \n\u2022\tDocument and analyze client\u2019s fundraising process to identify opportunities for improvement. Propose software solution and create implementation plan to improve grant approval rate.",
+        "title": "Business Consultant"
+      },
+      {
+        "company": {
+          "industry": "Computer Software",
+          "name": "Legal Technology Startup"
+        },
+        "endDate": {
+          "month": 3,
+          "year": 2012
+        },
+        "id": 345118851,
+        "isCurrent": false,
+        "startDate": {
+          "month": 6,
+          "year": 2011
+        },
+        "summary": "Work closely with engineers and user experience designer to iterate and refine functionality and features of a SaaS platform for attorneys and law firms. Create wireframes and illustrations to convey feature and user interface ideas to engineers and designers.\n\n\u2022\tDefine and communicate product vision and business strategy to investors. Drive product roadmap and development process, \n\u2022\tDevelop marketing strategy and work closely with engineering and design team to launch a desktop application for law students, in order to recruit potential users of SaaS platform and drive user engagement.",
+        "title": "Product Manager, Investor"
+      },
+      {
+        "company": {
+          "industry": "Computer Software",
+          "name": "Inventing"
+        },
+        "endDate": {
+          "month": 3,
+          "year": 2012
+        },
+        "id": 345120465,
+        "isCurrent": false,
+        "startDate": {
+          "month": 8,
+          "year": 2006
+        },
+        "summary": "Design, prototype, patent research, obtain cost estimates from manufacturers and material suppliers, secure private investors, and negotiate with retailers to launch consumer products.",
+        "title": "Consumer Product Inventor"
+      },
+      {
+        "company": {
+          "industry": "Computer Software",
+          "name": "Communication Consulting Service"
+        },
+        "endDate": {
+          "month": 11,
+          "year": 2011
+        },
+        "id": 345119027,
+        "isCurrent": false,
+        "startDate": {
+          "month": 3,
+          "year": 2011
+        },
+        "summary": "Lead 5 freelance translators to reduce translation wait time by 50% between English and Chinese on business documents and design packages for 2 international architectural firms; enabled clients to complete projects 10% ahead of schedule",
+        "title": "Founder and President"
+      },
+      {
+        "company": {
+          "id": 25579,
+          "industry": "Architecture & Planning",
+          "name": "MBH Architects",
+          "size": "51-200 employees",
+          "type": "Privately Held"
+        },
+        "endDate": {
+          "month": 6,
+          "year": 2007
+        },
+        "id": 172489204,
+        "isCurrent": false,
+        "startDate": {
+          "month": 8,
+          "year": 2006
+        },
+        "summary": "\u2022\tManaged multiple $300K+ retail store projects at any given time; coordinated daily with clients and consultants to resolve design and program issues, consistently within budget and with fast turn-around \n\u2022\tCompleted 20+ new retail stores in 6 months in several states for clients such as Bath & Body Works and Quicksilver; researched government code, created design and construction drawings, and conducted construction administration\n\u2022\tMember of 5 person team that accounted for a 20% increase in account revenue",
+        "title": "Architect"
+      }
+    ]
+  },
+  "publicProfileUrl": "http://www.linkedin.com/in/haoliu119",
+  "recommendationsReceived": {
+    "_total": 2,
+    "values": [
+      {
+        "recommendationText": "In a word, Hao is awesome.  I hired him to help build an important new software module for Foundersuite focused on tracking and monitoring the competitive landscape.  \r\n\r\nHe absolutely rocked the project.  He:\r\n   \r\n* quickly on-boarded and plugged into the code base \r\n* internalized the user stories and revised mockups to better present data \r\n* implemented stretch features to enrich the user experience \r\n\r\nHao worked fast, hit deadlines, and took initiative.  In short, he went miles above and beyond the scope of the project, and really put his soul into it. I would hire him again (and recommend him to others) without reservation. \r\n\r\nNathan Beckord",
+        "recommendationType": {"code": "service-provider"},
+        "recommender": {
+          "firstName": "Nathan",
+          "id": "bdcV9GpeWd",
+          "lastName": "Beckord"
+        }
+      },
+      {
+        "recommendationText": "Hao recently led a very successful consulting project for our volunteer group. \r\n\r\nHao's nonprofit client needed to examine and improve their current fundraising efforts and prepare an actionable plan to help the organization reach its three-year fundraising target.\r\n\r\nBy the conclusion of the 3-month, 50-hour project, Hao delivered an innovative solution to the fundraising team that stood to increase the emotional appeal and success rate of their corporate grant applications. \r\n\r\nUSA Leadership Corps highly recommends Hao for any type of team, consulting, or project management opportunity because he possesses exceptional analytical, problem solving, and leadership skill.\r\n\r\nSincerely,\r\nMaxwell Roper\r\nUSA Leadership Corps",
+        "recommendationType": {"code": "business-partner"},
+        "recommender": {
+          "firstName": "USA Leadership",
+          "id": "2jFsNBfPEK",
+          "lastName": "Corps (USALC)"
+        }
+      }
+    ]
+  },
+  "relatedProfileViews": {
+    "_total": 10,
+    "values": [
+      {
+        "firstName": "Zachary",
+        "id": "P3qHNJidFC",
+        "lastName": "Zibrat"
+      },
+      {
+        "firstName": "Jake",
+        "id": "5GTSDMd3Lz",
+        "lastName": "McGuire"
+      },
+      {
+        "firstName": "Josh",
+        "id": "kLXwxhs0FW",
+        "lastName": "Sprague"
+      },
+      {
+        "firstName": "Bianca",
+        "id": "bf4fj67OEn",
+        "lastName": "Gandolfo"
+      },
+      {
+        "firstName": "Shaohua",
+        "id": "HbRybmNgE6",
+        "lastName": "Zhou"
+      },
+      {
+        "firstName": "Barry",
+        "id": "-KnaUFOrAl",
+        "lastName": "Wong"
+      },
+      {
+        "firstName": "Elle",
+        "id": "NzzcV04pSt",
+        "lastName": "Beal"
+      },
+      {
+        "firstName": "Gregory",
+        "id": "AjHphU7_Hv",
+        "lastName": "Hilkert"
+      },
+      {
+        "firstName": "Eric",
+        "id": "8BUXdxK90u",
+        "lastName": "Levin"
+      },
+      {
+        "firstName": "Guy",
+        "id": "u4L3Jzqw9E",
+        "lastName": "Morita"
+      }
+    ]
+  },
+  "relationToViewer": {},
+  "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=80950825&authType=name&authToken=exBA&trk=api*a3139351*s3214061*"},
+  "skills": {
+    "_total": 40,
+    "values": [
+      {"skill": {"name": "Design Management"}},
+      {"skill": {"name": "Entrepreneurship"}},
+      {"skill": {"name": "Concept Design"}},
+      {"skill": {"name": "Product Design"}},
+      {"skill": {"name": "Product Development"}},
+      {"skill": {"name": "Rapid Prototyping"}},
+      {"skill": {"name": "3D Studio Max"}},
+      {"skill": {"name": "SketchUp"}},
+      {"skill": {"name": "AutoCAD"}},
+      {"skill": {"name": "Photoshop"}},
+      {"skill": {"name": "InDesign"}},
+      {"skill": {"name": "Bentley Architecture"}},
+      {"skill": {"name": "MicroStation"}},
+      {"skill": {"name": "Illustrator"}},
+      {"skill": {"name": "Revit"}},
+      {"skill": {"name": "Consulting"}},
+      {"skill": {"name": "Analysis"}},
+      {"skill": {"name": "JavaScript"}},
+      {"skill": {"name": "HTML 5"}},
+      {"skill": {"name": "CSS3"}},
+      {"skill": {"name": "jQuery"}},
+      {"skill": {"name": "Git"}},
+      {"skill": {"name": "Strategy"}},
+      {"skill": {"name": "Backbone.js"}},
+      {"skill": {"name": "d3.js"}},
+      {"skill": {"name": "MySQL"}},
+      {"skill": {"name": "SQL"}},
+      {"skill": {"name": "Ruby"}},
+      {"skill": {"name": "MongoDB"}},
+      {"skill": {"name": "BIM"}},
+      {"skill": {"name": "Node.js"}},
+      {"skill": {"name": "Architecture"}},
+      {"skill": {"name": "Ruby on Rails"}},
+      {"skill": {"name": "Web Development"}},
+      {"skill": {"name": "CSS"}},
+      {"skill": {"name": "AJAX"}},
+      {"skill": {"name": "Github"}},
+      {"skill": {"name": "Microsoft Excel"}},
+      {"skill": {"name": "Rails"}},
+      {"skill": {"name": "Product Management"}}
+    ]
+  },
+  "summary": "Hao Liu is passionate about building beautiful and intuitive products, and about creating services that maximize the potentials of people and organizations. Although his career began in architecture, he never stopped applying his analytical and critical thinking skills, intuitive design sense, creative problem solving skill, and business acumen to build products and services outside of architecture. \n\nBesides Hao\u2019s professional accomplishments leading teams of designers and engineers creating complex building projects around the world, his strong entrepreneurial spirit guided him to start his own business and join a startup, and his instinct for problem solving led him to invent consumer products and provide business consulting to nonprofit organizations. \n\nHao\u2019s recent role as a product manager in a startup he invested in, coupled with his strong belief that software is the universal tool to unlock potentials in people and organizations, led him to pursue a career in software development.",
+  "threeCurrentPositions": {
+    "_total": 1,
+    "values": [{
+      "company": {
+        "id": 3032535,
+        "industry": "Computer Software",
+        "name": "Hack Reactor",
+        "size": "11-50 employees",
+        "type": "Educational Institution"
+      },
+      "id": 412268199,
+      "isCurrent": true,
+      "startDate": {
+        "month": 6,
+        "year": 2013
+      },
+      "title": "Software Engineer / Full Stack Developer"
+    }]
+  },
+  "threePastPositions": {
+    "_total": 3,
+    "values": [
+      {
+        "company": {
+          "id": 3198216,
+          "industry": "Computer Software",
+          "name": "Foundersuite",
+          "size": "1-10 employees",
+          "type": "Public Company"
+        },
+        "endDate": {
+          "month": 8,
+          "year": 2013
+        },
+        "id": 432812136,
+        "isCurrent": false,
+        "startDate": {
+          "month": 8,
+          "year": 2013
+        },
+        "title": "Contract Software Developer"
+      },
+      {
+        "company": {
+          "industry": "Computer Software",
+          "name": "Community Consultant Teams Atlanta"
+        },
+        "endDate": {
+          "month": 7,
+          "year": 2013
+        },
+        "id": 381976484,
+        "isCurrent": false,
+        "startDate": {
+          "month": 2,
+          "year": 2013
+        },
+        "summary": "Develop marketing strategies and revenue diversification implementation plans for nonprofit client to achieve financial sustainability and future revenue growth. Propose online fundraising platforms as best technical solution and create implementation instructions to address client's immediate financial needs.\n\n--- Responsibilities include:\n\n\u2022 Define best practices for fundraising webpage design to drive donor conversion and visitor retention. \n\u2022 Gather and analyze client feedback to refine project scope and prioritize team tasks. \n\u2022 Define metrics for surveying client\u2019s customers, analyze results to define marketing strategy. \n\u2022 Conduct market research to understand client\u2019s competitive position and to refine revenue diversification strategy.\n\u2022 Define deliverable and communicate project objective and progress to client.",
+        "title": "Business Consultant"
+      },
+      {
+        "company": {
+          "id": 103231,
+          "industry": "Architecture & Planning",
+          "name": "John Portman & Associates",
+          "size": "51-200 employees",
+          "type": "Privately Held"
+        },
+        "endDate": {
+          "month": 5,
+          "year": 2013
+        },
+        "id": 130773135,
+        "isCurrent": false,
+        "startDate": {
+          "month": 6,
+          "year": 2007
+        },
+        "summary": "Define vision and drive development roadmap for complex architectural projects in 15+ major oversea cities. Work closely with design, engineering, marketing, and real estate financial teams to iterate and refine architectural product throughout entire development cycle: scope, concept, design development, material specifications, performance testing, quality assurance, and construction. \n\n--- Responsibilities include:\n\n\u2022\tImplement workflow best practices for Building Information Modeling and other software tools to streamline design process and enable agile execution and flexible planning. Anticipate for program changes and unforeseen issues, meet fast-paced deadlines and stay in budget.\n\u2022\tConduct research and market analysis to understand strategic and competitive position; Synthesize client feedback, access functional and financial needs, and analyze technical, social, and cultural requirements to define building\u2019s functionality and prioritize development tasks.\n\u2022\tTest building performances with engineers and consultants, analyze resulting metrics to improve the design of architectural features. \n\u2022\tPay attention to detail on building features, ensuring superior user experience.\n\u2022\tCommunicate schedule, project roadmap, scope, and progress to internal and external stakeholders. Create project requirement and deliverable documents.\n\u2022\tKnowledgeable in Building Information Modeling products and mentors employees with variable technical skills.\n\n--- Accomplishments: \n\n\u2022\tCreated and led a training class for 50+ employees to drive adoption of a design software product into company workflow.\n\u2022\tCreated an intranet forum and employee group that mentors and motivates junior architects, promotes best practices in design and operation, and enables free exchange of ideas among 60+ employees.\n\u2022\tStreamlined communication process in Mandarin with an outsourced production team in China; decreased response time to less than 24 hours from over 72 hours resulting in a 60% fee reduction",
+        "title": "Associate Project Manager, Project Architect, RA, LEED AP"
+      }
+    ]
+  },
+  "volunteer": {"volunteerExperiences": {
+    "_total": 3,
+    "values": [
+      {
+        "organization": {"name": "Community Consultant Teams Atlanta"},
+        "role": "Pro Bono Business Consultant"
+      },
+      {
+        "organization": {
+          "id": 210115,
+          "name": "USA Leadership Corps"
+        },
+        "role": "Pro Bono Business Consultant"
+      },
+      {
+        "organization": {
+          "id": 2567147,
+          "name": "NW Metro Atlanta Habitat for Humanity"
+        },
+        "role": "Construction Team Leader"
+      }
+    ]
+  }}
+}

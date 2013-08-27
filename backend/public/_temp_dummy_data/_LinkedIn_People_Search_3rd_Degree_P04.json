@@ -1,0 +1,959 @@
+{
+  "facets": {
+    "_total": 1,
+    "values": [{
+      "buckets": {
+        "_total": 4,
+        "values": [
+          {
+            "code": "F",
+            "count": 0,
+            "name": "1st Connections"
+          },
+          {
+            "code": "S",
+            "count": 67,
+            "name": "2nd Connections"
+          },
+          {
+            "code": "A",
+            "count": 190,
+            "name": "Group Members"
+          },
+          {
+            "code": "O",
+            "count": 965,
+            "name": "3rd + Everyone Else"
+          }
+        ]
+      },
+      "code": "network",
+      "name": "Relationship"
+    }]
+  },
+  "people": {
+    "_count": 25,
+    "_start": 75,
+    "_total": 260,
+    "values": [
+      {
+        "distance": 3,
+        "firstName": "Jack",
+        "headline": "Computer Software Contractor or Fulltime",
+        "id": "BbgDz0J4ey",
+        "industry": "Computer Software",
+        "lastName": "H.",
+        "location": {"name": "Sacramento, California Area"},
+        "numConnections": 17,
+        "numConnectionsCapped": false,
+        "positions": {"_total": 0},
+        "publicProfileUrl": "http://www.linkedin.com/pub/jack-h/0/b54/a04",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=2849188&authType=OUT_OF_NETWORK&authToken=VA-g&trk=api*a3139351*s3214061*"},
+        "summary": "Project Manager and application developer in graphics, networking and GUIs."
+      },
+      {
+        "distance": 3,
+        "firstName": "Earsh",
+        "headline": "Staff Software Engineer at Harmonic Inc",
+        "id": "97JVH4n0de",
+        "industry": "Computer Software",
+        "lastName": "N.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 235,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "industry": "Computer Software",
+              "name": "Harmonic Inc / Omneon"
+            },
+            "id": 137833285,
+            "isCurrent": true,
+            "startDate": {
+              "month": 7,
+              "year": 2010
+            },
+            "summary": "Member of the MediaGrid File System Server group",
+            "title": "Staff Software Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/earsh-n/1/231/131",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=3547765&authType=OUT_OF_NETWORK&authToken=5B_y&trk=api*a3139351*s3214061*"},
+        "specialties": "",
+        "summary": "SUMMARY\nDedicated teamplayer with an attitude towards learning. Designed, implemented, debugged, tested and documented various portions of system software. Solid experience in software design and development focusing within the Operating System (OS) on file systems  and  NFS client / server implementations.\n\nMAJOR ACCOMPLISHMENTS\n\n\u2022 Implemented complex directory rename in cloud computing server product. \n\n\u2022 Designed, implemented, and bringup of NFSv2 and NFSv3 in first releases of NAS server product. \n\n\u2022 Designed and implemented new functionality within the file system in first releases of NAS server product. \n\n\u2022 Stabilized the NFS (Network File System) client and server code in newly marketed Operating System, (OS X, OS 10.1), making it functional with various UNIX and Macintosh platforms running NFSv2, NFSv3 on UDP and TCP, with  both UFS and HFS+ as local file systems. \n\n\u2022 Critical knowledge of file systems within proprietary OSs and UNIX. Both standard and object oriented techniques observed with an eye on producing well-performing reliable code with languages Mesa, C, and C++.\n\n\u2022 Part of team that designed and implemented a highly reliable robust file system volume format replacing the need of specialized hardware, thus resulting in cost savings for end product (Xerox workstations and servers).\n\n\u2022 Continually solidified and enhanced code bases for release cycles by perseverance to add features and fix bugs."
+      },
+      {
+        "distance": 3,
+        "firstName": "Saghir",
+        "headline": "Principal Engineer",
+        "id": "pG-OTMXunO",
+        "industry": "Research",
+        "lastName": "M.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 166,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_U-uG0h91qK7aP8hGM92A0_bONPVm1LhGMKZg0_bawKaY2TcCcqyali1hsRslKG3asAmprXvmCPOj",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "industry": "Research",
+              "name": "San Francisco Bay Area, CA"
+            },
+            "id": 9178858,
+            "isCurrent": true,
+            "startDate": {
+              "month": 10,
+              "year": 2005
+            },
+            "summary": "Software and algorithm development.",
+            "title": "Principal Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/saghir-m/2/213/681",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=6496513&authType=OUT_OF_NETWORK&authToken=o5N7&trk=api*a3139351*s3214061*"},
+        "summary": "Digital Image Processing & Computer Graphics \nSoftware Design & IT (C/C++/C#/Pascal/.Net/ASP/MFC/SQL/JAVA etc)\nImage Based Metrology\nPhoto Lithography Simulation (Optics)\nSemiconductor Processes (Mask/Reticle fabrication for wafers)\nReticle Automated Defect Dispositioning and Management\nReticle Aerial Image Metrology\nSimulation of Physical Sytems and Processes\nSatellite Attitude Control, Navigation, Guidiance\nSpacecraft Flexible and Rigid body Dynamics, Control Theory & Robotics\nSpacecraft Orbital Dynamics and Space Electric Propulsion\nSpace Situational Awareness"
+      },
+      {
+        "distance": 3,
+        "firstName": "Madhumita",
+        "headline": "Software Development Engineer at Amazon Music",
+        "id": "DbWv5j4tn4",
+        "industry": "Computer Software",
+        "lastName": "N.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 126,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1070125,
+              "industry": "Computer Software",
+              "name": "Amazon Music, San Francisco, CA",
+              "size": "51-200 employees",
+              "ticker": "AMZN",
+              "type": "Public Company"
+            },
+            "id": 69189408,
+            "isCurrent": true,
+            "startDate": {
+              "month": 12,
+              "year": 2011
+            },
+            "summary": "\u2022\tSupport and development of highly scalable Event Tracking Service. The service has a producer consumer pattern supporting concurrency by using blocking queues and concurrent data structures\n\u2022\tDeveloped a Data Ingestion module, that can ingest large data volumes from a reader to a writer using Spring Batch\n\u2022\t Developed high performance queries, querying data warehouse facts and dimensions using analytical functions to generate highly accurate vendor and publisher specific summary and detail reports\n\u2022\t Generated Daily Metric data at various grains pre and post Amazon's Autorip launch\n\u2022\tResponsible for carrying out operational tasks on daily basis, deep diving and resolution of high severity issues, responding to adhoc requests from product managers and business teams\n\u2022\tInvolved in mentoring new team members and conducting interviews for intern and entry level positions",
+            "title": "Software Development Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/madhumita-n/12/4b7/339",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=43039773&authType=OUT_OF_NETWORK&authToken=eaV6&trk=api*a3139351*s3214061*"},
+        "summary": "\u2022\tSoftware Engineer with 4 years of professional experience in Java, J2EE, Spring, Hibernate and Oracle\n\u2022\tExperience in Agile Software Development, implementation and delivery of products with tight deadlines\n\u2022\tExperience in developing highly scalable and robust Server Side Applications supporting high volume of data and concurrency\n\u2022\tExposure to Data Warehousing for Metric and Report generation using Oracle 11g SQL, PL/SQL and analytical functions\n\u2022\tMasters in Computer Science from Syracuse University, NY\n\nOracle Certified Java EE 5 Web Component Developer\nSun Certified Programmer for Java 2 Platform 1.4"
+      },
+      {
+        "distance": 3,
+        "firstName": "Douglas",
+        "headline": "Senior Managing Security Consultant - IBM",
+        "id": "tD0LdBths4",
+        "industry": "Computer & Network Security",
+        "lastName": "B.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 456,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1009,
+              "industry": "Information Technology and Services",
+              "name": "IBM",
+              "size": "10,001+ employees",
+              "ticker": "IBM",
+              "type": "Public Company"
+            },
+            "id": 268570135,
+            "isCurrent": true,
+            "startDate": {
+              "month": 3,
+              "year": 2012
+            },
+            "summary": "Facilitate executive and technical enterprise leadership to leverage advanced comprehension of security business processes, methodologies, and standards within information technology risk management, and information security technical controls to reduce data driven risk.\n\nEffectively communicate and execute Security Consulting and Secure technical delivery tasks (Pre-Sales/Post Sales), by solution as defined by Industry practice and IBM Global Security business and technology standards.\n\n\u2022 Enterprise Security Architecture and Design\n\u2022 Strategic Enterprise Information Security and Planning\n\u2022 Network & Security Infrastructure design\n\u2022 Multi-Factor Authentication and Risk Analytics\n\u2022 Web, Host, and Device based Access Control\n\u2022 Identity Provisioning and Federation\n\u2022 Compliance and Role Management \n\u2022 Data Loss Prevention (DLP) Solutions\n\u2022 Data Security Services\n\u2022 Virtualization security for the host and enterprise infrastructure and applications\n\u2022 Secure Cloud Architectures",
+            "title": "Senior Managing Security Consultant"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/douglas-b/0/2b1/a66",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=729006&authType=OUT_OF_NETWORK&authToken=AycO&trk=api*a3139351*s3214061*"},
+        "summary": "Mr. Brown advises Senior Executives, Enterprise Architects, and key I.T. Technical leads to deliver results on a broad range of business related information security issues. He is an experienced Information Security Professional specializing in the design and architecture of Information security solutions and technical remediation.  \n\n[prior roles and focus] \n\nStrategic Planning and Architecture - Enterprise Architect Information Security of I.T. Networks, Infrastructure, Application/Software Security, Identity and Access Management, SCADA Systems, HAN, Smart Grid, Smart Meter, Smart Devices.\n\nSales / Pre-sales, Post Sales Delivery/ Field Team Support / Security Architecture Design / Management / Consulting / Professional Services Delivery / Systems Engineer / Business Development of security products and solutions / Partner Alliance Management.\n\nInformation Security speaker for HP's Executive Briefing Center.\nPalo Alto, Ca., Cupertino, Ca., Houston, Tx.\n\nSpecialties: Security Architectures, Governance Risk and Compliance Alignment, Trusted-Infrastructure Design, Security Engineer, Team Management, Partner Alliances, Subject matter public Speaker."
+      },
+      {
+        "distance": 3,
+        "firstName": "Julie",
+        "headline": "Information Analyst",
+        "id": "4Gt1iG0Rpo",
+        "industry": "Information Technology and Services",
+        "lastName": "H.",
+        "location": {"name": "Sacramento, California Area"},
+        "numConnections": 173,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "industry": "Information Technology and Services",
+              "name": "Sacramento, CA"
+            },
+            "id": 212568398,
+            "isCurrent": true,
+            "summary": "",
+            "title": "Full Time Mom and Part-Time Volunteer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/julie-h/0/bb0/513",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=2965983&authType=OUT_OF_NETWORK&authToken=PLFQ&trk=api*a3139351*s3214061*"}
+      },
+      {
+        "distance": 3,
+        "firstName": "Tomer",
+        "headline": "Finance Director, Security BU CFO at Akamai Technologies",
+        "id": "NZBpFpM1-X",
+        "industry": "Information Technology and Services",
+        "lastName": "Y.",
+        "location": {"name": "Israel"},
+        "numConnections": 400,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_CV5yQ4tdpW6VhqdZ8OifQs-6pS3v2qZZhjliQU1Miez51K74apvKHRbB-iTE71MN_JbCWpTdQhHe",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 3925,
+              "industry": "Internet",
+              "name": "Akamai Technologies",
+              "size": "1001-5000 employees",
+              "ticker": "AKAM",
+              "type": "Public Company"
+            },
+            "id": 386753162,
+            "isCurrent": true,
+            "startDate": {
+              "month": 4,
+              "year": 2013
+            },
+            "title": "Finance Director, Security BU CFO"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/tomeryellinek",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=7653688&authType=OUT_OF_NETWORK&authToken=JLIt&trk=api*a3139351*s3214061*"},
+        "specialties": "Business Analysis, Mergers and Acquisitions, Strategy, Financial Modeling, Financial Analysis, Corporate Development, Data Analytics",
+        "summary": "Business Development and Strategy professional; Former Software Engineer; NYU Stern MBA\n\n- Strategic Planning & Analysis (planning, competitive analysis, product positioning)\n\n- Business Analysis, Financial Analysis and Modeling\n\n- Industry trends, Competitive Threats, Expansion Opportunities and Internal Performance Reporting\n\n- Complex quantitative and financial models, Forecasting Business Metrics\n\n- Analyzing new projects/products and Business Plans\n\nNYU Stern MBA; specialized in Corporate Finance and Entrepreneurship & Innovation"
+      },
+      {
+        "distance": 3,
+        "firstName": "Anh",
+        "headline": "Mobile Developer, Indie Game Developer",
+        "id": "r6b5V-9cnA",
+        "industry": "Information Technology and Services",
+        "lastName": "L.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 300,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_LPiHRo1OGbOMr0DSb-5BRerlCCEsrJySbtcBReC7gbYEfgwDWv1XvH9Tu2o5POgTXK39qfyECb0o",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "industry": "Information Technology and Services",
+              "name": "Looksys - San Francisco, CA"
+            },
+            "id": 108985175,
+            "isCurrent": true,
+            "startDate": {"year": 2009},
+            "summary": "\u2022\tDesigned, built and successfully released my iPhone app Puppy Loves You (entertainment, game and educational).  App got accepted on very first submission and has been well received.\n\u2022\tCoded all aspects of apps using Objective C, XCode, and iOS SDK including UIKit, Foundation, CoreGraphics, CoreLocation, QuartzCore, AVFoundation.\n\u2022\tDesigned and created all app content including high-resolution 2D animations with custom sounds.  \n\u2022\tDesigned and built custom app UI that conforms to iOS Human Interface Guidelines.\n\u2022\tHandled testing on multiple iOS devices.  Highly experienced with the complex process of testing provision and app submission.\n\u2022\tCurrently developing a line of iOS casual games.",
+            "title": "Mobile Developer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/anh-l/3/b29/329",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=11752593&authType=OUT_OF_NETWORK&authToken=YH1j&trk=api*a3139351*s3214061*"},
+        "specialties": "",
+        "summary": ""
+      },
+      {
+        "distance": 3,
+        "firstName": "Bradley",
+        "headline": "Sr Software Engineer at Quantum Retail Technology",
+        "id": "jQr7pxNV5H",
+        "industry": "Computer Software",
+        "lastName": "B.",
+        "location": {"name": "Greater Minneapolis-St. Paul Area"},
+        "numConnections": 194,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_HAcsUdv37if5pVJueKldUwX373eHYpZuE9iLUw6AKXy4TZ72kcFnzIt0T7HcjRM8d-zkN24O8krX",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 129505,
+              "industry": "Computer Software",
+              "name": "Quantum Retail Technology",
+              "type": "Privately Held"
+            },
+            "id": 168611499,
+            "isCurrent": true,
+            "startDate": {
+              "month": 2,
+              "year": 2011
+            },
+            "summary": "",
+            "title": "Sr Software Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/bradbeck",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=3246049&authType=OUT_OF_NETWORK&authToken=IYBs&trk=api*a3139351*s3214061*"},
+        "specialties": "Java, OSGi, SCA, Agile Methodologies, Eclipse, Ant, Maven, Ivy, JUnit, TestNG",
+        "summary": "Software architect and engineer focusing on agile development and modular design of enterprise applications."
+      },
+      {
+        "distance": 3,
+        "firstName": "Rupen",
+        "headline": "VP of Engineering at BlackBerry",
+        "id": "HTmWZpGHrx",
+        "industry": "Computer Software",
+        "lastName": "C.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 2828,
+              "industry": "Telecommunications",
+              "name": "BlackBerry",
+              "size": "10,001+ employees",
+              "ticker": "RIMM",
+              "type": "Public Company"
+            },
+            "id": 388151237,
+            "isCurrent": true,
+            "startDate": {
+              "month": 3,
+              "year": 2013
+            },
+            "summary": "UI Frameworks, Graphics and Gaming",
+            "title": "VP of Engineering"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/rupen-c/0/754/39b",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=1852967&authType=OUT_OF_NETWORK&authToken=smei&trk=api*a3139351*s3214061*"},
+        "specialties": "C/C++, Expert knowledge in Android, Qualcomm BREW, Macromedia Flash, Blackberry QNX. Microsoft Windows programming, Netscape & IE browser plug-in, ActiveX/COM, DirectX, Extensive knowledge of Windows CE & Platform Builder, Smartphone/Windows Mobile, Microsoft TV(MSTV), Familiar with Symbian, Linux, Very well conversant with video/audio streaming, various encoding/unicode issues, Text/font handling, HTTP networking/TCP/IP, multithreading, almost all aspects of Mobile software development.",
+        "summary": ""
+      },
+      {
+        "distance": 3,
+        "firstName": "Claudia",
+        "headline": "President at RC Promotions Inc",
+        "id": "RlbodCBr5S",
+        "industry": "Computer Software",
+        "lastName": "D.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 209,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_-vl8EB3Grm-r-B0Hr110Ez1trwQtKlmHKt50EqACfmtC7zMeYPTuXN5uOL6S1n7X1nPY5Pf6wHMY",
+        "positions": {
+          "_total": 3,
+          "values": [
+            {
+              "company": {
+                "industry": "Marketing and Advertising",
+                "name": "RC Promotions Inc"
+              },
+              "id": 215231623,
+              "isCurrent": true,
+              "startDate": {
+                "month": 6,
+                "year": 2011
+              },
+              "summary": "We can sure help you promote your business with lower costs and not limited to any quantity!",
+              "title": "President"
+            },
+            {
+              "company": {
+                "industry": "Education Management",
+                "name": "Diablo Valley DaSilva, Inc."
+              },
+              "id": 32090783,
+              "isCurrent": true,
+              "startDate": {
+                "month": 10,
+                "year": 2007
+              },
+              "summary": "Futsal League for U9-U19 age groups; for adults; possibility of private training on technical and tactical skills in Futsal - www.diablovalleyfutsal.com",
+              "title": "Partner"
+            },
+            {
+              "company": {
+                "id": 10904,
+                "industry": "Higher Education",
+                "name": "City College of San Francisco",
+                "size": "1001-5000 employees",
+                "type": "Educational Institution"
+              },
+              "id": 71326671,
+              "isCurrent": true,
+              "startDate": {
+                "month": 8,
+                "year": 2007
+              },
+              "summary": "http://www.ccsf.edu - my personal website is www.cdasilva.info\nMost of the classes I teach are related to web development but I also teach Intro to Computers. I have experience in teaching online using Moodle learning system.\nCurrently developing a group of web developers with students (and ex-students) of the CNIT Department at City College of SF.",
+              "title": "Faculty and Coordinator of web dev group"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/claudiausa",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=1670392&authType=OUT_OF_NETWORK&authToken=EFV4&trk=api*a3139351*s3214061*"},
+        "specialties": "Documentation\nTraining\nTeaching\nWeb Development\nSEO Strategies\nPromotional Items",
+        "summary": "My objective is work directly with different customers to help them in their technology training needs, and/or web development/maintenance and especially in helping customers promoting their business with wonderful, creative and low-cost ideas!"
+      },
+      {
+        "distance": 3,
+        "firstName": "Tamsen",
+        "headline": "Entrepreneur, Innovator, Professional Connector",
+        "id": "AgDIBY1PfC",
+        "industry": "Computer Software",
+        "lastName": "Galloway",
+        "location": {"name": "Portland, Oregon Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_OurBLnRs2SvTLgU4YmKkLqVMuo8aFOo4pSXHLqEbPuNO4sjZtEhUwNOWCFhAkJIq07-WoPqj-5rg",
+        "positions": {
+          "_total": 3,
+          "values": [
+            {
+              "company": {
+                "id": 2023113,
+                "industry": "Philanthropy",
+                "name": "TechStart Education Foundation",
+                "size": "1-10 employees",
+                "type": "Nonprofit"
+              },
+              "id": 331372651,
+              "isCurrent": true,
+              "startDate": {
+                "month": 10,
+                "year": 2012
+              },
+              "title": "Board of Directors"
+            },
+            {
+              "company": {
+                "industry": "Information Technology and Services",
+                "name": "Technology Association of Oregon"
+              },
+              "id": 296121504,
+              "isCurrent": true,
+              "startDate": {
+                "month": 6,
+                "year": 2012
+              },
+              "title": "Board of Directors"
+            },
+            {
+              "company": {
+                "industry": "Information Technology and Services",
+                "name": "Gal-Away"
+              },
+              "id": 76527551,
+              "isCurrent": true,
+              "startDate": {
+                "month": 4,
+                "year": 2007
+              },
+              "summary": "Gal-Away is a mobile application designed to enhance quality of life for female business travelers, connecting women to their destination cities and to each other.",
+              "title": "Founder and CEO"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/tamsengalloway",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=134963&authType=OPENLINK&authToken=WBpd&trk=api*a3139351*s3214061*"},
+        "summary": "Tamsen has applied her technical background and business savvy to a wide span of roles, providing experience and leadership to companies from startups to Fortune 100.  She has held positions with world class companies including Anheuser-Busch, IBM, Xerox, and Computer Associates. From her beginnings as a network administrator to the leadership roles that she holds today, Tamsen has had an opportunity to experience all elements of organizations and apply her entrepreneurial spirit to removing obstacles through innovation and thought leadership.  \n\nShe is also the Founder of Gal-Away.com, and recently facilitated the successful launch of Blab to the public (www.blabpredicts.com/news).  She is a Board Member of the Technology Association of Oregon, TechStart Education Foundation supporting a stronger economy for Oregon's software community through education and mentoring.  She is also a respected speaker at many industry and community-focused conferences.\n\nSpecialties: \nSocial Media Marketing\nPredictive Analytics\nInnovative Leadership\nProduct Marketing\nProgram Management\nCross-Functional Team Development\nOrganizational Development\nPhilanthropreneurship"
+      },
+      {
+        "distance": 3,
+        "firstName": "Santhosh",
+        "headline": "Sr. Release Program Manager, Cisco WebEx, USA",
+        "id": "ssqnusu8HS",
+        "industry": "Computer Software",
+        "lastName": "R.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 294,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_RSNOtCEoptsTWnbAvWqDt3MdYKg7WK9AME8TthWzT9Wxnq3lBwk-p8jRKgjKoBcjVmnhgbRcF9UA",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 3805,
+              "industry": "Telecommunications",
+              "name": "Cisco Systems Inc - (WebEx)",
+              "size": "10,001+ employees",
+              "ticker": "csco",
+              "type": "Public Company"
+            },
+            "id": 276539589,
+            "isCurrent": true,
+            "startDate": {
+              "month": 4,
+              "year": 2012
+            },
+            "title": "Sr. Release Program Manager, CCATG - Cloud Services, Release Management"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/santhoshraghunath",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=3347583&authType=OUT_OF_NETWORK&authToken=kDi0&trk=api*a3139351*s3214061*"},
+        "specialties": "IT Software Release Project Management, Implement Release Processes & RACI matrix, Prepare Release Schedules and Calendars, Change Management, Source Code Management, Build and Release Automation, Release Metrics etc.",
+        "summary": "Professional Expertise:\n\nExperienced IT Release Management Professional with over nineteen years of IT experience in varied roles with focus on implementing best practices for Application Release Process Management. More than twelve years expertise in Application Software Release Management - covering creation and implementation of Release processes, Project Managing and coordinating Application Releases, enforce Change Management, Source Code Management, Deployment Automation etc.\n\nExperienced in defining and automating SCM processes for Build & Release management.\n\nGain satisfaction in 'bringing order to chaos' at growing IT companies in the Silicon Valley, CA, for their Release Management goals and implementation of ITIL strategies in an Agile or Waterfall environment.\n\nCan-do-attitude and Easy-to-do-business-with mentality with the ability to work well and communicate with seasoned professionals and also mentor newcomers.\n\nOBJECTIVE:\nIT Management position in Release Management, Release Project/Program Management, Release Planner/Coordinator in a growth industry in the San Francisco Bay Area."
+      },
+      {
+        "distance": 3,
+        "firstName": "Gisella",
+        "headline": "Sr. Software Engineer at Xoom Corporation",
+        "id": "Q0ONNq99Tx",
+        "industry": "Financial Services",
+        "lastName": "S.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 115,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "industry": "Financial Services",
+              "name": "Xoom Corporation"
+            },
+            "id": 344515316,
+            "isCurrent": true,
+            "startDate": {"year": 2012},
+            "title": "Sr. Software Engineer"
+          }]
+        },
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=7979929&authType=OUT_OF_NETWORK&authToken=eWW0&trk=api*a3139351*s3214061*"}
+      },
+      {
+        "distance": 3,
+        "firstName": "Michal",
+        "headline": "Software Engineer at CA Technologies",
+        "id": "VGOJRLwIY4",
+        "industry": "Computer Software",
+        "lastName": "L.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 106,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_mbFan0Hm-3LLRzDtukXAngZ3tGA5Jnyt281lngMYSFLv6-w-GTcG4jDKyulsslgY7kLrMVwmH_0v",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1372,
+              "industry": "Computer Software",
+              "name": "CA Technologies",
+              "size": "10,001+ employees",
+              "ticker": "CA",
+              "type": "Public Company"
+            },
+            "id": 214432231,
+            "isCurrent": true,
+            "startDate": {
+              "month": 7,
+              "year": 2011
+            },
+            "summary": "Working in the sustaining team\nResponsible for troubleshooting and fixing bugs in the code\nSolving customers issues over the phone\nWorking with  Java, Oracle, PostgreSQL, Linux, C++, HTML, CSS, Spring Framework, Python, JavaScript, JSP, Perforce, RTC",
+            "title": "Software Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/michal-l/19/666/b84",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=64335124&authType=OUT_OF_NETWORK&authToken=Rtyx&trk=api*a3139351*s3214061*"},
+        "summary": "Programming and troubleshooting experience with Java, C/C++, Ruby and familiar with, MIPS assembly language, Scheme, Prolog\n\nDatabase experience with Oracle, PostgeSQL, MySQL, Microsoft SQL Server 2008\n\nWeb design experience with PHP, HTML, LAMP, CSS, Adobe Dreamweaver, Adobe Flash\n\nAble to build, configure and maintain Windows/Linux based computers and computer networks\n\nExperience with operating systems Windows 7/Server 2008, Linux/Unix)\n\nApplications and Software experience with Adobe Photoshop, Adobe Premiere, Eclipse, Microsoft Word, Microsoft Publisher, Microsoft Excel and Microsoft Visio"
+      },
+      {
+        "distance": 3,
+        "firstName": "Neelam",
+        "headline": "Sr. Technical Product Manager, PointCare Systems, Inc.",
+        "id": "ZFS3BprVzN",
+        "industry": "Computer Software",
+        "lastName": "V.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 467,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_9NypJi8OJLOlr5HCqzUfJ89AM_UAt_MCN9e_J8lTQQ73SFmGsturBhL7BDRaAkZmcBYG9Fi6DZmA",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "industry": "Computer Software",
+              "name": "PointCare Systems, Inc."
+            },
+            "id": 16616828,
+            "isCurrent": true,
+            "startDate": {
+              "month": 9,
+              "year": 2012
+            },
+            "summary": "PointCare Systems has been been serving the biotech, pharmaceutical and agrochemical industry for more than 6 years through its products and services. \n\nRecently the company has launched a new software development project that assists scientists in decision making during route development and route optimization. This is web-based multi-modules product that follows the researcher\u2019s work-flow through drug-design and drug-development, utilizes vast amount of public domain and private (through strategic partnerships) chemical and toxicological data to provide \"greener\" chemical alternatives.",
+            "title": "Product, Program Management, Business Development"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/neelam-v/0/340/524",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=830188&authType=OUT_OF_NETWORK&authToken=u---&trk=api*a3139351*s3214061*"},
+        "summary": "Senior executive with over 20 years experience in business, and technical management. Specific expertise and track record of delivering high performance, high security software infrastructures in multi-domain WEB environment, and managing cross-functional global teams to deliver complex projects using agile/SCRUM environment. \n\nExtensive experience in product commercialization including infrastructure planning, pricing, positioning, branding, distribution, launch plans, etc. Extensive experience in product marketing using social, online and in-person techniques.\n\nIn-depth understanding of  SOA, extreme transaction processing, and cloud infrastructures."
+      },
+      {
+        "distance": 3,
+        "firstName": "Nathaniel",
+        "headline": "Site Reliability Operation  at Square",
+        "id": "baZoeGIRTT",
+        "industry": "Computer Software",
+        "lastName": "F.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 437,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_itf3qRGlchAot_gpTKOOqMhpzQis-5SpTrRYqZG2o_cED3sy7N0Ds4nGRH_5lCurGlD0R0p9e6V4",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 675562,
+              "industry": "Financial Services",
+              "name": "Square",
+              "size": "51-200 employees",
+              "type": "Privately Held"
+            },
+            "id": 337164912,
+            "isCurrent": true,
+            "startDate": {
+              "month": 9,
+              "year": 2012
+            },
+            "title": "Site Reliability Operations Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/nathanielfelsen",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=4081226&authType=OUT_OF_NETWORK&authToken=J5Fi&trk=api*a3139351*s3214061*"},
+        "specialties": "Linux Redhat, Debian, Unix BSD, Windows, Ruby on Rails, C / C++, SQL, Perl, Bourne shell (bash), PHP, HTML, MySQL, MSSQL, PostgreSQL, SQLite, Microsoft Office, CVS, Subversion (SVN), SourceSafe (VSS), Monotone, Git / Github, SADT, UML, VMware, XEN, Virtual Box,\nApache, Tomcat, Lighttpd, Ngnix, Ec2, S3, GoGrid, Heroku, Nagios, Google Analytics, Log correlation, LDAP , Strong authentication,\nSELinux, High Availability, Load Balancing , Firewall, IDS, SQL Power Injector, Wireshark (Ethereal)",
+        "summary": ""
+      },
+      {
+        "distance": 3,
+        "firstName": "PRABHAT",
+        "headline": "Experienced Product Development and Professional Services Turnaround specialist -- US and India",
+        "id": "1OCmTSdrgc",
+        "industry": "Computer & Network Security",
+        "lastName": "A.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_sNXFMQB3CLU3OgS7q1nqMLXh86W8OUS74vrZMLqyxigK30sf9tqIc58tmedxgyu_UB6JnCoHNiWr",
+        "positions": {
+          "_total": 2,
+          "values": [
+            {
+              "company": {
+                "industry": "Computer & Network Security",
+                "name": "ITOPS Services"
+              },
+              "id": 172750534,
+              "isCurrent": true,
+              "startDate": {
+                "month": 6,
+                "year": 2010
+              },
+              "summary": "My strengths are in architecture and technical and project leadership. I am currently based in the Silicon Valley. I have expertise in the following areas:\n\n1.  Healthcare \u2013 Web-based EMR, HIS, Lab & X-Ray interfaces. In-depth knowledge of HIPAA, HL-7, ICD codes, Snomed, Medline, insurance i/f, practice metrics, etc. Familiar with the MITA Framework 2.0 \u2013 Business, Information and Technical Architectures.\n2.  Enterprise and Infrastructure Architecture \u2013 Previously managed Unicenter Network & Systems Management product line along with ACM/Cohesion and Autosys for 4 years at CA Technologies, IDC. \n3. Extensive experience with Internet based applications in a variety of domains including Healthcare, Enterprise Invoice/Bill Presentment and Payment, Data Security Management and Theft Protection, SOX Compliance and Financial Systems, Windows SDK and Linux, Knowledge Management and context-based indexing, and so on.\n4.  Professional Services and Project Management \u2013 over 15 years of intense project management experience with clients such as Dell, Office Depot, Blue Cross & Blue Shield, Pacific Healthcare, Nelson Staffing, Smart Modular, etc. Managed projects ranging from 5 to 150+ engineers with budgets up to several millions of dollars. Very familiar with Agile, Scrums, and Sprints, especially, managing Agile across multiple facilities.\n5.  Quality Assurance \u2013 directly managed QA teams ranging from 5 engineers to 125+ engineers (multiple product teams), instituted QA metrics for coverage for manual testing as well as automation, extensive QA automation experience.\n5.  Offshore Operations Management and Interfacing \u2013 Have set up off-shore teams for the last 12 years, and actually managed teams in India and China for leading ISVs such as CA Technologies, Hyperion, Yahoo!, Phoenix technologies, Merant, Autodesk, and so on. \n\nI am a US Citizen holding a PIO Card in India valid until 2018 and willing to and can travel freely between US, India and any other countries as needed.",
+              "title": "Architecture, Technical and Project Leadership"
+            },
+            {
+              "company": {
+                "industry": "Computer Software",
+                "name": "TiE (The Indus Entrepreneurs), Bangalore Chapter"
+              },
+              "id": 74970956,
+              "isCurrent": true,
+              "startDate": {
+                "month": 3,
+                "year": 2010
+              },
+              "summary": "Charter Member of the Bangalore Chapter of The Indus Entrepreneurs (TiE) a worldwide organization focused on fostering entrepreneurship. Focused on mentoring founders of startups.",
+              "title": "Charter member"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/prabhat-a/8/749/61a",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=25729078&authType=OUT_OF_NETWORK&authToken=z2oe&trk=api*a3139351*s3214061*"},
+        "specialties": "Architecture, design & implementation leadership,  project management, setting up & managing offshore operations.\nMobile - Search & app orchestration\nWeb based and Client/server apps --financial/budgeting, fraud, CRM, Invoice mgmt.\nSecurity -  Network and server/end-user Data  \nHealthcare - HIPAA, HL-7- EMR, Hospital system\nKM (linguistics)\nContext based image/text search, IE for web crawling,\nImaging\nMulti-user 32-bit O/Ss, Network & Systems Mgmt for Ent. IT, Fault tolerant ISCPs.",
+        "summary": "Seasoned Architect and Technical Leader. Most recently a Snr. Director at Phoenix Technologies and prior to that Vice President of Engineering at CA Technologies (Computer Associates), $4.5 billion Enterprise IT Mgmt. ISV -- managed 220+ team including product/project mgrs, architects, engineers and technical support. As architecture and product development strategist and offshore expert, I use extensive experience of over two decades in influencing enterprise decisions in creating product visions and leading working teams of product managers, project managers and developers. \n\n25+ years of experience in the United States. Created product visions, architected/designed systems in many domains, very familiar with current technologies, NET, J2EE, Grid Computing, Cloud Computing, etc. \n\nAccomplished leader working with IT Directors and Decision makers to define real needs. Been creating and converting needs into product visions and products adhering to that visions. Hands-on experience in business requirements analysis, data model design, business intelligence and source system analysis for business process re-engineering,  EDI and data acquisition process design.\n\nOutstanding leadership skills in strategic analysis and creating advanced product business solutions, Used RAD prototyping and rapid programming (Xtreme and Agile).\n\nRecognized technologist, authored several books published by Prentice Hall including \u201cUNIX System Architecture\u201d - 1989 -(internal algorithms of UNIX), \u201cDistributed Object Oriented Data-Systems Design\u201d -1992 (proposes a software design lifecycle), and \u201cMultimedia Systems Design\u201d - 1995.. \n\nPublished several papers at prestigious conferences and been granted one patent, several applied for.\n\nPrabhat has an M.B.A., Finance & Marketing from Drexel University, Philadelphia, PA, USA, M.S., Computer Systems with Thesis, from the Univ. of Lowell (U. Mass), Lowell, MA, USA and B.Tech., Electronics & Communications Engineering from I.I.T. Madras."
+      },
+      {
+        "distance": 3,
+        "firstName": "Joe",
+        "headline": "Systems Engineer at SSL",
+        "id": "qoxkVsupXP",
+        "industry": "Defense & Space",
+        "lastName": "N.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 115,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 166073,
+              "industry": "Defense & Space",
+              "name": "Space Systems Loral",
+              "size": "1001-5000 employees",
+              "type": "Public Company"
+            },
+            "id": 9765421,
+            "isCurrent": true,
+            "startDate": {
+              "month": 1,
+              "year": 2011
+            },
+            "title": "Systems Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/joe-n/2/378/893",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=6878703&authType=OUT_OF_NETWORK&authToken=JSRQ&trk=api*a3139351*s3214061*"},
+        "summary": "Systems engineer with a background in software development, data acquisition, and data storage systems."
+      },
+      {
+        "distance": 3,
+        "firstName": "Rory",
+        "headline": "Senior Systems Analyst at Macys.com",
+        "id": "MyWCnsV3VC",
+        "industry": "Computer Software",
+        "lastName": "H.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 435,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_7bH7EYM0vIleR3Yk33IrEjd2BacbMF0kDLprEjV0eIiBQ_HXiT4_XgmAM8BZVhOemkol5sXvHJ6k",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "industry": "Computer Software",
+              "name": "Macys.com"
+            },
+            "id": 411653720,
+            "isCurrent": true,
+            "startDate": {
+              "month": 6,
+              "year": 2013
+            },
+            "summary": "Work with both technical and creative teams to bring digital-in-store products to life. Currently helping to design iPad-based apps to enhance customer in-store experience.",
+            "title": "Senior Systems Analyst"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/roryhewitt",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=537480&authType=OUT_OF_NETWORK&authToken=pXSO&trk=api*a3139351*s3214061*"},
+        "specialties": "Web design/serving (HTML, XML, JavaScript, CSS, Ajax, Apache, TCP/IP), System i software design & languages (RPG, PL/I, C, REXX, MI, COBOL, Java), SQL (multiple varieties), i18n, public speaking, presenting and technical writing, Agile, Scrum.",
+        "summary": "My background is in software application development, specializing in tool design and web-enablement, honed over the last 18 years as a technical expert, writing code in multiple languages for a variety of platforms, and acting as an evangelist for my company and my products, giving presentations at conferences, writing articles and working to keep my customers as happy as they can be.\n\n\nI am now a Senior Systems Analyst with Macys.com, working with teams to build the web and digital-in-store products for the Macys empire. This covers a wide range of both products (web browsers, iPad in-store apps, mobile consumer apps) and teams (Technical, Creative, Analysis).\n\n\nI have given presentations at more than 15 conferences in the US and across Europe - I specialize in communicating complex technical concepts to non-technical/semi-technical management audiences. I'm happy with audience sizes from 5 to 500 and I'm equally comfortable with PowerPoint or with a whiteboard and pen. I've received several presentation and speaking awards.\n\n\nI've written a number of articles for technical journals and magazines, on topics ranging from sorting/searching algorithms to system security concepts to software internationalization (I18N). Some of the more technical ones related to the IBM i platform can be found here: http://iprodeveloper.com/author/rory-hewitt"
+      },
+      {
+        "distance": 3,
+        "firstName": "Tucker",
+        "headline": "Principal Software/Systems Engineer at Liberty Mutual Insurance",
+        "id": "fQ6VUM7l6G",
+        "industry": "Information Technology and Services",
+        "lastName": "G.",
+        "location": {"name": "Greater Boston Area"},
+        "numConnections": 214,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_jOgiHrNnUIK83F76gjuKHPFsBdvfi3a600WyHPXke7T0p5JQl4SfQ1KEMXzr86fopjxjFq9fADY-",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 2701,
+              "industry": "Insurance",
+              "name": "Liberty Mutual Insurance",
+              "type": "Privately Held"
+            },
+            "id": 199546830,
+            "isCurrent": true,
+            "startDate": {
+              "month": 2,
+              "year": 2011
+            },
+            "summary": "",
+            "title": "Principal Software/Systems Engineer"
+          }]
+        },
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=27895961&authType=OUT_OF_NETWORK&authToken=GZk6&trk=api*a3139351*s3214061*"},
+        "summary": "Currently a lead architect/engineer on a Citrix XenDesktop / PVS multi-datacenter solution with AppSense, VMware ESX, Avere and NetApp.\n\nPast experience as lead architect/engineer on various HA Windows-based systems leveraging SharePoint, SAN / NAS, SQL, clustering, and load balancing."
+      },
+      {
+        "distance": 3,
+        "firstName": "Khyati",
+        "headline": "Senior Web Hosting Consultant ,  HP",
+        "id": "YTDZifv6nk",
+        "industry": "Computer Software",
+        "lastName": "S.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 139,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_IdV5bDJb5wMWFmf9wmI9bmeobexLImf9WaaVb7ZBZSwzqo4nbfoWdf2MW60VeWaVoo4UeH6_Z23O",
+        "positions": {"_total": 0},
+        "publicProfileUrl": "http://www.linkedin.com/in/shahkhyati",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=12645990&authType=OUT_OF_NETWORK&authToken=6JuI&trk=api*a3139351*s3214061*"},
+        "specialties": "",
+        "summary": "Leading the end to end implementation of projects and provide technical expertise involving middleware technologies such as Web servers, Application servers, Clustering, High availability architectures.\n\nExpertise :\nProject management and implementation, Middleware and Server architecture,\n\nAwards:\nJan 2009: \"GM CIO Supplier Award\" for exemplary performance and contribution on the GPSC Project."
+      },
+      {
+        "distance": 3,
+        "firstName": "Steven",
+        "headline": "\"Imagine engineers and technical managers as effective with people as with technology\"",
+        "id": "j8lpbnX8yR",
+        "industry": "Education Management",
+        "lastName": "Cerri",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 234,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_goVSNNIN9F6ioG2jjHjtNcEkniTGEGpj0Ia-N9sqW6v-vQIgA2oTVnaVZS3jdLjAyd4PUlHMusRd",
+        "positions": {
+          "_total": 3,
+          "values": [
+            {
+              "company": {
+                "industry": "Education Management",
+                "name": "AIAA San Francisco Section Council"
+              },
+              "id": 141291496,
+              "isCurrent": true,
+              "startDate": {"year": 2010},
+              "title": "Past SF Chair"
+            },
+            {
+              "company": {
+                "industry": "Education Management",
+                "name": "Applied Behavioral Technologies"
+              },
+              "id": 99812080,
+              "isCurrent": true,
+              "startDate": {"year": 1999},
+              "title": "Director and Trainer"
+            },
+            {
+              "company": {
+                "industry": "Education Management",
+                "name": "STCerri International"
+              },
+              "id": 24721542,
+              "isCurrent": true,
+              "startDate": {
+                "month": 1,
+                "year": 1996
+              },
+              "summary": "It's my experience that you can be a great engineer AND a great engineering manager. In fact, the best engineering managers are excellent engineers, they can cross into both worlds. It just takes training in the soft-skills, the interpersonal people skills.\n\nI began my career as an aeronautical engineer employed at Rockwell International Corporation working on Skylab, Shuttle, Shuttle Tug, and meteorological satellite programs. I then decided I wanted to be more technical and received an M.S. in geophysics and worked as a programmer and researcher for the United States Geological Survey before returning to the flight performance group of Rockwell International. This time at Rockwell, I met four engineers and together we started a software development and systems engineering company focused on Department of Defense programs. I then decided I wanted more business education and so I received an MBA and progressed from program manager to director, to vice president of engineering, chief operations officer and general manager. I then left to join a printer start-up as product manager and director of corporate training, helping the company grow from half a million to over a quarter of a billion dollars in six years.\n\nThroughout my career, it has been clear that, for whatever reason, I had a knack for training and coaching my direct reports to achieve extraordinary capabilities. I ultimately left the corporate world to start my own company dedicated to coaching and training engineers, scientists and technical professionals in the soft skills, the interpersonal people skills and management skills necessary to make the transition from engineer to leader and from engineering manager to engineering leader, and necessary to secure a long term technical career.\n\nI think the difference that makes the difference in my training, coaching, and facilitation  is that I've done it myself.",
+              "title": "President"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/stevencerri",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=13732209&authType=OPENLINK&authToken=oZcI&trk=api*a3139351*s3214061*"},
+        "specialties": "What sets me apart is that I\u2019m an engineer and a scientist, so I speak the language and understand the engineers' mind-set. I\u2019m also a businessman (MBA) and I translate the business aspect of technical work into engineering language.  And as a Master Practitioner of NLP (Neuro-Linguistic Programming), I understand the difference between understanding a concept and translating that understanding into real behavior.\n\nI've also conducted trainings in China, England, and Italy (in Italian).",
+        "summary": "My specialty is coaching, training, and facilitating engineers, technical managers and executives in the inter-personal people skills, (i.e., the soft skills) necessary to excel in their engineering professions and management and leadership positions.\n\nFor the engineer it's about being able to contribute fully to the organization, not just with the \"right\" answer but also through presenting that answer so it will be heard and understood.\n\nFor the manager and executive it's about the personal flexibility and communication and management excellence that builds teams and motivates people to give that extra effort that makes the difference between a problem project and a project completed on time and in budget."
+      },
+      {
+        "distance": 3,
+        "firstName": "Paul",
+        "headline": "Director of Customer Success at Boundary",
+        "id": "aaCoLI-LBU",
+        "industry": "Information Technology and Services",
+        "lastName": "Rowe",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_3vxs_xrlEy3VrSXz3BJ5_jGgop-zraqz_NwL_pt_zJ6LfEivSP7nDy6SXttoPdzJhngkuU8EaPb2",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 2145362,
+              "industry": "Computer Software",
+              "name": "Boundary",
+              "size": "11-50 employees",
+              "type": "Privately Held"
+            },
+            "id": 362158169,
+            "isCurrent": true,
+            "startDate": {
+              "month": 2,
+              "year": 2013
+            },
+            "title": "Director of Customer Success"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/zrowe",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=1793513&authType=OPENLINK&authToken=eI6p&trk=api*a3139351*s3214061*"}
+      },
+      {
+        "distance": 3,
+        "firstName": "Karl Ola",
+        "headline": "Software Engineer at WURL, Inc.",
+        "id": "DiE34WefxO",
+        "industry": "Information Technology and Services",
+        "lastName": "F.",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 142,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_cCVuh_x29ZdjsbizziJ1h37S9gO0ZGtzvha1hhaldZofbQ5vUko8m8sx41YhRLPJ9T4tfbr1mBMv",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 2198641,
+              "industry": "Internet",
+              "name": "WURL, Inc.",
+              "type": "Privately Held"
+            },
+            "id": 209482566,
+            "isCurrent": true,
+            "startDate": {
+              "month": 8,
+              "year": 2011
+            },
+            "summary": "",
+            "title": "Software Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/karl-ola-f/4/a23/ab5",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=14480489&authType=OUT_OF_NETWORK&authToken=kog2&trk=api*a3139351*s3214061*"},
+        "specialties": "These are some areas where I can contribute with my expertise:\n\n* Application development (Ruby/Java)\n* Agile software development and coaching\n* eCommerce\n* Content management\n* Stabilization and tuning\n* System integration\n* Build and deployment\n* Infrastructure\n* Virtualization\n* Data, data, data",
+        "summary": "I'm a Software Engineer with long experience working in the IT industry in various roles, mostly as developer and tech lead but also as architect, business analyst, quality assurance and project management. \n\nWhat I enjoy the most is being part of highly efficient and skilled delivery teams, providing business value in close collaboration with clients and developing complex systems. Preferably in start-up environments. I have spent most of my professional life as a consultant serving the media, retail and insurance industry in the US and EU. \n\nAt the core I am a developer specialized in web application development, databases and integration but I do dabble in other areas as well."
+      }
+    ]
+  }
+}

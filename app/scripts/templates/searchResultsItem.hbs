@@ -1,7 +1,12 @@
 <h2 class="title"><a href="{{url}}" target="_blank">{{jobtitle}}</a></h2>
 <ul class="small-10 info columns">
-  <li class="company">{{company}}</li>
-  <li class="location">{{city}}, {{state}}</li>
+  <li class="company">{{company}} {{toDoubleDigits pScore}}</li>
+  <li class="location">
+    {{#if city}}
+      {{city}},
+    {{/if}}
+    {{state}}
+  </li>
   <!-- <li>
     jobkey: {{jobkey}}
   </li>
@@ -47,5 +52,5 @@
   </li> -->
 </ul>
 <ul class="small-2 columns">
-  <li><a class="tiny button right showConnectButton">Info</a></li>
+  <li><a class="tiny button right showConnectButton">pCount: {{pCount}}</a></li>
 </ul>

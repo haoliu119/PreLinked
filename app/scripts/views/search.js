@@ -7,38 +7,49 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
   template: JST['app/scripts/templates/search.hbs'],
 
-
-  initialize: function(options){
-    this.jobQuery = options.jobQuery;
-    this.searchResultsView  = new PreLinked.Views.SearchResultsView({ collection: new PreLinked.Collections.SearchResultsCollection(), jobQuery: this.jobQuery });
-    this.connectionsView    = new PreLinked.Views.ConnectionView({ collection: new PreLinked.Collections.ConnectionsCollection(), jobQuery: this.jobQuery });
-    this.searchFilterView = new PreLinked.Views.SearchfilterView({
-      model: new PreLinked.Models.SearchfilterModel()
-    });
-  },
-
   events: {
     'click .searchFilterButton': 'submitSearch',
     'click .modal-details': 'getModalConnectionDetails',
-    'click .showConnectButton': 'findConnectionsForJob'
+  },
+
+  initialize: function(options){
+    this.jobQuery = options.jobQuery;
+    this.searchResultsView  = new PreLinked.Views.SearchResultsView({
+      collection: new PreLinked.Collections.SearchResultsCollection(),
+      jobQuery  : this.jobQuery
+    });
+    this.connectionsView    = new PreLinked.Views.ConnectionView({
+      collection: new PreLinked.Collections.ConnectionsCollection(),
+      jobQuery  : this.jobQuery
+    });
+    this.searchFilterView   = new PreLinked.Views.SearchfilterView({
+      model     : new PreLinked.Models.SearchfilterModel({
+                    jobQuery: this.jobQuery
+                  }),
+      jobQuery: this.jobQuery
+    });
+    this.searchResultsView.collection.on('showConnections', this.findConnectionsForJob, this);
   },
 
   submitSearch: function(e) {
     e.preventDefault();
-
-    this.searchFilterView.trigger('addSearchFilterOnSubmit');
-    
-    var searchQuery = this.searchFilterView.model.parseDataForSearch();
-    this.getJobResults(searchQuery.title, searchQuery.location, searchQuery.keywords);
-    // this.render(true); // IS THIS IMPORTANT? Rendering the entire page causes add / remove filter events in searchFilter view to not be heard
+    // if(this.jobQuery.hasChanged()){
+      // alert('CHANGED !!!!!!!!!!!');
+      // console.log('changedAttributes >>>>>>>>',this.jobQuery.changedAttributes());
+      this.searchFilterView.addSearchFilterOnSubmit();
+      this.getJobResults();
+      this.getConnections();
+    // }
   },
 
-  findConnectionsForJob: function(e) {
-    var title = e.currentTarget.offsetParent.parentElement.children[0].childNodes[0].innerText;
-    var company = e.currentTarget.offsetParent.parentElement.children[1].firstChild.nextSibling.innerText; // company
-    var that = this;
+  findConnectionsForJob: function(data) {
 
-    this.getConnections(title, company, '')
+    console.log('showConnections for data >>>', data);
+
+    var keywords = this.jobQuery.get('jobKeywords').join(' ');
+    var titles   = this.jobQuery.get('jobTitle').join(' ');
+    var that = this;
+    this.getConnections(titles, data.company, keywords)
       .done(function(element) {
         that.$el.find('#connections').html(element);
       })
@@ -52,30 +63,43 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     return this.searchFilterView.render().el;
   },
 
-  getJobResults: function(title, location, keywords) {
+  getJobResults: function() {
     var deferred = $.Deferred();
     var that = this;
+
+    // TODO: DELETE BEFORE DEPLOYMENT
+    this.jobQuery.consoleLogJobQuery();
+    // ----------------------------------
+
     this.searchResultsView.collection
-      .fetch( {data: {q: [title, keywords].join(' ') , l: location}} )
-      .done(function(){
-        that.searchResultsView.jobQuery.title = title; // TODO: THIS IS BEST PRACTICE??????
+      .fetch( {data: that.jobQuery.attributes} )
+      .done(function(data){
         deferred.resolve(that.searchResultsView.render().el);
       })
       .fail(function(){
-        that.searchResultsView.jobQuery.title = title; // TODO: THIS IS BEST PRACTICE??????
         deferred.reject(that.searchResultsView.render().el);
       });
     return deferred.promise();
   },
 
-  getConnections: function(title, company, keywords) {
+  getConnections: function(start, degree) {
     var deferred = $.Deferred();
     var that = this;
+
+    var keywords = this.jobQuery.attributes.jobKeywords;
+    keywords = keywords.concat(this.jobQuery.attributes.company); // Linkedin API company parameter is inaccurate, passing companies in as keywords
+    var query = {
+      title: this.jobQuery.attributes.jobTitle.join(' '),
+      keywords: keywords.join(' '),
+      start: '0',
+      count: '25',
+      facet:  'network,F,S,A,O'
+    };
+
     this.connectionsView.collection
-      .fetch( { data: { title: title, 'company-name': company, keywords: keywords } } )
+      .fetch( { data: query } )
       .done(function(data){
         // that.connectionsView.jobQuery.title = title;
-        console.log('GET people/search return >>>', data);
         deferred.resolve(that.connectionsView.render().el);
       })
       .fail(function(){
@@ -86,14 +110,14 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     return deferred.promise();
   },
 
-  render: function(partial) {
-    if (!partial) {
-      this.$el.html( this.template() );
-    }
+  render: function() {
+    this.$el
+      .attr('data-page','search')
+      .html( this.template() );
     this.$el.find('#search-filters').html(this.getSearchFilter())
 
     var that = this;
-    this.getJobResults(that.jobQuery.jobTitle, that.jobQuery.jobLocation)
+    this.getJobResults()
       .done(function(element) {
         that.$el.find('#job-results').html(element);
       })
@@ -101,7 +125,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
         that.$el.find('#job-results').html(element);
       });
 
-    this.getConnections(that.jobQuery.jobTitle, '', that.jobQuery.jobLocation)
+    this.getConnections()
       .done(function(element) {
         that.$el.find('#connections').html(element);
       })

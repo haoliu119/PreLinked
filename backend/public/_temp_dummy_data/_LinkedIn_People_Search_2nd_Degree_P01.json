@@ -1,0 +1,1003 @@
+[
+      {
+        "distance": 2,
+        "firstName": "Chris",
+        "headline": "Software Development Engineer at PartyPetition.com (Party Petitioners Inc)",
+        "id": "qzxTRWelIR",
+        "industry": "Information Technology and Services",
+        "lastName": "Carillo",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 102,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 2,
+          "values": [
+            {
+              "company": {
+                "industry": "Information Technology and Services",
+                "name": "PartyPetition.com (Petitioners Inc)"
+              },
+              "id": 412872333,
+              "isCurrent": true,
+              "startDate": {
+                "month": 6,
+                "year": 2013
+              },
+              "summary": "Party Petition is bringing discounted VIP and other venue reservations and services to the masses in the disruption fashion.\n\nFull LAMP Stack Senior Developer\nBuild backend platform:\nPHP\nMySQL\nCodeIgniter\nGithub\nMight work on frontend also: HTML5/JS/CSS (design/develop)\nDeveloping the payments module of the core platform and APIs\nfor the website and iOS.",
+              "title": "Software Development Engineer"
+            },
+            {
+              "company": {
+                "industry": "Information Technology and Services",
+                "name": "ModestoRC : Ongoing Side Project in Beta"
+              },
+              "id": 223600244,
+              "isCurrent": true,
+              "startDate": {
+                "month": 4,
+                "year": 2011
+              },
+              "summary": "Web Developer/Software Engineer/Consultant Back and Frontend                  April 2011 \u2013 Ongoing\nLAMP, Learning jQuery, Building Prototype then Blow Apart for Redesign.\nDesign & Build MySQL Database\nLAMP Stack OOP Backend\nHome and Lading Pages : jQuery/HTML/CSS/PHP/AJAX\nProject Management",
+              "title": "Consulting : LAMP Stack Web Developer : Ongoing Side Project"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/chris-carillo/1/111/a79",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=3258813&authType=OUT_OF_NETWORK&authToken=rzps&trk=api*a3139351*s3214061*"},
+        "specialties": "Developing, consulting, exploring the following:\n\n\u2022 LAMP, OOP PHP, CSS, JavaScript, AJAX, XHTML, jQuery, JSON/XML.\n\u2022 MVC: symfony 1, ZEND - some development and familiarity.\n\u2022 Database: RDBMS schema/model SQL - MySQL and workbench.\n\u2022 Debug or refactor Java/C++/PERL\n\u2022 Project management experience.\n\u2022 Large data sets\n\u2022 OS - Dev experience: Linux, Win32, UNIX bash shell.\n\u2022 Excel as a data management and analysis tool, MS Office in general.  \n\u2022 Acquisitioning caffine beverages and tasty tidbits.",
+        "summary": "Currently need to get my OOP LAMP - MVC experience onto the next project(s) for your company? Willing to explore mobile apps/platforms where interests lie in developing and bringing client/server applications to the world. Interested in green technology, real social network - user driven, and media content web development; as well as developing for traditional markets. Exploring HTML5/CSS3, SEM/SEO optimization, and usability techniques to incorporate in web design and development. Want to advance my OOP LAMP and SQL development skills with scaling, caching, load balancing, cloud resources, and other platforms if possible. Prefer to do backend and frontend web development, but a bit stronger on the backend.\n\nI've cleaned and processed large data sets. I'm a PC guy but the last few years I've been developing from a Mac because of the native bash shell command line, and everyone around was using Macs. So I'm Mac, PC, Linux, and command line capable, if such is important. I use a text editor mostly, and sometimes Aptana to write code in. I have used Eclipse, but not a big fan, yet. Might check out NetBeans one of these days. Familiar with MVC concepts and have developed under symfony and Zend, briefly. I use Chrome to browse currently, but still use Firefox and Firebug for development and debugging, console.log for JavaScript etc. Checking out git but use svn. I write SQL from scratch but learning to appreciate the MySQL workbench. Exploring unit test driven code. I want to be part of something big that empowers people through my development.\n\nPrefer to work in San Francisco and looking for the next great project and company to work for fulltime; deal directly with companies; PLEASE no second or third party recruiters. HIRE ME, you won't regret it. Willing to commute under right circumstances."
+      },
+      {
+        "firstName": "private",
+        "id": "private",
+        "lastName": "private"
+      },
+      {
+        "distance": 2,
+        "firstName": "Aurangzeb",
+        "headline": "Director, Customer Insights and Business Analytics at Autodesk",
+        "id": "10r4CqcEnk",
+        "industry": "Information Technology and Services",
+        "lastName": "Agha",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_n2b0MQYWxbarHNM7NdNhMLpwghWpEc47qDP8MLfZCLg2vPffVoB1c5UnPmdidrJ_Bf53nCA1g4bG",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1879,
+              "industry": "Computer Software",
+              "name": "Autodesk",
+              "size": "5001-10,000 employees",
+              "ticker": "ADSK",
+              "type": "Public Company"
+            },
+            "id": 256391054,
+            "isCurrent": true,
+            "startDate": {
+              "month": 2,
+              "year": 2012
+            },
+            "summary": "Autodesk's Customer Insights (Formerly, Voice of Customer) and Business Analytics team is chartered with monitoring customer behaviors and desires via Customer Insights data sources and providing visibility and analysis into customers' desires using operational data and analytics to drive changes throughout the organization.  The team strives to improve customers experiences at all the different points at which they interact with Autodesk.",
+            "title": "Director, Customer Insights and Business Analytics"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/aagha",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=1674362&authType=OUT_OF_NETWORK&authToken=Yn2s&trk=api*a3139351*s3214061*"},
+        "summary": "Aurangzeb Agha is a product leader with extensive experience in web application development and product management. He has more than a decade of demonstrated expertise in leading and launching large-scale web technology initiatives for customers, including CNET, Delta-Lloyd Bank, Morningstar and ISO New England. He continually demonstrates expertise leading large and distributed engineering teams in architecting, developing and launching technology initiatives for fast moving startups and large enterprises through all phases of development to exceed launch goals. He has built and managed cross-functional teams ranging in size from 5 to 20+ people to deliver effective client solutions on time and under budget, most recently leading a key component of a $1.4B energy market implementation in New England. Aurangzeb Agha has an MBA from the Kellogg School of Management at Northwestern University.\n\nSpecialties: Extremely technical, with the ability to lead both product management and software engineering teams.  Understanding the customers' needs and designing products and software that is usable, flexible, and scalable."
+      },
+      {
+        "distance": 2,
+        "firstName": "Ozgur Dogan",
+        "headline": "Software Engineer at Optimizely",
+        "id": "CPZciUt8hq",
+        "industry": "Computer Software",
+        "lastName": "Ugurlu",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 473,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_q6hJ9GxjfC4psZe1nQKE98glSTY-nZZ1nkqQ9TyatkEGWp7PZhrzZ3Hh_fODzxM0zLGFJ6aEbM5b",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1189697,
+              "industry": "Internet",
+              "name": "Optimizely",
+              "size": "11-50 employees",
+              "type": "Privately Held"
+            },
+            "id": 303613161,
+            "isCurrent": true,
+            "startDate": {
+              "month": 7,
+              "year": 2012
+            },
+            "title": "Software Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/odugurlu",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=46474045&authType=OUT_OF_NETWORK&authToken=850I&trk=api*a3139351*s3214061*"},
+        "specialties": "*Python, C, Java, Javascript, C#, SQL\n*Python Interpreter Internals, Tcl Interpreter Internals, Python Bytecode Rewriting, Python C Api\n*Android Applications, Android Kernel Hacking",
+        "summary": "Software Engineering and Development\nSystems Programming\nEmbedded Systems\nProgramming Languages\nOperating Systems\nDistributed Systems"
+      },
+      {
+        "distance": 2,
+        "firstName": "Chris",
+        "headline": "Principal Software Engineer at Autodesk",
+        "id": "iKiv9pV_NF",
+        "industry": "Computer Software",
+        "lastName": "Crossman",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_0hOv4Pe0W_rmqe480bZo4AJ-wLN29DW8g3oo4AdiNh8pdWYhP6aMnlgD5wq1voeuOipwcnRmwEwW",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1879,
+              "industry": "Computer Software",
+              "name": "Autodesk",
+              "size": "5001-10,000 employees",
+              "ticker": "ADSK",
+              "type": "Public Company"
+            },
+            "id": 214785824,
+            "isCurrent": true,
+            "startDate": {
+              "month": 6,
+              "year": 2011
+            },
+            "summary": "Currently working as part of the Autodesk Consumer Group developing web-based applications to build and share 2D and 3D designs online.  We are building the largest social network and collaboration tool for designers, architects, and creative developers.",
+            "title": "Principal Software Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/chris-crossman/2/66a/193",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=7606911&authType=OUT_OF_NETWORK&authToken=yyoZ&trk=api*a3139351*s3214061*"},
+        "summary": "Senior Software Engineer/ Web Developer with over 12 years of diverse experience in developing applications ranging from corporate Project and Portfolio Management (PPM) systems, to e-commerce websites for internationally known retailers and catalog companies, to Casino Financial Reporting (CFR) systems, to Student Information Systems (SIS) for school districts across the United States. \n\nHighly successful in working independently or in a team-oriented environment \u2013 domestically or internationally.  Extremely task oriented and reliable \u2013 consistently completes projects on or ahead of schedule with creative, customer-oriented results.\n\nPlatforms:       Windows, Linux, Solaris, Mac OS.\nLanguages:     Java (J2EE, J2SE, J2ME), C/C++, .NET (ASP, VB, C#), VB6.\nScripting:        ASP, PHP (LAMP, WAMP, XAMPP), JavaScript (JQuery, Mootools, YUI), VBScript, JSON, XML, XSLT, AJAX, DHTML, CSS.\nDatabases:      MSSQL, Oracle (9i,10g, 11g), MySQL, MongoDB, CouchDB.\nApplications:  Ant, JUnit, ClearCase, Visual Studio, IntelliJ, Eclipse, VSS, StarTeam, Flash.\nConcepts:        OOP, Agile, Rational, Refactoring."
+      },
+      {
+        "distance": 2,
+        "firstName": "Carlos",
+        "headline": "Software Engineer at Portrait Displays, Inc.",
+        "id": "pVSw7pok41",
+        "industry": "Computer Software",
+        "lastName": "Botto",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 252,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_C-W9UsihoTB9xae2CcIdU4G_oFLJxHd2hKgWU4GxzTAd8uOuaqMVzZnlXo56pfHh_AwHNxypr1yc",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 41074,
+              "industry": "Computer Software",
+              "name": "Portrait Displays, Inc.",
+              "size": "11-50 employees",
+              "type": "Privately Held"
+            },
+            "id": 210148754,
+            "isCurrent": true,
+            "startDate": {
+              "month": 7,
+              "year": 2011
+            },
+            "summary": "",
+            "title": "Senior Software Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/carlosbotto",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=3371315&authType=OUT_OF_NETWORK&authToken=v8fL&trk=api*a3139351*s3214061*"},
+        "specialties": "Java, C/C++, XML, HTML, JavaScript, Velocity, CSS, iBatis, Servlets, EJB, SQL, PostgreSQL, Tomcat, Linux.",
+        "summary": "Senior Application Developer in a wide variety of business applications. Particularly interested in web applications, client/server and relational database design using PostgreSQL and other RDBMS."
+      },
+      {
+        "distance": 2,
+        "firstName": "Gary",
+        "headline": "Senior Software Engineer at Jawbone",
+        "id": "bM6HlRDsXs",
+        "industry": "Internet",
+        "lastName": "Norris",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 270,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_Pk_hA9mYKBLynqtgjiL1ANuOrc8AqqigA_BxANg2flN3IKqj0CP2xqdGOVhaB1GltbTOO17t_02B",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1580750,
+              "industry": "Consumer Electronics",
+              "name": "Jawbone",
+              "size": "201-500 employees",
+              "type": "Privately Held"
+            },
+            "id": 388338850,
+            "isCurrent": true,
+            "startDate": {
+              "month": 3,
+              "year": 2013
+            },
+            "summary": "Build cross browser continuous integration test automation harnesses, test suites and scripts for use on www.jawbone.com using Selenium 2, WebDriver, TestNG, Maven, XML, Java, Jenkins and JavaScript. Manage the Website Quality Engineering team. Develop test cases, debug new development work, and review release of new features and code through automated and manual testing and analysis. Conduct releases to live production. Build library of mobile and desktop test devices. Develop company policies for test coverage, development and test flow, and cross web-browser/operating system combination testing requirements. Participate in developing new e-commerce features used for selling Jawbone products in an online store.",
+            "title": "Senior Software Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/garynorrisdeveloper",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=6107022&authType=OUT_OF_NETWORK&authToken=veR-&trk=api*a3139351*s3214061*"},
+        "summary": "Seasoned Software Development Engineer in Test with advanced knowledge of Selenium, Java, Test Automation Architecture, TestNG, HTML, CSS, XML, Jenkins and git. Experienced in cross web-browser/OS testing, using Jira to facilitate web QA and Agile Development, and confident writing effective test plans and developing test cases. Proficient with Drupal, SVN, the Google Maps API, JavaScript, Maven, Delphi Script and Flash, and with several website design and video and image editing programs including: Dreamweaver, Illustrator, Photoshop, Premier, Final Cut Pro, Avid, and Image Ready."
+      },
+      {
+        "distance": 2,
+        "firstName": "Jerry",
+        "headline": "Consulting UI/UE Architect",
+        "id": "IMWo3oxoRJ",
+        "industry": "Internet",
+        "lastName": "Simonian",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 73,
+        "numConnectionsCapped": false,
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "industry": "Internet",
+              "name": "Independent Consultant"
+            },
+            "id": 431598970,
+            "isCurrent": true,
+            "startDate": {
+              "month": 8,
+              "year": 2012
+            },
+            "summary": "Presentation tier architectural consultant of websites and web-apps, particularly in respect to designing on-page advertising widgets, organizing frameworks, and single-page apps featuring sound SEO, caching, and responsive design.\n\nA favored OO architectural approach is to breakdown a site/app into a hierarchy of logical Visual Components (VC's), and design them out using MV*, facade and decorator patterns. VCs can then be brought together to work as a system using observer and mediator patterns - the mediators themselves often being VCs in their own-right.\n\nAdept with many implementation technologies and techniques.  Of particular and contemporary note is the technique for building extendable OO visual components in Angular-JS, complimented with the technique for building them when opportune over Bootstrap and various jQuery widgets.",
+            "title": "Consulting UI/UE Architect"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/jerrysimonian",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=8024730&authType=OUT_OF_NETWORK&authToken=j5Sr&trk=api*a3139351*s3214061*"}
+      },
+      {
+        "distance": 2,
+        "firstName": "Harshad",
+        "headline": "Software Consultant at CIGNEX Datamatics (Disney Studios, Burbank)",
+        "id": "P1B0J24FeA",
+        "industry": "Computer Software",
+        "lastName": "Oak",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 263,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_SEVdfpWkLyGkwm_Xfmy9fxdcbx9XIm-XfHanfxsBZJGqqoLk3uoLT0aMWtnReW1HuW4ch4XjZGBF",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 298886,
+              "industry": "Information Technology and Services",
+              "name": "CIGNEX Datamatics",
+              "size": "201-500 employees",
+              "type": "Privately Held"
+            },
+            "id": 363216377,
+            "isCurrent": true,
+            "startDate": {
+              "month": 9,
+              "year": 2012
+            },
+            "summary": "Client Location: Disney Studios, Burbank, CA.\n\nWorking with marketing technology group on their products:\nTRAX\nPAS\nCaffeine Cam\nDosk\n\nMac / Linux platform and Java based development, using cutting edge technology for implementation like Spring MVC, Grails, GIT, Maven, Jenkins, Liferay, Alfresco, JQuery and much more.",
+            "title": "Software Consultant"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/harshadaoak",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=26392958&authType=OUT_OF_NETWORK&authToken=GaIU&trk=api*a3139351*s3214061*"},
+        "summary": "Platforms:\n\u2022 Windows, Linux Red Hat, Solaris, HPUX, AIX, MAC.\nLanguages:\n\u2022 Java, C, C++, Groovy, PHP.\nScripting:\n\u2022 Shell, Perl.\nWeb:\n\u2022 HTML, CSS, XML, JavaScript, JSP, Servlets, J2EE.\nFrameworks:\n\u2022 Struts (MVC), Grails, Zend, Spring.\nDatabase:\n\u2022 Oracle, MSSQL, PostgreSQL (SQL and PL/SQL).\nTools:\n\u2022 Tomcat, Eclipse, IntelliJ, NetBeans, Remedy, Toad, Maven, Liferay.\nVersioning:\n\u2022 CVS, Subversion, GIT.\nTesting:\n\u2022 Selenium, Bugzilla, Firebug, JIRA.\n\nSpecialties: Web application development,\nSQL analysis, \nDistributed applications.\nTest Automation."
+      },
+      {
+        "distance": 2,
+        "firstName": "Alejandro",
+        "headline": "Director - IT Program Mangagment Office at Pacific Gas and Electric Company",
+        "id": "CDIbiUEtw5",
+        "industry": "Information Technology and Services",
+        "lastName": "Medina",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 447,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_fxkuMYnHlLCV2raiSOB1MjG6P_NE29OiDYK1MjkJuL8s1td__MN8cgrcgmqv7A0fayQtnsVO0nbd",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 3895,
+              "industry": "Utilities",
+              "name": "Pacific Gas and Electric Company",
+              "size": "10,001+ employees",
+              "ticker": "PCG",
+              "type": "Public Company"
+            },
+            "id": 337554511,
+            "isCurrent": true,
+            "startDate": {
+              "month": 11,
+              "year": 2012
+            },
+            "summary": "Pacific Gas and Electric Company, a subsidiary of PG&E Corporation (NYSE:PCG), is one of the\nlargest combined natural gas and electric utilities in the United States. Based in San Francisco,\nwith 20,000\nemployees, the company delivers some of the nation's cleanest energy to 15 million people in\nNorthern and Central California.\n\nThe IT Program office is responsible for ensuring that IT strategy and processes are aligned and support PG&E\u2019s business vision.",
+            "title": "Director - IT Program Management Office"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/alejandro-medina/1/8a1/a72",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=5187254&authType=OUT_OF_NETWORK&authToken=iwp-&trk=api*a3139351*s3214061*"},
+        "specialties": "Strategic IT Planning \u2022 Software Development Lifecycle \u2022 Product & Project Management \u2022 Business Analysis \nRequirements Gathering \u2022 Master Data Strategy \u2022 System Design, Testing & Implementation \u2022 Process Optimization\nIT Healthcare Operations \u2022 Business Transformation & Change Management \u2022 Communication Skills\n Vendor & Client Relations \u2022 Staff Training & Mentoring \u2022 Team Building, Leadership & Motivation",
+        "summary": ""
+      },
+      {
+        "distance": 2,
+        "firstName": "Ritesh",
+        "headline": "Java Lead at Apple Inc.",
+        "id": "FHH5VgCsVH",
+        "industry": "Information Technology and Services",
+        "lastName": "Biltheria",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 483,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_I3FrdIVhPdfE49MHwG6fdWZCxWoWZ9WHWh17dWWj8uOMbtYebFcpbdj1lFEnRAeXoGLa6acPGOpz",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 162479,
+              "industry": "Consumer Electronics",
+              "name": "Apple",
+              "size": "10,001+ employees",
+              "ticker": "AAPL",
+              "type": "Public Company"
+            },
+            "id": 372898390,
+            "isCurrent": true,
+            "startDate": {
+              "month": 3,
+              "year": 2013
+            },
+            "title": "Java Lead"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/ritesh-biltheria/2/988/b06",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=8392758&authType=OUT_OF_NETWORK&authToken=dhyi&trk=api*a3139351*s3214061*"},
+        "summary": "- Sun Certified Java Programmer (SCJP 1.4 & 5.0), Sun Certified Web Component Developer (SCWCD) & Sun Certified Business Component Developer (SCBCD 2.0) with more than 12 years of Java/J2EE Experience with extensive experience in Object-Oriented Programming, Web development and Server-Side development as Senior Developer/Team Lead\n\n-Primary expertise in design/development of distributed enterprise solutions and using advanced software product architectures and development techniques in J2EE framework. Major strengths include software modeling, specification analysis and design.\n\n-Extensive knowledge about MVC framework like \u2018Web logic Portal Framework\u2019, \u2019Spring\u2019, \u2018Struts\u2019, \u2018Casper\u2019.\n\n-Strong experience in implementation of large scale projects involving web-based application development using J2EE (EJB, JDBC, JTA, JMS, JNDI, Servlets, JSP, Hibernate, iBATIS ), Struts, WebLogic Portal, JBoss, Tomcat/Apache, SQL, PL/SQL and Oracle database\n\n-Intensive knowledge and experience in source control and version control (CVS, Visual Source Safe), build process (ANT), unit testing (JUnit) etc.\n\n-Served as a lead technical resource on large projects. Proven capability in meeting project goals.\n\n-In-depth knowledge of existing and emerging technologies, architectures and platforms, with strong ability to focus on and set future direction.\n\n-Excellent problem solving skills and resourcefulness to find solutions through self-study and research."
+      },
+      {
+        "distance": 2,
+        "firstName": "Brent",
+        "headline": "Senior Engineering Manager at LinkedIn",
+        "id": "gdk3ceouur",
+        "industry": "Internet",
+        "lastName": "Vincent",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_OurBLB242dk7Lgo4YI8eLqEFuW8aFOo4ywXHLqEbPuNO4sjZtEhUwNOWCFhAkJIq07-WoP4_0E6g",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1337,
+              "industry": "Internet",
+              "name": "LinkedIn",
+              "ticker": "LNKD",
+              "type": "Public Company"
+            },
+            "id": 171012467,
+            "isCurrent": true,
+            "startDate": {
+              "month": 3,
+              "year": 2011
+            },
+            "summary": "",
+            "title": "Senior Engineering Manager"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/brentvincent",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=1323601&authType=OUT_OF_NETWORK&authToken=mP1P&trk=api*a3139351*s3214061*"}
+      },
+      {
+        "distance": 2,
+        "firstName": "Albert",
+        "headline": "Board Member - Percy Abrams Senior Housing at Christian Church Homes",
+        "id": "dqRFKSqoaB",
+        "industry": "Information Technology and Services",
+        "lastName": "Brown, ABD",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_-vl8En8--m1--lfHtBtPEq8YrwQtKlmHKt50EqACfmtC7zMeYPTuXN5uOL6S1n7X1nPY5P7oFlUY",
+        "positions": {
+          "_total": 4,
+          "values": [
+            {
+              "company": {
+                "industry": "Information Technology and Services",
+                "name": "Christian Church Homes"
+              },
+              "id": 428740557,
+              "isCurrent": true,
+              "startDate": {
+                "month": 8,
+                "year": 2013
+              },
+              "summary": "I am a member of the board of directors for Percy Abrams Senior Housing. A division of Christian Church Homes.",
+              "title": "Board Member - Percy Abrams Senior Housing"
+            },
+            {
+              "company": {
+                "id": 164503,
+                "industry": "Higher Education",
+                "name": "ITT Technical Institute",
+                "size": "5001-10,000 employees",
+                "ticker": "ESI",
+                "type": "Public Company"
+              },
+              "id": 358982551,
+              "isCurrent": true,
+              "startDate": {
+                "month": 9,
+                "year": 2012
+              },
+              "summary": "Teach computer students working on their AA degree in computer technology.",
+              "title": "Adjunct Instructor"
+            },
+            {
+              "company": {
+                "industry": "Information Technology and Services",
+                "name": "Oakland California Unified School District"
+              },
+              "id": 264324074,
+              "isCurrent": true,
+              "startDate": {
+                "month": 3,
+                "year": 2012
+              },
+              "summary": "Taught computers to parents and children throughout the school district. Wrote and taught computer curriculum, Worked on program for computer literacy in families.",
+              "title": "Computer Teacher"
+            },
+            {
+              "company": {
+                "id": 165270,
+                "industry": "Education Management",
+                "name": "Oakland Unified School District",
+                "size": "1001-5000 employees",
+                "type": "Educational Institution"
+              },
+              "id": 312171056,
+              "isCurrent": true,
+              "startDate": {
+                "month": 3,
+                "year": 2012
+              },
+              "summary": "I teach computer applications, networking, internet, database and operating systems.",
+              "title": "Computer Teacher"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/albertbrown",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=11467612&authType=OUT_OF_NETWORK&authToken=3scJ&trk=api*a3139351*s3214061*"},
+        "summary": "PORTRAIT \n\n                                                           of a \n\n                                                 PROBLEM-SOLVER\n\nPROBLEM: A non-profit organization could not keep-up with the changes in its mailing list from year to year, since the list was maintained manually. The annual fund-raising activities was declining every year.\n\nDIAGNOSIS: What was needed by the non-profit organization was an automated source of a mailing list and a automated system to create and update the mailing list and print labels for the annual mailing.\n\nSOLUTION: The idea of this problem-solver was to select the Department of Motor Vehicles list of people with driver\u2019s licenses as the source for the mailing list update. I created an automated mailing list by having the current manual list transcribed into automated format. I designed and implemented an automated system that would take the DMV tape and use it to update the mailing list. The system would also use automatic mailing machines to affix labels to envelopes, stuff and sort the envelopes for mailing by the post office. This was the first organization to have an automated method of updating their mailing list and doing automatic mailing.\n\nRESULT: The first year with the new system was an overwhelming success raising three times the money of the manual system and adding many new contributors to the list. This problem-solver was made Assistant Department Manager of the computer department.\n\nSee the Portrait of a Problem-Solver in the publications section."
+      },
+      {
+        "distance": 2,
+        "firstName": "Daniel",
+        "headline": "Director of Special Projects at DSE, Inc.",
+        "id": "U3HjW80FDP",
+        "industry": "Computer Software",
+        "lastName": "Kim",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 331,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_-ev3kqporoqgH-2RtdctkBydKd3tH-SRK7TYkBg977zCcnsUYm5Docd4YXTSwzuc1wB0wr__j9kq",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 589946,
+              "industry": "Defense & Space",
+              "name": "DSE, Inc.",
+              "size": "201-500 employees",
+              "type": "Privately Held"
+            },
+            "id": 283047275,
+            "isCurrent": true,
+            "startDate": {
+              "month": 4,
+              "year": 2012
+            },
+            "title": "Director of Special Projects"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/daniel-kim/1/55b/63a",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=4353742&authType=OUT_OF_NETWORK&authToken=gJtb&trk=api*a3139351*s3214061*"}
+      },
+      {
+        "distance": 2,
+        "firstName": "Shawn",
+        "headline": "Senior Tools Engineer at TiVo",
+        "id": "dIWS4s59Bg",
+        "industry": "Information Technology and Services",
+        "lastName": "Kielty",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_mv6Vd41imHhFy44eancWdUk72WFLy4Me2t-5dUNO1E1z_ymHGP99bRhrG3bV00Zk7nXX6pogNvr1",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 166454,
+              "industry": "Consumer Electronics",
+              "name": "TiVo",
+              "size": "501-1000 employees",
+              "ticker": "tivo",
+              "type": "Public Company"
+            },
+            "id": 425325145,
+            "isCurrent": true,
+            "startDate": {
+              "month": 7,
+              "year": 2013
+            },
+            "summary": "Tools.  Automation.  Continuous integration. Continuous delivery. Release Engineering. Perforce, Shell Scripting, Groovy, Java, Jenkins. Code Collaborator. Perl. Mysql db, sql.  Tcl/tk. Ruby. Leadership.  Magic. Sparkle. Vision.",
+            "title": "Senior Tools Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/shawnkielty",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=1539583&authType=OUT_OF_NETWORK&authToken=2DoS&trk=api*a3139351*s3214061*"},
+        "specialties": "User Interface design and development\nGui Programming and rapid Prototyping \nApplication Integration\nCross platform Integration  \nWeb administration and client/server programming Configuration and Build Management\nTool automation\nSoftware test and test automation\nXml and B2B server technologies \nTcl/tk\nPhotography",
+        "summary": "Over 10 years of software engineering experience.\n\n7 years of Unix/Linux and Windows system administration, including web server administration.  \n\nSeveral years of user interface design experience, excellent user advocacy and development and QA of UIs.  Experience conducting usability tests, performing usability reviews of a user interface, and/or knowledge of basic usability principles and methods.  \n\nOver 10 years in Quality Assurance.\n\nExperience developing user scenarios, work flows,  usage models and with the UI design cycle.\n\nKnowledge of web design, Javascript, client and server side technologies including CSS, XML.  Google Web Toolkit. \n\nExcellent leadership ability, including 12 years experience in training and supervising others.\n\n14 years in a Unix/PC Software Development environment. \n\nKnowledge in a wide variety of computer operating systems, platforms, programming languages, and applications.\n\nPlatforms:  Unix on SunOS, Solaris, AIX, HPUX, IRIX, and Linux, Windows2000, Windows XP, Windows Vista.\n\nProgramming in:  java, TCL/TK for Unix and Microsoft windows and web applications. Unix programming in Bourne and Korn shell scripts, JavaScript, SQL, HTML, InstallShield.\n\nDatabases and Version Control/tracking:  PerForce, CVS, Oracle, Sybase, Mysql, BugZilla, Clearcase, PVCS.\n\nServer Technologies: Apache, IIS, and Tclhttpd web server administration and server side scripting in tcl.  B2B server, clustering and socket communications, TCPIP, telnet, ftp, XML. \n\nStandards: HTML, XHTML, CSS, DOM, XML, EXIF and GUI, others. \n\n5 years of technical writing, with 2 year reviewing technical, tutorial, on line help and test documents."
+      },
+      {
+        "distance": 2,
+        "firstName": "Jeff",
+        "headline": "Software Engineer at Lithium Technologies",
+        "id": "GKv6FjTYcI",
+        "industry": "Computer Software",
+        "lastName": "Poyzner",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 323,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_in1UQMthSDnRAxsZ_9leQRKKfa39lxsZTqFXQR1hrIz6mRS47KiBHUba38Td-ZUNGvA5Wy37JdNZ",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 28789,
+              "industry": "Computer Software",
+              "name": "Lithium Technologies",
+              "size": "201-500 employees",
+              "type": "Privately Held"
+            },
+            "id": 316256604,
+            "isCurrent": true,
+            "startDate": {
+              "month": 11,
+              "year": 2010
+            },
+            "summary": "\u2022\tWorked on all facets of massive community LIA application including: database and DAO integration, middle layer logic like Viewers and Domain Object managers, Tapestry framework component page rendering with quilts, AJAX event handling, and front end scripting with combinations of JavaScript/jQuery/HTML5/CSS. Wrote tests for all application layers including Selenium UI integration, White-Box, and JUnit tests.\n\u2022\tDeveloped and published Lithosphere Community for iPhone native iPhone application from scratch. Work included XCode development using Objective C, a wide assortment of UI controls and screens, server-side application code, server-side REST controllers, and web service call parsers in the app itself.  Created custom versions of this app for BestBuy and Univision. Re-factored the iPhone application project to compile all data manager and web parser classes into static iPhone library allowing customers to integrate all non-UI aspects of the app into their own iPhone application implementations easily.\n\u2022\tWorked with different teams using AGILE Scrum methodology, JIRA issue tracking, Bamboo building, Confluence documentation pages, SVN repository, and other common tools suited for large-scale application development.\n\u2022\tTechnologies: Java, Objective C, Tapestry, JavaScript, jQuery, AJAX, CSS3, HTML5, XML, TML, Spring, XCode 4, iOS, Eclipse, SVN, UNIX, Selenium, JUnit, JIRA, Web Services, REST, SOAP UI, Firebug\n\u2022\tStrengths demonstrated: Became proficient at a multitude of new technologies quickly. Complete project ownership.",
+            "title": "Software Engineer"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/jpoyzner",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=2998797&authType=OUT_OF_NETWORK&authToken=aSaH&trk=api*a3139351*s3214061*"},
+        "specialties": "LANGUAGES: Java, JavaScript, Objective C, C/C++, HTML5, CSS3, XML, TML, jQuery, SQL, JSP, J2ME, VB 5.0\nFRAMEWORKS:  Spring, Tapestry, Hibernate, Selenium, Freemarker, JAXB\nTOOLS: Eclipse, Xcode 4, Maven, Ant, SVN, Bamboo, Subclipse, UNIX, Soap UI, Grinder, JIRA, IntelliJ IDEA, Tortoise SVN, MS Visual Studio, Jbuilder X, CC/GCC, VB 5.0, J2ME Wireless Toolkit, MS Access, Firebug\nDATABASES: MySQL, Oracle, MS Access, JDBC",
+        "summary": "\u2022\tOver seven years of industry Java software development experience, including professional experience with server-side development using J2EE, Web Services, JDBC, and numerous other tools, frameworks, and languages.\n\u2022\tSolid understanding and experience with front-end technologies such as JavaScript, CSS3, HTML5, and AJAX.\n\u2022\tExperience with team management and project ownership (owned Lithosphere Community for iPhone native iPhone application at Lithium Technologies Inc., owned NASCAR Web Service project at Hands-On Mobile/Sprint, managed Dolegate iPhone application team of four, owned Williams-Sonoma Saved Credit Card Web Service project, and owned eHealth iPhone application project)\n\u2022\tFull knowledge of structural detail and rich experience of technological implementation of the full Web Service Request flow from Client to Server including: using JavaScript XHR, making Web Service REST calls, request servlet dispatching, and persistence frameworks. \n\u2022\tExtensive knowledge of Spring MVC 3.0 framework including: MVC beans, interceptors, OXM bindings, JDBC, Hibernate\n\u2022\tExtensive knowledge of Tapestry framework including: contributed components, quilts, and services.\n\u2022\tOver two years of industry experience with iPhone application development using Objective C and XCode 4 (Lithium Technologies Inc., Dolegate, eHealth)\n\u2022\tExperience with all aspects of project life cycle including: design, documentation, development, load testing, quality assurance, deployment, management, and maintenance.\n\u2022\tSolid hands-on J2EE application server experience with Tomcat and JBoss\n\u2022\tStrong experience with relational databases such as MySQL; experience with Protobuf storage\n\u2022\tStrong experience with E-Commerce development and deployment/implementation of large-scale enterprise applications\n\u2022\tSolid Swing and AWT experience using Java across different platforms\n\u2022\tMobile game design experience using J2ME, with concepts such as collision detection, physics, and sprite animation"
+      },
+      {
+        "distance": 2,
+        "firstName": "Pradip",
+        "headline": "Software Engineer (LAMP) at Trulia",
+        "id": "9AcjllOedu",
+        "industry": "Information Technology and Services",
+        "lastName": "Marsonia",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 343,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_UiHHf6S_b4j3JeTHM3Zcf5MaFpomUIrHJXpBf5Iy4sOYk7FecL4XTLxtdAEl42AXsho9hGJVPOvl",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 167785,
+              "industry": "Internet",
+              "name": "Trulia",
+              "size": "501-1000 employees",
+              "type": "Public Company"
+            },
+            "id": 76717340,
+            "isCurrent": true,
+            "startDate": {
+              "month": 9,
+              "year": 2009
+            },
+            "title": "Software Engineer(LAMP)"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/pub/pradip-marsonia/4/a26/38b",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=14484635&authType=OUT_OF_NETWORK&authToken=Q76e&trk=api*a3139351*s3214061*"},
+        "specialties": "Expertise in Linux, Apache, MySQL, PHP (LAMP Technologies).\n\nExpertise in HTML, DHTML, JavaScript, AJAX, CSS, JQuery, JSON, Mootools.",
+        "summary": "Over 8 years of experience in Web application and Web 2.0 development. Experienced in complete software development life cycle process, including analysis, design, development, testing, and implementation.  \n\nExpertise in Linux, Apache, MySQL, PHP (LAMP Technologies).\n\nExpertise in optimizing website performance via memcache systems, database master/slave distribution, CDN and analytical tools (FireBug, Yslow).\n\nExpertise in HTML, DHTML, JavaScript, AJAX, CSS, JQuery, JSON, Prototype Lib., Mootools.\n\nAbility to work on multiple projects and manage sensitive customer relations.\n\nProven experience building portal, e-commerce, dating, community, and other business-related Web 2.0 websites. \n\nGood knowledge of  SEO."
+      },
+      {
+        "distance": 2,
+        "firstName": "Lilia",
+        "headline": "CEO & Founder, Elti Solutions; Global Talent Search and Recruiting for Startups and Fast Growing Teams",
+        "id": "G2gFuhaoJz",
+        "industry": "Staffing and Recruiting",
+        "lastName": "Tsalenko",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_9r8JGiKaaMHyKyqnn1PQG8_jasOgKJqnNtNQG88aAMoS7gi9s9Kzuhqhh-YC1Ozsc1CFDF-sehqw",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 714557,
+              "industry": "Staffing and Recruiting",
+              "name": "Elti Solutions",
+              "size": "1-10 employees",
+              "type": "Privately Held"
+            },
+            "id": 2223029,
+            "isCurrent": true,
+            "startDate": {
+              "month": 1,
+              "year": 2005
+            },
+            "summary": "Founded an executive global talent search and recruiting company focused on mid-level, senior, and executive hard-to-fill engineering and management positions with the well-funded growing startup companies in the San Francisco Bay Area, CA.\n\nResponsible for business development and strategy, close engagement with the clients, partnerships development, growing and managing Elti Solutions team, social media operations, and full cycle recruiting of highly technical professionals in the areas of large distributed systems and cloud computing, mobile technologies, Web applications architecture and development, systems operations and administration, test automation and quality assurance, video and audio streaming, engineering and product management, and UX.\n\nMade key talent acquisitions for the engineering and management teams for a number of successful Bay Area startups, including Conviva, Tango.me, Onlive, Neterion (acquired by Exor), AppStream (acquired by Symantec), Dyyno, BayNote, InAdCo, PSS Systems (acquired by IBM), Quova (acquired by Neustar), and others. Built about 20% of the whole organizations (engineering, QA, management, operations, UX) for Tango.me, Conviva, PSS Systems, AppStream, Dyyno.",
+            "title": "CEO & Founder"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/liliamt",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=1693654&authType=OPENLINK&authToken=MDGQ&trk=api*a3139351*s3214061*"},
+        "summary": "\"Age is an issue of mind over matter, If you do not mind, it does not matter.\"\n- Mark Twain\n\nI am the CEO & Founder of a global technology talent search and recruiting company, Elti Solutions. I discovered the Talent Search and Recruiting business as an opportunity to make a positive impact on the lives of many people as well as to contribute to the success of growing businesses. I strive to enjoy every single thing I do. I thrive on making things clear and simple for myself and for others.\n\nCurrently I am looking for people with strong expertise in cloud computing, OpenStack technologies, DevOps, video communications and distribution, mobile computing and distributed systems. Please do not be shy to write me a note and schedule a conversation.\n\nBased in Palo Alto, CA, my team specializes in serving well-funded startup companies backed by top VC firms in San Francisco Bay Area. We also take pride in working with individuals who possess the energy and spirit fitting a startup. We have management and engineering opportunities with early stage, established, and pre-IPO startups. Current clients include dynamic, growing companies in Palo Alto, Mountain View, San Mateo, and San Francisco, CA. We express our appreciation for your referrals with generous fees.\n\n\nFor our latest openings please check our web site:\nwww.EltiSolutions.com or our Facebook page www.Facebook.com/eltisolutions JOBS section."
+      },
+      {
+        "distance": 2,
+        "firstName": "Pavan",
+        "headline": "Senior Principal Software QA Engineer & Tech Lead at Autodesk",
+        "id": "RUxrkYiu0U",
+        "industry": "Computer Software",
+        "lastName": "Jella",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 453,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_5fq3TII6KgRnwl8V5Dn-TeIQKRfVwl3VbHhYTeDn7ORINz9sddXDfHMZYv7XHnh9k290mf1mBdwT",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 1879,
+              "industry": "Computer Software",
+              "name": "Autodesk",
+              "size": "5001-10,000 employees",
+              "ticker": "ADSK",
+              "type": "Public Company"
+            },
+            "id": 38462409,
+            "isCurrent": true,
+            "startDate": {
+              "month": 4,
+              "year": 2011
+            },
+            "summary": "I have been responsible for driving and delivering a high performing and high quality state of the art technology - Reality Capture.\n\u2022\tDrive the testing of Reality Capture Point Cloud technology for latest release with a group of 3 testers and within a agile team of 14.\n\u2022\tCollaborated with various cross functional groups across geographies to deliver a high quality product on-time.\n\u2022\tTravelled to Shanghai and managed endgame release of AutoCAD for Mac.\n\u2022\tDrove escalate team during release testing of AutoCAD for Mac\n\u2022\tActive member of product core team, driving important product decisions.",
+            "title": "Senior Principal Software QA Engineer & Tech Lead"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/pavanjella",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=24489366&authType=OUT_OF_NETWORK&authToken=fZ7I&trk=api*a3139351*s3214061*"},
+        "summary": "Seasoned QA Tech Lead combining both technical and leadership skills with a reputation for delivering results on time within budget by providing clear direction and focus to the team. Excellent track record of training QA and leading testing within a multi-site/multi-function engineering organization. Adept at identifying unique strengths, providing direction and leadership to all level of engineers. With broad product vision and knowledge of end-to-end testing, collaborated with various functional groups, drove key new initiatives, streamlined processes and released software successfully. Strong fundamentals in cloud, mobile, client-server and desktop application services. Extensive exposure to various SDLC models - Waterfall, Agile."
+      },
+      {
+        "distance": 2,
+        "firstName": "David",
+        "headline": "Software Engineer at CloudPassage, Inc",
+        "id": "SQjNEuUJ3f",
+        "industry": "Computer Software",
+        "lastName": "Doolin",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_zdfeRCDU6GS0bED3zIOBRhjsk3RKbdj3BaRcR3YoUXf8ZSoTMf0kvToXE7U7XapDqoDnqQ87AHog",
+        "positions": {
+          "_total": 2,
+          "values": [
+            {
+              "company": {
+                "id": 1119823,
+                "industry": "Computer Software",
+                "name": "CloudPassage",
+                "size": "11-50 employees",
+                "type": "Privately Held"
+              },
+              "id": 369223880,
+              "isCurrent": true,
+              "startDate": {
+                "month": 2,
+                "year": 2013
+              },
+              "summary": "Customer portal development for cloud server security monitoring.",
+              "title": "Software engineer"
+            },
+            {
+              "company": {
+                "industry": "Information Technology and Services",
+                "name": "Inventium Systems"
+              },
+              "id": 35248194,
+              "isCurrent": true,
+              "startDate": {
+                "month": 10,
+                "year": 2007
+              },
+              "summary": "Software systems design and build, from desktop to web applications, small business web technology, SEO and content marketing.",
+              "title": "Owner"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/davidmdoolin",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=8699443&authType=OUT_OF_NETWORK&authToken=lU7y&trk=api*a3139351*s3214061*"},
+        "specialties": "Software systems design and build, small business web technology.",
+        "summary": "Current projects include implementing a machine learning based system for periodic updates of US patents granted database, and building a platform for reducing compliance and inspection costs for stormwater management.\n \nIn the past, I've designed and built software for desktop analysis of rock engineering simulation, designed and built sensor networks for monitoring wildfires and tracking assets with onboard GPS. I've bid and won a design/build software project to rapidly model buildings for provisioning a military simulation engine (DARPA funded). More recently, I've freelanced and consulted for small businesses to help increase their web presence via SEO and content marketing."
+      },
+      {
+        "distance": 2,
+        "firstName": "Kate",
+        "headline": "Software Engineer at Kate Heddleston LLC",
+        "id": "ZL2tQs8q_K",
+        "industry": "Computer Software",
+        "lastName": "Heddleston",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 441,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_mbFanOo7KkLvRzytm59gnyUCtGA5Jnyt281lngMYSFLv6-w-GTcG4jDKyulsslgY7kLrMVbfk8Rv",
+        "positions": {
+          "_total": 2,
+          "values": [
+            {
+              "company": {
+                "industry": "Computer Software",
+                "name": "Kate Heddleston LLC"
+              },
+              "id": 428626784,
+              "isCurrent": true,
+              "startDate": {
+                "month": 5,
+                "year": 2013
+              },
+              "summary": "Software engineering contract work.",
+              "title": "Software Engineer"
+            },
+            {
+              "company": {
+                "id": 2669324,
+                "industry": "Computer Software",
+                "name": "Hackbright Academy",
+                "size": "1-10 employees",
+                "type": "Educational Institution"
+              },
+              "id": 381944214,
+              "isCurrent": true,
+              "startDate": {
+                "month": 3,
+                "year": 2013
+              },
+              "title": "Mentor"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/kateheddleston",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=28153807&authType=OUT_OF_NETWORK&authToken=nC1Z&trk=api*a3139351*s3214061*"},
+        "summary": "I'm a software engineer in San Francisco who mostly works on python projects. Tools I've worked with include python, django, jquery, backbone, reddis, chef, percona/innoDB, rabbitMQ, celery, and git for version control. I really enjoy working with open source software because you always get to learn something new, and there are some amazing technologies out there that people built to make software development faster, easier, and smarter."
+      },
+      {
+        "distance": 2,
+        "firstName": "Patrick",
+        "headline": "Staff Engineer, Embedded Software",
+        "id": "F1Sp8vLUo_",
+        "industry": "Consumer Electronics",
+        "lastName": "Lummis",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 71,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_zdfeR_mRkb7x5uu3vISRRhmEkCRKbdj3BaRcR3YoUXf8ZSoTMf0kvToXE7U7XapDqoDnqQuYZX7g",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 6229,
+              "industry": "Entertainment",
+              "name": "Dolby Laboratories",
+              "size": "1001-5000 employees",
+              "ticker": "DLB",
+              "type": "Public Company"
+            },
+            "id": 159357467,
+            "isCurrent": true,
+            "startDate": {
+              "month": 1,
+              "year": 2011
+            },
+            "summary": "Designed and developed database driven audio/video workflow processing engine platform.  Designed media workflow (graph) hosted on embedded JEE application server platform. Designed middleware for accessing distributed audio codecs (processing engines) hosted on Linux server. Designed multi-agent system in conjunction with media workflow and distributed processing engines. Routinely enhanced existing products and released software modifications to production. Collaborate with broadcast and cable operators to deploy workflow systems in heterogeneous networks. Troubleshoot product deployments remotely and in the field. Complete software reviews. Research embedded server products and develop innovative, paradigm shifting new products.\n\n●\tMember of Dolby Software Architecture Review Board.\n\n●\tPractitioner of various software development methodologies and industry best practices.\n\n●\tCreated content for professional broadcast and consumer licensing programs.\n\n●\tDeveloped innovative features for the DP600 Program Optimizer.",
+            "title": "Staff Engineer, Embedded Software"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/patricklummis",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=19173639&authType=OUT_OF_NETWORK&authToken=qj0a&trk=api*a3139351*s3214061*"},
+        "summary": "Accomplished, quality-driven technical professional with extensive experience successfully specifying software architecture solutions designing embedded systems and server-side software."
+      },
+      {
+        "distance": 2,
+        "firstName": "Yoshimasa",
+        "headline": "Software Engineer, Mobile",
+        "id": "pK0g_e7nT0",
+        "industry": "Internet",
+        "lastName": "Niwa",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 223,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_zVbmGhAelpRluth9BUngG_KeAy0rucl9BZPAGC1ZaMIhPPQnMpBCuGbn0-xffrKVqJ5KDLTSj1R1",
+        "positions": {
+          "_total": 2,
+          "values": [
+            {
+              "company": {
+                "id": 96622,
+                "industry": "Internet",
+                "name": "Twitter",
+                "size": "501-1000 employees",
+                "type": "Privately Held"
+              },
+              "id": 112132544,
+              "isCurrent": true,
+              "startDate": {
+                "month": 3,
+                "year": 2010
+              },
+              "summary": "Software engineering for Twitter mobile services, especially feature phones support and email notifications.\nContributing to Twitter iOS application and Twitter and Twitter mobile web sites.\nResponsible to both new feature development, service maintenance. Primally using Ruby, Ruby on Rails, Objective-C and general scripting on Linux/Mac OS X.",
+              "title": "Software Engineer, Mobile"
+            },
+            {
+              "company": {
+                "id": 1502784,
+                "industry": "Computer Software",
+                "name": "dotswitch inc"
+              },
+              "id": 45159396,
+              "isCurrent": true,
+              "startDate": {
+                "month": 2,
+                "year": 2006
+              },
+              "summary": "Software engineering, designing the web sites, working on various types of web services includes mobile web sites and applications. Founding in Tokyo at 2006 and running the company with our team.",
+              "title": "Co-founder, Software Engineer"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/yoshimasaniwa",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=15134189&authType=OUT_OF_NETWORK&authToken=apP5&trk=api*a3139351*s3214061*"},
+        "specialties": "Web: Ruby and Ruby on Rails, HTML and CSS design, JavaScript, SQL with MySQL, SQLite.\nMobile and Desktop: Objective-C/Cocoa for Mac OS X and iOS devices.",
+        "summary": "Software engineer with special interests in graphic design, media art and computer science, based in San Francisco, CA and Tokyo, Japan.\n\nSoftware development for web services, mobile applications, contributing various open source projects also running company with team.\n\nMy objective is designing and distributing amazing services and products using computing and network technologies with great innovations and ideas to make our daily life more fun."
+      },
+      {
+        "distance": 2,
+        "firstName": "Eric",
+        "headline": "Senior Software Engineer, Artist",
+        "id": "TyO7Xj5NNy",
+        "industry": "Internet",
+        "lastName": "Theise",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 500,
+        "numConnectionsCapped": true,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_yrLwHnN732l2pV2oOq54Hzcfif52pMpoOAAqHzLxpolpijIEr9zbQvllDTL1xYj6g1FvFtBGip-L",
+        "positions": {
+          "_total": 1,
+          "values": [{
+            "company": {
+              "id": 3012536,
+              "industry": "Internet",
+              "name": "Laflife",
+              "size": "1-10 employees",
+              "type": "Privately Held"
+            },
+            "id": 379487575,
+            "isCurrent": true,
+            "startDate": {
+              "month": 3,
+              "year": 2013
+            },
+            "summary": "Key technologies: Rails, jQuery, PostgreSQL, RSpec, SimpleCov, Capybara, Konacha, Cucumber, ZURB Foundation; git.",
+            "title": "Contractor"
+          }]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/erictheise",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=9160521&authType=OUT_OF_NETWORK&authToken=jvXo&trk=api*a3139351*s3214061*"},
+        "specialties": "Ruby on Rails, JavaScript, Leaflet, OpenLayers, D3, R, Raphaël; PostgreSQL, PostGIS, MySQL",
+        "summary": "Full-stack web developer, formally trained in quantitative methods and algorithmic efficiency, specializing in Internet applications since 1993.  Happiest in an environment that relies on open source software, and embraces agile, test-driven development.  Former academic, published in refereed journals and more mainstream books and magazines; early Internet entrepreneur and evangelist.  Artist, having exhibited experimental films and photographs internationally; occasional arts educator at colleges, centers, and institutes."
+      },
+      {
+        "distance": 2,
+        "firstName": "Thomas",
+        "headline": "Augmented Reality Software Engineer at metaio GmbH",
+        "id": "fisJ3XKVGZ",
+        "industry": "Information Technology and Services",
+        "lastName": "Berton",
+        "location": {"name": "San Francisco Bay Area"},
+        "numConnections": 156,
+        "numConnectionsCapped": false,
+        "pictureUrl": "http://m.c.lnkd.licdn.com/mpr/mprx/0_Dv0vDV1tXJ_5tdzwf-MEDMvKHR6LrfLw7cIoDMN_cg-zfw-ITPfM_JhS69QVPHXb2njwGOQ0oDtV",
+        "positions": {
+          "_total": 2,
+          "values": [
+            {
+              "company": {
+                "id": 109769,
+                "industry": "Computer Software",
+                "name": "metaio GmbH",
+                "size": "51-200 employees",
+                "type": "Privately Held"
+              },
+              "id": 284012099,
+              "isCurrent": true,
+              "startDate": {
+                "month": 5,
+                "year": 2012
+              },
+              "summary": "Development of Augmented Reality solutions based on metaio's technologies.",
+              "title": "Augmented Reality Software Engineer"
+            },
+            {
+              "company": {
+                "id": 1609868,
+                "industry": "Information Technology and Services",
+                "name": "Phrantom",
+                "type": "Self-Employed"
+              },
+              "id": 150840355,
+              "isCurrent": true,
+              "startDate": {
+                "month": 9,
+                "year": 2009
+              },
+              "summary": "Creator and project manager for Phrantom",
+              "title": "Project manager"
+            }
+          ]
+        },
+        "publicProfileUrl": "http://www.linkedin.com/in/bertonthomas",
+        "relationToViewer": {},
+        "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=93161077&authType=OUT_OF_NETWORK&authToken=YtPy&trk=api*a3139351*s3214061*"},
+        "specialties": "Creator and manager of Phrantom (Web company; IT)\nR&D in Augmented Reality (metaio Inc.; IT)"
+      }
+    ]

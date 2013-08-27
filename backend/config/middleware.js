@@ -8,7 +8,7 @@ var passport = require('passport');
 
 module.exports = function(app) {
   // all environments
-  app.set('env', 'development');  //for development
+  // app.set('env', 'development');  //for development
   app.set('port', process.env.PORT || 3000);
   app.set('views', path.join(__dirname, '../views'));
   app.set('view engine', 'hbs');

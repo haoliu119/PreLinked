@@ -1,5 +1,6 @@
+body{background-color:#f2f2f2}
 h1,h2,h3,h4{font-family:Play,helvetica,sans-serif}
-#app .logo{width:250px}
+#app .logo{width:220px}
 #app ul li{list-style-type:none}
 #app .page.current{display:block}
 #app fieldset .scroll{max-height:600px;overflow-y:scroll}
@@ -14,10 +15,16 @@ h1,h2,h3,h4{font-family:Play,helvetica,sans-serif}
 .job h2{font-size:22px;line-height:22px;margin-bottom:5px}
 .job .info{list-style-type:none;font-size:14px;line-height:18px}
 .job .location{color:#aaa}
-#search-filters .filter-item .rm{font-weight:normal;margin-left:8px;color:#aaa}
+#search-filters .filter-item.button{padding-right:0}
+#search-filters .filter-item .rm{font-weight:normal;padding:8px 8px 8px 2px;color:#aaa;line-height:0;font-size:15px}
+.column-left{background-color:#d1f2ff;margin-top:20px}
 #search-filters .filter-item:hover .rm{color:#000}
 #search-filters .filter-item .rm:hover{color:#f00}
-#job-results{border-radius:5px;background-color:#fff}
-#search-filters{margin-top:20px;background-color:#d1f2ff}
+#job-results{border-radius:5px;background-color:#fff;min-height:300px}
+#job-results .loader,#connections .loader{min-height:300px}
 #connections{margin-top:20px;background-color:#ddd}
-body{background-color:#f2f2f2}
+#connections.scroll{max-height:600px;overflow-y:auto}
+.loader{background:url("https://webfiles.uci.edu/shaohuaz/share/prelinked/loader.gif") no-repeat 50% 50%;height:40px}
+.inputFilter{position:relative}
+.addFilterButton{position:absolute;top:2px;right:2px}
+.distanceRange{width:70px;height:40px}

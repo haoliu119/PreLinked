@@ -4,13 +4,23 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
 
   template: JST['app/scripts/templates/searchFilter.hbs'],
 
-  initialize: function() {
-    this.on('addSearchFilterOnSubmit', this.addSearchFilterOnSubmit);
+  initialize: function(options) {
+    this.jobQuery = options.jobQuery;
+    this.jobQuery.on('change', this.render, this);
   },
 
   events: {
     'keypress .searchInput': 'addSearchFilter',
-    'click .removeFilter': 'removeSearchFilter'
+    'click .removeFilter': 'removeSearchFilter',
+    'mouseup .distanceRangeSlider': 'setDistance',
+    'submit #form-location-search': 'updateLocation',
+    'click a#jobLocation' : 'locationOnFocus'
+  },
+
+  setDistance: function() {
+    var distance = this.$el.find('input[name="distance"]')[0].value;
+
+    this.jobQuery.set('distance', distance);
   },
 
   addSearchFilter: function(e) {
@@ -18,30 +28,66 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
       e.preventDefault();
 
       var jobTitle = this.$el.find('input[name="job-title"]')[0].value;
+      var company = this.$el.find('input[name="company"]')[0].value;
       var jobLocation = this.$el.find('input[name=job-location]')[0].value
       var jobKeywords = this.$el.find('input[name="job-keywords"]')[0].value;
 
-      this.model.trigger('addSearchFilter', e, jobTitle, jobLocation, jobKeywords);
+      this.model.addSearchFilter(jobTitle, company, jobLocation, jobKeywords);
       this.render();
     }
   },
 
   addSearchFilterOnSubmit: function() {
-      var jobTitle = this.$el.find('input[name="job-title"]')[0].value;
-      var jobLocation = this.$el.find('input[name=job-location]')[0].value
-      var jobKeywords = this.$el.find('input[name="job-keywords"]')[0].value;
+    var jobTitle = this.$el.find('input[name="job-title"]')[0].value;
+    var company = this.$el.find('input[name="company"]')[0].value;
+    var jobLocation = this.$el.find('input[name=job-location]')[0].value
+    var jobKeywords = this.$el.find('input[name="job-keywords"]')[0].value;
+    var minSalary = this.$el.find('#minSalary')[0].value;
+    var maxSalary = this.$el.find('#maxSalary')[0].value;
 
-      this.model.trigger('addSearchFilterOnSubmit', jobTitle, jobLocation, jobKeywords);
-      this.render();
+    this.model.addSearchFilterOnSubmit(jobTitle, company, jobLocation, jobKeywords, minSalary, maxSalary);
+    this.render();
+    var userSearch = new PreLinked.Models.UserModel();
+    userSearch.save({
+      jobTitle: this.jobQuery.attributes.jobTitle,
+      company: this.jobQuery.attributes.company,
+      jobLocation: this.jobQuery.attributes.jobLocation,
+      jobKeywords: this.jobQuery.attributes.jobKeywords,
+      distance: 25,
+      minSalary: this.jobQuery.attributes.minSalary,
+      maxSalary: this.jobQuery.attributes.maxSalary,
+    });
   },
 
   removeSearchFilter: function(e) {
-    this.model.trigger('removeSearchFilter', e);
+    e.preventDefault();
+    this.model.removeSearchFilter(e);
     this.render();
   },
 
   render: function () {
-    this.$el.html( this.template(this.model.attributes) );
+    var obj = _.clone(this.jobQuery.attributes);
+    _(obj).extend({
+      salaryList: ["None", "40", "60", "80", "100", "120"]
+    });
+    this.$el.html( this.template(obj) );
+    this.$el.find('#minSalary').find("[data-id='" + this.jobQuery.attributes.minSalary + "']").attr('selected','selected');
+    this.$el.find('#maxSalary').find("[data-id='" + this.jobQuery.attributes.maxSalary + "']").attr('selected','selected');
     return this;
+  },
+
+  updateLocation: function(e){
+    e.preventDefault();
+    var jobLocation = this.$el.find('input[name=job-location]').val();
+    if (jobLocation !== ""){
+      this.$el.find('#jobLocation').trigger('click');
+      this.$el.find('input[name=job-location]').val('');
+      this.jobQuery.set('jobLocation', jobLocation);
+    }
+  },
+
+  locationOnFocus: function(e){
+    e.preventDefault();
+    this.$el.find('input[name=job-location]').focus();
   }
 });
