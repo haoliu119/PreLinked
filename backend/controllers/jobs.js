@@ -246,15 +246,17 @@ var _getJobsAndConnections = function(req, res){
 
 
 
-var _getScore = function(job, connections){
+var _getpScore = function(job, connections){
   var employer = job.company; // Apple
   // console.log('employer from indeed\n', employer);
 
   var friends = [];
   _(connections).each(function(conn){
     var friend = {};
-    friend.id = conn.id;
-    friend.distance = parseInt(conn.distance, 10);
+    //extend so we are not overwritting anything
+    friend = _(friend).extend(conn);
+
+    friend.distance = parseInt(friend.distance, 10);
 
     //look at all the positions, compare all of them against the employer name and get scores
     //return the max of scores
@@ -300,18 +302,22 @@ var _getScore = function(job, connections){
     return memo + friend.pScore;
   }, 0 );
 
+  //return top 25 connections
+  var n_return = 25;
+  var friends_return = _(friends).first(n_return);
+
   // console.log('best match from linkedin connections\n', friends[0], total_score );
-  return total_score;
+  return {
+    pScore        : total_score,
+    pConnections  : friends_return
+  };
 };
 
 var _sortJobs = function(inputJobs, inputConnections){
   _(inputJobs).each(function(inputJob){
-    inputJob.pScore = _getScore(inputJob, inputConnections);
-    inputJob.pConnections = _(inputConnections).filter(function(conn){
-      return (Math.random() < 1/100 ? true : false);
-    });
-    //todo
-    //fix dummy data
+    var scoreAndConnections = _getpScore(inputJob, inputConnections);
+    inputJob.pScore = scoreAndConnections.pScore;
+    inputJob.pConnections = scoreAndConnections.pConnections;
   });
   return inputJobs;
 };
