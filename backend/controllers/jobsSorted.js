@@ -98,10 +98,20 @@ var _getJobsAndConnections = function(req, res){
     jobLocation :  'San Francisco, CA',
     jobKeywords :  [],
     distance    :  25,
-    minSalary   :  null,
-    maxSalary   :  null,
+    minSalary   :  "None",
+    maxSalary   :  "None",
     useragent   :  req.headers['user-agent'],
     userip      :  _helper.getClientIp(req)
+  };
+
+  req.query = _(defaultReqQuery).extend(req.query);
+  var linkedInKeywords = req.query.jobKeywords;
+  linkedInKeywords = linkedInKeywords.concat(req.query.company); // Linkedin API company parameter is inaccurate, passing companies in as keywords
+  var linkdedInQueryObject = {
+    title: req.query.jobTitle.join(' '),
+    keywords: linkedInKeywords.join(' '),
+    start: '0',
+    count: '25',
   };
 
   //first, indeed jobs
@@ -113,21 +123,11 @@ var _getJobsAndConnections = function(req, res){
   promises.push( LinkedInApi.searchFirstDegree(req.session) );
 
   //third, linkedin second degrees
-  var linkedin_second_degree_query_obj = {
-    title   : 'software engineer',
-    keywords: 'google san francisco, ca',
-    start   : '0',
-    facet   : 'network,S'
-  };
+  var linkedin_second_degree_query_obj = _({facet:'network,S'}).extend(linkdedInQueryObject);
   promises.push( LinkedInApi.searchConnections(req.session, linkedin_second_degree_query_obj) );
 
   //fourth, linkedin third degrees
-  var linkedin_third_degree_query_obj = {
-    title   : 'software engineer',
-    keywords: 'google san francisco, ca',
-    start   : '0',
-    facet   : 'network,A,O'
-  };
+  var linkedin_third_degree_query_obj = _({facet:'network,A,0'}).extend(linkdedInQueryObject);
   promises.push( LinkedInApi.searchConnections(req.session, linkedin_third_degree_query_obj) );
 
   //input
