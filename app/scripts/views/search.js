@@ -9,7 +9,6 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
   events: {
     'click .searchFilterButton': 'submitSearch',
-    'click .modal-details': 'getModalConnectionDetails',
   },
 
   initialize: function(options){
