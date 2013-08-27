@@ -31,8 +31,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     this.searchResultsView.collection.on('showConnections', this.showConnections, this);
   },
 
-  showConnections: function(pConnections){
-    this.connectionsView.collection.reset(pConnections);
+  showConnections: function(jobAttributes){
+    this.connectionsView.collection.reset(jobAttributes.pConnections.slice(0,jobAttributes.pCount));
   },
 
   submitSearch: function(e) {
