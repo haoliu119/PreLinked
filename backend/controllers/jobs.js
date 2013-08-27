@@ -23,6 +23,16 @@ var _grabOnePage = function(req_query){
 };
 
 var _grabMultiplePages = function(req_query) {
+
+  req_query = { jobTitle: [ 'software engineer' ],
+                jobLocation: 'Mountain View, CA',
+                distance: '25',
+                minSalary: 'None',
+                maxSalary: 'None',
+                useragent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.57 Safari/537.36',
+                userip: '127.0.0.1'
+              };
+
   var deferred = Q.defer();
   var promises = [];
   for(var i = 0; i < 100; i+=25) {
@@ -152,8 +162,12 @@ var _saveIndeedJobs = function(indeedSearch){
 
 };
 
+//testing function
+jobs.testScore = function(req, res){
+  _getJobsAndConnections(req, res);
+};
 
-var _getJobsAndConnections = function(){
+var _getJobsAndConnections = function(req, res){
   var promises = [];
   //todo
   //remove this default query string in the future
@@ -165,7 +179,6 @@ var _getJobsAndConnections = function(){
   //   distance:     25
   // },
 
-  req.query = req.query || {jobTitle: ['Software Engineer']};
   promises.push( _grabMultiplePages(req.query) );
 
   promises.push( LinkedInApi.searchFirstDegree(req.session) ); //First 500 for now
@@ -190,19 +203,29 @@ var _getJobsAndConnections = function(){
   //100 2nd degree
   //100 3rd degree
 
-
-
   Q.all(promises)
-    .spread(function(indeedSearch, inSearch, inFirstDegree){
-      console.log('IndeedApi search data: \n');
-      _saveIndeedJobs(indeedSearch);
-
-      console.log('LinkedInApi search data: \n');
-      _saveInSearch(inSearch, req.session.passport.user.id);
-
-      console.log('LinkedInApi first degree data: \n');
-      _saveFirstDegree(inFirstDegree, req.session.passport.user.id);
+    .then(function(data){
+      _(data).each(function(value, index){
+        console.log('data ' + index, value.length + '\n');
+      });
     });
+
+
+  // Q.all(promises)
+  //   // .spread(function(indeedSearch, inSearch, inFirstDegree){
+  //   .spread(function(indeedSearch, inFirstDegree){
+  //     console.log('IndeedApi search data: \n', indeedSearch);
+  //     // _saveIndeedJobs(indeedSearch);
+
+  //     // console.log('LinkedInApi search data: \n');
+  //     // _saveInSearch(inSearch, req.session.passport.user.id);
+
+  //     console.log('LinkedInApi first degree data: \n', inFirstDegree);
+  //     // _saveFirstDegree(inFirstDegree, req.session.passport.user.id);
+
+  //     _helper.resolved(req, res, indeedSearch);
+  //     res.end('end');
+  //   });
 
   return;
 };
