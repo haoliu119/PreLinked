@@ -249,27 +249,57 @@ var _getScore = function(job, connections){
   // console.log('employer from indeed\n', employer);
 
   var friends = [];
-  _(connections).each(function(item){
-    var output = {};
-    output.id = item.id;
-    if(item.positions && item.positions.values && item.positions.values.length){
-      output.positions = _(item.positions.values).map( function(item){
-        return item.company && item.company.name;
+  _(connections).each(function(conn){
+    var friend = {};
+    friend.id = conn.id;
+    friend.distance = parseInt(conn.distance, 10);
+
+    //look at all the positions, compare all of them against the employer name and get scores
+    //return the max of scores
+    if(conn.positions && conn.positions.values && conn.positions.values.length){
+      friend.positions = _(conn.positions.values).map( function(conn){
+        return conn.company && conn.company.name;
       } );
     }
-    var stringDistances = _(output.positions).map(function(pos){
+    var stringDistances = _(friend.positions).map(function(pos){
       return natural.JaroWinklerDistance(employer, pos);
     });
-    output.stringDistance = _(stringDistances).max();
-    friends.push(output);
+    friend.stringDistance = _(stringDistances).max();
+
+    friends.push(friend);
   });
 
-  friends = _(friends).sortBy(function(item){
-    return -1 * item.stringDistance;
+  //weigh the stringDistance by the degree of connections
+  //expect heavy tweaking here
+  //cut the sore by an arbitrary threshold
+  var weightByDegree = {
+    1: 100,
+    2: 10,
+    3: 1
+  };
+  var threshold = 0.8;
+  _(friends).each(function(friend){
+    var score = friend.stringDistance > threshold ? friend.stringDistance : 0;
+    friend.pScore = score * weightByDegree[ friend.distance ];
+    //todo, why NaN in some cases?
+    //NaN is falsy, hence, the line below converting NaN to 0
+    friend.pScore = friend.pScore || 0;
+  })
+
+
+  //sort friends array by pScore
+  friends = _(friends).sortBy(function(friend){
+    return -1 * friend.pScore;
   });
-  // console.log('best match from linkedin connections\n', friends[0] );
-  // console.log('Best match score\n', friends[0].stringDistance );
-  return friends[0].stringDistance;
+
+  //return the sum of all scores for now
+  //probably should only return the top ten scores
+  var total_score = _(friends).reduce(function(memo, friend){
+    return memo + friend.pScore;
+  }, 0 );
+
+  // console.log('best match from linkedin connections\n', friends[0], total_score );
+  return total_score;
 };
 
 var _sortJobs = function(inputJobs, inputConnections){
