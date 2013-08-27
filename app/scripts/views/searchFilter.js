@@ -42,16 +42,17 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
     var minSalary = this.$el.find('#minSalary')[0].value;
     var maxSalary = this.$el.find('#maxSalary')[0].value;
 
-    this.model.addSearchFilterOnSubmit(jobTitle, company, jobLocation, jobKeywords);
+    this.model.addSearchFilterOnSubmit(jobTitle, company, jobLocation, jobKeywords, minSalary, maxSalary);
     this.render();
-
     var userSearch = new PreLinked.Models.UserModel();
     userSearch.save({
       jobTitle: this.jobQuery.attributes.jobTitle,
       company: this.jobQuery.attributes.company,
       jobLocation: this.jobQuery.attributes.jobLocation,
       jobKeywords: this.jobQuery.attributes.jobKeywords,
-      distance: 25
+      distance: 25,
+      minSalary: this.jobQuery.attributes.minSalary,
+      maxSalary: this.jobQuery.attributes.maxSalary,
     });
   },
 
