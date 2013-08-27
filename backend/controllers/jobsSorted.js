@@ -91,15 +91,21 @@ var _getJobsAndConnections = function(req, res){
   var deferred = Q.defer();
   var promises = [];
 
+  //defaults for req.query
+  var defaultReqQuery = {
+    jobTitle    :  [],
+    company     :  [],
+    jobLocation :  'San Francisco, CA',
+    jobKeywords :  [],
+    distance    :  25,
+    minSalary   :  null,
+    maxSalary   :  null,
+    useragent   :  req.headers['user-agent'],
+    userip      :  _helper.getClientIp(req)
+  };
+
   //first, indeed jobs
-  var indeed_query_obj =  { jobTitle: [ 'software engineer' ],
-                            jobLocation: 'Mountain View, CA',
-                            distance: '25',
-                            minSalary: 'None',
-                            maxSalary: 'None',
-                            useragent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/29.0.1547.57 Safari/537.36',
-                            userip: '127.0.0.1'
-                          };
+  var indeed_query_obj = _(defaultReqQuery).extend(req.query);
   promises.push( jobs.grabPages(indeed_query_obj) );
 
   //second, linkedin first degrees
@@ -233,6 +239,7 @@ var _sortJobs = function(inputJobs, inputConnections){
   return inputJobs;
 };
 
+//MAIN function for this file
 jobsSorted.searchSorted = function(req, res){
 
   _getJobsAndConnections(req, res)
