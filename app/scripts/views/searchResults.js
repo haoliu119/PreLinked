@@ -32,10 +32,10 @@ PreLinked.Views.SearchResultsView = Backbone.View.extend({
   },
 
   render: function() {
-
+    var titleString = this.titleString();
     this.$el.html(this.template(
       {jobCount: this.collection.length,
-        jobTitle: this.jobQuery.title}
+        jobTitle: titleString }
     ));
 
     if(this.collection.length){
@@ -56,5 +56,18 @@ PreLinked.Views.SearchResultsView = Backbone.View.extend({
     }
 
     return this;
+  },
+
+  titleString: function(){
+    var string = "";
+    var titles = this.jobQuery.attributes.jobTitle;
+
+    for(var i = 0; i < titles.length; i++) {
+      string += titles[i];
+      if (i !== titles.length - 1 ){
+        string += ", ";
+      }
+    }
+    return string;
   }
 });
