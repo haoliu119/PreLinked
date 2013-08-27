@@ -169,7 +169,7 @@ var _getJobsAndConnections = function(req, res){
   //   distance:     25
   // },
 
-
+  //first, indeed jobs
   var indeed_query_obj =  { jobTitle: [ 'software engineer' ],
                             jobLocation: 'Mountain View, CA',
                             distance: '25',
@@ -180,13 +180,17 @@ var _getJobsAndConnections = function(req, res){
                           };
   promises.push( _grabMultiplePages(indeed_query_obj) );
 
+  //second, linkedin first degrees
   promises.push( LinkedInApi.searchFirstDegree(req.session) ); //First 500 for now
 
+  //third, linkedin second degrees
   // req.query.keywords = req.query.keywords || 'Software Engineer';
   var linkedin_query_obj = {
     keywords: 'Software Engineer'
   };
   promises.push( LinkedInApi.searchConnections(req.session, linkedin_query_obj) );
+
+  //fourth, linkedin third degrees
 
   // // GET /people/search
   // // F first, S second, A groups, O out-of-network(third)
