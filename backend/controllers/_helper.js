@@ -6,7 +6,7 @@ _helper.sessionNotAvl = function(req, res){
 };
 
 _helper.resolved = function(req, res, json){
-  console.log('- '+ req.method + ' ' + req.url + ' - Resolved <<');
+  console.log('---'+ req.method + ' ' + req.url + ' - Resolved ---');
   res.writeHead(200, {
     'Content-Type': 'application/json'
   });
@@ -20,7 +20,7 @@ _helper.resolved = function(req, res, json){
 };
 
 _helper.rejected = function(req, res, error){
-  console.log('- '+ req.method + ' ' + req.url + ' - Rejected - error << ', error);
+  console.log('---'+ req.method + ' ' + req.url + ' - Rejected - error ---', error);
   res.send(401, error); //401 Unauthorized
 };
 

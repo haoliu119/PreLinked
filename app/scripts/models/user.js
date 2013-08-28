@@ -4,7 +4,7 @@ PreLinked.Models.UserModel = Backbone.Model.extend({
   urlRoot: '/user',
 
   defaults: {
-    searchHistory: [],
+    searchHistory: []
     // inPerson: {}
   },
 
@@ -27,12 +27,12 @@ PreLinked.Models.UserModel = Backbone.Model.extend({
   },
 
   addSearchHistory: function(){
-    console.log('addSearchHistory');
     var searchHistory = this.get('searchHistory');
+    console.log('adding SearchHistory, current history obj: ', searchHistory);
     searchHistory.unshift(_.clone(this.jobQuery.attributes));
-    if(searchHistory.length > 10){
-      searchHistory.pop();
-    }
+    // if(searchHistory.length > 10){
+    //   searchHistory.pop();
+    // }
     this.save();
   }
 });

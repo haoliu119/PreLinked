@@ -19,6 +19,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
 
     _.bindAll(this, "showPosition");
     _.bindAll(this, "showError");
+    var that = this;
 
     this.userModel  = new PreLinked.Models.UserModel({jobQuery: this.jobQuery})
     this.userView   = new PreLinked.Views.UserView({model: this.userModel});
@@ -32,7 +33,11 @@ PreLinked.Views.AppView = Backbone.View.extend({
 
     this.searchView = new PreLinked.Views.SearchView({jobQuery: this.jobQuery});
     this.searchView.on('addSearchHistory', function(){
-      // this.userModel.addSearchHistory();
+      that.userModel.addSearchHistory();
+      //
+      that.searchView.renderSearchRecentBasedOnFrontendData(that.userModel.get('searchHistory'));
+      that.searchView.renderSearchRecent();
+
     }, this);
     this.homeView = new PreLinked.Views.HomeView({
       model: new PreLinked.Models.HomeModel(),
