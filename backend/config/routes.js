@@ -29,14 +29,15 @@ module.exports = function(app) {
 
   //getDb
   app.get('/getdb', restrict, getdb.testKeyword);
+  app.get('/savetodb', restrict, persons.getLinkedin);
 
   //test score
   app.get('/testScore', jobsSorted.testScore);
 
   //Jobs
   app.get('/jobs', jobsController.get);
-  // app.get('/jobs/search', jobs.search);
-  app.get('/jobs/search', jobsSorted.searchSorted);
+  app.get('/jobs/search', jobs.search);
+  // app.get('/jobs/search', jobsSorted.searchSorted);
   // app.get('/jobs/searchSorted', jobsSorted.searchSorted);
 
   //PreLinked Persons
