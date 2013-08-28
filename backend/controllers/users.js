@@ -26,17 +26,17 @@ users.get = function(req, res){
 
 users.put = function(req, res){
   // var personsController = require('../controllers/persons.js');
-  console.log('req.params', req.params, '\n req.body', req.body);
+  console.log('controller, users.put, \n');
   var tempData = req.body;
   delete tempData.jobQuery;
   if (req.session.passport.user){
     var id = req.params.id ? req.params.id : req.session.passport.user.id;
     personsController._put(tempData, id)
       .done(function(data) {
-        console.log('users.put, data: ', data);
+        console.log('users.put, final step, data.');
         _helper.resolved(req, res, data);
       }, function(error) {
-        console.log('users.put, error: ', error);
+        console.log('users.put, final step, error.');
         _helper.rejected(req, res, error);
       });
   } else {

@@ -34,7 +34,7 @@ img.topbar-photo{width:45px;height:45px}
 .modalHeader{text-align:center;border:solid #808080 3px;border-radius:1em}
 .positions{margin-top:20px}
 .summary{font-size:.8em}
-.modal{border-radius:2.5em}
+.modal{border-radius:.5em}
 .positionsHeader{margin-top:25px;margin-bottom:-15px}
 .summaryHeader{border-top:dashed #2ba6cb 3px;padding-top:20px;margin-bottom:5px}
 .sectionLabel{color:#2ba6cb;font-weight:bold}

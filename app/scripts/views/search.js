@@ -37,7 +37,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   },
 
   showConnections: function(jobAttributes){
-    this.connectionsView.collection.reset(jobAttributes.pConnections.slice(0,jobAttributes.pCount));
+    // this.connectionsView.collection.reset(jobAttributes.pConnections.slice(0,jobAttributes.pCount));
+    this.connectionsView.collection.reset(jobAttributes.pConnections);
   },
 
   confirmSubmit: function(e) {
@@ -60,8 +61,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
   submitSearch: function(e){
     this.trigger('addSearchHistory');
-    // this.getJobResults();
-    // this.getConnections();
+    this.getJobResults();
+    this.getConnections();
   },
 
 
@@ -121,17 +122,38 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     this.connectionsView.collection
       .fetch( { data: query } )
       .done(function(data){
-        deferred.resolve(that.connectionsView.initRender().el);
+        deferred.resolve(that.connectionsView.render().el);
       })
       .fail(function(){
         console.log('Fetch connections failed');
-        deferred.reject(that.connectionsView.initRender().el);
+        deferred.reject(that.connectionsView.render().el);
       });
 
     return deferred.promise();
   },
 
+  renderSearchRecent: function(){
+    var that = this;
+    this.getSearchRecent()
+      .done(function(element) {
+        that.$el.find('#search-recent').html(element);
+      })
+      .fail(function(element) {
+        that.$el.find('#search-recent').html(element);
+      });
+  },
 
+  renderSearchRecentBasedOnFrontendData: function(frontendData){
+    console.log('Fake frontendData: ', frontendData);
+    var localData = JSON.parse( JSON.stringify(frontendData) );
+    _(localData).each(function(item){
+      item.jobTitle = item.jobTitle.join(' ');
+    });
+    var searchRecentViewLocal   = new PreLinked.Views.SearchrecentView({
+      collection: localData
+    });
+    this.$el.find('#search-recent').html(searchRecentViewLocal.render().el);
+  },
 
   render: function() {
     this.$el
@@ -156,13 +178,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
         that.$el.find('#connections').html(element);
       });
 
-    this.getSearchRecent()
-      .done(function(element) {
-        that.$el.find('#search-recent').html(element);
-      })
-      .fail(function(element) {
-        that.$el.find('#search-recent').html(element);
-      });
+    this.renderSearchRecent();
 
     return this;
   }

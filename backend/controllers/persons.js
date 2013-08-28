@@ -8,17 +8,27 @@ var LinkedInApi = require('../models/linkedin_api.js');
 var persons = module.exports = {};
 
 persons.searchRecent = function(req, res) {
-  console.log('persons.searchRecent: ', req.session);
-  if (req.session.passport.user){
-    Person.findOne({_id: req.session.passport.user.id}, function(err, data) {
-      if(err) {
-        console.log('err---->', err);
-      }
-      _helper.resolved(req, res, data.inPerson.searchHistory);
-    });
-  } else {
-    _helper.sessionNotAvl(req, res);
-  }
+  Person.findOne({_id: req.session.passport.user.id}, function(err, data) {
+    if(err) {
+      _helper.rejected(req, res, err);
+    }else{
+      _helper.resolved(req, res, data.searchHistory);
+    }
+  });
+};
+
+
+persons.getRelated = function(req, res) {
+  var IDs = _.pluck(req.query, 'id');
+  Person.find({
+    '_id': { $in: IDs }
+  }, function(err, data){
+    if(err){
+      _helper.rejected(req, res, err);
+    }else{
+      _helper.resolved(req, res, data);
+    }
+  });
 };
 
 persons.getLinkedin = function(req, res){
@@ -101,44 +111,44 @@ persons._post = function(data, myId){
 
 persons._put = function(data, myId){
   var deferred = Q.defer();
+  console.log('_put data: ', data);
 
   var query = Person.findOne({_id: data.id});
-  query.exec(function(error, oldPerson){
-    if(error){
-      console.log('Unable to find person?\n', error);
-      deferred.reject(error);
-      return deferred.promise;
-    }
+  // query.exec(function(error, oldPerson){
+  //   if(error){
+  //     console.log('Unable to find person?\n', error);
+  //     deferred.reject(error);
+  //     return deferred.promise;
+  //   }
 
-    if(oldPerson){
-      //update the person
-      console.log('Find the oldPerson\n');
-      console.log(oldPerson);
-      oldPerson.update({
-        $set: {inPerson: data}
-        // $addToSet: {firstDegree: myId}
-        //todo
-        //check for whether it is a first degree or not
-      },function(err){
-        if(err){
-          console.log(err);
-          deferred.reject(err);
-        }else{
-          console.log("Successfully updated\n");
-          console.log(oldPerson);
-          deferred.resolve(oldPerson);
-        }
-      });
+  //   if(oldPerson){
+  //     //update the person
+  //     console.log('Find the oldPerson, start, \n', data);
+  //     console.log('Find the oldPerson, end. \n');
+  //     oldPerson.update({
+  //       $set: {inPerson: data}
+  //       // $addToSet: {firstDegree: myId}
+  //       //todo
+  //       //check for whether it is a first degree or not
+  //     },function(err){
+  //       if(err){
+  //         console.log(err);
+  //         deferred.reject(err);
+  //       }else{
+  //         console.log("Successfully updated\n");
+  //         deferred.resolve(oldPerson);
+  //       }
+  //     });
 
-    } else {
-      //save as a new person
-      console.log('Save a new Person\n');
-      persons._post(data, myId)
-        .then(function(data){
-          deferred.resolve(data);
-        });
-    }
-  });
+  //   } else {
+  //     //save as a new person
+  //     console.log('Save a new Person\n');
+  //     persons._post(data, myId)
+  //       .then(function(data){
+  //         deferred.resolve(data);
+  //       });
+  //   }
+  // });
 
   return deferred.promise;
 };
