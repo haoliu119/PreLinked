@@ -36,15 +36,13 @@ module.exports = function(app) {
 
   //Jobs
   app.get('/jobs', jobsController.get);
-  app.get('/jobs/search', jobs.search);
-  // app.get('/jobs/search', jobsSorted.searchSorted);
-  // app.get('/jobs/searchSorted', jobsSorted.searchSorted);
+  // app.get('/jobs/search', jobs.search);
+  app.get('/jobs/search', jobsSorted.searchSorted);
 
   // Persons
   // Fetch data from our database
   app.get('/persons/searchRecent', restrict, persons.searchRecent);
   app.get('/persons/related', persons.getRelated);
-  app.get('/persons', persons.get);
 
   //LinkedIn Oauth
   app.get('/auth/linkedin',
