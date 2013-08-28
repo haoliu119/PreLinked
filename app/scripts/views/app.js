@@ -16,7 +16,6 @@ PreLinked.Views.AppView = Backbone.View.extend({
 
   initialize: function() {
     this.jobQuery = this.model;
-    this.render();
 
     _.bindAll(this, "showPosition");
     _.bindAll(this, "showError");
@@ -39,6 +38,8 @@ PreLinked.Views.AppView = Backbone.View.extend({
       model: new PreLinked.Models.HomeModel(),
       jobQuery: this.jobQuery
     });
+
+    this.render();
 
     PreLinked.appRouter = new PreLinked.Routers.AppRouter();
     PreLinked.appRouter.on('route:home', this.homePage, this);
@@ -71,6 +72,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
   render: function() {
     // render header, footer, other page-common components
     this.$el.html(this.template(this.model.attributes));
+    this.$el.find('#user-view').html(this.userView.render().el);
     return this;
   },
 
