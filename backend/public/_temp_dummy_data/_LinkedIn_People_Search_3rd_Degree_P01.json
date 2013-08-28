@@ -1,41 +1,4 @@
-{
-  "facets": {
-    "_total": 1,
-    "values": [{
-      "buckets": {
-        "_total": 4,
-        "values": [
-          {
-            "code": "F",
-            "count": 0,
-            "name": "1st Connections"
-          },
-          {
-            "code": "S",
-            "count": 67,
-            "name": "2nd Connections"
-          },
-          {
-            "code": "A",
-            "count": 190,
-            "name": "Group Members"
-          },
-          {
-            "code": "O",
-            "count": 965,
-            "name": "3rd + Everyone Else"
-          }
-        ]
-      },
-      "code": "network",
-      "name": "Relationship"
-    }]
-  },
-  "people": {
-    "_count": 25,
-    "_start": 0,
-    "_total": 260,
-    "values": [
+[
       {
         "distance": 3,
         "firstName": "Boris",
@@ -999,5 +962,3 @@
         "summary": "8 years Telecom Software Engineer experience.\n7 years Senior Software and Lotus Notes/Domino Consultant  experience. \n3 years of  internationalization/localization experience.\nIdentify opportunities to enhance Company Business Process.  \nAbility to work in various environments."
       }
     ]
-  }
-}

@@ -35,8 +35,8 @@ module.exports = function(app) {
 
   //Jobs
   app.get('/jobs', jobsController.get);
-  // app.get('/jobs/search', jobs.search);
-  app.get('/jobs/search', jobsSorted.searchSorted);
+  app.get('/jobs/search', jobs.search);
+  // app.get('/jobs/search', jobsSorted.searchSorted);
   app.get('/jobs/searchSorted', jobsSorted.searchSorted);
 
   //PreLinked Persons

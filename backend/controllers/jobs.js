@@ -25,10 +25,11 @@ var _grabOnePage = function(req_query){
 
 //temp solution for now
 //todo
-var _grabMultiplePages = jobs.grabPages = function(req_query) {
+var _grabMultiplePages = jobs.grabPages = function(req_query, pageCount) {
   var deferred = Q.defer();
   var promises = [];
-  for(var i = 0; i < 100; i+=25) {
+  pageCount = pageCount || 4;
+  for(var i = 0; i < ( 25 * pageCount ); i+=25) {
     var output = IndeedApi.search(req_query, {start: i});
     promises.push(output);
   }
