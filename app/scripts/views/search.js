@@ -119,11 +119,11 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     this.connectionsView.collection
       .fetch( { data: query } )
       .done(function(data){
-        deferred.resolve(that.connectionsView.render().el);
+        deferred.resolve(that.connectionsView.initRender().el);
       })
       .fail(function(){
         console.log('Fetch connections failed');
-        deferred.reject(that.connectionsView.render().el);
+        deferred.reject(that.connectionsView.initRender().el);
       });
 
     return deferred.promise();
