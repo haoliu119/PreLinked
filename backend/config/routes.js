@@ -77,8 +77,9 @@ module.exports = function(app) {
   // GET /user
   app.get('/user', users.read);
   app.get('/user/:id', users.read);
+  app.put('/user/:id', users.put);
   // post user search
-  app.post('/user/searches', function(req, res){
+  app.post('/user', function(req, res){
     console.log('--->POST /user/searches >>>>>>>>>>>>>>', req.body);
 
   ////////// begin dummy ///////////
@@ -92,16 +93,16 @@ module.exports = function(app) {
   ////////// begin db save ///////////
 
 
-    // Persons.save({searchHistory: req.body}, function(err, results){
-    //   if(err){
-    //     console.log(err);
-    //   } else {
-    //     console.log('Saved successfully', results);
-    //   }
-    //   Persons.find({}, function(err, data) {
-    //   //console.log('-->', data);
-    //   });
-    // })
+    persons.save({searchHistory: req.body}, function(err, results){
+      if(err){
+        console.log(err);
+      } else {
+        console.log('Saved successfully', results);
+      }
+      Persons.find({}, function(err, data) {
+      //console.log('-->', data);
+      });
+    })
 
 
     // users.userSearch = new users.UserSearch(req.body);
