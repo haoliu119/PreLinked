@@ -131,7 +131,28 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     return deferred.promise();
   },
 
+  renderSearchRecent: function(){
+    var that = this;
+    this.getSearchRecent()
+      .done(function(element) {
+        that.$el.find('#search-recent').html(element);
+      })
+      .fail(function(element) {
+        that.$el.find('#search-recent').html(element);
+      });
+  },
 
+  renderSearchRecentBasedOnFrontendData: function(frontendData){
+    console.log('Fake frontendData: ', frontendData);
+    var localData = JSON.parse( JSON.stringify(frontendData) );
+    _(localData).each(function(item){
+      item.jobTitle = item.jobTitle.join(' ');
+    });
+    var searchRecentViewLocal   = new PreLinked.Views.SearchrecentView({
+      collection: localData
+    });
+    this.$el.find('#search-recent').html(searchRecentViewLocal.render().el);
+  },
 
   render: function() {
     this.$el
@@ -156,13 +177,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
         that.$el.find('#connections').html(element);
       });
 
-    this.getSearchRecent()
-      .done(function(element) {
-        that.$el.find('#search-recent').html(element);
-      })
-      .fail(function(element) {
-        that.$el.find('#search-recent').html(element);
-      });
+    // renderSearchRecent();
 
     return this;
   }
