@@ -277,24 +277,23 @@ jobsSorted.searchSorted = function(req, res){
   var isLoggedin = req.session && req.session.passport && req.session.passport.user;
   if(!isLoggedin){
     jobs.search(req, res);
+  }else{
+    //for weighting the first degree Linkedin connections
+    var queryJobTitle = '';
+    if(req.query && req.query.jobTitle){
+      queryJobTitle = req.query.jobTitle.join(' ');
+    }
+
+    _getJobsAndConnections(req, res)
+      .then(function(jobsAndConnections){
+        console.log('-controller-jobs.searchSorted()');
+
+        var jobs = jobsAndConnections[0];
+        var connections = jobsAndConnections[1];
+        var sorted = _sortJobs(jobs, connections, queryJobTitle);
+
+        _helper.resolved(req, res, sorted);
+
+      });
   }
-
-  //for weighting the first degree Linkedin connections
-  var queryJobTitle = '';
-  if(req.query && req.query.jobTitle){
-    queryJobTitle = req.query.jobTitle.join(' ');
-  }
-
-  _getJobsAndConnections(req, res)
-    .then(function(jobsAndConnections){
-      console.log('-controller-jobs.searchSorted()');
-
-      var jobs = jobsAndConnections[0];
-      var connections = jobsAndConnections[1];
-      var sorted = _sortJobs(jobs, connections, queryJobTitle);
-
-      _helper.resolved(req, res, sorted);
-
-    });
-
 };
