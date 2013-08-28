@@ -27,7 +27,13 @@ PreLinked.Views.SearchView = Backbone.View.extend({
                   }),
       jobQuery: this.jobQuery
     });
+
     this.searchResultsView.collection.on('showConnections', this.showConnections, this);
+
+    this.searchRecentView   = new PreLinked.Views.SearchrecentView({
+      collection: new PreLinked.Collections.SearchrecentCollection()
+    });
+    // this.searchResultsView.collection.on('showConnections', this.findConnectionsForJob, this);
   },
 
   showConnections: function(jobAttributes){
@@ -55,11 +61,26 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   submitSearch: function(e){
       this.trigger('addSearchHistory');
       this.getJobResults();
-      // this.getConnections();
+      this.getConnections();
   },
 
   getSearchFilter: function(){
     return this.searchFilterView.render().el;
+  },
+
+  getSearchRecent: function(){
+    var deferred = $.Deferred();
+    var that = this;
+    this.searchRecentView.collection
+      .fetch()
+      .done(function(data) {
+        console.log('getSearchRecent', data);
+        deferred.resolve(that.searchRecentView.render().el);
+      })
+      .fail(function() {
+       deferred.reject(that.searchRecentView.render().el);
+      });
+    return deferred.promise();
   },
 
   getJobResults: function() {
@@ -98,15 +119,17 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     this.connectionsView.collection
       .fetch( { data: query } )
       .done(function(data){
-        deferred.resolve(that.connectionsView.render().el);
+        deferred.resolve(that.connectionsView.initRender().el);
       })
       .fail(function(){
         console.log('Fetch connections failed');
-        deferred.reject(that.connectionsView.render().el);
+        deferred.reject(that.connectionsView.initRender().el);
       });
 
     return deferred.promise();
   },
+
+
 
   render: function() {
     this.$el
@@ -129,6 +152,14 @@ PreLinked.Views.SearchView = Backbone.View.extend({
       })
       .fail(function(element){
         that.$el.find('#connections').html(element);
+      });
+
+    this.getSearchRecent()
+      .done(function(element) {
+        that.$el.find('#search-recent').html(element);
+      })
+      .fail(function(element) {
+        that.$el.find('#search-recent').html(element);
       });
 
     return this;

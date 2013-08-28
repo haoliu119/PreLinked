@@ -35,14 +35,14 @@ module.exports = function(app) {
 
   //Jobs
   app.get('/jobs', jobsController.get);
-  app.get('/jobs/search', jobs.search);
-  // app.get('/jobs/search', jobsSorted.searchSorted);
-  app.get('/jobs/searchSorted', jobsSorted.searchSorted);
+  // app.get('/jobs/search', jobs.search);
+  app.get('/jobs/search', jobsSorted.searchSorted);
+  // app.get('/jobs/searchSorted', jobsSorted.searchSorted);
 
   //PreLinked Persons
   // Fetch data from our database
+  app.get('/persons/searchRecent', persons.searchRecent);
   app.get('/persons', persons.get);
-  app.get('/persons/linkedin', persons.getLinkedin);
 
   //LinkedIn Oauth
   app.get('/auth/linkedin',
@@ -51,10 +51,11 @@ module.exports = function(app) {
       function(req, res) {});
   app.get('/auth/linkedin/callback',
     passport.authenticate('linkedin', {
-      successRedirect: '/persons/linkedIn', // download person profile, save to DB
-      failureRedirect: '/#search'
+      successRedirect: '/#search',
+      failureRedirect: '/#home'
     })
   );
+
   app.get('/logout', util.logout);
   app.get('/session', util.getSession);
 
@@ -73,7 +74,6 @@ module.exports = function(app) {
   // app.put('/user/:id', users.update);
   // app.del('/user/:id', users.delete);
 
-
   // GET /user
   app.get('/user', users.read);
   app.get('/user/:id', users.read);
@@ -90,18 +90,32 @@ module.exports = function(app) {
   ////////// end dummy ///////////
 
   ////////// begin db save ///////////
-    users.userSearch = new users.UserSearch(req.body);
 
-    users.userSearch.save(function(err, results){
-      if(err){
-        console.log(err);
-      } else {
-        console.log('Saved successfully', results);
-      }
-      users.UserSearch.find({}, function(err, data) {
-      //console.log('-->', data);
-      });
-    });
+
+    // Persons.save({searchHistory: req.body}, function(err, results){
+    //   if(err){
+    //     console.log(err);
+    //   } else {
+    //     console.log('Saved successfully', results);
+    //   }
+    //   Persons.find({}, function(err, data) {
+    //   //console.log('-->', data);
+    //   });
+    // })
+
+
+    // users.userSearch = new users.UserSearch(req.body);
+
+    // users.userSearch.save(function(err, results){
+    //   if(err){
+    //     console.log(err);
+    //   } else {
+    //     console.log('Saved successfully', results);
+    //   }
+    //   users.UserSearch.find({}, function(err, data) {
+    //   //console.log('-->', data);
+    //   });
+    // });
   ////////// end db save ///////////
 
     res.end();

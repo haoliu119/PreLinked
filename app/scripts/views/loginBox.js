@@ -10,18 +10,21 @@ PreLinked.Views.LoginboxView = Backbone.View.extend({
   },
 
   events: {
-    'click .in-login': 'openLoginModal'
+    'click .in-login': 'showLoginProgress'
   },
 
-  openLoginModal: function(){
-    var contentStr = '<h3><a href="http://localhost:3000/auth/linkedin">Login</a></h3>';
-    var modal = new this.Modal({
-      title: 'Awesome. I have it.',
-      content: contentStr,
-      footer: false
-    });
-    modal.open();
+  showLoginProgress: function(){
+
   },
+  // openLoginModal: function(){
+  //   var contentStr = '<h3><a href="http://localhost:3000/auth/linkedin">Login</a></h3>';
+  //   var modal = new this.Modal({
+  //     title: 'Awesome. I have it.',
+  //     content: contentStr,
+  //     footer: false
+  //   });
+  //   modal.open();
+  // },
 
   checkLogin: function(){
     var deferred = $.Deferred();

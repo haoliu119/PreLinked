@@ -1,0 +1,8 @@
+{{#if id}}
+  <li><a href="/logout">Log out</a></li>
+  {{#if pictureUrl}}
+    <li><img title="{{firstName}} {{lastName}}" class="topbar-photo" src="{{pictureUrl}}"></li>
+  {{/if}}
+{{else}}
+  <li><a href="/auth/linkedin">Log in</a></li>
+{{/if}}
