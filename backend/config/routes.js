@@ -75,52 +75,13 @@ module.exports = function(app) {
   // app.del('/user/:id', users.delete);
 
   // GET /user
-  app.get('/user', users.read);
-  app.get('/user/:id', users.read);
+  app.get('/user', users.get);
+  app.get('/user/:id', users.get);
+  app.put('/user', users.put);
   app.put('/user/:id', users.put);
   // post user search
-  app.post('/user', function(req, res){
-    console.log('--->POST /user/searches >>>>>>>>>>>>>>', req.body);
-
-  ////////// begin dummy ///////////
-    // var fs   = require('fs');
-    // var path = require('path');
-    // var json = req.body.searches[0];
-    // console.log('json-->', json);
-    // fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_User_Searches.json'), json);
-  ////////// end dummy ///////////
-
-  ////////// begin db save ///////////
-
-
-    persons.save({searchHistory: req.body}, function(err, results){
-      if(err){
-        console.log(err);
-      } else {
-        console.log('Saved successfully', results);
-      }
-      Persons.find({}, function(err, data) {
-      //console.log('-->', data);
-      });
-    })
-
-
-    // users.userSearch = new users.UserSearch(req.body);
-
-    // users.userSearch.save(function(err, results){
-    //   if(err){
-    //     console.log(err);
-    //   } else {
-    //     console.log('Saved successfully', results);
-    //   }
-    //   users.UserSearch.find({}, function(err, data) {
-    //   //console.log('-->', data);
-    //   });
-    // });
-  ////////// end db save ///////////
-
-    res.end();
-  });
+  app.post('/user', users.post);
+  app.post('/user/:id', users.post);
 
   //this is where you test random backend functions
   app.get('/test', testController.test);

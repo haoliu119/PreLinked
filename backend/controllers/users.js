@@ -4,8 +4,8 @@ var personsController = require('../controllers/persons.js');
 
 var users = module.exports = {};
 
-users.read = function(req, res){
-  var personsController = require('../controllers/persons.js');
+users.get = function(req, res){
+  // var personsController = require('../controllers/persons.js');
   if (req.session.passport.user){
     // use persons controller _getById to read form DB
     var id = req.params.id ? req.params.id : req.session.passport.user.id;
@@ -25,18 +25,18 @@ users.read = function(req, res){
 };
 
 users.put = function(req, res){
-  var personsController = require('../controllers/persons.js');
-  console.log('+++++++>>>>>>', req.params, '\n=========>>>>>', req.body);
+  // var personsController = require('../controllers/persons.js');
+  console.log('req.params', req.params, '\n req.body', req.body);
   var tempData = req.body;
   delete tempData.jobQuery;
   if (req.session.passport.user){
     var id = req.params.id ? req.params.id : req.session.passport.user.id;
     personsController._put(tempData, id)
       .done(function(data) {
-        console.log('-->data')
+        console.log('users.put, data: ', data);
         _helper.resolved(req, res, data);
       }, function(error) {
-        console.log('-->err');
+        console.log('users.put, error: ', error);
         _helper.rejected(req, res, error);
       });
   } else {
@@ -44,22 +44,56 @@ users.put = function(req, res){
   }
 };
 
-users.create = function(req, res){
-};
+users.post = function(req, res){
+  console.log('users.post: ', req.body);
 
-users.list = function(req, res){
-  res.json([
-    {
-      name: 'User'
-  }
- ]);
-};
+  personsController
+    ._post(req.body, req.session.passport.user.id)
+    .then(function(data){
+      console.log('POST users saved', data);
+    })
+    .fail(function(data){
+      console.log('POST users failed', data);
+    });
 
 
-users.update = function(req, res){
-  res.json({
-    name: 'User'
-  });
+  ////////// begin dummy ///////////
+    // var fs   = require('fs');
+    // var path = require('path');
+    // var json = req.body.searches[0];
+    // console.log('json-->', json);
+    // fs.writeFileSync(path.join(__dirname, '../public/_temp_dummy_data/_User_Searches.json'), json);
+  ////////// end dummy ///////////
+
+  ////////// begin db save ///////////
+
+
+  // personsController
+  //   .save({searchHistory: req.body}, function(err, results){
+  //     if(err){
+  //       console.log(err);
+  //     } else {
+  //       console.log('Saved successfully', results);
+  //     }
+  //   });
+
+
+    // users.userSearch = new users.UserSearch(req.body);
+
+    // users.userSearch.save(function(err, results){
+    //   if(err){
+    //     console.log(err);
+    //   } else {
+    //     console.log('Saved successfully', results);
+    //   }
+    //   users.UserSearch.find({}, function(err, data) {
+    //   //console.log('-->', data);
+    //   });
+    // });
+  ////////// end db save ///////////
+
+  // res.end();
+
 };
 
 users.delete = function(req, res){
