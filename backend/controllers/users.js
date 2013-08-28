@@ -45,7 +45,7 @@ users.put = function(req, res){
 };
 
 users.post = function(req, res){
-  console.log('--->POST /user/searches >>>>>>>>>>>>>>', req.body);
+  console.log('users.post: ', req.body);
 
   personsController
     ._post(req.body, req.session.passport.user.id)

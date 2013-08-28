@@ -81,6 +81,7 @@ module.exports = function(app) {
   app.put('/user/:id', users.put);
   // post user search
   app.post('/user', users.post);
+  app.post('/user/:id', users.post);
 
   //this is where you test random backend functions
   app.get('/test', testController.test);
