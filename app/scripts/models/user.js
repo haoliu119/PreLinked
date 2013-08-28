@@ -4,7 +4,8 @@ PreLinked.Models.UserModel = Backbone.Model.extend({
   urlRoot: '/user',
 
   defaults: {
-    searchHistory: []
+    searchHistory: [],
+    inPerson: {}
   },
 
   initialize: function(options) {
@@ -15,19 +16,21 @@ PreLinked.Models.UserModel = Backbone.Model.extend({
   fetchUser: function(){
     var that = this;
     this.fetch()
-      .done(function(){
+      .done(function(data){
         console.log('user attributes: ', that.attributes);
+        console.log('user fetch data: ', data);
+        that.trigger('renderUser');
       })
       .fail(function(error){
         console.log('user session does not exist............');
       });
   },
 
-  addSearchHistory: function(){
-    var searchHistory = this.get('searchHistory');
-    searchHistory.unshift(_.clone(this.jobQuery.attributes));
-    if(searchHistory.length > 10){
-      searchHistory.pop();
-    }
-  }
+  // addSearchHistory: function(){
+  //   var searchHistory = this.get('searchHistory');
+  //   searchHistory.unshift(_.clone(this.jobQuery.attributes));
+  //   if(searchHistory.length > 10){
+  //     searchHistory.pop();
+  //   }
+  // }
 });

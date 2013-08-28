@@ -67,5 +67,4 @@ PreLinked.Models.SearchfilterModel = Backbone.Model.extend({
       this.jobQuery.set('jobKeywords', jobKeywordsArray);
     }
   }
-
 });

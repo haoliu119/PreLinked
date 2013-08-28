@@ -15,6 +15,7 @@ PreLinked.Views.ConnectionView = Backbone.View.extend({
     this.$el
       .find('#login-box')
       .html(this.loginBox.render().el);
+    return this;
   },
 
   render: function(){
