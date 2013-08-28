@@ -37,7 +37,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   },
 
   showConnections: function(jobAttributes){
-    this.connectionsView.collection.reset(jobAttributes.pConnections.slice(0,jobAttributes.pCount));
+    // this.connectionsView.collection.reset(jobAttributes.pConnections.slice(0,jobAttributes.pCount));
+    this.connectionsView.collection.reset(jobAttributes.pConnections);
   },
 
   confirmSubmit: function(e) {
@@ -60,8 +61,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
   submitSearch: function(e){
     this.trigger('addSearchHistory');
-    // this.getJobResults();
-    // this.getConnections();
+    this.getJobResults();
+    this.getConnections();
   },
 
 
@@ -121,11 +122,11 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     this.connectionsView.collection
       .fetch( { data: query } )
       .done(function(data){
-        deferred.resolve(that.connectionsView.initRender().el);
+        deferred.resolve(that.connectionsView.render().el);
       })
       .fail(function(){
         console.log('Fetch connections failed');
-        deferred.reject(that.connectionsView.initRender().el);
+        deferred.reject(that.connectionsView.render().el);
       });
 
     return deferred.promise();
@@ -177,7 +178,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
         that.$el.find('#connections').html(element);
       });
 
-    // renderSearchRecent();
+    this.renderSearchRecent();
 
     return this;
   }
