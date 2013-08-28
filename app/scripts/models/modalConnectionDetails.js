@@ -7,6 +7,5 @@ PreLinked.Models.ModalconnectiondetailsModel = Backbone.Model.extend({
     // if(options && options.id){
     //   this.url = this.url + options.id;
     // }
-    console.log('ModalconnectiondetailsModel', this.url());
   }
 });

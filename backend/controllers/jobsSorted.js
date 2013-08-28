@@ -163,7 +163,7 @@ var _getJobsAndConnections = function(req, res){
 
 
 
-var _getScores = function(job, connections){
+var _getScores = function(job, connections, queryJobTitle){
   var employer = job.company; // Apple
   // console.log('employer from indeed\n', employer);
 
@@ -175,22 +175,35 @@ var _getScores = function(job, connections){
 
     friend.distance = parseInt(friend.distance, 10);
 
-    //look at all the positions, compare all of them against the employer name and get scores
+    //look at all the positions
+    //compare all of their company name against the employer name and get scores
+    //compare all of their job titles against queryJobTitle and get scores
     //return the max of scores
     if(conn.positions && conn.positions.values && conn.positions.values.length){
-      friend.positions = _(conn.positions.values).map( function(conn){
-        return conn.company && conn.company.name;
-      } );
+      friend.linkedinCompanies = [];
+      friend.linkedinTitles = [];
+
+      _(conn.positions.values).each(function(conn){
+        friend.linkedinCompanies.push( conn.company && conn.company.name );
+        friend.linkedinTitles.push( conn.title || '' );
+      });
     }
-    var stringDistances = _(friend.positions).map(function(pos){
-      return natural.JaroWinklerDistance(employer, pos);
+
+
+    var companyStringDistances = _(friend.linkedinCompanies).map(function(company){
+      return natural.JaroWinklerDistance(employer, company);
     });
-    friend.stringDistance = _(stringDistances).max();
+    friend.companyStringDistance = _(companyStringDistances).max();
+
+    var titleStringDistances = _(friend.linkedinTitles).map(function(title){
+      return natural.JaroWinklerDistance(queryJobTitle, title);
+    });
+    friend.titleStringDistance = _(titleStringDistances).max();
 
     friends.push(friend);
   });
 
-  //weigh the stringDistance by the degree of connections
+  //weigh the companyStringDistance by the degree of connections
   //expect heavy tweaking here
   //cut the sore by an arbitrary threshold
   var weightByDegree = {
@@ -200,13 +213,22 @@ var _getScores = function(job, connections){
   };
   var threshold = 0.8;
   _(friends).each(function(friend){
-    var score = friend.stringDistance > threshold ? friend.stringDistance : 0;
+    var score = friend.companyStringDistance > threshold ? friend.companyStringDistance : 0;
     friend.pScore = score * weightByDegree[ friend.distance ];
     //todo, why NaN in some cases?
     //NaN is falsy, hence, the line below converting NaN to 0
     friend.pScore = friend.pScore || 0;
   })
 
+  //extra step for first degree
+  //if title doesn't really match, set pScore to zero
+  var titleThreshold = 0.7;
+  _(friends).each(function(friend){
+    if(friend.distance === 1){
+      var titleScore = friend.titleStringDistance > titleThreshold ? 1 : 0;
+      friend.pScore = friend.pScore * titleScore;
+    }
+  });
 
   //sort friends array by pScore
   friends = _(friends).sortBy(function(friend){
@@ -221,7 +243,7 @@ var _getScores = function(job, connections){
 
   //return the number of connections who works in that company
   var pCount = _(friends).reduce(function(memo, friend){
-    var zeroOrOne = friend.stringDistance > threshold ? 1: 0;
+    var zeroOrOne = friend.companyStringDistance > threshold ? 1: 0;
     return memo + zeroOrOne;
   }, 0 );
 
@@ -237,9 +259,9 @@ var _getScores = function(job, connections){
   };
 };
 
-var _sortJobs = function(inputJobs, inputConnections){
+var _sortJobs = function(inputJobs, inputConnections, queryJobTitle){
   _(inputJobs).each(function(inputJob){
-    var scores = _getScores(inputJob, inputConnections);
+    var scores = _getScores(inputJob, inputConnections, queryJobTitle);
     inputJob.pScore = scores.pScore;
     inputJob.pConnections = scores.pConnections;
     inputJob.pCount = scores.pCount;
@@ -250,13 +272,19 @@ var _sortJobs = function(inputJobs, inputConnections){
 //MAIN function for this file
 jobsSorted.searchSorted = function(req, res){
 
+  //for weighting the first degree Linkedin connections
+  var queryJobTitle = '';
+  if(req.query && req.query.jobTitle){
+    queryJobTitle = req.query.jobTitle.join(' ');
+  }
+
   _getJobsAndConnections(req, res)
     .then(function(jobsAndConnections){
       console.log('-controller-jobs.searchSorted()');
 
       var jobs = jobsAndConnections[0];
       var connections = jobsAndConnections[1];
-      var sorted = _sortJobs(jobs, connections);
+      var sorted = _sortJobs(jobs, connections, queryJobTitle);
 
       _helper.resolved(req, res, sorted);
 
