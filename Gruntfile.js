@@ -222,9 +222,6 @@ module.exports = function (grunt) {
     grunt.file.write('./app/scripts/templates.js', 'this.JST = this.JST || {};');
   });
 
-
-  grunt.loadNpmTasks('grunt-express-server');
-
   grunt.registerTask('server', function () {
     grunt.task.run([
       'clean:server',
