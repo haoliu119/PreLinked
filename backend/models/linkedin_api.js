@@ -17,7 +17,7 @@ var _PeopleSearchReturnFields = "(people:(" + _AllFields + "),facets:(code,name,
 // GET /people/search
 // related connections is not available for any bulk call
 LinkedInApi.searchConnections = function (session, query) {
-  console.log('- GET /people/search - query >> ', query);
+  console.log('- GET /PEOPLE/SEARCH - searchConnections - query >> ', query);
   /*  query: {
         title=            [title]
         keywords=         [space delimited keywords]
@@ -118,8 +118,7 @@ LinkedInApi.getProfile = function(session, id){
 // GET /people/
 // GET ALL OF USER'S FIRST DEGREE CONNECTIONS
 LinkedInApi.searchFirstDegree = function (session, query) {
-  console.log('- GET /people/ - session >> ', session);
-  console.log('- GET /people/ - query >> ', query);
+  console.log('- GET /people/ - FIRST DEDREE - for >> ', session.passport.user.id);
   var endPoint    = "https://api.linkedin.com/v1/people/",
       id          = session.passport.user.id,
       accessToken = session.passport.user.accessToken,
