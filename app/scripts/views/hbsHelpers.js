@@ -8,3 +8,14 @@ Handlebars.registerHelper('ifCond', function(v1, v2, options) {
   }
   return options.inverse(this);
 });
+
+Handlebars.registerHelper('checkDegree', function(degree, options) {
+  if(degree === 1) {
+    return degree + 'st';
+  } else if(degree === 2) {
+    return degree + 'nd';
+  } else if(degree === 3) {
+    return degree + 'rd';
+  }
+  return options.inverse(this);
+});
