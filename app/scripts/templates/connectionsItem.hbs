@@ -7,7 +7,16 @@
     {{/if}}
   </a>
   <ul class="info">
-    <li><h2 class="name"><a class="modal-details" href="#" data-in-id="{{id}}">{{firstName}}&nbsp;{{lastName}}</a> {{distance}}</h2></li>
+    <li>
+      <h2 class="name">
+        <a class="modal-details" href="#" data-in-id="{{id}}">{{firstName}}&nbsp;{{lastName}}</a>
+        <span class="degree">
+          {{#checkDegree distance}}
+          {{/checkDegree}}
+        </span>
+        
+      </h2>
+    </li>
     <!-- li>{{title}}</li -->
     <li class="headline">{{headline}}</li>
     {{#each positions.values}}
