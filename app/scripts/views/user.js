@@ -6,8 +6,12 @@ PreLinked.Views.UserView = Backbone.View.extend({
 
   template: JST['app/scripts/templates/user.hbs'],
 
+  initialize: function(){
+    this.model.on('renderUser', this.render, this);
+  },
+
   render: function() {
-    this.$el.html(this.template(this.model.attributes.inPerson));
+    this.$el.html(this.template(this.model.attributes));
     return this;
   }
 });
