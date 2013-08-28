@@ -272,6 +272,13 @@ var _sortJobs = function(inputJobs, inputConnections, queryJobTitle){
 //MAIN function for this file
 jobsSorted.searchSorted = function(req, res){
 
+  //check for sesssion
+  //if not avaliable, only fetch indeed
+  var isLoggedin = req.session && req.session.passport && req.session.passport.user;
+  if(!isLoggedin){
+    jobs.search(req, res);
+  }
+
   //for weighting the first degree Linkedin connections
   var queryJobTitle = '';
   if(req.query && req.query.jobTitle){
