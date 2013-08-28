@@ -24,6 +24,26 @@ users.read = function(req, res){
   }
 };
 
+users.put = function(req, res){
+  var personsController = require('../controllers/persons.js');
+  console.log('+++++++>>>>>>', req.params, '\n=========>>>>>', req.body);
+  var tempData = req.body;
+  delete tempData.jobQuery;
+  if (req.session.passport.user){
+    var id = req.params.id ? req.params.id : req.session.passport.user.id;
+    personsController._put(tempData, id)
+      .done(function(data) {
+        console.log('-->data')
+        _helper.resolved(req, res, data);
+      }, function(error) {
+        console.log('-->err');
+        _helper.rejected(req, res, error);
+      });
+  } else {
+    _helper.sessionNotAvl(req, res);
+  }
+};
+
 users.create = function(req, res){
 };
 

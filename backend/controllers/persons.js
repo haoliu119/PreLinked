@@ -8,67 +8,16 @@ var users     = require('../controllers/users'); // TODO: refactor this later in
 var persons = module.exports = {};
 
 persons.searchRecent = function(req, res) {
-
-  //var person = new Person();
-
-  // Person.find({},'searchHistory',function(err, data) {
-  //   console.log('-->', data.searchHistory);
-  // });
-
-//req.session.passport.user
-
-  // Person.find({_id: req.session.passport.user.id}, function(err, data) {
-  //   console.log('====>>>>', data);
-  // });
-
   if (req.session.passport.user){
-    Person.findOne({id: req.session.passport.user.id}, function(err, data) {
+    Person.findOne({_id: req.session.passport.user.id}, function(err, data) {
       if(err) {
         console.log('err---->', err);
       }
-      data = [
-        {jobTitle:['title1'], jobKeywords:['kw1'], location:'sf1', company:'company1', distance:25},
-        {jobTitle:['title2'], jobKeywords:['kw1'], location:'sf1', company:'company1', distance:25},
-        {jobTitle:['title3'], jobKeywords:['kw1'], location:'sf1', company:'company1', distance:25},
-        {jobTitle:['title4'], jobKeywords:['kw1'], location:'sf1', company:'company1', distance:25},
-        {jobTitle:['title5'], jobKeywords:['kw1'], location:'sf1', company:'company1', distance:25},
-        {jobTitle:['title6'], jobKeywords:['kw1'], location:'sf1', company:'company1', distance:25},
-        {jobTitle:['title7'], jobKeywords:['kw1'], location:'sf1', company:'company1', distance:25}
-      ];
-      _helper.resolved(req, res, data);
+      _helper.resolved(req, res, data.searchHistory);
     });
-
   } else {
     _helper.sessionNotAvl(req, res);
   }
-
-
-  // Person.find().sort({_id: -1}).skip(0).limit(5).exec(function(err, data) {
-
-  //   _.each(data, function(value, index) {
-  //     console.log(value, index);
-  //   });
-
-  //   if (req.session.passport.user){
-  //     if(err) {
-  //       console.log(err);
-  //     }
-  //     //console.log('/////////-->', data.inPerson);
-
-  //     _helper.resolved(req, res, data);
-  //   } else {
-  //     //_helper.sessionNotAvl(req, res);
-  //   }
-
-  // });
-
-
-  // users.UserSearch.find().sort({_id: -1}).skip(0).limit(5).exec(function(err, data) {
-  //   if(err) {
-  //     console.log(err);
-  //   }
-  //   _helper.resolved(req, res, data);
-  // });
 };
 
 persons.get = function(req, res){
@@ -176,6 +125,7 @@ persons._put = function(data, myId){
     if(oldPerson){
       //update the person
       console.log('Find the oldPerson\n');
+      console.log(oldPerson);
       oldPerson.update({
         $set: {inPerson: data}
         // $addToSet: {firstDegree: myId}
@@ -187,6 +137,7 @@ persons._put = function(data, myId){
           deferred.reject(err);
         }else{
           console.log("Successfully updated\n");
+          console.log(oldPerson);
           deferred.resolve(oldPerson);
         }
       });
