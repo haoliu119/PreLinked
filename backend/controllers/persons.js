@@ -8,16 +8,27 @@ var users     = require('../controllers/users'); // TODO: refactor this later in
 var persons = module.exports = {};
 
 persons.searchRecent = function(req, res) {
-  if (req.session.passport.user){
-    Person.findOne({_id: req.session.passport.user.id}, function(err, data) {
-      if(err) {
-        console.log('err---->', err);
-      }
+  Person.findOne({_id: req.session.passport.user.id}, function(err, data) {
+    if(err) {
+      _helper.rejected(req, res, err);
+    }else{
       _helper.resolved(req, res, data.searchHistory);
-    });
-  } else {
-    _helper.sessionNotAvl(req, res);
-  }
+    }
+  });
+};
+
+
+persons.getRelated = function(req, res) {
+  var IDs = _.pluck(req.query, 'id');
+  Person.find({
+    '_id': { $in: IDs }
+  }, function(err, data){
+    if(err){
+      _helper.rejected(req, res, err);
+    }else{
+      _helper.resolved(req, res, data);
+    }
+  });
 };
 
 persons.get = function(req, res){
