@@ -3,7 +3,7 @@ var ObjectId = mongoose.Types.ObjectId;
 var Person   = require('../models/persons.js');
 var _helper  = require('./_helper.js');
 var LinkedInApi = require('../models/linkedin_api.js');
-var users     = require('../controllers/users'); // TODO: refactor this later into Person
+// TODO: refactor this later into Person
 
 var persons = module.exports = {};
 
