@@ -20,13 +20,6 @@ persons.searchRecent = function(req, res) {
   }
 };
 
-persons.get = function(req, res){
-  var deferred = Q.defer();
-  deferred.resolve('get');
-  res.json('get');
-  return deferred.promise;
-};
-
 persons.getLinkedin = function(req, res){
   var id = req.session.passport.user.id;
   LinkedInApi.getProfile(req.session, id)
@@ -82,12 +75,6 @@ persons._getById = function(targetId){
     deferred.reject('id not available');
   }
 
-  return deferred.promise;
-};
-
-persons.post = function(req, res){
-  var deferred = Q.defer();
-  deferred.resolve('post');
   return deferred.promise;
 };
 
