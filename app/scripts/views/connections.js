@@ -10,14 +10,6 @@ PreLinked.Views.ConnectionView = Backbone.View.extend({
     this.collection.on('reset', this.render, this);
   },
 
-  initRender: function(){
-    this.render();
-    this.$el
-      .find('#login-box')
-      .html(this.loginBox.render().el);
-    return this;
-  },
-
   render: function(){
     console.log('ConnectionView.render()');
     console.log('connections >>> ', this.collection.models);
@@ -25,6 +17,10 @@ PreLinked.Views.ConnectionView = Backbone.View.extend({
     this.$el.html(this.template({
       number_of_connections: this.collection.length
     }));
+
+    this.$el
+      .find('#login-box')
+      .html(this.loginBox.render().el);
 
     if( this.collection.length ){ //if collection is NOT empty
       this.$el

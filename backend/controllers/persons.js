@@ -8,20 +8,27 @@ var LinkedInApi = require('../models/linkedin_api.js');
 var persons = module.exports = {};
 
 persons.searchRecent = function(req, res) {
-  console.log('persons.searchRecent: ', req.session.passport.user.id);
-  if (req.session.passport.user){
-    Person.findOne({_id: req.session.passport.user.id}, function(err, data) {
-      if(err) {
-        console.log('persons.searchRecent, err: ', err);
-        return;
-      }
-      console.log('persons.searchRecent, data: ');
-      var history = (data && data.inPerson && data.inPerson.searchHistory )|| [];
-      _helper.resolved(req, res, history);
-    });
-  } else {
-    _helper.sessionNotAvl(req, res);
-  }
+  Person.findOne({_id: req.session.passport.user.id}, function(err, data) {
+    if(err) {
+      _helper.rejected(req, res, err);
+    }else{
+      _helper.resolved(req, res, data.searchHistory);
+    }
+  });
+};
+
+
+persons.getRelated = function(req, res) {
+  var IDs = _.pluck(req.query, 'id');
+  Person.find({
+    '_id': { $in: IDs }
+  }, function(err, data){
+    if(err){
+      _helper.rejected(req, res, err);
+    }else{
+      _helper.resolved(req, res, data);
+    }
+  });
 };
 
 persons.getLinkedin = function(req, res){

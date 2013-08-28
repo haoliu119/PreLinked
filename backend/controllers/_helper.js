@@ -20,8 +20,8 @@ _helper.resolved = function(req, res, json){
 };
 
 _helper.rejected = function(req, res, error){
-  console.log('---'+ req.method + ' ' + req.url + ' - Rejected - error ---', error);
-  res.send(401, error); //401 Unauthorized
+  console.log('- '+ req.method + ' ' + req.url + ' - Rejected - error << ', error);
+  res.send(503, error); //503 Service Unavailable
 };
 
 _helper.getClientIp = function(req) {

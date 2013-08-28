@@ -104,6 +104,7 @@ var _getJobsAndConnections = function(req, res){
     userip      :  _helper.getClientIp(req)
   };
 
+  // Make Query Object for LinkedIn API
   req.query = _(defaultReqQuery).extend(req.query);
   var linkedInKeywords = req.query.jobKeywords;
   linkedInKeywords = linkedInKeywords.concat(req.query.company); // Linkedin API company parameter is inaccurate, passing companies in as keywords
@@ -277,8 +278,7 @@ jobsSorted.searchSorted = function(req, res){
   var isLoggedin = req.session && req.session.passport && req.session.passport.user;
   if(!isLoggedin){
     jobs.search(req, res);
-
-  } else {
+  }else{
     //for weighting the first degree Linkedin connections
     var queryJobTitle = '';
     if(req.query && req.query.jobTitle){
@@ -297,5 +297,4 @@ jobsSorted.searchSorted = function(req, res){
 
       });
   }
-
 };

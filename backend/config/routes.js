@@ -40,15 +40,16 @@ module.exports = function(app) {
   // app.get('/jobs/search', jobsSorted.searchSorted);
   // app.get('/jobs/searchSorted', jobsSorted.searchSorted);
 
-  //PreLinked Persons
+  // Persons
   // Fetch data from our database
-  app.get('/persons/searchRecent', persons.searchRecent);
-  // app.get('/persons', persons.get);
+  app.get('/persons/searchRecent', restrict, persons.searchRecent);
+  app.get('/persons/related', persons.getRelated);
+  app.get('/persons', persons.get);
 
   //LinkedIn Oauth
   app.get('/auth/linkedin',
     passport.authenticate('linkedin',
-      { scope: ['r_fullprofile', 'r_network', 'r_emailaddress', 'r_contactinfo'], state: '12345'  }),
+      { scope: ['r_fullprofile', 'r_network'], state: '12345'  }),
       function(req, res) {});
   app.get('/auth/linkedin/callback',
     passport.authenticate('linkedin', {
