@@ -41,7 +41,7 @@ linkedin.searchConnections = function(req, res){
   /* Dummy Data ------------------------
   */
 
-  var fileName = "_LinkedIn_People_Search_2nd_Degree_P01.json";
+  var fileName = "_LinkedIn_People_Search_3rd_Degree_P01.json";
   var fileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/' + fileName ), 'utf8');
   _helper.resolved(req, res, fileContent);
 
