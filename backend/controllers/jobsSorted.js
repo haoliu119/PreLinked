@@ -116,7 +116,7 @@ var _getJobsAndConnections = function(req, res){
 
   //first, indeed jobs
   var indeed_query_obj = _(defaultReqQuery).extend(req.query);
-  promises.push( jobs.grabPages(indeed_query_obj) );
+  promises.push( jobs.grabPages(indeed_query_obj, 1) );
 
   //second, linkedin first degrees
   //First 500 for now
