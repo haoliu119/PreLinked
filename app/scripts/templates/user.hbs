@@ -1,0 +1,11 @@
+{{#if id}}
+  <li><a href="/logout">Log out</a></li>
+
+  {{#if pictureUrl}}
+    <li><img title="{{firstName}} {{lastName}}" class="topbar-photo" src="{{pictureUrl}}"></li>
+  {{/if}}
+
+  {{!-- <li class=""><img style="width:45px; height:45px;" src="http://m.c.lnkd.licdn.com/mpr/mprx/0_mbFanOo7KkLvRzytm59gnyUCtGA5Jnyt281lngMYSFLv6-w-GTcG4jDKyulsslgY7kLrMVbfk8Rv"></li> --}}
+{{else}}
+  <li class=""><a href="/#login">Log in</a></li>
+{{/if}}

@@ -33,21 +33,19 @@ persons.searchRecent = function(req, res) {
       }
       data = [
         {jobTitle:['title1'], jobKeywords:['kw1'], location:'sf1', company:'company1', distance:25},
-        {jobTitle:['title1'], jobKeywords:['kw1'], location:'sf1', company:'company1', distance:25},
-        {jobTitle:['title1'], jobKeywords:['kw1'], location:'sf1', company:'company1', distance:25},
-        {jobTitle:['title1'], jobKeywords:['kw1'], location:'sf1', company:'company1', distance:25},
-        {jobTitle:['title1'], jobKeywords:['kw1'], location:'sf1', company:'company1', distance:25}
+        {jobTitle:['title2'], jobKeywords:['kw1'], location:'sf1', company:'company1', distance:25},
+        {jobTitle:['title3'], jobKeywords:['kw1'], location:'sf1', company:'company1', distance:25},
+        {jobTitle:['title4'], jobKeywords:['kw1'], location:'sf1', company:'company1', distance:25},
+        {jobTitle:['title5'], jobKeywords:['kw1'], location:'sf1', company:'company1', distance:25},
+        {jobTitle:['title6'], jobKeywords:['kw1'], location:'sf1', company:'company1', distance:25},
+        {jobTitle:['title7'], jobKeywords:['kw1'], location:'sf1', company:'company1', distance:25}
       ];
-
       _helper.resolved(req, res, data);
-
     });
 
   } else {
     _helper.sessionNotAvl(req, res);
   }
-
-
 
 
   // Person.find().sort({_id: -1}).skip(0).limit(5).exec(function(err, data) {
