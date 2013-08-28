@@ -8,12 +8,13 @@ var LinkedInApi = require('../models/linkedin_api.js');
 var persons = module.exports = {};
 
 persons.searchRecent = function(req, res) {
+  console.log('persons.searchRecent: ', req.session);
   if (req.session.passport.user){
     Person.findOne({_id: req.session.passport.user.id}, function(err, data) {
       if(err) {
         console.log('err---->', err);
       }
-      _helper.resolved(req, res, data.searchHistory);
+      _helper.resolved(req, res, data.inPerson.searchHistory);
     });
   } else {
     _helper.sessionNotAvl(req, res);
