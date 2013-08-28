@@ -26,11 +26,11 @@ PreLinked.Models.UserModel = Backbone.Model.extend({
       });
   },
 
-  addSearchHistory: function(){
-    var searchHistory = this.get('searchHistory');
-    searchHistory.unshift(_.clone(this.jobQuery.attributes));
-    if(searchHistory.length > 10){
-      searchHistory.pop();
-    }
-  }
+  // addSearchHistory: function(){
+  //   var searchHistory = this.get('searchHistory');
+  //   searchHistory.unshift(_.clone(this.jobQuery.attributes));
+  //   if(searchHistory.length > 10){
+  //     searchHistory.pop();
+  //   }
+  // }
 });
