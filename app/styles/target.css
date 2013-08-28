@@ -28,9 +28,7 @@ h1,h2,h3,h4{font-family:Play,helvetica,sans-serif}
 .inputFilter{position:relative}
 .addFilterButton{position:absolute;top:2px;right:2px}
 .distanceRange{width:70px;height:40px}
-<<<<<<< HEAD
 img.topbar-photo{width:45px;height:45px}
-=======
 .name{display:inline-block;color:#2ba6cb}
 .industry{display:inline-block;margin-left:70px;position:relative;bottom:5px}
 .modalHeader{text-align:center;border:solid #808080 3px;border-radius:1em}
@@ -45,4 +43,3 @@ img.topbar-photo{width:45px;height:45px}
 .viewProfileContainer{text-align:center}
 .viewProfileButton:hover{color:#fff}
 .viewProfileContainer button{top:45px}
->>>>>>> bd61fb6215075bc20cba2595f44a1ba50277fa6a
