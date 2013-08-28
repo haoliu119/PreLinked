@@ -20,7 +20,8 @@ PreLinked.Views.AppView = Backbone.View.extend({
     _.bindAll(this, "showPosition");
     _.bindAll(this, "showError");
 
-    this.userView = new PreLinked.Views.UserView({model: new PreLinked.Models.UserModel()});
+    this.userModel  = new PreLinked.Models.UserModel({jobQuery: this.jobQuery})
+    this.userView   = new PreLinked.Views.UserView({model: this.userModel});
     this.model.on('googleGeoSuccess',function(){
       this.setIconGeo();
     }, this);
@@ -30,6 +31,9 @@ PreLinked.Views.AppView = Backbone.View.extend({
     }, this);
 
     this.searchView = new PreLinked.Views.SearchView({jobQuery: this.jobQuery});
+    this.searchView.on('addSearchHistory', function(){
+      this.userModel.addSearchHistory();
+    }, this);
     this.homeView = new PreLinked.Views.HomeView({
       model: new PreLinked.Models.HomeModel(),
       jobQuery: this.jobQuery

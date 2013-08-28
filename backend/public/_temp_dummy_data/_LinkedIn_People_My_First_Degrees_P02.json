@@ -1,8 +1,4 @@
-{
-  "_count": 15,
-  "_start": 500,
-  "_total": 515,
-  "values": [
+[
     {
       "distance": 1,
       "firstName": "Hang",
@@ -561,4 +557,3 @@
       "siteStandardProfileRequest": {"url": "http://www.linkedin.com/profile/view?id=144258595&authType=name&authToken=Qm2X&trk=api*a3139351*s3214061*"}
     }
   ]
-}

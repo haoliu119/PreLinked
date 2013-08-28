@@ -7,6 +7,7 @@ PreLinked.Views.ConnectionView = Backbone.View.extend({
   initialize: function(options) {
     this.jobQuery = options.jobQuery;
     this.loginBox = new PreLinked.Views.LoginboxView();
+    this.collection.on('reset', this.render, this);
   },
 
   render: function(){

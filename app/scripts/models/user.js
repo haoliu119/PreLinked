@@ -8,7 +8,8 @@ PreLinked.Models.UserModel = Backbone.Model.extend({
     inPerson: {}
   },
 
-  initialize: function() {
+  initialize: function(options) {
+    this.jobQuery = options.jobQuery;
     this.fetchUser();
   },
 
@@ -21,5 +22,13 @@ PreLinked.Models.UserModel = Backbone.Model.extend({
       .fail(function(error){
         console.log('user session does not exist............');
       });
+  },
+
+  addSearchHistory: function(){
+    var searchHistory = this.get('searchHistory');
+    searchHistory.unshift(this.jobQuery.attributes.slice());
+    if(searchHistory.length > 10){
+      searchHistory.pop();
+    }
   }
 });

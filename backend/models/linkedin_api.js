@@ -2,7 +2,7 @@ var request = require('request');
 
 var LinkedInApi = module.exports = {};
 
-var _BasicProfileFields = "id,first-name,last-name,headline,location:(name),industry,distance,relation-to-viewer:(related-connections),num-connections,num-connections-capped,summary,specialties,positions,picture-url,site-standard-profile-request,public-profile-url";
+var _BasicProfileFields = "id,first-name,last-name,headline,location:(name),industry,distance,relation-to-viewer:(related-connections),num-connections,num-connections-capped,summary,specialties,positions,picture-url,picture-urls::(original),site-standard-profile-request,public-profile-url";
 
 var _FullProfileFields = "last-modified-timestamp,associations,interests,publications:(title,publisher,authors:(name),summary,url),patents:(title,summary,inventors:(name),url),languages:(language:(name),proficiency:(level)),skills:(skill:(name)),certifications:(name),educations:(school-name,field-of-study,degree,activities,notes),courses:(name),volunteer:(volunteerExperiences:(role,organization)),three-current-positions,three-past-positions,num-recommenders,recommendations-received:(recommendation-type,recommendation-text,recommender),mfeed-rss-url,job-bookmarks,date-of-birth,member-url-resources,related-profile-views,connections:(id),group-memberships,network";
 
@@ -17,7 +17,7 @@ var _PeopleSearchReturnFields = "(people:(" + _AllFields + "),facets:(code,name,
 // GET /people/search
 // related connections is not available for any bulk call
 LinkedInApi.searchConnections = function (session, query) {
-  console.log('- GET /people/search - query >> ', query);
+  console.log('- GET /PEOPLE/SEARCH - searchConnections - query >> ', query);
   /*  query: {
         title=            [title]
         keywords=         [space delimited keywords]
@@ -80,6 +80,38 @@ LinkedInApi.searchConnections = function (session, query) {
   return deferred.promise;
 };
 
+// GET 100 connections, 25 per page x 4 pages
+LinkedInApi.getOneHundredConnections = function(session, query){
+
+  var deferred = Q.defer();
+  var promises = [];
+  for(var i = 0; i < 100; i+=25) {
+    _(query).extend({start: i}); //pagination
+    var output = LinkedInApi.searchConnections(session, query);
+    promises.push(output);
+  }
+
+  Q.all(promises)
+    .done(
+      // Resolved
+      function(data){
+        data = _(data).map(function(item){
+          return JSON.parse(item);
+        });
+        data = _(data).flatten(true); //only flatten the first level
+        deferred.resolve(JSON.stringify(data));
+      },
+      // Rejected
+      function(error){
+        deferred.reject(error);
+      }
+    );
+
+  return deferred.promise;
+
+};
+
+
 // GET /people/:id
 LinkedInApi.getProfile = function(session, id){
 
@@ -118,8 +150,7 @@ LinkedInApi.getProfile = function(session, id){
 // GET /people/
 // GET ALL OF USER'S FIRST DEGREE CONNECTIONS
 LinkedInApi.searchFirstDegree = function (session, query) {
-  console.log('- GET /people/ - session >> ', session);
-  console.log('- GET /people/ - query >> ', query);
+  console.log('- GET /people/ - FIRST DEDREE - for >> ', session.passport.user.id);
   var endPoint    = "https://api.linkedin.com/v1/people/",
       id          = session.passport.user.id,
       accessToken = session.passport.user.accessToken,
