@@ -8,23 +8,17 @@ var LinkedInApi = require('../models/linkedin_api.js');
 var persons = module.exports = {};
 
 persons.searchRecent = function(req, res) {
+  console.log('persons.searchRecent: ', req.session);
   if (req.session.passport.user){
     Person.findOne({_id: req.session.passport.user.id}, function(err, data) {
       if(err) {
         console.log('err---->', err);
       }
-      _helper.resolved(req, res, data.searchHistory);
+      _helper.resolved(req, res, data.inPerson.searchHistory);
     });
   } else {
     _helper.sessionNotAvl(req, res);
   }
-};
-
-persons.get = function(req, res){
-  var deferred = Q.defer();
-  deferred.resolve('get');
-  res.json('get');
-  return deferred.promise;
 };
 
 persons.getLinkedin = function(req, res){
@@ -82,12 +76,6 @@ persons._getById = function(targetId){
     deferred.reject('id not available');
   }
 
-  return deferred.promise;
-};
-
-persons.post = function(req, res){
-  var deferred = Q.defer();
-  deferred.resolve('post');
   return deferred.promise;
 };
 

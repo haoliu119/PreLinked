@@ -42,7 +42,7 @@ module.exports = function(app) {
   //PreLinked Persons
   // Fetch data from our database
   app.get('/persons/searchRecent', persons.searchRecent);
-  app.get('/persons', persons.get);
+  // app.get('/persons', persons.get);
 
   //LinkedIn Oauth
   app.get('/auth/linkedin',
