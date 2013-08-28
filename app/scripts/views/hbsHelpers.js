@@ -19,3 +19,8 @@ Handlebars.registerHelper('checkDegree', function(degree, options) {
   }
   return options.inverse(this);
 });
+
+Handlebars.registerHelper('truncateName', function(name, options) {
+  var firstCharOfName = name.substr(0,1) + '.';
+  return firstCharOfName;
+});
