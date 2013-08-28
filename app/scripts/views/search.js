@@ -8,7 +8,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   template: JST['app/scripts/templates/search.hbs'],
 
   events: {
-    'click .searchFilterButton': 'submitSearch',
+    'click .searchFilterButton': 'confirmSubmit'
   },
 
   initialize: function(options){
@@ -34,33 +34,29 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     this.connectionsView.collection.reset(jobAttributes.pConnections.slice(0,jobAttributes.pCount));
   },
 
-  submitSearch: function(e) {
+  confirmSubmit: function(e) {
     e.preventDefault();
-    // if(this.jobQuery.hasChanged()){
-      // alert('CHANGED !!!!!!!!!!!');
-      // console.log('changedAttributes >>>>>>>>',this.jobQuery.changedAttributes());
-      this.searchFilterView.addSearchFilterOnSubmit();
-      this.getJobResults();
-      this.getConnections();
-    // }
+    this.searchFilterView.addSearchFilter(e);
+    if(this.jobQuery.hasChanged()){
+      // TODO: DELETE BEFORE DEPLOYMENT =========================================
+      console.log('jobQuery changed since last time, YOU MAY SUBMIT >>>>>>>>>>');
+      console.log('changedAttributes >>>>>>>>',this.jobQuery.changedAttributes());
+      // ========================================================================
+      this.jobQuery.changed = {};
+      this.submitSearch();
+    }else{
+      var answer = confirm("You haven't changed anything, search anyways?");
+      if(answer){
+        this.submitSearch();
+      }
+    }
   },
 
-  // findConnectionsForJob: function(data) {
-
-  //   console.log('showConnections for data >>>', data);
-
-  //   var keywords = this.jobQuery.get('jobKeywords').join(' ');
-  //   var titles   = this.jobQuery.get('jobTitle').join(' ');
-  //   var that = this;
-  //   this.getConnections(titles, data.company, keywords)
-  //     .done(function(element) {
-  //       that.$el.find('#connections').html(element);
-  //     })
-  //     .fail(function(element){
-  //       that.$el.find('#connections').html(element);
-  //     });
-  //   this.connectionsView.render();
-  // },
+  submitSearch: function(e){
+      this.trigger('addSearchHistory');
+      this.getJobResults();
+      // this.getConnections();
+  },
 
   getSearchFilter: function(){
     return this.searchFilterView.render().el;
@@ -70,9 +66,9 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     var deferred = $.Deferred();
     var that = this;
 
-    // TODO: DELETE BEFORE DEPLOYMENT
+    // TODO: DELETE BEFORE DEPLOYMENT ================
     this.jobQuery.consoleLogJobQuery();
-    // ----------------------------------
+    // ===============================================
 
     this.searchResultsView.collection
       .fetch( {data: that.jobQuery.attributes} )
@@ -102,7 +98,6 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     this.connectionsView.collection
       .fetch( { data: query } )
       .done(function(data){
-        // that.connectionsView.jobQuery.title = title;
         deferred.resolve(that.connectionsView.render().el);
       })
       .fail(function(){

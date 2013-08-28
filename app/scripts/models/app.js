@@ -7,7 +7,7 @@ PreLinked.Models.AppModel = Backbone.Model.extend({
     company:      [],
     jobLocation:  "Mountain View, CA",
     jobKeywords:  [],
-    distance:     25,
+    distance:     "25",
     minSalary:    "None",
     maxSalary:    "None"
   },
@@ -55,8 +55,9 @@ PreLinked.Models.AppModel = Backbone.Model.extend({
     });
   },
 
-  // TODO: DELETE BEFORE DEPLOYMENT
+  // TODO: DELETE BEFORE DEPLOYMENT ==============================
   consoleLogJobQuery: function(){
+    console.log('APP MODEL changed =====================');
     console.log('jobTitle: ',    this.get('jobTitle'));
     console.log('company: ',     this.get('company'));
     console.log('jobLocation: ', this.get('jobLocation'));
@@ -64,6 +65,7 @@ PreLinked.Models.AppModel = Backbone.Model.extend({
     console.log('distance: ',    this.get('distance'));
     console.log('minSalary: ',   this.get('minSalary'));
     console.log('maxSalary: ',   this.get('maxSalary'));
+    console.log('========================================');
   }
-  // ------------------------------
+  // ========================================================================
 });
