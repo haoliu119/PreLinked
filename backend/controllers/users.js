@@ -4,7 +4,7 @@ var personsController = require('../controllers/persons.js');
 
 var users = module.exports = {};
 
-users.read = function(req, res){
+users.get = function(req, res){
   // var personsController = require('../controllers/persons.js');
   if (req.session.passport.user){
     // use persons controller _getById to read form DB
@@ -94,21 +94,6 @@ users.post = function(req, res){
 
   // res.end();
 
-};
-
-users.list = function(req, res){
-  res.json([
-    {
-      name: 'User'
-  }
- ]);
-};
-
-
-users.update = function(req, res){
-  res.json({
-    name: 'User'
-  });
 };
 
 users.delete = function(req, res){

@@ -75,8 +75,8 @@ module.exports = function(app) {
   // app.del('/user/:id', users.delete);
 
   // GET /user
-  app.get('/user', users.read);
-  app.get('/user/:id', users.read);
+  app.get('/user', users.get);
+  app.get('/user/:id', users.get);
   app.put('/user', users.put);
   app.put('/user/:id', users.put);
   // post user search
