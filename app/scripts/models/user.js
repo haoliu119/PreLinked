@@ -16,8 +16,10 @@ PreLinked.Models.UserModel = Backbone.Model.extend({
   fetchUser: function(){
     var that = this;
     this.fetch()
-      .done(function(){
+      .done(function(data){
         console.log('user attributes: ', that.attributes);
+        console.log('user fetch data: ', data);
+        that.trigger('renderUser');
       })
       .fail(function(error){
         console.log('user session does not exist............');
