@@ -59,10 +59,12 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   },
 
   submitSearch: function(e){
-      this.trigger('addSearchHistory');
-      this.getJobResults();
-      this.getConnections();
+    this.trigger('addSearchHistory');
+    // this.getJobResults();
+    // this.getConnections();
   },
+
+
 
   getSearchFilter: function(){
     return this.searchFilterView.render().el;
