@@ -21,13 +21,8 @@ persons.searchRecent = function(req, res) {
   //   console.log('====>>>>', data);
   // });
 
-
-  //var id = req.session.passport.user.id;
-  var id = 'CPZciUt8hq';
   if (req.session.passport.user){
-
-
-    Person.findOne({id: id}, function(err, data) {
+    Person.findOne({id: req.session.passport.user.id}, function(err, data) {
       if(err) {
         console.log('err---->', err);
       }

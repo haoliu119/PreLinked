@@ -5,6 +5,7 @@ var personsController = require('../controllers/persons.js');
 var users = module.exports = {};
 
 users.read = function(req, res){
+  var personsController = require('../controllers/persons.js');
   if (req.session.passport.user){
     // use persons controller _getById to read form DB
     var id = req.params.id ? req.params.id : req.session.passport.user.id;
