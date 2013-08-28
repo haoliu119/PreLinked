@@ -13,6 +13,13 @@ PreLinked.Views.ModalconnectiondetailsView = Backbone.View.extend({
   render: function(){
     this.$el.append( this.template(this.model));
     return this;
+  },
+
+  // only call this funcito when distance > 1
+  getRelatedConnections: function(){
+    // get the related connections array from attributes
+    // ajax that to /persons/related
+    // on success: render every picutre with url
   }
 
 });
