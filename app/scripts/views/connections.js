@@ -21,8 +21,8 @@ PreLinked.Views.ConnectionView = Backbone.View.extend({
   },
 
   render: function(){
-    console.log('ConnectionView.render()');
-    console.log('connections >>> ', this.collection.models);
+    // console.log('ConnectionView.render()');
+    // console.log('connections >>> ', this.collection.models);
 
     this.$el.html(this.template({
       number_of_connections: this.collection.length

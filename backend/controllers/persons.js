@@ -12,7 +12,8 @@ persons.searchRecent = function(req, res) {
     if(err) {
       _helper.rejected(req, res, err);
     }else{
-      _helper.resolved(req, res, data.searchHistory);
+      var output = data.inPerson && data.inPerson.searchHistory || [];
+      _helper.resolved(req, res, output);
     }
   });
 };
@@ -112,7 +113,7 @@ persons._post = function(data, myId){
 
 persons._put = function(data, myId){
   var deferred = Q.defer();
-  console.log('_put data: ', data);
+  // console.log('_put data: ', data);
 
   var query = Person.findOne({_id: data.id});
   // query.exec(function(error, oldPerson){
