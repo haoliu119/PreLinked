@@ -13,14 +13,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
   initialize: function(options){
     this.jobQuery = options.jobQuery;
-    this.searchResultsView  = new PreLinked.Views.SearchResultsView({
-      collection: new PreLinked.Collections.SearchResultsCollection(),
-      jobQuery  : this.jobQuery
-    });
-    this.connectionsView    = new PreLinked.Views.ConnectionView({
-      collection: new PreLinked.Collections.ConnectionsCollection(),
-      jobQuery  : this.jobQuery
-    });
+
     this.searchFilterView   = new PreLinked.Views.SearchfilterView({
       model     : new PreLinked.Models.SearchfilterModel({
                     jobQuery: this.jobQuery
@@ -28,17 +21,27 @@ PreLinked.Views.SearchView = Backbone.View.extend({
       jobQuery: this.jobQuery
     });
 
+    this.searchRecentView   = new PreLinked.Views.SearchrecentView({
+      collection: new PreLinked.Collections.SearchrecentCollection(),
+      jobQuery: this.jobQuery
+    });
+
+    this.searchResultsView  = new PreLinked.Views.SearchResultsView({
+      collection: new PreLinked.Collections.SearchResultsCollection(),
+      jobQuery  : this.jobQuery
+    });
+
+    this.connectionsView    = new PreLinked.Views.ConnectionView({
+      collection: new PreLinked.Collections.ConnectionsCollection(),
+      jobQuery  : this.jobQuery
+    });
+
     this.searchResultsView.collection.on('showConnections', this.showConnections, this);
 
-    this.searchRecentView   = new PreLinked.Views.SearchrecentView({
-      collection: new PreLinked.Collections.SearchrecentCollection()
-    });
-    // this.searchResultsView.collection.on('showConnections', this.findConnectionsForJob, this);
   },
 
   showConnections: function(jobAttributes){
     this.connectionsView.jobConnections.reset(jobAttributes.pConnections.slice(0,jobAttributes.pCount));
-    // this.connectionsView.collection.reset(jobAttributes.pConnections);
   },
 
   confirmSubmit: function(e) {
@@ -46,8 +49,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     this.searchFilterView.addSearchFilter(e);
     if(this.jobQuery.hasChanged()){
       // TODO: DELETE BEFORE DEPLOYMENT =========================================
-      console.log('jobQuery changed since last time, YOU MAY SUBMIT >>>>>>>>>>');
-      console.log('changedAttributes >>>>>>>>',this.jobQuery.changedAttributes());
+      // console.log('jobQuery changed since last time, YOU MAY SUBMIT >>>>>>>>>>');
+      console.log('jobQuery changed :',this.jobQuery.changedAttributes());
       // ========================================================================
       this.jobQuery.changed = {};
       this.submitSearch();
@@ -65,8 +68,6 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     this.getConnections();
   },
 
-
-
   getSearchFilter: function(){
     return this.searchFilterView.render().el;
   },
@@ -75,13 +76,15 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     var deferred = $.Deferred();
     var that = this;
     this.searchRecentView.collection
-      .fetch()
-      .done(function(data) {
-        console.log('getSearchRecent', data);
-        deferred.resolve(that.searchRecentView.render().el);
-      })
-      .fail(function() {
-       deferred.reject(that.searchRecentView.render().el);
+      .fetch({
+        success: function(data){
+          // console.log('getSearchRecent', data);
+          deferred.resolve(that.searchRecentView.render().el);
+
+        },
+        error: function(){
+         deferred.reject(that.searchRecentView.render().el);
+        }
       });
     return deferred.promise();
   },
@@ -91,7 +94,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     var that = this;
 
     // TODO: DELETE BEFORE DEPLOYMENT ================
-    this.jobQuery.consoleLogJobQuery();
+    //this.jobQuery.consoleLogJobQuery();
     // ===============================================
 
     this.searchResultsView.collection
@@ -132,6 +135,10 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     return deferred.promise();
   },
 
+  renderSearchFilter: function(){
+    this.$el.find('#search-filters').html(this.getSearchFilter());
+  },
+
   renderSearchRecent: function(){
     var that = this;
     this.getSearchRecent()
@@ -144,23 +151,19 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   },
 
   renderSearchRecentBasedOnFrontendData: function(frontendData){
-    console.log('Fake frontendData: ', frontendData);
+    // console.log('Fake frontendData: ', frontendData);
     var localData = JSON.parse( JSON.stringify(frontendData) );
     _(localData).each(function(item){
       item.jobTitle = item.jobTitle.join(' ');
     });
     var searchRecentViewLocal   = new PreLinked.Views.SearchrecentView({
-      collection: localData
+      collection: localData,
+      jobQuery: this.jobQuery
     });
     this.$el.find('#search-recent').html(searchRecentViewLocal.render().el);
   },
 
-  render: function() {
-    this.$el
-      .attr('data-page','search')
-      .html( this.template() );
-    this.$el.find('#search-filters').html(this.getSearchFilter())
-
+  renderJobResults: function(){
     var that = this;
     this.getJobResults()
       .done(function(element) {
@@ -169,7 +172,10 @@ PreLinked.Views.SearchView = Backbone.View.extend({
       .fail(function(element) {
         that.$el.find('#job-results').html(element);
       });
+  },
 
+  renderConnections: function(){
+    var that = this;
     this.getConnections()
       .done(function(element) {
         that.$el.find('#connections').html(element);
@@ -177,8 +183,17 @@ PreLinked.Views.SearchView = Backbone.View.extend({
       .fail(function(element){
         that.$el.find('#connections').html(element);
       });
+  },
 
+  render: function() {
+    this.$el
+      .attr('data-page','search')
+      .html( this.template() );
+
+    this.renderSearchFilter();
     this.renderSearchRecent();
+    this.renderJobResults();
+    this.renderConnections();
 
     return this;
   }

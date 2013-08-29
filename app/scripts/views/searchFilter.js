@@ -41,7 +41,7 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
   },
 
   render: function () {
-    console.log('searchFilter View .render() >>>>>>>');
+    console.log('searchFilter View .render()');
     var obj = _.clone(this.jobQuery.attributes);
     _(obj).extend({
       salaryList: ["None", "40", "60", "80", "100", "120"]
