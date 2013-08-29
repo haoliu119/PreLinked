@@ -111,7 +111,7 @@ persons._post = function(data, myId){
 
 persons._put = function(data, myId){
   var deferred = Q.defer();
-  console.log('_put data: ', data);
+  // console.log('_put data: ', data);
 
   var query = Person.findOne({_id: data.id});
   // query.exec(function(error, oldPerson){
