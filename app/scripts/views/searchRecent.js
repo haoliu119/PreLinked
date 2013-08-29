@@ -13,9 +13,10 @@ PreLinked.Views.SearchrecentView = Backbone.View.extend({
       this.$el
         .find('#search-recent-details')
         .html(
-          this.collection.map(function(item) {
+          this.collection.map(function(item, historyIndex) {
             return new PreLinked.Views.SearchrecentitemView({
-              model: item
+              model: item,
+              historyIndex: historyIndex
             }).render().el;
           })
         );
