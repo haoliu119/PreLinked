@@ -3,7 +3,6 @@ require('../controllers/passport.js');  //necessary to init passport?
 var site      = require('../controllers/site.js');
 var jobsCRUD      = require('../controllers/jobsCRUD.js');
 var jobsSorted= require('../controllers/jobsSorted.js');
-var jobsController = require('../controllers/jobs_controller.js');
 var linkedin  = require('../controllers/linkedin.js');
 var persons   = require('../controllers/persons.js');
 var getdb     = require('../controllers/getDb.js');
@@ -19,7 +18,6 @@ module.exports = function(app) {
 
 
   //Jobs
-  app.get('/jobs', jobsController.get);
   app.get('/jobs/search', jobsCRUD.search);
   // app.get('/jobs/search', jobsSorted.searchSorted);
 

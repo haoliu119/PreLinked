@@ -1,15 +1,7 @@
-var mongoose = require('mongoose');
 var Job = require('../models/jobs.js');
+var Person = require('../models/persons.js');
 
 var jobs_controller = module.exports = {};
-
-jobs_controller.get = function(req, res){
-  var query = Job.find({});
-  query.exec(function(error, jobs){
-    console.log('Getting jobs from db\n', jobs);
-    res.json('jobs: ', jobs);
-  });
-};
 
 jobs_controller._post = function(input_job){
   var deferred = Q.defer();
