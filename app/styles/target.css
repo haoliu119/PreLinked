@@ -1,4 +1,4 @@
-body,html{background-color:#f2f2f2}
+html,body{background-color:#f2f2f2}
 h1,h2,h3,h4{font-family:Play,helvetica,sans-serif}
 #app .logo{width:220px}
 #app ul li{list-style-type:none}
@@ -49,3 +49,8 @@ div.degree{display:inline-block;margin-left:3px;background:#e1e9ec;text-align:ce
 .numberOfConnections{display:inline-block;margin-left:3px}
 .exitModal{position:absolute;top:8px;right:20px}
 .exitModal:hover{color:#f00}
+.page{background-color:#fff}
+.header{border-bottom:2px solid #1b75ba;padding-top:50px}
+.footer{border-top:10px solid #1b75ba}
+.header #user-view ul{margin-bottom:0}
+.header .logo{position:relative;top:8px}
