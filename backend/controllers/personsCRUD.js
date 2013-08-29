@@ -2,9 +2,9 @@ var _helper  = require('./_helper.js');
 var Person = require('../models/persons.js');
 var personsController = require('../controllers/persons.js');
 
-var users = module.exports = {};
+var personsCRUD = module.exports = {};
 
-users.get = function(req, res){
+personsCRUD.get = function(req, res){
   if (req.session.passport.user){
     // use persons controller _getById to read form DB
     var id = req.params.id ? req.params.id : req.session.passport.user.id;
@@ -23,7 +23,7 @@ users.get = function(req, res){
   }
 };
 
-users.put = function(req, res){
+personsCRUD.put = function(req, res){
   console.log('controller, users.put, req.body, \n', req.body);
   var req_body = req.body;
   delete req_body.jobQuery;
@@ -40,7 +40,7 @@ users.put = function(req, res){
 
 };
 
-users.post = function(req, res){
+personsCRUD.post = function(req, res){
   console.log('users.post: ', req.body);
 
   personsController
@@ -92,8 +92,6 @@ users.post = function(req, res){
 
 };
 
-users.delete = function(req, res){
-  res.json({
-    name: 'User'
-  });
+personsCRUD.delete = function(req, res){
+  res.json('personsCRUD - delete');
 };
