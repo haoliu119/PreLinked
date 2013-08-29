@@ -9,21 +9,18 @@ PreLinked.Views.SearchrecentitemView = Backbone.View.extend({
   },
 
   initialize: function(options){
-    this.historyIndex = options.historyIndex;
+    this.jobQuery = options.jobQuery;
   },
 
   useSeachHistoryToSearch: function(events){
     events.preventDefault();
     var $target = $(events.target);
     var historyIndex = $target.closest('.useThisToSearch').data('historyindex');
-    console.log('useSeachHistoryToSearch', historyIndex);
+    this.jobQuery.set( _.clone(this.model.attributes) );
   },
 
   render: function() {
     var data = this.model.attributes || this.model;
-    _(data).extend({
-      historyIndex: this.historyIndex
-    });
     this.$el.append( this.template(data) );
     return this;
   }
