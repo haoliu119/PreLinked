@@ -8,7 +8,7 @@ PreLinked.Views.SearchrecentView = Backbone.View.extend({
       this.$el.html(this.template());
       //render a placeholder first
 
-      console.log('searchRecent collection length: ', this.collection.length);
+      // console.log('searchRecent collection length: ', this.collection.length);
 
       this.$el
         .find('#search-recent-details')

@@ -23,6 +23,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
 
     this.userModel  = new PreLinked.Models.UserModel({jobQuery: this.jobQuery})
     this.userView   = new PreLinked.Views.UserView({model: this.userModel});
+
     this.model.on('googleGeoSuccess',function(){
       this.setIconGeo();
     }, this);
@@ -33,12 +34,15 @@ PreLinked.Views.AppView = Backbone.View.extend({
 
     this.searchView = new PreLinked.Views.SearchView({jobQuery: this.jobQuery});
     this.searchView.on('addSearchHistory', function(){
-      that.userModel.addSearchHistory();
-      //
+      that.userView.addSearchHistory();
+      //immediate local rendering with local data which is not completely in sync with the server
       that.searchView.renderSearchRecentBasedOnFrontendData(that.userModel.get('searchHistory'));
-      // that.searchView.renderSearchRecent();
-
+      //rendering the real data after the userModel has been updated
+      that.searchView.listenTo( that.userModel, 'sync',  that.searchView.renderSearchRecent);
+      //rendering the real data even if the sync with userModel failed
+      that.searchView.listenTo( that.userModel, 'error',  that.searchView.renderSearchRecent);
     }, this);
+
     this.homeView = new PreLinked.Views.HomeView({
       model: new PreLinked.Models.HomeModel(),
       jobQuery: this.jobQuery
@@ -70,7 +74,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
   },
 
   searchPage: function(){
-    this.userView.model.fetchUser();
+    //this.userView.model.fetchUser();
     this.$el.find('#main').html(this.searchView.render().el);
   },
 

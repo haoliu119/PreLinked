@@ -49,8 +49,13 @@ div.degree{display:inline-block;margin-left:3px;background:#e1e9ec;text-align:ce
 .numberOfConnections{display:inline-block;margin-left:3px}
 .exitModal{position:absolute;top:8px;right:20px}
 .exitModal:hover{color:#f00}
+<<<<<<< HEAD
 .page{background-color:#fff}
 .header{border-bottom:2px solid #1b75ba;padding-top:50px}
 .footer{border-top:10px solid #1b75ba}
 .header #user-view ul{margin-bottom:0}
 .header .logo{position:relative;top:8px}
+=======
+.showRelations{margin-top:25px}
+.interConnectionInfoLI{width:80px;display:inline-block}
+>>>>>>> 8ddd7494daca12e19e440f4e587a640e02750563
