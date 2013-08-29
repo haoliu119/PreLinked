@@ -33,7 +33,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
 
     this.searchView = new PreLinked.Views.SearchView({jobQuery: this.jobQuery});
     this.searchView.on('addSearchHistory', function(){
-      that.userModel.addSearchHistory();
+      that.userView.addSearchHistory();
       //
       that.searchView.renderSearchRecentBasedOnFrontendData(that.userModel.get('searchHistory'));
       that.searchView.renderSearchRecent();

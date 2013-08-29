@@ -23,6 +23,23 @@ PreLinked.Views.UserView = Backbone.View.extend({
       });
   },
 
+  addSearchHistory: function(){
+    var searchHistory = this.model.get('searchHistory');
+    console.log('adding SearchHistory, current history obj: ', searchHistory);
+    searchHistory.unshift(_.clone(this.model.jobQuery.attributes));
+    // if(searchHistory.length > 10){
+    //   searchHistory.pop();
+    // }
+    this.model.save(null, {
+        success: function(model, response, options){
+          console.log('success');
+        },
+        error: function(model, xhr, options){
+          console.log('error');
+        }
+      });
+  },
+
   render: function() {
     this.$el.html(this.template(this.model.attributes));
     return this;
