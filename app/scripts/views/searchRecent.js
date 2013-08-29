@@ -2,25 +2,30 @@
 
 PreLinked.Views.SearchrecentView = Backbone.View.extend({
 
-    template: JST['app/scripts/templates/searchRecent.hbs'],
+  template: JST['app/scripts/templates/searchRecent.hbs'],
 
-    render: function() {
-      this.$el.html(this.template());
-      //render a placeholder first
+  initialize: function(options){
+    this.jobQuery = options.jobQuery;
+  },
 
-      // console.log('searchRecent collection length: ', this.collection.length);
+  render: function() {
+    this.$el.html(this.template());
+    //render a placeholder first
 
-      this.$el
-        .find('#search-recent-details')
-        .html(
-          this.collection.map(function(item) {
-            return new PreLinked.Views.SearchrecentitemView({
-              model: item
-            }).render().el;
-          })
-        );
+    // console.log('searchRecent collection length: ', this.collection.length);
+    var that = this;
+    this.$el
+      .find('#search-recent-details')
+      .html(
+        this.collection.map(function(item, historyIndex) {
+          return new PreLinked.Views.SearchrecentitemView({
+            model: item,
+            jobQuery: that.jobQuery
+          }).render().el;
+        })
+      );
 
-      return this;
-    }
+    return this;
+  }
 
 });

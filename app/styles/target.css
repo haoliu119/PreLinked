@@ -1,4 +1,4 @@
-body,html{background-color:#f2f2f2}
+html,body{background-color:#f2f2f2}
 h1,h2,h3,h4{font-family:Play,helvetica,sans-serif}
 #app .logo{width:220px}
 #app ul li{list-style-type:none}
@@ -48,6 +48,18 @@ div.degree{display:inline-block;margin-left:3px;background:#e1e9ec;text-align:ce
 #indeedLogo{position:absolute;top:10px;right:20px}
 .numberOfConnections{display:inline-block;margin-left:3px}
 .exitModal{position:absolute;top:8px;right:20px}
-.exitModal:hover{color:#f00}
-.showRelations{margin-top:25px}
-.interConnectionInfoLI{width:80px;display:inline-block}
+.exitModal:hover,.showRelations{margin-top:25px}
+.interConnectionInfoLI{width:80px;display:inline-block;color:#f00}
+.page{background-color:#fff}
+.header{border-bottom:2px solid #1b75ba;padding-top:20px}
+.footer{border-top:10px solid #1b75ba;font-size:14px;padding:50px 0}
+.header #user-view ul{margin-bottom:0}
+.header .logo{position:relative;top:8px}
+.icon-connection{background:url("https://webfiles.uci.edu/shaohuaz/share/prelinked/connections.png") no-repeat 50% 50%;padding:20px}
+.icon-indeed,.icon-linkedin,.icon-hackreactor,.icon-github{background-image:url("https://webfiles.uci.edu/shaohuaz/share/prelinked/sprite-footer.png");height:38px;display:inline-block;vertical-align:middle;opacity:.6}
+.icon-indeed{background-position:-106px 0;width:92px}
+.icon-linkedin{background-position:276px 0;width:40px}
+.icon-hackreactor{background-position:121px 3px;width:121px}
+.icon-github{background-position:0 0;width:45px}
+.footer .col{margin:10px 5% 10px 0}
+.footer .col strong{margin-bottom:5px;display:block;color:#666}
