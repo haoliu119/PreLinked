@@ -9,13 +9,17 @@
 
     <script src="../../../node_modules/chai/chai.js"></script>
     <script src="../../../node_modules/mocha/mocha.js"></script>
-
+    
     <script src="../../../dist/scripts/vendor.js"></script>
-    <script src="../../../dist/scripts/main.js"></script>
+    <!-- // <script src="../../../dist/scripts/main.js"></script> -->
+    
+    <script src="../../../app/scripts/main.js"></script>
+    <script src="../../../app/scripts/models/app.js"></script>
+    <script src="../../../app/scripts/views/app.js"></script>
+
     <script>
       expect = chai.expect;
       mocha.setup('bdd');
-      // mocha.setup({ignoreLeaks: true});
       mocha.setup({globals: ['hasCert']});
     </script>
 
