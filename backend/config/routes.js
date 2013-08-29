@@ -16,7 +16,6 @@ var testController = require('../controllers/testController.js');
 module.exports = function(app) {
   app.get('/serverindex', site.index);
 
-
   //Jobs
   app.get('/jobs/search', jobsCRUD.search);
   // app.get('/jobs/search', jobsSorted.searchSorted);
