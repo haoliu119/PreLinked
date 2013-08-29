@@ -1,4 +1,5 @@
 var IndeedApi = require('../models/indeed_api.js');
+var Job = require('../models/jobs.js');
 
 var jobs = module.exports = {};
 
@@ -15,7 +16,6 @@ jobs._grabOnePage = function(req_query){
   return deferred.promise;
 };
 
-//temp solution for now
 //todo
 jobs._grabMultiplePages = function(req_query, pageCount) {
   var deferred = Q.defer();
@@ -41,6 +41,23 @@ jobs._grabMultiplePages = function(req_query, pageCount) {
         deferred.reject(error);
       }
     );
+
+  return deferred.promise;
+};
+
+jobs._post = function(input_job){
+  var deferred = Q.defer();
+
+  var job = new Job({
+    indeedJob: input_job
+  });
+  job.save(function(error, data){
+    if(error){
+      console.log('Unable to save to database: ', error);
+    } else {
+      deferred.resolve(data);
+    }
+  });
 
   return deferred.promise;
 };
