@@ -75,13 +75,15 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     var deferred = $.Deferred();
     var that = this;
     this.searchRecentView.collection
-      .fetch()
-      .done(function(data) {
-        console.log('getSearchRecent', data);
-        deferred.resolve(that.searchRecentView.render().el);
-      })
-      .fail(function() {
-       deferred.reject(that.searchRecentView.render().el);
+      .fetch({
+        success: function(data){
+          console.log('getSearchRecent', data);
+          deferred.resolve(that.searchRecentView.render().el);
+
+        },
+        error: function(){
+         deferred.reject(that.searchRecentView.render().el);
+        }
       });
     return deferred.promise();
   },
