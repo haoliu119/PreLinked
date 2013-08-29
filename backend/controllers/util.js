@@ -12,6 +12,10 @@ util.restrict = function(req, res, next) {
   }
 };
 
+util.badIdea = function(req, res){
+  res.json('This is not a good idea.');
+};
+
 util.getSession = function(req, res) {
   if(req.session && req.session.passport && req.session.passport.user){
     console.log('- GET /session >> ture, accessToken >> ', req.session.passport.user.accessToken);

@@ -44,11 +44,12 @@ module.exports = function(app) {
   // /user
   app.get('/user', personsCRUD.get);
   app.get('/user/:id', personsCRUD.get);
-  app.put('/user', personsCRUD.put);
+  app.put('/user', personsCRUD.put);  //this should NOT be allowed too
   app.put('/user/:id', personsCRUD.put);
-  // post user search
   app.post('/user', personsCRUD.post);
   app.post('/user/:id', personsCRUD.post);
+  app.del('/user', util.badIdea);
+  app.del('/user/:id', personsCRUD.delete);
 
   //getDb
   // app.get('/getdb', restrict, getdb.testKeyword);
