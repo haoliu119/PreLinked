@@ -11,12 +11,6 @@ jobs_controller.get = function(req, res){
   });
 };
 
-jobs_controller.post = function(req, res){
-  var deferred = Q.defer();
-  deferred.resolve('post');
-  return deferred.promise;
-};
-
 jobs_controller._post = function(input_job){
   var deferred = Q.defer();
 
@@ -31,12 +25,6 @@ jobs_controller._post = function(input_job){
     }
   });
 
-  return deferred.promise;
-};
-
-jobs_controller.put = function(req, res){
-  var deferred = Q.defer();
-  deferred.resolve('put');
   return deferred.promise;
 };
 
@@ -74,10 +62,4 @@ jobs_controller._put = function(){
         });
     }
   });
-};
-
-jobs_controller.delete = function(req, res){
-  var deferred = Q.defer();
-  deferred.resolve('delete');
-  return deferred.promise;
 };
