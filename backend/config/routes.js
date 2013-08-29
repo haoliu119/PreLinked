@@ -14,7 +14,6 @@ var restrict  = util.restrict;
 var testController = require('../controllers/testController.js');
 
 module.exports = function(app) {
-  app.get('/serverindex', site.index);
 
   //Jobs
   app.get('/jobs/search', jobsCRUD.search);
@@ -46,6 +45,10 @@ module.exports = function(app) {
   app.post('/user/:id', personsCRUD.post);
   app.del('/user', util.badIdea);
   app.del('/user/:id', personsCRUD.delete);
+
+  //server side rendering
+  //used for /aboutus etc.
+  app.get('/serverindex', site.index);
 
   //getDb
   // app.get('/getdb', restrict, getdb.testKeyword);
