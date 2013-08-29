@@ -8,7 +8,7 @@ var jobsController = require('../controllers/jobs_controller.js');
 var linkedin  = require('../controllers/linkedin.js');
 var persons   = require('../controllers/persons.js');
 var getdb     = require('../controllers/getDb.js');
-var users     = require('../controllers/users.js');
+var personsCRUD = require('../controllers/personsCRUD.js');
 
 var util      = require('../controllers/util.js');
 var restrict  = util.restrict;
@@ -42,13 +42,13 @@ module.exports = function(app) {
   app.get('/people/', restrict, linkedin.searchFirstDegree);
 
   // /user
-  app.get('/user', users.get);
-  app.get('/user/:id', users.get);
-  app.put('/user', users.put);
-  app.put('/user/:id', users.put);
+  app.get('/user', personsCRUD.get);
+  app.get('/user/:id', personsCRUD.get);
+  app.put('/user', personsCRUD.put);
+  app.put('/user/:id', personsCRUD.put);
   // post user search
-  app.post('/user', users.post);
-  app.post('/user/:id', users.post);
+  app.post('/user', personsCRUD.post);
+  app.post('/user/:id', personsCRUD.post);
 
   //getDb
   // app.get('/getdb', restrict, getdb.testKeyword);
