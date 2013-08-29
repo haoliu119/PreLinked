@@ -77,7 +77,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     this.searchRecentView.collection
       .fetch({
         success: function(data){
-          console.log('getSearchRecent', data);
+          // console.log('getSearchRecent', data);
           deferred.resolve(that.searchRecentView.render().el);
 
         },
