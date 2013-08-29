@@ -70,7 +70,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
   },
 
   searchPage: function(){
-    this.userView.model.fetchUser();
+    //this.userView.model.fetchUser();
     this.$el.find('#main').html(this.searchView.render().el);
   },
 

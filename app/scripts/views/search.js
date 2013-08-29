@@ -61,8 +61,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
   submitSearch: function(e){
     this.trigger('addSearchHistory');
-    this.getJobResults();
-    this.getConnections();
+    // this.getJobResults();
+    // this.getConnections();
   },
 
 
@@ -91,7 +91,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     var that = this;
 
     // TODO: DELETE BEFORE DEPLOYMENT ================
-    this.jobQuery.consoleLogJobQuery();
+    //this.jobQuery.consoleLogJobQuery();
     // ===============================================
 
     this.searchResultsView.collection
