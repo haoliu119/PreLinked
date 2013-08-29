@@ -5,7 +5,6 @@ var personsController = require('../controllers/persons.js');
 var users = module.exports = {};
 
 users.get = function(req, res){
-  // var personsController = require('../controllers/persons.js');
   if (req.session.passport.user){
     // use persons controller _getById to read form DB
     var id = req.params.id ? req.params.id : req.session.passport.user.id;
@@ -25,7 +24,6 @@ users.get = function(req, res){
 };
 
 users.put = function(req, res){
-  // var personsController = require('../controllers/persons.js');
   console.log('controller, users.put, req.body, \n', req.body);
   var req_body = req.body;
   delete req_body.jobQuery;
