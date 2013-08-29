@@ -104,6 +104,7 @@ var _getJobsAndConnections = function(req, res){
     userip      :  _helper.getClientIp(req)
   };
 
+  // Make Query Object for LinkedIn API
   req.query = _(defaultReqQuery).extend(req.query);
   var linkedInKeywords = req.query.jobKeywords;
   linkedInKeywords = linkedInKeywords.concat(req.query.company); // Linkedin API company parameter is inaccurate, passing companies in as keywords

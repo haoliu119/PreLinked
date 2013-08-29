@@ -154,7 +154,7 @@ LinkedInApi.searchFirstDegree = function (session, query) {
   var endPoint    = "https://api.linkedin.com/v1/people/",
       id          = session.passport.user.id,
       accessToken = session.passport.user.accessToken,
-      url         = endPoint + "id=" + id + "/connections:(" + _AllFields + ")",
+      url         = endPoint + "id=" + id + "/connections:(" + _BasicProfileFields + ")",
       defaults    = {
         // modified:         '', // 'updated' | 'new'
         // 'modified-since': '', // Unix time stamp of milliseconds since epoch
