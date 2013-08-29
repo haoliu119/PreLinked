@@ -41,7 +41,8 @@
     "q": "~0.9.6",
     "passport-linkedin-oauth2": "~1.0.1",
     "natural": "~0.1.21",
-    "chai": "~1.7.2"
+    "chai": "~1.7.2",
+    "grunt-cli": "~0.1.9"
   },
   "engines": {
     "node": ">=0.8.0"
