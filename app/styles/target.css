@@ -1,4 +1,4 @@
-body{background-color:#f2f2f2}
+body,html{background-color:#f2f2f2}
 h1,h2,h3,h4{font-family:Play,helvetica,sans-serif}
 #app .logo{width:220px}
 #app ul li{list-style-type:none}
