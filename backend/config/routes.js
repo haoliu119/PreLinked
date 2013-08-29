@@ -62,7 +62,7 @@ module.exports = function(app) {
   // LinkedIn API
   app.get('/people/search', restrict, linkedin.searchConnections);
   app.get('/people/:id', restrict, linkedin.getProfile);
-  app.get('/people/', restrict, linkedin.searchFirstDegree);
+  app.get('/people', restrict, linkedin.searchFirstDegree);
 
   // Users
   // app.post('/user', users.create);
