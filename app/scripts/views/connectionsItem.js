@@ -34,6 +34,14 @@ PreLinked.Views.ConnectionsitemView = Backbone.View.extend({
           model: data
         });
 
+        // detailsView.model.something = 'her';
+        // console.log('details view', detailsView.model);
+
+        // detailsView.getRelatedConnections(data).done(function(data) {
+        //   console.log(data);
+        // });
+        // detailsView.model.connectionPicURLs = [{}];
+
         var modal = new that.Modal({
           content: detailsView,
           allowCancel: false

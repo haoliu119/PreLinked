@@ -277,8 +277,7 @@ jobsSorted.searchSorted = function(req, res){
   var isLoggedin = req.session && req.session.passport && req.session.passport.user;
   if(!isLoggedin){
     jobs.search(req, res);
-
-  } else {
+  }else{
     //for weighting the first degree Linkedin connections
     var queryJobTitle = '';
     if(req.query && req.query.jobTitle){
@@ -297,5 +296,4 @@ jobsSorted.searchSorted = function(req, res){
 
       });
   }
-
 };
