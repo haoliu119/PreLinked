@@ -36,7 +36,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
       that.userModel.addSearchHistory();
       //
       that.searchView.renderSearchRecentBasedOnFrontendData(that.userModel.get('searchHistory'));
-      // that.searchView.renderSearchRecent();
+      that.searchView.renderSearchRecent();
 
     }, this);
     this.homeView = new PreLinked.Views.HomeView({
