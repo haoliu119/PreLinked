@@ -110,16 +110,3 @@ persons._post = function(data, myId){
 
   return deferred.promise;
 };
-
-
-persons.put = function(req, res){
-  var deferred = Q.defer();
-  deferred.resolve('put');
-  return deferred.promise;
-};
-
-persons.delete = function(req, res){
-  var deferred = Q.defer();
-  deferred.resolve('delete');
-  return deferred.promise;
-};
