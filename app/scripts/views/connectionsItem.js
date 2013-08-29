@@ -37,18 +37,19 @@ PreLinked.Views.ConnectionsitemView = Backbone.View.extend({
         // detailsView.model.something = 'her';
         // console.log('details view', detailsView.model);
 
-        // detailsView.getRelatedConnections(data).done(function(data) {
-        //   console.log(data);
-        // });
-        // detailsView.model.connectionPicURLs = [{}];
+        detailsView.getRelatedConnections(data).done(function(result) {
+          console.log('promise working?', result);
+          detailsView.model.interConnections = result;
+          console.log('interrelated connections', detailsView.model.interConnections);
 
-        var modal = new that.Modal({
-          content: detailsView,
-          allowCancel: false
+          var modal = new that.Modal({
+            content: detailsView,
+            allowCancel: false
+          });
+          modal.open();
+          //open modal
+          console.log(data);
         });
-        modal.open();
-        //open modal
-        console.log(data);
       });
   }
 

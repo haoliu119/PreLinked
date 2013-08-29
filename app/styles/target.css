@@ -50,3 +50,4 @@ div.degree{display:inline-block;margin-left:3px;background:#e1e9ec;text-align:ce
 .exitModal{position:absolute;top:8px;right:20px}
 .exitModal:hover{color:#f00}
 .showRelations{margin-top:25px}
+.interConnectionInfoLI{width:80px;display:inline-block}
