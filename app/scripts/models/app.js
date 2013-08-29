@@ -42,7 +42,7 @@ PreLinked.Models.AppModel = Backbone.Model.extend({
             }
           });
           location = location.join(', ');
-          console.log(location);
+          // console.log(location);
           that.set('jobLocation', location);
           that.trigger('googleGeoSuccess');
         }else{
