@@ -12,7 +12,8 @@ persons.searchRecent = function(req, res) {
     if(err) {
       _helper.rejected(req, res, err);
     }else{
-      _helper.resolved(req, res, data.searchHistory);
+      var output = data.inPerson && data.inPerson.searchHistory || [];
+      _helper.resolved(req, res, output);
     }
   });
 };

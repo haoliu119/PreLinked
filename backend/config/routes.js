@@ -28,8 +28,8 @@ module.exports = function(app) {
   app.get('/serverindex', site.index);
 
   //getDb
-  app.get('/getdb', restrict, getdb.testKeyword);
-  app.get('/savetodb', restrict, persons.getLinkedin);
+  // app.get('/getdb', restrict, getdb.testKeyword);
+  // app.get('/savetodb', restrict, persons.getLinkedin);
 
   //test score
   app.get('/testScore', jobsSorted.testScore);
