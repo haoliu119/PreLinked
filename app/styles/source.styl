@@ -1,7 +1,7 @@
 //this file is compiled to target.css
 //then copied to dist/styles/main.css
 html, body
-  background-color #f2f2f2
+  background url(https://webfiles.uci.edu/shaohuaz/share/prelinked/bg-striped.gif) #fff repeat
 h1, h2, h3, h4
   font-family Play, helvetica, sans-serif
 #app .logo
@@ -54,21 +54,21 @@ h1, h2, h3, h4
   line-height 0
   font-size 15px
 .column-left
-  background-color #d1f2ff
-  margin-top 20px
+  background-color #d1edf6
+  padding-top 10px
+.column-mid
+  background-color #fff
+  min-height 300px
+  padding-top 10px
+.column-right
+  background #ddd
+  padding-top 10px
 #search-filters .filter-item:hover .rm
   color #000
 #search-filters .filter-item .rm:hover
   color red
-#job-results
-  border-radius 5px
-  background-color #fff
-  min-height 300px
 #job-results .loader, #connections .loader
   min-height 300px
-#connections
-  margin-top 20px
-  background-color #ddd
 #connections.scroll
   max-height 600px
   overflow-y auto
@@ -156,12 +156,13 @@ div.degree
   display: inline-block
   color red
 .page
-  background-color #ffffff
+  background #f2f2f2
 .header
-  border-bottom 2px solid #1b75ba
+  background-color #ffffff
+  border-bottom 2px solid #03487d
   padding-top 20px
 .footer
-  border-top 10px solid #1b75ba
+  border-top 10px solid #03487d
   font-size 14px
   padding 50px 0
 .header #user-view ul
@@ -196,4 +197,39 @@ div.degree
   margin-bottom 5px
   display block
   color #666
+
+#page-search h2.title-search
+  background-color #03497e
+#page-search h2.title-header
+  margin 10px 0 0 0
+  line-height 28px
+  font-size 24px
+  padding 10px 15px
+  color #fff
+  text-shadow 2px 2px 2px #000
+.title-network.arrow_box
+  z-index 1
+.title-network.arrow_box
+  background-color #666
+  color #fff
+.title-network.arrow_box:after
+  border-right-color #666
+.arrow_box
+  position relative
+  background #0596d5
+.arrow_box:after
+  right 100%
+  border solid transparent
+  content " "
+  height 0
+  width 0
+  position absolute
+  pointer-events none
+.arrow_box:after
+  border-color rgba(136, 183, 213, 0)
+  border-right-color #0596d5
+  border-width 15px
+  top 50%
+  margin-top -15px
+
 
