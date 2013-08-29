@@ -149,8 +149,8 @@ var _getJobsAndConnections = function(req, res){
         //first element is indeed jobs
         //the last three elements are linkedin connections
         var jobs = data[0];
-        if(data[1].values && data[1].values.length){
-          var connections = data[1].values.concat( data[2], data[3] );
+        if(data[1] && data[1].length){
+          var connections = data[1].concat( data[2], data[3] );
         }
         console.log('jobs: \n', jobs.length);
         console.log('connections: \n', connections.length);

@@ -21,8 +21,8 @@ module.exports = function(app) {
 
   //Jobs
   app.get('/jobs', jobsController.get);
-  app.get('/jobs/search', jobs.search);
-  // app.get('/jobs/search', jobsSorted.searchSorted);
+  // app.get('/jobs/search', jobs.search);
+  app.get('/jobs/search', jobsSorted.searchSorted);
 
   // Persons: data from our database
   app.get('/persons/searchRecent', restrict, persons.searchRecent);
@@ -39,7 +39,7 @@ module.exports = function(app) {
   // LinkedIn API
   app.get('/people/search', restrict, linkedin.searchConnections);
   app.get('/people/:id', restrict, linkedin.getProfile);
-  app.get('/people/', restrict, linkedin.searchFirstDegree);
+  app.get('/people', restrict, linkedin.searchFirstDegree);
 
   // /user
   app.get('/user', personsCRUD.get);

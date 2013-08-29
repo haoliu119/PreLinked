@@ -44,13 +44,13 @@ LinkedInApi.searchConnections = function (session, query) {
       accessToken = session.passport.user.accessToken,
       url = endPoint + "/people-search:" + _PeopleSearchReturnFields,
       defaults = {
-        'first-name': '',
-        'last-name' : '',
+        'first-name': '',         // in order to make facet connections return results, empty name fields will return all results
+        'last-name' : '',         // in order to make facet connections return results, empty name fields will return all results
         format: 'json',
-        count:  '25',         // default page max
-        start:  '0',          // specify in query for pagination
-        sort:   'relevance',  // we already have your 1st degree
-        facets: 'network',    // location,industry,school,current-company,past-company
+        count:   25,              // default page max
+        start:   0,               // specify in query for pagination
+        sort:   'relevance',      // we already have your 1st degree
+        facets: 'network',        // location,industry,school,current-company,past-company
         facet:  'network,F,S,A,O' // F first, S second, A groups, O out-of-network(third)
       };
 
@@ -147,10 +147,46 @@ LinkedInApi.getProfile = function(session, id){
   return deferred.promise;
 };
 
-// GET /people/
-// GET ALL OF USER'S FIRST DEGREE CONNECTIONS
-LinkedInApi.searchFirstDegree = function (session, query) {
-  console.log('- GET /people/ - FIRST DEDREE - for >> ', session.passport.user.id);
+// Route: GET /people
+// GET all of user's 1st degree connections
+//     recursively call searchFirstDegree untill all 1st degree connections are fetched
+LinkedInApi.searchFirstDegree = function (session, query, personsArray) {
+  var deferred = Q.defer();
+  personsArray = personsArray || [];
+  query.start  = query.start || 0;
+
+  LinkedInApi._searchFirstDegree(session, query)
+    .done(
+      function(data){
+        if (typeof data === 'string'){
+          data = JSON.parse(data);
+        }
+        // plucking the persons array from api return data and combine with previously fetched persons
+        personsArray = personsArray.concat(data.values);
+        // _total, _start, _count are properties in the api return data
+        // _total: your total number of connections
+        // _start: start location for pagination in the previous api call
+        // _count: number of connections in the prevous api call result
+        if((data._start + data._count) >= data._total ){
+          deferred.resolve(personsArray);
+        }
+        else{
+          query.start += 500;
+          deferred.resolve(LinkedInApi.searchFirstDegree(session, query, personsArray));
+        }
+      },
+      function(error){
+        deferred.reject(error);
+      });
+
+  return deferred.promise;
+};
+
+// Route: GET /people
+// GET user's 1st degree connections, default is first 500 connections
+// Return the raw data form LinkedIn API without parse out the persons array
+LinkedInApi._searchFirstDegree = function (session, query) {
+  console.log('- GET /people - _searchFirstDegree - for >> ', session.passport.user.id);
   var endPoint    = "https://api.linkedin.com/v1/people/",
       id          = session.passport.user.id,
       accessToken = session.passport.user.accessToken,
@@ -159,13 +195,9 @@ LinkedInApi.searchFirstDegree = function (session, query) {
         // modified:         '', // 'updated' | 'new'
         // 'modified-since': '', // Unix time stamp of milliseconds since epoch
         format: 'json',
-        count: '500', // default max
-        start: '0'    // specify different start value in query for pagination
+        count: 500, // default max
+        start: 0    // specify different start value in query for pagination
       };
-  /*  query: {
-        start:
-      }
-  */
 
   var deferred = Q.defer();
 

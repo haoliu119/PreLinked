@@ -33,34 +33,6 @@ persons.getRelated = function(req, res) {
   });
 };
 
-persons.getLinkedin = function(req, res){
-  var id = req.session.passport.user.id;
-  LinkedInApi.getProfile(req.session, id)
-    .done(
-      //Resolved: json returned from LinkedIn API
-      function(json) {
-        // save it to DB
-        if(typeof json === "string"){
-          json = JSON.parse(json);
-        }
-        persons._put(json, id)
-          .done(
-            function(data){
-              console.log('person successfully saved to DB');
-              res.redirect('/#search');
-            },
-            function(error){
-              console.log('person NOT saved to DB, error >>>', error);
-              res.redirect('/#search');
-            });
-      },
-      //Rejected: error message from LinkedIn API
-      function(error) {
-        console.log('linkedin did not return profile, error >>>', error);
-        res.redirect('/#search');
-    });
-};
-
 persons._getById = function(targetId){
   var deferred = Q.defer();
 

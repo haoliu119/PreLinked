@@ -11,7 +11,14 @@ var testController = module.exports = {};
 testController.test = function(req, res){
     console.log('- GET /test - app.get(env)', app.get('env'));
 
-
+    LinkedInApi.searchFirstDegree(req.session, req.query)
+        .done(
+            function(json){
+                _helper.resolved(req, res, json);
+            },
+            function(error){
+                _helper.rejected(req, res, error);
+            });
     /**
     /** TESTING Mongoose ---------------------------------------------
     /*/
