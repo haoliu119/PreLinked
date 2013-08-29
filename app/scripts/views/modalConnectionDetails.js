@@ -7,6 +7,10 @@ PreLinked.Views.ModalconnectiondetailsView = Backbone.View.extend({
   events: {
     'click .exitModal': function() {
       $('.exitModal').foundation('reveal', 'close');
+    },
+    'mouseenter .interConnectionInfo': function(e) {
+      console.log(e);
+      console.log($('.interConnectionInfo').data('name'));
     }
   },
 
@@ -26,6 +30,7 @@ PreLinked.Views.ModalconnectiondetailsView = Backbone.View.extend({
       for(var i = 0; i < relations.length; i++) {
         relationIDs.push(relations[i].id);
       }
+      console.log('relationIDs',relationIDs);
 
       var deferred = $.Deferred();
       
@@ -34,13 +39,13 @@ PreLinked.Views.ModalconnectiondetailsView = Backbone.View.extend({
         url: '/persons/related',
         dataType: 'json',
         contentType: "application/json; charset=utf-8",
-        data: {relatedConnections: relationIDs},
+        data: {id: relationIDs},
         success: function(r) {
-          console.log(r);
+          console.log('success getRelatedConnections',r);
           deferred.resolve(r);
         },
         error: function(e) {
-          console.log(e);
+          console.log('some error in modalConnection',e);
           deferred.reject(e);
         }
       });

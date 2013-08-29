@@ -26,6 +26,15 @@
 <div class="summaryHeader sectionLabel"> Summary: </div>
 <p class="summary">{{summary}}</p>
 <div class="sectionLabel showRelations"> How You're Connected: </div>
+<ul>
+  {{#each interConnections}}
+    <a class="interConnectionInfo" data-name="{{this.inPerson.firstName}} {{this.inPerson.lastName}}" data-degree="{{this.inPerson.distance}} Degree" target="_blank" href="{{this.inPerson.publicProfileUrl}}">
+      <li class="interConnectionInfoLI">
+        <img src="{{this.inPerson.pictureUrl}}"/>
+      </li>
+    </a>
+  {{/each}}
+</ul>
 <div class='viewProfileContainer'>
   <a class="viewProfileButton" target="_blank" href="{{publicProfileUrl}}">
     <button class="profileButton">View Profile On LinkedIn</button>
