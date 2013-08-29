@@ -39,8 +39,7 @@ module.exports = function(app) {
   // app.get('/jobs/search', jobs.search);
   app.get('/jobs/search', jobsSorted.searchSorted);
 
-  // Persons
-  // Fetch data from our database
+  // Persons: data from our database
   app.get('/persons/searchRecent', restrict, persons.searchRecent);
   app.get('/persons/related', persons.getRelated);
 
@@ -56,6 +55,7 @@ module.exports = function(app) {
     })
   );
 
+  // User Session
   app.get('/logout', util.logout);
   app.get('/session', util.getSession);
 
@@ -63,9 +63,6 @@ module.exports = function(app) {
   app.get('/people/search', restrict, linkedin.searchConnections);
   app.get('/people/:id', restrict, linkedin.getProfile);
   app.get('/people/', restrict, linkedin.searchFirstDegree);
-  // app.get('/people/search', linkedin.searchConnections);
-  // app.get('/people/:id', persons.getById);
-  // app.get('/people/', persons.get);
 
   // Users
   // app.post('/user', users.create);

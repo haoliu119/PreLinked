@@ -62,15 +62,6 @@ linkedin.getProfile = function(req, res){
       .done(
         //Resolved: json returned from LinkedIn API
         function(json) {
-          // // save it to DB
-          // personsController._post(json, id)
-          //   .done(
-          //     function(data){
-          //       console.log('person successfully saved to DB');
-          //     },
-          //     function(error){
-          //       console.log('person NOT saved to DB, error >>>', error);
-          //     });
           Person._upsert(json);
           _helper.resolved(req, res, json);
         },
