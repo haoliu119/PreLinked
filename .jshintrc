@@ -13,5 +13,9 @@
     "regexp": true,
     "undef": true,
     "unused": true,
-    "trailing": true
+    "trailing": true,
+    "globals": {
+        "Q": true,
+        "_": true
+    }
 }
