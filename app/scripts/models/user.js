@@ -10,20 +10,7 @@ PreLinked.Models.UserModel = Backbone.Model.extend({
 
   initialize: function(options) {
     this.jobQuery = options.jobQuery;
-    this.fetchUser();
-  },
-
-  fetchUser: function(){
-    var that = this;
-    this.fetch()
-      .done(function(data){
-        console.log('user attributes: ', that.attributes);
-        console.log('user fetch data: ', data);
-        that.trigger('renderUser');
-      })
-      .fail(function(error){
-        console.log('user session does not exist............');
-      });
+    _.bindAll(this, "addSearchHistory"); //might be necessary
   },
 
   addSearchHistory: function(){
@@ -33,6 +20,13 @@ PreLinked.Models.UserModel = Backbone.Model.extend({
     // if(searchHistory.length > 10){
     //   searchHistory.pop();
     // }
-    this.save();
+    this.save(null, {
+        success: function(model, response, options){
+          console.log('success');
+        },
+        error: function(model, xhr, options){
+          console.log('error');
+        }
+      });
   }
 });
