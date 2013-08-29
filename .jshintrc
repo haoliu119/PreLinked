@@ -13,13 +13,5 @@
     "regexp": true,
     "undef": true,
     "unused": true,
-    "trailing": true,
-    "smarttabs": true,
-    "jquery": true,
-    "globals": {
-        "_": true,
-        "Q": true,
-        "app": true
-        "$": true
-    }
+    "trailing": true
 }
