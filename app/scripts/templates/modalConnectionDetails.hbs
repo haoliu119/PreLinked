@@ -28,7 +28,8 @@
 <div class="sectionLabel showRelations"> How You're Connected: </div>
 <ul>
   {{#each interConnections}}
-    <a class="interConnectionInfo" data-name="{{this.inPerson.firstName}} {{this.inPerson.lastName}}" data-degree="{{this.inPerson.distance}} Degree" target="_blank" href="{{this.inPerson.publicProfileUrl}}">
+    <a class="interConnectionInfo" title="{{this.inPerson.firstName}} {{this.inPerson.lastName}} {{this.inPerson.distance}} Degree" target="_blank"
+    href="{{this.inPerson.publicProfileUrl}}">
       <li class="interConnectionInfoLI">
         <img src="{{this.inPerson.pictureUrl}}"/>
       </li>

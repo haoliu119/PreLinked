@@ -7,10 +7,6 @@ PreLinked.Views.ModalconnectiondetailsView = Backbone.View.extend({
   events: {
     'click .exitModal': function() {
       $('.exitModal').foundation('reveal', 'close');
-    },
-    'mouseenter .interConnectionInfo': function(e) {
-      console.log(e);
-      console.log($('.interConnectionInfo').data('name'));
     }
   },
 
