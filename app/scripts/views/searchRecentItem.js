@@ -5,8 +5,8 @@ PreLinked.Views.SearchrecentitemView = Backbone.View.extend({
     template: JST['app/scripts/templates/searchRecentItem.hbs'],
 
     render: function() {
-      // this.$el.append(this.template(this.model.attributes));
-      this.$el.append(this.template(this.model));
+      var data = this.model.attributes || this.model;
+      this.$el.append( this.template(data) );
       return this;
     }
 

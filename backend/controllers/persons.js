@@ -20,7 +20,8 @@ persons.searchRecent = function(req, res) {
 
 
 persons.getRelated = function(req, res) {
-  var IDs = _.pluck(req.query, 'id');
+  var IDs = req.query.id;
+  console.log('IDS', IDs);
   Person.find({
     '_id': { $in: IDs }
   }, function(err, data){
