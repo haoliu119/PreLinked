@@ -5,17 +5,16 @@
     {{else}}
       <img class="image" src="http://placehold.it/80x80">
     {{/if}}
+    <div class="degree">
+      {{#checkDegree distance}}
+      {{/checkDegree}}
+    </div>
   </a>
   <ul class="info">
     <li>
       <h2 class="name">
         <a class="modal-details" href="#" data-in-id="{{id}}">{{firstName}}&nbsp;{{#truncateName lastName}}{{/truncateName}}</a>
-        <div class="degree">
-          {{#checkDegree distance}}
-          {{/checkDegree}}
-        </div>
         <div class="numberOfConnections"> {{numConnections}} </div>
-        
       </h2>
     </li>
     <li class="headline">{{headline}}</li>
