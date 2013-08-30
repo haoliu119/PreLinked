@@ -11,7 +11,7 @@ var testController = module.exports = {};
 testController.test = function(req, res){
     console.log('- GET /test - app.get(env)', app.get('env'));
 
-    LinkedInApi.searchFirstDegree(req.session, req.query)
+    LinkedInApi.getProfile(req.session)
         .done(
             function(json){
                 _helper.resolved(req, res, json);
