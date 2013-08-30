@@ -7,6 +7,15 @@ PreLinked.Models.SearchfilterModel = Backbone.Model.extend({
     this.regexTrimHeadTailSpace = /^[ \t]+|[ \t]+$/;
   },
 
+  splitFilter: function(word) {
+    if(_.contains(word, '_')) {
+      word = word.replace('_',' ');
+      return this.splitFilter(word);
+    } else {
+      return word;
+    }
+  },
+
   isDuplicateFilter: function(filterType, filterWord) {
     var filterArray = this.jobQuery.attributes[filterType];
     var filterWord = filterWord.toLowerCase();
@@ -45,7 +54,7 @@ PreLinked.Models.SearchfilterModel = Backbone.Model.extend({
 
   removeSearchFilter: function(e) {
     var filterType = e.target.className.split(' ')[1];
-    var elToRemove = e.target.className.split(' ')[2];
+    var elToRemove = this.splitFilter(e.target.className.split(' ')[2]);
     if(filterType === 'removeJobTitleFilter') {
       var jobTitleArray = this.jobQuery.get('jobTitle').slice();
       var indexToRemove = _.indexOf(jobTitleArray, elToRemove);

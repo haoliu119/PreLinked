@@ -27,7 +27,7 @@
   <div>
     {{#each jobTitle}}
       <a class="filter-item button tiny round secondary removeJobTitleFilter removeFilter">
-        {{this}}<span class="rm removeJobTitleFilter {{this}}">
+        {{this}}<span class="rm removeJobTitleFilter {{#concatWord this}} {{/concatWord}}">
         &times;
         </span>
       </a>
@@ -41,7 +41,7 @@
   <div>
     {{#each company}}
       <a class="filter-item button tiny round secondary removeCompanyFilter removeFilter">
-        {{this}}<span class="rm removeCompanyFilter {{this}}">
+        {{this}}<span class="rm removeCompanyFilter {{#concatWord this}} {{/concatWord}}">
         &times;
         </span>
       </a>
@@ -56,7 +56,7 @@
   <div>
     {{#each jobKeywords}}
       <a class="filter-item button tiny round secondary removeFilter">
-        {{this}}<span class="rm removeJobKeywordsFilter {{this}}">&times;</span>
+        {{this}}<span class="rm removeJobKeywordsFilter {{#concatWord this}} {{/concatWord}}">&times;</span>
       </a>
     {{/each}}
   </div>
