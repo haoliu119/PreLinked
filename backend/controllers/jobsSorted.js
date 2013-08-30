@@ -5,7 +5,6 @@ var path      = require('path');
 var _helper   = require('./_helper.js');
 var personsController = require('./persons.js');
 var jobs = require('./jobs.js');
-var jobsController = require('../controllers/jobs_controller.js');
 var natural = require('natural');
 
 var jobsSorted = module.exports = {};
@@ -54,7 +53,7 @@ var _saveIndeedJobs = function(indeedSearch){
   }
   if(indeedSearch.length){
     _(indeedSearch).each(function(data){
-      jobsController._post(data)
+      jobs._post(data)
         .then(function(job){
           console.log('Indeed job saved successfully: ', job);
         });
@@ -117,7 +116,7 @@ var _getJobsAndConnections = function(req, res){
 
   //first, indeed jobs
   var indeed_query_obj = _(defaultReqQuery).extend(req.query);
-  promises.push( jobs.grabPages(indeed_query_obj, 2) );
+  promises.push( jobs._grabMultiplePages(indeed_query_obj, 2) );
 
   //second, linkedin first degrees
   //First 500 for now
@@ -149,8 +148,8 @@ var _getJobsAndConnections = function(req, res){
         //first element is indeed jobs
         //the last three elements are linkedin connections
         var jobs = data[0];
-        if(data[1].values && data[1].values.length){
-          var connections = data[1].values.concat( data[2], data[3] );
+        if(data[1] && data[1].length){
+          var connections = data[1].concat( data[2], data[3] );
         }
         console.log('jobs: \n', jobs.length);
         console.log('connections: \n', connections.length);

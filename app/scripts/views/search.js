@@ -22,7 +22,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     });
 
     this.searchRecentView   = new PreLinked.Views.SearchrecentView({
-      collection: new PreLinked.Collections.SearchrecentCollection()
+      collection: new PreLinked.Collections.SearchrecentCollection(),
+      jobQuery: this.jobQuery
     });
 
     this.searchResultsView  = new PreLinked.Views.SearchResultsView({
@@ -63,8 +64,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
   submitSearch: function(e){
     this.trigger('addSearchHistory');
-    // this.getJobResults();
-    // this.getConnections();
+    this.getJobResults();
+    this.getConnections();
   },
 
   getSearchFilter: function(){
@@ -156,7 +157,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
       item.jobTitle = item.jobTitle.join(' ');
     });
     var searchRecentViewLocal   = new PreLinked.Views.SearchrecentView({
-      collection: localData
+      collection: localData,
+      jobQuery: this.jobQuery
     });
     this.$el.find('#search-recent').html(searchRecentViewLocal.render().el);
   },
