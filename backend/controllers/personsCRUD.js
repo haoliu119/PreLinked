@@ -41,15 +41,15 @@ personsCRUD.put = function(req, res){
 };
 
 personsCRUD.post = function(req, res){
-  console.log('users.post: ', req.body);
+  // console.log('users.post: ', req.body);
 
   personsController
     ._post(req.body, req.session.passport.user.id)
     .then(function(data){
-      console.log('POST users saved', data);
+      // console.log('POST users saved', data);
     })
     .fail(function(data){
-      console.log('POST users failed', data);
+      // console.log('POST users failed', data);
     });
 
 
