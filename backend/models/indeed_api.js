@@ -16,7 +16,7 @@ var endPoint = 'http://api.indeed.com/ads/apisearch',
 
 // GET /jobs/search
 IndeedApi.search = function (query, start, testCallback) {
-  query = parseJobQueryForIndeed(query);
+  query = IndeedApi.parseJobQueryForIndeed(query);
   console.log('- GET /jobs/search -> IndeedApi.search - parsedQueryForIndeed >> ', query);
   var deferred = Q.defer();
   request({
@@ -42,7 +42,7 @@ IndeedApi.search = function (query, start, testCallback) {
   return deferred.promise;
 };
 
-var parseJobQueryForIndeed = function(query) {
+IndeedApi.parseJobQueryForIndeed = function(query) {
     var tempQuery = {};
     var apiQuery = {};
     var title    = query.jobTitle,
