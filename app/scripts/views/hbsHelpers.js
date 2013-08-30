@@ -24,3 +24,15 @@ Handlebars.registerHelper('truncateName', function(name, options) {
   var firstCharOfName = name.substr(0,1) + '.';
   return firstCharOfName;
 });
+
+Handlebars.registerHelper('concatWord', function(string, options) {
+  var splitWord = string.split(' ');
+  if(splitWord.length > 1) {
+    var splitWord1 = splitWord.splice(0,1);
+    return _.reduce(splitWord, function(memo, string) {
+      return memo + '_' + string;
+    }, splitWord1);
+  } else {
+    return string;
+  }
+});

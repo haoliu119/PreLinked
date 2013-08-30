@@ -32,9 +32,9 @@ linkedin.searchConnections = function(req, res){
   /* Dummy Data ------------------------
   */
 
-  // var fileName = "_LinkedIn_People_Search_3rd_Degree_P01.json";
-  // var fileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/' + fileName ), 'utf8');
-  // _helper.resolved(req, res, fileContent);
+  var fileName = "_LinkedIn_People_Search_3rd_Degree_P01.json";
+  var fileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/' + fileName ), 'utf8');
+  _helper.resolved(req, res, fileContent);
 
 };
 
@@ -66,11 +66,11 @@ linkedin.getProfile = function(req, res){
   /* Dummy Data ------------------------
   */
 
-  // var fileName = "_LinkedIn_Profile_Sample_1st_Degree.json";
-  // var fileName = "_LinkedIn_Profile_Sample_2nd_Degree.json";
-  // var fileName = "_LinkedIn_Profile_Sample_3rd_Degree.json";
-  // var fileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/' + fileName ), 'utf8');
-  // _helper.resolved(req, res, fileContent);
+  var fileName = "_LinkedIn_Profile_Sample_1st_Degree.json";
+  var fileName = "_LinkedIn_Profile_Sample_2nd_Degree.json";
+  var fileName = "_LinkedIn_Profile_Sample_3rd_Degree.json";
+  var fileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/' + fileName ), 'utf8');
+  _helper.resolved(req, res, fileContent);
 
 };
 
@@ -101,9 +101,9 @@ linkedin.searchFirstDegree = function(req, res){
   /* Dummy Data ------------------------
   */
 
-  // var fileName = "_LinkedIn_People_My_First_Degrees_P01.json";
-  // var fileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/' + fileName ), 'utf8');
-  // _helper.resolved(req, res, fileContent);
+  var fileName = "_LinkedIn_People_My_First_Degrees_P01.json";
+  var fileContent = fs.readFileSync(path.join(__dirname, '../public/_temp_dummy_data/' + fileName ), 'utf8');
+  _helper.resolved(req, res, fileContent);
 
 };
 
