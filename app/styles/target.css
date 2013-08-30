@@ -1,4 +1,4 @@
-html,body{background-color:#f2f2f2}
+html,body{background:url("https://webfiles.uci.edu/shaohuaz/share/prelinked/bg-striped.gif") #fff repeat}
 h1,h2,h3,h4{font-family:Play,helvetica,sans-serif}
 #app .logo{width:220px}
 #app ul li{list-style-type:none}
@@ -17,12 +17,12 @@ h1,h2,h3,h4{font-family:Play,helvetica,sans-serif}
 .job .location{color:#aaa}
 #search-filters .filter-item.button{padding-right:0}
 #search-filters .filter-item .rm{font-weight:normal;padding:8px 8px 8px 2px;color:#aaa;line-height:0;font-size:15px}
-.column-left{background-color:#d1f2ff;margin-top:20px}
+.column-left{background-color:#d1edf6;padding-top:10px}
+.column-mid{background-color:#fff;min-height:300px;padding-top:10px}
+.column-right{background:#ddd;padding-top:10px}
 #search-filters .filter-item:hover .rm{color:#000}
 #search-filters .filter-item .rm:hover{color:#f00}
-#job-results{border-radius:5px;background-color:#fff;min-height:300px}
 #job-results .loader,#connections .loader{min-height:300px}
-#connections{margin-top:20px;background-color:#ddd}
 #connections.scroll{max-height:600px;overflow-y:auto}
 .loader{background:url("https://webfiles.uci.edu/shaohuaz/share/prelinked/loader.gif") no-repeat 50% 50%;height:40px}
 .inputFilter{position:relative}
@@ -50,9 +50,9 @@ div.degree{display:inline-block;margin-left:3px;background:#e1e9ec;text-align:ce
 .exitModal{position:absolute;top:8px;right:20px}
 .exitModal:hover,.showRelations{margin-top:25px}
 .interConnectionInfoLI{width:80px;display:inline-block;color:#f00}
-.page{background-color:#fff}
-.header{border-bottom:2px solid #1b75ba;padding-top:20px}
-.footer{border-top:10px solid #1b75ba;font-size:14px;padding:50px 0}
+.page{background:#f2f2f2}
+.header{background-color:#fff;border-bottom:2px solid #03487d;padding-top:20px}
+.footer{border-top:10px solid #03487d;font-size:14px;padding:50px 0}
 .header #user-view ul{margin-bottom:0}
 .header .logo{position:relative;top:8px}
 .icon-connection{background:url("https://webfiles.uci.edu/shaohuaz/share/prelinked/connections.png") no-repeat 50% 50%;padding:20px}
@@ -63,3 +63,11 @@ div.degree{display:inline-block;margin-left:3px;background:#e1e9ec;text-align:ce
 .icon-github{background-position:0 0;width:45px}
 .footer .col{margin:10px 5% 10px 0}
 .footer .col strong{margin-bottom:5px;display:block;color:#666}
+#page-search h2.title-search{background-color:#03497e}
+#page-search h2.title-header{margin:10px 0 0 0;line-height:28px;font-size:24px;padding:10px 15px;color:#fff;text-shadow:2px 2px 2px #000}
+.title-network.arrow_box{z-index:1}
+.title-network.arrow_box{background-color:#666;color:#fff}
+.title-network.arrow_box:after{border-right-color:#666}
+.arrow_box{position:relative;background:#0596d5}
+.arrow_box:after{right:100%;border:solid transparent;content:" ";height:0;width:0;position:absolute;pointer-events:none}
+.arrow_box:after{border-color:rgba(136,183,213,0);border-right-color:#0596d5;border-width:15px;top:50%;margin-top:-15px}
