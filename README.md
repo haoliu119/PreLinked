@@ -1,7 +1,7 @@
 PreLinked
 =========
 
-### Don't Just Be Another Resume. Get PreLinked
+### Don't Be Just Another Resume. Get PreLinked
 
 Finding a job is tough, and can make you feel like just another piece of paper in a sea of resumes. 
 Knowing someone at a company dramatically increase your chances of getting an interview, but until Prelinked, figuring
