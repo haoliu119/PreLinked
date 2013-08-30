@@ -5,47 +5,14 @@ var path      = require('path');
 var _helper   = require('./_helper.js');
 var personsController = require('./persons.js');
 var jobs = require('./jobs.js');
+var jobsCRUD = require('./jobsCRUD.js');
+
 var natural = require('natural');
 
 var jobsSorted = module.exports = {};
 
-
-var _saveInSearch = function(inSearch, myId){
-  if(typeof inSearch === 'string'){
-    inSearch = JSON.parse(inSearch);
-    //API returns a string
-  }
-  if(inSearch && inSearch.people && inSearch.people.values){
-    _(inSearch.people.values).each(function(data){
-      personsController._put(data, myId)
-        .then(function(){
-          console.log('Data saved successfully.');
-        });
-      // console.log(Object.keys(data) + '\n\n');
-      // apiStandardProfileRequest,distance,firstName,headline,id,industry,
-      // lastName,location,numConnections,numConnectionsCapped,pictureUrl,positions,
-      // publicProfileUrl,relationToViewer,siteStandardProfileRequest,summary
-    });
-  }
-//apiStandardProfileRequest
-
-};
-
-var _saveFirstDegree = function(inFirstDegree, myId){
-  if(typeof inFirstDegree === 'string'){
-    inFirstDegree = JSON.parse(inFirstDegree);
-    //API returns a string
-  }
-  if(inFirstDegree && inFirstDegree.values){
-    _(inFirstDegree.values).each(function(data){
-      personsController._put(data, myId)
-        .then(function(){
-          console.log('Data saved successfully.');
-        });
-    });
-  }
-};
-
+// currently not used to save job posts to DB
+// may implement caching in the future
 var _saveIndeedJobs = function(indeedSearch){
   if(typeof indeedSearch === 'string'){
     indeedSearch = JSON.parse(indeedSearch);
@@ -62,26 +29,7 @@ var _saveIndeedJobs = function(indeedSearch){
 
 };
 
-//helper method to save promises to db
-var _savePromises = function(req, res, promises){
-  Q.all(promises)
-    // .spread(function(indeedSearch, inSearch, inFirstDegree){
-    .spread(function(indeedSearch, inFirstDegree){
-      console.log('IndeedApi search data: \n', indeedSearch);
-      // _saveIndeedJobs(indeedSearch);
-
-      // console.log('LinkedInApi search data: \n');
-      // _saveInSearch(inSearch, req.session.passport.user.id);
-
-      console.log('LinkedInApi first degree data: \n', inFirstDegree);
-      // _saveFirstDegree(inFirstDegree, req.session.passport.user.id);
-
-      _helper.resolved(req, res, indeedSearch);
-      res.end('end');
-    });
-};
-
-//testing function
+//testing function for internal purposes
 jobsSorted.testScore = function(req, res){
   _getJobsAndConnections(req, res);
 };
@@ -276,7 +224,7 @@ jobsSorted.searchSorted = function(req, res){
   //if not avaliable, only fetch indeed
   var isLoggedin = req.session && req.session.passport && req.session.passport.user;
   if(!isLoggedin){
-    jobs.search(req, res);
+    jobsCRUD.search(req, res);
   }else{
     //for weighting the first degree Linkedin connections
     var queryJobTitle = '';

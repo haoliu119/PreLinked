@@ -119,20 +119,90 @@ describe('add search filters', function() {
     // searchfilterModel.addSearchFilter('software engineer', 'Google', 'javascript', '25', '$100,000', '$120,000');
 
 describe('remove filters', function() {
-  it('should instantiate models', function() {
-    var app_model = new PreLinked.Models.AppModel();
-    expect(app_model).to.be.an.instanceof(PreLinked.Models.AppModel);
+  it('should remove title filters', function() {
+    var jobQuery = new PreLinked.Models.AppModel();
+    var searchfilterModel = new PreLinked.Models.SearchfilterModel({ jobQuery: jobQuery });
+
+    searchfilterModel.addSearchFilter('software engineer');
+    searchfilterModel.addSearchFilter('web developer');
+
+    var e = {
+      target: {
+        className: "rm removeJobTitleFilter software_engineer"
+      }
+    };
+
+    searchfilterModel.removeSearchFilter(e);
+
+    expect(searchfilterModel.jobQuery.get('jobTitle')).to.eql(["web developer"]);
+
+    e = {
+      target: {
+        className: "rm removeJobTitleFilter web_developer"
+      }
+    };
+
+    searchfilterModel.removeSearchFilter(e);
+
+    expect(searchfilterModel.jobQuery.get('jobTitle')).to.eql([]);
   });
 
-  it('should instantiate views', function() {
-    var app_model = new PreLinked.Models.AppModel();
-    var app_view = new PreLinked.Views.AppView({
-      model: app_model
-    });
-    // var app = new App();
+  it('should remove company filters', function() {
+    var jobQuery = new PreLinked.Models.AppModel();
+    var searchfilterModel = new PreLinked.Models.SearchfilterModel({ jobQuery: jobQuery });
 
-    // var appView = new AppView({model: app});
-    // expect(appView).to.be.an.instanceof(AppView);
+    searchfilterModel.addSearchFilter(undefined, 'Google Ventures');
+    searchfilterModel.addSearchFilter(undefined, 'Union Square Ventures');
+    searchfilterModel.addSearchFilter(undefined, 'Yahoo');
+
+    var e = {
+      target: {
+        className: "rm removeCompanyFilter Google_Ventures"
+      }
+    };
+
+    searchfilterModel.removeSearchFilter(e);
+
+    expect(searchfilterModel.jobQuery.get('company')).to.eql(['Union Square Ventures', "Yahoo"]);
+
+    e = {
+      target: {
+        className: "rm removeCompanyFilter Union_Square_Ventures"
+      }
+    };
+
+    searchfilterModel.removeSearchFilter(e);
+
+    expect(searchfilterModel.jobQuery.get('company')).to.eql(["Yahoo"]);
+  });
+
+  it('should remove keyword filters', function() {
+    var jobQuery = new PreLinked.Models.AppModel();
+    var searchfilterModel = new PreLinked.Models.SearchfilterModel({ jobQuery: jobQuery });
+
+    searchfilterModel.addSearchFilter(undefined, undefined, 'test driven development');
+    searchfilterModel.addSearchFilter(undefined, undefined, 'javascript');
+    searchfilterModel.addSearchFilter(undefined, undefined, 'object oriented design');
+
+    var e = {
+      target: {
+        className: "rm removeJobKeywordsFilter test_driven_development"
+      }
+    };
+
+    searchfilterModel.removeSearchFilter(e);
+
+    expect(searchfilterModel.jobQuery.get('jobKeywords')).to.eql(['javascript', "object oriented design"]);
+
+    e = {
+      target: {
+        className: "rm removeJobKeywordsFilter javascript"
+      }
+    };
+
+    searchfilterModel.removeSearchFilter(e);
+
+    expect(searchfilterModel.jobQuery.get('jobKeywords')).to.eql(["object oriented design"]);
   });
 });
 
