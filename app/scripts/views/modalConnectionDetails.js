@@ -17,6 +17,7 @@ PreLinked.Views.ModalconnectiondetailsView = Backbone.View.extend({
 
   // only call this funcito when distance > 1
   getRelatedConnections: function(data){
+      var deferred = $.Deferred();
     if(data.distance > 1) {
       console.log('get related connections called', data);
       console.log('relationship', data.relationToViewer.relatedConnections.values);
@@ -28,8 +29,7 @@ PreLinked.Views.ModalconnectiondetailsView = Backbone.View.extend({
       }
       console.log('relationIDs',relationIDs);
 
-      var deferred = $.Deferred();
-      
+
       $.ajax({
         type: 'GET',
         url: '/persons/related',
@@ -45,11 +45,13 @@ PreLinked.Views.ModalconnectiondetailsView = Backbone.View.extend({
           deferred.reject(e);
         }
       });
-      return deferred.promise();
+    }else{
+      deferred.resolve([]);
     }
     // get the related connections array from attributes
     // ajax that to /persons/related
     // on success: render every picutre with url
+      return deferred.promise();
   }
 
 });
