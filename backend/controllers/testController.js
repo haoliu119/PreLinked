@@ -9,9 +9,9 @@ var _helper     = require('../controllers/_helper.js');
 var testController = module.exports = {};
 
 testController.test = function(req, res){
-    console.log('- GET /test - app.get(env)', app.get('env'));
+    // console.log('- GET /test - app.get(env)', app.get('env'));
 
-    LinkedInApi.searchFirstDegree(req.session, req.query)
+    LinkedInApi.searchConnections(req.session, req.query, 50)
         .done(
             function(json){
                 _helper.resolved(req, res, json);

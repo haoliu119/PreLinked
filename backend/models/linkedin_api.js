@@ -1,4 +1,5 @@
 var request = require('request');
+var Person  = require('./persons.js');
 
 var LinkedInApi = module.exports = {};
 
@@ -14,10 +15,73 @@ var _AllFields = _BasicProfileFields + "," + _FullProfileFields + "," + _Contact
 
 var _PeopleSearchReturnFields = "(people:(" + _AllFields + "),facets:(code,name,buckets:(code,name,count)))";
 
+
+
+// Delete profiles with private id or names, which belong to people who choose not to share their info
+// Accept an array of profile objects
+var deletePrivateProfiles = function(data){
+  return  _.reject(data, function(person){
+    return (person.id.toLowerCase() === 'private' || person.lastName.toLowerCase() === 'private' || person.firstName.toLowerCase() === 'private' || person.distance === -1);
+  });
+};
+
 // GET /people/search
-// related connections is not available for any bulk call
-LinkedInApi.searchConnections = function (session, query) {
-  console.log('- GET /PEOPLE/SEARCH - searchConnections - query >> ', query);
+// call _searchConnections to return paginated array of connections that match the query criteria
+// First api call must be synchronous to get total available results
+//      total result number is compared to max to makes sure no unnecessary api calls are used when there are no remaining pages to fetch
+//      subsequent api calls for remaining pages can happen concurrently / asynchronously
+// Number of connections capped by max, which is defaulted to 50 to avoid accidentially exceeding throttle limit
+LinkedInApi.searchConnections = function (session, query, max) {
+  var deferred = Q.defer();
+  var promises = [];
+  max = max || 100;
+  query.start = query.start || 0;
+  query.count = query.count || 25;
+
+  var output = LinkedInApi._searchConnections(session, query);
+  promises.push(output);
+  output.then(
+      function(data){
+        if (typeof data === 'string'){
+          data = JSON.parse(data);
+        }
+        max = Math.min(max, data.people._total);
+        for(var i = query.count; i < max; i+=query.count) {
+          _(query).extend({start: i}); //pagination
+          var output = LinkedInApi._searchConnections(session, query);
+          promises.push(output);
+        }
+        Q.all(promises)
+          .then(
+            // Resolved
+            function(data){
+              data = _(data).map(function(item){
+                return JSON.parse(item).people.values;
+              });
+              data = _(data).flatten(true); //only flatten the first level
+              console.log('- GET /people/search - flattened length >>>', data.length)
+              deferred.resolve(JSON.stringify(data));
+            },
+            // Rejected
+            function(error){
+              deferred.reject(error);
+            }
+          );
+      },
+      function(error){
+        deferred.reject(error);
+    });
+
+
+  return deferred.promise;
+};
+
+// GET /people/search
+//    note: related connections is not available for bulk call, must use .getProfile for each person
+// Return the raw data form LinkedIn API without parse out the persons array
+// default api max is 25 persons per result page
+LinkedInApi._searchConnections = function (session, query) {
+  console.log('- GET /people/search - searchConnections - query >>');
   /*  query: {
         title=            [title]
         keywords=         [space delimited keywords]
@@ -65,12 +129,20 @@ LinkedInApi.searchConnections = function (session, query) {
         })
     },function(error, response, body){
       if (error) {
+        console.log('- LinkedInApi Server error: ', error);
         deferred.reject(error);
       } else {
         try {
-          body = JSON.stringify(JSON.parse(body).people.values);
-          body = body ? body : "[]";
-          deferred.resolve(body);
+          // When throttle limit is exceeded, api does not return error
+          // so we try / catch that error when we extract persons array if that array was not returned
+          body = JSON.parse(body);
+          // Delete Private Profile
+          body.people.values = body.people.values.length > 0 ? deletePrivateProfiles(body.people.values) : [];
+          // Update/Insert profiles to MongoDB
+          // _bulkUpsert accept either json or object
+          Person._bulkUpsert(body.people.values);
+          // Return json
+          deferred.resolve(JSON.stringify(body));
         } catch (error){
           console.log('- LinkedInApi error: ', error, body);
           deferred.reject(body.message);
@@ -80,83 +152,21 @@ LinkedInApi.searchConnections = function (session, query) {
   return deferred.promise;
 };
 
-// GET 100 connections, 25 per page x 4 pages
-LinkedInApi.getOneHundredConnections = function(session, query){
-
-  var deferred = Q.defer();
-  var promises = [];
-  for(var i = 0; i < 100; i+=25) {
-    _(query).extend({start: i}); //pagination
-    var output = LinkedInApi.searchConnections(session, query);
-    promises.push(output);
-  }
-
-  Q.all(promises)
-    .done(
-      // Resolved
-      function(data){
-        data = _(data).map(function(item){
-          return JSON.parse(item);
-        });
-        data = _(data).flatten(true); //only flatten the first level
-        deferred.resolve(JSON.stringify(data));
-      },
-      // Rejected
-      function(error){
-        deferred.reject(error);
-      }
-    );
-
-  return deferred.promise;
-
-};
-
-
-// GET /people/:id
-LinkedInApi.getProfile = function(session, id){
-
-  //TODO: currently only fetching profile with linkedin id, ignoring cases when only public url is available
-  var endPoint    = "https://api.linkedin.com/v1/people/",
-      accessToken = session.passport.user.accessToken,
-      url         = endPoint + 'id=' + id + ":(" + _AllFields + ")",
-      defaults    = {
-        format: 'json'
-      };
-
-  var deferred = Q.defer();
-
-  request({
-      method: 'GET',
-      url: url,
-      qs: _.extend(defaults, {
-        oauth2_access_token: session.passport.user.accessToken
-      })
-    }, function(error, response, body){
-      if (error) {
-        deferred.reject(error);
-      } else {
-        try {
-          deferred.resolve(body);
-        } catch (error){
-          console.log('- LinkedInApi error: ', error, body);
-          deferred.reject(body.message);
-        }
-      }
-  });
-
-  return deferred.promise;
-};
-
-// Route: GET /people
+// GET /people
 // GET all of user's 1st degree connections
 //     recursively call searchFirstDegree untill all 1st degree connections are fetched
+// API calls happen synchronously one after another
+//     Performance may only suffer when person has thousands of connections
+//     which is rare
 LinkedInApi.searchFirstDegree = function (session, query, personsArray) {
   var deferred = Q.defer();
   personsArray = personsArray || [];
-  query.start  = query.start || 0;
+  query = query || {};
+  query.start  = query.start  || 0;
+  query.count  = query.count  || 500;
 
   LinkedInApi._searchFirstDegree(session, query)
-    .done(
+    .then(
       function(data){
         if (typeof data === 'string'){
           data = JSON.parse(data);
@@ -168,7 +178,7 @@ LinkedInApi.searchFirstDegree = function (session, query, personsArray) {
         // _start: start location for pagination in the previous api call
         // _count: number of connections in the prevous api call result
         if((data._start + data._count) >= data._total ){
-          deferred.resolve(personsArray);
+          deferred.resolve(JSON.stringify(personsArray));
         }
         else{
           query.start += 500;
@@ -182,7 +192,7 @@ LinkedInApi.searchFirstDegree = function (session, query, personsArray) {
   return deferred.promise;
 };
 
-// Route: GET /people
+// GET /people
 // GET user's 1st degree connections, default is first 500 connections
 // Return the raw data form LinkedIn API without parse out the persons array
 LinkedInApi._searchFirstDegree = function (session, query) {
@@ -210,9 +220,61 @@ LinkedInApi._searchFirstDegree = function (session, query) {
         })
     },function(error, response, body){
       if (error) {
+        console.log('- LinkedInApi Server error: ', error);
         deferred.reject(error);
       } else {
         try {
+          // When throttle limit is exceeded, api does not return error
+          // so we try / catch that error when we extract persons array if that array was not returned
+          body = JSON.parse(body);
+          // Delete Private Profile
+          body.values = body.values.length > 0 ? deletePrivateProfiles(body.values) : [];
+          // Update/Insert profiles to MongoDB
+          // _bulkUpsert accept either json or object
+          Person._bulkUpsert(body.values);
+          // Return json
+          deferred.resolve(JSON.stringify(body));
+        } catch (error){
+          console.log('- LinkedInApi error: ', error, body);
+          deferred.reject(body.message);
+        }
+      }
+  });
+
+  return deferred.promise;
+};
+
+// GET /people/:id
+LinkedInApi.getProfile = function(session, id){
+
+  id = id || session.passport.user.id;
+  var endPoint    = "https://api.linkedin.com/v1/people/",
+      accessToken = session.passport.user.accessToken,
+      url         = endPoint + 'id=' + id + ":(" + _AllFields + ")",
+      defaults    = {
+        format: 'json'
+      };
+
+  var deferred = Q.defer();
+
+  request({
+      method: 'GET',
+      url: url,
+      qs: _.extend(defaults, {
+        oauth2_access_token: session.passport.user.accessToken
+      })
+    }, function(error, response, body){
+      if (error) {
+        console.log('- LinkedInApi Server error: ', error);
+        deferred.reject(error);
+      } else {
+        try {
+          // When throttle limit is exceeded, api does not return error
+          // so we try / catch that error when we extract values that were not returned
+          JSON.parse(body).id.length;
+          // Update/Insert single profile to MongoDB
+          // _upsert accept either json or object
+          Person._upsert(body);
           deferred.resolve(body);
         } catch (error){
           console.log('- LinkedInApi error: ', error, body);
@@ -224,40 +286,41 @@ LinkedInApi._searchFirstDegree = function (session, query) {
   return deferred.promise;
 };
 
-// LinkedInApi.searchCompanies = function(session, companyNames) {
-//   console.log('- LinkedInApi.searchCompanies >>');
+// Not Currently Used,
+// will be usefull for future release when we want to pass company ids into people/search facets to make results even more relevant to job search
+LinkedInApi.searchCompanies = function(session, companyNames) {
+  console.log('- LinkedInApi.searchCompanies >>');
 
-//   // var endPoint = "https://api.linkedin.com/v1/companies::(universal-name=convergent-manufacturing-technologies-inc-)",
-//   var endPoint = "https://api.linkedin.com/v1/company-search:(companies:(id,name,universal-name))",
-//       accessToken = session.passport.user.accessToken,
-//       url = endPoint,
-//       defaults = {
-//         keywords: 'composite software',
-//         format: 'json',
-//         count: '110',
-//         sort: 'relevance'
-//       };
+  // var endPoint = "https://api.linkedin.com/v1/companies::(universal-name=convergent-manufacturing-technologies-inc-)",
+  var endPoint = "https://api.linkedin.com/v1/company-search:(companies:(id,name,universal-name))",
+      accessToken = session.passport.user.accessToken,
+      url = endPoint,
+      defaults = {
+        keywords: 'composite software',
+        format: 'json',
+        count: '110',
+        sort: 'relevance'
+      };
 
-//   var deferred = Q.defer();
+  var deferred = Q.defer();
 
-//   request({
-//     method: 'GET',
-//     url: url,
-//     qs: _.extend(defaults,{
-//           oauth2_access_token: accessToken,
-//         })
-//     },function(error, response, body){
-//       if (error) {
-//         deferred.reject(error);
-//       } else {
-//         try {
-//           // body = JSON.stringify(JSON.parse(body).people.values);
-//           deferred.resolve(body);
-//         } catch (error){
-//           console.log('- LinkedInApi error: ', error, body);
-//           deferred.reject(body.message);
-//         }
-//       }
-//   });
-//   return deferred.promise;
-// };
+  request({
+    method: 'GET',
+    url: url,
+    qs: _.extend(defaults,{
+          oauth2_access_token: accessToken,
+        })
+    },function(error, response, body){
+      if (error) {
+        deferred.reject(error);
+      } else {
+        try {
+          deferred.resolve(body);
+        } catch (error){
+          console.log('- LinkedInApi error: ', error, body);
+          deferred.reject(body.message);
+        }
+      }
+  });
+  return deferred.promise;
+};
