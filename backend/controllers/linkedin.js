@@ -2,16 +2,8 @@ var fs          = require('fs');
 var path        = require('path');
 var LinkedInApi = require('../models/linkedin_api.js');
 var _helper     = require('./_helper.js');
-var Person      = require('../models/persons.js');
 
 var linkedin    = module.exports = {};
-
-var parseLinkedInResults = function(json){
-  json = _.reject(JSON.parse(json), function(person){
-    return (person.id.toLowerCase() === 'private' || person.lastName.toLowerCase() === 'private' || person.firstName.toLowerCase() === 'private' || person.distance === -1);
-  });
-  return JSON.stringify(json);
-};
 
 // GET /people/search
 linkedin.searchConnections = function(req, res){
@@ -22,12 +14,10 @@ linkedin.searchConnections = function(req, res){
   */
 
   if (req.session.passport.user){
-    LinkedInApi.searchConnections(req.session, req.query)
+    LinkedInApi.searchConnections(req.session, req.query, 25)
       .done(
         //Resolved: json returned from LinkedIn API
         function(json) {
-          json = parseLinkedInResults(json);
-          Person._bulkUpsert(json);
           _helper.resolved(req, res, json);
         },
         //Rejected: error message from LinkedIn API
@@ -62,7 +52,6 @@ linkedin.getProfile = function(req, res){
       .done(
         //Resolved: json returned from LinkedIn API
         function(json) {
-          Person._upsert(json);
           _helper.resolved(req, res, json);
         },
         //Rejected: error message from LinkedIn API
@@ -98,7 +87,6 @@ linkedin.searchFirstDegree = function(req, res){
       .done(
         //Resolved: json returned from LinkedIn API
         function(json) {
-          Person._bulkUpsert(json);
           _helper.resolved(req, res, json);
         },
         //Rejected: error message from LinkedIn API
