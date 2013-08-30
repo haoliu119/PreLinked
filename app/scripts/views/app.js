@@ -6,7 +6,8 @@ PreLinked.Views.AppView = Backbone.View.extend({
   template: JST['app/scripts/templates/app.hbs'],
 
   events:{
-    "click .geoLocation" : "getLocation"
+    "click .geoLocation" : "getLocation",
+    'click .tab': 'tabClick',
   },
 
   imageUrls:{
@@ -65,6 +66,16 @@ PreLinked.Views.AppView = Backbone.View.extend({
     // $(window).on('scroll', function() {
     //   that.fixedScroll();
     // });
+  },
+
+  tabClick: function(e) {
+    e.preventDefault();
+    var dataAttr = $(e.target).data('tab');
+
+    this.$el.find('.tab').removeClass('on');
+    this.$el.find('.search-col').removeClass('on');
+    $(e.target).addClass('on');
+    this.$el.find('#column-' + dataAttr).addClass('on');
   },
 
   homePage: function(){
