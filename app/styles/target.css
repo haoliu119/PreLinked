@@ -55,7 +55,8 @@ div.degree{display:inline-block;margin-left:3px;background:#e1e9ec;text-align:ce
 .footer{border-top:10px solid #03487d;font-size:14px;padding:50px 0}
 .header #user-view ul{margin-bottom:0}
 .header .logo{position:relative;top:8px}
-.icon-connection{background:url("https://webfiles.uci.edu/shaohuaz/share/prelinked/connections.png") no-repeat 50% 50%;padding:20px}
+.showConnectButton:hover{color:#fff;background-color:#444}
+.showConnectButton{background:url("https://webfiles.uci.edu/shaohuaz/share/prelinked/connection.png") no-repeat 95% 50% #666;padding:2px 25px 2px 2px;border:1px solid #666;border-radius:2px;color:#fff;text-align:center;width:54px;font-size:14px}
 .icon-indeed,.icon-linkedin,.icon-hackreactor,.icon-github{background-image:url("https://webfiles.uci.edu/shaohuaz/share/prelinked/sprite-footer.png");height:38px;display:inline-block;vertical-align:middle;opacity:.6}
 .icon-indeed{background-position:-106px 0;width:92px}
 .icon-linkedin{background-position:276px 0;width:40px}
@@ -64,10 +65,12 @@ div.degree{display:inline-block;margin-left:3px;background:#e1e9ec;text-align:ce
 .footer .col{margin:10px 5% 10px 0}
 .footer .col strong{margin-bottom:5px;display:block;color:#666}
 #page-search h2.title-search{background-color:#03497e}
-#page-search h2.title-header{margin:10px 0 0 0;line-height:28px;font-size:24px;padding:10px 15px;color:#fff;text-shadow:2px 2px 2px #000}
+#page-search h2.title-header{margin:20px 0 0 0;line-height:28px;font-size:24px;padding:10px 15px;color:#fff;text-shadow:2px 2px 2px #000}
 .title-network.arrow_box{z-index:1}
 .title-network.arrow_box{background-color:#666;color:#fff}
 .title-network.arrow_box:after{border-right-color:#666}
 .arrow_box{position:relative;background:#0596d5}
 .arrow_box:after{right:100%;border:solid transparent;content:" ";height:0;width:0;position:absolute;pointer-events:none}
 .arrow_box:after{border-color:rgba(136,183,213,0);border-right-color:#0596d5;border-width:15px;top:50%;margin-top:-15px}
+.modal-details{position:relative}
+.modal-details .degree{position:absolute;top:-5px;left:52px;font-size:14px;color:#555;box-shadow:1px 1px 2px #666}
