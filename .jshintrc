@@ -16,6 +16,8 @@
     "trailing": true,
     "globals": {
         "Q": true,
-        "_": true
+        "_": true,
+        "analytics": true,
+        "app": true
     }
 }
