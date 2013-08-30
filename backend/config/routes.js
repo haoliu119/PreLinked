@@ -16,12 +16,8 @@ var testController = require('../controllers/testController.js');
 module.exports = function(app) {
 
   //Jobs
-  app.get('/jobs/search', jobsCRUD.search);
-  // app.get('/jobs/search', jobsSorted.searchSorted);
-
-  // Persons: data from our database
-  app.get('/persons/searchRecent', restrict, persons.searchRecent);
-  app.get('/persons/related', persons.getRelated);
+  // app.get('/jobs/search', jobsCRUD.search);
+  app.get('/jobs/search', jobsSorted.searchSorted);
 
   //LinkedIn Oauth
   app.get('/auth/linkedin', util.authLinkedinPassport, util.authLinkedinFunc );
@@ -32,19 +28,24 @@ module.exports = function(app) {
   app.get('/session', util.getSession);
 
   // LinkedIn API
+  // currently controlling whether live or dummy data is used
   app.get('/people/search', restrict, linkedin.searchConnections);
   app.get('/people/:id', restrict, linkedin.getProfile);
   app.get('/people', restrict, linkedin.searchFirstDegree);
 
+  // Persons: data from our database
+  app.get('/persons/searchRecent', restrict, persons.searchRecent);
+  app.get('/persons/related', persons.getRelated);
+
   // /user
-  app.get('/user', personsCRUD.get);
-  app.get('/user/:id', personsCRUD.get);
-  app.put('/user', personsCRUD.put);  //this should NOT be allowed too
-  app.put('/user/:id', personsCRUD.put);
-  app.post('/user', personsCRUD.post);
-  app.post('/user/:id', personsCRUD.post);
-  app.del('/user', util.badIdea);
-  app.del('/user/:id', personsCRUD.delete);
+  app.get('/persons', personsCRUD.get);
+  app.get('/persons/:id', personsCRUD.get);
+  app.put('/persons', personsCRUD.put);  //this should NOT be allowed too
+  app.put('/persons/:id', personsCRUD.put);
+  app.post('/persons', personsCRUD.post);
+  app.post('/persons/:id', personsCRUD.post);
+  app.del('/persons', util.badIdea);
+  app.del('/persons/:id', personsCRUD.delete);
 
   //server side rendering
   //used for /aboutus etc.
