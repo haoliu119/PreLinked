@@ -1,4 +1,5 @@
 var request = require('request');
+var Person  = require('./persons.js');
 
 var LinkedInApi = module.exports = {};
 
@@ -14,6 +15,15 @@ var _AllFields = _BasicProfileFields + "," + _FullProfileFields + "," + _Contact
 
 var _PeopleSearchReturnFields = "(people:(" + _AllFields + "),facets:(code,name,buckets:(code,name,count)))";
 
+
+
+// Delete profiles with private id or names, which belong to people who choose not to share their info
+// Accept an array of profile objects
+var deletePrivateProfiles = function(data){
+  return  _.reject(data, function(person){
+    return (person.id.toLowerCase() === 'private' || person.lastName.toLowerCase() === 'private' || person.firstName.toLowerCase() === 'private' || person.distance === -1);
+  });
+};
 
 // GET /people/search
 // call _searchConnections to return paginated array of connections that match the query criteria
@@ -46,9 +56,10 @@ LinkedInApi.searchConnections = function (session, query, max) {
             // Resolved
             function(data){
               data = _(data).map(function(item){
-                return JSON.parse(item).poeple.values;
+                return JSON.parse(item).people.values;
               });
               data = _(data).flatten(true); //only flatten the first level
+              console.log('- GET /people/search - flattened length >>>', data.length)
               deferred.resolve(JSON.stringify(data));
             },
             // Rejected
@@ -61,6 +72,7 @@ LinkedInApi.searchConnections = function (session, query, max) {
         deferred.reject(error);
     });
 
+
   return deferred.promise;
 };
 
@@ -69,7 +81,7 @@ LinkedInApi.searchConnections = function (session, query, max) {
 // Return the raw data form LinkedIn API without parse out the persons array
 // default api max is 25 persons per result page
 LinkedInApi._searchConnections = function (session, query) {
-  console.log('- GET /PEOPLE/SEARCH - searchConnections - query >> ', query);
+  console.log('- GET /people/search - searchConnections - query >>');
   /*  query: {
         title=            [title]
         keywords=         [space delimited keywords]
@@ -124,7 +136,12 @@ LinkedInApi._searchConnections = function (session, query) {
           // When throttle limit is exceeded, api does not return error
           // so we try / catch that error when we extract persons array if that array was not returned
           body = JSON.parse(body);
-          body.people.values = body.poeple.values.length > 0 ? body.poeple.values : [];
+          // Delete Private Profile
+          body.people.values = body.people.values.length > 0 ? deletePrivateProfiles(body.people.values) : [];
+          // Update/Insert profiles to MongoDB
+          // _bulkUpsert accept either json or object
+          Person._bulkUpsert(body.people.values);
+          // Return json
           deferred.resolve(JSON.stringify(body));
         } catch (error){
           console.log('- LinkedInApi error: ', error, body);
@@ -144,6 +161,7 @@ LinkedInApi._searchConnections = function (session, query) {
 LinkedInApi.searchFirstDegree = function (session, query, personsArray) {
   var deferred = Q.defer();
   personsArray = personsArray || [];
+  query = query || {};
   query.start  = query.start  || 0;
   query.count  = query.count  || 500;
 
@@ -160,7 +178,7 @@ LinkedInApi.searchFirstDegree = function (session, query, personsArray) {
         // _start: start location for pagination in the previous api call
         // _count: number of connections in the prevous api call result
         if((data._start + data._count) >= data._total ){
-          deferred.resolve(personsArray);
+          deferred.resolve(JSON.stringify(personsArray));
         }
         else{
           query.start += 500;
@@ -209,7 +227,12 @@ LinkedInApi._searchFirstDegree = function (session, query) {
           // When throttle limit is exceeded, api does not return error
           // so we try / catch that error when we extract persons array if that array was not returned
           body = JSON.parse(body);
-          body.values = body.values.length > 0 ? body.values : [];
+          // Delete Private Profile
+          body.values = body.values.length > 0 ? deletePrivateProfiles(body.values) : [];
+          // Update/Insert profiles to MongoDB
+          // _bulkUpsert accept either json or object
+          Person._bulkUpsert(body.values);
+          // Return json
           deferred.resolve(JSON.stringify(body));
         } catch (error){
           console.log('- LinkedInApi error: ', error, body);
@@ -249,6 +272,9 @@ LinkedInApi.getProfile = function(session, id){
           // When throttle limit is exceeded, api does not return error
           // so we try / catch that error when we extract values that were not returned
           JSON.parse(body).id.length;
+          // Update/Insert single profile to MongoDB
+          // _upsert accept either json or object
+          Person._upsert(body);
           deferred.resolve(body);
         } catch (error){
           console.log('- LinkedInApi error: ', error, body);
