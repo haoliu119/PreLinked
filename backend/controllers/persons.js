@@ -1,9 +1,5 @@
-var mongoose = require('mongoose');
-var ObjectId = mongoose.Types.ObjectId;
 var Person   = require('../models/persons.js');
 var _helper  = require('./_helper.js');
-var LinkedInApi = require('../models/linkedin_api.js');
-// TODO: refactor this later into Person
 
 var persons = module.exports = {};
 

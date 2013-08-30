@@ -93,5 +93,5 @@ personsCRUD.post = function(req, res){
 };
 
 personsCRUD.delete = function(req, res){
-  res.json('personsCRUD - delete');
+  res.json('personsCRUD - delete - doing nothing right now');
 };
