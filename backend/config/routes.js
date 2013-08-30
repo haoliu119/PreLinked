@@ -16,7 +16,6 @@ var testController = require('../controllers/testController.js');
 module.exports = function(app) {
 
   //Jobs
-  // app.get('/jobs/search', jobsCRUD.search);
   app.get('/jobs/search', jobsSorted.searchSorted);
 
   //LinkedIn Oauth
@@ -28,7 +27,7 @@ module.exports = function(app) {
   app.get('/session', util.getSession);
 
   // LinkedIn API
-  // currently controlling whether live or dummy data is used
+  // currently decide whether live or dummy data is used
   app.get('/people/search', restrict, linkedin.searchConnections);
   app.get('/people/:id', restrict, linkedin.getProfile);
   app.get('/people', restrict, linkedin.searchFirstDegree);
