@@ -2,8 +2,9 @@ var express = require('express');
 var http = require('http');
 
 global._    = require('underscore');
-global.Q    = require('Q');
+global.Q    = require('q');
 global.app  = express();
+global.analytics = require('analytics-node');
 
 require('./config/environments.js')(app);
 require('./config/db.js')(app);
