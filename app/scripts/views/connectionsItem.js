@@ -44,7 +44,8 @@ PreLinked.Views.ConnectionsitemView = Backbone.View.extend({
 
           var modal = new that.Modal({
             content: detailsView,
-            allowCancel: false
+            allowCancel: false,
+            okText: 'Close'
           });
           modal.open();
           //open modal
