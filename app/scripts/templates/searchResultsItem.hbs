@@ -9,6 +9,8 @@
   </li>
 </ul>
 <ul class="small-2 columns">
-  <li><a class="right showConnectButton" href="">{{pCount}} <i class="icon-connection"></i></a></li>
+  <li><a class="right showConnectButton" href="javascript:;">
+    {{#if pCount}}{{pCount}}{{else}}0{{/if}}
+  </a></li>
   {{!-- <li><a class="small button right showConnectButton">{{pCount}} <i class="icon-connection"></i></a></li> --}}
 </ul>
