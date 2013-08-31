@@ -29,13 +29,13 @@ PreLinked.Views.UserView = Backbone.View.extend({
   },
 
   saveUser: function(){
-    this.model.save(null, {
-        success: function(model, response, options){
-          console.log('success in saveUser()');
-        },
-        error: function(model, xhr, options){
-          console.log('error in saveUser()');
-        }
+    this.model
+      .save()
+      .done(function(model, response, options){
+        console.log('success in saveUser()');
+      })
+      .fail(function(model, xhr, options){
+        console.log('error in saveUser()');
       });
   },
 
