@@ -50,6 +50,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
     });
 
     this.homeView.on('homeSearchSubmit', this.selectTab, this);
+    this.searchView.on('homeSearchSubmit', this.selectTab, this);
 
     this.render();
 

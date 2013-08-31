@@ -62,6 +62,9 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   },
 
   submitSearch: function(e){
+    //null is used to signify that this is NOT a click event
+    this.trigger('homeSearchSubmit', null, {showTab: 'jobs'});
+
     this.trigger('addSearchHistory');
     this.getJobResults();
     this.getConnections();
