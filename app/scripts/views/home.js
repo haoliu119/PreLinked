@@ -20,7 +20,7 @@ PreLinked.Views.HomeView = Backbone.View.extend({
   submitSearch: function(e) {
     e.preventDefault();
     e.stopPropagation();
-
+    console.log('target >>>', e.target);
 
     var that = this,
         jobTitle = this.$el.find('input[name=job-title]').val();
