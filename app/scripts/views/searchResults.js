@@ -6,6 +6,7 @@ PreLinked.Views.SearchResultsView = Backbone.View.extend({
 
   initialize: function(options) {
     this.jobQuery = options.jobQuery;
+    this.collection.on('reset', this.render, this);
   },
 
   events: {

@@ -1,5 +1,6 @@
 html,body{background:url("https://webfiles.uci.edu/shaohuaz/share/prelinked/bg-striped.gif") #fff repeat}
 h1,h2,h3,h4,.tab{font-family:Play,helvetica,sans-serif}
+.clearfix{clear:both}
 #app .logo{width:220px}
 #app ul li{list-style-type:none}
 #app .page.current{display:block}
@@ -75,11 +76,16 @@ div.degree{display:inline-block;margin-left:3px;background:#e1e9ec;text-align:ce
 .columns-box .arrow_box:after{border-color:rgba(136,183,213,0);border-right-color:#0596d5;border-width:15px;top:50%;margin-top:-15px}
 .modal-details{position:relative}
 .modal-details .degree{position:absolute;top:-5px;left:52px;font-size:14px;color:#555;box-shadow:1px 1px 2px #666}
-@media only screen and (max-width: 768px){#column-search,#column-jobs,#column-network{position:absolute;top:0;left:0;display:none}
-.tab{height:50px;z-index:1;position:relative;color:#fff;text-align:center;padding:18px 0}
+#form-home{border:10px solid #ccc}
+#form-home button,#form-home input{margin-bottom:0}
+.f-dropdown input,.f-dropdown button{margin-bottom:0}
+@media only screen and (max-width: 768px){.column-left,.column-mid,.column-right{padding-top:20px}
+#column-search,#column-jobs,#column-network{display:none}
+.tab{height:50px;z-index:1;position:relative;color:#fff;text-align:center;padding:18px 0;color:#ccc}
+.tab:hover{color:#fff}
+.tab.on{color:#fff;text-shadow:1px 1px 1px #000}
 #column-search.on,#column-jobs.on,#column-network.on{display:block}
 .columns-box{position:relative}
-.footer{display:none}
 .tab.on:after{top:100%;border:solid transparent;content:" ";height:0;width:0;position:absolute;pointer-events:none;border-width:12px;left:50%;margin-left:-12px;border-color:rgba(136,183,213,0)}
 #tab-search{background:#03497e}
 #tab-search.on:after{border-top-color:#03497e}

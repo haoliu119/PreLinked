@@ -4,6 +4,7 @@ PreLinked.Collections.ConnectionsCollection = Backbone.Collection.extend({
 
     model: PreLinked.Models.ConnectionModel,
 
-    url: '/people/search'
+    // by default, connections will show you first degrees
+    url: '/people'
 
 });

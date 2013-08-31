@@ -8,6 +8,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
   events:{
     "click .geoLocation" : "getLocation",
     'click .tab': 'selectTab',
+    'submit form#form-home': 'submitSearch',
   },
 
   imageUrls:{
@@ -33,7 +34,11 @@ PreLinked.Views.AppView = Backbone.View.extend({
       alert("Location information is unavailable.");
     }, this);
 
-    this.searchView = new PreLinked.Views.SearchView({jobQuery: this.jobQuery});
+    this.searchView = new PreLinked.Views.SearchView({
+      model: new PreLinked.Models.SearchModel(),
+      jobQuery: this.jobQuery
+    });
+
     this.searchView.on('addSearchHistory', function(){
       that.userView.addSearchHistory();
       //immediate local rendering with local data which is not completely in sync with the server
@@ -51,6 +56,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
 
     this.homeView.on('homeSearchSubmit', this.selectTab, this);
     this.searchView.on('homeSearchSubmit', this.selectTab, this);
+    PreLinked.on('homeSearchSubmit', this.selectTab, this);
 
     this.render();
 
@@ -87,6 +93,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
     this.$el.find('.search-col').removeClass('on');
     $(tab).addClass('on');
     this.$el.find('#column-' + dataAttr).addClass('on');
+    window.scrollTo(0,1);
   },
 
   homePage: function(){
@@ -151,7 +158,12 @@ PreLinked.Views.AppView = Backbone.View.extend({
       }
     this.setIconGeo();
   },
-
+  submitSearch: function(event){
+    event.preventDefault();
+    event.stopPropagation();
+    this.homeView.submitSearch(event);
+    return false;
+  }
   // fixedScroll: function() {
   //   var reset = function() {
   //     $('#connections').removeClass('scroll').css({

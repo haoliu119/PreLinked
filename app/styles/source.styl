@@ -4,6 +4,8 @@ html, body
   background url(https://webfiles.uci.edu/shaohuaz/share/prelinked/bg-striped.gif) #fff repeat
 h1, h2, h3, h4, .tab
   font-family Play, helvetica, sans-serif
+.clearfix
+  clear both
 #app .logo
   width 220px
 #app ul li
@@ -253,13 +255,22 @@ div.degree
   color #555
   box-shadow 1px 1px 2px #666
 
+#form-home
+  border: 10px solid #ccc
+#form-home button, #form-home input
+  margin-bottom 0
+.f-dropdown input,
+.f-dropdown button
+  margin-bottom 0
+
 @media only screen and (max-width: 768px)
+  .column-left,
+  .column-mid,
+  .column-right
+    padding-top 20px
   #column-search,
   #column-jobs,
   #column-network
-    position absolute
-    top 0
-    left 0
     display none
   .tab
     height 50px
@@ -268,14 +279,18 @@ div.degree
     color #fff
     text-align center
     padding 18px 0
+    color #ccc
+  .tab:hover
+    color #fff
+  .tab.on
+    color #fff
+    text-shadow 1px 1px 1px #000
   #column-search.on,
   #column-jobs.on,
   #column-network.on
     display block
   .columns-box
     position relative
-  .footer
-    display none
   .tab.on:after
     top 100%
     border solid transparent

@@ -17,6 +17,7 @@ PreLinked.Views.SearchResultsItemView = Backbone.View.extend({
 
   showConnect: function(e) {
     e.preventDefault();
+    PreLinked.trigger('homeSearchSubmit', null, {showTab: 'network'});
     this.model.showConnections();
   }
 
