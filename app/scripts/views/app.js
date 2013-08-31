@@ -6,7 +6,8 @@ PreLinked.Views.AppView = Backbone.View.extend({
   template: JST['app/scripts/templates/app.hbs'],
 
   events:{
-    "click .geoLocation" : "getLocation"
+    "click .geoLocation" : "getLocation",
+    'click .tab': 'selectTab',
   },
 
   imageUrls:{
@@ -32,7 +33,10 @@ PreLinked.Views.AppView = Backbone.View.extend({
       alert("Location information is unavailable.");
     }, this);
 
-    this.searchView = new PreLinked.Views.SearchView({jobQuery: this.jobQuery});
+    this.searchView = new PreLinked.Views.SearchView({
+      model: new PreLinked.Models.SearchModel(),
+      jobQuery: this.jobQuery
+    });
     this.searchView.on('addSearchHistory', function(){
       that.userView.addSearchHistory();
       //immediate local rendering with local data which is not completely in sync with the server
@@ -47,6 +51,9 @@ PreLinked.Views.AppView = Backbone.View.extend({
       model: new PreLinked.Models.HomeModel(),
       jobQuery: this.jobQuery
     });
+
+    this.homeView.on('homeSearchSubmit', this.selectTab, this);
+    this.searchView.on('homeSearchSubmit', this.selectTab, this);
 
     this.render();
 
@@ -65,6 +72,24 @@ PreLinked.Views.AppView = Backbone.View.extend({
     // $(window).on('scroll', function() {
     //   that.fixedScroll();
     // });
+  },
+
+  selectTab: function(e, data) {
+    if(data){
+      var tab = '#tab-' + data.showTab;
+      var dataAttr = data.showTab;
+    } else {
+      e.preventDefault();
+      var tab = e.target;
+      var dataAttr = $(tab).data('tab');
+    }
+
+    PreLinked.appRouter.navigate('/search', { trigger: true});
+
+    this.$el.find('.tab').removeClass('on');
+    this.$el.find('.search-col').removeClass('on');
+    $(tab).addClass('on');
+    this.$el.find('#column-' + dataAttr).addClass('on');
   },
 
   homePage: function(){

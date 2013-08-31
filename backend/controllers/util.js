@@ -32,7 +32,7 @@ util.restrict = function(req, res, next) {
     });
 
     req.session.error = 'Access denied!';
-    res.redirect('/');
+    res.send(401, "Access denied");
   }
 };
 
