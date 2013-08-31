@@ -33,10 +33,16 @@ PreLinked.Views.AppView = Backbone.View.extend({
       alert("Location information is unavailable.");
     }, this);
 
+<<<<<<< HEAD
     this.searchView = new PreLinked.Views.SearchView({
       model: new PreLinked.Models.SearchModel(),
       jobQuery: this.jobQuery
     });
+=======
+    //this.searchResultsItemView = PreLinked.Views.SearchResultsItemView({jobQuery: this.jobQuery});
+
+    this.searchView = new PreLinked.Views.SearchView({jobQuery: this.jobQuery});
+>>>>>>> berry
     this.searchView.on('addSearchHistory', function(){
       that.userView.addSearchHistory();
       //immediate local rendering with local data which is not completely in sync with the server
@@ -54,6 +60,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
 
     this.homeView.on('homeSearchSubmit', this.selectTab, this);
     this.searchView.on('homeSearchSubmit', this.selectTab, this);
+    //this.searchResultsItemView.on('homeSearchSubmit', this.selectTab, this);
 
     this.render();
 
