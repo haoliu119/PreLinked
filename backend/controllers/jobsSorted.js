@@ -74,7 +74,7 @@ var _getJobsAndConnections = function(req, res){
       .searchConnections(
         req.session,
         req.query,
-        100,    // max number of conneciton to return from API, watchout for throttle limit
+        50,    // max number of conneciton to return from API, watchout for throttle limit
         ["first", "second", "group", "third"]); // modify this array to specify degree of connection to search within
 
   inPromise.then(
