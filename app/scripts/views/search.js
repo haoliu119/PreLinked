@@ -47,10 +47,6 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     e.preventDefault();
     this.searchFilterView.addSearchFilter(e);
     if(this.jobQuery.hasChanged()){
-      // TODO: DELETE BEFORE DEPLOYMENT =========================================
-      // console.log('jobQuery changed since last time, YOU MAY SUBMIT >>>>>>>>>>');
-      console.log('jobQuery changed :',this.jobQuery.changedAttributes());
-      // ========================================================================
       this.jobQuery.changed = {};
       this.submitSearch();
     }else{
@@ -61,17 +57,58 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     }
   },
 
-  submitSearch: function(e){
+  submitSearch: function(){
     //null is used to signify that this is NOT a click event
     this.trigger('homeSearchSubmit', null, {showTab: 'jobs'});
-
+    var deferred = $.Deferred();
+    var that = this;
+    // TODO: FILTER OUT DUPLICATE JOB QUERIES IN SEARCH HISTORY
     this.trigger('addSearchHistory');
-    this.getJobResults();
-    this.getConnections();
+    // ===============================
+    this.model.fetch({data: PreLinked.jobQuery.attributes})
+      .done(function(JC){
+        if(JC.jobs){
+          // render job results
+          that.searchResultsView.collection.reset(JC.jobs);
+          if(JC.connections){
+            // render connections
+            that.connectionsView.collection.reset(JC.connections);
+            deferred.resolve();
+          }else{
+            deferred.reject();
+            alert("LinkedIn didn't like us, we recorded the error.");
+          }
+        }else{ // JC.connections must be available, otherwise fetch would have failed
+          // render connections
+          that.connectionsView.collection.reset(JC.connections);
+          deferred.resolve();
+          alert("Indeed didn't like us, we recorded the error.");
+        }
+      })
+      .fail(function(errors){
+        alert("Strange, both Indeed and LinkedIn didn't like us, we recorded the errors.");
+        deferred.reject();
+      })
+      .always(function(){
+        // clear loading icons
+        console.log('- clear loading icons')
+      });
+    return deferred.promise();
   },
 
-  getSearchFilter: function(){
-    return this.searchFilterView.render().el;
+  getFirstDegrees: function(){
+    var deferred = $.Deferred();
+    var that = this;
+    this.connectionsView.collection.fetch()
+      .fail(function(error){
+        console.log("- getFirstDegrees error - ", error);
+      })
+      .always(function(){
+        // clear loading icons
+        deferred.resolve();
+        console.log('- clear loading icons')
+      });
+    return deferred.promise();
   },
 
   getSearchRecent: function(){
@@ -91,54 +128,9 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     return deferred.promise();
   },
 
-  getJobResults: function() {
-    var deferred = $.Deferred();
-    var that = this;
-
-    // TODO: DELETE BEFORE DEPLOYMENT ================
-    //this.jobQuery.consoleLogJobQuery();
-    // ===============================================
-
-    this.searchResultsView.collection
-      .fetch( {data: that.jobQuery.attributes} )
-      .done(function(data){
-        deferred.resolve(that.searchResultsView.render().el);
-      })
-      .fail(function(){
-        deferred.reject(that.searchResultsView.render().el);
-      });
-    return deferred.promise();
-  },
-
-  getConnections: function(start, degree) {
-    var deferred = $.Deferred();
-    var that = this;
-
-    var keywords = this.jobQuery.attributes.jobKeywords;
-    keywords = keywords.concat(this.jobQuery.attributes.company); // Linkedin API company parameter is inaccurate, passing companies in as keywords
-    var query = {
-      title: this.jobQuery.attributes.jobTitle.join(' '),
-      keywords: keywords.join(' '),
-      start: '0',
-      count: '25',
-      facet:  'network,F,S,A,O'
-    };
-
-    this.connectionsView.collection
-      .fetch( { data: query } )
-      .done(function(data){
-        deferred.resolve(that.connectionsView.render().el);
-      })
-      .fail(function(){
-        console.log('Fetch connections failed');
-        deferred.reject(that.connectionsView.render().el);
-      });
-
-    return deferred.promise();
-  },
 
   renderSearchFilter: function(){
-    this.$el.find('#search-filters').html(this.getSearchFilter());
+    this.$el.find('#search-filters').html(this.searchFilterView.render().el);
   },
 
   renderSearchRecent: function(){
@@ -165,37 +157,26 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     this.$el.find('#search-recent').html(searchRecentViewLocal.render().el);
   },
 
-  renderJobResults: function(){
-    var that = this;
-    this.getJobResults()
-      .done(function(element) {
-        that.$el.find('#job-results').html(element);
-      })
-      .fail(function(element) {
-        that.$el.find('#job-results').html(element);
-      });
-  },
-
-  renderConnections: function(){
-    var that = this;
-    this.getConnections()
-      .done(function(element) {
-        that.$el.find('#connections').html(element);
-      })
-      .fail(function(element){
-        that.$el.find('#connections').html(element);
-      });
-  },
-
   render: function() {
+    var that = this;
     this.$el
       .attr('data-page','search')
       .html( this.template() );
 
+    this.submitSearch()
+      .done(function(){
+        that.$el.find('#connections').html(that.connectionsView.render().el);
+      })
+      .fail(function(){
+        that.getFirstDegrees().always(function(){
+          that.$el.find('#connections').html(that.connectionsView.render().el);
+        });
+      })
+      .always(function(){
+        that.$el.find('#job-results').html(that.searchResultsView.render().el);
+      });
     this.renderSearchFilter();
     this.renderSearchRecent();
-    this.renderJobResults();
-    this.renderConnections();
 
     return this;
   }

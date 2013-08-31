@@ -16,29 +16,20 @@ var _AllFields = _BasicProfileFields + "," + _FullProfileFields + "," + _Contact
 var _PeopleSearchReturnFields = "(people:(" + _AllFields + "),facets:(code,name,buckets:(code,name,count)))";
 
 
-
-// Delete profiles with private id or names, which belong to people who choose not to share their info
-// Accept an array of profile objects
-var deletePrivateProfiles = function(data){
-  return  _.reject(data, function(person){
-    return (person.id.toLowerCase() === 'private' || person.lastName.toLowerCase() === 'private' || person.firstName.toLowerCase() === 'private' || person.distance === -1);
-  });
-};
-
 // GET /people/search
 // call _searchConnections to return paginated array of connections that match the query criteria
 // First api call must be synchronous to get total available results
 //      total result number is compared to max to makes sure no unnecessary api calls are used when there are no remaining pages to fetch
 //      subsequent api calls for remaining pages can happen concurrently / asynchronously
 // Number of connections capped by max, which is defaulted to 50 to avoid accidentially exceeding throttle limit
-LinkedInApi.searchConnections = function (session, query, max) {
+LinkedInApi.searchConnections = function (session, query, max, degreesArray) {
   var deferred = Q.defer();
   var promises = [];
   max = max || 100;
   query.start = query.start || 0;
   query.count = query.count || 25;
 
-  var output = LinkedInApi._searchConnections(session, query);
+  var output = LinkedInApi._searchConnections(session, query, degreesArray);
   promises.push(output);
   output.then(
       function(data){
@@ -80,30 +71,9 @@ LinkedInApi.searchConnections = function (session, query, max) {
 //    note: related connections is not available for bulk call, must use .getProfile for each person
 // Return the raw data form LinkedIn API without parse out the persons array
 // default api max is 25 persons per result page
-LinkedInApi._searchConnections = function (session, query) {
+LinkedInApi._searchConnections = function (session, query, degreesArray) {
   console.log('- GET /people/search - searchConnections - query >>');
-  /*  query: {
-        title=            [title]
-        keywords=         [space delimited keywords]
-        facet=            [facet code, values]
 
-        company-name=     [company name] // may not be accurate, use keywords
-
-        facets=           [facet codes]
-        first-name=       [first name]
-        last-name=        [last name]
-        current-title=    [true|false]
-        current-company=  [true|false]
-        school-name=      [school name]
-        current-school=   [true|false]
-        country-code=     [country code]
-        postal-code=      [postal code]
-        distance=         [miles]
-        start=            [number]
-        count=            [1-25]
-        sort=             [connections|recommenders|distance|relevance] // connection: # of connection. recommenders: # of recommenders.
-      }
-  */
   var endPoint = "https://api.linkedin.com/v1",
       accessToken = session.passport.user.accessToken,
       url = endPoint + "/people-search:" + _PeopleSearchReturnFields,
@@ -119,7 +89,7 @@ LinkedInApi._searchConnections = function (session, query) {
       };
 
   var deferred = Q.defer();
-
+  query = parseJobQueryForLinkedIn(query, degreesArray);
   request({
     method: 'GET',
     url: url,
@@ -324,3 +294,78 @@ LinkedInApi.searchCompanies = function(session, companyNames) {
   });
   return deferred.promise;
 };
+
+// =============================================
+// === Private Helper Functions ===
+// =============================================
+
+// for GET people/search, parse job search query to LinkedIn API query formats
+// NOTE: currently not using locaiton and distance
+var parseJobQueryForLinkedIn = function(query, degreesArray){
+  // ex: degreesArray = ["first", "second"]
+  var networkFacetKey = {
+    first:  ",F",
+    second: ",S",
+    group:  ",A",
+    third:  ",O"
+  };
+  var apiQuery = {};
+  degreesArray = degreesArray || ["first", "second", "group", "third"];
+
+  if(query.jobTitle && query.jobTitle.length > 0){
+    apiQuery.title = orJoinKeywords(query.jobTitle);
+  }
+  if(query.company && query.company.length > 0){
+    apiQuery["company-name"] = orJoinKeywords(query.company);
+  }
+  if(query.jobKeywords && query.jobKeywords.length > 0){
+    apiQuery.keywords = orJoinKeywords(query.jobKeywords);
+  }
+  apiQuery.facet = "network";
+  _.each(degreesArray, function(degree){
+    apiQuery.facet += networkFacetKey[degree];
+  });
+
+  apiQuery.start = query.start || 0;
+  apiQuery.count = query.count || 25;
+  return apiQuery;
+};
+
+var orJoinKeywords = function(qArray){
+  qArray = _.map(qArray, function(item){
+    return JSON.stringify(item);
+  });
+
+  var qString = "("+ qArray.join(" OR ") + ")";
+  return qString;
+};
+
+// Delete profiles with private id or names, which belong to people who choose not to share their info
+// Accept an array of profile objects
+var deletePrivateProfiles = function(data){
+  return  _.reject(data, function(person){
+    return (person.id.toLowerCase() === 'private' || person.lastName.toLowerCase() === 'private' || person.firstName.toLowerCase() === 'private' || person.distance === -1);
+  });
+};
+
+/*  query: {
+      title=            ("title1" OR "title name2" OR "title 3")
+      company-name=     ("company1" OR "company name2" OR "company 3")
+      keywords=         ("keyword1" OR "keywords 2" OR "keyword3")
+      start=            [number]
+      count=            [1-25]
+      facet=            "network,F,S,A,O" // F = 1st degree, S = 2nd degree, A = same group, O = 3rd degree/out-of-network
+      sort=             [connections|recommenders|distance|relevance] // connection: # of connection. recommenders: # of recommenders.
+
+      facets=           [facet codes]
+      first-name=       [first name]
+      last-name=        [last name]
+      current-title=    [true|false]
+      current-company=  [true|false]
+      school-name=      [school name]
+      current-school=   [true|false]
+      country-code=     [country code]
+      postal-code=      [postal code]
+      distance=         [miles]
+    }
+*/
