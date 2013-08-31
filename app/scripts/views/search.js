@@ -40,7 +40,9 @@ PreLinked.Views.SearchView = Backbone.View.extend({
   },
 
   showConnections: function(jobAttributes){
-    this.connectionsView.jobConnections.reset(jobAttributes.pConnections.slice(0,jobAttributes.pCount));
+    if(jobAttributes.pCount) {
+      this.connectionsView.jobConnections.reset(jobAttributes.pConnections.slice(0,jobAttributes.pCount));
+    }
   },
 
   confirmSubmit: function(e) {
@@ -74,9 +76,11 @@ PreLinked.Views.SearchView = Backbone.View.extend({
             // render connections
             that.connectionsView.collection.reset(JC.connections);
             deferred.resolve();
-          }else{
+          }else if (JC.connectionsError){
             deferred.reject();
             alert("LinkedIn didn't like us, we recorded the error.");
+          }else{
+            deferred.resolve();
           }
         }else{ // JC.connections must be available, otherwise fetch would have failed
           // render connections
@@ -130,6 +134,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
 
   renderSearchFilter: function(){
+    this.trigger('homeSearchSubmit', null, {showTab: 'search'});
     this.$el.find('#search-filters').html(this.searchFilterView.render().el);
   },
 

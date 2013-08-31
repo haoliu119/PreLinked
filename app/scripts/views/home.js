@@ -21,16 +21,17 @@ PreLinked.Views.HomeView = Backbone.View.extend({
     e.preventDefault();
     e.stopPropagation();
 
-    //null is used to signify that this is NOT a click event
-    this.trigger('homeSearchSubmit', null, {showTab: 'jobs'});
 
     var that = this,
-        jobTitle    = this.$el.find('input[name=job-title]').val();
-
+        jobTitle = this.$el.find('input[name=job-title]').val();
     if (jobTitle !== ""){
-      this.jobQuery.attributes.jobTitle.push(jobTitle);
+      var titles = PreLinked.jobQuery.get("jobTitle").slice();
+      titles.push(jobTitle);
+      PreLinked.jobQuery.set("jobTitle", titles);
     }
 
+    //null is used to signify that this is NOT a click event
+    this.trigger('homeSearchSubmit', null, {showTab: 'jobs'});
     // var userSearch = new PreLinked.Models.UserModel();
     // userSearch.save({
     //   jobTitle: this.jobQuery.attributes.jobTitle,
