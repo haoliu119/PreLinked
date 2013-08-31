@@ -7,7 +7,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
 
   events:{
     "click .geoLocation" : "getLocation",
-    'click .tab': 'tabClick',
+    'click .tab': 'selectTab',
   },
 
   imageUrls:{
@@ -49,6 +49,8 @@ PreLinked.Views.AppView = Backbone.View.extend({
       jobQuery: this.jobQuery
     });
 
+    this.homeView.on('homeSearchSubmit', this.selectTab, this);
+
     this.render();
 
     PreLinked.appRouter = new PreLinked.Routers.AppRouter();
@@ -68,9 +70,16 @@ PreLinked.Views.AppView = Backbone.View.extend({
     // });
   },
 
-  tabClick: function(e) {
+  selectTab: function(e, data) {
+    console.log('selectTab', e, data);
+    if(data){
+      return;
+    }
+
     e.preventDefault();
     var dataAttr = $(e.target).data('tab');
+
+    PreLinked.appRouter.navigate('/search', { trigger: true});
 
     this.$el.find('.tab').removeClass('on');
     this.$el.find('.search-col').removeClass('on');
