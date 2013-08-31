@@ -78,7 +78,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
             deferred.resolve();
           }else if (JC.connectionsError){
             deferred.reject();
-            alert("LinkedIn didn't like us, we recorded the error.");
+            $('#notification').show();
+            $('#notification .message').html("LinkedIn didn't like us, we recorded the error.");
           }else{
             deferred.resolve();
           }
@@ -86,11 +87,13 @@ PreLinked.Views.SearchView = Backbone.View.extend({
           // render connections
           that.connectionsView.collection.reset(JC.connections);
           deferred.resolve();
-          alert("Indeed didn't like us, we recorded the error.");
+          $('#notification').show();
+          $('#notification .message').html("Indeed didn't like us, we recorded the error.");
         }
       })
       .fail(function(errors){
-        alert("Strange, both Indeed and LinkedIn didn't like us, we recorded the errors.");
+        $('#notification').show();
+        $('#notification .message').html("Strange, both Indeed and LinkedIn didn't like us, we recorded the errors.");
         deferred.reject();
       })
       .always(function(){
