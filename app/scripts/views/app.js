@@ -102,6 +102,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
 
   homePage: function(){
     this.$el.find('#main').html(this.homeView.render().el);
+    // this.homeView.delegateEvents();
     this.$el.find('#main input[name=job-title]').focus();
     this.getLocation();
   },
@@ -109,12 +110,14 @@ PreLinked.Views.AppView = Backbone.View.extend({
   searchPage: function(){
     //this.userView.model.fetchUser();
     this.$el.find('#main').html(this.searchView.render().el);
+    // this.searchView.delegateEvents();
   },
 
   render: function() {
     // render header, footer, other page-common components
     this.$el.html(this.template(this.model.attributes));
     this.$el.find('#user-view').html(this.userView.render().el);
+    this.delegateEvents();
     return this;
   },
 
@@ -172,12 +175,20 @@ PreLinked.Views.AppView = Backbone.View.extend({
       }
     this.setIconGeo();
   },
-  submitSearch: function(event){
-    event.preventDefault();
-    event.stopPropagation();
-    this.homeView.submitSearch(event);
-    return false;
-  }
+
+
+
+  // submitSearch: function(event){
+  //   event.preventDefault();
+  //   event.stopPropagation();
+  //   this.homeView.submitSearch(event);
+  //   return false;
+  // }
+
+
+
+
+
   // fixedScroll: function() {
   //   var reset = function() {
   //     $('#connections').removeClass('scroll').css({

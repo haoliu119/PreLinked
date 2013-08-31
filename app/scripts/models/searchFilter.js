@@ -16,26 +16,20 @@ PreLinked.Models.SearchfilterModel = Backbone.Model.extend({
     }
   },
 
-  isDuplicateFilter: function(filterType, filterWord) {
-    var filterArray = this.jobQuery.attributes[filterType];
-    var filterWord = filterWord.toLowerCase();
-    return _.contains(filterArray, filterWord);
-  },
-
   addSearchFilter: function(title, company, keywords, distance, minSalary, maxSalary) {
-    if(title && !this.isDuplicateFilter('jobTitle', title)) {
+    if(title && !this.jobQuery.isDuplicateFilter('jobTitle', title)) {
       title = title.replace(this.regexTrimHeadTailSpace, "");
       var temp = this.jobQuery.attributes.jobTitle.slice();
       temp.push(title);
       this.jobQuery.set('jobTitle', temp);
     }
-    if(company && !this.isDuplicateFilter('company', company)) {
+    if(company && !this.jobQuery.isDuplicateFilter('company', company)) {
       company = company.replace(this.regexTrimHeadTailSpace, "");
       var temp = this.jobQuery.attributes.company.slice();
       temp.push(company);
       this.jobQuery.set('company', temp);
     }
-    if(keywords && !this.isDuplicateFilter('jobKeywords', keywords)) {
+    if(keywords && !this.jobQuery.isDuplicateFilter('jobKeywords', keywords)) {
       keywords = keywords.replace(this.regexTrimHeadTailSpace, "");
       var temp = this.jobQuery.attributes.jobKeywords.slice();
       temp.push(keywords);
