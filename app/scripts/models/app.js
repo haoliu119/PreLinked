@@ -18,7 +18,7 @@ PreLinked.Models.AppModel = Backbone.Model.extend({
     this.googleAPIurl = "https://maps.googleapis.com/maps/api/geocode/json"
 
     // TODO: DELETE BEFORE DEPLOYMENT
-    // this.on('change', this.consoleLogJobQuery);
+    this.on('change', this.consoleLogJobQuery);
     // ------------------------------
   },
 
