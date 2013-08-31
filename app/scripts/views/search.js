@@ -76,9 +76,11 @@ PreLinked.Views.SearchView = Backbone.View.extend({
             // render connections
             that.connectionsView.collection.reset(JC.connections);
             deferred.resolve();
-          }else{
+          }else if (JC.connectionsError){
             deferred.reject();
             alert("LinkedIn didn't like us, we recorded the error.");
+          }else{
+            deferred.resolve();
           }
         }else{ // JC.connections must be available, otherwise fetch would have failed
           // render connections
