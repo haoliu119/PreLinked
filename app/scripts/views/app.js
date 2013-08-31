@@ -37,7 +37,10 @@ PreLinked.Views.AppView = Backbone.View.extend({
       model: new PreLinked.Models.SearchModel(),
       jobQuery: this.jobQuery
     });
-    //this.searchResultsItemView = PreLinked.Views.SearchResultsItemView({jobQuery: this.jobQuery});
+
+    // this.searchResultsItemView = PreLinked.Views.SearchResultsItemView({
+    //   model: new PreLinked.Models.SearchResultsItemModel(),
+    // });
 
     this.searchView.on('addSearchHistory', function(){
       that.userView.addSearchHistory();
