@@ -147,6 +147,7 @@ LinkedInApi.searchFirstDegree = function (session, query, personsArray) {
         // _total: your total number of connections
         // _start: start location for pagination in the previous api call
         // _count: number of connections in the prevous api call result
+        data._count = data._count || data._total;
         if((data._start + data._count) >= data._total ){
           deferred.resolve(JSON.stringify(personsArray));
         }
@@ -198,7 +199,7 @@ LinkedInApi._searchFirstDegree = function (session, query) {
           // so we try / catch that error when we extract persons array if that array was not returned
           body = JSON.parse(body);
           // Delete Private Profile
-          body.values = body.values.length > 0 ? deletePrivateProfiles(body.values) : [];
+          body.values = deletePrivateProfiles(body.values);
           // Update/Insert profiles to MongoDB
           // _bulkUpsert accept either json or object
           Person._bulkUpsert(body.values);
