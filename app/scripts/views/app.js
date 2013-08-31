@@ -33,6 +33,8 @@ PreLinked.Views.AppView = Backbone.View.extend({
       alert("Location information is unavailable.");
     }, this);
 
+    //this.searchResultsItemView = PreLinked.Views.SearchResultsItemView({jobQuery: this.jobQuery});
+
     this.searchView = new PreLinked.Views.SearchView({jobQuery: this.jobQuery});
     this.searchView.on('addSearchHistory', function(){
       that.userView.addSearchHistory();
@@ -51,6 +53,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
 
     this.homeView.on('homeSearchSubmit', this.selectTab, this);
     this.searchView.on('homeSearchSubmit', this.selectTab, this);
+    //this.searchResultsItemView.on('homeSearchSubmit', this.selectTab, this);
 
     this.render();
 
