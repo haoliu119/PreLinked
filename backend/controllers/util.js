@@ -4,9 +4,33 @@ var passport = require('passport');
 //http://stackoverflow.com/questions/14218725/working-with-sessions-in-express-js
 util.restrict = function(req, res, next) {
   if (req.session && req.session.passport && req.session.passport.user) {
+
+    //analytics
+    analytics.identify({
+      userId : req.session.passport.user.id,
+      user    : req.session.passport.user
+    });
+    analytics.track({
+      userId     : req.session.passport.user.id,
+      event      : 'Access granted.',
+      properties : {
+        time : new Date()
+      }
+    });
+
     next();
   } else {
     console.log('Did NOT pass restrict(). Please check session.');
+
+    //analytics
+    analytics.track({
+      userId     : 'null',
+      event      : 'Access denied!',
+      properties : {
+        time : new Date()
+      }
+    });
+
     req.session.error = 'Access denied!';
     res.redirect('/');
   }
