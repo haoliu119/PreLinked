@@ -5,7 +5,7 @@ PreLinked.Views.ConnectionView = Backbone.View.extend({
   template: JST['app/scripts/templates/connections.hbs'],
 
   events:{
-    'click .allResults' : 'renderAllResults'
+    'click #all-connections' : 'renderAllResults'
   },
 
   renderAllResults: function(e){
