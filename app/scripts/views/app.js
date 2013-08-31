@@ -8,6 +8,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
   events:{
     "click .geoLocation" : "getLocation",
     'click .tab': 'selectTab',
+    'submit form#form-home': 'submitSearch',
   },
 
   imageUrls:{
@@ -157,7 +158,12 @@ PreLinked.Views.AppView = Backbone.View.extend({
       }
     this.setIconGeo();
   },
-
+  submitSearch: function(event){
+    event.preventDefault();
+    event.stopPropagation();
+    this.homeView.submitSearch(event);
+    return false;
+  }
   // fixedScroll: function() {
   //   var reset = function() {
   //     $('#connections').removeClass('scroll').css({
