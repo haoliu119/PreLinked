@@ -17,7 +17,7 @@ PreLinked.Views.SearchrecentView = Backbone.View.extend({
     this.$el
       .find('#search-recent-details')
       .html(
-        this.collection.map(function(item, historyIndex) {
+        this.collection.map(function(item) {
           return new PreLinked.Views.SearchrecentitemView({
             model: item,
             jobQuery: that.jobQuery

@@ -37,6 +37,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
       model: new PreLinked.Models.SearchModel(),
       jobQuery: this.jobQuery
     });
+
     this.searchView.on('addSearchHistory', function(){
       that.userView.addSearchHistory();
       //immediate local rendering with local data which is not completely in sync with the server
@@ -53,7 +54,8 @@ PreLinked.Views.AppView = Backbone.View.extend({
     });
 
     this.homeView.on('homeSearchSubmit', this.selectTab, this);
-    this.searchView.on('homeSearchSubmit', this.selectTab, this);
+    PreLinked.on('homeSearchSubmit', this.selectTab, this);
+    //this.on('homeSearchSubmit', this.selectTab, this);
 
     this.render();
 
