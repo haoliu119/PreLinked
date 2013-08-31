@@ -24,7 +24,7 @@ jobsSorted.searchSorted = function(req, res){
   };
   req.query = _.extend(req.query, forIndeedApi);
 
-  var isLoggedin = req.session && req.session.passport && req.session.passport.user;
+  var isLoggedin = req.session && req.session.passport.user && req.session.passport.user.id;
   if(!isLoggedin){
     IndeedApi.search(req.query, 100)
       .done(
