@@ -15,6 +15,7 @@ out what companies were hiring AND finding the decision makers could be a daunti
 - Backbone.js
 - Node.js
 - Express.js
+- Q Promise Library
 - Foundation.js
 - Passport.js
 - MongoDB
