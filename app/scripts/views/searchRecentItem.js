@@ -14,8 +14,6 @@ PreLinked.Views.SearchrecentitemView = Backbone.View.extend({
 
   useSeachHistoryToSearch: function(events){
     events.preventDefault();
-    var $target = $(events.target);
-    var historyIndex = $target.closest('.useThisToSearch').data('historyindex');
     this.jobQuery.set( _.clone(this.model.attributes) );
   },
 
