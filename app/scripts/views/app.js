@@ -72,7 +72,6 @@ PreLinked.Views.AppView = Backbone.View.extend({
   },
 
   selectTab: function(e, data) {
-    console.log('selectTab', e, data);
     if(data){
       var tab = '#tab-' + data.showTab;
       var dataAttr = data.showTab;

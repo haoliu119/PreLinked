@@ -21,8 +21,8 @@ PreLinked.Views.HomeView = Backbone.View.extend({
     e.preventDefault();
     e.stopPropagation();
 
-    this.trigger('homeSearchSubmit', null, {showTab: 'jobs'});
     //null is used to signify that this is NOT a click event
+    this.trigger('homeSearchSubmit', null, {showTab: 'jobs'});
 
     var that = this,
         jobTitle    = this.$el.find('input[name=job-title]').val();

@@ -1,5 +1,5 @@
 html,body{background:url("https://webfiles.uci.edu/shaohuaz/share/prelinked/bg-striped.gif") #fff repeat}
-h1,h2,h3,h4{font-family:Play,helvetica,sans-serif}
+h1,h2,h3,h4,.tab{font-family:Play,helvetica,sans-serif}
 #app .logo{width:220px}
 #app ul li{list-style-type:none}
 #app .page.current{display:block}
@@ -76,7 +76,7 @@ div.degree{display:inline-block;margin-left:3px;background:#e1e9ec;text-align:ce
 .modal-details{position:relative}
 .modal-details .degree{position:absolute;top:-5px;left:52px;font-size:14px;color:#555;box-shadow:1px 1px 2px #666}
 @media only screen and (max-width: 768px){#column-search,#column-jobs,#column-network{position:absolute;top:0;left:0;display:none}
-.tab{display:table-cell;vertical-align:middle;min-height:50px;z-index:1;position:relative}
+.tab{height:50px;z-index:1;position:relative;color:#fff;text-align:center;padding:18px 0}
 #column-search.on,#column-jobs.on,#column-network.on{display:block}
 .columns-box{position:relative}
 .footer{display:none}
