@@ -26,7 +26,6 @@ PreLinked.Views.ConnectionsitemView = Backbone.View.extend({
       id: in_id
     });
 
-    var that = this;
     details.fetch()
       .done(function(data){
 
@@ -42,7 +41,7 @@ PreLinked.Views.ConnectionsitemView = Backbone.View.extend({
           detailsView.model.interConnections = result;
           console.log('interrelated connections', detailsView.model.interConnections);
 
-          var modal = new that.Modal({
+          var modal = new Backbone.FoundationModal({
             content: detailsView,
             allowCancel: false,
             okText: 'Close'
