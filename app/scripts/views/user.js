@@ -44,7 +44,7 @@ PreLinked.Views.UserView = Backbone.View.extend({
     // console.log('adding SearchHistory, current history obj: ', searchHistory);
     searchHistory.unshift(_.clone(this.model.jobQuery.attributes));
     if(searchHistory.length > 10){
-      searchHistory.pop();
+      _(searchHistory).first(10);
     }
     this.saveUser();
   },
