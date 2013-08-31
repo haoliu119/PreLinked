@@ -1,34 +1,40 @@
 <div class="row">
-  <div class="large-6 columns">
+  <div class="large-7 large-centered columns">
     <div class="row collapse">
-      <p>Link jobs searches to your network</p>
-      <div style="padding:50px 0 100px 0">
+      <div class="home-content">
         <div class="large-12 columns">
-          Search for Jobs near:
-          <strong><a href="#" data-dropdown="drop1" id="jobLocation">{{jobLocation}}</a></strong>
-          <a href="#" class="geoLocation"><img src="https://webfiles.uci.edu/shaohuaz/share/prelinked/geolocate.png" height="20" width="20"></a>
+          <div class="row">
+            <div class="home-search-text">
+              <strong>Search for Jobs</strong> near:
+              <span class="wsn"><strong><a href="#" data-dropdown="drop1" id="jobLocation">{{jobLocation}}</a></strong>
+              <a href="#" class="geoLocation"><img src="https://webfiles.uci.edu/shaohuaz/share/prelinked/geolocate.png" height="20" width="20"></a></span>
+            <div>
+            <form id="form-location">
+              <ul id="drop1" class="f-dropdown medium" data-dropdown-content>
+                <li>
+                  <div class="small-10 columns">
+                    <input class="full-width" name="job-location" type="text" placeholder="Location: city, state, or zip">
+                  </div>
+                  <div class="small-2 columns">
+                    <button type="submit" class="button prefix">Update</button>
+                  </div>
+                </li>
+              </ul>
+            </form>
+
+          </div>
+          <div class="row">
+            <form id="form-home">
+              <div class="large-9 columns">
+                <input class="full-width" name="job-title" type="text" placeholder="Enter job title (example: Software Engineer)">
+              </div>
+              <div class="large-3 columns">
+                <button type="submit" class="button prefix">Search Jobs</button>
+              </div>
+              <div class="clearfix"></div>
+            </form>
+          </div>
         </div>
-        <form id="form-location">
-          <ul id="drop1" class="f-dropdown medium" data-dropdown-content>
-            <li>
-              <div class="small-10 columns">
-                <input class="full-width" name="job-location" type="text" placeholder="Location: city, state, or zip">
-              </div>
-              <div class="small-2 columns">
-                <button type="submit" class="button prefix">Update</button>
-              </div>
-            </li>
-          </ul>
-        </form>
-        <form id="form-home">
-          <div class="large-9 columns">
-            <input class="full-width" name="job-title" type="text" placeholder="Enter job title (example: Software Engineer)">
-          </div>
-          <div class="large-3 columns">
-            <button type="submit" class="button prefix">Search Jobs</button>
-          </div>
-          <div class="clearfix"></div>
-        </form>
       </div>
     </div>
   </div>
