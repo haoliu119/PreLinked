@@ -8,7 +8,7 @@ util.restrict = function(req, res, next) {
   } else {
     console.log('Did NOT pass restrict(). Please check session.');
     req.session.error = 'Access denied!';
-    res.redirect('/');
+    res.send(401, "Access denied");
   }
 };
 
