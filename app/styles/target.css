@@ -75,8 +75,11 @@ div.degree{display:inline-block;margin-left:3px;background:#e1e9ec;text-align:ce
 .columns-box .arrow_box:after{border-color:rgba(136,183,213,0);border-right-color:#0596d5;border-width:15px;top:50%;margin-top:-15px}
 .modal-details{position:relative}
 .modal-details .degree{position:absolute;top:-5px;left:52px;font-size:14px;color:#555;box-shadow:1px 1px 2px #666}
-@media only screen and (max-width: 768px){#column-search,#column-jobs,#column-network{position:absolute;top:0;left:0;display:none}
-.tab{height:50px;z-index:1;position:relative;color:#fff;text-align:center;padding:18px 0}
+@media only screen and (max-width: 768px){.column-left,.column-mid,.column-right{padding-top:20px}
+#column-search,#column-jobs,#column-network{position:absolute;top:0;left:0;display:none}
+.tab{height:50px;z-index:1;position:relative;color:#fff;text-align:center;padding:18px 0;color:#ccc}
+.tab:hover{color:#fff}
+.tab.on{color:#fff;text-shadow:1px 1px 1px #000}
 #column-search.on,#column-jobs.on,#column-network.on{display:block}
 .columns-box{position:relative}
 .footer{display:none}

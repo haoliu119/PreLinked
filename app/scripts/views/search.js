@@ -139,6 +139,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
   renderSearchFilter: function(){
     this.$el.find('#search-filters').html(this.getSearchFilter());
+    this.trigger('homeSearchSubmit', null, {showTab: 'search'});
   },
 
   renderSearchRecent: function(){
