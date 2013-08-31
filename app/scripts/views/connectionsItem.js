@@ -5,7 +5,6 @@ PreLinked.Views.ConnectionsitemView = Backbone.View.extend({
   template: JST['app/scripts/templates/connectionsItem.hbs'],
 
   initialize: function(){
-    this.Modal = (new PreLinked.Views.PmodalView()).pmodal;
   },
 
   events: {
