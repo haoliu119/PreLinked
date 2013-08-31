@@ -143,9 +143,11 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     this.getSearchRecent()
       .done(function(element) {
         that.$el.find('#search-recent').html(element);
+        that.searchRecentView.delegateEvents();
       })
       .fail(function(element) {
         that.$el.find('#search-recent').html(element);
+        that.searchRecentView.delegateEvents();
       });
   },
 
@@ -182,7 +184,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
       });
     this.renderSearchFilter();
     this.renderSearchRecent();
-
+    this.delegateEvents();
     return this;
   }
 

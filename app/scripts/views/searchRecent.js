@@ -4,8 +4,19 @@ PreLinked.Views.SearchrecentView = Backbone.View.extend({
 
   template: JST['app/scripts/templates/searchRecent.hbs'],
 
+  events: {
+    'click .useThisToSearch'  : 'useSeachHistoryToSearch'
+  },
+
   initialize: function(options){
     this.jobQuery = options.jobQuery;
+  },
+
+  useSeachHistoryToSearch: function(event){
+    event.preventDefault();
+    var target = $(event.target).closest('a');
+    var id = target.data('id');
+    PreLinked.jobQuery.set(_.clone(this.collection.get(id).attributes));
   },
 
   render: function() {
@@ -24,8 +35,8 @@ PreLinked.Views.SearchrecentView = Backbone.View.extend({
           }).render().el;
         })
       );
-
+    this.delegateEvents();
     return this;
-  }
+  },
 
 });
