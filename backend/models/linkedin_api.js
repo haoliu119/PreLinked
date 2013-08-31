@@ -199,7 +199,7 @@ LinkedInApi._searchFirstDegree = function (session, query) {
           // so we try / catch that error when we extract persons array if that array was not returned
           body = JSON.parse(body);
           // Delete Private Profile
-          body.values = deletePrivateProfiles(body.values);
+          body.values = body.values.length ? deletePrivateProfiles(body.values) : [];
           // Update/Insert profiles to MongoDB
           // _bulkUpsert accept either json or object
           Person._bulkUpsert(body.values);
