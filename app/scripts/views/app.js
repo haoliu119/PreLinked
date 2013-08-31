@@ -73,17 +73,19 @@ PreLinked.Views.AppView = Backbone.View.extend({
   selectTab: function(e, data) {
     console.log('selectTab', e, data);
     if(data){
-      return;
+      var tab = '#tab-' + data.showTab;
+      var dataAttr = data.showTab;
+    } else {
+      e.preventDefault();
+      var tab = e.target;
+      var dataAttr = $(tab).data('tab');
     }
-
-    e.preventDefault();
-    var dataAttr = $(e.target).data('tab');
 
     PreLinked.appRouter.navigate('/search', { trigger: true});
 
     this.$el.find('.tab').removeClass('on');
     this.$el.find('.search-col').removeClass('on');
-    $(e.target).addClass('on');
+    $(tab).addClass('on');
     this.$el.find('#column-' + dataAttr).addClass('on');
   },
 

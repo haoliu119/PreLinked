@@ -21,7 +21,7 @@ PreLinked.Views.HomeView = Backbone.View.extend({
     e.preventDefault();
     e.stopPropagation();
 
-    this.trigger('homeSearchSubmit', null, {isSubmit: true});
+    this.trigger('homeSearchSubmit', null, {showTab: 'jobs'});
     //null is used to signify that this is NOT a click event
 
     var that = this,
