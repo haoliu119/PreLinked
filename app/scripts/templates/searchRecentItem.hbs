@@ -1,15 +1,15 @@
-<a class="button tiny secondary useThisToSearch" href="#">
-  {{#if jobTitle}}
-    <span>{{jobTitle}}</span>
+<a class="button tiny secondary useThisToSearch" href="javascript: void(0)" data-id="{{model.cid}}">
+  {{#if data.jobTitle}}
+    <span>{{data.jobTitle}}</span>
   {{/if}}
-  {{#if company}}
-    <span>{{company}}</span>
+  {{#if data.company}}
+    <span>{{data.company}}</span>
   {{/if}}
-  {{#if jobKeywords}}
-    <span>{{jobKeywords}}</span>
+  {{#if data.jobKeywords}}
+    <span>{{data.jobKeywords}}</span>
   {{/if}}
-  {{#if distance}}
-    <span>{{distance}} miles</span>
+  {{#if data.distance}}
+    <span>{{data.distance}} miles</span>
   {{/if}}
 </a>
 

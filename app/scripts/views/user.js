@@ -51,6 +51,7 @@ PreLinked.Views.UserView = Backbone.View.extend({
 
   render: function() {
     this.$el.html(this.template(this.model.attributes));
+    this.delegateEvents();
     return this;
   }
 });

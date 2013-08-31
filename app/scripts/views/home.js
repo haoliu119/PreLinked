@@ -43,6 +43,7 @@ PreLinked.Views.HomeView = Backbone.View.extend({
     this.$el
       .attr('data-page','home')
       .html(this.template(this.jobQuery.attributes));
+    this.delegateEvents();
     return this;
   },
 
