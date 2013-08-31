@@ -25,7 +25,7 @@ var _PeopleSearchReturnFields = "(people:(" + _AllFields + "),facets:(code,name,
 LinkedInApi.searchConnections = function (session, query, max, degreesArray) {
   var deferred = Q.defer();
   var promises = [];
-  max = max || 100;
+  max = max || 50;
   query.start = query.start || 0;
   query.count = query.count || 25;
 
