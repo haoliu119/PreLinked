@@ -39,7 +39,7 @@ PreLinked.Views.LoginboxView = Backbone.View.extend({
         checkLogin: data
       }));
     });
-
+    this.delegateEvents();
     return this;
   }
 
