@@ -9,6 +9,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
     "click .geoLocation" : "getLocation",
     'click .tab': 'selectTab',
     'submit form#form-home': 'submitSearch',
+    'click .close-notification': 'closeNotification'
   },
 
   imageUrls:{
@@ -70,11 +71,14 @@ PreLinked.Views.AppView = Backbone.View.extend({
       silent: true
     });
     Backbone.history.loadUrl();
-
     // var that = this;
     // $(window).on('scroll', function() {
     //   that.fixedScroll();
     // });
+  },
+
+  closeNotification: function() {
+    this.$el.find('#notification').hide();
   },
 
   selectTab: function(e, data) {
@@ -144,16 +148,26 @@ PreLinked.Views.AppView = Backbone.View.extend({
       {
       case error.PERMISSION_DENIED:
         console.log("User denied the request for Geolocation.");
+        this.$el.find('#notification').show();
+        this.$el.find('#notification .message').html("User denied the request for Geolocation.");
         break;
       case error.POSITION_UNAVAILABLE:
         alert("Location information is unavailable.");
+        this.$el.find('#notification').show();
+        this.$el.find('#notification .message').html("Location information is unavailable.");
         break;
       case error.TIMEOUT:
         alert("Request timed out, try again.");
+        this.$el.find('#notification').show();
+        this.$el.find('#notification .message').html("Request timed out, try again.");
+
         // alert("The request to get user location timed out.");
         break;
       case error.UNKNOWN_ERROR:
         alert("An unknown error occurred.");
+        this.$el.find('#notification').show();
+        this.$el.find('#notification .message').html("An unknown error occurred.");
+
         break;
       }
     this.setIconGeo();
