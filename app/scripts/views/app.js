@@ -54,8 +54,8 @@ PreLinked.Views.AppView = Backbone.View.extend({
     });
 
     this.homeView.on('homeSearchSubmit', this.selectTab, this);
+    this.searchView.on('homeSearchSubmit', this.selectTab, this);
     PreLinked.on('homeSearchSubmit', this.selectTab, this);
-    //this.on('homeSearchSubmit', this.selectTab, this);
 
     this.render();
 
@@ -92,6 +92,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
     this.$el.find('.search-col').removeClass('on');
     $(tab).addClass('on');
     this.$el.find('#column-' + dataAttr).addClass('on');
+    window.scrollTo(0,1);
   },
 
   homePage: function(){
