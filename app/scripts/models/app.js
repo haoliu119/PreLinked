@@ -56,6 +56,12 @@ PreLinked.Models.AppModel = Backbone.Model.extend({
     });
   },
 
+  isDuplicateFilter: function(filterType, filterWord) {
+    var filterArray = this.attributes[filterType];
+    var filterWord = filterWord.toLowerCase();
+    return _.contains(filterArray, filterWord);
+  },
+
   // TODO: DELETE BEFORE DEPLOYMENT ==============================
   consoleLogJobQuery: function(){
     console.log('APP MODEL changed =====================');
