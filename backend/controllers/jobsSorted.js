@@ -1,117 +1,132 @@
-var IndeedApi = require('../models/indeed_api.js');
-var LinkedInApi = require('../models/linkedin_api.js');
-var fs        = require('fs');
-var path      = require('path');
-var _helper   = require('./_helper.js');
-var personsController = require('./persons.js');
-var jobs = require('./jobs.js');
-var jobsCRUD = require('./jobsCRUD.js');
-
+var fs      = require('fs');
+var path    = require('path');
 var natural = require('natural');
+// Other Controllers
+var jobsCRUD = require('./jobsCRUD.js');
+var jobs     = require('./jobs.js');
+var personsController = require('./persons.js');
+var _helper   = require('./_helper.js');
+// API models
+var IndeedApi   = require('../models/indeed_api.js');
+var LinkedInApi = require('../models/linkedin_api.js');
 
 var jobsSorted = module.exports = {};
 
-// currently not used to save job posts to DB
-// may implement caching in the future
-var _saveIndeedJobs = function(indeedSearch){
-  if(typeof indeedSearch === 'string'){
-    indeedSearch = JSON.parse(indeedSearch);
-    //API might return string
-  }
-  if(indeedSearch.length){
-    _(indeedSearch).each(function(data){
-      jobs._post(data)
-        .then(function(job){
-          console.log('Indeed job saved successfully: ', job);
+// MAIN function for this file
+// return to client an object:
+//{ jobs:        [array of job objects],
+//  connections: [array of people objects] }
+jobsSorted.searchSorted = function(req, res){
+  //check for sesssion, if not avaliable, only fetch indeed
+  var forIndeedApi = {
+    userip      :  _helper.getClientIp(req),
+    useragent   :  req.headers['user-agent'],
+  };
+  req.query = _.extend(req.query, forIndeedApi);
+
+  var isLoggedin = req.session && req.session.passport.user && req.session.passport.user.id;
+  if(!isLoggedin){
+    IndeedApi.search(req.query, 100)
+      .done(
+        function(data){
+          data = {jobs: JSON.parse(data)};
+          _helper.resolved(req, res, JSON.stringify(data));
+        },
+        function(error){
+          _helper.rejected(req, res, error);
         });
-    });
+  }else{
+    _getJobsAndConnections(req, res)
+      .done(
+        function(JC){
+        // JC is an object with two properties
+          if(JC.jobs){
+            if(JC.connections){
+            // if both jobs and connections APIs returned success
+              var jobs = JC.jobs,
+                  connections = JC.connections;
+              JC.jobs = _sortJobs(jobs, connections);
+              _helper.resolved(req, res, JSON.stringify(JC));
+            }else{
+              // if Linkedin Errored Out
+              _helper.resolved(req, res, JSON.stringify(JC));
+            }
+          }else{
+            // if jobs errored out, but we know Linkedin returned success
+              _helper.resolved(req, res, JSON.stringify(JC));
+          }
+        },
+        // Both Indeed and LinkedIn APIs Errored Out
+        function(error){
+          _helper.rejected(req, res, JSON.stringify(error));
+        });
   }
-
-};
-
-//testing function for internal purposes
-jobsSorted.testScore = function(req, res){
-  _getJobsAndConnections(req, res);
 };
 
 var _getJobsAndConnections = function(req, res){
   var deferred = Q.defer();
   var promises = [];
 
-  //defaults for req.query
-  var defaultReqQuery = {
-    jobTitle    :  [],
-    company     :  [],
-    jobLocation :  'San Francisco, CA',
-    jobKeywords :  [],
-    distance    :  25,
-    minSalary   :  "None",
-    maxSalary   :  "None",
-    useragent   :  req.headers['user-agent'],
-    userip      :  _helper.getClientIp(req)
-  };
-
-  // Make Query Object for LinkedIn API
-  req.query = _(defaultReqQuery).extend(req.query);
-  var linkedInKeywords = req.query.jobKeywords;
-  linkedInKeywords = linkedInKeywords.concat(req.query.company); // Linkedin API company parameter is inaccurate, passing companies in as keywords
-  var linkdedInQueryObject = {
-    title: req.query.jobTitle.join(' '),
-    keywords: linkedInKeywords.join(' '),
-    start: '0',
-    count: '25',
-  };
-
   //first, indeed jobs
-  var indeed_query_obj = _(defaultReqQuery).extend(req.query);
-  promises.push( jobs._grabMultiplePages(indeed_query_obj, 2) );
+  var jobsPromise = IndeedApi.search(req.query, 100);
+  promises.push(jobsPromise);
+  var inPromise = LinkedInApi
+      .searchConnections(
+        req.session,
+        req.query,
+        100,    // max number of conneciton to return from API, watchout for throttle limit
+        ["first", "second", "group", "third"]); // modify this array to specify degree of connection to search within
 
-  //second, linkedin first degrees
-  //First 500 for now
-  promises.push( LinkedInApi.searchFirstDegree(req.session) );
-
-  //third, linkedin second degrees
-  var linkedin_second_degree_query_obj = _({facet:'network,S'}).extend(linkdedInQueryObject);
-  promises.push( LinkedInApi.searchConnections(req.session, linkedin_second_degree_query_obj) );
-
-  //fourth, linkedin third degrees
-  var linkedin_third_degree_query_obj = _({facet:'network,A,0'}).extend(linkdedInQueryObject);
-  promises.push( LinkedInApi.searchConnections(req.session, linkedin_third_degree_query_obj) );
-
-  //input
-  //100 indeed jobs
-  //500 1st degree
-  //25 2nd degree
-  //25 3rd degree
-
-  Q.all(promises)
-    .then(function(data){
-      data = _(data).map(function(value, index){
-        console.log('data ' + index, value.length, value.substring(0,200) + '\n');
-        return JSON.parse(value);
-      });
-      //convert data from string to objects
-
-      if(data.length === 4){
-        //first element is indeed jobs
-        //the last three elements are linkedin connections
-        var jobs = data[0];
-        if(data[1] && data[1].length){
-          var connections = data[1].concat( data[2], data[3] );
-        }
-        console.log('jobs: \n', jobs.length);
-        console.log('connections: \n', connections.length);
-        // _helper.resolved(req, res, [jobs, connections]);
-        deferred.resolve([jobs, connections]);
-      }
+  inPromise.then(
+    // LinkedIn API successfully returned
+    function(connectionsData){
+      promises.push(inPromise);
+      // When jobsPromise is also done
+      Q.all(promises).then(
+        // If Both Indeed and Linkedin calls were successful
+        function(data){
+          //convert data from string to objects
+          data = _(data).map(function(value, index){
+            return JSON.parse(value);
+          });
+          var jobs = data[0]; //first element is always indeed jobs because we pushed it first
+          var connections = data[1];
+          console.log('- GET jobs/search - jobsSorted - jobs: \n', jobs.length);
+          console.log('- GET jobs/search - jobsSorted - connections: \n', connections.length);
+          deferred.resolve({jobs: jobs, connections: connections});
+        },
+        // Indeed API returned error, but we still want to return LinkedIn results
+        function(jobsError){
+          deferred.resolve({connections: JSON.parse(connectionsData), jobsError: jobsError});
+        });
+    },
+    // LinkedIn API errored out, but we still want to return Indeed Results
+    function(connectionsError){
+      Q.all(promises).then(
+        // Indeed returned success
+        function(data){
+          deferred.resolve({jobs: JSON.parse(data[0]), connectionsError: connectionsError});
+        },
+        // Indeed also errored out
+        function(jobsError){
+          deferred.reject({jobsError: jobsError, connectionsError: connectionsError});
+        });
     });
 
   return deferred.promise;
 };
 
+var _sortJobs = function(inputJobs, inputConnections){
+  _(inputJobs).each(function(inputJob){
+    var scores = _getScores(inputJob, inputConnections);
+    inputJob.pScore = scores.pScore;
+    inputJob.pConnections = scores.pConnections;
+    inputJob.pCount = scores.pCount;
+  });
+  return inputJobs;
+};
 
-
-var _getScores = function(job, connections, queryJobTitle){
+var _getScores = function(job, connections){
   var employer = job.company; // Apple
   // console.log('employer from indeed\n', employer);
 
@@ -129,11 +144,11 @@ var _getScores = function(job, connections, queryJobTitle){
     //return the max of scores
     if(conn.positions && conn.positions.values && conn.positions.values.length){
       friend.linkedinCompanies = [];
-      friend.linkedinTitles = [];
+      // friend.linkedinTitles = [];
 
       _(conn.positions.values).each(function(conn){
         friend.linkedinCompanies.push( conn.company && conn.company.name );
-        friend.linkedinTitles.push( conn.title || '' );
+        // friend.linkedinTitles.push( conn.title || '' );
       });
     }
 
@@ -143,10 +158,10 @@ var _getScores = function(job, connections, queryJobTitle){
     });
     friend.companyStringDistance = _(companyStringDistances).max();
 
-    var titleStringDistances = _(friend.linkedinTitles).map(function(title){
-      return natural.JaroWinklerDistance(queryJobTitle, title);
-    });
-    friend.titleStringDistance = _(titleStringDistances).max();
+    // var titleStringDistances = _(friend.linkedinTitles).map(function(title){
+    //   return natural.JaroWinklerDistance(queryJobTitle, title);
+    // });
+    // friend.titleStringDistance = _(titleStringDistances).max();
 
     friends.push(friend);
   });
@@ -170,13 +185,13 @@ var _getScores = function(job, connections, queryJobTitle){
 
   //extra step for first degree
   //if title doesn't really match, set pScore to zero
-  var titleThreshold = 0.7;
-  _(friends).each(function(friend){
-    if(friend.distance === 1){
-      var titleScore = friend.titleStringDistance > titleThreshold ? 1 : 0;
-      friend.pScore = friend.pScore * titleScore;
-    }
-  });
+  // var titleThreshold = 0.7;
+  // _(friends).each(function(friend){
+  //   if(friend.distance === 1){
+  //     var titleScore = friend.titleStringDistance > titleThreshold ? 1 : 0;
+  //     friend.pScore = friend.pScore * titleScore;
+  //   }
+  // });
 
   //sort friends array by pScore
   friends = _(friends).sortBy(function(friend){
@@ -207,41 +222,29 @@ var _getScores = function(job, connections, queryJobTitle){
   };
 };
 
-var _sortJobs = function(inputJobs, inputConnections, queryJobTitle){
-  _(inputJobs).each(function(inputJob){
-    var scores = _getScores(inputJob, inputConnections, queryJobTitle);
-    inputJob.pScore = scores.pScore;
-    inputJob.pConnections = scores.pConnections;
-    inputJob.pCount = scores.pCount;
-  });
-  return inputJobs;
+// =====================================================
+// === Functions for Internal Use or Future Features ===
+// =====================================================
+
+//testing function for internal purposes
+jobsSorted.testScore = function(req, res){
+  _getJobsAndConnections(req, res);
 };
 
-//MAIN function for this file
-jobsSorted.searchSorted = function(req, res){
-
-  //check for sesssion
-  //if not avaliable, only fetch indeed
-  var isLoggedin = req.session && req.session.passport && req.session.passport.user;
-  if(!isLoggedin){
-    jobsCRUD.search(req, res);
-  }else{
-    //for weighting the first degree Linkedin connections
-    var queryJobTitle = '';
-    if(req.query && req.query.jobTitle){
-      queryJobTitle = req.query.jobTitle.join(' ');
-    }
-
-    _getJobsAndConnections(req, res)
-      .then(function(jobsAndConnections){
-        console.log('-controller-jobs.searchSorted()');
-
-        var jobs = jobsAndConnections[0];
-        var connections = jobsAndConnections[1];
-        var sorted = _sortJobs(jobs, connections, queryJobTitle);
-
-        _helper.resolved(req, res, sorted);
-
-      });
+// Currently Not Used to save job posts to DB
+// may implement caching in the future
+var _saveIndeedJobs = function(indeedSearch){
+  if(typeof indeedSearch === 'string'){
+    indeedSearch = JSON.parse(indeedSearch);
+    //API might return string
   }
+  if(indeedSearch.length){
+    _(indeedSearch).each(function(data){
+      jobs._post(data)
+        .then(function(job){
+          console.log('Indeed job saved successfully: ', job);
+        });
+    });
+  }
+
 };

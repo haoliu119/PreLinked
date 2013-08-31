@@ -2,6 +2,7 @@
 
 PreLinked.Models.AppModel = Backbone.Model.extend({
 
+  // NOTE: DO NOT CHANGE ATTRIBUTE NAMES, USED TO MAP TO API QUERY
   defaults:{
     jobTitle:     [],
     company:      [],

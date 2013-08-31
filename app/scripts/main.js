@@ -9,9 +9,9 @@ window.PreLinked = {
     console.log('Hello from PreLinked!');
     _.extend(PreLinked, Backbone.Events);
 
-    var app_model = new this.Models.AppModel();
+    PreLinked.jobQuery = new this.Models.AppModel();
     var app_view = new this.Views.AppView({
-      model: app_model
+      model: PreLinked.jobQuery
     });
   }
 };
