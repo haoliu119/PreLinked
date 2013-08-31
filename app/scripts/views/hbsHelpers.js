@@ -1,5 +1,6 @@
 Handlebars.registerHelper('toDoubleDigits', function(input){
-  return parseFloat(input).toFixed(2);
+  var output = parseFloat(input).toFixed(2);
+  return (_(output).isNumber() ) ? output : '';
 });
 
 Handlebars.registerHelper('ifCond', function(v1, v2, options) {
