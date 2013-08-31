@@ -1,5 +1,5 @@
-.gitignore
 node_modules
+env.json
 dist
 test/temp
 .sass-cache
