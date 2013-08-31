@@ -6,7 +6,8 @@ PreLinked.Views.AppView = Backbone.View.extend({
   template: JST['app/scripts/templates/app.hbs'],
 
   events:{
-    "click .geoLocation" : "getLocation"
+    "click .geoLocation" : "getLocation",
+    'click .tab': 'selectTab',
   },
 
   imageUrls:{
@@ -48,6 +49,9 @@ PreLinked.Views.AppView = Backbone.View.extend({
       jobQuery: this.jobQuery
     });
 
+    this.homeView.on('homeSearchSubmit', this.selectTab, this);
+    this.searchView.on('homeSearchSubmit', this.selectTab, this);
+
     this.render();
 
     PreLinked.appRouter = new PreLinked.Routers.AppRouter();
@@ -65,6 +69,24 @@ PreLinked.Views.AppView = Backbone.View.extend({
     // $(window).on('scroll', function() {
     //   that.fixedScroll();
     // });
+  },
+
+  selectTab: function(e, data) {
+    if(data){
+      var tab = '#tab-' + data.showTab;
+      var dataAttr = data.showTab;
+    } else {
+      e.preventDefault();
+      var tab = e.target;
+      var dataAttr = $(tab).data('tab');
+    }
+
+    PreLinked.appRouter.navigate('/search', { trigger: true});
+
+    this.$el.find('.tab').removeClass('on');
+    this.$el.find('.search-col').removeClass('on');
+    $(tab).addClass('on');
+    this.$el.find('#column-' + dataAttr).addClass('on');
   },
 
   homePage: function(){

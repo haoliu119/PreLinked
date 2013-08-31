@@ -16,15 +16,6 @@ PreLinked.Views.LoginboxView = Backbone.View.extend({
   showLoginProgress: function(){
 
   },
-  // openLoginModal: function(){
-  //   var contentStr = '<h3><a href="http://localhost:3000/auth/linkedin">Login</a></h3>';
-  //   var modal = new this.Modal({
-  //     title: 'Awesome. I have it.',
-  //     content: contentStr,
-  //     footer: false
-  //   });
-  //   modal.open();
-  // },
 
   checkLogin: function(){
     var deferred = $.Deferred();
@@ -36,7 +27,7 @@ PreLinked.Views.LoginboxView = Backbone.View.extend({
     }).done(function(data){
       deferred.resolve( JSON.parse(data) );
       //from string to boolean
-    })
+    });
     return deferred.promise();
   },
 

@@ -18,6 +18,7 @@
         "Q": true,
         "_": true,
         "analytics": true,
-        "app": true
+        "app": true,
+        "$": true
     }
 }
