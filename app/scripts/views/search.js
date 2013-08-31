@@ -130,6 +130,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
 
 
   renderSearchFilter: function(){
+    this.trigger('homeSearchSubmit', null, {showTab: 'search'});
     this.$el.find('#search-filters').html(this.searchFilterView.render().el);
   },
 
