@@ -87,7 +87,7 @@ img.topbar-photo,.each-connection .modal-details .image{border-radius:4px}
 #notification{background-color:#fff6a4;position:relative}
 #notification .message{text-align:center;padding:10px 40px}
 #notification .close-notification{padding:10px;position:absolute;right:0;top:0;color:#000}
-#form-home{border:10px solid #ccc;border-radius:4px}
+#form-home{border:10px solid #ccc;border-radius:4px;font-size:18px}
 #form-home input{font-weight:bold;text-align:center}
 #form-home button,#form-home input{margin-bottom:0}
 .f-dropdown input,.f-dropdown button{margin-bottom:0}
