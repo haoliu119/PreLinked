@@ -4,8 +4,8 @@ PreLinked.Views.SearchResultsView = Backbone.View.extend({
 
   template: JST['app/scripts/templates/searchResults.hbs'],
 
-  initialize: function(options) {
-    this.jobQuery = options.jobQuery;
+  initialize: function() {
+    this.jobQuery = PreLinked.jobQuery;
     this.collection.on('reset', this.render, this);
   },
 
