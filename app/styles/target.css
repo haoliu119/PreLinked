@@ -85,15 +85,15 @@ img.topbar-photo,.each-connection .modal-details .image{border-radius:4px}
 .modal-details{position:relative}
 .modal-details .degree{position:absolute;top:-5px;left:52px;font-size:14px;color:#555;box-shadow:1px 1px 2px #666}
 #notification{background-color:#fff6a4;position:relative}
-#notification .message{text-align:center;padding:5px}
-#notification .close-notification{padding:5px 10px;position:absolute;right:0;top:0;color:#000}
+#notification .message{text-align:center;padding:10px 40px}
+#notification .close-notification{padding:10px;position:absolute;right:0;top:0;color:#000}
 #form-home{border:10px solid #ccc;border-radius:4px}
 #form-home input{font-weight:bold;text-align:center}
 #form-home button,#form-home input{margin-bottom:0}
 .f-dropdown input,.f-dropdown button{margin-bottom:0}
 @media only screen and (max-width: 768px){.column-left,.column-mid,.column-right{padding-top:20px}
 #column-search,#column-jobs,#column-network{display:none}
-.tab{height:50px;z-index:1;position:relative;color:#fff;text-align:center;padding:18px 0;color:#ccc}
+.tab{height:50px;z-index:1;position:relative;color:#fff;text-align:center;padding:18px 0}
 .tab:hover{color:#fff}
 .tab.on{color:#fff;text-shadow:1px 1px 1px #000}
 #column-search.on,#column-jobs.on,#column-network.on{display:block}
