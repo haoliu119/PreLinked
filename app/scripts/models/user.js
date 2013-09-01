@@ -8,7 +8,7 @@ PreLinked.Models.UserModel = Backbone.Model.extend({
     // inPerson: {}
   },
 
-  initialize: function(options) {
-    this.jobQuery = options.jobQuery;
+  initialize: function() {
+    this.jobQuery = PreLinked.jobQuery;
   }
 });

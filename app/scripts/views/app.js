@@ -18,13 +18,13 @@ PreLinked.Views.AppView = Backbone.View.extend({
   },
 
   initialize: function() {
-    this.jobQuery = this.model;
+    this.jobQuery = PreLinked.jobQuery; //the same as this.model
 
     _.bindAll(this, "showPosition");
     _.bindAll(this, "showError");
     var that = this;
 
-    this.userModel  = new PreLinked.Models.UserModel({jobQuery: this.jobQuery})
+    this.userModel  = new PreLinked.Models.UserModel();
     this.userView   = new PreLinked.Views.UserView({model: this.userModel});
 
     this.model.on('googleGeoSuccess',function(){
@@ -36,8 +36,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
     }, this);
 
     this.searchView = new PreLinked.Views.SearchView({
-      model: new PreLinked.Models.SearchModel(),
-      jobQuery: this.jobQuery
+      model: new PreLinked.Models.SearchModel()
     });
 
     this.searchView.on('addSearchHistory', function(){
@@ -51,8 +50,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
     }, this);
 
     this.homeView = new PreLinked.Views.HomeView({
-      model: new PreLinked.Models.HomeModel(),
-      jobQuery: this.jobQuery
+      model: new PreLinked.Models.HomeModel()
     });
 
     this.homeView.on('homeSearchSubmit', this.selectTab, this);

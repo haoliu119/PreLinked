@@ -8,15 +8,15 @@ PreLinked.Views.SearchrecentView = Backbone.View.extend({
     'click .useThisToSearch'  : 'useSeachHistoryToSearch'
   },
 
-  initialize: function(options){
-    this.jobQuery = options.jobQuery;
+  initialize: function(){
+    this.jobQuery = PreLinked.jobQuery;
   },
 
   useSeachHistoryToSearch: function(event){
     event.preventDefault();
     var target = $(event.target).closest('a');
     var id = target.data('id');
-    PreLinked.jobQuery.set(_.clone(this.collection.get(id).attributes));
+    this.jobQuery.set(_.clone(this.collection.get(id).attributes));
   },
 
   render: function() {
@@ -24,14 +24,12 @@ PreLinked.Views.SearchrecentView = Backbone.View.extend({
     //render a placeholder first
 
     // console.log('searchRecent collection length: ', this.collection.length);
-    var that = this;
     this.$el
       .find('#search-recent-details')
       .html(
         this.collection.map(function(item) {
           return new PreLinked.Views.SearchrecentitemView({
-            model: item,
-            jobQuery: that.jobQuery
+            model: item
           }).render().el;
         })
       );
