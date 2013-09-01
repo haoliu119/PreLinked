@@ -41,7 +41,7 @@ util.badIdea = function(req, res){
 };
 
 util.getSession = function(req, res) {
-  if(req.session && req.session.passport && req.session.passport.user){
+  if(req.session && req.session.passport.user && req.session.passport.user.id){
     console.log('- GET /session >> ture, accessToken >> ', req.session.passport.user.accessToken);
     res.json(true);
   } else {
