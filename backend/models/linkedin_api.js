@@ -111,7 +111,7 @@ LinkedInApi._searchConnections = function (session, query, degreesArray) {
           body.people.values = body.people.values.length > 0 ? deletePrivateProfiles(body.people.values) : [];
           // Tracking # of API calls per user
           if(body.people.values.length){
-            analytics.identity({
+            analytics.identify({
               userId: session.passport.user.id,
               traits: {
                 name: session.passport.user.displayName
@@ -134,7 +134,7 @@ LinkedInApi._searchConnections = function (session, query, degreesArray) {
         } catch (error){
           console.log('- LinkedInApi error: ', error, body);
           // Tracking API errors
-          analytics.identity({
+          analytics.identify({
             userId: session.passport.user.id,
             traits: {
               name: session.passport.user.displayName
@@ -236,7 +236,7 @@ LinkedInApi._searchFirstDegree = function (session, query) {
           // Tracking # of API calls per user
           if(body.values.length){
             var count = body._count || body._total;
-            analytics.identity({
+            analytics.identify({
               userId: session.passport.user.id,
               traits: {
                 name: session.passport.user.displayName
@@ -259,7 +259,7 @@ LinkedInApi._searchFirstDegree = function (session, query) {
         } catch (error){
           console.log('- LinkedInApi error: ', error, body);
           // Tracking API errors
-          analytics.identity({
+          analytics.identify({
             userId: session.passport.user.id,
             traits: {
               name: session.passport.user.displayName
@@ -316,7 +316,7 @@ LinkedInApi.getProfile = function(session, id){
           // When throttle limit is exceeded, api does not return error
           // so we try / catch that error when we extract values that were not returned
           if(body.id){
-            analytics.identity({
+            analytics.identify({
               userId: session.passport.user.id,
               traits: {
                 name: session.passport.user.displayName
@@ -337,7 +337,7 @@ LinkedInApi.getProfile = function(session, id){
         } catch (error){
           console.log('- LinkedInApi error: ', error, body);
           // Tracking API errors
-          analytics.identity({
+          analytics.identify({
             userId: session.passport.user.id,
             traits: {
               name: session.passport.user.displayName
