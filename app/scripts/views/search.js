@@ -11,29 +11,23 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     'click .searchFilterButton': 'confirmSubmit'
   },
 
-  initialize: function(options){
-    this.jobQuery = options.jobQuery;
+  initialize: function(){
+    this.jobQuery = PreLinked.jobQuery;
 
     this.searchFilterView   = new PreLinked.Views.SearchfilterView({
-      model     : new PreLinked.Models.SearchfilterModel({
-                    jobQuery: this.jobQuery
-                  }),
-      jobQuery: this.jobQuery
+      model     : new PreLinked.Models.SearchfilterModel()
     });
 
     this.searchRecentView   = new PreLinked.Views.SearchrecentView({
-      collection: new PreLinked.Collections.SearchrecentCollection(),
-      jobQuery: this.jobQuery
+      collection: new PreLinked.Collections.SearchrecentCollection()
     });
 
     this.searchResultsView  = new PreLinked.Views.SearchResultsView({
-      collection: new PreLinked.Collections.SearchResultsCollection(),
-      jobQuery  : this.jobQuery
+      collection: new PreLinked.Collections.SearchResultsCollection()
     });
 
     this.connectionsView    = new PreLinked.Views.ConnectionView({
-      collection: new PreLinked.Collections.ConnectionsCollection(),
-      jobQuery  : this.jobQuery
+      collection: new PreLinked.Collections.ConnectionsCollection()
     });
 
     this.searchResultsView.collection.on('showConnections', this.showConnections, this);
@@ -67,7 +61,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     // TODO: FILTER OUT DUPLICATE JOB QUERIES IN SEARCH HISTORY
     this.trigger('addSearchHistory');
     // ===============================
-    this.model.fetch({data: PreLinked.jobQuery.attributes})
+    this.model.fetch({data: this.jobQuery.attributes})
       .done(function(JC){
         if(JC.jobs){
           // render job results
@@ -161,8 +155,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
       item.jobTitle = item.jobTitle.join(' ');
     });
     var searchRecentViewLocal   = new PreLinked.Views.SearchrecentView({
-      collection: localData,
-      jobQuery: this.jobQuery
+      collection: localData
     });
     this.$el.find('#search-recent').html(searchRecentViewLocal.render().el);
   },

@@ -4,9 +4,9 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
 
   template: JST['app/scripts/templates/searchFilter.hbs'],
 
-  initialize: function(options) {
-    this.jobQuery = options.jobQuery;
-    PreLinked.jobQuery.on('change', this.render, this);
+  initialize: function() {
+    this.jobQuery = PreLinked.jobQuery;
+    this.jobQuery.on('change', this.render, this);
     this.regexTrimHeadTailSpace = /^[ \t]+|[ \t]+$/;
   },
 
