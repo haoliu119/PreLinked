@@ -12,20 +12,19 @@ PreLinked.Views.HomeView = Backbone.View.extend({
     'click a#jobLocation' : 'locationOnFocus'
   },
 
-  initialize: function(options) {
-    this.jobQuery = options.jobQuery;
+  initialize: function() {
+    this.jobQuery = PreLinked.jobQuery;
     this.jobQuery.on('change:jobLocation', this.renderLocation, this);
   },
 
   submitSearch: function(e) {
     e.preventDefault();
     e.stopPropagation();
-    var that = this,
-        jobTitle = this.$el.find('input[name=job-title]').val();
+    var jobTitle = this.$el.find('input[name=job-title]').val();
     if (jobTitle !== "" && !this.jobQuery.isDuplicateFilter('jobTitle', jobTitle)){
-      var titles = PreLinked.jobQuery.get("jobTitle").slice();
+      var titles = this.jobQuery.get("jobTitle").slice();
       titles.push(jobTitle);
-      PreLinked.jobQuery.set("jobTitle", titles);
+      this.jobQuery.set("jobTitle", titles);
     }
 
     //null is used to signify that this is NOT a click event

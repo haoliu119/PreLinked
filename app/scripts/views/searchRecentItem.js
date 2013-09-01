@@ -4,8 +4,8 @@ PreLinked.Views.SearchrecentitemView = Backbone.View.extend({
 
   template: JST['app/scripts/templates/searchRecentItem.hbs'],
 
-  initialize: function(options){
-    this.jobQuery = options.jobQuery;
+  initialize: function(){
+    this.jobQuery = PreLinked.jobQuery;
   },
 
   render: function() {
