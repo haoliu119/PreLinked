@@ -1,15 +1,30 @@
-<a class="button tiny secondary useThisToSearch" href="javascript: void(0)" data-id="{{model.cid}}">
-  {{#if data.jobTitle}}
-    <span>{{data.jobTitle}}</span>
+<a class="button tiny secondary useThisToSearch column" href="javascript: void(0)" data-id="{{model.cid}}">
+  {{#if data.jobTitle.length}}
+    <span>Title: </span>
+    {{#each data.jobTitle}}
+      <span>{{this}}, </span>
+    {{/each}}<br>
   {{/if}}
-  {{#if data.company}}
-    <span>{{data.company}}</span>
+  {{#if data.company.length}}
+    <span>Company: </span>
+    {{#each data.company}}
+      <span>{{this}}, </span>
+    {{/each}}<br>
   {{/if}}
-  {{#if data.jobKeywords}}
-    <span>{{data.jobKeywords}}</span>
+  {{#if data.jobLocation.length}}
+    <span>Location: </span>
+    <span>{{data.jobLocation}}</span><br>
+  {{/if}}
+  {{#if data.jobKeywords.length}}
+    <span>Keywords: </span>
+    {{#each data.jobKeywords}}
+      <span>{{this}}, </span>
+    {{/each}}<br>
   {{/if}}
   {{#if data.distance}}
-    <span>{{data.distance}} miles</span>
+    <span>Distance: </span>
+    <span>{{data.distance}} miles</span><br>
   {{/if}}
+  <span>Salary: {{data.minSalary}}-{{data.maxSalary}}</span>
 </a>
 

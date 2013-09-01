@@ -24,7 +24,7 @@ PreLinked.Views.ConnectionView = Backbone.View.extend({
   render: function(){
     // console.log('ConnectionView.render()');
     // console.log('connections >>> ', this.collection.models);
-
+    var that = this;
     this.$el.html(this.template({
       number_of_connections: this.collection.length
     }));
@@ -44,15 +44,34 @@ PreLinked.Views.ConnectionView = Backbone.View.extend({
           })
         );
     } else {
-      this.$el
-        .find('#connection-results')
-        .html("Sorry. I can't find any connection for you.<br>"+
-              "How about adding me as your connection...<br><br>");
+      this.checkLogin().done(function(message){
+        that.$el
+          .find('#connection-results')
+          .html(message);
+      });
     }
     this.delegateEvents();
     return this;
   },
-
+  checkLogin: function(){
+    var deferred = $.Deferred();
+    $.ajax({
+      type: "GET",
+      url: "/session",
+      contentType: "application/json; charset=utf-8",
+      dataType: "json"
+    }).done(function(data){
+      data = JSON.parse(data);
+      if(data){
+        deferred.resolve("Sorry, I can't find any connection for you.<br>"+
+              "How about submitting a job search...<br><br>");
+      }else{
+        deferred.resolve("Sorry, I can't find any connection for you.<br>"+
+              "How about adding me as your connection...<br><br>");
+      }
+    });
+    return deferred.promise();
+  },
   renderJobConnections: function(){
     this.$el.html(this.template({
       number_of_connections: this.jobConnections.length
