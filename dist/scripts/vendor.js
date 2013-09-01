@@ -15734,6 +15734,10 @@ if (typeof jQuery === "undefined" &&
         cancelText: 'Cancel',
         allowCancel: true
       }, options);
+
+      //create a throttled version of open
+      this.throttled = _.throttle(this.open, 500, {trailing: false});
+
     },
 
     /**
@@ -15759,6 +15763,13 @@ if (typeof jQuery === "undefined" &&
 
       this.isRendered = true;
 
+      var that = this;
+      //Remove DOM element if clicking on the background
+      var $background = $('.reveal-modal-bg');
+      $background.one('click', function(){
+        that.close();
+      });
+
       return this;
     },
 
@@ -15783,6 +15794,13 @@ if (typeof jQuery === "undefined" &&
       }
 
       return this;
+    },
+
+    /**
+     * A throttled version of open
+     */
+    openOnce: function(callback){
+      this.throttled.call(this, callback);
     },
 
     /**
