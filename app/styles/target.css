@@ -5,6 +5,7 @@ h1,h2,h3,h4,.tab{font-family:Play,helvetica,sans-serif}
 #app ul li{list-style-type:none}
 #app .page.current{display:block}
 #app fieldset .scroll{max-height:600px;overflow-y:scroll}
+.white-wall{top:0;left:0;height:100%;width:100%;position:absolute;background:#fff;opacity:.5;z-index:9999999}
 .each-connection{position:relative}
 .each-connection .modal-details .image{position:absolute;top:0;left:0}
 .each-connection .info{margin-left:90px;min-height:90px}
