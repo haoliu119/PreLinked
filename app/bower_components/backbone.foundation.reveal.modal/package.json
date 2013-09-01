@@ -1,0 +1,32 @@
+{
+  "name": "backbone.foundation.reveal.modal",
+  "version": "0.0.1",
+  "description": "A thin Backbone wrapper for Foundation Reveal Modal",
+  "main": "./js/modal.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/shaohua/backbone.foundation.reveal.modal.git"
+  },
+  "keywords": [
+    "Backbone",
+    "Foundation",
+    "Reveal",
+    "Modal"
+  ],
+  "author": "Shaohua Zhou",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "4194e50eebab332fe045fa0f17f43bbd852620b0",
+  "bugs": {
+    "url": "https://github.com/shaohua/backbone.foundation.reveal.modal/issues"
+  },
+  "devDependencies": {
+    "grunt-mocha-test": "~0.6.3",
+    "grunt": "~0.4.1",
+    "chai": "~1.7.2",
+    "grunt-cli": "~0.1.9"
+  }
+}

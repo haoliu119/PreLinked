@@ -1,0 +1,24 @@
+{
+  "name": "backbone.foundation.reveal.modal",
+  "version": "0.0.1",
+  "homepage": "https://github.com/shaohua/backbone.foundation.reveal.modal",
+  "authors": [
+    "Shaohua Zhou <sh.zhou@gmail.com>"
+  ],
+  "description": "Foundation Reveal Modal Wrapper for Backbone.js",
+  "main": "js/modal.js",
+  "keywords": [
+    "Foundation",
+    "Reveal",
+    "Modal",
+    "Backbone.js"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
