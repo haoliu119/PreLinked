@@ -1,2 +1,4 @@
-.gitignore
 node_modules
+app/bower_components/
+app/scripts/templates.js
+dist/

@@ -73,6 +73,7 @@ LinkedInApi.searchConnections = function (session, query, max, degreesArray) {
 // default api max is 25 persons per result page
 LinkedInApi._searchConnections = function (session, query, degreesArray) {
   console.log('- GET /people/search - searchConnections - query >>');
+  console.log('- GET /people/search - searchConnections - session.passport.user >>', session.passport.user);
 
   var endPoint = "https://api.linkedin.com/v1",
       accessToken = session.passport.user.accessToken,
@@ -108,6 +109,23 @@ LinkedInApi._searchConnections = function (session, query, degreesArray) {
           body = JSON.parse(body);
           // Delete Private Profile
           body.people.values = body.people.values.length > 0 ? deletePrivateProfiles(body.people.values) : [];
+          // Tracking # of API calls per user
+          if(body.people.values.length){
+            analytics.identify({
+              userId: session.passport.user.id,
+              traits: {
+                name: session.passport.user.displayName
+              }
+            });
+            analytics.track({
+              userId: session.passport.user.id,
+              event : "LinkedIn Success - People Search",
+              properties: {
+                time: new Date(),
+                count: body.people._count
+              }
+            });
+          }
           // Update/Insert profiles to MongoDB
           // _bulkUpsert accept either json or object
           Person._bulkUpsert(body.people.values);
@@ -115,6 +133,21 @@ LinkedInApi._searchConnections = function (session, query, degreesArray) {
           deferred.resolve(JSON.stringify(body));
         } catch (error){
           console.log('- LinkedInApi error: ', error, body);
+          // Tracking API errors
+          analytics.identify({
+            userId: session.passport.user.id,
+            traits: {
+              name: session.passport.user.displayName
+            }
+          });
+          analytics.track({
+            userId: session.passport.user.id,
+            event : "LinkedIn Error - People Search: " + body.message,
+            properties: {
+              time: new Date()
+            }
+          });
+
           deferred.reject(body.message);
         }
       }
@@ -200,6 +233,24 @@ LinkedInApi._searchFirstDegree = function (session, query) {
           body = JSON.parse(body);
           // Delete Private Profile
           body.values = body.values.length ? deletePrivateProfiles(body.values) : [];
+          // Tracking # of API calls per user
+          if(body.values.length){
+            var count = body._count || body._total;
+            analytics.identify({
+              userId: session.passport.user.id,
+              traits: {
+                name: session.passport.user.displayName
+              }
+            });
+            analytics.track({
+              userId: session.passport.user.id,
+              event : "LinkedIn Success - 1st Degrees",
+              properties: {
+                time: new Date(),
+                count: count
+              }
+            });
+          }
           // Update/Insert profiles to MongoDB
           // _bulkUpsert accept either json or object
           Person._bulkUpsert(body.values);
@@ -207,6 +258,20 @@ LinkedInApi._searchFirstDegree = function (session, query) {
           deferred.resolve(JSON.stringify(body));
         } catch (error){
           console.log('- LinkedInApi error: ', error, body);
+          // Tracking API errors
+          analytics.identify({
+            userId: session.passport.user.id,
+            traits: {
+              name: session.passport.user.displayName
+            }
+          });
+          analytics.track({
+            userId: session.passport.user.id,
+            event : "LinkedIn Error - 1st Degrees: " + body.message,
+            properties: {
+              time: new Date()
+            }
+          });
           deferred.reject(body.message);
         }
       }
@@ -227,6 +292,13 @@ LinkedInApi.getProfile = function(session, id){
       };
 
   var deferred = Q.defer();
+  // event for tracking
+  var event = "";
+  if(id === session.passport.user.id){
+    event = "Get Own Profile";
+  }else{
+    event = "Get Other's Profile"
+  }
 
   request({
       method: 'GET',
@@ -240,15 +312,44 @@ LinkedInApi.getProfile = function(session, id){
         deferred.reject(error);
       } else {
         try {
+          body = JSON.parse(body);
           // When throttle limit is exceeded, api does not return error
           // so we try / catch that error when we extract values that were not returned
-          JSON.parse(body).id.length;
+          if(body.id){
+            analytics.identify({
+              userId: session.passport.user.id,
+              traits: {
+                name: session.passport.user.displayName
+              }
+            });
+            analytics.track({
+              userId: session.passport.user.id,
+              event : "LinkedIn Success - User " + event,
+              properties: {
+                time: new Date()
+              }
+            });
+          }
           // Update/Insert single profile to MongoDB
           // _upsert accept either json or object
           Person._upsert(body);
           deferred.resolve(body);
         } catch (error){
           console.log('- LinkedInApi error: ', error, body);
+          // Tracking API errors
+          analytics.identify({
+            userId: session.passport.user.id,
+            traits: {
+              name: session.passport.user.displayName
+            }
+          });
+          analytics.track({
+            userId: session.passport.user.id,
+            event : "LinkedIn Error - User " + event + " - " + body.message,
+            properties: {
+              time: new Date()
+            }
+          });
           deferred.reject(body.message);
         }
       }
