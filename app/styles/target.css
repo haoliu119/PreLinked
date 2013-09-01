@@ -94,7 +94,7 @@ img.topbar-photo,.each-connection .modal-details .image{border-radius:4px}
 .f-dropdown input,.f-dropdown button{margin-bottom:0}
 @media only screen and (max-width: 768px){.column-left,.column-mid,.column-right{padding-top:20px}
 #column-search,#column-jobs,#column-network{display:none}
-.tab{height:50px;z-index:1;position:relative;color:#fff;text-align:center;padding:18px 0}
+.tab{z-index:1;position:relative;color:#fff;text-align:center;padding:10px 0}
 .tab:hover{color:#fff}
 .tab.on{color:#fff;text-shadow:1px 1px 1px #000}
 #column-search.on,#column-jobs.on,#column-network.on{display:block}

@@ -397,55 +397,82 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
 function program1(depth0,data) {
   
-  var buffer = "", stack1;
-  buffer += "\n    <span>"
-    + escapeExpression(((stack1 = ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.jobTitle)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</span>\n  ";
+  var buffer = "", stack1, stack2;
+  buffer += "\n    <span>Title: </span>\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.jobTitle), {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "<br>\n  ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "";
+  buffer += "\n      <span>"
+    + escapeExpression((typeof depth0 === functionType ? depth0.apply(depth0) : depth0))
+    + ", </span>\n    ";
   return buffer;
   }
 
-function program3(depth0,data) {
+function program4(depth0,data) {
   
-  var buffer = "", stack1;
-  buffer += "\n    <span>"
-    + escapeExpression(((stack1 = ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.company)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</span>\n  ";
+  var buffer = "", stack1, stack2;
+  buffer += "\n    <span>Company: </span>\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.company), {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "<br>\n  ";
   return buffer;
   }
 
-function program5(depth0,data) {
+function program6(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n    <span>"
-    + escapeExpression(((stack1 = ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.jobKeywords)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</span>\n  ";
+  buffer += "\n    <span>Location: </span>\n    <span>"
+    + escapeExpression(((stack1 = ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.jobLocation)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</span><br>\n  ";
   return buffer;
   }
 
-function program7(depth0,data) {
+function program8(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n    <span>Keywords: </span>\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.jobKeywords), {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "<br>\n  ";
+  return buffer;
+  }
+
+function program10(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n    <span>"
+  buffer += "\n    <span>Distance: </span>\n    <span>"
     + escapeExpression(((stack1 = ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.distance)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + " miles</span>\n  ";
+    + " miles</span><br>\n  ";
   return buffer;
   }
 
-  buffer += "<a class=\"button tiny secondary useThisToSearch\" href=\"javascript: void(0)\" data-id=\""
+  buffer += "<a class=\"button tiny secondary useThisToSearch column\" href=\"javascript: void(0)\" data-id=\""
     + escapeExpression(((stack1 = ((stack1 = depth0.model),stack1 == null || stack1 === false ? stack1 : stack1.cid)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">\n  ";
-  stack2 = helpers['if'].call(depth0, ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.jobTitle), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.jobTitle)),stack1 == null || stack1 === false ? stack1 : stack1.length), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "\n  ";
-  stack2 = helpers['if'].call(depth0, ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.company), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
+  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.company)),stack1 == null || stack1 === false ? stack1 : stack1.length), {hash:{},inverse:self.noop,fn:self.program(4, program4, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "\n  ";
-  stack2 = helpers['if'].call(depth0, ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.jobKeywords), {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data});
+  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.jobLocation)),stack1 == null || stack1 === false ? stack1 : stack1.length), {hash:{},inverse:self.noop,fn:self.program(6, program6, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "\n  ";
-  stack2 = helpers['if'].call(depth0, ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.distance), {hash:{},inverse:self.noop,fn:self.program(7, program7, data),data:data});
+  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.jobKeywords)),stack1 == null || stack1 === false ? stack1 : stack1.length), {hash:{},inverse:self.noop,fn:self.program(8, program8, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n</a>\n\n";
+  buffer += "\n  ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.distance), {hash:{},inverse:self.noop,fn:self.program(10, program10, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n  <span>Salary: "
+    + escapeExpression(((stack1 = ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.minSalary)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "-"
+    + escapeExpression(((stack1 = ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.maxSalary)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</span>\n</a>\n\n";
   return buffer;
   });
 
@@ -1271,7 +1298,7 @@ PreLinked.Views.SearchResultsView = Backbone.View.extend({
             }).render().el;
           })
         );
-    } else {
+    } else{
       this.$el
         .find('.jobResults')
         .html("Sorry. I can't find anything for you.<br>"+
@@ -1498,22 +1525,27 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     this.searchFilterView.addSearchFilter(e);
     if(this.jobQuery.hasChanged()){
       this.jobQuery.changed = {};
-      this.submitSearch();
+      this.submitSearch(false);
     }else{
       var answer = confirm("You haven't changed anything, search anyways?");
       if(answer){
-        this.submitSearch();
+        this.submitSearch(true);
       }
     }
   },
 
-  submitSearch: function(){
+  submitSearch: function(duplicate){
     //null is used to signify that this is NOT a click event
     this.trigger('homeSearchSubmit', null, {showTab: 'jobs'});
+    this.$el.find(".searchFilterButton").html("<div class='loader'></div>").attr('disabled','disabled');
+    this.connectionsView.$el.append("<div class='white-wall'></div>");
+    this.searchResultsView.$el.append("<div class='white-wall'></div>");
     var deferred = $.Deferred();
     var that = this;
     // TODO: FILTER OUT DUPLICATE JOB QUERIES IN SEARCH HISTORY
-    this.trigger('addSearchHistory');
+    if(!duplicate){
+      this.trigger('addSearchHistory');
+    }
     // ===============================
     this.model.fetch({data: this.jobQuery.attributes})
       .done(function(JC){
@@ -1525,9 +1557,15 @@ PreLinked.Views.SearchView = Backbone.View.extend({
             that.connectionsView.collection.reset(JC.connections);
             deferred.resolve();
           }else if (JC.connectionsError){
-            deferred.reject();
+            var message = JC.connectionsError;
+            if (message === 'Unable to verify access token' || message === '[unauthorized] Invalid or expired token.'){
+              message = "your LinkedIn access expired, please logout and re-login.";
+            }else{
+              message = "we've reached your daily LinkedIn search limit, please try again after midnight UTC."
+            }
             $('#notification').show();
-            $('#notification .message').html("Sorry, we've reached your daily LinkedIn search limit, please try again after midnight UTC.");
+            $('#notification .message').html("Sorry, " + message);
+            deferred.reject();
           }else{
             deferred.resolve();
           }
@@ -1546,7 +1584,9 @@ PreLinked.Views.SearchView = Backbone.View.extend({
       })
       .always(function(){
         // clear loading icons
-        console.log('- clear loading icons')
+        that.connectionsView.$el.find('.white-wall').remove();
+        that.searchResultsView.$el.find('.white-wall').remove();
+        that.$el.find(".searchFilterButton").html("Search").removeAttr('disabled');
       });
     return deferred.promise();
   },
@@ -1619,19 +1659,23 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     this.$el
       .attr('data-page','search')
       .html( this.template() );
-
-    this.submitSearch()
-      .done(function(){
-        that.$el.find('#connections').html(that.connectionsView.render().el);
-      })
-      .fail(function(){
-        that.getFirstDegrees().always(function(){
+    if(this.jobQuery.hasChanged() && this.jobQuery.attributes.jobTitle.length > 0 ){
+      this.submitSearch()
+        .done(function(){
           that.$el.find('#connections').html(that.connectionsView.render().el);
+        })
+        .fail(function(){
+          that.getFirstDegrees().always(function(){
+            that.$el.find('#connections').html(that.connectionsView.render().el);
+          });
+        })
+        .always(function(){
+          that.$el.find('#job-results').html(that.searchResultsView.render().el);
         });
-      })
-      .always(function(){
-        that.$el.find('#job-results').html(that.searchResultsView.render().el);
-      });
+    }else{
+      this.$el.find('#job-results').html(that.searchResultsView.render().el);
+      this.$el.find('#connections').html(that.connectionsView.render().el);
+    }
     this.renderSearchFilter();
     this.renderSearchRecent();
     this.delegateEvents();
@@ -1817,7 +1861,7 @@ PreLinked.Views.ConnectionView = Backbone.View.extend({
   render: function(){
     // console.log('ConnectionView.render()');
     // console.log('connections >>> ', this.collection.models);
-
+    var that = this;
     this.$el.html(this.template({
       number_of_connections: this.collection.length
     }));
@@ -1837,15 +1881,34 @@ PreLinked.Views.ConnectionView = Backbone.View.extend({
           })
         );
     } else {
-      this.$el
-        .find('#connection-results')
-        .html("Sorry. I can't find any connection for you.<br>"+
-              "How about adding me as your connection...<br><br>");
+      this.checkLogin().done(function(message){
+        that.$el
+          .find('#connection-results')
+          .html(message);
+      });
     }
     this.delegateEvents();
     return this;
   },
-
+  checkLogin: function(){
+    var deferred = $.Deferred();
+    $.ajax({
+      type: "GET",
+      url: "/session",
+      contentType: "application/json; charset=utf-8",
+      dataType: "json"
+    }).done(function(data){
+      data = JSON.parse(data);
+      if(data){
+        deferred.resolve("Sorry, I can't find any connection for you.<br>"+
+              "How about submitting a job search...<br><br>");
+      }else{
+        deferred.resolve("Sorry, I can't find any connection for you.<br>"+
+              "How about adding me as your connection...<br><br>");
+      }
+    });
+    return deferred.promise();
+  },
   renderJobConnections: function(){
     this.$el.html(this.template({
       number_of_connections: this.jobConnections.length

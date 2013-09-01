@@ -374,55 +374,82 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
 function program1(depth0,data) {
   
-  var buffer = "", stack1;
-  buffer += "\n    <span>"
-    + escapeExpression(((stack1 = ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.jobTitle)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</span>\n  ";
+  var buffer = "", stack1, stack2;
+  buffer += "\n    <span>Title: </span>\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.jobTitle), {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "<br>\n  ";
+  return buffer;
+  }
+function program2(depth0,data) {
+  
+  var buffer = "";
+  buffer += "\n      <span>"
+    + escapeExpression((typeof depth0 === functionType ? depth0.apply(depth0) : depth0))
+    + ", </span>\n    ";
   return buffer;
   }
 
-function program3(depth0,data) {
+function program4(depth0,data) {
   
-  var buffer = "", stack1;
-  buffer += "\n    <span>"
-    + escapeExpression(((stack1 = ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.company)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</span>\n  ";
+  var buffer = "", stack1, stack2;
+  buffer += "\n    <span>Company: </span>\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.company), {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "<br>\n  ";
   return buffer;
   }
 
-function program5(depth0,data) {
+function program6(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n    <span>"
-    + escapeExpression(((stack1 = ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.jobKeywords)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</span>\n  ";
+  buffer += "\n    <span>Location: </span>\n    <span>"
+    + escapeExpression(((stack1 = ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.jobLocation)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</span><br>\n  ";
   return buffer;
   }
 
-function program7(depth0,data) {
+function program8(depth0,data) {
+  
+  var buffer = "", stack1, stack2;
+  buffer += "\n    <span>Keywords: </span>\n    ";
+  stack2 = helpers.each.call(depth0, ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.jobKeywords), {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "<br>\n  ";
+  return buffer;
+  }
+
+function program10(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n    <span>"
+  buffer += "\n    <span>Distance: </span>\n    <span>"
     + escapeExpression(((stack1 = ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.distance)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + " miles</span>\n  ";
+    + " miles</span><br>\n  ";
   return buffer;
   }
 
-  buffer += "<a class=\"button tiny secondary useThisToSearch\" href=\"javascript: void(0)\" data-id=\""
+  buffer += "<a class=\"button tiny secondary useThisToSearch column\" href=\"javascript: void(0)\" data-id=\""
     + escapeExpression(((stack1 = ((stack1 = depth0.model),stack1 == null || stack1 === false ? stack1 : stack1.cid)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\">\n  ";
-  stack2 = helpers['if'].call(depth0, ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.jobTitle), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
+  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.jobTitle)),stack1 == null || stack1 === false ? stack1 : stack1.length), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "\n  ";
-  stack2 = helpers['if'].call(depth0, ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.company), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
+  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.company)),stack1 == null || stack1 === false ? stack1 : stack1.length), {hash:{},inverse:self.noop,fn:self.program(4, program4, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "\n  ";
-  stack2 = helpers['if'].call(depth0, ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.jobKeywords), {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data});
+  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.jobLocation)),stack1 == null || stack1 === false ? stack1 : stack1.length), {hash:{},inverse:self.noop,fn:self.program(6, program6, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
   buffer += "\n  ";
-  stack2 = helpers['if'].call(depth0, ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.distance), {hash:{},inverse:self.noop,fn:self.program(7, program7, data),data:data});
+  stack2 = helpers['if'].call(depth0, ((stack1 = ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.jobKeywords)),stack1 == null || stack1 === false ? stack1 : stack1.length), {hash:{},inverse:self.noop,fn:self.program(8, program8, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n</a>\n\n";
+  buffer += "\n  ";
+  stack2 = helpers['if'].call(depth0, ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.distance), {hash:{},inverse:self.noop,fn:self.program(10, program10, data),data:data});
+  if(stack2 || stack2 === 0) { buffer += stack2; }
+  buffer += "\n  <span>Salary: "
+    + escapeExpression(((stack1 = ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.minSalary)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "-"
+    + escapeExpression(((stack1 = ((stack1 = depth0.data),stack1 == null || stack1 === false ? stack1 : stack1.maxSalary)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</span>\n</a>\n\n";
   return buffer;
   });
 
