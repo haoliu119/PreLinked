@@ -9,13 +9,17 @@ Finding a job is tough, and can make you feel like just another piece of paper i
 Knowing someone at a company dramatically increase your chances of getting an interview, but until Prelinked, figuring
 out what companies were hiring AND finding the decision makers could be a daunting task. 
 
-### 
+![Alt text](http://i.imgur.com/QjrXRTM.png)
+
 
 ### Tech Stack
 - Backbone.js
 - Node.js
 - Express.js
 - Q Promise Library
+- Request
+- jQuery
+- Underscore.js
 - Foundation.js
 - Passport.js
 - MongoDB
