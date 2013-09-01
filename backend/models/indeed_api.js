@@ -65,7 +65,7 @@ IndeedApi.search = function(query, max){
 // GET /jobs/search
 // Returns JSON raw data from Indeed API
 IndeedApi._search = function (query) {
-  query = parseJobQueryForIndeed(query);
+  query = this.parseJobQueryForIndeed(query);
   query.start = query.start || 0;
   query.limit = query.limit || 25;
 
@@ -105,7 +105,7 @@ var orJoinKeywords = function(qArray){
   return qString;
 };
 
-var parseJobQueryForIndeed = function(query) {
+IndeedApi.parseJobQueryForIndeed = function(query) {
     var q        = {},
         apiQuery = {},
         salary;

@@ -6,6 +6,7 @@ PreLinked.Views.ModalconnectiondetailsView = Backbone.View.extend({
 
   render: function(){
     this.$el.append( this.template(this.model));
+    this.delegateEvents();
     return this;
   },
 

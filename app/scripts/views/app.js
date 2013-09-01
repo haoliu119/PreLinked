@@ -9,6 +9,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
     "click .geoLocation" : "getLocation",
     'click .tab': 'selectTab',
     'submit form#form-home': 'submitSearch',
+    'click .close-notification': 'closeNotification'
   },
 
   imageUrls:{
@@ -70,11 +71,14 @@ PreLinked.Views.AppView = Backbone.View.extend({
       silent: true
     });
     Backbone.history.loadUrl();
-
     // var that = this;
     // $(window).on('scroll', function() {
     //   that.fixedScroll();
     // });
+  },
+
+  closeNotification: function() {
+    this.$el.find('#notification').hide();
   },
 
   selectTab: function(e, data) {
@@ -98,6 +102,7 @@ PreLinked.Views.AppView = Backbone.View.extend({
 
   homePage: function(){
     this.$el.find('#main').html(this.homeView.render().el);
+    // this.homeView.delegateEvents();
     this.$el.find('#main input[name=job-title]').focus();
     this.getLocation();
   },
@@ -105,12 +110,14 @@ PreLinked.Views.AppView = Backbone.View.extend({
   searchPage: function(){
     //this.userView.model.fetchUser();
     this.$el.find('#main').html(this.searchView.render().el);
+    // this.searchView.delegateEvents();
   },
 
   render: function() {
     // render header, footer, other page-common components
     this.$el.html(this.template(this.model.attributes));
     this.$el.find('#user-view').html(this.userView.render().el);
+    this.delegateEvents();
     return this;
   },
 
@@ -144,26 +151,40 @@ PreLinked.Views.AppView = Backbone.View.extend({
       {
       case error.PERMISSION_DENIED:
         console.log("User denied the request for Geolocation.");
+        this.$el.find('#notification').show();
+        this.$el.find('#notification .message').html("User denied the request for Geolocation.");
         break;
       case error.POSITION_UNAVAILABLE:
-        alert("Location information is unavailable.");
+        this.$el.find('#notification').show();
+        this.$el.find('#notification .message').html("Location information is unavailable.");
         break;
       case error.TIMEOUT:
-        alert("Request timed out, try again.");
-        // alert("The request to get user location timed out.");
+        this.$el.find('#notification').show();
+        this.$el.find('#notification .message').html("Request timed out, try again.");
+
         break;
       case error.UNKNOWN_ERROR:
-        alert("An unknown error occurred.");
+        this.$el.find('#notification').show();
+        this.$el.find('#notification .message').html("An unknown error occurred.");
+
         break;
       }
     this.setIconGeo();
   },
-  submitSearch: function(event){
-    event.preventDefault();
-    event.stopPropagation();
-    this.homeView.submitSearch(event);
-    return false;
-  }
+
+
+
+  // submitSearch: function(event){
+  //   event.preventDefault();
+  //   event.stopPropagation();
+  //   this.homeView.submitSearch(event);
+  //   return false;
+  // }
+
+
+
+
+
   // fixedScroll: function() {
   //   var reset = function() {
   //     $('#connections').removeClass('scroll').css({

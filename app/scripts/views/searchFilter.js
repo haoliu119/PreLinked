@@ -49,6 +49,7 @@ PreLinked.Views.SearchfilterView = Backbone.View.extend({
     this.$el.html( this.template(obj) );
     this.$el.find('#minSalary').find("[data-id='" + this.jobQuery.attributes.minSalary + "']").attr('selected','selected');
     this.$el.find('#maxSalary').find("[data-id='" + this.jobQuery.attributes.maxSalary + "']").attr('selected','selected');
+    this.delegateEvents();
     return this;
   },
 

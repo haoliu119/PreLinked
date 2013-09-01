@@ -55,7 +55,7 @@ PreLinked.Views.SearchResultsView = Backbone.View.extend({
         .html("Sorry. I can't find anything for you.<br>"+
               "Do you want a bagel instead?<br><br>");
     }
-
+    this.delegateEvents();
     return this;
   },
 

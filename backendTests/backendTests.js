@@ -36,7 +36,7 @@ describe('query data', function() {
       query.company = undefined;
       query.jobKeywords = undefined;
       var APIQuery = indeedAPI.parseJobQueryForIndeed(query);
-      expect(APIQuery.q).to.equal(' title:(\'software engineer\') ');
+      expect(APIQuery.q).to.equal(" title:(\"software engineer\")");
     });
 
     it('should assign multiple jobTitles to the "q" property', function() {
@@ -44,14 +44,14 @@ describe('query data', function() {
       query.company = undefined;
       query.jobKeywords = undefined;
       var APIQuery = indeedAPI.parseJobQueryForIndeed(query);
-      expect(APIQuery.q).to.equal(' title:(\'software engineer\' or \'web developer\') ');
+      expect(APIQuery.q).to.equal(" title:(\"software engineer\" OR \"web developer\")");
     });
 
     it('should assign company to the "q" property', function() {
       query.jobTitle = undefined;
       query.jobKeywords = undefined;
       var APIQuery = indeedAPI.parseJobQueryForIndeed(query);
-      expect(APIQuery.q).to.equal(' company:(\'Google\') ');
+      expect(APIQuery.q).to.equal(" company:(\"Google\")");
     });
 
     it('should assign multiple companies to the "q" property', function() {
@@ -59,14 +59,14 @@ describe('query data', function() {
       query.jobTitle = undefined;
       query.jobKeywords = undefined;
       var APIQuery = indeedAPI.parseJobQueryForIndeed(query);
-      expect(APIQuery.q).to.equal(' company:(\'Google\' or \'Twitter\') ');
+      expect(APIQuery.q).to.equal(" company:(\"Google\" OR \"Twitter\")");
     });
 
     it('should assign a keyword to the "q" property', function() {
       query.jobTitle = undefined;
       query.company = undefined;
       var APIQuery = indeedAPI.parseJobQueryForIndeed(query);
-      expect(APIQuery.q).to.equal(' (\'javascript\') ');
+      expect(APIQuery.q).to.equal(" (\"javascript\")");
     });
 
     it('should assign a keyword to the "q" property', function() {
@@ -74,14 +74,14 @@ describe('query data', function() {
       query.jobTitle = undefined;
       query.company = undefined;
       var APIQuery = indeedAPI.parseJobQueryForIndeed(query);
-      expect(APIQuery.q).to.equal(' (\'javascript\' or \'ruby\') ');
+      expect(APIQuery.q).to.equal(" (\"javascript\" OR \"ruby\")");
     });
 
     it('should create a full query (without salaries)', function() {
       var APIQuery = indeedAPI.parseJobQueryForIndeed(query);
       
       var expectedQueryObject = {
-        q: ' title:(\'software engineer\') company:(\'Google\') (\'javascript\') ',
+        q: " title:(\"software engineer\") company:(\"Google\") (\"javascript\")",
         l: 'Mountain View, CA',
         radius: '25'
       };

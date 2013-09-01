@@ -13,6 +13,7 @@ PreLinked.Views.ConnectionsitemView = Backbone.View.extend({
 
   render: function() {
     this.$el.append(this.template(this.model.attributes));
+    this.delegateEvents();
     return this;
   },
 

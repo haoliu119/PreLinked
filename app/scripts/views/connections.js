@@ -49,7 +49,7 @@ PreLinked.Views.ConnectionView = Backbone.View.extend({
         .html("Sorry. I can't find any connection for you.<br>"+
               "How about adding me as your connection...<br><br>");
     }
-
+    this.delegateEvents();
     return this;
   },
 

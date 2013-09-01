@@ -20,11 +20,9 @@ PreLinked.Views.HomeView = Backbone.View.extend({
   submitSearch: function(e) {
     e.preventDefault();
     e.stopPropagation();
-    console.log('target >>>', e.target);
-
     var that = this,
         jobTitle = this.$el.find('input[name=job-title]').val();
-    if (jobTitle !== ""){
+    if (jobTitle !== "" && !this.jobQuery.isDuplicateFilter('jobTitle', jobTitle)){
       var titles = PreLinked.jobQuery.get("jobTitle").slice();
       titles.push(jobTitle);
       PreLinked.jobQuery.set("jobTitle", titles);
@@ -32,11 +30,6 @@ PreLinked.Views.HomeView = Backbone.View.extend({
 
     //null is used to signify that this is NOT a click event
     this.trigger('homeSearchSubmit', null, {showTab: 'jobs'});
-    // var userSearch = new PreLinked.Models.UserModel();
-    // userSearch.save({
-    //   jobTitle: this.jobQuery.attributes.jobTitle,
-    //   jobLocation: this.jobQuery.attributes.jobLocation
-    // });
 
     analytics.track('Searched on homepage', {
       jobTitle    : this.jobQuery.attributes.jobTitle,
@@ -50,6 +43,7 @@ PreLinked.Views.HomeView = Backbone.View.extend({
     this.$el
       .attr('data-page','home')
       .html(this.template(this.jobQuery.attributes));
+    this.delegateEvents();
     return this;
   },
 
