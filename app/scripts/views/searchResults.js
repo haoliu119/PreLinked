@@ -49,7 +49,7 @@ PreLinked.Views.SearchResultsView = Backbone.View.extend({
             }).render().el;
           })
         );
-    } else {
+    } else{
       this.$el
         .find('.jobResults')
         .html("Sorry. I can't find anything for you.<br>"+
