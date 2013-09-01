@@ -71,8 +71,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
             that.connectionsView.collection.reset(JC.connections);
             deferred.resolve();
           }else if (JC.connectionsError){
-            var message = JC.connectionsError.message;
-            if (message === 'Unable to verify access token'){
+            var message = JC.connectionsError;
+            if (message === 'Unable to verify access token' || message === '[unauthorized] Invalid or expired token.'){
               message = "your LinkedIn access expired, please logout and re-login.";
             }else{
               message = "we've reached your daily LinkedIn search limit, please try again after midnight UTC."
