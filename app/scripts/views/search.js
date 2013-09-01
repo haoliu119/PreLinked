@@ -79,7 +79,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
           }else if (JC.connectionsError){
             deferred.reject();
             $('#notification').show();
-            $('#notification .message').html("LinkedIn didn't like us, we recorded the error.");
+            $('#notification .message').html("Sorry, we've reached your daily LinkedIn search limit, please try again after midnight UTC.");
           }else{
             deferred.resolve();
           }
