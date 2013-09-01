@@ -44,22 +44,25 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     this.searchFilterView.addSearchFilter(e);
     if(this.jobQuery.hasChanged()){
       this.jobQuery.changed = {};
-      this.submitSearch();
+      this.submitSearch(false);
     }else{
       var answer = confirm("You haven't changed anything, search anyways?");
       if(answer){
-        this.submitSearch();
+        this.submitSearch(true);
       }
     }
   },
 
-  submitSearch: function(){
+  submitSearch: function(duplicate){
     //null is used to signify that this is NOT a click event
     this.trigger('homeSearchSubmit', null, {showTab: 'jobs'});
+    this.$el.find(".searchFilterButton").html("<div class='loader'></div>").attr('disabled','disabled');
     var deferred = $.Deferred();
     var that = this;
     // TODO: FILTER OUT DUPLICATE JOB QUERIES IN SEARCH HISTORY
-    this.trigger('addSearchHistory');
+    if(!duplicate){
+      this.trigger('addSearchHistory');
+    }
     // ===============================
     this.model.fetch({data: this.jobQuery.attributes})
       .done(function(JC){
@@ -98,7 +101,7 @@ PreLinked.Views.SearchView = Backbone.View.extend({
       })
       .always(function(){
         // clear loading icons
-        console.log('- clear loading icons')
+        that.$el.find(".searchFilterButton").html("Search").removeAttr('disabled');
       });
     return deferred.promise();
   },
@@ -171,19 +174,23 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     this.$el
       .attr('data-page','search')
       .html( this.template() );
-
-    this.submitSearch()
-      .done(function(){
-        that.$el.find('#connections').html(that.connectionsView.render().el);
-      })
-      .fail(function(){
-        that.getFirstDegrees().always(function(){
+    if(this.jobQuery.hasChanged() && this.jobQuery.attributes.jobTitle.length > 0 ){
+      this.submitSearch()
+        .done(function(){
           that.$el.find('#connections').html(that.connectionsView.render().el);
+        })
+        .fail(function(){
+          that.getFirstDegrees().always(function(){
+            that.$el.find('#connections').html(that.connectionsView.render().el);
+          });
+        })
+        .always(function(){
+          that.$el.find('#job-results').html(that.searchResultsView.render().el);
         });
-      })
-      .always(function(){
-        that.$el.find('#job-results').html(that.searchResultsView.render().el);
-      });
+    }else{
+      this.$el.find('#job-results').html(that.searchResultsView.render().el);
+      this.$el.find('#connections').html(that.connectionsView.render().el);
+    }
     this.renderSearchFilter();
     this.renderSearchRecent();
     this.delegateEvents();
