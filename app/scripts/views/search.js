@@ -57,6 +57,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
     //null is used to signify that this is NOT a click event
     this.trigger('homeSearchSubmit', null, {showTab: 'jobs'});
     this.$el.find(".searchFilterButton").html("<div class='loader'></div>").attr('disabled','disabled');
+    this.connectionsView.$el.append("<div class='white-wall'></div>");
+    this.searchResultsView.$el.append("<div class='white-wall'></div>");
     var deferred = $.Deferred();
     var that = this;
     // TODO: FILTER OUT DUPLICATE JOB QUERIES IN SEARCH HISTORY
@@ -101,6 +103,8 @@ PreLinked.Views.SearchView = Backbone.View.extend({
       })
       .always(function(){
         // clear loading icons
+        that.connectionsView.$el.find('.white-wall').remove();
+        that.searchResultsView.$el.find('.white-wall').remove();
         that.$el.find(".searchFilterButton").html("Search").removeAttr('disabled');
       });
     return deferred.promise();
