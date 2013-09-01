@@ -65,24 +65,30 @@ div.degree{display:inline-block;margin-left:3px;background:#e1e9ec;text-align:ce
 .footer .col{margin:10px 5% 10px 0}
 .footer .col strong{margin-bottom:5px;display:block;color:#666}
 #page-home{background:url("https://webfiles.uci.edu/shaohuaz/share/prelinked/home-bg.png") 50% 50% no-repeat;padding:100px 0}
-.home-search-text{font-size:20px}
+.home-search-text{font-size:20px;line-height:28px}
 #jobLocation{background-color:#f3f3f3;box-shadow:0 0 10px #f3f3f3}
 .wsn{white-space:nowrap}
-#page-search h2.title-search{background-color:#03497e}
-#page-search h2.title-header{margin:20px 0 0 0;line-height:28px;font-size:24px;padding:10px 15px;color:#fff;text-shadow:2px 2px 2px #000}
+img.topbar-photo,.each-connection .modal-details .image{border-radius:4px}
+#user-view .logout{font-size:12px}
+#page-search{padding-bottom:20px}
+#page-search h2.title-header.title-search{background-color:#03497e;z-index:2;padding-left:15px}
+#page-search h2.title-header{margin:20px 0 0 0;line-height:28px;font-size:24px;padding:10px 30px;color:#fff;text-shadow:2px 2px 2px #000}
+.columns-box .title-network{background-color:#666}
 .columns-box .title-network.arrow_box{z-index:1}
 .columns-box .title-network.arrow_box{background-color:#666;color:#fff}
-.columns-box .title-network.arrow_box:after{border-right-color:#666}
-.columns-box .title-jobs{background:#0596d5}
+.columns-box .title-search.arrow_box:after{border-left-color:#03497e}
+.columns-box .title-network.arrow_box:after{border-left-color:#666}
+.columns-box .title-jobs{background:#0596d5;z-index:1}
 .columns-box .arrow_box{position:relative}
-.columns-box .arrow_box:after{right:100%;border:solid transparent;content:" ";height:0;width:0;position:absolute;pointer-events:none}
-.columns-box .arrow_box:after{border-color:rgba(136,183,213,0);border-right-color:#0596d5;border-width:15px;top:50%;margin-top:-15px}
+.columns-box .arrow_box:after{left:100%;border:solid transparent;content:" ";height:0;width:0;position:absolute;pointer-events:none}
+.columns-box .arrow_box:after{border-color:rgba(136,183,213,0);border-left-color:#0596d5;border-width:23px;top:50%;margin-top:-23px}
 .modal-details{position:relative}
 .modal-details .degree{position:absolute;top:-5px;left:52px;font-size:14px;color:#555;box-shadow:1px 1px 2px #666}
 #notification{background-color:#fff6a4;position:relative}
 #notification .message{text-align:center;padding:5px}
 #notification .close-notification{padding:5px 10px;position:absolute;right:0;top:0;color:#000}
-#form-home{border:5px solid #ccc}
+#form-home{border:10px solid #ccc;border-radius:4px}
+#form-home input{font-weight:bold;text-align:center}
 #form-home button,#form-home input{margin-bottom:0}
 .f-dropdown input,.f-dropdown button{margin-bottom:0}
 @media only screen and (max-width: 768px){.column-left,.column-mid,.column-right{padding-top:20px}
