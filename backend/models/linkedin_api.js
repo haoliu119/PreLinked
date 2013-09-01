@@ -144,7 +144,7 @@ LinkedInApi._searchConnections = function (session, query, degreesArray) {
             userId: session.passport.user.id,
             event : "LinkedIn Error - People Search: " + body.message,
             properties: {
-              time: new Date();
+              time: new Date()
             }
           });
 
@@ -269,7 +269,7 @@ LinkedInApi._searchFirstDegree = function (session, query) {
             userId: session.passport.user.id,
             event : "LinkedIn Error - 1st Degrees: " + body.message,
             properties: {
-              time: new Date();
+              time: new Date()
             }
           });
           deferred.reject(body.message);
@@ -347,7 +347,7 @@ LinkedInApi.getProfile = function(session, id){
             userId: session.passport.user.id,
             event : "LinkedIn Error - User " + event + " - " + body.message,
             properties: {
-              time: new Date();
+              time: new Date()
             }
           });
           deferred.reject(body.message);
