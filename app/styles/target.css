@@ -14,7 +14,7 @@ h1,h2,h3,h4,.tab{font-family:Play,helvetica,sans-serif}
 .reveal-modal ul li{list-style-type:none}
 .reveal-modal .info h2{margin-bottom:5px}
 .job{clear:both}
-.job h2{font-size:22px;line-height:22px;margin-bottom:5px}
+.job h2{font-size:20px;line-height:22px;margin-bottom:5px}
 .job .info{list-style-type:none;font-size:14px;line-height:18px;margin-left:20px}
 .job .location{color:#aaa}
 #search-filters .filter-item.button{padding-right:0}
@@ -57,7 +57,7 @@ div.degree{display:inline-block;margin-left:3px;background:#e1e9ec;text-align:ce
 .footer{border-top:10px solid #03487d;font-size:14px;padding:50px 0}
 .header #user-view ul{margin-bottom:0}
 .showConnectButton:hover{color:#fff;background-color:#444}
-.showConnectButton{background:url("https://webfiles.uci.edu/shaohuaz/share/prelinked/connection.png") no-repeat 95% 50% #666;padding:6px 25px 6px 2px;border:1px solid #666;border-radius:2px;color:#fff;text-align:center;width:54px;font-size:14px}
+.showConnectButton{background:url("https://webfiles.uci.edu/shaohuaz/share/prelinked/connection.png") no-repeat 95% 50% #666;padding:6px 25px 6px 2px;border:1px solid #666;border-radius:2px;color:#fff;text-align:center;width:54px;font-size:14px;text-decoration:none}
 .icon-indeed,.icon-linkedin,.icon-hackreactor,.icon-github{background-image:url("https://webfiles.uci.edu/shaohuaz/share/prelinked/sprite-footer.png");height:38px;display:inline-block;vertical-align:middle;opacity:.6}
 .icon-indeed{background-position:-106px 0;width:92px}
 .icon-linkedin{background-position:276px 0;width:40px}
@@ -74,7 +74,7 @@ img.topbar-photo,.each-connection .modal-details .image{border-radius:4px}
 #user-view .logout{font-size:12px}
 #page-search{padding-bottom:20px}
 #page-search h2.title-header.title-search{background-color:#03497e;z-index:2}
-#page-search h2.title-header{margin:20px 0 0 0;line-height:28px;font-size:24px;padding:10px 30px;color:#fff;text-align:center;text-shadow:2px 2px 2px #000}
+#page-search h2.title-header{margin:20px 0 0 0;line-height:28px;font-size:20px;padding:10px 30px;color:#fff;text-align:center;text-shadow:2px 2px 2px #000}
 .columns-box .title-network{background-color:#666}
 .columns-box .title-network.arrow_box{z-index:1}
 .columns-box .title-network.arrow_box{background-color:#666;color:#fff}
@@ -88,7 +88,7 @@ img.topbar-photo,.each-connection .modal-details .image{border-radius:4px}
 .modal-details .degree{position:absolute;top:-5px;left:52px;font-size:14px;color:#555;box-shadow:1px 1px 2px #666}
 #notification{background-color:#fff6a4;position:relative}
 #notification .message{text-align:center;padding:10px 40px}
-#notification .close-notification{padding:10px;position:absolute;right:0;top:0;color:#000}
+#notification .close-notification{padding:10px;position:absolute;right:0;top:0;color:#000;text-decoration:none}
 #form-home{border:10px solid #ccc;border-radius:4px;font-size:18px}
 #form-home input{font-weight:bold;text-align:center}
 #form-home button,#form-home input{margin-bottom:0}
@@ -96,7 +96,7 @@ img.topbar-photo,.each-connection .modal-details .image{border-radius:4px}
 .column .sorting{line-height:28px;font-size:14px}
 @media only screen and (max-width: 768px){.column-left,.column-mid,.column-right{padding-top:20px}
 #column-search,#column-jobs,#column-network{display:none}
-.tab{z-index:1;position:relative;color:#fff;text-align:center;padding:10px 0}
+.tab{z-index:1;position:relative;color:#fff;text-align:center;padding:10px;text-decoration:none}
 .tab:hover{color:#fff}
 .tab.on{color:#fff;text-shadow:1px 1px 1px #000}
 #column-search.on,#column-jobs.on,#column-network.on{display:block}
