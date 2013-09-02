@@ -70,7 +70,6 @@ div.degree{display:inline-block;margin-left:3px;background:#e1e9ec;text-align:ce
 #page-home #jobLocation{background-color:#f3f3f3;box-shadow:0 0 10px #f3f3f3}
 .wsn{white-space:nowrap}
 #search-filters #jobLocation{font-size:16px}
-#search-filters .geoLocation img{vertical-align:top}
 img.topbar-photo,.each-connection .modal-details .image{border-radius:4px}
 #user-view .logout{font-size:12px}
 #page-search{padding-bottom:20px}
@@ -94,6 +93,7 @@ img.topbar-photo,.each-connection .modal-details .image{border-radius:4px}
 #form-home input{font-weight:bold;text-align:center}
 #form-home button,#form-home input{margin-bottom:0}
 .f-dropdown input,.f-dropdown button{margin-bottom:0}
+.column .sorting{line-height:28px;font-size:14px}
 @media only screen and (max-width: 768px){.column-left,.column-mid,.column-right{padding-top:20px}
 #column-search,#column-jobs,#column-network{display:none}
 .tab{z-index:1;position:relative;color:#fff;text-align:center;padding:10px 0}

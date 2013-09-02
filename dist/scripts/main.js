@@ -38,11 +38,11 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  buffer += "\n  <p class=\"allResults\"><strong>";
+  buffer += "\n  <p class=\"allResults left\"><strong>";
   if (stack1 = helpers.number_of_connections) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.number_of_connections; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + " related connections</strong></p>\n  Connections:\n  <button id=\"all-connections\" class=\"tiny\">All</button>\n  <div id=\"login-box\">\n    <div class=\"loader\"></div>\n  </div>\n\n  <div id=\"connection-results\" class=\"scroll\">\n    <div class=\"loader\"></div>\n  </div>\n\n";
+    + " related connections</strong></p>\n  <div class=\"sorting right\">\n    Connections:\n    <a id=\"all-connections\" href=\"javascript:;\">All</a>\n  </div>\n\n  <div id=\"login-box\" class=\"clearfix\">\n    <div class=\"loader\"></div>\n  </div>\n\n  <div id=\"connection-results\" class=\"scroll\">\n    <div class=\"loader\"></div>\n  </div>\n\n";
   return buffer;
   });
 
@@ -482,7 +482,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  buffer += "<p><strong>";
+  buffer += "<p class=\"left\"><strong>";
   if (stack1 = helpers.jobCount) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.jobCount; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -490,8 +490,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.jobTitle) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.jobTitle; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\"</strong></p>\n"
-    + "\n<div class=\"right\">\n  Rank:\n  <a class=\"sortAsc button tiny\" href=\"javascript:;\">Up</a> |\n  <a class=\"sortDesc button tiny\" href=\"javascript:;\">Down</a>\n</div>\n\n\n<div class=\"jobResults\">\n  <div class=\"loader\"></div>\n</div>";
+    + "\"</strong></p>\n<div class=\"sorting right\">\n  Rank:\n  <a class=\"sortAsc\" href=\"javascript:;\">Up</a> |\n  <a class=\"sortDesc\" href=\"javascript:;\">Down</a>\n</div>\n\n<div class=\"jobResults clearfix\">\n  <div class=\"loader\"></div>\n</div>";
   return buffer;
   });
 
