@@ -1,7 +1,9 @@
 //this file is compiled to target.css
 //then copied to dist/styles/main.css
+@import 'mixins'
+
 html, body
-  background url(https://webfiles.uci.edu/shaohuaz/share/prelinked/bg-striped.gif) #fff repeat
+  background url(imgUrlBody) #fff repeat
 h1, h2, h3, h4, .tab
   font-family Play, helvetica, sans-serif
 .clearfix
@@ -39,7 +41,7 @@ h1, h2, h3, h4, .tab
 .each-connection .info .headline
   font-size 14px
   line-height 20px
-  margin-top -8px
+  margin-top -5px
 .reveal-modal ul li
   list-style-type none
 .reveal-modal .info h2
@@ -47,13 +49,14 @@ h1, h2, h3, h4, .tab
 .job
   clear both
 .job h2
-  font-size 22px
+  font-size 20px
   line-height 22px
   margin-bottom 5px
 .job .info
   list-style-type none
   font-size 14px
   line-height 18px
+  margin-left 20px
 .job .location
   color #aaa
 #search-filters .filter-item.button
@@ -84,7 +87,7 @@ h1, h2, h3, h4, .tab
   max-height 600px
   overflow-y auto
 .loader
-  background url(https://webfiles.uci.edu/shaohuaz/share/prelinked/loader.gif) no-repeat 50% 50%
+  background url(imgUrlLoader) no-repeat 50% 50%
   height 40px
 .inputFilter
   position relative
@@ -155,6 +158,8 @@ div.degree
 .numberOfConnections
   display inline-block
   margin-left 3px
+  font-size 16px
+  color #666
 .exitModal
   position: absolute;
   top 8px
@@ -182,17 +187,18 @@ div.degree
   color #fff
   background-color #444
 .showConnectButton
-  background url(https://webfiles.uci.edu/shaohuaz/share/prelinked/connection.png) no-repeat 95% 50% #666
-  padding 2px 25px 2px 2px
+  background url(imgUrlConnection) no-repeat 95% 50% #666
+  padding 6px 25px 6px 2px
   border 1px solid #666
   border-radius 2px
   color #fff
   text-align center
   width 54px
   font-size 14px
+  text-decoration none
 
 .icon-indeed, .icon-linkedin, .icon-hackreactor, .icon-github
-  background-image url(https://webfiles.uci.edu/shaohuaz/share/prelinked/sprite-footer.png)
+  background-image url(imgUrlSpriteFooter)
   height 38px
   display inline-block
   vertical-align middle
@@ -217,16 +223,19 @@ div.degree
   color #666
 
 #page-home
-  background url(https://webfiles.uci.edu/shaohuaz/share/prelinked/home-bg.png) 50% 50% no-repeat
+  background url(imgUrlHomeBg) 50% 50% no-repeat
   padding 100px 0
 .home-search-text
   font-size 20px
   line-height 28px
-#jobLocation
+#page-home #jobLocation
   background-color #f3f3f3
   box-shadow 0 0 10px #f3f3f3
 .wsn
   white-space nowrap
+
+#search-filters #jobLocation
+  font-size 16px
 
 img.topbar-photo,
 .each-connection .modal-details .image
@@ -239,13 +248,13 @@ img.topbar-photo,
 #page-search h2.title-header.title-search
   background-color #03497e
   z-index 2
-  padding-left 15px
 #page-search h2.title-header
   margin 20px 0 0 0
   line-height 28px
-  font-size 24px
+  font-size 20px
   padding 10px 30px
   color #fff
+  text-align center
   text-shadow 2px 2px 2px #000
 .columns-box .title-network
   background-color #666
@@ -300,6 +309,7 @@ img.topbar-photo,
   right 0
   top 0
   color #000
+  text-decoration none
 
 #form-home
   border 10px solid #ccc
@@ -313,6 +323,10 @@ img.topbar-photo,
 .f-dropdown input,
 .f-dropdown button
   margin-bottom 0
+
+.column .sorting
+  line-height 28px
+  font-size 14px
 
 @media only screen and (max-width: 768px)
   .column-left,
@@ -328,7 +342,8 @@ img.topbar-photo,
     position relative
     color #fff
     text-align center
-    padding 10px 0
+    padding 10px
+    text-decoration none
   .tab:hover
     color #fff
   .tab.on
@@ -364,9 +379,5 @@ img.topbar-photo,
     background #666
   #tab-network.on:after
     border-top-color #666
-
-
-
-
 
 

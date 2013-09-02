@@ -38,11 +38,11 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  buffer += "\n  <p class=\"allResults\"><strong>";
+  buffer += "\n  <p class=\"allResults left\"><strong>";
   if (stack1 = helpers.number_of_connections) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.number_of_connections; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + " related connections</strong></p>\n  Connections:\n  <button id=\"all-connections\" class=\"tiny\">All</button>\n  <div id=\"login-box\">\n    <div class=\"loader\"></div>\n  </div>\n\n  <div id=\"connection-results\" class=\"scroll\">\n    <div class=\"loader\"></div>\n  </div>\n\n";
+    + " related connections</strong></p>\n  <div class=\"sorting right\">\n    Connections:\n    <a id=\"all-connections\" href=\"javascript:;\">All</a>\n  </div>\n\n  <div id=\"login-box\" class=\"clearfix\">\n    <div class=\"loader\"></div>\n  </div>\n\n  <div id=\"connection-results\" class=\"scroll\">\n    <div class=\"loader\"></div>\n  </div>\n\n";
   return buffer;
   });
 
@@ -91,7 +91,7 @@ function program7(depth0,data) {
   options = {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data};
   stack2 = ((stack1 = helpers.checkDegree || depth0.checkDegree),stack1 ? stack1.call(depth0, depth0.distance, options) : helperMissing.call(depth0, "checkDegree", depth0.distance, options));
   if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n    </div>\n  </a>\n  <ul class=\"info\">\n    <li>\n      <h2 class=\"name\">\n        <a class=\"modal-details\" href=\"#\" data-in-id=\"";
+  buffer += "\n    </div>\n  </a>\n  <div class=\"info\">\n    <h2 class=\"name\">\n      <a class=\"modal-details\" href=\"#\" data-in-id=\"";
   if (stack2 = helpers.id) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
   else { stack2 = depth0.id; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
   buffer += escapeExpression(stack2)
@@ -103,17 +103,17 @@ function program7(depth0,data) {
   options = {hash:{},inverse:self.noop,fn:self.program(7, program7, data),data:data};
   stack2 = ((stack1 = helpers.truncateName || depth0.truncateName),stack1 ? stack1.call(depth0, depth0.lastName, options) : helperMissing.call(depth0, "truncateName", depth0.lastName, options));
   if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "</a>\n        <div class=\"numberOfConnections\"> ";
+  buffer += "</a>\n      <div class=\"numberOfConnections\">";
   if (stack2 = helpers.numConnections) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
   else { stack2 = depth0.numConnections; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
   buffer += escapeExpression(stack2)
-    + " </div>\n      </h2>\n    </li>\n    <li class=\"headline\">";
+    + "</div>\n\n    </h2>\n    <ul>\n      <li class=\"headline\">";
   if (stack2 = helpers.headline) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
   else { stack2 = depth0.headline; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
   buffer += escapeExpression(stack2)
-    + "</li>\n    <li class=\"connectionLocation\">"
+    + "</li>\n      <li class=\"connectionLocation\">"
     + escapeExpression(((stack1 = ((stack1 = depth0.location),stack1 == null || stack1 === false ? stack1 : stack1.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</li>\n  </ul>\n</div>";
+    + "</li>\n    </ul>\n  </div>\n</div>";
   return buffer;
   });
 
@@ -350,11 +350,11 @@ function program11(depth0,data) {
   return buffer;
   }
 
-  buffer += "<div>\n  <label>\n  <a href=\"#\" class=\"geoLocation\"><img src=\"https://webfiles.uci.edu/shaohuaz/share/prelinked/geolocate.png\" height=\"20\" width=\"20\"></a>\n    <strong><a href=\"#\" data-dropdown=\"drop2\" id=\"jobLocation\">";
+  buffer += "<div>\n  <p>\n    <label>\n      <strong><a href=\"#\" data-dropdown=\"drop2\" id=\"jobLocation\">";
   if (stack1 = helpers.jobLocation) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.jobLocation; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</a></strong>\n  </label>\n\n</div>\n<form id=\"form-location-search\">\n  <ul id=\"drop2\" class=\"f-dropdown medium\" data-dropdown-content>\n    <li>\n      <div>\n        <input class=\"full-width\" name=\"job-location\" type=\"text\" placeholder=\"Location: city, state, or zip\">\n      </div>\n      <div>\n        <button type=\"submit\" class=\"button prefix\">Update</button>\n      </div>\n    </li>\n  </ul>\n</form>\n\n<form id=\"form-search\">\n  <label>Job Title</label>\n  <div class=\"inputFilter\">\n    <input class=\"searchInput\" id=\"jobTitleSearchInput\" name=\"job-title\" type=\"text\" placeholder=\"Example: Engineer\">\n    <button class=\"addFilterButton tiny\" data-id=\"jobTitle\">Add</button>\n  <div>\n  <div>\n    ";
+    + "</a></strong>\n      <a href=\"#\" class=\"geoLocation\"><img src=\"https://webfiles.uci.edu/shaohuaz/share/prelinked/geolocate.png\" height=\"20\" width=\"20\"></a>\n    </label>\n  </p>\n\n</div>\n<form id=\"form-location-search\">\n  <ul id=\"drop2\" class=\"f-dropdown medium\" data-dropdown-content>\n    <li>\n      <div>\n        <input class=\"full-width\" name=\"job-location\" type=\"text\" placeholder=\"Location: city, state, or zip\">\n      </div>\n      <div>\n        <button type=\"submit\" class=\"button prefix\">Update</button>\n      </div>\n    </li>\n  </ul>\n</form>\n\n<form id=\"form-search\">\n  <label>Job Title</label>\n  <div class=\"inputFilter\">\n    <input class=\"searchInput\" id=\"jobTitleSearchInput\" name=\"job-title\" type=\"text\" placeholder=\"Example: Engineer\">\n    <button class=\"addFilterButton tiny\" data-id=\"jobTitle\">Add</button>\n  <div>\n  <div>\n    ";
   stack1 = helpers.each.call(depth0, depth0.jobTitle, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n  </div>\n  <label>Company</label>\n  <div class=\"inputFilter\">\n    <input class=\"searchInput\" id=\"companySearchInput\" name=\"company\" type=\"text\" placeholder=\"Example: Google\">\n    <button class=\"addFilterButton tiny\" data-id=\"company\">Add</button>\n  </div>\n  <div>\n    ";
@@ -482,7 +482,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  buffer += "<p><strong>";
+  buffer += "<p class=\"left\"><strong>";
   if (stack1 = helpers.jobCount) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.jobCount; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -490,8 +490,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.jobTitle) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.jobTitle; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\"</strong></p>\n"
-    + "\n<div class=\"right\">\n  Rank:\n  <a class=\"sortAsc button tiny\" href=\"javascript:;\">Up</a> |\n  <a class=\"sortDesc button tiny\" href=\"javascript:;\">Down</a>\n</div>\n\n\n<div class=\"jobResults\">\n  <div class=\"loader\"></div>\n</div>";
+    + "\"</strong></p>\n<div class=\"sorting right\">\n  Rank:\n  <a class=\"sortAsc\" href=\"javascript:;\">Up</a> |\n  <a class=\"sortDesc\" href=\"javascript:;\">Down</a>\n</div>\n\n<div class=\"jobResults clearfix\">\n  <div class=\"loader\"></div>\n</div>";
   return buffer;
   });
 
@@ -503,11 +502,11 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = "", stack1;
-  buffer += "\n      ";
+  buffer += "\n          ";
   if (stack1 = helpers.city) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.city; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + ",\n    ";
+    + ",\n        ";
   return buffer;
   }
 
@@ -525,7 +524,7 @@ function program5(depth0,data) {
   return "0";
   }
 
-  buffer += "<h2 class=\"title\"><a href=\"";
+  buffer += "<div class=\"row collapse\">\n  <h2 class=\"title twelve columns\">\n    <a href=\"";
   if (stack1 = helpers.url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
@@ -533,25 +532,24 @@ function program5(depth0,data) {
   if (stack1 = helpers.jobtitle) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.jobtitle; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</a></h2>\n<ul class=\"small-10 info columns\">\n  <li class=\"company\">";
+    + "</a>\n  </h2>\n</div>\n<div class=\"row collapse\">\n  <div class=\"small-10 columns\">\n    <ul class=\"info\">\n      <li class=\"company\">";
   if (stack1 = helpers.company) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.company; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
     + " ";
   options = {hash:{},data:data};
   buffer += escapeExpression(((stack1 = helpers.toDoubleDigits || depth0.toDoubleDigits),stack1 ? stack1.call(depth0, depth0.pScore, options) : helperMissing.call(depth0, "toDoubleDigits", depth0.pScore, options)))
-    + "</li>\n  <li class=\"location\">\n    ";
+    + "</li>\n      <li class=\"location\">\n        ";
   stack2 = helpers['if'].call(depth0, depth0.city, {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n    ";
+  buffer += "\n        ";
   if (stack2 = helpers.state) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
   else { stack2 = depth0.state; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
   buffer += escapeExpression(stack2)
-    + "\n  </li>\n</ul>\n<ul class=\"small-2 columns\">\n  <li><a class=\"right showConnectButton\" href=\"javascript:;\">\n    ";
+    + "\n      </li>\n    </ul>\n  </div>\n  <div class=\"small-2 columns\">\n    <a class=\"right showConnectButton\" href=\"javascript:;\">\n      ";
   stack2 = helpers['if'].call(depth0, depth0.pCount, {hash:{},inverse:self.program(5, program5, data),fn:self.program(3, program3, data),data:data});
   if(stack2 || stack2 === 0) { buffer += stack2; }
-  buffer += "\n  </a></li>\n  "
-    + "\n</ul>\n";
+  buffer += "\n    </a>\n  </div>\n</div>\n\n";
   return buffer;
   });
 

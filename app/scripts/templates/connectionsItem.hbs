@@ -10,14 +10,15 @@
       {{/checkDegree}}
     </div>
   </a>
-  <ul class="info">
-    <li>
-      <h2 class="name">
-        <a class="modal-details" href="#" data-in-id="{{id}}">{{firstName}}&nbsp;{{#truncateName lastName}}{{/truncateName}}</a>
-        <div class="numberOfConnections"> {{numConnections}} </div>
-      </h2>
-    </li>
-    <li class="headline">{{headline}}</li>
-    <li class="connectionLocation">{{location.name}}</li>
-  </ul>
+  <div class="info">
+    <h2 class="name">
+      <a class="modal-details" href="#" data-in-id="{{id}}">{{firstName}}&nbsp;{{#truncateName lastName}}{{/truncateName}}</a>
+      <div class="numberOfConnections">{{numConnections}}</div>
+
+    </h2>
+    <ul>
+      <li class="headline">{{headline}}</li>
+      <li class="connectionLocation">{{location.name}}</li>
+    </ul>
+  </div>
 </div>
