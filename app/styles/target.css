@@ -10,12 +10,12 @@ h1,h2,h3,h4,.tab{font-family:Play,helvetica,sans-serif}
 .each-connection .modal-details .image{position:absolute;top:0;left:0}
 .each-connection .info{margin-left:90px;min-height:90px}
 .each-connection .info h2{font-size:18px;margin-bottom:5px}
-.each-connection .info .headline{font-size:14px;line-height:20px;margin-top:-8px}
+.each-connection .info .headline{font-size:14px;line-height:20px;margin-top:-5px}
 .reveal-modal ul li{list-style-type:none}
 .reveal-modal .info h2{margin-bottom:5px}
 .job{clear:both}
 .job h2{font-size:22px;line-height:22px;margin-bottom:5px}
-.job .info{list-style-type:none;font-size:14px;line-height:18px}
+.job .info{list-style-type:none;font-size:14px;line-height:18px;margin-left:20px}
 .job .location{color:#aaa}
 #search-filters .filter-item.button{padding-right:0}
 #search-filters .filter-item .rm{font-weight:normal;padding:8px 8px 8px 2px;color:#aaa;line-height:0;font-size:15px}
@@ -48,7 +48,7 @@ img.topbar-photo{width:45px;height:45px}
 div.degree{display:inline-block;margin-left:3px;background:#e1e9ec;text-align:center;font-size:14px;width:30px;border-radius:.2em}
 .connectionLocation{font-size:12px;color:#808080}
 #indeedLogo{position:absolute;top:10px;right:20px}
-.numberOfConnections{display:inline-block;margin-left:3px}
+.numberOfConnections{display:inline-block;margin-left:3px;font-size:16px;color:#666}
 .exitModal{position:absolute;top:8px;right:20px}
 .exitModal:hover,.showRelations{margin-top:25px}
 .interConnectionInfoLI{width:80px;display:inline-block;color:#f00}
@@ -57,7 +57,7 @@ div.degree{display:inline-block;margin-left:3px;background:#e1e9ec;text-align:ce
 .footer{border-top:10px solid #03487d;font-size:14px;padding:50px 0}
 .header #user-view ul{margin-bottom:0}
 .showConnectButton:hover{color:#fff;background-color:#444}
-.showConnectButton{background:url("https://webfiles.uci.edu/shaohuaz/share/prelinked/connection.png") no-repeat 95% 50% #666;padding:2px 25px 2px 2px;border:1px solid #666;border-radius:2px;color:#fff;text-align:center;width:54px;font-size:14px}
+.showConnectButton{background:url("https://webfiles.uci.edu/shaohuaz/share/prelinked/connection.png") no-repeat 95% 50% #666;padding:6px 25px 6px 2px;border:1px solid #666;border-radius:2px;color:#fff;text-align:center;width:54px;font-size:14px}
 .icon-indeed,.icon-linkedin,.icon-hackreactor,.icon-github{background-image:url("https://webfiles.uci.edu/shaohuaz/share/prelinked/sprite-footer.png");height:38px;display:inline-block;vertical-align:middle;opacity:.6}
 .icon-indeed{background-position:-106px 0;width:92px}
 .icon-linkedin{background-position:276px 0;width:40px}
@@ -67,13 +67,15 @@ div.degree{display:inline-block;margin-left:3px;background:#e1e9ec;text-align:ce
 .footer .col strong{margin-bottom:5px;display:block;color:#666}
 #page-home{background:url("https://webfiles.uci.edu/shaohuaz/share/prelinked/home-bg.png") 50% 50% no-repeat;padding:100px 0}
 .home-search-text{font-size:20px;line-height:28px}
-#jobLocation{background-color:#f3f3f3;box-shadow:0 0 10px #f3f3f3}
+#page-home #jobLocation{background-color:#f3f3f3;box-shadow:0 0 10px #f3f3f3}
 .wsn{white-space:nowrap}
+#search-filters #jobLocation{font-size:16px}
+#search-filters .geoLocation img{vertical-align:top}
 img.topbar-photo,.each-connection .modal-details .image{border-radius:4px}
 #user-view .logout{font-size:12px}
 #page-search{padding-bottom:20px}
-#page-search h2.title-header.title-search{background-color:#03497e;z-index:2;padding-left:15px}
-#page-search h2.title-header{margin:20px 0 0 0;line-height:28px;font-size:24px;padding:10px 30px;color:#fff;text-shadow:2px 2px 2px #000}
+#page-search h2.title-header.title-search{background-color:#03497e;z-index:2}
+#page-search h2.title-header{margin:20px 0 0 0;line-height:28px;font-size:24px;padding:10px 30px;color:#fff;text-align:center;text-shadow:2px 2px 2px #000}
 .columns-box .title-network{background-color:#666}
 .columns-box .title-network.arrow_box{z-index:1}
 .columns-box .title-network.arrow_box{background-color:#666;color:#fff}
