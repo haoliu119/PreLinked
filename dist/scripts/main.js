@@ -1824,7 +1824,7 @@ PreLinked.Views.ConnectionsitemView = Backbone.View.extend({
             allowCancel: false,
             okText: 'Close'
           });
-          modal.open();
+          modal.openOnce();
           //open modal
           console.log(data);
         });
