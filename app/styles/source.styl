@@ -1,7 +1,9 @@
 //this file is compiled to target.css
 //then copied to dist/styles/main.css
+@import 'mixins'
+
 html, body
-  background url(https://webfiles.uci.edu/shaohuaz/share/prelinked/bg-striped.gif) #fff repeat
+  background url(imgUrlBody) #fff repeat
 h1, h2, h3, h4, .tab
   font-family Play, helvetica, sans-serif
 .clearfix
@@ -84,7 +86,7 @@ h1, h2, h3, h4, .tab
   max-height 600px
   overflow-y auto
 .loader
-  background url(https://webfiles.uci.edu/shaohuaz/share/prelinked/loader.gif) no-repeat 50% 50%
+  background url(imgUrlLoader) no-repeat 50% 50%
   height 40px
 .inputFilter
   position relative
@@ -182,7 +184,7 @@ div.degree
   color #fff
   background-color #444
 .showConnectButton
-  background url(https://webfiles.uci.edu/shaohuaz/share/prelinked/connection.png) no-repeat 95% 50% #666
+  background url(imgUrlConnection) no-repeat 95% 50% #666
   padding 2px 25px 2px 2px
   border 1px solid #666
   border-radius 2px
@@ -192,7 +194,7 @@ div.degree
   font-size 14px
 
 .icon-indeed, .icon-linkedin, .icon-hackreactor, .icon-github
-  background-image url(https://webfiles.uci.edu/shaohuaz/share/prelinked/sprite-footer.png)
+  background-image url(imgUrlSpriteFooter)
   height 38px
   display inline-block
   vertical-align middle
@@ -217,7 +219,7 @@ div.degree
   color #666
 
 #page-home
-  background url(https://webfiles.uci.edu/shaohuaz/share/prelinked/home-bg.png) 50% 50% no-repeat
+  background url(imgUrlHomeBg) 50% 50% no-repeat
   padding 100px 0
 .home-search-text
   font-size 20px
