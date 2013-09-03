@@ -852,8 +852,12 @@ PreLinked.Collections.SearchrecentCollection = Backbone.Collection.extend({
 });
 
 Handlebars.registerHelper('toDoubleDigits', function(input){
-  var output = parseFloat(input).toFixed(2);
-  return (_(output).isNumber() ) ? output : '';
+  var output = parseFloat(input).toFixed(1);
+  if(output === '0.00' || output === 'NaN'){
+    return '';
+  } else {
+    return output;
+  }
 });
 
 Handlebars.registerHelper('ifCond', function(v1, v2, options) {
