@@ -13,7 +13,7 @@ out what companies were hiring AND finding the decision makers could be a daunti
 
 
 ### Tech Stack
-![tech stack diagram](http://i.imgur.com/YHe5Swx.png)
+![tech stack diagram](http://i.imgur.com/N2WBpWj.png)
 
 - Backbone.js
 - Node.js
