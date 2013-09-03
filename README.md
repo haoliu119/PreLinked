@@ -1,7 +1,7 @@
 PreLinked
 =========
 
-> PreLinked combines the job search features of Indeed.com, with the power of your LinkedIn network to show you the best people to contact for the job.
+> PreLinked combines the job search features of Indeed.com, with the power of your LinkedIn network to show you the best people to contact for the job. http://prelinked.jit.su/
 
 ### Don't Be Just Another Resume. Get PreLinked
 
@@ -13,6 +13,8 @@ out what companies were hiring AND finding the decision makers could be a daunti
 
 
 ### Tech Stack
+![tech stack diagram](http://i.imgur.com/N2WBpWj.png)
+
 - Backbone.js
 - Node.js
 - Express.js
