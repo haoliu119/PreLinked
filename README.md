@@ -3,9 +3,10 @@ PreLinked
 
 This is a 2 week group project with a team of four: *me*, [Stephen](https://github.com/sportanova), [Barry](https://github.com/barrymwong), and [Shao](https://github.com/shaohua) 
 Here's a sample list of my personal contributions to the codebase:
-  * Back-end work:
-  * Front-end work:
-
+ * Back-end work:
+   * [LinkedIn API model](https://github.com/haoliu119/PreLinked/blob/master/backend/models/linkedin_api.js) 
+ * Front-end work:
+   * [Search Result View](https://github.com/haoliu119/PreLinked/blob/master/app/scripts/views/search.js)
 > PreLinked combines the job search features of Indeed.com, with the power of your LinkedIn network to show you the best people to contact for the job. http://prelinked.jit.su/
 
 ### Don't Be Just Another Resume. Get PreLinked
